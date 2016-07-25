@@ -502,19 +502,35 @@ $\exists n \forall m\geq n$ происходит событие $A_m$.
 
 $\forall n \exists m\geq n: A_m$ произошло.
 
-Нижний предел последовательности: $\{A_n: n\geq 1\}$ --- это случайное событие, состоящее в том, что произошли все события, начиная с некоторого из исходной последовательности: $$\varlimsup\limits_{n\to\infty}A_n=\bigcup\limits_{n=1}^\infty\bigcap\limits_{m=n}^\infty A_m.$$
+Нижний предел последовательности: $\{A_n: n\geq 1\}$ --- это случайное событие, состоящее в том, что произошли все события, начиная с некоторого из исходной последовательности: $$\varliminf\limits_{n\to\infty}A_n=\bigcup\limits_{n=1}^\infty\bigcap\limits_{m=n}^\infty A_m.$$
 
 $\exists n \forall m\geq n$ происходит событие $A_m$.
 
-а)
+а) $\overline{\varlimsup\limits_{n\to\infty}A_n}=\overline{\bigcap\limits_{n\geq 1}\bigcup\limits_{m\geq n}A_m}=\bigcup\limits_{n\geq 1}\overline{\bigcup\limits_{m\geq n}A_m}=\bigcup\limits_{n\geq 1}\bigcap\limits_{m\geq n}\overline{A_m}=\varliminf\limits_{n\to\infty}\overline{A_n}$;
 
-б)
+б) $\varlimsup\limits_{n\to\infty}\left(A_n\cup B_n\right)=\bigcap\limits_{n\geq 1}\bigcup\limits_{m\geq n}\left(A_m\cup B_m\right)=\prod\limits_{n=1}^\infty\sum\limits_{m=n}^\infty\left(A_m+B_m\right)=\prod\limits_{n=1}^\infty\sum\limits_{m=n}^\infty A_m+\prod\limits_{n=1}^\infty\sum\limits_{m=n}^\infty B_m=\varlimsup\limits_{n\to\infty}A_n\cup\varlimsup\limits_{n\to\infty}B_n$.
 
 \subsubsection*{2.7}
 
 \textit{Задание.} Пусть $\{A_n, n\in\mathbb{N}\}$ --- некоторая последовательность событий, $\mathbbm{1}(A)$ --- индикатор события A. Докажите, что $\mathbbm{1}\left(\varlimsup\limits_{n\to\infty}A_n\right)=\varlimsup\limits_{n\to\infty}\mathbbm{1}\left(A_n\right)$.
 
-\textit{Решение.}
+\textit{Решение.} Рассмотрим 4 случая: 
+
+\begin{enumerate}
+\item $\mathbbm{1}\left(\varlimsup\limits_{n\to\infty}A_n\right)=0, \varlimsup\limits_{n\to\infty}\mathbbm{1}\left(A_n\right)=0$;
+\item $\mathbbm{1}\left(\varlimsup\limits_{n\to\infty}A_n\right)=0, \varlimsup\limits_{n\to\infty}\mathbbm{1}\left(A_n\right)=1$;
+\item $\mathbbm{1}\left(\varlimsup\limits_{n\to\infty}A_n\right)=1, \varlimsup\limits_{n\to\infty}\mathbbm{1}\left(A_n\right)=0$;
+\item $\mathbbm{1}\left(\varlimsup\limits_{n\to\infty}A_n\right)=1, \varlimsup\limits_{n\to\infty}\mathbbm{1}\left(A_n\right)=1$.
+\end{enumerate}
+
+Нужно доказать, что возможны только первый и последний случаи.
+
+Верхний предел последовательности $\{A_n: n\geq 1\}$ --- это случайное событие, состоящее в том, что произошло бесконечно много событий из исходной последовательности: $$\varlimsup\limits_{n\to\infty}A_n=\bigcap\limits_{n\geq 1}\bigcup\limits_{m\geq n}A_m.$$
+
+
+Индикатор верхнего предела равен нулю $\left(\mathbbm{1}\left(\varlimsup\limits_{n\to\infty}A_n\right)=0\right)$ --- значит, произошло конечное множество событий из $A_n$. Значит, с какого-то момента события перестали происходить, и предел индикаторов равен нулю: $\varlimsup\limits_{n\to\infty}\mathbbm{1}\left(A_n\right)=0$.
+
+Если индикатор от верхнего предела равен единице $$\left(\mathbbm{1}\left(\varlimsup\limits_{n\to\infty}A_n\right)=\mathbbm{1}\left(\bigcap\limits_{n\geq 1}\bigcup\limits_{m\geq n}A_m\right)=1\right),$$ то произошло бесконечное множество событий из $A_n$. Это значит, во-первых, что пересечение не пустое, а во-вторых, что элементарный исход принадлежит этому пересечению. Верхний предел последовательности событий --- это такое случайное событие, что каждый случайный исход из него принадлежит бесконечному количеству событий из последовательности. Поэтому $\varlimsup\limits_{n\to\infty}\mathbbm{1}\left(A_n\right)=1$.
 
 \subsubsection*{2.8}
 
@@ -525,6 +541,14 @@ $\exists n \forall m\geq n$ происходит событие $A_m$.
 б) произошло только конечное количество событий из последовательности $\{A_n\}_{n=1}^\infty$.
 
 \textit{Решение.}
+
+а) По определению $\varlimsup\limits_{n\to\infty}A_n=\bigcap\limits_{n\geq 1}\bigcup\limits_{m\geq n}A_m$.
+
+При $n=1: \bigcup\limits_{m\geq 1}A_m=A_1\cup A_2\cup A_3\cup...=B\cup C$. Пересечение бесконечного количества одинаковых множеств даёт$\varlimsup\limits_{n\to\infty}A_n=B\cup C$;
+
+б) по определению $\varliminf\limits_{n\to\infty}A_n=\bigcup\limits_{n=1}^\infty\bigcap\limits_{m=n}^\infty A_m=B\cap C$.
+
+При $n=1: \bigcap\limits_{m\geq 1}A_m=A_1\cap A_2\cap A_3\cap...=B\cap C$, поэтому $\varliminf\limits_{n\to\infty}A_n=B\cap C$.
 
 \subsubsection*{2.9}
 
@@ -663,6 +687,10 @@ $C=\{(1, 1, 1), (2, 2, 2), (3, 3, 3), (4, 4, 4), (5, 5, 5), (6, 6, 6)\}$. Пос
 б) $\varlimsup\limits_{n\to\infty}A_n\cap\varliminf\limits_{n\to\infty}B_n\subseteq\varlimsup\limits_{n\to\infty}\left(A_n\cap B_n\right)\subseteq\varlimsup\limits_{n\to\infty}A_n\cap\varlimsup\limits_{n\to\infty}B_n$.
 
 \textit{Решение.}
+
+а) $\overline{\varliminf\limits_{n\to\infty}A_n}=\overline{\bigcup\limits_{n\geq 1}\bigcap\limits_{m\geq n}A_n}=\bigcap\limits_{n\geq 1}\overline{\bigcap\limits_{m\geq n}A_n}=\bigcap\limits_{n\geq 1}\bigcup\limits_{m\geq 1}\overline{A_m}=\varlimsup\limits_{n\to\infty}\overline{A_n}$;
+
+б)
 
 \subsubsection*{2.17}
 
