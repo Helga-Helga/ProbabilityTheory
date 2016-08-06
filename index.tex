@@ -28,7 +28,7 @@
 
 \subsubsection*{Сформулируйте основной принцип комбинаторики (правило умножения).}
 
-Если множества $A_1, ..., A_m$ содержат соответственно $n_1, ..., n_m$ элементов, то количество m-мерных векторов, которые получают выбором по одному элементу из каждого множества равно $n_1\cdot n_2\cdot...\cdot n_m$.
+Если множества $A_1,  \dotsc , A_m$ содержат соответственно $n_1,  \dotsc , n_m$ элементов, то количество m-мерных векторов, которые получают выбором по одному элементу из каждого множества равно $n_1\cdot n_2\cdot \dotsc \cdot n_m$.
 
 \subsubsection*{Что называется сочетанием из n элементов по k?}
 
@@ -36,7 +36,7 @@
 
 \subsubsection*{Чему равно число сочетаний из n элементов по k?}
 
-Если некоторое множество содержит n элементов, то количество её k-элементных подмножеств равно $$C_n^k=C_n^{n-k}=\frac{n!}{k!\left(n-k\right)!=\frac{n\cdot\left(n-1\right)\cdot...\cdot\left(n-k+1\right)}{k!}},$$ где $n!=1\cdot 2\cdot...\cdot n$. Считается, что $0!=1$.
+Если некоторое множество содержит n элементов, то количество её k-элементных подмножеств равно $$C_n^k=C_n^{n-k}=\frac{n!}{k!\left(n-k\right)!=\frac{n\cdot\left(n-1\right)\cdot \dotsc \cdot\left(n-k+1\right)}{k!}},$$ где $n!=1\cdot 2\cdot \dotsc \cdot n$. Считается, что $0!=1$.
 
 \subsubsection*{Что называется сочетанием с повторениями из n элементов по k?}
 
@@ -52,15 +52,15 @@
 
 \subsubsection*{Чему равно число размещений из n элементов по k?}
 
-Количество размещений из n элементов по k равно $$A_n^k=k!C_n^k=n\cdot(n-1)\cdot...\cdot(n-k+1).$$
+Количество размещений из n элементов по k равно $$A_n^k=k!C_n^k=n\cdot(n-1)\cdot \dotsc \cdot(n-k+1).$$
 
 \subsubsection*{Чему равно число перестановок множества из n элементов?}
 
 Количество перестановок равно $n!$.
 
-\subsubsection*{Чему равно число способов разбиения множества из n элементов на m непересекающихся неупорядоченных подмножеств, которые содержат соответственно $k_1, ..., k_m$ элементов?}
+\subsubsection*{Чему равно число способов разбиения множества из n элементов на m непересекающихся неупорядоченных подмножеств, которые содержат соответственно $k_1,  \dotsc , k_m$ элементов?}
 
-Первое подмножество содержит $k_1$ элемент. Количество комбинаций, которыми можно выбрать эти элементы, равно $C_n^{k_1}$. Второе подмножество содержит $k_2$ элементов, тогда его элементы можно выбрать $C_{n-k_1}^{k_2}$ способами. Подмножество под номером m содержит $k_m$ элементов. Эти элементы можно выбрать из оставшихся $\left(n-k_1-k_2-...-k_{m-1}\right)$ $C_{n-k_1-k_2-...-k_{m-1}}^{k_m}$ способами. Число способов разбиения множества из n элементов на m непересекающихся неупорядоченных подмножеств равно $$C_n^{k_1}\cdot C_{n-k_1}^{k_2}\cdot...\cdot C_{n-k_1-k_2-...-k_{m-1}}^{k_m}=\prod\limits_{i=1}^mC_{n-\sum\limits_{j=0}^{i-1}k_j}^{k_i}.$$ Так как $$n=k_1+k_2+...+k_m=\sum\limits_{i=1}^m k_i=K_i,$$ то произведение можно записать в виде $$\prod\limits_{i=1}^mC_{K_i}^{k_i}.$$
+Первое подмножество содержит $k_1$ элемент. Количество комбинаций, которыми можно выбрать эти элементы, равно $C_n^{k_1}$. Второе подмножество содержит $k_2$ элементов, тогда его элементы можно выбрать $C_{n-k_1}^{k_2}$ способами. Подмножество под номером m содержит $k_m$ элементов. Эти элементы можно выбрать из оставшихся $\left(n-k_1-k_2- \dotsc -k_{m-1}\right)$ $C_{n-k_1-k_2- \dotsc -k_{m-1}}^{k_m}$ способами. Число способов разбиения множества из n элементов на m непересекающихся неупорядоченных подмножеств равно $$C_n^{k_1}\cdot C_{n-k_1}^{k_2}\cdot \dotsc \cdot C_{n-k_1-k_2- \dotsc -k_{m-1}}^{k_m}=\prod\limits_{i=1}^mC_{n-\sum\limits_{j=0}^{i-1}k_j}^{k_i}.$$ Так как $$n=k_1+k_2+ \dotsc +k_m=\sum\limits_{i=1}^m k_i=K_i,$$ то произведение можно записать в виде $$\prod\limits_{i=1}^mC_{K_i}^{k_i}.$$
 
 \addcontentsline{toc}{section}{Аудиторные задачи}
 \section*{Аудиторные задачи}
@@ -96,7 +96,7 @@
 \textit{Решение.} В данном случае имеем множество, которое содержит 32 бита двух типов. В качестве первого символа 32-битного слова можно выбрать одно из двух чисел. Количество способов это сделать равно $C_{2}^1=2$. Аналогично на всех остальных позициях может стоять либо 0, либо 1. Отсюда имеем, что всего можно составить $2^{32}$ слова.
 
 \subsubsection*{1.6}
-\textit{Задание.} Сколькими способами можно упорядочить множество $\{1, 2, ..., 2n\}$ так, чтобы каждое чётное число имело чётный номер?
+\textit{Задание.} Сколькими способами можно упорядочить множество $\{1, 2,  \dotsc , 2n\}$ так, чтобы каждое чётное число имело чётный номер?
 
 \textit{Решение.} Каждое чётное число должно стоять на чётной позиции, каждое нечётное число --- на нечётной. В множестве есть n чётных и n нечётных чисел. Количество способов разместить n чётных чисел на n чётных позициях равно $n!$. Аналогично можно разместить n нечётных чисел на n нечётных позициях $n!$ способами. Так как независимо заполняем n и n ячеек, то множество можно упорядочить $n!\cdot n!$ способами.
 
@@ -150,13 +150,13 @@
 
 \subsubsection*{1.11}
 
-\textit{Задание.} Вычислить количество неубывающих путей на двумерной целочисленной решётке $$\mathbb{Z}_+^2=\{\left(i, j\right): i, j=0, 1, 2, ...\},$$ которые начинаются в точке $\left(0, 0\right)$ и приводят в точку $\left(m, n\right)$. (Путь считается неубывающим, если на каждом шаге изменяется только одна координата, увеличиваясь на единицу.)
+\textit{Задание.} Вычислить количество неубывающих путей на двумерной целочисленной решётке $$\mathbb{Z}_+^2=\{\left(i, j\right): i, j=0, 1, 2,  \dotsc \},$$ которые начинаются в точке $\left(0, 0\right)$ и приводят в точку $\left(m, n\right)$. (Путь считается неубывающим, если на каждом шаге изменяется только одна координата, увеличиваясь на единицу.)
 
 \textit{Решение.} Имеем пути, состоящие из $m+n$ ходов, среди которых ровно m <<горизонтальных>> и n <<вертикальных>> ходов. Если выберем, на каких шагах увеличиваем одну координату (например, вертикальную), будем однозначно знать, где увеличиваем вторую координату (идём по горизонтали). Значит, достаточно расставить m одинаковых шагов вверх на $n+m$ разных ячеек. Это будет $$C_{n+m}^m=\frac{\left(n+m\right)!}{n!m!}.$$
 
 \subsubsection*{1.12}
 
-\textit{Задание.} Вычислить количество разных частных производных порядка r бесконечно дифференцируемой функции n переменных $f\left(x_1, ..., x_n\right)$.
+\textit{Задание.} Вычислить количество разных частных производных порядка r бесконечно дифференцируемой функции n переменных $f\left(x_1,  \dotsc , x_n\right)$.
 
 \textit{Решение.} Функция бесконечно дифференцируема, значит, производная порядка r есть. Рассмотрим функцию $f(x, y)$. Производные первого порядка: $f'_x, f'_y$. Первая производная --- одномерная матрица (вектор). Производные второго порядка для $f(x, y)$: $f''_{xx}, f''_{xy}, f''_{yx}, f''_{yy}$. $f''_{xy}$ и $f''_{yx}$ одинаковые. Представим вторую производную в виде матрицы:
 $$
@@ -212,15 +212,15 @@ xzz & yzz & zzz \\
 
 \subsubsection*{1.13}
 
-\textit{Задание.} Пусть $\omega_m$ --- количество таких перестановок элементов множества $\{1, 2, ..., n\}$, что ни одно из чисел не остаётся на своём месте. Доказать, что величина $p_n=\frac{\omega_n}{n!}$ равна $$p_n=\frac{1}{2!}-\frac{1}{3!}+...+\frac{\left(-1\right)^n}{n!}.$$
+\textit{Задание.} Пусть $\omega_m$ --- количество таких перестановок элементов множества $\{1, 2,  \dotsc , n\}$, что ни одно из чисел не остаётся на своём месте. Доказать, что величина $p_n=\frac{\omega_n}{n!}$ равна $$p_n=\frac{1}{2!}-\frac{1}{3!}+ \dotsc +\frac{\left(-1\right)^n}{n!}.$$
 
 \textit{Решение.} Найдём значение величины $\omega_n$.
 
-Любая перестановка $k_1k_2...k_n$ чисел $1, 2, ..., n$ означает вариант перестановки чисел, при котором i-е число стоит на $k_i$-м месте. Например, в случае четырёх чисел перестановка 3241 означает, что на первом месте стоит тройка $\left(k_1=3\right)$, на втором --- двойка (на своём месте, $k_2=2$), на третьем --- четвёртая $\left(k_3=4\right)$ и на последнем --- первая $\left(k_4=1\right)$. Наоборот, каждый вариант перестановки чисел обозначается единственной перестановкой чисел $1, 2, ..., n$.
+Любая перестановка $k_1k_2 \dotsc k_n$ чисел $1, 2,  \dotsc , n$ означает вариант перестановки чисел, при котором i-е число стоит на $k_i$-м месте. Например, в случае четырёх чисел перестановка 3241 означает, что на первом месте стоит тройка $\left(k_1=3\right)$, на втором --- двойка (на своём месте, $k_2=2$), на третьем --- четвёртая $\left(k_3=4\right)$ и на последнем --- первая $\left(k_4=1\right)$. Наоборот, каждый вариант перестановки чисел обозначается единственной перестановкой чисел $1, 2,  \dotsc , n$.
 
-Будем говорить, что в перестановки $k_1k_2...k_n$ чисел $1, 2, ..., n$ число i стоит на своём месте, если $k_i=i$ (например, в перестановке 3241 двойка стоит на своём месте). Нас интересует количество беспорядков, то есть таких перестановок, в которых ни одно из чисел не стоит на своём месте. Число беспорядков можно найти, вычитая из общего количества перестановок, равного $n!$, количество тех перестановок, в которых хотя бы одно из чисел стоит на своём месте.
+Будем говорить, что в перестановки $k_1k_2 \dotsc k_n$ чисел $1, 2,  \dotsc , n$ число i стоит на своём месте, если $k_i=i$ (например, в перестановке 3241 двойка стоит на своём месте). Нас интересует количество беспорядков, то есть таких перестановок, в которых ни одно из чисел не стоит на своём месте. Число беспорядков можно найти, вычитая из общего количества перестановок, равного $n!$, количество тех перестановок, в которых хотя бы одно из чисел стоит на своём месте.
 
-Пусть $A_i$ --- множество перестановок, в которых число i стоит на своём месте $\left(i=1, 2, ..., n\right)$. Искомое число $\omega_n$ беспорядков, таким образом, равно $$\omega_n=n!-|A_1\cup A_2\cup...\cup A_n|=n!-\sum\limits_i|A_i|+\sum\limits_{i<j}|A_i\cap A_j|-$$$$-\sum\limits_{i<j<k}|A_i\cap A_j\cap A_k|+...+\left(-1\right)^n|A_1\cap A_2\cap...\cap A_n|.$$
+Пусть $A_i$ --- множество перестановок, в которых число i стоит на своём месте $\left(i=1, 2,  \dotsc , n\right)$. Искомое число $\omega_n$ беспорядков, таким образом, равно $$\omega_n=n!-|A_1\cup A_2\cup \dotsc \cup A_n|=n!-\sum\limits_i|A_i|+\sum\limits_{i<j}|A_i\cap A_j|-$$$$-\sum\limits_{i<j<k}|A_i\cap A_j\cap A_k|+ \dotsc +\left(-1\right)^n|A_1\cap A_2\cap \dotsc \cap A_n|.$$
 
 $|A_i|=\left(n-1\right)!$, поэтому $$\sum\limits_i|A_i|=n\cdot\left(n-1\right)!=n!.$$
 
@@ -228,9 +228,9 @@ $|A_i|=\left(n-1\right)!$, поэтому $$\sum\limits_i|A_i|=n\cdot\left(n-1\r
 
 Аналогично $|A_i\cap A_j\cap A_k|=\left(n-3\right)!$ и $$\sum\limits_{i<j<k}|A_i\cap A_j\cap A_k|=C_n^3\cdot\left(n-3\right)!=\frac{n\left(n-1\right)\left(n-3\right)}{3!}\cdot\left(n-3\right)!=\frac{n!}{3!}.$$
 
-Теперь приходим к нужной формуле: $$\omega_n=n!-n!+\frac{n!}{2!}=\frac{n!}{3!}+...+\left(-1\right)^n=n!\cdot\sum\limits_{k=0}^n\frac{\left(-1\right)^k}{k!}.$$
+Теперь приходим к нужной формуле: $$\omega_n=n!-n!+\frac{n!}{2!}=\frac{n!}{3!}+ \dotsc +\left(-1\right)^n=n!\cdot\sum\limits_{k=0}^n\frac{\left(-1\right)^k}{k!}.$$
 
-Так как числа переставляются случайным образом, то вероятность беспорядка равна $$p_n=\frac{\omega_n}{n!}=\frac{1}{n!}\left(\frac{n!}{2!}-\frac{n!}{3!}+...+\left(-1\right)^n\right)=\frac{1}{2!}-\frac{1}{3!}+...+\frac{\left(-1\right)^n}{n!}.$$
+Так как числа переставляются случайным образом, то вероятность беспорядка равна $$p_n=\frac{\omega_n}{n!}=\frac{1}{n!}\left(\frac{n!}{2!}-\frac{n!}{3!}+ \dotsc +\left(-1\right)^n\right)=\frac{1}{2!}-\frac{1}{3!}+ \dotsc +\frac{\left(-1\right)^n}{n!}.$$
 
 \subsubsection*{1.14}
 
@@ -262,9 +262,18 @@ $|A_i|=\left(n-1\right)!$, поэтому $$\sum\limits_i|A_i|=n\cdot\left(n-1\r
 
 \textit{Решение.}
 
-а) Можно считать, что $X=\{1, ..., n\}, Y=\{1, ..., m\}$. Каждую функцию можно отождествлять с последовательностью $<f(1), ..., fn)>=<y_1, ..., y_n>$. Каждый член $y_i$ последовательности можно выбрать m способами, что даёт $m^n$ возможностей выбора $<y_1, ..., y_n>$.
+а) Можно считать, что $X=\{1,  \dotsc , n\}, Y=\{1,  \dotsc , m\}$. Каждую функцию можно отождествлять с последовательностью $<f(1),  \dotsc , fn)>=<y_1,  \dotsc , y_n>$. Каждый член $y_i$ последовательности можно выбрать m способами, что даёт $m^n$ возможностей выбора $<y_1,  \dotsc , y_n>$.
 
-б) Будем определять число инъективных (то есть имеющих все различные члены) последовательностей $<y_1, ..., y_n>$. Элемент $y_1$ может быть выбран m способами, элемент $y_2$ можно выбрать $m-1$ способом из оставшихся элементов. Если уже выбраны элементы $y_1, ..., y_{i-1}$, то в качестве $y_i$ может быть выбран любой из $m-i+1$ элементов множества $Y\setminus\{y_1, ..., y_{i-1}\}$. Принимаем, что $m\geq n$. если $n>m$, то искомое число функций равно 0. Это даёт $$m\left(m-1\right)...\left(m-n+1\right)=\frac{m!}{\left(m-n\right)!}$$ возможность выбора инъективных последовательностей $<y_1, ..., y_n>$.
+б) Будем определять число инъективных (то есть имеющих все различные члены) последовательностей $<y_1,  \dotsc , y_n>$.
+Элемент $y_1$ может быть выбран m способами, элемент $y_2$ можно выбрать $m-1$ способом из оставшихся элементов.
+Если уже выбраны элементы $y_1,  \dotsc , y_{i-1}$,
+то в качестве $y_i$ может быть выбран любой из $m-i+1$ элементов множества
+$Y\setminus\{y_1,  \dotsc , y_{i-1}\}$. Принимаем, что $m\geq n$. если $n>m$,
+то искомое число функций равно 0.
+Это даёт
+$$m\left(m-1\right) \dotsc (m+n-1)
+=\frac{m!}{\left(m-n\right)!}$$
+возможность выбора инъективных последовательностей $<y_1,  \dotsc , y_n>$.
 
 в) Если $n=m$, то любое инъективное отображение будет биективным. Число всех биективных отражений X в Y равно $n!$ при $m=n$ и 0 при $m\neq n$.
 
@@ -343,9 +352,9 @@ $|A_i|=\left(n-1\right)!$, поэтому $$\sum\limits_i|A_i|=n\cdot\left(n-1\r
 
 \subsubsection*{1.22}
 
-\textit{Задание.} Доказать, что количество неубывающих путей на r-мерной целочисленной решётке $$\mathbb{Z}_+^r=\{\left(i_1, ..., i_r\right): i_1, ..., i_r=0, 1, 2, ...\},$$ которые начинаются в точке $\left(0, ..., 0\right)$ и приводят в точку $\left(n_1, ..., n_r\right)$, равно $$C_N\left(n_1, ..., n_r\right)=\frac{N!}{n_1!...n_r!},$$ где $N=\sum\limits_{i=1}^rn_i$. (Путь считается неубывающим, если на каждом шаге изменяется только одна координата, увеличиваясь на единицу.)
+\textit{Задание.} Доказать, что количество неубывающих путей на r-мерной целочисленной решётке $$\mathbb{Z}_+^r=\{\left(i_1,  \dotsc , i_r\right): i_1,  \dotsc , i_r=0, 1, 2,  \dotsc \},$$ которые начинаются в точке $\left(0,  \dotsc , 0\right)$ и приводят в точку $\left(n_1,  \dotsc , n_r\right)$, равно $$C_N\left(n_1,  \dotsc , n_r\right)=\frac{N!}{n_1! \dotsc n_r!},$$ где $N=\sum\limits_{i=1}^rn_i$. (Путь считается неубывающим, если на каждом шаге изменяется только одна координата, увеличиваясь на единицу.)
 
-\textit{Решение.} Имеем пути, состоящие из $n_1+...+n_r$ ходов, среди которых ровно $n_1$ ходов в направлении $r_1$, ..., и $n_r$ ходов в направлении $r_n$. Если выберем, на каких шагах увеличиваем первую координату, будем знать, где увеличиваем остальные координаты. Далее выберем, на каких шагах увеличиваем вторую координату. И так необходимо определить, где увеличиваем $n_1+...n_{r-1}$ координат. Тогда будем однозначно знать, где увеличиваем последнюю координату. Это будет $$\frac{\left(n_1+...+n_r\right)}{n_1!...n_r!}.$$
+\textit{Решение.} Имеем пути, состоящие из $n_1+ \dotsc +n_r$ ходов, среди которых ровно $n_1$ ходов в направлении $r_1$,  $\dotsc$ , и $n_r$ ходов в направлении $r_n$. Если выберем, на каких шагах увеличиваем первую координату, будем знать, где увеличиваем остальные координаты. Далее выберем, на каких шагах увеличиваем вторую координату. И так необходимо определить, где увеличиваем $n_1+ \dotsc n_{r-1}$ координат. Тогда будем однозначно знать, где увеличиваем последнюю координату. Это будет $$\frac{\left(n_1+ \dotsc +n_r\right)}{n_1! \dotsc n_r!}.$$
 
 \subsubsection*{1.23}
 
@@ -423,7 +432,7 @@ $\exists n \forall m\geq n$ происходит событие $A_m$.
 
 Второй закон де Моргана гласит: <<Если неверно, что есть первое, или неверно, что есть второе, то неверно, что есть первое и второе>>, что выражается следующей формулой: $\overline{A\cup B}=\overline{A}$ $\overline{B}$.
 
-Законы де Моргана верны для любого конечного числа событий: $$\overline{A_1\cup A_2\cup...\cup A_n}=\overline{A_1}\,\overline{A_2}\,...\overline{A_n},$$ $$\overline{A_1A_2...A_n}=\overline{A_1}\cup\overline{A_2}\cup...\cup\overline{A_n}.$$
+Законы де Моргана верны для любого конечного числа событий: $$\overline{A_1\cup A_2\cup \dotsc \cup A_n}=\overline{A_1}\,\overline{A_2}\, \dotsc \overline{A_n},$$ $$\overline{A_1A_2 \dotsc A_n}=\overline{A_1}\cup\overline{A_2}\cup \dotsc \cup\overline{A_n}.$$
 
 \addcontentsline{toc}{section}{Аудиторные задачи}
 \section*{Аудиторные задачи}
@@ -544,11 +553,11 @@ $\exists n \forall m\geq n$ происходит событие $A_m$.
 
 а) По определению $\varlimsup\limits_{n\to\infty}A_n=\bigcap\limits_{n\geq 1}\bigcup\limits_{m\geq n}A_m$.
 
-При $n=1: \bigcup\limits_{m\geq 1}A_m=A_1\cup A_2\cup A_3\cup...=B\cup C$. Пересечение бесконечного количества одинаковых множеств даёт$\varlimsup\limits_{n\to\infty}A_n=B\cup C$;
+При $n=1: \bigcup\limits_{m\geq 1}A_m=A_1\cup A_2\cup A_3\cup \dotsc =B\cup C$. Пересечение бесконечного количества одинаковых множеств даёт$\varlimsup\limits_{n\to\infty}A_n=B\cup C$;
 
 б) по определению $\varliminf\limits_{n\to\infty}A_n=\bigcup\limits_{n=1}^\infty\bigcap\limits_{m=n}^\infty A_m=B\cap C$.
 
-При $n=1: \bigcap\limits_{m\geq 1}A_m=A_1\cap A_2\cap A_3\cap...=B\cap C$, поэтому $\varliminf\limits_{n\to\infty}A_n=B\cap C$.
+При $n=1: \bigcap\limits_{m\geq 1}A_m=A_1\cap A_2\cap A_3\cap \dotsc =B\cap C$, поэтому $\varliminf\limits_{n\to\infty}A_n=B\cap C$.
 
 \subsubsection*{2.9}
 
@@ -577,7 +586,7 @@ $\exists n \forall m\geq n$ происходит событие $A_m$.
 
 \subsubsection*{2.10}
 
-\textit{Задание.} Пусть A --- множество из n элементов, $A_1, ..., A_k$ --- подмножества A такие, что ни одно из подмножеств не является частью другого, а $i_1, ..., i_k$ --- количество элементов подмножеств $A_1, ..., A_k$ соответственно. Докажите, что $$\sum\limits_{r=1}^k\frac{1}{C_n^{i_r}}\leq 1.$$
+\textit{Задание.} Пусть A --- множество из n элементов, $A_1,  \dotsc , A_k$ --- подмножества A такие, что ни одно из подмножеств не является частью другого, а $i_1,  \dotsc , i_k$ --- количество элементов подмножеств $A_1,  \dotsc , A_k$ соответственно. Докажите, что $$\sum\limits_{r=1}^k\frac{1}{C_n^{i_r}}\leq 1.$$
 
 \textit{Решение.}
 
@@ -638,9 +647,9 @@ $C=\{(1, 1, 1), (2, 2, 2), (3, 3, 3), (4, 4, 4), (5, 5, 5), (6, 6, 6)\}$. Пос
 
 \textit{Решение.}
 
-а) $\overline{A_1}\cap\overline{A_2}\cap...\cap\overline{A_n}=\bigcap\limits_{i=1}^n\overline{A_i}$;
+а) $\overline{A_1}\cap\overline{A_2}\cap \dotsc \cap\overline{A_n}=\bigcap\limits_{i=1}^n\overline{A_i}$;
 
-б) $A_1\cup A_2\cup...\cup A_n=\bigcup\limits_{i=1}^nA_i$;
+б) $A_1\cup A_2\cup \dotsc \cup A_n=\bigcup\limits_{i=1}^nA_i$;
 
 в) $\bigcup\limits_{i=1}^n\left(A_i\bigcap\limits_{j\neq i}\overline{A_j}\right)$;
 
@@ -690,15 +699,97 @@ $C=\{(1, 1, 1), (2, 2, 2), (3, 3, 3), (4, 4, 4), (5, 5, 5), (6, 6, 6)\}$. Пос
 
 а) $\overline{\varliminf\limits_{n\to\infty}A_n}=\overline{\bigcup\limits_{n\geq 1}\bigcap\limits_{m\geq n}A_n}=\bigcap\limits_{n\geq 1}\overline{\bigcap\limits_{m\geq n}A_n}=\bigcap\limits_{n\geq 1}\bigcup\limits_{m\geq 1}\overline{A_m}=\varlimsup\limits_{n\to\infty}\overline{A_n}$;
 
-б) $\varlimsup\limits_{n\to\infty}A_n\cap\varliminf\limits_{n\to\infty}B_n=\left(\bigcap\limits_{n\geq 1}\bigcup\limits_{m\geq n}A_m\right)\cap\left(\bigcup\limits_{n=1}^\infty\bigcap\limits_{m=n}^\infty B_m\right)=\left(\bigcap\limits_{n\geq 1}\bigcup\limits_{m\geq n}A_m\right)\cap C=\left(A_1\cup A_2\cup...\right)\cap\left(A_2\cup A_3\cup...\right)\cap...\cap C=\left(\left(A_1\cap C\right)\cup\left(A_2\cap C\right)\cup...\right)\cap\left(A_2\cup A_3\cup...\right)\cap\left(A_3\cup A_4\cup...\right)\cap...$
+б) Докажем, что нижний предел входит в верхний. Распишем нижний предел:
 
-$\varlimsup\limits_{n\to\infty}\left(A_n\cap B_n\right)=\bigcap\limits_{n\geq 1}\bigcup\limits_{m\geq n}\left(A_m\cap B_m\right)=\bigcap\limits_{n\geq 1}\bigcup\limits_{m\geq n}C=\left(C_1\cup C_2\cup...\right)\cap\left(C_2\cup C_3\cup...\right)\cap...=\left(\left(A_1\cap B_1\right)\cup\left(A_2\cap B_2\right)\cup...\right)\cap\left(\left(A_2\cap B_2\right)\cup\left(A_3\cap B_3\right)\cup...\right)\cap...$
+$\varliminf\limits_{n\to\infty}B_n=\bigcup\limits_{n=1}^\infty\bigcap\limits_{m=n}^\infty B_m=\left(B_1\cap B_2\cap \dotsc \right)\cup\left(B_2\cap B_3\cap \dotsc \right)\cup\dots=B_1B_2B_3 \dotsc +B_2B_3B_4 \dotsc + \dots$
 
-$\varlimsup\limits_{n\to\infty}A_n\cap\varlimsup\limits_{n\to\infty}B_n=\left(\bigcap\limits_{n\geq 1}\bigcup\limits_{m\geq n}A_m\right)\cap\left(\bigcap\limits_{n\geq 1}\bigcup\limits_{m\geq n}B_m\right)=\bigcap\limits_{n\geq 1}\bigcup\limits_{m\geq n}\left(A_m\cap B_m\right)$
+Распишем верхний предел:
 
-Верхний предел последовательности $\{A_n: n\geq 1\}$ --- это случайное событие, состоящее в том, что произошло бесконечно много событий из исходной последовательности: $$\varlimsup\limits_{n\to\infty}A_n=\bigcap\limits_{n\geq 1}\bigcup\limits_{m\geq n}A_m.$$
+$\varlimsup\limits_{n\to\infty}B_n=\bigcap\limits_{n=1}^\infty\bigcup\limits_{m=n}^\infty B_m=\left(B_1 \cup B_2 \cup \dotsc \right) \cap \left(B_2 \cup B_3 \cup \dotsc \right) \cap \dotsc = \\ \left( B_1+B_2+B_3+ \dotsc \right) \left( B_2+B_3+B_4+ \dotsc \right) \dotsc =B_1B_2 \dotsc +B_2B_3 \dotsc +B_3B_4 \dotsc + \dotsc +B_1B_3 \dotsc +B_1B_4 \dotsc +B_2B_3 \dotsc + \dots=\varliminf\limits_{n\to\infty}B_n+B_1B_3 \dotsc +B_1B_4 \dotsc +B_2B_3 \dotsc + \dots$
 
-Нижний предел последовательности: $\{A_n: n\geq 1\}$ --- это случайное событие, состоящее в том, что произошли все события, начиная с некоторого из исходной последовательности: $$\varlimsup\limits_{n\to\infty}A_n=\bigcup\limits_{n=1}^\infty\bigcap\limits_{m=n}^\infty A_m.$$
+Видим, что в верхний предел, помимо нижнего, входят дополнительные члены. Поэтому нижний предел входит в верхний, т.е.
+$$\varliminf\limits_{n\to\infty}B_n\subseteq \varlimsup\limits_{n\to\infty}B_n.$$
+
+Значит первое выражение входит в третье:
+$$\varlimsup\limits_{n\to\infty}A_n\cap\varliminf\limits_{n\to\infty}B_n\subseteq\varlimsup\limits_{n\to\infty}A_n\cap\varlimsup\limits_{n\to\infty}B_n.$$
+
+Докажем, что второе выражение входит в третье. Распишем второе выражение:
+
+$\varlimsup\limits_{n\to\infty}\left(A_n\cap B_n\right)=\bigcap\limits_{n\geq 1}\bigcup\limits_{m\geq n}\left(A_m\cap B_m\right)=\bigcap\limits_{n\geq 1}\bigcup\limits_{m\geq n}C=\left(C_1\cup C_2\cup \dotsc \right)\cap\left(C_2\cup C_3\cup \dotsc \right)\cap \dotsc =\left(\left(A_1\cap B_1\right)\cup\left(A_2\cap B_2\right)\cup \dotsc \right)\cap\left(\left(A_2\cap B_2\right)\cup\left(A_3\cap B_3\right)\cup \dotsc \right)\cap \dotsc = \left( A_1B_1+A_2B_2+ \dotsc \right) \left( A_2B_2+A_3B_3+ \dotsc \right) \dotsc$
+
+Распишем третье выражение:
+
+$\varlimsup\limits_{n\to\infty}A_n\cap
+\varlimsup\limits_{n\to\infty}B_n=
+\left(\bigcap\limits_{n\geq 1}\bigcup\limits_{m\geq n}A_m\right)
+\cap\left(\bigcap\limits_{n\geq 1}\bigcup\limits_{m\geq n}B_m\right) = \\
+= \left( \prod \limits_{n=1}^\infty \sum \limits_{m=n}^\infty A_m \right)
+\left( \prod \limits_{n=1}^\infty \sum \limits_{m=n}^\infty B_m \right) =
+\left( A_1+A_2+ \dotsc \right) \left(A_2+A_3+ \dotsc \right) \dotsc
+\left( \prod \limits_{n=1}^\infty \sum \limits_{m=n}^\infty B_m \right) = \\
+= \left( A_1 \cdot \prod \limits_{n=1}^\infty \sum \limits_{m=n}^\infty B_m+
+A_2 \cdot \prod \limits_{n=1}^\infty \sum \limits_{m=n}^\infty B_m+ \dotsc \right)
+\left(A_2+A_3+ \dotsc \right) \dotsc = \\ \left[ A_1 \left( B_1+B_2+ \dotsc \right)
+\left( B_2+B_3+ \dotsc \right) \dotsc \right] +
+\left[ A_2 \left( B_1+B_2+ \dotsc \right)
+\left( B_2+B_3+ \dotsc \right) \dotsc \right] \\
+\left(A_2+A_3+ \dotsc \right) \dotsc =
+\left( \left(A_1B_1+A_1B_2+ \dotsc \right) \left( B_2+B_3+ \dotsc \right) \dotsc \right) + \\
+\left( \left(A_2B_1+A_2B_2+ \dotsc \right) \left( B_2+B_3+ \dotsc \right) \dotsc \right)
+\left(A_2+A_3+ \dotsc \right) \dotsc $
+
+Все члены, полученные во втором выражении, входят в третье, значит
+$$\varlimsup\limits_{n\to\infty}\left(A_n\cap B_n\right)\subseteq
+\varlimsup\limits_{n\to\infty}A_n\cap
+\varlimsup\limits_{n\to\infty}B_n.$$
+
+Докажем, что первое выражение входит во второе. Распишем первое выражение:
+
+\begin{equation*}
+\begin{split}
+\varlimsup\limits_{n\to\infty}A_n\cap\varliminf\limits_{n\to\infty}B_n=
+\left(\bigcap\limits_{n\geq 1}\bigcup\limits_{m\geq n}A_m\right)\cap
+\left(\bigcup\limits_{n=1}^\infty\bigcap\limits_{m=n}^\infty B_m\right) = \\
+= \left(\bigcap\limits_{n\geq 1}\bigcup\limits_{m\geq n}A_m\right)\cap C =
+\left(A_1\cup A_2\cup \dotsc \right)\cap\left(A_2\cup A_3\cup \dotsc \right)\cap \dotsc \cap C = \\
+= \left(\left(A_1\cap C\right)\cup\left(A_2\cap C\right)\cup \dotsc \right)\cap
+\left(A_2\cup A_3\cup \dotsc \right)\cap\left(A_3\cup A_4\cup \dotsc \right)\cap \dotsc = \\
+= \left( A_1 \cdot C+A_2 \cdot C+ \dotsc \right) \left( A_2+A_3+ \dotsc \right)
+\left( A_3+A_4+ \dotsc \right) \dotsc = \\
+= \left( A_1 \cdot \sum \limits_{n=1}^\infty \prod \limits_{m=n}^\infty B_m +
+A_2 \cdot \sum \limits_{n=1}^\infty \prod \limits_{m=n}^\infty B_m + \dotsc \right)
+\left( A_2 + A_3 + \dotsc \right) \left( A_3 + A_4 + \dotsc \right) \dotsc =  \\
+= \left\{ \left[ A_1 \left( B_1 B_2 \dotsc +B_2 B_3 \dotsc + \dotsc \right) \right] +
+\left[ A_2 \left( B_1 B_2 \dotsc +B_2 B_3 \dotsc + \dotsc \right) \right] + \dotsc \right\} \times \\
+\times \left( A_2 + A_3 + \dotsc \right) \left( A_3+A_4+ \dotsc \right) \dotsc = \\
+= \left( A_1 B_1 B_2 \dotsc + A_1 B_2 B_3 \dotsc + A_2 B_1 B_2 \dotsc + A_2 B_2 B_3 \dotsc + \dotsc \right) \times \\
+\times \left( A_2 + A_3 + \dotsc \right) \left( A_3 + A_4 + \dotsc \right) \dotsc = \\
+= ( A_2 A_2 B_1 B_2 \dotsc + A_1 A_3 B_1 B_2 \dotsc + A_1 A_2 B_1 B_2 \dotsc + \\
++ A_1 A_3 B_1 B_2 \dotsc + A_2 A_2 B_2 B_3 \dotsc + A_2 A_3 B_2 B_3 \dotsc + \dotsc )
+\left( A_3 + A_4+ \dotsc \right) \dotsc = \\
+= A_2 A_2 A_3 \dotsc B_1 B_2 \dotsc + A_2 A_2 A_4 \dotsc B_1 B_2 \dotsc + A_1 A_3 A_3 \dotsc B_1 B_2 \dotsc + \\
++ A_1 A_3 A_4 \dotsc B_1 B_2 \dotsc + A_1 A_2 A_3 \dotsc B_1 B_2 \dotsc + A_1 A_2 A_4 \dotsc B_1 B_2 \dotsc + \\
++ A_1 A_3 A_3 \dotsc B_1 B_2 \dotsc + A_1 A_3 A_4 \dotsc B_1 B_2 \dotsc + A_2 A_2 A_3 \dotsc B_2 B_3 \dotsc + \\
++ A_2 A_2 A_4 \dotsc B_2 B_3 \dotsc + A_2 A_3 A_3 \dotsc B_2 B_3 \dotsc + A_2 A_3 A_4 \dotsc B_2 B_3 \dotsc + \dotsc 
+\end{split}
+\end{equation*}
+
+Вспомним второе выражение:
+\begin{equation*}
+\begin{split}
+\varlimsup\limits_{n\to\infty}\left(A_n\cap B_n\right)=
+\left( A_1 B_1 + A_2 B_2 + A_3 B_3 + \dotsc \right) \left( A_2 B_2 + A_3 B_3 + A_4 B_4 + \dotsc \right) \times \\
+\times \left(A_3 B_3 + A_4 B_4 + \dotsc \right) \dotsc = \\
+= ( A_1 A_2 B_1 B_2 + A_1 A_3 B_1 B_3 + A_1 A_4 B_1 B_4 + A_2 A_2 B_2 B_2 + A_2 A_3 B_2 B_3 + A_2 A_3 B_2 B_4 + \\
++ A_3 A_2 B_3 B_2 + A_3 A_3 B_3 B_3 + A_3 A_4 B_3 B_4 + \dotsc) \left(A_3 B_3 + A_4 B_4 + \dotsc  \right) \dotsc = \\
+= A_1 A_2 A_3 \dotsc B_1 B_2 B_3 \dotsc + A_1 A_2 A_4 \dotsc B_1 B_2 B_4 \dotsc + A_1 A_3 A_3 \dotsc B_1 B_3 B_3 \dotsc + \\
++ A_1 A_3 A_4 \dotsc B_1 B_3 B_4 \dotsc + A_1 A_4 A_3 \dotsc B_1 B_4 B_3 \dotsc + A_1 A_4 A_4 \dotsc B_1 B_3 B_4 \dotsc + \\
++ A_2 A_2 A_3 \dotsc B_2 B_2 B_3 \dotsc + A_2 A_2 A_4 \dotsc B_2 B_2 B_4 \dotsc + A_2 A_3 A_3 \dotsc B_2 B_3 B_3 \dotsc + \\
++ A_2 A_3 A_4 \dotsc B_2 B_3 B_4 \dotsc + A_3 A_2 A_3 \dotsc B_3 B_2 B_3 \dotsc + A_3 A_2 A_4 \dotsc B_3 B_2 B_4 \dotsc + \\
++ A_3 A_3 A_3 \dotsc B_3 B_3 B_3 \dotsc + A_3 A_3 A_4 \dotsc B_3 B_3 B_4 \dotsc + A_3 A_4 A_3 \dotsc B_3 B_4 B_3 \dotsc + \\
++ A_3 A_4 A_4 \dotsc B_3 B_4 B_4 \dotsc + \dotsc
+\end{split}
+\end{equation*}
 
 \subsubsection*{2.17}
 
@@ -758,7 +849,7 @@ $\varlimsup\limits_{n\to\infty}A_n\cap\varlimsup\limits_{n\to\infty}B_n=\left(\b
 
 \subsubsection*{Запишите формулу включений и исключений.}
 
-Если $B_1, B_2, ..., B_m$ --- некоторые события, то имеет место равенство $P\{\bigcup\limits_{i=1}^mB_i\}=\sum\limits_{i=1}^mP\{B_i\}-\sum\limits_{1\leq i_1<i_2\leq m}\{B_{i_1}\cap B_{i_2}\}+...+(-1)^{k-1}\sum\limits_{1\leq i_1<i_2<...<i_k\leq m}P\{B_{i_1}\cap B_{i_2}\cap...\cap B_{i_k}\}+...+(-1)^{m-1}P\{B_1\cap B_2\cap...\cap B_m\}.$
+Если $B_1, B_2,  \dotsc , B_m$ --- некоторые события, то имеет место равенство $P\{\bigcup\limits_{i=1}^mB_i\}=\sum\limits_{i=1}^mP\{B_i\}-\sum\limits_{1\leq i_1<i_2\leq m}\{B_{i_1}\cap B_{i_2}\}+ \dotsc +(-1)^{k-1}\sum\limits_{1\leq i_1<i_2< \dotsc <i_k\leq m}P\{B_{i_1}\cap B_{i_2}\cap \dotsc \cap B_{i_k}\}+ \dotsc +(-1)^{m-1}P\{B_1\cap B_2\cap \dotsc \cap B_m\}.$
 
 \addcontentsline{toc}{section}{Домашнее задание}
 \section*{Домашнее задание}
@@ -773,7 +864,7 @@ $\varlimsup\limits_{n\to\infty}A_n\cap\varlimsup\limits_{n\to\infty}B_n=\left(\b
 
 \textit{Задание.} Подбрасывают 4 игральных кубика. Найдите вероятность того, что на них выпадет одинаковое количество очков.
 
-\textit{Решение.} На выпавшей грани <<первого>> игрального кубика может появиться одно очко, два очка, ..., шесть очков. Аналогичные шесть элементарных исходов возможны при бросании остальных кубиков. Таким образом, общее число возможных элементарных исходов испытания равно $6\cdot 6\cdot 6\cdot 6=1296$. Эти исходы в силу симметрии кубиков равновозможны.
+\textit{Решение.} На выпавшей грани <<первого>> игрального кубика может появиться одно очко, два очка,  $\dotsc$ , шесть очков. Аналогичные шесть элементарных исходов возможны при бросании остальных кубиков. Таким образом, общее число возможных элементарных исходов испытания равно $6\cdot 6\cdot 6\cdot 6=1296$. Эти исходы в силу симметрии кубиков равновероятны.
 
 Благоприятствующие интересующему нас событию (на всех гранях появится одинаковое количество очков) являются следующие шесть исходов (первым записано число очков, выпавших на <<первом>> кубике, вторым -- число очков, выпавших на <<втором>> кубике и т.д.): 1) 1, 1, 1, 1, 2) 2, 2, 2, 2, 3) 3, 3, 3, 3, 4) 4, 4, 4, 4, 5) 5, 5, 5, 5, 6) 6, 6, 6, 6.
 
@@ -797,13 +888,13 @@ $\varlimsup\limits_{n\to\infty}A_n\cap\varlimsup\limits_{n\to\infty}B_n=\left(\b
 
 \subsubsection*{3.19}
 
-\textit{Задание.} Числа $1, 2, ..., n$ размещены в случайном порядке. Найдите вероятность того, что числа: а) 1 и 2; б) 1, 2 и 3 размещены рядом в указанном порядке.
+\textit{Задание.} Числа $1, 2,  \dotsc , n$ размещены в случайном порядке. Найдите вероятность того, что числа: а) 1 и 2; б) 1, 2 и 3 размещены рядом в указанном порядке.
 
 \textit{Решение.} Пространство элементарных событий $\Omega$ является множеством всех перестановок множества из n элементов. Значит $|\Omega|=n!$.
 
-а) Поскольку числа 1 и 2 стоят рядом, то их можно рассматривать как одно число (обозначим его $n+1$). Количество возможных перестановок чисел $\{3, 4, ..., n+1\}$ равно $\left(n-1\right)!$. Тогда вероятность данного события равна: $$P=\frac{\left(n-1\right)!}{n!}=\frac{1}{n};$$
+а) Поскольку числа 1 и 2 стоят рядом, то их можно рассматривать как одно число (обозначим его $n+1$). Количество возможных перестановок чисел $\{3, 4,  \dotsc , n+1\}$ равно $\left(n-1\right)!$. Тогда вероятность данного события равна: $$P=\frac{\left(n-1\right)!}{n!}=\frac{1}{n};$$
 
-б) поскольку числа 1, 2 и 3 стоят рядом, то их можно рассматривать как одно число (обозначим его $n+1$). Количество возможных перестановок чисел $\{4, 5, ..., n+1\}$ равно $\left(n-2\right)!$. Тогда вероятность данного события равна: $$P=\frac{\left(n-2\right)!}{n!}=\frac{1}{n(n-1)}.$$
+б) поскольку числа 1, 2 и 3 стоят рядом, то их можно рассматривать как одно число (обозначим его $n+1$). Количество возможных перестановок чисел $\{4, 5,  \dotsc , n+1\}$ равно $\left(n-2\right)!$. Тогда вероятность данного события равна: $$P=\frac{\left(n-2\right)!}{n!}=\frac{1}{n(n-1)}.$$
 
 \subsubsection*{3.20}
 
@@ -846,5 +937,11 @@ $\varlimsup\limits_{n\to\infty}A_n\cap\varlimsup\limits_{n\to\infty}B_n=\left(\b
 д) пять карт одной масти можно выбрать $4\cdot C_{13}^5$ способами. Отнимем из этих комбинаций <<royal flush>> и <<straight flush>>. Получим $4\cdot C_{13}^5-С_4^1-C_{36}^1$. Поэтому вероятность комбинации <<flush>> равна $$p=\frac{4\cdot C_{13}^5-С_4^1-C_{36}^1}{C_{52}^5};$$
 
 е) имея только одну масть есть 9 комбинаций пяти карт подряд. Каждая из этих пяти карт может быть любой масти. Главное, чтобы хотя бы одна карта имела масть, отличающуюся от остальных четырёх карт. Имеем $9\cdot 4^5$ комбинаций. Теперь отнимем от них комбинации, где все карты имеют одну масть (их 9). Поэтому вероятность <<straight>> равна $$p=\frac{C_9^1\cdot 4^5}{C_{52}^5}.$$
+
+\subsubsection*{3.23}
+
+\textit{Задание.} Компьютерный центр имеет три процессора, на которые поступило n заданий. Каждое задание выполняется на наугад выбранном процессоре. Найдите вероятность того, что ровно один процессор останется незадействованным.
+
+\textit{Решение.}
 
 \end{document}
