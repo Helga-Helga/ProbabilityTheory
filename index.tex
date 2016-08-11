@@ -1826,7 +1826,7 @@ $$ P(A) =
 \frac{1}{C_{n+N-1}^{N-1}}. $$
 
 б) Вероятность желаемого события оценивается по формуле
-$$ p =
+$$ q_k =
 \frac{r}{| \Omega |}.$$
 
 Аналогично предыдущему пункту $  | \Omega | = C_{n+N-1}^{N-1}  $.
@@ -1834,9 +1834,9 @@ $$ p =
 Сначала надо отобрать k частиц в фиксированную ячейку (это можно сделать одним способом), а потом
 $ n - k $
 частиц распределить среди
-$ N - 1 $ ячеек.
-Используем метод перегородок.
+$ N - 1 $ ячейки.
 
+Используем метод перегородок.
 Разместим все $ n - k $ частиц в ряд.
 Чтобы отделить частицы, которые попадут в разные ячейки, поставим между ними $ N - 2 $ перегородки.
 Обозначим частицу символом <<0>>, а перегородку символом <<1>>.
@@ -1848,8 +1848,116 @@ $ n - k $
 Количество таких комбинаций равно $ r = C_{n-k+N-2}^{N-2} $.
 
 Тогда
-$$ p =
+$$ q_k =
 \frac{C_{n-k+N-2}^{N-2}}{C_{n+N-1}^{N-1}}.$$
+
+в) Найдём вероятность $ q_0 $ того, что в данной ячейке будет 0 частиц.
+Вероятность желаемого события оценивается по формуле
+$$ q_0 =
+\frac{r_0}{| \Omega |}.$$
+
+Аналогично пункту а) $  | \Omega | = C_{n+N-1}^{N-1}  $.
+
+Нужно n одинаковых частиц распределить среди $ N - 1 $ ячейки.
+
+Используем метод перегородок.
+Разместим все n частиц в ряд.
+Чтобы отделить частицы, которые попадут в разные ячейки, поставим между ними $ N - 2 $ перегородки.
+Обозначим частицу символом <<0>>, а перегородку символом <<1>>.
+Тогда распределение частиц по ячейкам характеризуется последовательностью из n нулей и $ N - 2 $ единиц.
+Количество способов, которыми можно распределить n частиц, совпадает с количеством разных последовательностей указанного вида.
+Последовательность определяется однозначно, если выбрать $ N - 2 $ места из $ n + N - 2 $, где будут размещены единицы.
+Количество таких комбинаций равно $ C_{n+N-2}^{N-2} $.
+
+Тогда
+$$ q_0 =
+\frac{C_{n+N-2}^{N-2}}{C_{n+N-1}^{N-1}}.$$
+
+Проверим формулу из пункта б).
+Подставим $ k = 0 $.
+Получим:
+$$ q_0 =
+\frac{C_{n+N-2}^{N-2}}{C_{n+N-1}^{N-1}}.$$
+Видим, что получили такую же формулу, значит для дальнейшего решения можно использовать её, подставляя вместо k нужное значение.
+
+Упростим:
+\begin{equation*}
+\begin{split}
+q_0 =
+\frac{ \frac{ \left( n+N-2 \right)! }{ \left( N-2 \right)! \left( n+N-2-N+2 \right)!  } }{ \frac{ \left( n+N-1\right)! }{\left( N-1 \right)! \left( n+N-1-N+1 \right)!  } } =
+\frac{ \left( n+N-2\right)! \left( N-1 \right)!n!}{ \left( N-2 \right)!n! \left( n+N-1 \right)! } = \\
+= \frac{ \left( n+N-2 \right)! \left( N-2 \right)! \left( N-1 \right) }{ \left( N-2 \right)! \left( n+N-2 \right)! \left( n+N-1 \right) } =
+\frac{N-1}{n+N-1}.
+\end{split}
+\end{equation*}
+
+Упростим общую формулу:
+\begin{equation*}
+\begin{split}
+q_k =
+\frac{ \frac{ \left( n-k+N-2 \right)! }{ \left( N-2 \right)! \left( n-k+N-2-N+2 \right)! } }{ \frac{ \left( n+N-1 \right)!}{ \left( N-1 \right)! \left(n+N-1-N+1 \right)!} } =
+\frac{ \left( n-k+N-2 \right)! \left( N-1 \right)!n!}{ \left( N-2 \right)! \left( n-k \right)! \left( n+N-1 \right)!} = \\
+= \frac{ \left( n-k+N-2 \right)! \left( N-1 \right) n!}{ \left( n-k \right)! \left( n+N-1 \right)!}.
+\end{split}
+\end{equation*}
+
+Найдём вероятность $ q_1 $ того, что в данной ячейке будет одна частица:
+\begin{equation*}
+\begin{split}
+q_1 =
+\frac{ \left( n-1+N-2 \right)! \left( N-1 \right) n!}{ \left( n-1 \right)! \left( n+N-1 \right)!} = \\
+= \frac{ \left( n+N-3 \right)! \left( N-1 \right)! \left( n-1 \right)!n }{ \left( n-1 \right)! \left( n+N-3 \right)! \left( n+N-2 \right) \left( n+N-1 \right) } =
+\frac{ \left( N-1 \right) n}{ \left( n+N-2 \right) \left( n+N-1 \right).}
+\end{split}
+\end{equation*}
+
+Сравним $ q_0 $ и $ q_1 $.
+Приведём к общему знаменателю.
+Для этого $ q_0 $ умножим на $ \left( n+N-2 \right) $.
+Получим:
+$$ q_0 =
+\frac{ \left( N-1 \right) \left( n+N-2 \right) }{ \left( n+N-1 \right) \left( n+N-2 \right) }.$$
+
+Видим, что $ q_0 $ и $ q_1 $ отличаются только выражением в числителе.
+Теперь сравним n и $ \left( n+N-2 \right)$.
+По условию задачи $ N > 2 $, поэтому $ N - 2 > 0 $.
+Это значит, что $ n + N - 2  > n $, т.е. $ q_0 > q_1 $.
+
+Докажем, что условие выполняется для k-го члена.
+Найдём вероятность $ q_{k+1} $ того, что в данной ячейке будет $ k + 1 $ частица:
+$$ q_{k+1} =
+\frac{ \left( n-k-1+N-2 \right)! \left( N-1 \right) n!}{ \left( n-k-1 \right)! \left( n+N-1 \right)!} =
+\frac{ \left( n-k+N-3 \right)! \left( N-1 \right) n!}{ \left( n-k-1 \right)! \left( n+N-1 \right)!}.$$
+
+Сравним полученное выражение с $ q_k $.
+В выражении для $ q_{k+1} $ и числитель, и знаменатель меньше: $ n - k + N -3 < n - k + N - 2 $, а также $ n - k - 1 < n - k $.
+Отсюда следует, что $ q_k > q_{k+1}$.
+
+Итого, доказали, что условие верно для первого члена $ \left( q_0 > q_1 \right) $.
+Также из верности условия для k-го члена вытекает его верность для $ k + 1 $-го.
+Отсюда по индукции Пеано следует, что условие верно для любого натурального числа.
+
+г) Распишем $ p_k $ (вероятность того, что в данную ячейку попадут k частиц):
+
+\begin{equation*}
+\begin{split}
+p_k =
+\frac{C_{N+n-k-2}^{n-k}}{C_{N+n-1}^n} =
+\frac{ \left( N+n-k-2 \right)!n! \left( N-1 \right)!}{ \left( n-k \right)! \left( N-2 \right)! \left( N+n-1 \right)!} = \\
+= \frac{ \left( N+n-k-2 \right)! \left( n-k \right)! \left( N-2 \right)! \left( N-1 \right) \prod \limits_{i=0}^{k-1} \left( n-i \right) }{ \left( n-k \right)! \left( N-2 \right)! \left( N+n-k-2 \right)! \prod \limits_{j=1}^{k+1} \left( N+n-j \right) } =
+\frac{ \left( N-1 \right) \prod \limits_{i=0}^{k-1} \left( n-i \right) }{ \prod \limits_{j=1}^{k+1} \left( N+n-j \right) }.
+\end{split}
+\end{equation*}
+
+Поделим числитель и знаменатель на N:
+\begin{equation*}
+\begin{split}
+p_k =
+\frac{ \left( 1- \frac{1}{N} \right) \prod \limits_{i=0}^{k-1} \left( \frac{n}{N} - \frac{i}{N} \right) }{ \prod \limits_{j=1}^{k+1} \left( 1+ \frac{n}{N} - \frac{j}{N} \right) } = \\
+= \frac{ \frac{n}{N} \left( \frac{n}{N} - \frac{1}{N} \right) \dotsc \left( \frac{n}{N} - \frac{k-1}{N} \right) }{ \left( 1+ \frac{n}{N} - \frac{1}{N} \right) \left( 1+ \frac{n}{N} - \frac{2}{N} \right) \dotsc \left( 1+ \frac{n}{N} - \frac{k+1}{N} \right) } =
+\frac{ \lambda^k}{ \left( 1+ \lambda \right)^{k+1}}.
+\end{split}
+\end{equation*}
 
 д) Вероятность желаемого события оценивается по формуле
 $$ p =
