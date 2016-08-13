@@ -977,7 +977,43 @@ $ A_1,  \dotsc , A_k $ --- подмножества A такие, что ни о
 Докажите, что
 $$ \sum \limits_{ r = 1 }^k \frac{ 1 }{ C_n^{ i_r } } \leq 1.$$
 
-\textit{Решение.} Распишем левую часть неравенства:
+\textit{Решение.} Умножим слева и справа на произведение знаменателей:
+$$ \prod \limits_{r=1}^k C_n^{i_r} \sum \limits_{r=1}^k \frac{1}{C_n^{i_r}} \leq
+\prod \limits_{r=1}^k C_n^{i_r}. $$
+
+Внесём произведение под знак суммы:
+$$ \sum \limits_{r=1}^k \frac{ \prod \limits_{r'=1}^k C_n^{i_{r'}}}{C_n^{i_r}} \leq
+\prod \limits_{r=1}^k C_n^{i_r}. $$
+
+Упростим:
+$$ \sum \limits_{r=1}^k \prod \limits_{1 \leq r' \leq k}^{r' \neq r} C_n^{i_{r'}} \leq
+\prod \limits_{r=1}^k C_n^{i_r}. $$
+
+Обозначим номер наибольшего слагаемого как r:
+$$ m = arg \max \limits_{1 \leq r \leq k} \prod \limits_{1 \leq r' \leq k}^{r' \neq r} C_n^{i_{r'}}. $$
+
+Сумма слагаемых не больше чем наибольшее из них взятое k раз, т.е.
+$$ \sum \limits_{r=1}^k \prod \limits_{1 \leq r' \leq k}^{r' \neq r} C_n^{i_{r'}} \leq
+k \cdot \prod \limits_{1 \leq r' \leq k}^{r' \neq m} C_n^{i_{r'}} \leq
+\prod \limits_{r=1}^k C_n^{i_r}. $$
+
+Поделим правую и левую часть полученного неравенства на произведение, стоящее в левой части:
+$$ k \leq
+\frac{ \prod \limits_{r=1}^k C_n^{i_r}}{ \prod \limits_{1 \leq r' \leq k}^{r' \neq m} C_n^{i_{r'}}} =
+C_n^m. $$
+
+Если $ k \leq n $, то неравенство выполняется для любого возможного m кроме $ m = 0 $ и $ m = n $.
+
+$ m = 0 $ возможно только если $A_1$ --- пустое множество и $k = 1$,
+потому что если бы там были другие множества, пустое было бы их подмножеством, что противоречит условию задачи.
+Тогда $ C_0^0 = 1 \leq 1$.
+
+$ m = n $, то $ A_1 = A, k = 1 $, значит $C_n^n = 1$.
+Если будут другие подмножества кроме $A_1$, то они будут подмножествами $A_1$, что противоречит условию.
+
+\paragraph*{Формулы Стирлинга.}
+
+Распишем левую часть неравенства:
 $$ \sum \limits_{r=1}^k \frac{1}{C_n^{i_r}} =
 \sum \limits_{r=1}^k \frac{1}{ \frac{n!}{i_{r}! \left(n-i_r\right)!} } =
 \sum \limits_{r=1}^k \frac{i_{r}! \left(n-i_r\right)!}{n!}.$$
@@ -985,13 +1021,107 @@ $$ \sum \limits_{r=1}^k \frac{1}{C_n^{i_r}} =
 Получили неравенство:
 $$\sum \limits_{r=1}^k \frac{i_{r}! \left(n-i_r\right)!}{n!} \leq 1.$$
 
-Умножим левую и правую часть неравенства на $n!$.
+Умножим левую и правую части неравенства на $n!$.
 Левая часть:
 $$ n! \cdot \sum \limits_{r=1}^k \frac{i_{r}! \left(n-i_r\right)!}{n!} =
 \sum \limits_{r=1}^k i_{r}! \left(n-i_r\right)!.$$
 
 Получили неравенство:
-$$\sum \limits_{r=1}^k i_{r}! \left(n-i_r\right)! \leq n!.$$
+$$\sum \limits_{r=1}^k i_{r}! \left(n-i_r\right)! \leq n!. $$
+Нижний и верхний пределы для факториала:
+$$ \sqrt{2 \pi n} \left( \frac{n}{e} \right)^n \exp \left( \frac{1}{12 n+1} \right) <
+n! <
+\sqrt{2 \pi n} \left( \frac{n}{e} \right)^n \exp \left( \frac{1}{12 n} \right). $$
+
+Возьмём для левой части неравенства верхний предел, а для правой --- нижний:
+\begin{equation*}
+\begin{split}
+\sum \limits_{r=1}^k \sqrt{2 \pi i_r} \left( \frac{i_r}{e} \right)^{i_r} \exp \left( \frac{1}{12 i_r} \right)
+\left( \frac{i_r}{e} \right)^{i_r} \sqrt{2 \pi  \left( n-i_r\right) }
+\left( \frac{n-i_r}{e} \right)^{n-i_r} \times \\
+\times \exp \left( \frac{1}{12 \left( n-i_r\right) } \right) \leq 
+\sqrt{2 \pi n} \left( \frac{n}{e} \right)^n \exp \left( \frac{1}{12 n+1} \right).
+\end{split}
+\end{equation*}
+
+Сократим на $ \sqrt{2 \pi } $ и упростим:
+\begin{equation*}
+\begin{split}
+\sum \limits_{r=1}^k \sqrt{i_r \left( n-i_r \right) }
+\exp \left( \frac{1}{12 i_r} + \frac{1}{12 \left( n-i_r \right) } \right) \left( \frac{i_r}{e} \right)^{i_r}
+\left( \frac{n-i_r}{e} \right)^{n-i_r} \leq \\
+\leq \sqrt{n} \left( \frac{n}{e} \right)^n \exp \left( \frac{1}{12 n+1} \right).
+\end{split}
+\end{equation*}
+
+Упростим экспоненты в знаменателях левой части:
+$$ \exp \left( - i_r \right) \exp \left( i_r - n \right) =
+\exp \left( - i_r + i_r - n \right) =
+\exp \left( -n \right).$$
+
+В правой части имеем такую же степень экспоненты, поэтому сократим:
+\begin{equation*}
+\begin{split}
+\sum \limits_{r=1}^k \sqrt{i_r \left( n-i_r \right) }
+\exp \left( \frac{1}{12 i_r} + \frac{1}{12 \left( n-i_r \right) } \right) i_r^{i_r} \left( n-i_r \right)^{n-i_r} \leq \\
+\leq \sqrt{n} n^n \exp \left( \frac{1}{12 n+1} \right).
+\end{split}
+\end{equation*}
+
+Приведём подобные:
+$$ \sum \limits_{r=1}^k i_r^{i_r + \frac{1}{2} } \left( n-i_r \right)^{n - i_r + \frac{1}{2} }
+\exp \left( \frac{1}{12 i_r} + \frac{1}{12 \left( n-i_r \right) } \right) \leq
+n^{n + \frac{1}{2} } \exp \left( \frac{1}{12 n+1} \right). $$
+
+Приведём к общему знаменателю дроби в степени экспоненты в левой части:
+$$ \frac{1}{12 i_r} + \frac{1}{12 \left( n-i_r \right) } =
+\frac{n - i_r + i_r}{12 i_r \left( n-i_r \right) } =
+\frac{n}{12 i_r \left( n-i_r \right) }. $$
+
+Подставим в неравенство:
+$$ \sum \limits_{r=1}^k i_r^{i_r + \frac{1}{2} } \left( n-i_r \right)^{n - i_r + \frac{1}{2} }
+\exp \left( \frac{n}{12 i_r \left( n-i_r \right) } \right) \leq 
+n^{n + \frac{1}{2} } \exp \left( \frac{1}{12 n+1} \right). $$
+
+Упростим выражение в левой части так, что оно станет больше:
+\begin{equation*}
+\begin{split}
+\sum \limits_{r=1}^k i_r^{i_r + \frac{1}{2} } n^{n - i_r + \frac{1}{2} }
+\exp \left( \frac{n}{12 i_r \left( n-i_r \right) } \right) \leq \\
+\leq n^{n + \frac{1}{2} } \exp \left( \frac{1}{12 n+1} \right).
+\end{split}
+\end{equation*}
+
+Сократим на $ n^{n + \frac{1}{2} } $.
+Получим:
+$$ \sum \limits_{r=1}^k i_r^{i_r + \frac{1}{2} } \left( \frac{1}{n} \right)^{i_r}
+\exp \left( \frac{n}{12 i_r \left( n-i_r \right) } \right) \leq
+\exp \left( \frac{1}{12 n+1} \right). $$
+
+Внесём $ i_r^{i_r} $ в числитель дроби и поделим на экспоненту из правой части:
+$$ \sum \limits_{r=1}^k \sqrt{i_r} \left( \frac{i_r}{n} \right)^{i_r}
+\exp \left( \frac{n}{12 i_r \left( n-i_r\right) } - \frac{1}{12 n + 1} \right) \leq 1. $$
+
+Сведём дроби в степени экспоненты к общему знаменателю:
+\begin{equation*}
+\begin{split}
+\frac{n}{12 i_r \left( n-i_r \right) } - \frac{1}{12 n + 1} =
+\frac{n \left( 12 n + 1 \right) - 12 i_r \left( n-i_r \right) }{12 i_r \left( n-i_r \right) \left( 12 n + 1\right) } = \\
+= \frac{12 n^2 + n - 12 i_r n + 12 i_r^2}{12 i_r \left( n-i_r \right) \left( 12 n + 1\right) } =
+\frac{12 n^2 + n - 12 i_r n + 12 i_r^2}{ \left( 12 i_r n - 12 i_r^2 \right) \left( 12 n + 1 \right) } = \\
+= \frac{12 n^2 + n - 12 i_r n + 12 i_r^2}{144 n^2 i_r + 12 i_r n - 144 i_r^2 n - 12 i_r^2} =
+\frac{12 \left( n^2 -2 i_r n + i_r^2 \right) + n + 12 i_r n}{144 n^2 i_r + 12 i_r n - 144 i_r^2 n - 12 i_r^2} = \\
+= \frac{12 \left( n-i_r\right)^2 + n + 12 i_r n }{144 n^2 i_r + 12 i_r n - 144 i_r^2 n - 12 i_r^2}.
+\end{split}
+\end{equation*}
+
+Упростим выражение, используя нижний предел для количества сочетаний:
+$$ \left( \frac{n}{k} \right)^k \leq C_n^k. $$
+
+Получим:
+$$\sum \limits_{r=1}^k \frac{1}{C_n^{i_r}} \leq
+\sum \limits_{r=1}^k \frac{1}{\left( \frac{n}{i_r} \right)^{i_r}} =
+\sum \limits_{r=1}^k \left( \frac{i_r}{n} \right)^{i_r}. $$
 
 \addcontentsline{toc}{section}{Домашнее задание}
 \section*{Домашнее задание}
