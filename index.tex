@@ -2021,24 +2021,31 @@ $$p_k =
 \begin{split}
 p_k =
 \frac{C_n^k \left( N-1 \right)^{n-k}}{N^n} =
-\frac{n! \left( N-1 \right)^{n-k}}{k! \left) n-k \right)! \cdot N^n} = \\
-= \frac{ \left( n-k \right)! \left( n-k_1 \right) \dotsc n \left( N-1 \right)^{n-k}}{k! \left(n-k \right)! \cdot N^n} =
-\frac{ \left( n-k+1 \right) \dotsc n \left( N-1 \right)^{n-k}}{k! \cdot N^n} = \\
-= \frac{ \prod \limits_{i=0}^{k-1} \left( n-i \right) \left( N-1 \right)^{n-k}}{k! \cdot N^n}.
+\frac{n! \left( N-1 \right)^{n-k}}{k! \left( n-k \right)! \cdot N^n} = \\
+= \frac{n! \left( N-1 \right)^n}{k! \left( n-k \right)! \cdot N^n \left( N-1 \right)^k} =
+\frac{n!}{k! \left( n-k \right)! \left( N-1 \right)^k} \cdot \left( \frac{N-1}{N} \right)^n = \\
+= \frac{ \left( n-k \right)! \left( n-k+1 \right) \dotsc n}{k! \left( n-k \right)! \left( N-1 \right)^k} \cdot \left(\frac{N-1}{N} \right)^n =
+\frac{ \prod \limits_{i=0}^{k-1} \left( n-i \right) }{k! \left( N-1 \right)^k} \cdot \left( \frac{N-1}{N} \right)^n = \\
+= \frac{ \prod \limits_{i=0}^{k-1} \left( \frac{n-i}{N-1} \right)}{k!} \cdot \left( 1 - \frac{1}{N} \right)^n.
 \end{split}
 \end{equation*}
 
-Поделим числитель и знаменатель на $N^n$.
+Умножим и поделим последнюю скобку на $n$.
 Получим:
 \begin{equation*}
 \begin{split}
 p_k =
-\frac{ \frac{1}{N^n} \prod \limits_{i=0}^{k-1} \left( n-i \right) \left( N-1 \right)^{n-k}}{k!} =
-\frac{ \prod \limits_{i=0}^{k-1} \left( \frac{n}{N} - \frac{i}{N} \right) \left( \frac{N-1}{N} \right)^{n-k}}{k!} = \\
-= \frac{ \prod \limits_{i=0}^{k-1} \left( \frac{n}{N} - \frac{i}{N} \right) \left( 1 - \frac{1}{N} \right)^{n-k}}{k!} \rightarrow
-\frac{ \lambda^k}{k!} \cdot \left(1 - \frac{1}{N} \right)^{n-k}.
+\frac{ \prod \limits_{i=0}^{k-1} \left( \frac{n-i}{N-1} \right)}{k!} \cdot \left( 1 - \frac{ \frac{n}{N} }{n} \right)^n.
 \end{split}
 \end{equation*}
+
+Возьмём предел полученного выражения при 
+$$ \frac{n}{N} \rightarrow \lambda.$$
+Получим:
+$$ \lim \limits_{ \frac{n}{N} \rightarrow \lambda } p_k =
+\lim \limits_{ \frac{n}{N} \rightarrow \lambda }
+\left( \frac{ \prod \limits_{i=0}^{k-1} \left( \frac{n-i}{N-1} \right)}{k!} \cdot \left( 1 - \frac{ \frac{n}{N} }{n} \right)^n \right) =
+\frac{ \lambda^k}{k!} \exp \left( - \lambda \right).$$
 
 г) Вероятность соответственного события вычисляется с помощью формулы включений и исключений:
 $P \left\{ \bigcup \limits_{i=1}^m B_i \right\} =
