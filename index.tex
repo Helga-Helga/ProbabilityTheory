@@ -2732,4 +2732,160 @@ $ \left( m - N + r \right) + \left( N - r - 1 \right) = \\
 $$ p =
 \frac{C_{N}^{N-r} \cdot C_{m-1}^{N - r - 1}}{C_{n+N-1}^{N-1}}.$$
 
+\addcontentsline{toc}{chapter}{Занятие 4. Геометрические вероятности. Принцип отражения}
+\chapter*{Занятие 4. Геометрические вероятности. Принцип отражения}
+
+\addcontentsline{toc}{section}{Контрольные вопросы и задания}
+\section*{Контрольные вопросы и задания}
+
+\subsubsection*{Запишите формулу для вычисления геометрической вероятности.}
+
+Случайным образом выбираются точки в области $D$, где:
+$D \subset \mathbb{R}^n,
+\Omega = \\
+= D,
+A \subset D$
+--- случайное событие.
+$$P \left( A \right) =
+\frac{|A|}{| \Omega |}, $$
+где $|A|$ --- $n$-мерный объём $A$.
+
+Геометрическое определение вероятности обобщает классическое на случай бесконечного множества элементарных исходов
+$ \Omega $ тогда, когда $ \Omega $ представляет собой подмножество пространства $ \mathbb{R}$ (числовой прямой),
+$ \mathbb{R}^2$ (плоскости), $ \mathbb{R}^n$ ($n$-мерного евклидова пространства).
+
+Под мерой $ \mu \left( A \right) $ подмножества $A$ будем понимать его длину,
+площадь или объём (обобщённый объём) в зависимости от того,
+какому пространству принадлежит $ \Omega $:
+в  $ \mathbb{R}$, в $ \mathbb{R}^2$ или в $ \mathbb{R}^3 \left(  \mathbb{R}^n \right) $.
+
+Вероятностью события $A$
+называют число $P \left( A \right) $, равное отношению меры множества $A$ к мере множества $ \Omega $:
+$$P \left( A \right) =
+\frac{ \mu \left( A \right) }{ \mu \left( \Omega \right) },$$
+где $ \mu \left( A \right) $ --- мера множества $A$.
+
+\subsubsection*{В чём состоит принцип отражения?}
+
+Пусть $A$ и $B$ --- точки с целыми координатами, причём $B$ лежит выше оси абсцисс и правее оси ординат, $B'$ --- точка, симметричная $B$ относительно оси абсцисс.
+
+Количество путей, начинающихся в точке $A$ и оканчивающихся в точке $B$, которые касаются оси абсцисс или пересекают её, равно числу путей, оканчивающихся в точке $B'$.
+
+\subsubsection*{Опишите математические модели вероятностного эксперимента, связанные с задачей про встречу и иглой Бюффона.}
+
+\paragraph*{Задача о встрече}
+
+\textit{Задание.} Два приятеля договорились встретиться на протяжении определённого времени $T$.
+Первый приятель может ждать другого не больше чем время $ \tau_1$, а второй ждёт первого только время $ \tau_2$.
+Чему равна вероятность встречи приятелей, если каждый из них независимо от другого может прийти равновероятно в любой момент промежутка времени $T$.
+
+\textit{Решение.} Обозначим моменты прихода первого и второго приятелей через $x$ и $y$ соответственно.
+Тогда пространство элементарных событий $ \Omega $ имеет вид (рис. \ref{fig:41}): $ \Omega = \left\{ \left( x, y \right): 0 \leq  x \leq T, 0 \leq y \leq T \right\} $.
+
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=.4\textwidth]{./pictures/4_1.png}
+  \caption{Пространство элементарных событий}
+  \label{fig:41}
+\end{figure}
+
+Множество $A$ точек, которые способствуют встрече, определяется неравенствами
+$$A =
+\left\{ \left( x, y \right):
+0 \leq x \leq y \leq \min \left( T, x + \tau_1 \right),
+0 \leq x \leq y \leq \min \left( T, x + \tau_2 \right) \right\}.$$
+
+Очевидно, что
+$$m \left( \Omega \right) =
+T^2,
+m \left( A \right) =
+T^2 - \frac{1}{2} \left[ T - \min \left( T, \tau_1 \right) \right]^2 - \frac{1}{2} \left[ T - \min \left( T, \tau_2 \right) \right]^2.$$
+
+Поэтому согласно с
+$$P \left\{ A \right\} =
+\frac{ \mu \left( A \right) }{ \mu \left( \Omega \right) }$$
+имеем
+$$P \left\{ A \right\} =
+1 - \frac{1}{2} \left\{ \left[ \max \left( 0, 1 - \frac{ \tau_1}{T} \right) \right]^2 + \left[ \max \left( 0, 1 - \frac{ \tau_2}{T} \right) \right]^2 \right\}.$$
+
+\paragraph*{Игла Бюффона}
+
+\textit{Задание.} Рассмотрим плоскость, разделённую параллельными прямыми, которые находятся на расстоянии $2a$ одна от другой (рис. \ref{fig:42}).
+На плоскость наугад бросается игла, которая имеет длину $2l$.
+Нужно найти вероятность того, что игла пресечёт хотя бы одну из прямых (в случае $l > a$ игла может пересечь несколько прямых).
+
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=.9\textwidth]{./pictures/4_2.png}
+  \caption{Плоскость, разделённая параллельными прямыми}
+  \label{fig:42}
+\end{figure}
+
+\textit{Решение.}  Положение иглы однозначно определяется расстоянием от центра игла до ближайшей прямой и углом $ \phi $, который образует игла с этой прямой.
+Очевидно, что $0 \leq x \leq a$ и $0 \leq \phi \leq \pi $, т.е. пространство элементарных событий $ \Omega $ является прямоугольником (рис. \ref{fig:4201} и \ref{fig:4202}):
+$$ \Omega =
+\left\{ \left( x, \phi \right):
+0 \leq x \leq a,
+0 \leq \phi \leq \pi \right\}.$$
+
+Для того, чтобы игла пересекла одну из прямых необходимо и достаточно выполнение условия
+$x \leq l \sin \phi$, т.е.
+$$A =
+\left\{ \left( x, \phi \right):
+x \leq l \sin \phi,
+0 \leq x \leq a,
+0 \leq \phi \leq \pi \right\}.$$
+
+Рассмотрим два случая.
+
+А. $l \leq a$ (рис. \ref{fig:4201}).
+Очевидно, что
+$$ \mu \left( \Omega \right) =
+a \pi,
+\mu \left( A \right) =
+\int \limits_{0}^{ \pi } l \sin \phi d \phi =
+2l,
+P \left\{ A \right\} =
+\frac{2l}{a \pi}.$$
+
+B. $l > a$ (рис. \ref{fig:4202}).
+В этом случае имеем
+\begin{equation*}
+\begin{split}
+\mu \left( A \right) =
+a \pi - 2 \int \limits_{0}^{\arcsin \left( \frac{a}{l} \right) } \left( a - l \sin \phi \right) d \phi =
+a \left( \pi - 2 \arcsin \frac{a}{l} \right) + \\
++ 2l \left( 1 - \sqrt{1 - \left( \frac{a}{l} \right)^2} \right),
+P \left\{ A \right\} =
+\frac{ \mu \left( A \right) }{a \pi}.
+\end{split}
+\end{equation*}
+
+\begin{figure}[h!]
+  \centering
+  \begin{minipage}[b]{0.4\textwidth}
+    \includegraphics[width=\textwidth]{./pictures/4_201.png}
+    \caption{Случай $l \leq a$}
+    \label{fig:4201}
+  \end{minipage}
+  \hfill
+  \begin{minipage}[b]{0.4\textwidth}
+    \includegraphics[width=\textwidth]{./pictures/4_202.png}
+    \caption{Случай $l > a$}
+    \label{fig:4202}
+  \end{minipage}
+\end{figure}
+
+В случае $l \leq a$ с помощью иглы Бюффона можно приближённо вычислить число $ \pi $.
+Действительно, пусть было проведено $n$ экспериментов, в каждом из которых исследовалось пересекла ил игла прямую, или нет.
+Обозначим через $ \nu_n$ количество экспериментов, в которых произошло пересечение.
+Согласно с усиленным законом больших чисел
+$$ \frac{ \nu_n}{n} \xrightarrow[n \rightarrow \infty ]{} P \left\{ A \right\} =
+\frac{2l}{a \pi}$$
+с вероятностью 1.
+
+Отсюда следует, что
+$$ \frac{2l n}{a \nu_n} \xrightarrow[n \rightarrow \infty ]{} \pi $$
+с вероятностью 1, т.е. с помощью достаточного количества экспериментов можно вычислить число $ \pi $ с любой точностью.
+
 \end{document}
