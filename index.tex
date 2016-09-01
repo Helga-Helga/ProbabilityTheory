@@ -10,6 +10,7 @@
 \usepackage{amsmath}
 \usepackage{bbm}
 \usepackage{enumitem}
+\usepackage{gensymb}
 \hypersetup{
 	colorlinks=true,
 	linkcolor=blue,
@@ -2889,6 +2890,162 @@ $$ \frac{ \nu_n}{n} \xrightarrow[n \rightarrow \infty ]{} P \left\{ A \right\} =
 $$ \frac{2l n}{a \nu_n} \xrightarrow[n \rightarrow \infty ]{} \pi $$
 с вероятностью 1, т.е. с помощью достаточного количества экспериментов можно вычислить число $ \pi $ с любой точностью.
 
+\addcontentsline{toc}{section}{Аудиторные задачи}
+\section*{Аудиторные задачи}
+
+\subsubsection*{4.3}
+
+\textit{Задание.} На отрезке $ \left[ 0, 10 \right] $ числовой оси наугад выбрана точка.
+Найдите вероятность того, что расстояние от этой точки до средины отрезка окажется большим чем три.
+
+\textit{Решение.} Обозначим через $x$ расстояние от начала отрезка к точке.
+Тогда пространством элементарных событий является отрезок
+$ \Omega = \\
+= \left\{ x \in \mathbb{R}: \, 0 \leq x \leq 10 \right\} =
+\left[ 0, 10 \right] $,
+а событию $A$ =
+\{расстояние от точки до средины отрезка окажется большим чем 3\}
+способствуют точки объединения интервала
+$A =
+\left\{ x \in \Omega: \, x < 2, \, x > 8 \right\} =
+\left[0, 2 \right) \cup \left(8, 10 \right] $.
+Поэтому
+$$P \left( A \right) =
+\frac{|A|}{| \Omega |} =
+\frac{4}{10} =
+\frac{2}{5}.$$
+
+\subsubsection*{4.4}
+
+\textit{Задание.} В квадрате $ABCD$ со стороной 3 наугад выбрана точка.
+Найдите вероятность того, что расстояние от этой точки к:
+
+а) центру квадрата;
+
+б) стороне $AB$;
+
+в) точке $A$;
+
+г) одной из сторон;
+
+д) диагонали $AC$ не будет превышать 1.
+
+\textit{Решение.} Обозначим через $x$ и $y$ координаты точки.
+Пусть точка $A$ имеет координаты $ \left( 0, 0 \right) $,
+точка $B$ --- $ \left( 0, 3 \right) $, $C$ --- $ \left( 3, 3 \right) $, и $D$ имеет координаты $ \left( 3, 0 \right) $.
+Тогда пространством элементарных событий является квадрат
+$ \Omega = \\
+=\left\{ \left( x, y \right) \in \mathbb{R}^2: \,
+0 \leq x \leq 3,
+0 \leq y \leq 3 \right\} $.
+Площадь квадрата равна $S_{\Omega} = 3^2 = \\ = 9$.
+
+а) Центр квадрата --- это точка $ O \left( 3/2, 3/2 \right) $.
+Расстояние от точки к центру квадрата не должно превышать единицу --- событие $A$.
+Тогда точка должна находиться в круге с радиусом 1 и центром в точке $O$.
+Событие описывается множеством
+$$A =
+\left\{ \left( x, y \right) \in \Omega: \,
+\left( \frac{3}{2} - x \right)^2 + \left( \frac{3}{2} - y \right)^2 \leq 1 \right\}.$$
+
+Поэтому
+$$P \left( A \right) =
+\frac{S_A}{S_{ \Omega }} =
+\frac{ \pi \cdot 1^2}{9} =
+\frac{ \pi }{9};$$
+
+б) событие $A$ =
+\{расстояние от точки к стороне $AB$ не будет превышать единицу\}
+описывается множеством $A = \left\{ \left( x, y \right) \in \Omega: \, 0 \leq x \leq 1, 0 \leq y \leq 3 \right\} $.
+Изобразив $A$ на плоскости, можно убедиться, что точки множества $A$ образуют прямоугольник со сторонами $1$ и $3$.
+Поэтому
+$$P \left( A \right) =
+\frac{S_A}{S_{ \Omega }} =
+\frac{1 \cdot 3}{9} =
+\frac{1}{3};$$
+
+в) событие $A =$
+\{расстояние к точке $A$ не будет превышать единицу\}
+описывается множеством $A =\left\{ \left( x, y \right) \in \Omega: \, x^2 + y^2 \leq 1 \right\} $.
+Изобразив $A$ на плоскости, можно убедиться, что $A$ является четвертью круга с центром в начале координат и радиусом 1.
+Поэтому
+$$P \left( A \right) =
+\frac{S_A}{S_{ \Omega }}=
+\frac{ \frac{1}{4} \cdot \pi 1^2}{9} =
+\frac{ \pi }{36};$$
+
+г) событие $A =$
+\{расстояние от точки к одной из сторон не превышает единицу\}
+описывается множеством
+$$A =
+\left\{ \left( x, y \right) \in \Omega: \,
+0 \leq x \leq 1,
+2 \leq x \leq 3,
+0 \leq y \leq 1,
+2 \leq y \leq 3 \right\}.$$
+Изобразив $A$ на плоскости, можно убедиться, что $A$ --- исходный квадрат с вырезанным квадратом со стороной 1.
+Поэтому
+$$P \left( A \right) =
+\frac{S_A}{S_{ \Omega }} =
+\frac{3^2 - 1^2}{9} =
+\frac{9-1}{9} =
+\frac{8}{9};$$
+
+д) событие $A =$
+\{расстояние от точки к диагонали $AC$ не превысит единицы\}
+описывается множеством $A = \left\{ \left( x, y \right) \in \Omega: \, 0 \leq \left| y - x \right| \leq 1 \right\}$.
+Изобразив $A$ на плоскости, можно убедиться,
+что $A$ является квадратом без двух прямоугольных равнобедренных треугольников с катетами 2.
+Поэтому
+$$P \left( A \right) =
+\frac{S_A}{S_{ \Omega }} =
+\frac{3^2 - 2 \cdot \frac{1}{2} \cdot 2}{9} =
+\frac{9 - 2}{9} =
+\frac{7}{9}.$$
+
+\subsubsection*{4.5}
+
+\textit{Задание.} Точка $ \left( \xi, \eta \right) $ наугад выбрана в квадрате $ \left[ 0, 1 \right]^2$.
+Для фиксированного $z \in \left( 0, 1 \right) $ вычислить вероятность:
+
+а) $P \left( \left| \xi - \eta \right| < z \right) $;
+
+б) $P \left( \min \left( \xi, \eta \right) < z \right) $;
+
+в) $P \left( \left( \xi + \eta \right)/2 < z \right) $.
+
+\textit{Решение.}
+Пространство элементарных событий можно описать следующим образом:
+$ \Omega =
+\left\{ \left( \xi, \eta \right) \in \left[ 0, 1 \right]^2 \right\} $.
+Изобразив $ \Omega $ на плоскости, можно убедиться, что $ \Omega $ является квадратом со стороной 1.
+
+а) Событие $A$ описывается множеством
+$$A =
+\left\{ \left( \xi, \eta \right) \in \Omega: \,
+\left| \xi - \eta \right| < z,
+z \in \left( 0, 1 \right) \right\}.$$
+Изобразив $A$ на плоскости,
+можно убедиться,
+что точки множества $A$ образуют квадрат с двумя вырезанными прямоугольными равнобедренными треугольниками с катетами $z$.
+
+Найдём площадь треугольника:
+$$S = \frac{1}{2} z \cdot z =
+\frac{z^2}{2}.$$
+
+Тогда вероятность равна
+$$P \left( A \right) =
+\frac{1^2 - \frac{z^2}{2}}{1} =
+1 - \frac{z^2}{2}.$$
+
+б) Пусть $z = 1/2$.
+Прямая $ \xi = \eta $ делит квадрат на 2 одинаковых треугольника.
+Рассмотрим вариант, когда $ \eta < \xi $. Тогда $ \min \left( \xi, \eta \right) = \eta < z$.
+Тогда точка может лежать в в
+При $\eta \geq \xi $ получаем, что $ \min \left( \xi, \eta \right) = \xi < z$.
+Тогда точка может лежать в нижнем треугольнике левее вертикальной прямой $ \xi = 1/2$.
+
+
 \addcontentsline{toc}{section}{Домашнее задание}
 \section*{Домашнее задание}
 
@@ -3209,5 +3366,428 @@ $$P \left( A \right) =
 $ \left( x, y \right), \, x \in \\ \in \mathbb{N}, \, y \in \mathbb{N} $
 называется ломаная с вершинами в точках
 $ \left( 0, 0 \right), \, \left( 1, S_1 \right), \\ \left( 2, S_2 \right), \dotsc, \left( x, S_x \right) $, где $S_x = y, \, S_i - S_{i-1} \in \left\{ -1, 1 \right\} .$
+
+а) Сведём задачу к задаче, которая решается с помощью метода отражений.
+Введём новую систему координат, которая повёрнута относительно данной на $45 \degree $ по часовой стрелке.
+В этой системе координат за 1 шаг будет изменяться две координаты (рис. \ref{fig:422}).
+
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=.7\textwidth]{./pictures/4_22.png}
+  \caption{Новая система координат}
+  \label{fig:422}
+\end{figure}
+
+Свели данную задачу к задаче $1.22$.
+Имеем пути, состоящие из $n + n$ ходов, среди которых ровно $n$ ходов в направлении $x'$, и $n$ ходов в направлении $y'$.
+Если выберем, на каких шагах увеличиваем первую координату, будем знать, где увеличиваем вторую координату.
+Это будет $C_{2n}^n$.
+
+\begin{enumerate}[label=(\roman*)]
+\item Развернём для удобства рисунок (рис. \ref{fig:4221}).
+
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=.6\textwidth]{./pictures/4_22_1.png}
+  \caption{Метод отражений}
+  \label{fig:4221}
+\end{figure}
+
+Нам нужно, чтобы путь не касался диагонали,
+поэтому уйдём с неё на шаг вверх в точку $A$ и будем искать количество путей из $A$ в $B$.
+
+Количество путей из $A$ в $B$, не цепляющих диагональ,
+равно общему количеству путей из $A$ в $B -$ количество путей из $A$ в $B'$.
+
+В точку $A$ из начала координат можно попасть одним способом,
+как и в конечную точку из $B$, поэтому количество путей не измениться, если начать считать с них.
+
+Из точки $A$ в точку $B$ есть $n - 1$ вертикальный шаг и $n - 1$ горизонтальный.
+Поэтому количество путей из $A$ в $B$ равно $C_{2 \left( n-1 \right)}^{n-1} = C_{2n-2}^{n-1}$.
+От этого количества нужно отнять число путей,
+которые пересекают диагональ (по условию задачи это те пути, у которых $S_i \leq 0$).
+Когда из точки $A$ попадаем на диагональ, есть путь, симметричный данному, который ведёт в точку $B'$.
+Есть $n$ горизонтальных шагов и $n - 2$ вертикальных.
+Имеем $C_{n+n-2}^n = C_{2n-2}^n$ путей.
+
+Тогда число путей из точки $ \left( 0, 0 \right) $ в точку $ \left( 2n, 0 \right) $ равно
+\begin{equation*}
+\begin{split}
+C_{2n-2}^{n-1} - C_{2n-2}^n =
+\frac{ \left( 2n-2 \right)!}{ \left( n-1 \right)! \left( 2n-2-n+1 \right)!} -
+\frac{ \left( 2n-2 \right)!}{n! \left( 2n-2-n \right)!} = \\
+= \frac{ \left( 2n-2 \right)!}{ \left( n-1 \right)! \left( n-1 \right)!} -
+\frac{ \left( 2n-2 \right)!}{n! \left( n-2 \right)!} = \\
+= \left( 2n-2 \right)!
+\left( \frac{1}{ \left( n-2 \right)! \left( n-1 \right) \left( n-1 \right)! } -
+\frac{1}{ \left( n-1 \right)! n \left( n-2 \right)!} \right) = \\
+= \left( 2n-2 \right) \cdot \frac{n - n + 1}{\left( n-2 \right)! \left( n-1 \right)! \left( n-1 \right) n} =
+\frac{2n-2}{n! \left( n-1 \right)!}.
+\end{split}
+\end{equation*}
+
+\item Данная задача аналогична предыдущей, только теперь нужно из числа путей из точки с координатами
+$ \left( 0, 0 \right) $ в точку с координатами $ \left( 2n, 0 \right) $ отнять число путей, ведущих из точки $ \left( 0, 0 \right) $ в $B'$.
+
+Из точки $ \left( 0, 0 \right) $ в точку $ \left( 2n, 0 \right) $ нужно сделать $n$ горизонтальный шаг и $n$ вертикальных --- всего $C_{2n}^{n}$.
+
+Из точки $ \left( 0, 0 \right) $ в точку $B'$ есть $n$ горизонтальных шагов и $n - 1$ вертикальный.
+Всего таких путей $C_{2n-1}^n$.
+
+Итого имеем
+\begin{equation*}
+\begin{split}
+C_{2n}^n - C_{2n-1}^n =
+\frac{ \left( 2n \right)!}{n! n!} - \frac{ \left( 2n-1 \right)!}{n! \left( n-1 \right)!} =
+\frac{ \left( 2n \right)!}{n! \left( n-1 \right)! n} - \frac{ \left( 2n-1 \right)!}{n! \left( n-1 \right)!} = \\
+= \frac{ \left( 2n \right)! - \left( 2n-1 \right)! n}{n! n!} =
+\frac{ \left( 2n-1 \right)! \left( 2n-n \right)}{n! n!} =
+\frac{ \left( 2n-1 \right)! n}{n! n!}
+\end{split}
+\end{equation*}
+\end{enumerate}
+
+б) Задача проиллюстрирована на рисунке \ref{fig:4222}.
+
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=.6\textwidth]{./pictures/4_22_2.png}
+  \caption{Пути из точки $ \left( 0, m \right) $ в точку $ \left( n, 0 \right) $}
+  \label{fig:4222}
+\end{figure}
+
+При $n = m$
+существует один путь из точки
+$ \left( 0, m \right) $
+в точку
+$ \left( n, o \right)$,
+который соответствует линии,
+проведённой между этими точками:
+$ \left( 0, m \right) \rightarrow \\
+\rightarrow \left( 1, m-1 \right) \rightarrow
+\left( 2, m-2 \right) \rightarrow \dotsc \rightarrow \left( n, 0 \right)$.
+
+При $n < m$ пути между точками с заданными условиями нет.
+
+При $n > m$ путь возможен только при условии, что $ \left( m-n \right) mod 2 = \\ = 1$.
+В каждую следующую точку, в которой выполняется это условие, существует больше путей чем в предыдущую.
+Аналогично пункту а) имеем
+
+\begin{enumerate}[label=(\roman*)]
+\item
+\begin{equation*}
+\begin{split}
+C_{m+n-2}^{n-1} - C_{m+n-2}^n =
+\frac{ \left( m+n-2 \right)!}{ \left( n-1 \right)! \left( m-1 \right)!} -
+\frac{ \left( m+n-2 \right)!}{n! \left( m-2 \right)!} = \\
+= \frac{ \left( m+n-2 \right)!}{ \left( n-1 \right)! \left( m-2 \right)! \left( m-1 \right)} -
+\frac{ \left( m+n-2 \right)!}{ \left( n-1 \right)!n \left( m-2 \right)!}= \\
+= \frac{ \left( m+n-2 \right)! \left( n-m+1 \right) }{\left( n-1 \right)! \left( m-2 \right)! \left( m-1 \right) n} =
+\frac{ \left( m+n-2 \right)! \left( n-m+1 \right) }{n! \left( m-1 \right)!};
+\end{split}
+\end{equation*}
+\item 
+\begin{equation*}
+\begin{split}
+C_{m+n}^m - C_{m+n-1}^m =
+\frac{ \left( m+n \right)!}{m! n!} - \frac{ \left( m+n-1 \right)!}{m! \left( n-1 \right)!} = \\
+= \frac{ \left( m+n \right)! - \left( m+n-1 \right)!n}{m!n!} =
+\frac{ \left( m+n-1 \right)! \left( m+n-n \right) }{m!n!} = \\
+= \frac{ \left( m+n-1 \right)! m}{m!n!}.
+\end{split}
+\end{equation*}
+\end{enumerate}
+
+\paragraph*{Второй способ}
+
+Изобразим путь, который необходимо пройти в декартовых координатах (рис. \ref{fig:4223}).
+
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=.6\textwidth]{./pictures/4_22_3.png}
+  \caption{Путь в декартовых координатах}
+  \label{fig:4223}
+\end{figure}
+
+Повернём рисунок (рис. \ref{fig:4224}).
+
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=.6\textwidth]{./pictures/4_22_4.png}
+  \caption{Путь, который нужно пройти}
+  \label{fig:4224}
+\end{figure}
+
+Пунктиром обозначены крайние пути, которыми можно пройтись.
+Зелёным --- линия, которую нельзя пересекать.
+Разница суммы шагов вниз от суммы шагов вверх будет $m$.
+Для рисунка \ref{fig:4223} $AB = \sqrt{m^2 + n^2}$ --- гипотенуза треугольника $AOB$.
+
+Самый простой случай: $m = n$ (рис. \ref{fig:4225}).
+
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=.6\textwidth]{./pictures/4_22_5.png}
+  \caption{Случай, когда $m = n$}
+  \label{fig:4225}
+\end{figure}
+
+Если развернуть, получим прямоугольник шириной $m = n$ и высотой $0$.
+
+Теперь делаем $n = m + 1$.
+Высота прямоугольника $1$.
+Ширина его $m + 1$.
+Задача не решаема, потому что точка $n$ может быть либо под, либо над осью.
+Если она под, то до неё не добраться без пересечения оси.
+Если над, то она будет не на оси.
+
+Идём дальше: $n = m + 2$.
+
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=.6\textwidth]{./pictures/4_22_6.png}
+  \caption{Случай, когда $n = m + 2$}
+  \label{fig:4226}
+\end{figure}
+
+Теперь $n$ на оси, форма прямоугольника не поменялась.
+И т.д.
+Увеличиваем $n$ на $1$ --- получаем прирост высоты и ширины на $1$, увеличиваем $n$ ещё на $1$ --- задача решаема.
+Расстояние от $m$ до нижнего угла такое же, как от верхнего угла до точки $n$.
+Поскольку с ростом $n$ на $2$ увеличивается $m$ на $1$, а ширина прямоугольника равна высоте этого наклонённого отрезка, то получается, что ширина результирующего прямоугольника растёт на $1$.
+
+Проводим дополнительную вертикальную ось через $m + 2$ (рис. \ref{fig:4227}).
+
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=.6\textwidth]{./pictures/4_22_7.png}
+  \caption{Дополнительные построения}
+  \label{fig:4227}
+\end{figure}
+
+Смотрим на верхнюю линию от $m'$ до $n'$.
+Это линия длиной $m' = m + 2$.
+Значит, весь предыдущий прямоугольник имеет ширину $m + 2$.
+Высота 2 --- потому что двух шагов достаточно, чтобы пройтись от $m$ до $m'$.
+
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=.6\textwidth]{./pictures/4_22_8.png}
+  \caption{Дополнительные построения}
+  \label{fig:4228}
+\end{figure}
+
+Известно, что $AB = m, \, BC = n - m$ (рис. \ref{fig:4228}).
+Угол $BCD = 45 \degree$ (можем всегда ходить направо.
+При этом либо вниз, либо вверх.
+Пройтись направо --- $45 \degree$).
+Считаем синус:
+$$ \sin \angle BCD =
+\cos 45 \degree =
+\frac{ \sqrt{2} }{2}.$$
+Вычисляем длину $BD$ --- это катет и высота прямоугольника:
+$$BD =
+BC \cdot \sin \angle BCD =
+\left( n-m \right) \cdot \frac{ \sqrt{2} }{2}.$$
+Знаем высоту, делим её на $ \sqrt{2} $ --- получаем высоту в шагах:
+$$h =
+\frac{BD}{ \sqrt{2} } =
+\frac{ \left( n-m \right) \sqrt{2} }{2 \sqrt{2} } =
+\frac{n-m}{2}.$$
+
+Найдём длину прямоугольника. Она состоит из отрезков $DF$ и $CD$.
+$DF = BE$, поэтому найдём его длину из треугольника $ABE$:
+$$BE =
+\frac{AB}{ \cos \angle ABE} =
+\frac{2m}{ \sqrt{2} }.$$
+Найдём $CD$ из треугольника $BDC$:
+$$CD =
+DC \cdot \cos 45 \degree =
+\left( n-m \right) \cdot \frac{ \sqrt{2} }{2}.$$
+Тогда общая длина равна
+\begin{equation*}
+\begin{split}
+CF =
+BE + CD =
+\frac{2m}{ \sqrt{2} } + \frac{ \left( n-m \right) \sqrt{2} }{2} =
+\frac{2 \sqrt{2} m + \sqrt{2} \left( n-m \right) }{2} = \\
+= \frac{ \sqrt{2} \left( 2m+n-m \right) }{2} =
+\frac{ \sqrt{2} \left( n+m \right) }{2}.
+\end{split}
+\end{equation*}
+
+Длина перевёрнутого прямоугольника равна
+$$l =
+\frac{CF}{ \sqrt{2} } =
+\frac{ \sqrt{2} \left( n+m \right) }{2 \sqrt{2} } =
+\frac{n+m}{2}.$$
+
+Всего путей из $A$ в $B$ есть
+\begin{equation*}
+\begin{split}
+C_{ \frac{n-m}{2} + \frac{n+m}{2} }^{ \frac{n-m}{2} } =
+C_{ \frac{n-m+n+m}{2} }^{ \frac{n-m}{2} } =
+C_n^{ \frac{n-m}{2} } =
+\frac{n!}{ \left( \frac{n-m}{2} \right)! \left( n - \frac{n-m}{2} \right)! } = \\
+= \frac{n!}{ \left( \frac{n-m}{2} \right)! \left( \frac{2n+m-n}{2} \right)!} =
+\frac{n!}{ \left( \frac{n-m}{2} \right)! \left( \frac{n+m}{2} \right)!}. 
+\end{split}
+\end{equation*}
+
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=.6\textwidth]{./pictures/4_22_9.png}
+  \caption{Вспомогательный рисунок для определения количества путей}
+  \label{fig:4229}
+\end{figure}
+
+\begin{enumerate}[label=(\roman*)]
+\item Посчитаем количество путей, которые не касаются диагонали.
+Рассмотрим частный случай.
+Пусть $h = 2$ и $l = 4$.
+Тогда имеем
+$$C_{4+2}^2 =
+C_6^2 =
+\frac{6!}{2! 4!} =
+\frac{5 \cdot 6}{2} =
+15$$
+возможных путей (рис. \ref{fig:42210}).
+
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=.8\textwidth]{./pictures/4_22_10.png}
+  \caption{Все возможные пути для $h = 2$ и $l = 4$}
+  \label{fig:42210}
+\end{figure}
+
+Оранжевым обозначены пути, которые не касаются диагонали, коричневым --- которые только касаются диагонали, и розовым --- которые пересекают её.
+Путей, которые касаются диагонали 10 --- это $C_5^2$.
+Т.е. это количество путей из точки $A$ в точку $B'$.
+Их
+\begin{equation*}
+\begin{split}
+C_{ \frac{n+m}{2} + \frac{n-m}{2} - 1}^{ \frac{n-m}{2} } =
+C_{ \frac{n+m+n-m-2}{2} }^{ \frac{n-m}{2} } =
+C_{n-1}^{ \frac{n-m}{2} } = \\
+= \frac{ \left( n-1 \right)!}{ \left( \frac{n-m}{2} \right)! \left( n - 1 - \frac{n-m}{2} \right)!} =
+\frac{ \left( n-1 \right)!}{ \left( \frac{n-m}{2} \right)! \left( \frac{2n-2-n+m}{2} \right)!} =
+\frac{ \left( n-1 \right)!}{ \left( \frac{n-m}{2} \right)! \left( \frac{n+m-2}{2} \right)!} = \\
+= \frac{ \left( n-1 \right)!}{ \left( \frac{n-m}{2} \right)! \left( \frac{n+m}{2} - 1 \right)!}.
+\end{split}
+\end{equation*}
+
+Вероятность равна
+\begin{equation*}
+\begin{split}
+P =
+\frac{\frac{ \left( n-1 \right)!}{ \left( \frac{n-m}{2} \right)! \left( \frac{n+m}{2} - 1 \right)!}}{\frac{n!}{ \left( \frac{n-m}{2} \right)! \left( \frac{n+m}{2} \right)!}} =
+\frac{ \left( n-1 \right)!}{ \left( \frac{n-m}{2} \right)! \left( \frac{n+m}{2} - 1 \right)!} \cdot
+\frac{ \left( \frac{n-m}{2} \right)! \left( \frac{n+m}{2} \right)!}{n!} = \\
+= \frac{ \left( n-1 \right)!}{ \left( \frac{n+m}{2} - 1 \right)! } \cdot
+\frac{ \left( \frac{n+m}{2} - 1 \right)! \cdot \frac{n+m}{2} }{ \left( n-1 \right)! n} =
+\frac{n+m}{2n};
+\end{split}
+\end{equation*}
+
+\item путей, которые пересекают диагональ 6 или это все пути от $A$ до $B''$, т.е.
+\begin{equation*}
+\begin{split}
+C_{ \frac{n-m}{2} + \frac{n-m}{2} }^{ \frac{n-m}{2} } =
+C_{n-m}^{ \frac{n-m}{2} } =
+\frac{ \left( n-m \right)!}{ \left( \frac{n-m}{2} \right)! \left( \frac{n-m}{2} \right)! }.
+\end{split}
+\end{equation*}
+
+Тогда вероятность равна
+\begin{equation*}
+\begin{split}
+P =
+\frac{\frac{ \left( n-m \right)!}{ \left( \frac{n-m}{2} \right)! \left( \frac{n-m}{2} \right)! }}{\frac{n!}{ \left( \frac{n-m}{2} \right)! \left( \frac{n+m}{2} \right)!}} =
+\frac{ \left( n-m \right)!}{ \left( \frac{n-m}{2} \right)! \left( \frac{n-m}{2} \right)! } \cdot
+\frac{ \left( \frac{n-m}{2} \right)! \left( \frac{n+m}{2} \right)!}{n!} = \\
+= \frac{ \left( n-m \right)!}{n!} \left( \frac{n+m}{2} \right)! \left( \frac{2}{n-m} \right)!.
+\end{split}
+\end{equation*}
+\end{enumerate}
+
+\subsubsection*{4.23}
+
+\textit{Задание.} В последний тур выборов вышли кандидаты $A$ и $B$.
+Кандидат $A$ набрал $n$ голосов, кандидат $B$ --- $m$ голосов.
+Избиратели голосовали последовательно.
+Найдите вероятность того, что кандидат $A$ не отстал от $B$, если:
+
+а) $n \geq m$;
+
+б) $n = m$.
+ 
+\textit{Решение.} Вероятность равна
+$$P =
+\frac{k}{| \Omega |}.$$
+Общее количество путей равно $| \Omega| = C_{m+n}^m$.
+Найдём $k$.
+
+а) Данная задача решена в пункте б) из предыдущей.
+Так как кандидат $A$ может быть или наравне с кандидатом $B$, или лидировать, то нам подходит пункт ii).
+Имеем:
+\begin{equation*}
+\begin{split}
+C_{m+n}^m - C_{m+n-1}^m =
+\frac{ \left( m+n \right)!}{m! n!} - \frac{ \left( m+n-1 \right)!}{m! \left( n-1 \right)!} = \\
+= \frac{ \left( m+n \right)! - \left( m+n-1 \right)!n}{m!n!} =
+\frac{ \left( m+n-1 \right)! \left( m+n-n \right) }{m!n!} = \\
+= \frac{ \left( m+n-1 \right)! m}{m!n!}.
+\end{split}
+\end{equation*}
+
+Тогда вероятность указанного события равна
+$$P =
+\frac{\frac{ \left( m+n-1 \right)! m}{m!n!}}{C_{m+n}^m} =
+\frac{ \left( m+n-1 \right)! m}{m!n!} \cdot \frac{m!n!}{ \left( m+n \right)!} =
+\frac{m}{m+n}.$$
+
+б) В данном случае $k = 1$.
+Поэтому вероятность равна
+$$P =
+\frac{1}{C_{m+n}^m} =
+\frac{m!n!}{ \left( m+n \right)!}.$$
+
+\subsubsection*{4.24}
+
+\textit{Задание.} Решите задачу 4.12 при условии, что в начале работы в кассе буфета было $p$ монет по $50$ коп.
+
+В буфете продаются пирожки стоимостью $50$ коп.
+Около буфета собралось $m+n$ студентов,
+причём $n$ из них имеют монеты по $50$ коп., а остальные $m$ имеют только по одной гривне $ \left( m \leq n \right) $.
+Найдите вероятность того, что ни одном студенту не придётся ждать сдачи,
+если в начале работы в кассе было $p$ монет по $50$ коп. 
+
+\textit{Решение.} Данная задача решается методом отражений (рис. \ref{fig:423}).
+
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=.6\textwidth]{./pictures/4_23.png}
+  \caption{Возможные исходы}
+  \label{fig:423}
+\end{figure}
+
+Точка $ \left( 0, p \right) $ --- начальная, $A$ --- конечная.
+Из ней можем двигаться вправо и вверх (если студент заплатил $50$ коп.) или вправо и вниз (если гривну).
+Когда студент платит $50$ коп., количество монет в кассе увеличивается на единицу (становится $p + 1$).
+Когда студент платит гривну, количество монет в кассе уменьшается на единицу, так как ему необходимо дать сдачу.
+Их становится $p - 1$.
+Всего есть $C_{n+m}^n$ путей.
+
+Чтобы студент не ждал сдачу, монет в кассе не может быть отрицательное количество, но может быть 0.
+Поэтому все пути могут касаться оси, но не пересекать её.
+Таких путей 
+\begin{equation*}
+\begin{split}
+C_{p+m}^p - C_{p+m-1}^p =
+\frac{ \left( p+m \right)!}{p!m!} - \frac{ \left( p+m-1 \right)!}{p! \left( m-1 \right)!} = \\
+= \frac{ \left( p+m \right)!}{p! \left( m-1 \right)! m} - \frac{ \left( p+m-1 \right)!}{p! \left( m-1 \right)!} =
+\frac{ \left( p+m-1 \right)!m}{p!m!}.
+\end{split}
+\end{equation*}
 
 \end{document}
