@@ -11,6 +11,7 @@
 \usepackage{bbm}
 \usepackage{enumitem}
 \usepackage{gensymb}
+\usepackage{subcaption}
 \hypersetup{
 	colorlinks=true,
 	linkcolor=blue,
@@ -3038,13 +3039,90 @@ $$P \left( A \right) =
 \frac{1^2 - \frac{z^2}{2}}{1} =
 1 - \frac{z^2}{2}.$$
 
-б) Пусть $z = 1/2$.
-Прямая $ \xi = \eta $ делит квадрат на 2 одинаковых треугольника.
-Рассмотрим вариант, когда $ \eta < \xi $. Тогда $ \min \left( \xi, \eta \right) = \eta < z$.
-Тогда точка может лежать в в
-При $\eta \geq \xi $ получаем, что $ \min \left( \xi, \eta \right) = \xi < z$.
-Тогда точка может лежать в нижнем треугольнике левее вертикальной прямой $ \xi = 1/2$.
+б) Событие
+$A =
+\left\{ P \left( \min \left( \xi, \eta \right) < z \right) \right\}$
+описывается множеством
+$A = \\
+= \left\{ \left( \xi, \eta \right) \in \Omega: \,
+\min \left( \xi, \eta \right) < z, \,
+z \in \left( 0, 1 \right) \right\} $.
+Изобразив $A$ на плоскости, можно убедиться, что точки множества $A$ образуют квадрат со сторонами длиной $z$ (рис. \ref{fig:45}, \ref{fig:451}).
 
+\begin{figure}[h!]
+  \centering
+  \begin{minipage}[b]{0.4\textwidth}
+    \includegraphics[width=\textwidth]{./pictures/4_5.png}
+    \caption{$ \xi < \eta, \min \left( \xi, \eta \right) = \\ = \xi < z$}
+    \label{fig:45}
+  \end{minipage}
+  \hfill
+  \begin{minipage}[b]{0.4\textwidth}
+    \includegraphics[width=\textwidth]{./pictures/4_5_1.png}
+    \caption{$ \xi \geq \eta, \min \left( \xi, \eta \right) = \\ = \eta < z$}
+    \label{fig:451}
+  \end{minipage}
+\end{figure}
+
+Поэтому
+$$P =
+\frac{z^2}{1} =
+z^2.$$
+
+в) Упростим неравенство. Умножим левую и правую части на $2$.
+Получим: $ \xi + \eta < 2z$.
+Выразим $ \xi $ и $ \eta: \, \xi < 2z - \eta, \, \eta < 2z - \xi $.
+
+Событие
+$$A =
+\left\{ P \left( \frac{ \xi + \eta }{2} < z \right) \right\} $$
+описывается множеством
+$$A =
+\left\{ \left( \xi, \eta \right) \in \Omega: \,
+\frac{ \xi + \eta }{2} < z, \,
+z \in \left( 0, 1 \right) \right\}.$$
+Изобразив $A$ на плоскости, можно убедиться, что точки множества $A$ образуют прямоугольник с катетами $2z$ (рис. \ref{fig:452}).
+
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=.4\textwidth]{./pictures/4_5_2.png}
+  \caption{Точки множества $A$}
+  \label{fig:452}
+\end{figure}
+
+Поэтому
+$$P \left( A \right) =
+\frac{S_A}{S_{ \Omega }} =
+\frac{ \frac{1}{2} \cdot 2z \cdot 2z}{1 \cdot 1} =
+2z^2.$$
+
+\subsubsection*{4.6}
+
+\textit{Задание.} На отрезке $ \left[ 0, 10 \right] $ числовой оси наугад выбраны две точки.
+Найдите вероятность того, что расстояние от правой точки к точке с координатой $8$ окажется меньшим чем единица.
+
+\textit{Решение.} Обозначим через $x$ и $y$ расстояния от начала отрезка (точки $0$) к левой и правой точкам соответственно.
+Тогда пространство элементарных событий можно описать следующим образом:
+$$ \Omega =
+\left\{ \left( x, y \right) \in \mathbb{R}^2: \,
+0 \leq x  \leq y \leq 10 \right\},$$
+а событие $A =$ \{расстояние от правой точки к точке 8\} описывается множеством $A = \left\{ \left( x, y \right) \in \Omega: 0 \leq x \leq 7, 7 < y < 9 \right\} $.
+Изобразив $ \Omega $ и $A$ на плоскости, можно убедиться, что $ \Omega $ является прямоугольным треугольником с катетами длиной $10$,
+а точки множества $A$ образуют прямоугольник со сторонами $2$ и $7$ (рис. \ref{fig:46}).
+
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=.4\textwidth]{./pictures/4_6.png}
+  \caption{Точки множества $A$}
+  \label{fig:46}
+\end{figure}
+
+Поэтому
+$$P \left( A \right) =
+\frac{S_A}{S_{ \Omega }} =
+\frac{2 \cdot 7}{10 \cdot 10} =
+\frac{7}{5 \cdot 10} =
+\frac{7}{50}.$$
 
 \addcontentsline{toc}{section}{Домашнее задание}
 \section*{Домашнее задание}
