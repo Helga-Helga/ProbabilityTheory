@@ -253,3 +253,157 @@ $$P \left( A/B \right) =
 \frac{P \left( A \cap B \right) }{P \left( B \right) } =
 \frac{ \frac{1}{8} }{ \frac{7}{8} } =
 \frac{1}{7}.$$
+
+\subsubsection*{5.19}
+
+\textit{Задание.} Точка $ \xi = \left( \xi_1, \xi_2 \right) $ наугад выбрана в квадрате $ \left[ 0, 1 \right]^2$.
+Пусть $B = \left\{ \xi_1 + \xi_2 \leq 1 \right\} $.
+Вычислите условную вероятность $P \left( \left. A \right| B \right) $, если:
+\begin{enumerate}[label=\alph*)]
+\item $A = \left\{ \left| \xi_1 + \xi_2 \right| < 1 \right\} $;
+\item $A = \left\{ \xi_1 \cdot \xi_2 < 1/2 \right\} $;
+\item $A = \left\{ \max \left\{ \xi_1, \xi_2 \right\} < 1/2 \right\} $;
+\item $A = \left\{ \xi_1^2 + \xi_2^2 < 1/4 \right\} $;
+\item $A = \left\{ \xi_1 > \xi_2 \right\} $.
+\end{enumerate}
+
+\textit{Решение.}
+Вероятностное пространство эксперимента,
+которое состоит в выборе точки в квадрате
+$ \left[ 0, 1 \right]^2$, опишем множеством
+$ \Omega =
+\left\{ \left( \xi_1, \xi_2 \right), \,
+0 \leq \xi_1 \leq 1, \,
+0 \leq \xi_2 \leq 1 \right\} $,
+где через $ \xi_1$ обозначена первая координата точки, а через $ \xi_2$ --- вторая координата.
+
+Вычислим вероятность события $B$.
+Это прямоугольный равнобедренный треугольник с катетами длиной $1$.
+Тогда площадь этой фигуры равна
+$$S_B =
+\frac{1}{2} \cdot 1 \cdot 1 =
+\frac{1}{2}.$$
+
+\begin{enumerate}[label=\alph*)]
+\item Событие $A$ --- это прямоугольный равнобедренный треугольник с катетами длиной $1$.
+Вероятность пересечения событий $A$ и $B$ равна
+$$P \left( A \cap B \right) =
+\frac{1}{2}.$$
+Тогда условная вероятность равна
+$$P \left( \left. A \right| B \right) =
+\frac{P \left( A \cap B \right) }{P \left( B \right) } =
+\frac{ \frac{1}{2} }{ \frac{1}{2} } =
+1;$$
+\item событие $A$ --- это часть квадрата под веткой гиперболы
+$$ \xi_2 = \frac{1}{2 \xi_1}.$$
+Вероятность пересечения событий $A$ и $B$ равна
+$$P \left( A \cap B \right) =
+\frac{1}{2}.$$
+Тогда условная вероятность равна
+$$P \left( \left. A \right| B \right) =
+\frac{P \left( A \cap B \right) }{P \left( B \right) } =
+\frac{ \frac{1}{2} }{ \frac{1}{2} } =
+1;$$
+\item множество $A$ --- это фигура, образованная вырезанием из квадрата со сторонами длиной $1$ квадрат со сторонами длиной $1/2$ (рис. \ref{fig:517}).
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=.4\textwidth]{./pictures/5_17.png}
+  \caption{Точки множества $A$}
+  \label{fig:517}
+\end{figure}
+Вероятность пересечения событий $A$ и $B$ равна
+$$P \left( A \cap B \right) =
+\frac{1}{2} \left[ \cdot 1^2 - \left( \frac{1}{2} \right)^2 \right] =
+\frac{1}{2} \cdot \frac{3}{4} =
+\frac{3}{8}.$$
+Тогда условная вероятность равна
+$$P \left( \left. A \right| B \right) =
+\frac{P \left( A \cap B \right) }{P \left( B \right) } =
+\frac{ \frac{3}{8} }{ \frac{1}{2} } =
+\frac{3}{4};$$
+\item множество $A$ --- четвёртая часть круга с радиусом $1/2$.
+Вероятность пересечения событий $A$ и $B$ равна
+$$P \left( A \cap B \right) =
+\frac{1}{4} \cdot \pi \left( \frac{1}{2} \right)^2 =
+\frac{ \pi }{16}.$$
+Тогда условная вероятность равна
+$$P \left( \left. A \right| B \right) =
+\frac{P \left( A \cap B \right) }{P \left( B \right) } =
+\frac{ \frac{ \pi }{16} }{ \frac{1}{2} } =
+\frac{ \pi }{8};$$
+\item множество $A$ --- это равнобедренный прямоугольный треугольник с катетами длиной $1$.
+Вероятность пересечения событий $A$ и $B$ равна
+$$P \left( A \cap B \right) =
+\frac{1}{4} \cdot 1^2 =
+\frac{1}{4}.$$
+Тогда условная вероятность равна
+$$P \left( \left. A \right| B \right) =
+\frac{P \left( A \cap B \right) }{P \left( B \right) } =
+\frac{ \frac{1}{4} }{ \frac{1}{2} } =
+\frac{1}{2}.$$
+\end{enumerate}
+
+\subsubsection*{5.20}
+
+\textit{Задание.} Монета, для которой вероятность выпадения решки равна $p$, подбрасывается $n$ раз.
+Пусть событие $A$ состоит в том, что решка выпала при первом подбрасывании, а событие $B_k$ --- в том, что выпало ровно $k$ решек.
+Для каких пар $ \left( n, k \right) $ события $A$ и $B_k$ являются независимыми?
+
+\textit{Решение.}
+Опишем вероятностное пространство
+$ \Omega = \\
+= \left\{ \left( x_1, x_2, \dotsc, x_n \right), \,
+x_i \in \left\{ 0, 1\right\}, \,
+i = \overline{1, n} \right\} $,
+где 1 означает, что выпала решка, 0 --- выпал орёл.
+На каждом месте может стоять либо единица, либо ноль.
+Поэтому $ \left| \Omega \right| =2^n$.
+
+Опишем событие $A = \left\{ \left( x_1, x_2, \dotsc, x_n \right) \in \Omega, \, x_1 = 1 \right\} $.
+На первом месте может стоять только единица.
+Количество способов её выбрать равна одному.
+Тогда остаётся посчитать, сколько есть вариантов выпадения монеты при остальных $n - 1$ подбрасывании.
+Имеем $ \left| A \right| = 2^{n-1}$.
+Тогда вероятность события $A$ равна
+$$P \left( A \right) =
+\frac{2^{n-1}}{2^n} =
+\frac{1}{2}.$$
+
+Опишем событие $B_k = \left\{ \left( x_1, x_2, \dotsc, x_n \right) \in \Omega, \, \sum \limits_{i=1}^k x_i = k \right\} $.
+На $k$ местах могут стоять только единицы, на остальных $n - k$ местах --- только нули.
+Найдём количество способов выбрать $k$ мест, где будут единицы.
+Это $C_n^k$.
+Тогда вероятность равна
+$$P \left( B_k \right) =
+\frac{C_n^k}{2^n}.$$
+
+Чтобы события были независимы, нужно, чтобы вероятность пересечения этих событий равнялась произведению их вероятностей.
+Найдём произведение вероятностей:
+$$P \left( A \right) P \left( B_k \right) =
+\frac{1}{2} \cdot \frac{C_n^k}{2^n} =
+\frac{C_n^k}{2^{n+1}}.$$
+
+Найдём вероятность переечения этих событий:
+$$P \left( A \cap B \right) =
+P \left( \left\{ \left( x_1, x_2, \dotsc, x_n \right) \in \Omega, \, \sum \limits_{i=1}^k x_i = k, \, x_1 = 1 \right\} \right).$$
+Нужно выбрать $k - 1$ место, где будут единицы.
+Тогда
+$$P \left( A \cap B \right) =
+\frac{C_n^{k-1}}{2^n}.$$
+
+Приравняем полученные результаты:
+$$ \frac{C_n^k}{2^{n+1}} = \frac{C_n^{k-1}}{2^n}.$$
+Сократим на $2^n$.
+Получим:
+$$ \frac{C_n^k}{2} = C_n^{k-1}.$$
+Распишем:
+$$ \frac{n!}{2k! \left( n-k \right)!} = \frac{n!}{ \left( k-1 \right)! \left( n-k+1 \right)!}.$$
+Сократим на $n!$:
+$$\frac{1}{2k! \left( n-k \right)!} = \frac{1}{ \left( k-1 \right)! \left( n-k+1 \right)!}.$$
+Распишем факториалы:
+$$\frac{1}{2 \left( k-1 \right)!k \left( n-k \right)!} = \frac{1}{ \left( k-1 \right)! \left( n-k \right)! \left(n-k+1 \right)!}.$$
+Сократим:
+$$\frac{1}{2k} = \frac{1}{n-k+1}.$$
+Перемножим как пропорцию: $2k = n - k + 1$.
+Выразим $n$ из этого уравнения: $n = 3k - 1$.
+Тогда события $A$ и $B_k$ независимы при парах $ \left( 3k-1, k \right) $.
