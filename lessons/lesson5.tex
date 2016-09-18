@@ -642,3 +642,33 @@ $$P \left( \left. B \right| \overline{A} \right) =
 Вероятностьь в этом случае равна
 $$p =
 \frac{ \left( 1-a_i \right) p_i}{1-p_i a_i}.$$
+
+\subsubsection*{5.25}
+
+\textit{Задание.} Допустим, что $A$ и $B$ такие события, что
+$P \left( \left. A \right| B \right) = P \left( \left. B \right| A \right); \,
+P \left( A \cup B \right) = \\
+= 1; \,
+P \left( A \cap B \right) > 0$.
+Докажите, что $P \left( A \right) > 1/2$.
+
+\textit{Решение.} Распишем условные вероятности:
+$$P \left( \left. A \right| B \right) =
+\frac{P \left( A \cap B \right) }{P \left( B \right) }.$$
+По условию задачи это равно
+$$P \left( \left. B \right| A \right) =
+\frac{P \left( A \cap B \right) }{P \left( B \right) }.$$
+Отсюда видим, что $P \left( A \right) = P \left( B \right) $.
+
+По формуле включений-исключений:
+$P \left( A \cup B \right) =
+P \left( A \right) + P \left( B \right) - P \left( A \cap B \right) = \\
+= 2P \left( A \right) - P \left( A \cap B \right) =
+1$.
+Выразим отсюда вероятность события $A$.
+Имеем:
+$$P \left( A \right) = \frac{1}{2} + \frac{P \left( A \cap B \right) }{2}.$$
+По условию $P \left( A \cap B \right) > 0$.
+Поэтому
+$$P \left( A \right) >
+\frac{1}{2}.$$
