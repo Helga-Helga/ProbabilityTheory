@@ -271,10 +271,10 @@ $$P \left( A/B \right) =
 Вероятностное пространство эксперимента,
 которое состоит в выборе точки в квадрате
 $ \left[ 0, 1 \right]^2$, опишем множеством
-$ \Omega =
+$$ \Omega =
 \left\{ \left( \xi_1, \xi_2 \right), \,
 0 \leq \xi_1 \leq 1, \,
-0 \leq \xi_2 \leq 1 \right\} $,
+0 \leq \xi_2 \leq 1 \right\},$$
 где через $ \xi_1$ обозначена первая координата точки, а через $ \xi_2$ --- вторая координата.
 
 Вычислим вероятность события $B$.
@@ -304,7 +304,8 @@ $$P \left( \left. A \right| B \right) =
 \frac{P \left( A \cap B \right) }{P \left( B \right) } =
 \frac{ \frac{1}{2} }{ \frac{1}{2} } =
 1;$$
-\item множество $A$ --- это фигура, образованная вырезанием из квадрата со сторонами длиной $1$ квадрат со сторонами длиной $1/2$ (рис. \ref{fig:517}).
+\item множество $A$ --- это фигура,
+образованная вырезанием из квадрата со сторонами длиной $1$ квадрат со сторонами длиной $1/2$ (рис. \ref{fig:517}).
 \begin{figure}[h!]
   \centering
   \includegraphics[width=.4\textwidth]{./pictures/5_17.png}
@@ -413,3 +414,125 @@ $$\frac{\sum \limits_{i=1}^{n-1} p^{n-i+1}}{2k! \left( n-k \right)!} = \frac{1}{
 $$\frac{\sum \limits_{i=1}^{n-1} p^{n-i+1}}{2 \left( k-1 \right)!k \left( n-k \right)!} = \frac{1}{ \left( k-1 \right)! \left( n-k \right)! \left(n-k+1 \right)!}.$$
 Сократим:
 $$\frac{\sum \limits_{i=1}^{n-1} p^{n-i+1}}{2k} = \frac{1}{n-k+1}.$$
+
+\subsubsection*{5.21}
+
+\textit{Задание.} Вероятность безотказной работы реле при перегреве равна $0.95$, при вибрации --- $0.9$, при перегреве и вибрации --- $0.8$.
+Найдите вероятность отказа реле, если вероятность перегрева равна $0.2$, вероятность вибрации --- $0.1$, и считая, что перегрев и вибрация являются независимыми событиями.
+
+\textit{Решение.}
+Пусть событие $A =$ \{реле перегрелось\}, событие $B =$ \{произошла вибрация\}, событие $C =$ \{произошёл отказ реле\}, такие что
+\begin{equation*}
+\begin{split}
+P \left( A \right) = 0.2, \,
+P \left( B \right) = 0.1, \,
+P \left( \left. \overline{C} \right| A \right) = 0.95, \,
+P \left( \left. \overline{C} \right| B \right) = 0.9, \\
+P \left( \left. \overline{C} \right| A \cap B \right) = 0.2.
+\end{split}
+\end{equation*}
+
+Распишем условную вероятность:
+$$P \left( \left. \overline{C} \right| A \right) =
+\frac{P \left( \overline{C} \cap A \right) }{P \left( A \right) } =
+\frac{P \left( \overline{C} \cap A \right) }{0.2} =
+0.95.$$
+Отсюда $P \left( \overline{C} \cap A \right) = 0.2 \cdot 0.95 = 0.19$.
+
+Распишем условную вероятность:
+$$P \left( \left. \overline{C} \right| B \right) =
+\frac{P \left( \overline{C} \cap B \right) }{P \left( B \right) } =
+\frac{P \left( \overline{C} \cap B \right) }{0.1} =
+0.9.$$
+Отсюда $P \left( \overline{C} \cap B \right) = 0.1 \cdot 0.9 = 0.09$.
+
+Распишем условную вероятность:
+\begin{equation*}
+\begin{split}
+P \left( \left. \overline{C} \right| A \cap B \right) =
+\frac{P \left( \overline{C} \cap A \cap B \right) }{P \left( A \cap B \right) } =
+\frac{P \left( \overline{C} \cap A \cap B \right) }{P \left( A \right) P \left( B \right) } =
+\frac{P \left( \overline{C} \cap A \cap B \right) }{0.2 \cdot 0.1} = \\
+= \frac{P \left( \overline{C} \cap A \cap B \right) }{0.02} =
+0.2.
+\end{split}
+\end{equation*}
+Отсюда $P \left( \overline{C} \cap A \cap B \right) = 0.2 \cdot 0.02 = 0.004$.
+
+Посчитаем
+$P \left( \overline{ \overline{C} \cap A} \right) =
+P \left( C \cup \overline{A} \right) =
+P \left( C \right) + P \left( \overline{A} \right) - P \left( C \cap \overline{A} \right) =
+P \left( C \right) + \\
++ 1 - 0.2 - P \left( C \cap \overline{A} \right) =
+1 - 0.19$.
+Тогда $P \left( C \right) - P \left( C \cap \overline{A} \right) = 0.2 - 0.19 = 0.01$.
+
+Найдём
+$P \left( \overline{ \overline{C} \cap B} \right) =
+P \left( C \cup \overline{B} \right) =
+P \left( C \right) + P \left( \overline{B} \right) - P \left( C \cap \overline{B} \right) =
+P \left( C \right) + \\ + 1 - 0.1 - P \left( C \cap \overline{B} \right) =
+1 - 0.09.$
+Отсюда $P \left( C \right) - P \left( C \cap \overline{B} \right) = 0.1 - 0.09 = 0.01$.
+
+Найдём
+$P \left( \overline{ \overline{C} \cap A \cap B} \right) =
+P \left( C \cup \overline{A} \cup \overline{B} \right) =
+P \left( C \right) + P \left( \overline{A} \right) + P \left( \overline{B} \right) - \\
+- P \left( C \cap \overline{A} \right) - P \left( C \cap \overline{B} \right) - P \left( \overline{A} \cap \overline{B} \right) +
+P \left( C \cap \overline{A} \cap \overline{B} \right) =
+P \left( C \right) + 1 - 0.2 + 1 - \\ 
+- 0.1 - P \left( C \cap \overline{A} \right) - P \left( C \cap \overline{B} \right) - \left( 1 - 0.2 \right) \left( 1 - 0.1 \right) +
+P \left( C \cap \overline{A} \cap \overline{B} \right) =
+P \left( C \right) - \\
+- P \left( C \cap \overline{A} \right) -
+P \left( C \cap \overline{B} \right) +P \left( C \cap \overline{A} \cap \overline{B} \right) + 0.98 =
+1 - 0.004 =
+0.996$.
+Отсюда
+$P \left( C \right) -
+P \left( C \cap \overline{A} \right) -
+P \left( C \cap \overline{B} \right) + P \left( C \cap \overline{A} \cap \overline{B} \right) = 0.016$.
+
+Составим систему:
+\begin{equation*}
+\begin{split}
+\begin{cases}
+P \left( C \right) = P \left( C \cap \overline{A} \right) + 0.01; \\
+P \left( C \right) = P \left( C \cap \overline{B} \right) + 0.01; \\
+P \left( C \right) =
+P \left( C \cap \overline{B} \right) -  P \left( C \cap \overline{A} \cap \overline{B} \right) + P \left( C \cap \overline{A} \right) + 0.016.
+\end{cases}
+\end{split}
+\end{equation*}
+
+Получили 3 уравнения и 4 неизвестных.
+Упростим:
+$P \left( C \right) =
+P \left( C \right) - \\
+- 0.01 - P \left( C \cap \overline{A} \cap \overline{B} \right) + P \left( C \right) - 0.01 + 0.016 =
+0.006 - P \left( C \cap \overline{A} \cap \overline{B} \right) + 2P \left( C \right) $.
+
+Выразим вероятность события $C$.
+Получим:
+$P \left( C \right) = 0.012 - \\
+- 0.5 P \left( C \cap \overline{A} \cap \overline{B} \right) $.
+
+Отсюда $P \left( C \cap \overline{A} \cap \overline{B} \right) = 0.024 - 2 P \left( C \right) $.
+
+По формуле включений-исключений:
+$P \left( \overline{C \cap \overline{A} \cap \overline{B}} \right) =
+P \left( \overline{C} \cup A \cup B \right) = \\
+= P \left( \overline{C} \right) +
+P \left( A \right) +
+P \left( B \right) -
+P \left( \overline{C} \cap A \right) -
+P \left( \overline{C} \cap B \right) - P \left( A \cap B \right) + P \left( \overline{C} \cap A \cap B \right) = \\
+= 1 - P \left( C \right) + 0.2 + 0.1 - 0.2 \cdot 0.1 + 0.04 =
+0.92 - P \left( C \right) $.
+
+Это равно $0.92 - P \left( C \right) = 1 - P \left( C \cap \overline{A} \overline{B} \right) = 1 - 0.024 + 2 P \left( C \right) $.
+Тогда $0.92 - P \left( C \right) = 0.076 + 2 P \left( C \right) $.
+Выразим вероятность собыития $C$ из этого уравнения: $3P \left( C \right) = 0.92 - 0.076 = 0.844$.
+Отсюда $P \left( C \right) = 0.844/3 = \\ = 0.281 \left( 3 \right) $.
