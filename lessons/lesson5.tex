@@ -115,7 +115,65 @@ $$P \left( \left. A \right| B \right) =
 \frac{P \left( A \cap B \right) }{P \left( B \right) } =
 \frac{ \frac{1}{18} }{ \frac{1}{8} } =
 \frac{8}{18} =
-\frac{4}{9}.$$ 
+\frac{4}{9}.$$
+
+\subsubsection*{5.5}
+
+\textit{Задание.}
+Считая,
+что рождение мальчика или девочки являются равновероятными, найдите вероятность того, что в семье с двумя детьмя оба мальчика, если известно, что
+\begin{enumerate}[label=\alph*)]
+\item старший ребёнок --- мальчик;
+\item среди детей есть хотя бы один мальчик.
+\end{enumerate}
+
+\textit{Решение.}
+Распишем пространство элементарных событий
+$ \Omega = \\
+= \left\{ \left( b, b \right), \, \left( b, g \right), \, \left( g, b \right), \, \left( g, g \right) \right\} $,
+где $b$ означает мальчик, $g$ --- девочка, на первом месте стоит старший ребёнок, на втором --- младший.
+В этом пространстве $ \left| \Omega \right| = 4$ элемента.
+
+Пусть событие $A = \left\{ \left( b, b \right) \right\} $.
+
+\begin{enumerate}[label=\alph*)]
+\item Рассмотрим событие $B = \left\{ \left( b, g \right), \, \left(b, b \right) \right\} $.
+Его вероятность равна
+$$P \left( B \right) =
+\frac{ \left| B \right| }{ \left| \Omega \right| } =
+\frac{2}{4} =
+\frac{1}{2}.$$
+
+Рассмотрим вероятность пересечения событий $A$ и $B$.
+Это будет
+$$P \left( A \cap B \right) =
+P \left( \left\{ \left( b, b \right) \right\} \right) =
+\frac{1}{4}.$$
+
+Тогда условная вероятность события $A$ при условии того, что событие $B$ произошло равна
+$$P \left( \left. A \right| B \right) =
+\frac{P \left( A \cap B \right) }{P \left( B \right) } =
+\frac{ \frac{1}{4} }{ \frac{1}{2} } =
+\frac{2}{4} =
+\frac{1}{2};$$ 
+\item рассмотрим событие $C = \left\{ \left( b, g \right), \, \left(b, b \right), \, \left( g, b \right) \right\} $.
+Его вероятность равна
+$$P \left( C \right) =
+\frac{ \left| C \right| }{ \left| \Omega \right| } =
+\frac{3}{4}.$$
+
+Рассмотрим вероятность пересечения событий $A$ и $C$.
+Это будет
+$$P \left( A \cap C \right) =
+P \left( \left\{ \left( b, b \right) \right\} \right) =
+\frac{1}{4}.$$
+
+Тогда условная вероятность события $A$ при условии того, что событие $C$ произошло равна
+$$P \left( \left. A \right| C \right) =
+\frac{P \left( A \cap C \right) }{P \left( C \right) } =
+\frac{ \frac{1}{4} }{ \frac{3}{4} } =
+\frac{1}{3}.$$ 
+\end{enumerate}
 
 \addcontentsline{toc}{section}{Домашнее задание}
 \section*{Домашнее задание}
