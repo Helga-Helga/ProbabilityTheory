@@ -711,3 +711,20 @@ $$P \left( \left. A_1 \right| C \right) P \left( \left. A_2 \right| A_1 C \right
 P \left( \left. A_n \right| A_1 A_2 \dotsc A_{n-1} C \right) =
 \frac{P \left( A_1 A_2 \dotsc A_{n-1} A_n C \right) }{P \left( C \right) }.$$
 А это равно левой части.
+
+\subsubsection*{5.28}
+
+\textit{Задание.} Пусть событие $A$ такое, что $P \left( A \right) $ равно 0 или 1.
+Докажите, что $A$ и произвольное событие $B$ независимы.
+
+\textit{Решение.} Рассмотрим произведение вероятностей событий.
+Если $P \left( A \right) = \\ = 0$, то $P \left( A \right) P \left( B \right) = 0$.
+Если $P \left( A \right) = 1$, то $P \left( A \right) P \left( B \right) = P \left( B \right) $.
+
+$A$ может быть либо пустым множеством, либо совпадать с множеством элементарных исходов.
+
+Рассмотрим вероятность пересечения событий. При $A = \varnothing$ имеем, что $P \left( A \cap B \right) = P \left( \varnothing \right) = 0$.
+Если $A = \Omega $, то $P \left( A \cap B \right) = P \left( B \right) $.
+
+События называются независимыми, если $P \left( A \cap B \right) = P \left( A \right) P \left( B \right) $.
+Получили, что это равенство выполняется, значит события независимы.
