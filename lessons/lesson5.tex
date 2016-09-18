@@ -18,6 +18,65 @@ $A$ и $B$ --- независимы, если $P \left( A \cap B \right) = P \le
 $$P \left( A/B \right) =
 \frac{P \left( A \cap B \right) }{P \left( B \right) }.$$
 
+\addcontentsline{toc}{section}{Аудиторные задачи}
+\section*{Аудиторные задачи}
+
+\subsubsection*{5.3}
+
+\textit{Задание.} Трижды подбросили монету.
+Пусть событие $A$ состоит в том, что дважды выпал герб, а событие $B$ --- в том, что хотя бы один раз выпал герб.
+Найдите условные вероятности $P \left( \left. A \right| B \right), \, P \left( \left. B \right| A \right) $.
+Являются ли события $A$ и $B$ независимы.
+
+\textit{Решение.} Распишем вероятностное пространство
+$$ \Omega =
+\left\{ \left( 1, 1, 1 \right), \,
+\left( 1, 1, 0 \right), \, \left( 1, 0, 1 \right), \, \left( 0, 1, 1 \right), \,
+\left( 1, 0, 0 \right), \, \left( 0, 1, 0 \right), \, \left( 0, 0, 1 \right), \,
+\left( 0, 0, 0 \right) \right\},$$
+где единица означает, что выпал герб, ноль --- цифра.
+На каждом из трёх мест может стоять 2 значения, поэтому $ \left| \Omega \right| = 2^3 = 8$.
+
+Распишем событие $A = \left\{ \left( 1, 1, 0 \right), \, \left( 1, 0, 1 \right), \, \left( 0, 1, 1 \right) \right\} $.
+Событие $A$ включает $ \left| A \right| = 3$ элемента.
+Тогда его вероятность равна
+$$P \left( A \right) =
+\frac{ \left| A \right| }{ \left| \Omega \right| } =
+\frac{3}{8}.$$
+
+Распишем событие
+$$B = \left\{ \left( 1, 1, 1 \right), \,
+\left( 1, 1, 0 \right), \, \left( 1, 0, 1 \right), \, \left( 0, 1, 1 \right), \,
+\left( 1, 0, 0 \right), \, \left( 0, 1, 0 \right), \, \left( 0, 0, 1 \right) \right\}.$$
+Вероятность этого события равна
+$$P \left( B \right) =
+\frac{ \left| B \right| }{ \left| \Omega \right| } = 
+\frac{7}{8}.$$
+
+Найдём вероятность перечечения этих событий:
+$$P \left( A \cap B \right) =
+P \left\{ \left( 1, 1, 0 \right), \, \left( 1, 0, 1 \right), \, \left( 0, 1, 1 \right) \right\} =
+\frac{3}{8}.$$
+
+Найдём условную вероятность события $A$ при условии, что событие $B$ произошло:
+$$P \left( \left. A \right| B \right) =
+\frac{P \left( A \cap B \right) }{P \left( B \right) } =
+\frac{ \frac{3}{8} }{ \frac{7}{8} } =
+\frac{3 \cdot 8}{7 \cdot 8} =
+\frac{3}{7}.$$
+
+Найдём условную вероятность события $B$ при условии, что событие $A$ произошло:
+$$P \left( \left. B \right| A \right) =
+\frac{P \left( A \cap B \right) }{P \left( A \right) } =
+\frac{ \frac{3}{8} }{ \frac{3}{8} } =
+1.$$
+
+Найдём произведение вероятностей
+$$P \left( A \right) P \left( B \right) =
+\frac{3}{8} \cdot \frac{7}{8} =
+\frac{21}{64}.$$
+Видим, что это не равно вероятности пересечения этих событий, значит события не независимы.
+
 \addcontentsline{toc}{section}{Домашнее задание}
 \section*{Домашнее задание}
 
