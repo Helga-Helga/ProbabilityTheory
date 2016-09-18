@@ -684,3 +684,30 @@ $$P \left( A \right) >
 
 Если $P \left( A \right) \neq 0$, то можно на него сократить, тогда $P \left( B \right) = 1$.
 Иначе $P \left( A \right) = 0$, тогда $P \left( B \right) \in \left( 0, 1 \right) $.
+
+\subsubsection*{5.27}
+
+\textit{Задание.} Докажите, что
+$P \left( \left. A_1 \dotsc A_n \right| C \right) =
+P \left( \left. A_1 \right| C \right)
+P \left( \left. A_2 \right| A_1 C \right) \dotsc \cdot \\
+\cdot P \left( \left. A_n \right| A_1 A_2 \dotsc A_{n-1} C \right) $.
+
+\textit{Решение.} Распишем левую часть:
+$$P \left( \left. A_1 \dotsc A_n \right| C \right) =
+\frac{P \left( A_1 \dotsc A_n C \right) }{P \left( C \right) }.$$
+Распишем правую часть:
+\begin{equation*}
+\begin{split}
+P \left( \left. A_1 \right| C \right) P \left( \left. A_2 \right| A_1 C \right) \dotsc
+P \left( \left. A_n \right| A_1 A_2 \dotsc A_{n-1} C \right) = \\
+= \frac{P \left( A_1 C \right) }{P \left( C \right) } \cdot \frac{P \left( A_1 A_2 C \right) }{P \left( A_1 C \right) } \dotsc
+\frac{P \left( A_1 A_2 \dotsc A_{n-1} A_n C \right) }{P \left( A_1 A_2 \dotsc A_{n-1} C \right) }.
+\end{split}
+\end{equation*}
+Всё кроме числителя последней дроби и знаменателя первой дроби сокращается.
+Получаем то, что требовали:
+$$P \left( \left. A_1 \right| C \right) P \left( \left. A_2 \right| A_1 C \right) \dotsc
+P \left( \left. A_n \right| A_1 A_2 \dotsc A_{n-1} C \right) =
+\frac{P \left( A_1 A_2 \dotsc A_{n-1} A_n C \right) }{P \left( C \right) }.$$
+А это равно левой части.
