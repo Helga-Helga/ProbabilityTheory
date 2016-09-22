@@ -597,19 +597,32 @@ $$ P(C) =
 
 \textit{Решение.}
 \begin{enumerate}[label=\alph*)]
-\item $ \overline{ A_1 } \cap \overline{ A_2 } \cap \dotsc \cap \overline{ A_n } =
-\bigcap \limits_{ i = 1 }^n \overline{ A_i }$;
+\item $ \overline{A_1} \cap \overline{A_2} \cap \dotsc \cap \overline{A_n} =
+\bigcap \limits_{i=1}^n \overline{A_i}$;
 
 \item $ A_1 \cup A_2 \cup \dotsc \cup A_n =
-\bigcup \limits_{ i = 1 }^n A_i $;
+\bigcup \limits_{i=1}^n A_i $;
 
-\item $ \bigcup \limits_{ i = 1 }^n \left( A_i \bigcap \limits_{ j \neq i } \overline{ A_j } \right) $;
+\item $ \bigcup \limits_{i=1}^n \left( A_i \cap \left( \bigcap \limits_{j=1}^n \overline{A_j} \right) \right), \, j \neq i$;
 
-\item $ \bigcup \limits_{ i = 1 }^n \bigcup \limits_{ j = 1 }^n \left( \bigcap \limits_{ k \neq i, j} \overline{ A_k } \right) $;
+\item $ \bigcup \limits_{i, j=1}^n \left( A_i \cap A_j \cap \left( \bigcap \limits_{k=1}^n \overline{A_k} \right) \right), \, i \neq j \neq k$;
 
-\item $ \bigcup \limits_{ i = 1 }^n \bigcup \limits_{ j = 1 }^n \overline{ A_i } \, \overline{ A_j } $;
+\item $D =$ \{хотя бы две детали не имеют дефектов\} = \{иди две детали не имеют дефектов, или 3 детали не имеют дефектов, ..., или $n$ деталей не имеет дефектов\}.
 
-\item $ \bigcup \limits_{ i = 1 }^n \bigcup \limits_{ j = 1 }^n \left( A_i A_j \bigcap \limits_{ k \neq i, j } \overline{ A_k } \right) $.
+Рассмотрим противоположное событие: $ \overline{D} =$ \{меньше двух деталей не имеют дефекта\} = \{все детали с дефектами\} $ \cup $
+\{ровно одна деталь не имеет дефекта\} $= \left( \bigcap \limits_{i=1}^n A_i \right) \cup \left( \bigcup \limits_k \overline{A_k} \bigcap \limits_{i \neq k} A_i \right) $.
+
+Вернёмся к нужному событию.
+Воспользуемся правилом де Моргана:
+$D =
+\overline{ \left( \bigcap \limits_{i=1}^n A_i \right) \cup \left( \bigcup \limits_k \overline{A_k} \bigcap \limits_{i \neq k} A_i \right) }$; 
+
+\item $E =$ \{не больше двух деталей имеют дефект\} = \{все детали без дефектов\} $ \cup $ \{одна деталь с дефектом\} $ \cup
+$ \{две детали с дефектом\}
+$= \left( \bigcap \limits_{i=1}^n \overline{A_i} \right) \cup
+\left( \bigcup \limits_{j=1}^n A_j \cap \left( \bigcap \limits_{k=1}^n \overline{A_k} \right) \right) \cup
+\left( \bigcup \limits_{l,m=1}^n \left( A_l \cap A_m \cap \left( \bigcap \limits_{t=1}^n \overline{A_t} \right) \right) \right), \, i \neq \\
+\neq j \neq k \neq l \neq m \neq t$.
 \end{enumerate}
 
 \subsubsection*{2.14}
