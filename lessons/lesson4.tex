@@ -289,16 +289,18 @@ $$A =
 z \in \left( 0, 1 \right) \right\}.$$
 Изобразив $A$ на плоскости,
 можно убедиться,
-что точки множества $A$ образуют квадрат с двумя вырезанными прямоугольными равнобедренными треугольниками с катетами $z$.
+что точки множества $A$ образуют квадрат с двумя вырезанными прямоугольными равнобедренными треугольниками с катетами $1 - z$.
 
 Найдём площадь треугольника:
-$$S = \frac{1}{2} z \cdot z =
-\frac{z^2}{2}.$$
+$$S = \frac{1}{2} \cdot \left( 1-z \right)^2 =
+\frac{ \left( 1-z \right)^2}{2}.$$
 
 Тогда вероятность равна
 $$P \left( A \right) =
-\frac{1^2 - \frac{z^2}{2}}{1} =
-1 - \frac{z^2}{2};$$
+1 - 2 \cdot \frac{ \left( 1-z \right)^2}{2} =
+1 - \left( 1-z \right)^2 =
+1 - 1 + 2z - z^2 =
+z \left( 2-z \right);$$
 
 \item событие
 $A =
@@ -308,31 +310,32 @@ $A = \\
 = \left\{ \left( \xi, \eta \right) \in \Omega: \,
 \min \left( \xi, \eta \right) < z, \,
 z \in \left( 0, 1 \right) \right\} $.
-Изобразив $A$ на плоскости, можно убедиться, что точки множества $A$ образуют квадрат со сторонами длиной $z$ (рис. \ref{fig:45}, \ref{fig:451}).
+Изобразив $A$ на плоскости,
+можно убедиться, что точки множества $A$ образуют квадрат со сторонами длиной $1$ без квадрата со стороной длиной $1 - z$ (рис. \ref{fig:45}, \ref{fig:451}).
 
 \begin{figure}[h!]
   \centering
   \begin{minipage}[b]{0.4\textwidth}
     \includegraphics[width=\textwidth]{./pictures/4_5.png}
-    \caption{$ \xi < \eta, \min \left( \xi, \eta \right) = \\ = \xi < z$}
+    \caption{$ \xi < \eta, \min \left( \xi, \eta \right) = \\ = \eta < z$}
     \label{fig:45}
   \end{minipage}
   \hfill
   \begin{minipage}[b]{0.4\textwidth}
     \includegraphics[width=\textwidth]{./pictures/4_5_1.png}
-    \caption{$ \xi \geq \eta, \min \left( \xi, \eta \right) = \\ = \eta < z$}
+    \caption{$ \xi \geq \eta, \min \left( \xi, \eta \right) = \\ = \xi < z$}
     \label{fig:451}
   \end{minipage}
 \end{figure}
 
 Поэтому
 $$P =
-\frac{z^2}{1} =
-z^2;$$
+1 - \left( 1-z \right)^2;$$
 
-\item упростим неравенство. Умножим левую и правую части на $2$.
+\item рассмотрим случай, когда $2z < 1$.
+Упростим неравенство. Умножим левую и правую части на $2$.
 Получим: $ \xi + \eta < 2z$.
-Выразим $ \xi $ и $ \eta: \, \xi < 2z - \eta, \, \eta < 2z - \xi $.
+Выразим $ \xi $ и $ \eta: \, \xi < \\ < 2z - \eta, \, \eta < 2z - \xi $.
 
 Событие
 $$A =
@@ -347,7 +350,7 @@ z \in \left( 0, 1 \right) \right\}.$$
 \begin{figure}[h!]
   \centering
   \includegraphics[width=.4\textwidth]{./pictures/4_5_2.png}
-  \caption{Точки множества $A$}
+  \caption{Точки множества $A, \, 2z < 1$}
   \label{fig:452}
 \end{figure}
 
@@ -357,6 +360,20 @@ $$P \left( A \right) =
 \frac{ \frac{1}{2} \cdot 2z \cdot 2z}{1 \cdot 1} =
 2z^2.$$
 \end{enumerate}
+
+Теперь рассмотрим случай, когда $2z > 1$ (рис. \ref{fig:453}).
+
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=.4\textwidth]{./pictures/4_5_3.png}
+  \caption{Точки множества $A, \, 2z > 1$}
+  \label{fig:453}
+\end{figure}
+
+Вероятность тогда равна
+$$P \left( A \right) =
+1 - \frac{1}{2} \cdot \left( 2-2z \right)^2 =
+1 - 2 \left( 1-z \right)^2.$$
 
 \subsubsection*{4.6}
 
