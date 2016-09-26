@@ -213,6 +213,330 @@ P \left( \left. A \right| B \right) =
 \end{split}
 \end{equation*}
 
+\subsubsection*{5.7}
+
+\textit{Задание} Точка наугад выбрана в квадрате $ \left[ 0,1 \right]^2$.
+Пусть
+$$A =
+\left\{ \xi_1 \leq \frac{1}{2} \right\}, \,
+B =
+\left\{ \xi_2 \leq \frac{1}{2} \right\}, \,
+C =
+\left\{ \left( \xi_1 - \frac{1}{2} \right) \left( \xi_2 - \frac{1}{2} \right) < 0 \right\}.$$
+Выясните, являются ли эти события независимыми:
+\begin{enumerate}[label=\alph*)]
+\item попарно;
+\item в совокупности.
+\end{enumerate}
+
+\textit{Решение} Опишем вероятностное пространство $ \Omega = \left[ 0,1 \right]^2$.
+Его площадь равна $S_{ \Omega } = 1 \cdot 1 = 1$.
+Событию
+$$A =
+\left\{ \xi_1 \leq \frac{1}{2} \right\} $$
+способствуют все точки квадрата, расположенные не правее вертикальной прямой
+$$ \xi_1 \leq \frac{1}{2}.$$
+Событие $A$ --- это прямоугольник со сторонами длиной $1$ и $1/2$.
+Его площадь равна
+$$S_A =
+1 \cdot \frac{1}{2} =
+\frac{1}{2}.$$
+Тогда вероятность события $A$ равна
+$$P \left( A \right) =
+\frac{S_A}{S_{ \Omega }} =
+\frac{ \frac{1}{2} }{1} =
+\frac{1}{2}.$$
+
+Событию $B$ способствуют точки квадрата, расположенные ниже горизонтальной прямой
+$$ \xi_2 = \frac{1}{2}.$$
+Это прямоугольник о сторонами длиной $1$ и $1/2$.
+Его площадь равна
+$$S_B =
+1 \cdot \frac{1}{2} =
+\frac{1}{2}.$$
+Тогда вероятность события $B$ равна
+$$P \left( B \right) =
+\frac{S_B}{S_{ \Omega }} =
+\frac{ \frac{1}{2} }{1} =
+\frac{1}{2}.$$
+
+Событию $C$ способствуют 2 квадрата со сторонами длиной $1/2$.
+Их площадь равна
+$$S_C =
+2 \cdot \frac{1}{2} \cdot \frac{1}{2} =
+\frac{1}{2}.$$
+Тогда вероятность события $C$ равна
+$$P \left( C \right) =
+\frac{S_C}{S_{ \Omega }} =
+\frac{ \frac{1}{2} }{1} =
+\frac{1}{2}.$$
+
+\begin{enumerate}[label=\alph*)]
+\item Найдём вероятность пересечения события $A$ и $B$.
+Это будет
+$$P \left( A \cap B \right) =
+P \left( \left\{ \xi_1 \leq \frac{1}{2}, \, \xi_2 \leq \frac{1}{2} \right\} \right) =
+\frac{1}{4},$$
+т.к. эти точки образуют квадрат со сторонами $1/2$.
+Видим, что
+$$P \left( A \cap B \right) =
+P \left( A \right) P \left( B \right) =
+\frac{1}{4},$$
+поэтому события независимы.
+
+Найдём вероятность пересечения события $A$ и $С$.
+Это будет
+$$P \left( A \cap C \right) =
+P \left( \left\{ \xi_1 \leq \frac{1}{2}, \, \left( \xi_1 - \frac{1}{2} \right) \left( \xi_2 - \frac{1}{2} \right) < 0 \right\} \right) =
+\frac{1}{4},$$
+т.к. эти точки образуют квадрат со сторонами $1/2$.
+Видим, что
+$$P \left( A \cap C \right) =
+P \left( A \right) P \left( C \right) =
+\frac{1}{4},$$
+поэтому события независимы.
+
+Найдём вероятность пересечения события $C$ и $B$.
+Это будет
+$$P \left( C \cap B \right) =
+P \left( \left\{ \left( \xi_1 - \frac{1}{2} \right) \left( \xi_2 - \frac{1}{2} \right) < 0, \, \xi_2 \leq \frac{1}{2} \right\} \right) =
+\frac{1}{4},$$
+т.к. эти точки образуют квадрат со сторонами $1/2$.
+Видим, что
+$$P \left( C \cap B \right) =
+P \left( C \right) P \left( B \right) =
+\frac{1}{4},$$
+поэтому события независимы;
+\item найдём вероятность пересечения всех трёх событий:
+\begin{equation*}
+\begin{split}
+P \left( A \cap B \cap C \right) = \\
+= P \left( \left\{ \xi_1 \leq \frac{1}{2}, \,
+\xi_2 \leq \frac{1}{2}, \,
+\left( \xi_1 - \frac{1}{2} \right) \left( \xi_2 - \frac{1}{2} \right) < 0\right\} \right) =
+0.
+\end{split}
+\end{equation*}
+События не являются независимыми в совокупности, так как
+$$P \left( A \cap B \cap C \right) =
+0 \neq
+P \left( A \right) P \left( B \right) P \left( C \right) =
+\frac{1}{8}.$$
+\end{enumerate}
+
+\subsubsection*{5.8}
+
+\textit{Задание.} Докажите, что
+$P \left( A_1 \dotsc A_n \right) = \\
+= P \left( A_1 \right) P \left( \left. A_2 \right| A_1 \right) \dotsc P \left( \left. A_n \right| A_1 A_2 \dotsc A_{n-1} \right) $.
+
+\textit{Решение.} Распишем правую часть по формуле условной вероятности:
+\begin{equation*}
+\begin{split}
+P \left( A_1 \right) P \left( \left. A_2 \right| A_1 \right) \dotsc P \left( \left. A_n \right| A_1 A_2 \dotsc A_{n-1} \right) =
+P \left( A_1 \right) \cdot
+\frac{P \left( A_1 \cap A_2 \right) }{P \left( A_1 \right) } \cdot
+\dotsc \times \\
+\times \frac{P \left( A_1 A_2 \dotsc A_{n-1} A_n \right) }{P \left( A_1 A_2 \dotsc A_{n-1} \right) } =
+P \left( A_1 A_2 \dotsc A_{n-1} A_n \right).
+\end{split}
+\end{equation*}
+
+\subsubsection*{5.9}
+
+\textit{Задание.}
+Пусть $P \left( A \right) \in \left( 0,1 \right) $ и $P \left( \left. B \right| \overline{A} \right) = P \left( \left. B \right| A \right) $.
+Докажите, что $A$ и $B$ независимы.
+
+\textit{Решение.} Распишем условные вероятности:
+$$P \left( \left. B \right| \overline{A} \right) =
+\frac{P \left( B \cap \overline{A} \right) }{P \left( \overline{A} \right) } =
+\frac{P \left( B \cap A \right)}{P \left( A \right) } =
+P \left( \left. B \right| A \right).$$
+
+Известно, что $P \left( \overline{A} \right) = 1 - P \left( A \right) $, поэтому
+$$\frac{P \left( B \cap \overline{A} \right) }{1 - P \left( A \right) } =
+\frac{P \left( B \cap A \right)}{P \left( A \right) }.$$
+
+По формуле разницы множеств: $P \left( B \setminus A \right) = P \left( B \cap \overline{A} \right) $ получаем:
+$$\frac{P \left( B \setminus A \right) }{1 - P \left( A \right) } =
+\frac{P \left( B \cap A \right)}{P \left( A \right) }.$$
+
+Так как $P \left( B \setminus A \right) = P \left( B \right) - P \left( A \cap B \right) $, то
+$$\frac{P \left( B \right) - P \left( A \cap B \right) }{1 - P \left( A \right) } =
+\frac{P \left( B \cap A \right)}{P \left( A \right) }.$$
+
+Перемножим как пропорцию:
+$P \left( A \right) \left( P \left( B \right) - P \left( A \cap B \right) \right) = \\
+= P \left( A \cap B \right) \left( 1 - P \left( A \right) \right) $.
+
+Раскроем скобки:
+$P \left( A \right) P \left( B \right) - P \left( A \right) P \left( A \cap B \right) =
+P \left( A \cap B \right) - \\ - P \left( A \cap B \right) P \left( A \right) $.
+
+Уничтожим одинаковые члены: $P \left( A \right) P \left( B \right) = P \left( A \cap B \right) $.
+Это значит, что события $A$ и $B$ независимы.
+
+\subsubsection*{5.10}
+
+\textit{Задание.} Докажите, что если событие $A$ не зависит само от себя, то или $P \left( A \right) = 1$, или $P \left( A \right) = 0$.
+
+\textit{Решение.}
+События независимы, когда вероятность пересечения равна пересечению вероятностей:
+$P \left( A \cap A \right) =
+P \left( A \right) P \left( A \right) =
+\left( P \left( A \right) \right)^2 =
+P \left( A \right) $.
+
+Квадрат числа равен числу, когда оно равно или нулю, или единице.
+
+\subsubsection*{5.11}
+
+\textit{Задание.} Вероятность того, что компьютер №1 проработает месяц без поломок равна $0.9$, для компьютера №2 эта вероятность равна $0.8$.
+Компьютеры работают независимо друг от друга.
+Найдите вероятность того, что за месяц работы:
+\begin{enumerate}[label=\alph*)]
+\item оба компьютера не поломаются;
+\item оба компьютера поломаются;
+\item поломается хотя бы один компьютер;
+\item поломается только компьютер №2;
+\item поломается один и только один из компьютеров.
+\end{enumerate}
+
+\textit{Решение.} Пусть событие $A =$ \{компьютер №1 не поломается\}, а событие $B =$ \{компьютер №2 не поломается\}.
+Их вероятности по условию равны $P \left( A \right) = 0.9$ и $P \left( B \right) = 0.8$.
+\begin{enumerate}[label=\alph*)]
+\item Вероятность того, что оба компьютера не поломаются равна
+$P \left( A \cap B \right) = \\
+= P \left( A \right) P \left( B \right) =
+0.9 \cdot 0.8 =
+0.72$;
+\item событие \{оба компьютера поломаются\} означает, что не произойдёт ни событие $A$, ни событие $B$.
+Вероятность такого события равна
+\begin{equation*}
+\begin{split}
+P \left( \overline{A} \cap \overline{B} \right) =
+P \left( \overline{A} \right) P \left( \overline{B} \right) =
+\left( 1 - 0.9 \right) \left( 1 - 0.8 \right) =
+0.1 \cdot 0.2 =
+0.02;
+\end{split}
+\end{equation*} 
+\item данное событие означает, что произойдёт хотя бы одно из событий $\overline{A}$ или $ \overline{B}$.
+По формуле включений-исключений имеем:
+$P \left( \overline{A} \cup \overline{B} \right) = \\
+= P \left( \overline{A} \right) + P \left( \overline{B} \right) - P \left( \overline{A} \cap \overline{B} \right) =
+1 - 0.9 + 1 - 0.8 - 0.02 =
+0.1 + 0.2 - 0.02 = \\
+= 0.3 - 0.02 =
+0.298$;
+\item событие означает, что произошло событие $A$ и не произошло событие $B$.
+Вероятность этого равна
+$P \left( A \cap \overline{B} \right) =
+P \left( A \right) P \left( \overline{B} \right) =
+0.9 \cdot \left( 1 - 0.8 \right) = \\
+= 0.9 \cdot 0.2 =
+0.18$;
+\item событие означает, что произойдёт или событие $A$, или событие $B$.
+Вероятность того, что поломается только компьютер №1 равна
+$$P \left( \overline{A} \cap B \right) =
+P \left( \overline{A} \right) P \left( B \right) =
+\left( 1 - 0.9 \right) \cdot 0.2 =
+0.1 \cdot 0.2 =
+0.02.$$
+Вероятность того, что поломается только компьютер №2 равна
+$$P \left( A \cap \overline{B} \right) =
+P \left( A \right) P \left( \overline{B} \right) =
+0.9 \cdot \left( 1 - 0.8 \right) =
+0.9 \cdot 0.2 =
+0.18.$$
+Нужно найти сумму этих вероятностей: $0.02 + 0.18 = 0.2$.
+\end{enumerate}
+
+\subsubsection*{5.12}
+
+\textit{Задание.} Вероятность того, что хотя бы один из четырёх сигналов будет передан правильно, равна $0.9984$.
+Найдите вероятность правильной передачи одного сигнала, если сигналы передаются независимо друг от друга.
+
+\textit{Решение.} Вероятность того, что ни один из сигналов не будет передан правильно, равна $1 - 0.9984 = 0.0016$.
+Эта вероятность равна сумме четырёх вероятностей того, что сигнал не будет передан правильно, т.е. вероятность того,
+что один сигнал не будет передан правильно, равна $0.0016/4 = 0.04$.
+Тогда вероятность того, что 1 сигнал будет передан правильно, равна $1 - \\ - 0.04 = 0.96$.
+
+\subsubsection*{5.13}
+
+\textit{Задание.} Для некоторой группы людей из 60 человек данные о том, сколько человек курят и не курят и сколько из них имеют и не имеют рак лёгких отображены в таблице:
+\begin{center}
+\begin{tabular}{|l|l|l|l|}
+\hline
+& Не курит & Курит & Всего \\ \hline
+Не болеет раком & 40 & 10 & 50 \\ \hline
+Болеет раком & 7 & 3 & 10 \\ \hline
+Всего & 47 & 13 & 60 \\
+\hline
+\end{tabular}
+\end{center}
+Проанализовав данные в таблице,
+выясните, являются ли события $X = \\ =$ \{человек болеет раком\} и П = \{человек курит\} независимыми для данной группы людей.
+
+\textit{Решение} Из таблицы видим, что $ \left| X \right| = 10$, при этом $\left| \Omega \right| = 60$.
+Поэтому
+$$P \left( X \right) =
+\frac{ \left| X \right| }{ \left| \Omega \right| } =
+\frac{10}{60} =
+\frac{1}{6}.$$
+
+Аналогично $ \left| \prod \right| = 13$.
+Поэтому вероятность равна
+$$P \left( \Pi \right) =
+\frac{ \left| \Pi \right| }{ \left| \Omega \right| } =
+\frac{13}{60}.$$
+
+Найдём произведение этих вероятностей:
+$$P \left( X \right) P \left( \Pi \right) =
+\frac{1}{6} \cdot \frac{13}{60} =
+\frac{13}{360} =
+\frac{1}{27}.$$
+
+Найдём вероятность пересечения этих двух событий.
+Пересечение содержит $ \left| X \cap \Pi \right| = 3$.
+Тогда вероятность равна
+$$P \left( X \cap \Pi \right) =
+\frac{3}{60} =
+\frac{1}{20}.$$
+
+События не являются независимыми, так как
+$$ \frac{1}{27} \neq \frac{1}{20}.$$
+
+\addcontentsline{toc}{section}{Дополнительные задачи}
+\section*{Дополнительные задачи}
+
+\subsubsection*{5.14}
+
+\textit{Задание.}
+Докажите, что события
+$A_1, \dotsc, A_n$,
+которые заданы на одном вероятностном пространстве,
+независимы тогда и только тогда,
+когда выполняется $2^n$ условий:
+$P \left( A_1^{ \delta_1} \dotsc A_n^{ \delta_n} \right) =
+P \left( A_1^{ \delta_1} \right) \dotsc P \left( A_n^{ \delta_n} \right) $, где
+$$ \delta_i \in \left\{ 0, 1 \right\}; \, A_i^{ \delta_i} =
+\begin{cases}
+A_i, \, \delta_i = 1, \\
+\overline{A_i}, \, \delta_i = 0,
+\end{cases}
+i = \overline{1, n}.$$
+
+\textit{Решение.} Докажем с помощью математической индукции.
+В качестве базы индукции возьмём $n = 2$ и рассмотрим все возможные варианты для двух независимых событий:
+\begin{enumerate}
+\item $ \delta_1 = \delta_2 = 1$;
+\item $ \delta_1 = \delta _2 = 0$;
+\item $ \delta_1 = 0, \, \delta_2 = 1$;
+\item $ \delta_1 = 1, \, \delta_2 = 0$.
+\end{enumerate}
+
 \addcontentsline{toc}{section}{Домашнее задание}
 \section*{Домашнее задание}
 
