@@ -1,0 +1,116 @@
+\addcontentsline{toc}{chapter}{Занятие 6. Формула полной вероятности. Формула Байеса}
+\chapter*{Занятие 6. Формула полной вероятности. Формула Байеса}
+
+\addcontentsline{toc}{section}{Контрольные вопросы и задания}
+\section*{Контрольные вопросы и задания}
+
+\subsubsection*{Приведите определение полной группы гипотез.}
+
+Набор случайных событий $H_1, \dotsc, H_n$ называется полным набором гипотез, если выполнены следующие условия:
+\begin{enumerate}
+\item $P \left( H_i \right) > 0, \, i = \overline{1, n} $;
+\item $H_i \cap H_j = \varnothing, \, i \neq j$ (они несовместны);
+\item $ \bigcup \limits_{i=1}^n H_i = \Omega $.
+\end{enumerate}
+
+\subsubsection*{Запишите формулу для вычисления условной вероятности, формулу полной вероятности, формулу Байеса.}
+
+Условная вероятность события $A$ при условии, что событие $B$ произошло --- это выражение
+$$P \left( \left. A \right| B \right) =
+\frac{P \left( A \cap B \right) }{P \left( B \right) }.$$
+
+Формула полной вероятности: $P \left( A \right) = \sum \limits_{i=1}^n P \left( \left. A \right| H_i \right) P \left( H_i \right) $.
+
+Формула Байеса:
+$$P \left( \left. H_i \right| A \right) =
+\frac{P \left( \left. A \right| H_i \right) P \left( H_i \right) }{ \sum \limits_{k=1}^n P \left( \left. A \right| H_k \right) P \left( H_k \right) }.$$
+
+\addcontentsline{toc}{section}{Домашнее задание}
+\section*{Домашнее задание}
+
+\subsubsection*{6.13}
+
+\textit{Задание.} В первой урне содержатся 1 белый и 9 чёрных шаров; во второй урне --- 1 чёрный и 5 белых шаров.
+Из каждой урны наугад вынуто по одному шару, а остальные пересыпали в третью урну.
+Найдите вероятность того, что шар, вынятый наугад из третьей урны, окажется белым.
+
+\textit{Решение.}
+Введём полную группу событий:
+$H_1 =$ \{в третью урну переложили 10 чёрных и 4 белых шара\} = \{из обеих урн вынули по одному белому шару\};
+$H_2 =$ \{в третью урну переложили 9 чёрных и 5 белых шаров\} = \{из одной урны достали 1 белый шар, и из второй --- 1 чёрный шар\};
+$H_3 =$ \{в третью урну переложили 8 чёрных и 6 белых шаров\} = \{из обеих урн вынули по одному чёрному шару\}.
+Определим вероятности этих событий:
+\begin{equation*}
+\begin{split}
+P \left\{ H_1 \right\} =
+\frac{1}{10} \cdot \frac{5}{6} =
+\frac{1}{12}, \,
+P \left\{ H_2 \right\} =
+\frac{1}{10} \cdot \frac{1}{6} + \frac{9}{10} \cdot \frac{5}{6} =
+\frac{1}{60} + \frac{3}{4} =
+\frac{1+15}{60} =
+\frac{16}{60} = \\
+= \frac{1}{5}, \,
+P \left\{ H_3 \right\} =
+\frac{9}{10} \cdot \frac{1}{6} =
+\frac{3}{10 \cdot 2} =
+\frac{3}{20}.
+\end{split}
+\end{equation*}
+Введём событие $A =$ \{из третьей урны вытянули белый шар\}.
+В то же время
+$$P \left\{ \left. A \right| H_1 \right\} =
+\frac{4}{14} =
+\frac{2}{12}, \,
+P \left\{ \left. A \right| H_2 \right\} =
+\frac{5}{14}, \,
+P \left\{ \left. A \right| H_3 \right\} =
+\frac{6}{14} =
+\frac{3}{7}.$$
+Согласно с формулой полной вероятности $P \left\{ A \right\} = \sum \limits_{i=1}^\infty P \left\{ H_i \right\} \cdot P \left\{ \left. A \right| H_i \right\} $ имеем
+\begin{equation*}
+\begin{split}
+P \left\{ A \right\} =
+\frac{1}{12} \cdot \frac{2}{12} + \frac{1}{5} \cdot \frac{5}{14} + \frac{3}{20} + \frac{3}{7} =
+\frac{1}{72} + \frac{1}{14} + \frac{9}{140} =
+\frac{1960+10080+9072}{141120} = \\
+= \frac{21112}{141120}=
+\frac{377}{2520}.
+\end{split}
+\end{equation*}
+
+\subsubsection*{6.14}
+
+\textit{Задание.} Два стрелка стреляют по мишени.
+Один из них попадает в 5 случаях, а другой --- в 8 случаях из 10.
+Перед выстрелом они подбрасывают правильную монету для определения очередности.
+Сторонний наблюдатель знает условия стрельбы, но не видит, кто в данный момент стреляет.
+Он видит, что стрелок попал по мишени.
+Найдите вероятность того, что стрелял первый стрелок.
+
+\textit{Решение.} Первый стрелок попадает по мишени с вероятностью
+$$P \left( \left. A \right| H_1 \right) =
+\frac{5}{10} =
+\frac{1}{2},$$
+второй стрелок --- с вероятностью
+$$P \left( \left. A \right| H_2 \right) =
+\frac{8}{10} =
+\frac{4}{5}.$$
+Априорные вероятности этих гипотез одинаковы:
+$$P \left( H_1 \right) =
+P \left( H_2 \right) =
+\frac{1}{2}.$$
+Рассмотрим событие $A =$ \{стрелок попал в цель\}.
+Поэтому вероятность стрелять первому стрелку
+\begin{equation*}
+\begin{split}
+P \left( \left. A \right| H_1 \right) =
+\frac{P \left( \left. A \right| H_1 \right) P \left( H_1 \right) }{P \left( \left. A \right| H_1 \right) P \left( H_1 \right) +
+P \left( \left. A \right| H_2 \right) P \left( H_2 \right) } =
+\frac{ \frac{1}{2} \cdot \frac{1}{2} }{ \frac{1}{2} \cdot \frac{1}{2} + \frac{4}{5} \cdot \frac{1}{2} } =
+\frac{ \frac{1}{4} }{ \frac{1}{4} + \frac{2}{5} } = \\
+= \frac{ \frac{1}{4} }{ \frac{5+8}{20} } =
+\frac{20}{4 \cdot 13} =
+\frac{5}{13}.
+\end{split}
+\end{equation*}
