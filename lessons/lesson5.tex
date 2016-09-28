@@ -528,14 +528,82 @@ A_i, \, \delta_i = 1, \\
 \end{cases}
 i = \overline{1, n}.$$
 
-\textit{Решение.} Докажем с помощью математической индукции.
-В качестве базы индукции возьмём $n = 2$ и рассмотрим все возможные варианты для двух независимых событий:
-\begin{enumerate}
-\item $ \delta_1 = \delta_2 = 1$;
-\item $ \delta_1 = \delta _2 = 0$;
-\item $ \delta_1 = 0, \, \delta_2 = 1$;
-\item $ \delta_1 = 1, \, \delta_2 = 0$.
-\end{enumerate}
+\textit{Решение.} Рассмотрим $n$ случайных событий таких, что любые $n-1$ их них независимы, а все $n$ --- зависимы.
+
+Рассмотрим полный граф с $n$ вершинами ($n$ точек на плоскости, между которыми проведены все возможные рёбра).
+На каждом ребре случайным образом выбрано направление.
+Получился ориентированный граф (рис. \ref{fig:514}).
+
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=.4\textwidth]{./pictures/5_14.png}
+  \caption{Ориентированный граф}
+  \label{fig:514}
+\end{figure}
+
+Пускай $r_i$ --- количество стрелок, ведущих в $i$-ую вершину.
+Например, $r_1 = 2, \, r_4 = 3$.
+Событие $A_i =$ \{$r_i$ --- чётное\}.
+Утверждаем, что имеют место свойства:
+\begin{itemize}
+\item $A_1, \dotsc, A_n$ --- зависимые:
+$$r_1 + r_2 + \dotsc + r_n =
+\frac{n \left( n+1 \right) }{2}$$
+(общее количество стрелок, которое равно количеству рёбер);
+\item любые $n - 1$ события независимы.
+\end{itemize}
+
+Рассмотрим $A_1, \dotsc, A_n$.
+Найдём вероятность $A_1$.
+Начнём с описания вероятностного пространства.
+Имеем дело с классическим экспериментом.
+$ \Omega =$ \{все возможные ориентации графа\}, $ \left| \Omega \right| = 2^{ \frac{n \left( n-1 \right) }{2} }$.
+Докажем, что $ \left| A_1 \right| = \left| \overline{A_1} \right| $.
+Если сумеем построить биекицию (рис. \ref{fig:5141}), то $ \left| A_1 \right| = \left| \overline{A_1} \right| $.
+
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=.4\textwidth]{./pictures/5_14_1.png}
+  \caption{Слева --- ориентации, в которых $r_1$ --- чётное, справа --- ориентации, в которых $r_1$ --- нечётное}
+  \label{fig:5141}
+\end{figure}
+
+Все стрелки оставляем, а стрелку на ребре $1, 2$ меняем на противоположную (рис. \ref{fig:5142}).
+
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=.4\textwidth]{./pictures/5_14_2.png}
+  \caption{Построение биекции}
+  \label{fig:5142}
+\end{figure}
+
+Таким образом получим плохую ориентацию, при которой в вершину 1 будет идти нечётное количество стрелок --- взаимно однозначное отражение.
+$$P \left( A_1 \right) =
+\frac{1}{2}, \, P \left( A_1^{ \epsilon_1 } \cap A_2^{ \epsilon_2} \cap \dotsc \cap A_{n-1}^{ \epsilon_{n-1} } \right) =
+\frac{1}{2^{n-1}}.$$
+Проверим для $P \left( A_1 \cap A_2 \cap \dotsc \cap A_{n-1} \right) $ (рис. \ref{fig:5143}).
+
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=.4\textwidth]{./pictures/5_14_3.png}
+  \caption{Построение биекции}
+  \label{fig:5143}
+\end{figure}
+
+Покажем, что
+$ \left| A_1^{ \epsilon_1 } \cap \dotsc \cap A_{n-1}^{ \epsilon_{n-1} } \right| =
+\left| A_1 \cap \dotsc \cap A_{n-1} \right| \,
+\forall \epsilon_1, \dotsc, \epsilon_{n-1} =
+\pm 1$.
+Фиксируем все возможные наборы чётности.
+При разных наборах $A_i$ и $ \overline{A_i} $ не пересекаются.
+Должны научиться устанавливать биекцию.
+Есть ориентация, из которой хотим получить хорошую.
+Взаимно-однозначное соответствие устанавливается путём перевыбора направлений рёбер, ведущих из $n$-ой вершины во все остальные.
+$ \bigcup \limits_{ \epsilon_1, \dotsc, \epsilon_{n-1} \pm 1} A_1^{ \epsilon_1 \cap \dotsc \cap A_{n-1}^{ \epsilon_{n-1} }} =
+\Omega, \\
+P \left( A_1 \cap \dotsc \cap A_{n-1} \right) =
+\frac{1}{2^{n-1}}.$
 
 \addcontentsline{toc}{section}{Домашнее задание}
 \section*{Домашнее задание}
