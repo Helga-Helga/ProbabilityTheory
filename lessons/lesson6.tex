@@ -114,3 +114,51 @@ P \left( \left. A \right| H_2 \right) P \left( H_2 \right) } =
 \frac{5}{13}.
 \end{split}
 \end{equation*}
+
+\subsubsection*{6.15}
+
+\textit{Задание.} Среди $N$ экзаменационных билетов есть $n$ <<счастливых>>.
+Студенты подходят за билетами по одному.
+У кого больше шансов вынуть счастливый билет: у того, кто подошёл первым, или у того, что подошёл вторым?
+Найдите вероятность того, что студент, который подошёл первым, вынул счастливый билет, если известно, что студент, который подошёл вторым, вынул счастливый билет.
+
+\textit{Решение.} Если студент сдаёт экзамен первым, то вероятность вынуть счастливый билет равна $n/N$.
+Рассмотрим ситуацию, когда он сдаёт вторым.
+Введём гипотезы: $H_1$ --- первый забрал <<счастливый>> билет, $H_2$ --- первый не забрал <<счастливый>> билет.
+Событие $A =$ \{студент сдал экзамен\}.
+\begin{equation*}
+\begin{split}
+P \left( \left. A \right| H_1 \right) =
+\frac{n-1}{N-1}, \,
+P \left( \left. A \right| H_2 \right) =
+\frac{n}{N-1}, \,
+P \left( H_1 \right) =
+\frac{n}{N}, \,
+P \left( H_2 \right) =
+1 - \frac{n}{N} = \\
+= \frac{N-n}{N}.
+\end{split}
+\end{equation*}
+Используем формулу полной вероятности:
+\begin{equation*}
+\begin{split}
+P \left( A \right) =
+\frac{n-1}{N-1} \cdot \frac{n}{N} + \frac{n}{N-1} \cdot \frac{N-n}{N} =
+\frac{n}{N \left( N-1 \right) } \cdot \left( n-1+N-n \right) = \\
+= \frac{n \left( N-1 \right) }{N \left( N-1 \right) } =
+\frac{n}{N}.
+\end{split}
+\end{equation*}
+Вывод: без разницы, когда сдавать.
+
+Вероятность того, что студент, который пошёл первым, вынул счастливый билет, если известно, что студент, который пошёл вторым, вынул счастливый билет:
+\begin{equation*}
+\begin{split}
+P \left( \left. H_1 \right| A \right) =
+\frac{P \left( \left. A \right| H_1 \right) P \left( H_1 \right) }{P \left( \left. A \right| H_1 \right) P \left( H_1 \right) +
+P \left( \left. A \right| H_2 \right) P \left( H_2 \right) } = \\
+= \frac{ \frac{n-1}{N-1} \cdot \frac{n}{N} }{ \frac{n-1}{N-1} \cdot \frac{n}{N} + \frac{n}{N-1} \cdot \frac{N-n}{N} } =
+\frac{ \frac{n-1}{N-1} \cdot \frac{n}{N} }{ \frac{n}{N \left( N-1 \right) } \cdot \left( n-1+N-n \right) } =
+\frac{n-1}{N-1}.
+\end{split}
+\end{equation*}
