@@ -171,3 +171,19 @@ P \left( \left. A \right| H_2 \right) P \left( H_2 \right) } = \\
 Найдите вероятность того, что сигнал действительно попал на вход радиолокационного устройства.
 
 \textit{Решение.}
+Введём событие $A =$ \{устройство зарегистрировало наличие сигнала\} и сделаем гипотезы о том,
+какой же сигнал попал на радиолокационное устройство: $H_1 =$ \{попал сигнал с шумом\}, $H_2 =$ \{попал только шум\}.
+Нам нужно найти условную вероятность $P \left( \left. H_1 \right| A \right) $.
+По формуле Байеса:
+\begin{equation*}
+\begin{split}
+P \left( \left. H_1 \right| A \right) =
+\frac{P \left( \left. A \right| H_1 \right) P \left( H_1 \right) }{P \left( \left. A \right| H_1 \right) P \left( H_1 \right) +
+P \left( \left. A \right| H_2 \right) P \left( H_2 \right) } =
+\frac{0.7 \cdot 0.4}{0.7 \cdot 0.4 + 0.5 \cdot 0.6} = \\
+= \frac{7 \cdot 4}{7 \cdot 4 + 5 \cdot 6} =
+\frac{7 \cdot 2}{7 \cdot 2 + 5 \cdot 3} =
+\frac{14}{14 + 15} =
+\frac{14}{29}.
+\end{split}
+\end{equation*}
