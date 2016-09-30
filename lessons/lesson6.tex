@@ -187,3 +187,96 @@ P \left( \left. A \right| H_2 \right) P \left( H_2 \right) } =
 \frac{14}{29}.
 \end{split}
 \end{equation*}
+
+\subsubsection*{6.17}
+
+\textit{Задание.} В Лондоне в половину дней года идёт дождь.
+Прогноз погоды сбывается в $2/3$ случаев,
+то есть условная вероятность того,
+что будет идти дождь, при условии, что его прогнозировали, и условная вероятность того, что дождя не будет, при условии, что его не прогнозировали, равны $2/3$.
+Если прогнозируют дождь, мистер Пиквик всегда берёт зонт.
+Если же дождь не прогнозируют, то мистер Пиквик берёт зонт с вероятностью $1/3$.
+Найдите вероятность того, что:
+\begin{enumerate}[label=\alph*)]
+\item мистер Пиквик не имеет зонта, при условии, что идёт дождь;
+\item дождя нет, при условии, что мистер Пиквик имеет зонт.
+\end{enumerate}
+
+\textit{Решение.}
+Выберем событие $A =$ \{мистер Пиквик берёт зонт\} и сделаем гипотезы о том,
+будет или нет дождь, прогнозировали его или нет: $H_1 = \\ =$ \{дождь прогнозировали\}, $H_2 =$ \{дождь не прогнозировали\}, $X_1 =$ \{идёт дождь\}, $X_2 =$ \{дождь не идёт\}.
+Есть такие условия:
+\begin{equation*}
+\begin{split}
+P \left( X_1 \right) =
+P \left( X_2 \right) =
+\frac{1}{2}, \,
+P \left( \left. X_1 \right| H_1 \right) =
+\frac{2}{3} \rightarrow
+P \left( \left. X_1 \right| H_1 \right) =
+1 - \frac{2}{3} =
+\frac{1}{3}, \\
+P \left( \left. X_2 \right| H_2 \right) =
+\frac{2}{3} \rightarrow
+P \left( \left. X_2 \right| H_2 \right) =
+1 - \frac{2}{3} =
+\frac{1}{3}, \,
+P \left( \left. A \right| H_1 \right) =
+1, \,
+P \left( \left. A \right| H_2 \right) =
+\frac{1}{3}.
+\end{split}
+\end{equation*}
+\begin{enumerate}[label=\alph*)]
+\item Нужно найти условную вероятность $P \left( \left. \overline{A} \right| X_1 \right) $.
+Найдём сначала вероятность того, что идёт дождь.
+По формуле полной вероятности:
+$P \left( X_1 \right) =
+P \left( \left. X_1 \right| H_1 \right) P \left( H_1 \right) + P \left( \left. X_1 \right| H_2 \right) P \left( H_2 \right) =
+P \left( H_1 \right) P \left( \left. X_1 \right| H_1 \right) +  \\
++ \left( 1 - P \left( H_1 \right) \right) P \left( \left. X_2 \right| H_2 \right) =
+P \left( H_1 \right) \cdot \frac{2}{3} + \left( 1 - P \left( H_1 \right) \right) \cdot \frac{2}{3} =
+\frac{2}{3} \cdot P \left( H_1 \right) + \\
++ \frac{1}{3} - \frac{1}{4} \cdot P \left( H_1 \right) =
+\frac{1}{3} \cdot P \left( H_1 \right) + \frac{1}{3} =
+\frac{1}{2}$.
+Умножим полученное равенство на 6: $2P \left( H_1 \right) + 2 = 3$.
+Перенесём двойку в правую сторону: $2P \left( H_1 \right) = 3 - 2 = 1$.
+Выразим вероятность:
+$$P \left( H_1 \right) =
+\frac{1}{2}.$$
+Требуемая условная вероятность равна
+\begin{equation*}
+\begin{split}
+P \left( \left. \overline{A} \right| X_1 \right) =
+\frac{P \left( \left. \overline{A} \cap X_1 \right| H_1 \right) P \left( H_1 \right) +
+P \left( \left. \overline{A} \cap X_1 \right| H_2 \right) P \left( H_2 \right) }{P \left( X_1 \right) } = \\
+= 2 \cdot \frac{1}{2} \left( P \left( \left. \overline{A} \right| H_1 \right) P \left( \left. X_1 \right| H_1 \right) +
+P \left( \left. \overline{A} \right| H_2 \right) P \left( \left. X_1 \right| H_2 \right) \right) = \\
+= \left( 1-1 \right) \cdot \frac{2}{3} + \left( 1 - \frac{1}{3} \right) \cdot \frac{1}{3} =
+0 \cdot \frac{2}{3} + \frac{2}{3} \cdot \frac{1}{3} =
+\frac{2}{9};
+\end{split}
+\end{equation*}
+\item 
+\begin{equation*}
+\begin{split}
+P \left( \left. X_2 \right| A \right) =
+\frac{P \left( X_2 \cap A \right) }{P \left( A \right) } = \\
+= \frac{P \left( \left. X_2 \cap A \right| H_1 \right) P \left( H_1 \right) +
+P \left( \left. X_2 \cap A \right| H_2 \right) P \left( H_2 \right) }{P \left( \left. A \right| H_1 \right) P \left( H_1 \right) +
+P \left( \left. A \right| H_2 \right) P \left( H_2 \right) } = \\
+= \frac{P \left( \left. X_2 \right| H_1 \right) P \left( \left. A \right| H_1 \right) P \left( H_1 \right) +
+P \left( \left. X_2 \right| H_2 \right) P \left( \left. A \right| H_2 \right) P \left( H_2 \right)}{P \left( \left. A \right| H_1 \right) P \left( H_1 \right) +
+P \left( \left. A \right| H_2 \right) P \left( H_2 \right) } = \\
+= \frac{ \frac{1}{3} \cdot 1 \cdot \frac{1}{2} + \frac{2}{3} \cdot \frac{1}{3} \left( 1 - \frac{1}{2} \right) }{1 \cdot \frac{1}{2} +
+\frac{1}{3} \left( 1 - \frac{1}{2} \right) } =
+\frac{ \frac{1}{6} + \frac{2}{9} \cdot \frac{1}{2} }{ \frac{1}{2} + \frac{1}{3} \cdot \frac{1}{2} } =
+\frac{ \frac{1}{6} + \frac{1}{9} }{ \frac{1}{2} + \frac{1}{6} } =
+\frac{ \frac{3+2}{18} }{ \frac{3+1}{6} } = \\
+= \frac{5}{18} \cdot \frac{6}{4} =
+\frac{5}{34} =
+\frac{5}{12}.
+\end{split}
+\end{equation*}
+\end{enumerate}
