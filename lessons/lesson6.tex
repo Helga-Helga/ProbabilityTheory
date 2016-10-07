@@ -151,6 +151,62 @@ P \left( H_2 \right) P \left( \left. A \right| H_2 \right) + P \left( H_3 \right
 \end{equation*}
 \end{enumerate}
 
+\subsubsection*{6.5}
+
+\textit{Задание.} Некоторое изделие выпускается двумя заводами, причём объём продукции первого завода в 3 раза больше объёма продукции второго завода.
+Доля бракованных изделий составляет $0.1$ на первом заводе, и $0.05$ --- на втором.
+Изделия, выпущенные обоими заводами за одинаковый промежуток времени, смешали и пустили в продажу.
+Вы приобрели такое изделие.
+Найдите вероятность того, что изделие было изготовлено на первом заводе, если оно окажется:
+\begin{enumerate}[label=\alph*)]
+\item качественным;
+\item бракованным.
+\end{enumerate}
+
+\textit{Решение.}
+\begin{enumerate}[label=\alph*)]
+\item Это задача на формулу Байеса.
+Нам известно, что изделие оказалось качественным: $A =$ \{изделие оказалось качественным\}.
+Гипотезы: $H_1 =$ \{изготовили это изделие на первом заводе\}, $H_2 =$ \{это изделие изготовили на втором заводе\}.
+Нужно найти $P \left( \left. H_1 \right| A \right) $.
+Вероятности гипотез:
+$$P \left( H_1 \right) =
+\frac{3}{4}, \,
+P \left( H_2 \right) =
+\frac{1}{4}.$$
+Условные вероятности: $P \left( \left. A \right| H_1 \right) = 0.9, \, P \left( \left. A \right| H_2 \right) = 0.095$.
+По формуле полной вероятности:
+\begin{equation*}
+\begin{split}
+P \left( A \right) =
+P \left( H_1 \right) P \left( \left. A \right| H_1 \right) + P \left( H_2 \right) P \left( \left. A \right| H_2 \right) =
+\frac{3}{4} \cdot 0.9 + \frac{1}{4} \cdot 0.95 = \\
+= \frac{3}{4} \cdot \frac{9}{10} + \frac{1}{4} \cdot \frac{95}{100} =
+\frac{27}{40} + \frac{95}{100} =
+\frac{365}{400} =
+\frac{73}{80}.
+\end{split}
+\end{equation*}
+Применяем формулу Байеса:
+$$P \left( \left. H_1 \right| A \right) =
+\frac{P \left( \left. A \right| H_1 \right) P \left( H_1 \right) }{P \left( A \right) } =
+\frac{9}{10} \cdot \frac{3}{4} \cdot \frac{80}{73} =
+\frac{27 \cdot 2}{73} =
+\frac{54}{73};$$
+\item введём событие $B =$ \{изделие оказалось бракованным\}.
+Условные вероятности: $P \left( \left. B \right| H_1 \right) = 0.1, \, P \left( \left. B \right| H_2 \right) = 0.05$.
+События $A$ и $B$ --- противоположные:
+$$P \left( B \right) =
+1 - P \left( A \right) =
+1 - \frac{73}{80} =
+\frac{7}{80}.$$
+По формуле Байеса:
+$$P \left( \left. H_1 \right| B \right) = \frac{ \left( \left. B \right| H_1 \right) P \left( H_1 \right) }{P \left( B \right) } =
+\frac{1}{10} \cdot \frac{3}{4} \cdot \frac{80}{7} =
+\frac{3 \cdot 2}{7} =
+\frac{6}{7}.$$
+\end{enumerate}
+
 \addcontentsline{toc}{section}{Домашнее задание}
 \section*{Домашнее задание}
 
