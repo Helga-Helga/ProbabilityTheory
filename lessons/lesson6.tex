@@ -207,6 +207,37 @@ $$P \left( \left. H_1 \right| B \right) = \frac{ \left( \left. B \right| H_1 \ri
 \frac{6}{7}.$$
 \end{enumerate}
 
+\subsubsection*{6.6}
+
+\textit{Задание.} Три приятеля --- Андрей, Борис и Володя --- пришли в тир.
+Андрей попадает в мишень с вероятностью $3/5$, Борис --- с вероятностью $1/2$, а Володя --- с вероятностью $2/5$.
+Одновременно они выстрелили по мишени и две пули попали.
+Что вероятнее: попал Володя в мишень или нет?
+
+\textit{Решение.} Введём событие $A =$ \{2 выстрела из трёх оказались точными\}.
+Введём гипотезы: $H_1 =$ \{Володя попал\}, $H_2 =$ \{Володя не попал\}.
+Их вероятности равны
+$$P \left( H_1 \right) =
+\frac{2}{5}, \,
+P \left( H_2 \right) =
+\frac{3}{5}.$$
+Условные вероятности: $P \left( \left. A \right| H_1 \right) = P$ (\{или Андрей попал, Борис --- нет, или Андрей не попал, а Бори попал\}).
+События несовместные.
+$$P \left( \left. A \right| H_1 \right) =
+\frac{3}{5} \cdot \frac{1}{2} + \frac{2}{5} \cdot \frac{1}{2} =
+\frac{3}{10} + \frac{2}{10} =
+\frac{1}{2};$$
+$P \left( \left. A \right| H_2 \right) = P$ (\{Андрей и Борис попали\}) $= \frac{3}{5} \cdot \frac{1}{2} = \frac{3}{10}.$
+
+По формуле Байеса:
+$$P \left( \left. H_1 \right| A \right) =
+\frac{1}{2} \cdot \frac{2}{5} \cdot \frac{1}{P \left( A \right) } =
+\frac{1}{5P \left( A \right) }, \,
+P \left( \left. H_2 \right| A \right) =
+\frac{3}{5} \cdot \frac{3}{10} \cdot \frac{1}{P \left( A \right) } =
+\frac{9}{50 P \left( A \right) }.$$
+Имеем, что $P \left( \left. H_1 \right| A \right) > P \left( \left. H_2 \right| A \right) \Rightarrow $ более вероятно, что Володя попал при этих двух точных выстрелах.
+
 \addcontentsline{toc}{section}{Домашнее задание}
 \section*{Домашнее задание}
 
