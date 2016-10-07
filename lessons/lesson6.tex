@@ -74,6 +74,83 @@ P \left( H_1 \right) P \left( \left. A \right| H_1 \right) + P \left( H_2 \right
 \end{split}
 \end{equation*}
 
+\subsubsection*{6.4}
+
+\textit{Задание.} Из урны, которая содержит 3 чёрных и 2 белых шара, наугад вынуты два шара и переложены в другую урну, которая содержит 4 чёрных и 4 белых шара.
+Найдите вероятность того, что:
+\begin{enumerate}[label=\alph*)]
+\item шар, вынутый после этого наугад из второй урны, окажется белым;
+\item из первой урны переложили в другую два чёрных шара, при условии, что шар, вынутый после этого из второй урны, оказался белым.
+\end{enumerate}
+
+\textit{Решение.} В первой урне содержится 3 чёрных и 2 белых шара, во второй --- 4 чёрных и 4 белых.
+\begin{enumerate}[label=\alph*)]
+\item Введём событие $A =$ \{вынутый из второй урны после переложения шар окажется белым\}.
+
+Есть 3 разные гипотезы: $H_1 =$ \{переложили 2 белых шара\}, $H_2 = \\ =$ \{переложили 2 чёрных шара\}, $H_3 =$ \{переложили 1 белый и 1 чёрный шар\}.
+
+Находим вероятности этих гипотез:
+\begin{equation*}
+\begin{split}
+P \left( H_1 \right) =
+\frac{C_2^2}{C_5^2} =
+\frac{2! \cdot 3!}{5!} = 
+\frac{2 \cdot 2 \cdot 3}{2 \cdot 3 \cdot 4} =
+\frac{1}{2 \cdot 5} =
+\frac{1}{10} >
+0; \\
+P \left( H_2 \right) =
+\frac{C_3^2}{C_5^2} =
+\frac{3!}{2!} \cdot \frac{2! \cdot 3!}{5!} =
+\frac{3}{10} >
+0; \\
+P \left( H_3 \right) =
+\frac{C_3^1 \cdot C_2^1}{C_5^2} =
+\frac{3 \cdot 2 \cdot 2 \cdot 2 \cdot 3}{2 \cdot 3 \cdot 4 \cdot 5} =
+\frac{3}{5} >
+0.
+\end{split}
+\end{equation*}
+
+В сумме вероятности гипотез дают единицу.
+Гипотезы не могут одновременно происходит, поэтому они являются полным набором гипотез.
+
+Найдём условные вероятности:
+$$P \left( \left. A \right| H_1 \right) =
+\frac{6}{10}, \,
+P \left( \left. A \right| H_2 \right) =
+\frac{4}{10}, \,
+P \left( \left. A \right| H_3 \right) =
+\frac{1}{2}.$$
+
+По формуле полной вероятности:
+\begin{equation*}
+\begin{split}
+P \left( A \right) =
+\frac{1}{10} \cdot \frac{6}{10} + \frac{2}{10} \cdot \frac{4}{10} + \frac{3}{5} \cdot \frac{1}{2} =
+\frac{1}{10} \cdot \frac{3}{5} + \frac{3}{10} \cdot \frac{2}{5} + \frac{3}{5} \cdot \frac{1}{2} = \\
+= \frac{3}{50} + \frac{6}{50} + \frac{3}{10} =
+\frac{3+6+15}{50} =
+\frac{24}{50} =
+\frac{12}{25};
+\end{split}
+\end{equation*}
+
+\item $A$ стало условием.
+Знаем, что это событие произошло.
+По формуле Байеса:
+\begin{equation*}
+\begin{split}
+P \left( \left. H_2 \right| A \right) =
+\frac{P \left( H_2 \right) P \left( \left. A \right| H_2 \right) }{P \left( H_1 \right) P \left( \left. A \right| H_1 \right) +
+P \left( H_2 \right) P \left( \left. A \right| H_2 \right) + P \left( H_3 \right) P \left( \left. A \right| H_3 \right) } = \\
+= \frac{P \left( H_2 \right) P \left( \left. A \right| H_2 \right) }{P \left( A \right) } =
+\frac{3}{10} \cdot \frac{4}{10} \cdot \frac{25}{12} =
+\frac{1}{4}.
+\end{split}
+\end{equation*}
+\end{enumerate}
+
 \addcontentsline{toc}{section}{Домашнее задание}
 \section*{Домашнее задание}
 
