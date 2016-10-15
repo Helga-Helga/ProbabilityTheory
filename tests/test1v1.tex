@@ -78,3 +78,26 @@ $$P \left( \left. B \right| \overline{A} \right) =
 \frac{P \left( \overline{A} \cap B \right)}{P \left( \overline{A} \right) } =
 \frac{P \left( B \right)}{P \left( \overline{A} \right) } =
 \frac{ \frac{5^{10} + C_{10}^1 \cdot 5^9}{6^{10}}}{1 - \frac{5^{10}}{6^{10}} }.$$
+
+\subsubsection*{3}
+
+\textit{Задание.} Допустим, что в среднем 5 мужчин из 100 и 25 женщин из 10000 являются дальтониками.
+Наугад выбранный человек оказался дальтоником.
+Какая вероятность того, что это был мужчина?
+
+\textit{Решение.} Рассмотрим событие $A =$ \{наугад быбранный человек оказался дальтоником\}.
+Рассмотрим гипотезы: $H_1 =$ \{выбранный человек --- мужчина\}, $H_2 =$ \{выбранный человек --- женщина\}.
+Мужчин и женщин в популяции одинаковое количество, поэтому вероятности гипотез равны
+$$P \left( H_1 \right) =
+\frac{1}{2} =
+P \left( H_2 \right).$$
+Условные вероятности:
+$$P \left( \left. A \right| H_1 \right) =
+\frac{5}{100}, \,
+P \left( \left. A \right| H_2 \right) =
+\frac{25}{10000}.$$
+По формуле Байеса
+$$P \left( \left. H_1 \right| A \right) =
+\frac{P \left( \left. A \right| H_1 \right) P \left( H_1 \right) }{P \left( \left. A \right| H_1 \right) P \left( H_1 \right) +
+P \left( \left. A \right| H_2 \right) P \left( H_2 \right) } =
+\frac{ \frac{5}{100} \cdot \frac{1}{2} }{ \frac{5}{100} \cdot \frac{1}{2} +  \frac{25}{10000} \cdot \frac{1}{2} }.$$
