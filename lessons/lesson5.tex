@@ -1302,14 +1302,18 @@ P \left( \left. A_n \right| A_1 A_2 \dotsc A_{n-1} C \right) =
 \textit{Задание.} Пусть событие $A$ такое, что $P \left( A \right) $ равно 0 или 1.
 Докажите, что $A$ и произвольное событие $B$ независимы.
 
-\textit{Решение.} Рассмотрим произведение вероятностей событий.
-Если $P \left( A \right) = \\ = 0$, то $P \left( A \right) P \left( B \right) = 0$.
-Если $P \left( A \right) = 1$, то $P \left( A \right) P \left( B \right) = P \left( B \right) $.
+\textit{Решение.} $A$ может быть либо пустым множеством, либо совпадать с множеством элементарных исходов.
 
-$A$ может быть либо пустым множеством, либо совпадать с множеством элементарных исходов.
-
-Рассмотрим вероятность пересечения событий. При $A = \varnothing$ имеем, что $P \left( A \cap B \right) = P \left( \varnothing \right) = 0$.
-Если $A = \Omega $, то $P \left( A \cap B \right) = P \left( B \right) $.
-
+Пусть $A = \varnothing$.
+Тогда $P \left( A \right) = 0$.
+Рассмотрим произведение вероятностей события $A$ и произвольного события $B$.
+Оно равно $P \left( A \right) P \left( B \right) = 0 \cdot P \left( B \right) = \\ = 0$.
+Рассмотрим вероятность пересечения событий: $P \left( A \cap B \right) = P \left( \varnothing \cap B \right) = \\ = P \left( \varnothing \right) = 0$.
 События называются независимыми, если $P \left( A \cap B \right) = P \left( A \right) P \left( B \right) $.
 Получили, что это равенство выполняется, значит события независимы.
+
+Если $A = \Omega $, то $P \left( A \right) = 1$.
+Рассмотрим произведение вероятностей события $A$ и произвольного события $B$.
+Оно равно $P \left( A \right) P \left( B \right) = 1 \cdot P \left( B \right) = \\ = P \left( B \right)$.
+Рассмотрим вероятность пересечения событий: $P \left( A \cap B \right) = P \left( \Omega \cap B \right) = \\ = P \left( B \right) $.
+События независимы, так как $P \left( A \cap B \right) = P \left( A \right) P \left( B \right) $.
