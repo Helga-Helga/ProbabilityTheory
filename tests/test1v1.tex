@@ -123,7 +123,7 @@ P \left( \left. A \right| H_2 \right) P \left( H_2 \right) } =
 Зелёную линию пересекать не можем.
 Касаться её можно только в точке $ \left( 21, 0 \right) $.
 
-Перевернём изображение (рис. \ref{fig:141}).
+Перевернём изображение (рис. \ref{fig:1	41}).
 
 \begin{figure}[h!]
   \centering
@@ -314,3 +314,48 @@ $$P \left( C \right) =
 \frac{ \left| C \right| }{ \left| \Omega \right| } =
 \frac{14}{70} =
 \frac{1}{5}.$$
+
+\subsubsection*{4}
+
+\textit{Задание.} На отрезок наугад брошено две точки.
+Найдите вероятность того, что из трёх образованных отрезков можно составить треугольник.
+
+\textit{Решение.} Пусть отрезок начинается в точке 0 и заканчивается в точке $c$.
+Выбираем на нём наугад две точки: точку $a$ и точку $b$, причём $a$ лежит не правее $b$ (рис. \ref{fig:24}).
+
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=.4\textwidth]{./pictures/t1v2_4.png}
+  \caption{Отрезок $ \left[ 0, c \right] $}
+  \label{fig:24}
+\end{figure}
+
+Тогда пространство элементарных исходов имеет вид $ \Omega =  \\
+= \left\{ \left( a, b \right): 0 \leq a \leq b \leq c \right\} $.
+Изобразив его на плоскости, видим, что это прямоугольный треугольник с катетами длиной $c$ (рис. \ref{fig:241}).
+
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=.4\textwidth]{./pictures/t1v2_41.png}
+  \caption{Пространство элементарных событий $ \Omega$ и событие $A$}
+  \label{fig:241}
+\end{figure}
+
+Площадь треугольника равна
+$$S_{ \Omega } =
+\frac{1}{2} \cdot c \cdot c =
+\frac{c^2}{2}.$$
+
+Событие
+$$A = \{ \left( a, b \right) \in \Omega: a \leq \frac{c}{2}, b \geq \frac{c}{2}, a \leq \frac{c}{2} + b\}.$$
+Точки множества $A$ образуют прямоугольный треугольник с катетами $c/2$.
+Его площадь равна
+$$S_A =
+\frac{1}{2} \cdot \frac{c}{2} \cdot \frac{c}{2} =
+\frac{c^2}{8}.$$
+
+Тогда вероятность события $A$ равна
+$$P \left( A \right) =
+\frac{S_A}{S_{ \Omega }} =
+\frac{c^2}{8} \cdot \frac{2}{c^2} =
+\frac{1}{4}.$$
