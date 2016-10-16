@@ -1,0 +1,51 @@
+\addcontentsline{toc}{chapter}{Занятие 7. Алгебры и $ \sigma $-алгебры. Мера}
+\chapter*{Занятие 7. Алгебры и $ \sigma $-алгебры. Мера}
+
+\addcontentsline{toc}{section}{Контрольные вопросы и задания}
+\section*{Контрольные вопросы и задания}
+
+\subsubsection*{Приведите определение алгебры событий,
+$ \sigma $-алгебры событий, конечно-аддитивной меры, счётно-аддитивной меры, вероятностной меры, монотонного класса.}
+
+Совокупность $\mathcal{A}$ подмножеств называется алгеброй, если выполнены свойства:
+\begin{equmerate}
+\item $ \varnothing \in \mathcal{A}$,
+\item $A \in \mathcal{A} \Rightarrow \overline{A} \in \mathcal{A}$,
+\item $A, B \in \mathcal{A} \Rightarrow A \cup B \in \mathcal{A}$.
+\end{enumerate}
+
+Совокупность множеств называется $ \sigma $-алгеброй, если выполняются следующие условия:
+\begin{equmerate}
+\item $ \Omega \in \mathcal{A}$,
+\item $A \in \mathcal{A} \Rightarrow \overline{A} \in \mathcal{A}$,
+\item $A_1, \dotsc, A_n \in \mathcal{A} \Rightarrow \bigcup \limits_{i=1}^n A_i \in \mathcal{A}$.
+\end{enumerate}
+
+Функция $ \mu: \mathcal{F} \rightarrow \left[ 0, \infty \right] $ называется конечно-аддитивной мерой (иногда объёмом), если она удовлетворяет следующим аксиомам:
+\begin{equmerate}
+\item $ \mu \left( \varnothing \right) = 0$,
+\item если
+$ \left\{ E_n \right\}_{n=1}^N \subset \mathcal{F}$
+--- конечное семейство попарно непересекающихся множеств из
+$ \mathcal{F}$, то есть $E_i \cap E_j = \varnothing, \, i \neq j$,
+то $ \mu \left( \bigcup \limits_{n=1}^N E_n \right) = \sum \limits_{n=1}^N \mu \left( E_n \right)$.
+\end{enumerate}
+
+Функция $ \mu: \mathcal{F} \rightarrow \left[ 0, \infty \right] $ называется счётно-аддитивной (или $ \sigma $-аддитивной) мерой, если она удовлетворяет следующим аксиомам:
+\begin{equmerate}
+\item $ \mu \left( \varnothing \right) = 0$,
+\item ($ \sigma $-аддитивность) Если
+$ \left\{ E_n \right\}_{n=1}^{ \infty } \subset \mathcal{F}$
+--- конечное семейство попарно непересекающихся множеств из
+$ \mathcal{F}$, то есть $E_i \cap E_j = \varnothing, \, i \neq j$,
+то $ \mu \left( \bigcup \limits_{n=1}^{ \infty } E_n \right) = \sum \limits_{n=1}^{ \infty } \mu \left( E_n \right)$.
+\end{enumerate}
+
+Вероятностная мера (вероятность) --- это функция $P: \, \mathcal{F} \rightarrow \left[ 0, 1 \right], \mathcal{F} - \sigma $-алгебра:
+\begin{equmerate}
+\item $P \left( \Omega \right) = 1$,
+\item если
+$A_n \in \mathcal{F}, \,
+A_n \cap A_m = \varnothing, \,
+n \neq m$, то $P \left( \bigcup \limits_{n=1}^{ \infty } A_n \right) = \sum \limits_{n=1}^{ \infty  P \left( A_n \right) }$.
+\end{enumerate}
