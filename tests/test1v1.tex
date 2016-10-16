@@ -545,3 +545,49 @@ $$P \left( A \right) =
 \frac{S_A}{S_{ \Omega }} =
 \frac{5c^2}{18} \cdot \frac{2}{c^2} =
 \frac{5}{9}.$$
+
+\subsubsection*{4}
+
+\textit{Задание.} Частица совершает случайное симметрическое блуждание на прямой, делая шаг вправо или влево с вероятностью $1/2$.
+Найдите вероятность того, что через $2n$ шагов частица впервые вернётся в исходную точку.
+
+\textit{Решение.} Задача изображена на рисунке \ref{fig:34}.
+
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=.4\textwidth]{./pictures/t1v3_4.png}
+  \caption{Задача про случайное блуждание частицы на прямой}
+  \label{fig:34}
+\end{figure}
+
+Красным обозначены крайние пути, зелёным --- линия, которую нельзя пересекать.
+Перевернём изображение (рис. \ref{fig:341}).
+
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=.4\textwidth]{./pictures/t1v3_41.png}
+  \caption{Метод отражений}
+  \label{fig:341}
+\end{figure}
+
+Начальная точка --- точка $A$, конечная --- точка $B$.
+Всего путей из $A$ в $B$ существует
+$$ \left| A \rightarrow B \right| =
+C_{n+n}^n =
+C_{2n}^n =
+\frac{ \left( 2n \right)!}{n!n!}.$$
+
+Путей, которые пересекают диагональ будет
+$$ \left| A' \rightarrow B \right| =
+C_{n-1+n}^n =
+C_{2n-1}^n =
+\frac{ \left( 2n-1 \right)!}{n! \left( n-1 \right)!}.$$
+
+Тогда путей, которые не пересекают диагональ будет
+$$2 \left( \left| A \rightarrow B \right| - \left| A' \rightarrow B \right| \right) =
+2 \cdot \left( \frac{ \left( 2n \right)!}{n!n!} - \frac{ \left( 2n-1 \right)!}{n! \left( n-1 \right)!} \right),$$
+так как частица может двигаться и вправо, и влево.
+
+Тогда вероятность указанного в условии задачи события равна
+$$P =
+\frac{2 \cdot \left( \frac{ \left( 2n \right)!}{n!n!} - \frac{ \left( 2n-1 \right)!}{n! \left( n-1 \right)!} \right) }{ \frac{ \left( 2n \right)!}{n!n!} }.$$
