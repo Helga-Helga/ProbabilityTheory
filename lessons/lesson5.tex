@@ -935,70 +935,58 @@ $$P \left( \left. A \right| B \right) =
 Пусть событие $A$ состоит в том, что решка выпала при первом подбрасывании, а событие $B_k$ --- в том, что выпало ровно $k$ решек.
 Для каких пар $ \left( n, k \right) $ события $A$ и $B_k$ являются независимыми?
 
-\textit{Решение.}
-Опишем вероятностное пространство
+\textit{Решение.} Известно, что $P$ (выпала решка) $= p$.
+Пусть
 $ \Omega = \\
-= \left\{ \left( x_1, x_2, \dotsc, x_n \right), \,
-x_i \in \left\{ 0, 1\right\}, \,
-i = \overline{1, n} \right\} $,
-где 1 означает, что выпала решка, 0 --- выпал орёл.
-На каждом месте может стоять либо единица, либо ноль.
-Поэтому $ \left| \Omega \right| =2^n$.
+= \left\{ \left( i_1, i_2, \dotsc, i_n \right):
+i_j \in \left\{ 0, 1 \right\},
+j =
+\overline{1, n} \right\} $,
+где 0 означает, что выпал орёл, 1 --- выпала решка.
+Пространство элементарных исходов содержит $ \left| \Omega \right| = 2^n$ элементов.
 
-Опишем событие $A = \left\{ \left( x_1, x_2, \dotsc, x_n \right) \in \Omega, \, x_1 = 1 \right\} $.
-На первом месте может стоять только единица.
-Количество способов её выбрать равно одному.
-Тогда остаётся посчитать, сколько есть вариантов выпадения монеты при остальных $n - 1$ подбрасываниях.
-Имеем $ \left| A \right| = 2^{n-1} p \cdot \sum \limits_{i=1}^{n-1} \left( 1-p \right)^i p^{n-i}$.
-Тогда вероятность события $A$ равна
-$$P \left( A \right) =
-\frac{2^{n-1} p \cdot \sum \limits_{i=1}^{n-1} \left( 1-p \right)^i p^{n-i}}{2^n} =
-\frac{p \cdot \sum \limits_{i=1}^{n-1} \left( 1-p \right)^i p^{n-i}}{2}.$$
+Запишем событие $A = \left\{ \left( i_1, i_2, \dotsc, i_n \right) \in \Omega: i_1 = 1 \right\} $.
+Запишем событие $B_k = \left\{ \left( i_1, i_2, \dotsc, i_n \right) \in \Omega: \sum \limits_{j=1}^n i_j = k \right\} $.
 
-Опишем событие $B_k = \left\{ \left( x_1, x_2, \dotsc, x_n \right) \in \Omega, \, \sum \limits_{i=1}^k x_i = k \right\} $.
-На $k$ местах могут стоять только единицы, на остальных $n - k$ местах --- только нули.
-Найдём количество способов выбрать $k$ мест, где будут единицы.
-Это $C_n^k p^k \left( 1-p \right)^{n-k}$.
-Тогда вероятность равна
-$$P \left( B_k \right) =
-\frac{C_n^k p^k \left( 1-p \right)^{n-k}}{2^n}.$$
+Вероятность события $A$ составляет $P \left( A \right) = p$, что равно вероятности выпадения решки.
 
-Чтобы события были независимы, нужно, чтобы вероятность пересечения этих событий равнялась произведению их вероятностей.
-Найдём произведение вероятностей:
-\begin{equation*}
-\begin{split}
-P \left( A \right) P \left( B_k \right) =
-\frac{p \cdot \sum \limits_{i=1}^{n-1} \left( 1-p \right)^i p^{n-i}}{2} \cdot \frac{C_n^k p^k \left( 1-p \right)^{n-k}}{2^n} = \\
-= \frac{p p^k \left( 1-p \right)^{n-k} C_n^k \cdot \sum \limits_{i=1}^{n-1} p^{n-i} \left( 1-p \right)^i}{2^{n+1}} = \\
-= \frac{p^{k+1} \left( 1-p \right)^{n-k} C_n^k \cdot \sum \limits_{i=1}^{n-1} p^{n-i} \left( 1-p \right)^i}{2^{n+1}}.
-\end{split}
-\end{equation*}
+Вероятность того, что выпадет ровно $k$ решек равна
+$P \left( B_k \right) =
+\left( C_n^k \cdot p^k \right) \times \\
+\times \left( C_{n-k}^{n-k} \cdot \left( 1-p \right)^{n-k} \right) $,
+где $C_n^k$ --- выбор $k$ монет из $n$, которые выпадут решкой,
+$p^k$ --- вероятность выпадения $k$ решек,
+$C_{n-k}^{n-k}$ ---
+выбор $ \left( n-k \right) $ монет из $ \left( n-k \right) $,
+которые выпадут орлом,
+$ \left( 1-p \right)^{n-k}$ --- вероятность выпадения орлов на $ \left( n-k \right) $ монетах,
+так как это событие противоположно выпадению решек.
 
-Найдём вероятность переечения этих событий:
-$$P \left( A \cap B \right) =
-P \left( \left\{ \left( x_1, x_2, \dotsc, x_n \right) \in \Omega, \, \sum \limits_{i=1}^k x_i = k, \, x_1 = 1 \right\} \right).$$
-Нужно выбрать $k - 1$ место, где будут единицы.
-Тогда
-$$P \left( A \cap B \right) =
-\frac{p^k \left( 1-p \right)^{n-k} C_n^{k-1}}{2^n}.$$
+Из условия независимости событий имеем: $P \left( A \right) \cdot P \left( B_k \right) = P \left( A \cap B_k \right) $.
 
-Приравняем полученные результаты:
-$$ \frac{p^{k+1} \left( 1-p \right)^{n-k} C_n^k \cdot \sum \limits_{i=1}^{n-1} p^{n-i} \left( 1-p \right)^i}{2^{n+1}} =
-\frac{p^k \left( 1-p \right)^{n-k} C_n^{k-1}}{2^n}.$$
-Сократим на
-$$\frac{p^k \left( 1-p \right)^{n-k}}{2^n}.$$
-Получим:
-$$ \frac{p C_n^k \cdot \sum \limits_{i=1}^{n-1} p^{n-i} \left( 1-p \right)^i}{2} =
-C_n^{k-1}.$$
-Распишем:
-$$ \frac{p \cdot \sum \limits_{i=1}^{n-1} p^{n-i} \cdot n!}{2k! \left( n-k \right)!} =
-\frac{n!}{ \left( k-1 \right)! \left( n-k+1 \right)!}.$$
-Сократим на $n!$ и внесём $p$ под знак суммы:
-$$\frac{\sum \limits_{i=1}^{n-1} p^{n-i+1}}{2k! \left( n-k \right)!} = \frac{1}{ \left( k-1 \right)! \left( n-k+1 \right)!}.$$
-Распишем факториалы:
-$$\frac{\sum \limits_{i=1}^{n-1} p^{n-i+1}}{2 \left( k-1 \right)!k \left( n-k \right)!} = \frac{1}{ \left( k-1 \right)! \left( n-k \right)! \left(n-k+1 \right)!}.$$
-Сократим:
-$$\frac{\sum \limits_{i=1}^{n-1} p^{n-i+1}}{2k} = \frac{1}{n-k+1}.$$
+Найдём вероятность пересечения:
+$P \left( A \cap B_k \right) =
+p \cdot \left( C_{n-1}^{k-1} \cdot p^{k-1} \right) \times \\
+\times \left( C_{n-k}^{n-k} \left( 1-p \right)^{n-k} \right) $,
+где $p$ --- вероятность выпадения решки при первом подбрасывании монеты,
+$C_{n-1}^{k-1}$ --- выбор $k-1$ подбрасывания из $n-1$,
+при котором выпадет решка,
+$p^{k-1}$ ---
+вероятность такого выпадения,
+$C_{n-k}^{n-k}$ ---
+выбор $ \left( n-k \right) $ подбрасываний,
+среди $ \left( n-k \right) $, при которых выпадут орлы, $ \left( 1-p \right)^{n-k}$ --- вероятность такого выпадения.
+
+Приравниваем полученные соотношения:
+$p \cdot \left( C_n^k \cdot p^k \right) \times \\
+\times \left( C_{n-k}^{n-k} \cdot \left( 1-p \right)^{n-k} \right) =
+p \cdot \left( C_{n-1}^{k-1} \cdot p^{k-1} \right) \cdot \left( C_{n-k}^{n-k} \cdot \left(1-p \right)^{n-k} \right) $.
+Отсюда $C_n^k \cdot p =  \\ = C_{n-1}^{k-1}$.
+Выразим $p$ из последнего соотношения:
+$p =
+\frac{ \left( n-1 \right)!}{ \left( k-1 \right)! \left( n-k \right)!} \cdot \frac{ k! \left( n-k \right)!}{n!} = \\
+= \frac{k}{n}$,
+или $k = pn$.
 
 \subsubsection*{5.21}
 
