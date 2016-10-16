@@ -1587,30 +1587,29 @@ $$P =
 Найдите вероятность того, что ни одному студенту не придётся ждать сдачи,
 если в начале работы в кассе было $p$ монет по $50$ коп. 
 
-\textit{Решение.} Данная задача решается методом отражений (рис. \ref{fig:423}).
+\textit{Решение.} Данная задача решается методом отражений (рис. \ref{fig:424}).
 
 \begin{figure}[h!]
   \centering
-  \includegraphics[width=.6\textwidth]{./pictures/4_23.png}
+  \includegraphics[width=.6\textwidth]{./pictures/4_24.png}
   \caption{Возможные исходы}
-  \label{fig:423}
+  \label{fig:424}
 \end{figure}
 
-Точка $ \left( 0, p \right) $ --- начальная, $A$ --- конечная.
-Из неё можем двигаться вправо и вверх (если студент заплатил $50$ коп.) или вправо и вниз (если гривну).
-Когда студент платит $50$ коп., количество монет в кассе увеличивается на единицу (становится $p + 1$).
-Когда студент платит гривну, количество монет в кассе уменьшается на единицу, так как ему необходимо дать сдачу.
-Их становится $p - 1$.
-Всего есть $C_{n+m}^n$ путей.
-
-Чтобы студент не ждал сдачу, монет в кассе не может быть отрицательное количество, но может быть 0.
-Поэтому все пути могут касаться оси, но не пересекать её.
-Таких путей 
+Количество всех возможных путей равно $ \left| \Omega \right| = C_{m+n}^n$.
+Найдём количество путей,
+которые не пересекают диагональ: $ \left| A \right| = C_{m+n}^n - C_{n+m}^{n+p+1}$, где $A$ --- описанное в условии событие.
+Найдём теперь его вероятность:
 \begin{equation*}
 \begin{split}
-C_{p+m}^p - C_{p+m-1}^p =
-\frac{ \left( p+m \right)!}{p!m!} - \frac{ \left( p+m-1 \right)!}{p! \left( m-1 \right)!} = \\
-= \frac{ \left( p+m \right)!}{p! \left( m-1 \right)! m} - \frac{ \left( p+m-1 \right)!}{p! \left( m-1 \right)!} =
-\frac{ \left( p+m-1 \right)!m}{p!m!}.
+P \left( A \right) =
+\frac{ \left| A \right| }{ \left| \Omega \right| } =
+\frac{C_{m+n}^n - C_{n+m}^{n+p+1}}{C_{m+n}^n} =
+1 - \frac{C_{n+m}^{n+p+1}}{C_{m+n}^n} =
+1 -
+\frac{ \frac{ \left( n+
+m \right)!}{ \left( n+p+1 \right)! \left( n+m-n-p-1 \right)!} }{ \frac{ \left( m+n \right)!}{n! \left( m+n-n \right)!} } = \\
+= 1 - \frac{ \left( n+m \right)! n! m!}{ \left( n+m \right)! \left( n+p+1 \right)! \left( m-p-1 \right)!} =
+1 - \frac{n!m!}{ \left( n+p+1 \right)! \left( m-p-1 \right)!}.
 \end{split}
 \end{equation*}
