@@ -591,3 +591,58 @@ $$2 \left( \left| A \rightarrow B \right| - \left| A' \rightarrow B \right| \rig
 Тогда вероятность указанного в условии задачи события равна
 $$P =
 \frac{2 \cdot \left( \frac{ \left( 2n \right)!}{n!n!} - \frac{ \left( 2n-1 \right)!}{n! \left( n-1 \right)!} \right) }{ \frac{ \left( 2n \right)!}{n!n!} }.$$
+
+\subsubsection*{5}
+
+\textit{Задание.}
+Среди 5 стрелков есть 3 хороших, которые метко стреляют с вероятностью $0.8$, и 2 средних, которые попадают в цель с вероятностью $0.5$.
+Вызвали наугад двух стрелков, они выстрелили по мишени и оба попали.
+Найдите вероятность того, что стреляли два средних стрелка.
+
+\textit{Решение.}
+Введём событие $A =$ \{два стрелка попали по мишени\} и гипотезы о том,
+каких стрелков вызвали: $H_1 =$ \{оба стрелка были хорошими\},
+$H_2 =$ \{оба стрелка были средними\}, $H_3 =$ \{первый стрелок был хорошим, а второй --- средним\}, $H_4 =$ \{первый стрелок был средним, а второй хорошим\}.
+Нужно найти вероятность
+$$P \left( \left. H_2 \right| A \right) =
+\frac{P \left( \left. A \right| H_2 \right) P \left( H_2 \right) }{ \sum \limits_{i=1}^4 P \left( \left. A \right| H_i \right) P \left( H_i \right) }.$$
+
+Вероятность того, что выбрали два хороших стрелка равна
+$$P \left( H_1 \right) =
+\frac{3}{5} \cdot \frac{2}{4} =
+\frac{3}{5} \cdot \frac{1}{2} =
+\frac{3}{10}.$$
+
+Вероятность того, что выбрали два средних стрелка равна
+$$P \left( H_2 \right) =
+\frac{2}{5} \cdot \frac{1}{4} =
+\frac{1}{5 \cdot 2} =
+\frac{1}{10}.$$
+
+Вероятность того, что один из стрелков был хорошим, а второй --- средним равна
+$$P \left( H_3 \right) =
+P \left( H_4 \right) =
+\frac{3}{5} \cdot \frac{2}{4} =
+\frac{3}{10}.$$
+
+Найдём условные вероятности:
+\begin{equation*}
+\begin{split}
+P \left( \left. A \right| H_1 \right) =
+\frac{8}{10} \cdot \frac{8}{10} =
+\frac{4}{5} \cdot \frac{4}{5} =
+\frac{16}{25}, \,
+P \left( \left. A \right| H_2 \right) =
+\frac{1}{2} \cdot \frac{1}{2} =
+\frac{1}{4}, \,
+P \left( \left. A \right| H_3 \right) = \\
+= P \left( \left. A \right| H_4 \right) =
+\frac{8}{10} \cdot \frac{1}{2} =
+\frac{4}{5 \cdot 2} =
+\frac{2}{5}.
+\end{split}
+\end{equation*}
+
+Тогда по формуле Байеса получаем
+$$P \left( \left. H_2 \right| A \right) =
+\frac{ \frac{1}{4} \cdot \frac{1}{10} }{ \frac{3}{10} \cdot \frac{16}{25} + \frac{1}{4} \cdot \frac{1}{10} + 2 \cdot \frac{3}{10} \cdot \frac{2}{5} }$$
