@@ -8,21 +8,21 @@
 $ \sigma $-алгебры событий, конечно-аддитивной меры, счётно-аддитивной меры, вероятностной меры, монотонного класса.}
 
 Совокупность $\mathcal{A}$ подмножеств называется алгеброй, если выполнены свойства:
-\begin{equmerate}
+\begin{enumerate}
 \item $ \varnothing \in \mathcal{A}$,
 \item $A \in \mathcal{A} \Rightarrow \overline{A} \in \mathcal{A}$,
 \item $A, B \in \mathcal{A} \Rightarrow A \cup B \in \mathcal{A}$.
 \end{enumerate}
 
 Совокупность множеств называется $ \sigma $-алгеброй, если выполняются следующие условия:
-\begin{equmerate}
+\begin{enumerate}
 \item $ \Omega \in \mathcal{A}$,
 \item $A \in \mathcal{A} \Rightarrow \overline{A} \in \mathcal{A}$,
 \item $A_1, \dotsc, A_n \in \mathcal{A} \Rightarrow \bigcup \limits_{i=1}^n A_i \in \mathcal{A}$.
 \end{enumerate}
 
 Функция $ \mu: \mathcal{F} \rightarrow \left[ 0, \infty \right] $ называется конечно-аддитивной мерой (иногда объёмом), если она удовлетворяет следующим аксиомам:
-\begin{equmerate}
+\begin{enumerate}
 \item $ \mu \left( \varnothing \right) = 0$,
 \item если
 $ \left\{ E_n \right\}_{n=1}^N \subset \mathcal{F}$
@@ -32,7 +32,7 @@ $ \mathcal{F}$, то есть $E_i \cap E_j = \varnothing, \, i \neq j$,
 \end{enumerate}
 
 Функция $ \mu: \mathcal{F} \rightarrow \left[ 0, \infty \right] $ называется счётно-аддитивной (или $ \sigma $-аддитивной) мерой, если она удовлетворяет следующим аксиомам:
-\begin{equmerate}
+\begin{enumerate}
 \item $ \mu \left( \varnothing \right) = 0$,
 \item ($ \sigma $-аддитивность) Если
 $ \left\{ E_n \right\}_{n=1}^{ \infty } \subset \mathcal{F}$
@@ -42,10 +42,98 @@ $ \mathcal{F}$, то есть $E_i \cap E_j = \varnothing, \, i \neq j$,
 \end{enumerate}
 
 Вероятностная мера (вероятность) --- это функция $P: \, \mathcal{F} \rightarrow \left[ 0, 1 \right], \mathcal{F} - \sigma $-алгебра:
-\begin{equmerate}
+\begin{enumerate}
 \item $P \left( \Omega \right) = 1$,
 \item если
 $A_n \in \mathcal{F}, \,
 A_n \cap A_m = \varnothing, \,
 n \neq m$, то $P \left( \bigcup \limits_{n=1}^{ \infty } A_n \right) = \sum \limits_{n=1}^{ \infty  P \left( A_n \right) }$.
+\end{enumerate}
+
+Совокупность $ \mu $ подмножеств множества $ \Omega $ называется монотонным классом,
+если для любой монотонной последовательности $ \left\{ A_n \right\}_{n=1}^{ \infty } $
+(т.е. такой,
+что $A_1 \supset A_2 \supset A_3 \supset \dotsc $ или $A_1 \subset A_2 \subset \dotsc $) её предел $ \lim \limits_{n \rightarrow \infty } A_n$ тоже лежит в $ \mu $.
+
+\subsubsection*{Сформулируйте теорему про монотонный класс.}
+
+Пусть $ \mathcal{A}$ --- алгебра подмножеств множества $ \Omega $.
+Тогда монотонный класс, порождаемый $ \mathcal{A}$ совпадает с алгеброй, порождаемой $ \mathcal{A}: \, m \left( \mathcal{A} \right) = \sigma \left( \mathcal{A} \right) $.
+
+\addcontentsline{toc}{section}{Аудиторные задачи}
+\section*{Аудиторные задачи}
+
+\subsubsection*{7.3}
+
+\textit{Задание.} Опишите $ \sigma $-алгебру подмножеств отрезка $ \left[ 0, 1 \right] $, порождённую множествами:
+\begin{enumerate}[label=\alph*)]
+\item $ \left[ 0, 1/2 \right] $;
+\item $ \left[ 0, 2/3 \right] $ и $ \left[ 1/3, 1 \right] $;
+\item $ \left[ 0, 1/2 \right] $ и $ \left[ 1/2,  1 \right] $.
+\end{enumerate}
+
+\textit{Решение.} Множество $ \Omega = \left[ 0, 1 \right] $.
+
+\begin{enumerate}[label=\alph*)]
+\item $A = \left[ 0, 1/2 \right] $.
+Опишем $ \sigma $-алгебру подмножеств:
+$$ \mathcal{A}_A =
+\left\{ \varnothing, \Omega, A, \overline{A} \right\} =
+\left\{ \varnothing, \left[ 0, 1 \right], \left[ 0, \frac{1}{2} \right], \left( \frac{1}{2}, 1 \right] \right\};$$
+\item $B = \left[ 0, 2/3 \right], \, C = \left[ 1/3, 1 \right] $.
+Введём непересекающиеся множества, которые в объединении дают всё множество:
+$$D_1 =
+\left[ 0, \frac{1}{3} \right], \,
+D_2 =
+\left( \frac{1}{3}, \frac{1}{2} \right],
+D_3 =
+\left( \frac{2}{3}, 1 \right].$$
+Тогда
+$$ \mathcal{A}_D =
+\left\{ \varnothing, \Omega, \bigcup \limits_{i=1}^k D_i, k = \overline{1,3} \right\};$$
+\item $A = \left[ 0, 1/2 \right], \, B = \left[ 1/2,  1 \right] $.
+Введём непересекающиеся множества, которые в объединении дают всё множество:
+$$D_1 =
+\left[ 0, \frac{1}{2} \right), \,
+D_2 \left\{ \frac{1}{2} \right\}, \,
+D_3 = \left( \frac{1}{2}, 1 \right].$$
+Тогда
+$$ \mathcal{A}_D =
+\left\{ \varnothing, \Omega, \bigcup \limits_{i=1}^k D_i, k = \overline{1,3} \right\}.$$
+\end{enumerate}
+
+\addcontentsline{toc}{section}{Домашнее задание}
+\section*{Домашнее задание}
+
+\subsubsection*{7.12}
+
+\textit{Задание.} Опишите $ \sigma $-алгебру подмножеств отрезка $ \left[ 0, 1 \right] $, порождённую множествами:
+\begin{enumerate}[label=\alph*)]
+\item $ \left[ 1/3, 1/2 \right] $;
+\item множеством рациональных точек отрезка $ \left[ 0, 1 \right] $;
+\item $ \left\{ 0 \right\} $ и $ \left\{ 1 \right\} $.
+\end{enumerate}
+
+\textit{Решение.} Множество $ \Omega = \left[ 0, 1 \right] $.
+
+\begin{enumerate}[label=\alph*)]
+\item $A = \left[ 1/3, 1/2 \right] $.
+Опишем $ \sigma $-алгебру подмножеств:
+$$ \mathcal{A}_A =
+\left\{ \varnothing, \Omega, A, \overline{A} \right\} =
+\left\{ \varnothing, \left[ 0, 1 \right],
+\left[ \frac{1}{3}, \frac{1}{2} \right], \left[ 0, \frac{1}{3} \right) \cup \left( \frac{1}{2}, 1 \right] \right\};$$
+\item пусть $B = \mathbb{Q} \cap \left[ 0, 1 \right] $ --- множество рациональных точек отрезка $ \left[ 0, 1 \right] $.
+Тогда
+$ \mathcal{A}_{ \mathbb{Q} } =
+\left\{ \varnothing, \Omega, B, \overline{B} \right\} =
+\left\{ \varnothing, \left[ 0, 1 \right], \mathbb{Q} \cap \left[ 0, 1 \right], \left[ 0, 1 \right] \setminus \mathbb{Q} \right\};$
+\item $C = \left\{ 0 \right\}, E = \left\{ 1 \right\} $.
+Введём непересекающиеся множества,
+которые в объединении дают весь отрезок: $D_1 = \left\{ 0 \right\}, \, D_2 = \left( 0, 1 \right), \, D_3 = \left\{ 1 \right\} $.
+Тогда
+$ \mathcal{A}_D =
+\left\{ \varnothing, \Omega, \bigcup \limits_{i=1}^k D_i, k = \overline{1, 3} \right\} = \\
+= \left\{ \varnothing, \left[0, 1 \right], \left\{ 0 \right\}, \left( 0, 1 \right),
+\left\{ 1 \right\}, \left[0, 1 \right), \left(0, 1 \right], \left\{ 0 \right\} \cup \left\{ 1 \right\} \right\} $.
 \end{enumerate}
