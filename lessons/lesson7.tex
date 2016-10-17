@@ -140,6 +140,54 @@ $$ \left\{ a \right\} =
 Для любого $n$ отрезок такого вида принадлежит $ \mathcal{B} $, тогда их счётное пересечение принадлежит $ \mathcal{B} $, тогда $ \left[ a, a \right] \in \mathcal{B} $.
 А это значит, что $ \left\{ a \right\} \in \mathcal{B} $.
 
+\subsubsection*{7.5}
+
+\textit{Задание.} Пусть $ \Omega = \mathbb{R}^2, \, \mathcal{B} $ --- борелевская $ \sigma $-алгебра в $ \mathbb{R}^2$.
+Докажите, что:
+\begin{enumerate}[label=\alph*)]
+\item $ \left\{ x \in \mathbb{R}^2: \left| \left| x \right| \right| < 1 \right\} \in \mathcal{B} $;
+\item $ \left\{ x \in \mathbb{R}^2: \left| \left| x \right| \right| \leq 1 \right\} \in \mathcal{B} $;
+\item $ \left\{ \left( 1, 1 \right) \right\} \in \mathcal{B} $;
+\item $ \mathbb{Q} \times \mathbb{Q} \in \mathcal{B} $;
+\item $ \left[ 0, 1 \right]^2 \in \mathcal{B} $;
+\item $ \left( 0, 1 \right) \times \left[ 2, 3 \right) \in \mathcal{B} $;
+\item $ \left\{ \left( x_1, x_2 \right) \in \mathbb{R}^2: sin x_1 + cos \left( x_1 + x_2^3 \right) > 1/7 \right\} \in \mathcal{B} $.
+\end{enumerate}
+
+\textit{Решение.} Есть борелевская $ \sigma $-алгебра в $ \mathbb{R}^2$.
+
+\begin{enumerate}[label=\alph*)]
+\item $ \left\{ x \in \mathbb{R}^2: \left| \left| x \right| \right| < 1 \right\} \in \mathcal{B} $ ---
+внутренняя часть круга с центром в точке 0 и радиусом 1, открытое множество, а значит принадлежит $ \sigma $-алгебре, как открытое множество;
+\item это замкнутое множество.
+И как дополнение к открытому множеству принадлежит $ \sigma $-алгебре;
+\item $ \left\{ \left( 1, 1 \right) \right\} $ --- замкнутое множество.
+Поэтому принадлежит $ \sigma $-алгебре.
+Или $ \left( 1, 1 \right) = \left\{ 1 \right\} \times \left\{ 1 \right\} \in \mathcal{B} \left( \mathbb{R}^2 \right) $;
+\item $ \mathbb{Q} $ --- множество рациональных чисел --- счётное множество.
+Всякие счётные объединения и пересечения не выводят за границы $ \sigma $-алгебры.
+$ \left( r_i, r_j \right) \in \mathcal{B} $ как замкнутое множество (точка).
+$ \forall i, j \, \bigcup \limits_{i=1}^{ \infty } \bigcup \limits_{j=1}^{ \infty } \left( r_i, r_j \right) \in \mathcal{B} $.
+\item $ \left[ 0, 1 \right]^2$ --- замкнутое множество в $ \mathbb{R}^2 \Rightarrow \left[ 0, 1 \right]^2 \in \\
+\in \mathcal{B} \left( \mathbb{R}^2 \right) $.
+Второй способ: $ \left[ 0, 1 \right]^2 = \left[ 0, 1 \right] \times \left[ 0, 1 \right] $.
+Знаем, что $ \left[ 0, 1 \right] \in \mathcal{B} \left( \mathbb{R} \right) $.
+Тогда
+$ \left[ 0, 1 \right] \times \left[ 0, 1 \right] \in \mathcal{B} \left( \mathbb{R}^2 \right) \Rightarrow
+\left[ 0, 1 \right]^2 \in \mathcal{B} \left( \mathbb{R}^2 \right) $;
+\item покажем, что $ \left[ 2, 3 \right) \in \mathcal{B} \left( \mathbb{R} \right) $.
+Будем считать, что $ \sigma $-алгебра порождается интервалами $ \left( a, b \right) \in \mathcal{B} \left( \mathbb{R} \right) $.
+Можем записать данный интервал в виде
+$$ \left( 2, 3 \right) =
+\bigcap \limits_{n=1}^{ \infty } \left( 2 - \frac{1}{n}, 3 \right).$$
+В каждый этот интервал точка 2 входит.
+Тогда точка 2 входит в пересечение, потому что отступили влево.
+Тогда $ \left[ 2, 3 \right) \in \mathcal{B} \left( \mathbb{R} \right) $.
+По определению $ \left( 0, 1 \right) \in \mathcal{B} \left( \mathbb{R} \right) $ (это открытое множество).
+Тогда $ \left( 0, 1 \right) \times \left[ 2, 3 \right) \in \mathcal{B} $;
+\item $ \left\{ \left( x_1, x_2 \right) \in \mathbb{R}^2: sin x_1 + cos \left( x_1 + x_2^3 \right) > 1/7 \right\} \in \mathcal{B} $.
+\end{enumerate}
+
 \addcontentsline{toc}{section}{Домашнее задание}
 \section*{Домашнее задание}
 
