@@ -241,3 +241,28 @@ $ \mathcal{A}_D =
 которые принадлежат $ \mathcal{B} \left( \mathbb{R} \right) $ по определению даст множество,
 принадлежащее $ \mathcal{B} \left( \mathbb{R} \right) $, т.е. множество $ \mathbb{Q} \in \mathcal{B} \left( \mathbb{R} \right) $.
 Тогда его дополнение $ \overline{ \mathbb{Q} } = \mathbb{R} \setminus \mathbb{Q} \in \mathcal{B} \left( \mathbb{R} \right) $.
+
+\subsubsection*{7.14}
+
+\textit{Задание.} Пусть $ \Omega = \mathbb{R}, \, \mathcal{B} $ --- борелевская $ \sigma $-алгебра на $ \mathbb{R}^2$.
+Докажите, что:
+\begin{enumerate}[label=\alph*)]
+\item $ \left( \mathbb{R} \setminus \mathbb{Q} \right) \times \mathbb{Q} \in \mathcal{B} \left( \mathbb{R}^2 \right) $;
+\item $ \left\{ \left( x_1, x_2 \right) \in \mathbb{R}^2:
+max \left( sin \left( x_1 x_2 \right), arctg \left( x_2 - x_1 \right) \right) > 0.1 \right\} \in \mathcal{B} \left( \mathbb{R}^2 \right) $.
+\end{enumerate}
+
+\textit{Решение.}
+\begin{enumerate}[label=\alph*)]
+\item $ \mathbb{R} \setminus \mathbb{Q} \in \mathcal{B} \left( \mathbb{R} \right), \,
+\mathbb{Q} \in \mathcal{B} \left( \mathbb{R} \right) \Rightarrow
+\left( \mathbb{R} \setminus \mathbb{Q} \right) \times \mathbb{Q} \in \mathcal{B} \left( \mathbb{R}^2 \right) $;
+\item функции $arctg \phi $ и $sin \phi $ --- ограниченные.
+В случае максимума синуса функция будет лежать в пределах от $0.1$ до единицы.
+В случае максимума арктангенса --- от $0.1$ до $ \pi/2$ не включая $ \pi/2$.
+А интервалы по определению $ \mathcal{B} \left( \mathbb{R} \right) $ ей принадлежат.
+Тогда $ \\
+\left\{ \left( x_1, x_2 \right) \in \mathbb{R}^2:
+max \left( sin \left( x_1 x_2 \right), arctg \left( x_2 - x_1 \right) \right) > 0.1 \right\} \in \mathcal{B} \left( \mathbb{R}^2 \right) $.
+\end{enumerate}
+
