@@ -9,7 +9,7 @@ $ \sigma $-алгебры событий, конечно-аддитивной м
 
 Совокупность $\mathcal{A}$ подмножеств называется алгеброй, если выполнены свойства:
 \begin{enumerate}
-\item $ \varnothing \in \mathcal{A}$,
+\item $ \emptyset \in \mathcal{A}$,
 \item $A \in \mathcal{A} \Rightarrow \overline{A} \in \mathcal{A}$,
 \item $A, B \in \mathcal{A} \Rightarrow A \cup B \in \mathcal{A}$.
 \end{enumerate}
@@ -23,21 +23,21 @@ $ \sigma $-алгебры событий, конечно-аддитивной м
 
 Функция $ \mu: \mathcal{F} \rightarrow \left[ 0, \infty \right] $ называется конечно-аддитивной мерой (иногда объёмом), если она удовлетворяет следующим аксиомам:
 \begin{enumerate}
-\item $ \mu \left( \varnothing \right) = 0$,
+\item $ \mu \left( \emptyset \right) = 0$,
 \item если
 $ \left\{ E_n \right\}_{n=1}^N \subset \mathcal{F}$
 --- конечное семейство попарно непересекающихся множеств из
-$ \mathcal{F}$, то есть $E_i \cap E_j = \varnothing, \, i \neq j$,
+$ \mathcal{F}$, то есть $E_i \cap E_j = \emptyset, \, i \neq j$,
 то $ \mu \left( \bigcup \limits_{n=1}^N E_n \right) = \sum \limits_{n=1}^N \mu \left( E_n \right)$.
 \end{enumerate}
 
 Функция $ \mu: \mathcal{F} \rightarrow \left[ 0, \infty \right] $ называется счётно-аддитивной (или $ \sigma $-аддитивной) мерой, если она удовлетворяет следующим аксиомам:
 \begin{enumerate}
-\item $ \mu \left( \varnothing \right) = 0$,
+\item $ \mu \left( \emptyset \right) = 0$,
 \item ($ \sigma $-аддитивность) Если
 $ \left\{ E_n \right\}_{n=1}^{ \infty } \subset \mathcal{F}$
 --- конечное семейство попарно непересекающихся множеств из
-$ \mathcal{F}$, то есть $E_i \cap E_j = \varnothing, \, i \neq j$,
+$ \mathcal{F}$, то есть $E_i \cap E_j = \emptyset, \, i \neq j$,
 то $ \mu \left( \bigcup \limits_{n=1}^{ \infty } E_n \right) = \sum \limits_{n=1}^{ \infty } \mu \left( E_n \right)$.
 \end{enumerate}
 
@@ -46,7 +46,7 @@ $ \mathcal{F}$, то есть $E_i \cap E_j = \varnothing, \, i \neq j$,
 \item $P \left( \Omega \right) = 1$,
 \item если
 $A_n \in \mathcal{F}, \,
-A_n \cap A_m = \varnothing, \,
+A_n \cap A_m = \emptyset, \,
 n \neq m$, то $P \left( \bigcup \limits_{n=1}^{ \infty } A_n \right) = \sum \limits_{n=1}^{ \infty  P \left( A_n \right) }$.
 \end{enumerate}
 
@@ -78,8 +78,8 @@ n \neq m$, то $P \left( \bigcup \limits_{n=1}^{ \infty } A_n \right) = \sum \l
 \item $A = \left[ 0, 1/2 \right] $.
 Опишем $ \sigma $-алгебру подмножеств:
 $$ \mathcal{A}_A =
-\left\{ \varnothing, \Omega, A, \overline{A} \right\} =
-\left\{ \varnothing, \left[ 0, 1 \right], \left[ 0, \frac{1}{2} \right], \left( \frac{1}{2}, 1 \right] \right\};$$
+\left\{ \emptyset, \Omega, A, \overline{A} \right\} =
+\left\{ \emptyset, \left[ 0, 1 \right], \left[ 0, \frac{1}{2} \right], \left( \frac{1}{2}, 1 \right] \right\};$$
 \item $B = \left[ 0, 2/3 \right], \, C = \left[ 1/3, 1 \right] $.
 Введём непересекающиеся множества, которые в объединении дают всё множество:
 $$D_1 =
@@ -90,7 +90,7 @@ D_3 =
 \left( \frac{2}{3}, 1 \right].$$
 Тогда
 $$ \mathcal{A}_D =
-\left\{ \varnothing, \Omega, \bigcup \limits_{i=1}^k D_i, k = \overline{1,3} \right\};$$
+\left\{ \emptyset, \Omega, \bigcup \limits_{i=1}^k D_i, k = \overline{1,3} \right\};$$
 \item $A = \left[ 0, 1/2 \right], \, B = \left[ 1/2,  1 \right] $.
 Введём непересекающиеся множества, которые в объединении дают всё множество:
 $$D_1 =
@@ -99,7 +99,7 @@ D_2 \left\{ \frac{1}{2} \right\}, \,
 D_3 = \left( \frac{1}{2}, 1 \right].$$
 Тогда
 $$ \mathcal{A}_D =
-\left\{ \varnothing, \Omega, \bigcup \limits_{i=1}^k D_i, k = \overline{1,3} \right\}.$$
+\left\{ \emptyset, \Omega, \bigcup \limits_{i=1}^k D_i, k = \overline{1,3} \right\}.$$
 \end{enumerate}
 
 \subsubsection*{7.4}
@@ -206,21 +206,21 @@ $$ \left( 2, 3 \right) =
 \item $A = \left[ 1/3, 1/2 \right] $.
 Опишем $ \sigma $-алгебру подмножеств:
 $$ \mathcal{A}_A =
-\left\{ \varnothing, \Omega, A, \overline{A} \right\} =
-\left\{ \varnothing, \left[ 0, 1 \right],
+\left\{ \emptyset, \Omega, A, \overline{A} \right\} =
+\left\{ \emptyset, \left[ 0, 1 \right],
 \left[ \frac{1}{3}, \frac{1}{2} \right], \left[ 0, \frac{1}{3} \right) \cup \left( \frac{1}{2}, 1 \right] \right\};$$
 \item пусть $B = \mathbb{Q} \cap \left[ 0, 1 \right] $ --- множество рациональных точек отрезка $ \left[ 0, 1 \right] $.
 Тогда
 $ \mathcal{A}_{ \mathbb{Q} } =
-\left\{ \varnothing, \Omega, B, \overline{B} \right\} =
-\left\{ \varnothing, \left[ 0, 1 \right], \mathbb{Q} \cap \left[ 0, 1 \right], \left[ 0, 1 \right] \setminus \mathbb{Q} \right\};$
+\left\{ \emptyset, \Omega, B, \overline{B} \right\} =
+\left\{ \emptyset, \left[ 0, 1 \right], \mathbb{Q} \cap \left[ 0, 1 \right], \left[ 0, 1 \right] \setminus \mathbb{Q} \right\};$
 \item $C = \left\{ 0 \right\}, E = \left\{ 1 \right\} $.
 Введём непересекающиеся множества,
 которые в объединении дают весь отрезок: $D_1 = \left\{ 0 \right\}, \, D_2 = \left( 0, 1 \right), \, D_3 = \left\{ 1 \right\} $.
 Тогда
 $ \mathcal{A}_D =
-\left\{ \varnothing, \Omega, \bigcup \limits_{i=1}^k D_i, k = \overline{1, 3} \right\} = \\
-= \left\{ \varnothing, \left[0, 1 \right], \left\{ 0 \right\}, \left( 0, 1 \right),
+\left\{ \emptyset, \Omega, \bigcup \limits_{i=1}^k D_i, k = \overline{1, 3} \right\} = \\
+= \left\{ \emptyset, \left[0, 1 \right], \left\{ 0 \right\}, \left( 0, 1 \right),
 \left\{ 1 \right\}, \left[0, 1 \right), \left(0, 1 \right], \left\{ 0 \right\} \cup \left\{ 1 \right\} \right\} $.
 \end{enumerate}
 
