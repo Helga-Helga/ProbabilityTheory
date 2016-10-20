@@ -192,6 +192,33 @@ $$ \left( 2, 3 \right) =
 Тогда $ \left\{ \left( x_1, x_2 \right) \in \mathbb{R}^2: sin x_1 + cos \left( x_1 + x_2^3 \right) > 1/7 \right\} \in \mathcal{B} $.
 \end{enumerate}
 
+\subsubsection*{7.6}
+
+\textit{Задание.} Пусть $ \mu $ --- конечно-аддитивная мера на алгебре $ \mathcal{B} $ и пусть множества $A, A_1, A_2, \dotsc $ принадлежат $ \mathcal{B} $.
+Докажите, что если:
+\begin{enumerate}[label=\alph*)]
+\item $A = \bigcup \limits_{n=1}^k A_n$ и $A_n$ попарно не пересекаются, то $ \mu \left( A \right) = \sum \limits_{n=1}^k \mu \left( A_n \right) $;
+\item $A = \bigcup \limits_{n=1}^{ \infty } A_n$ и $A_n$ попарно не пересекаются, то $ \mu \left( A \right) \geq \sum \limits_{n=1}^{ \infty } \mu \left( A_n \right) $.
+\end{enumerate}
+
+\textit{Решение.}
+\begin{enumerate}[label=\alph*)]
+\item $A = \bigcup \limits_{n=1}^k A_n, \, A_i \cap A_j = \emptyset, \, i \neq j$.
+Тогда $ \mu \left( A \right) = \sum \limits_{n=1}^k \mu \left( A_n \right) $ --- следует из определения конечно-аддитивной меры;
+\item $A = \bigcup \limits_{n=1}^{ \infty } A_n, \, A_i \cap A_j = \emptyset, \, i \neq j$.
+Каждое конечное объединение принадлежит множеству $A$.
+Для произвольного $k \geq 1$ рассмотрим конечное объединение: $ \bigcup \limits_{n=1}^k A_n \subset \bigcup \limits_{n=1}^{ \infty } A_n = A$.
+Из монотонности можем утверждать, что $ \mu \left( \bigcup \limits_{n=1}^k A_n \right) \leq \mu \left( A \right) $.
+Мера конечно-аддитивна, и множества не пересекаются.
+Из определения конечно-аддитивной меры
+$ \mu \left( \bigcup \limits_{n=1}^k A_n \right) \leq
+\sum \limits_{n=1}^k \mu \left( A_n \right) \leq
+\mu \left( A \right) \,
+\forall k$.
+Переходя к границе при $ k \rightarrow \infty $ получаем $ \sum \limits_{n=1}^{ \infty } \mu \left( A_n \right) \leq \mu \left( A \right) $ ---
+для $A_i \cap A_j = \emptyset, \, i \neq j$.
+\end{enumerate}
+
 \addcontentsline{toc}{section}{Домашнее задание}
 \section*{Домашнее задание}
 
