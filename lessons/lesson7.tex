@@ -219,6 +219,77 @@ $ \mu \left( \bigcup \limits_{n=1}^k A_n \right) \leq
 для $A_i \cap A_j = \emptyset, \, i \neq j$.
 \end{enumerate}
 
+\subsubsection*{7.7}
+
+\textit{Задание.} Пусть $ \mu $ --- неотрицательная аддитивная функция, которая задана на алгебре $ \mathcal{B} $.
+Докажите, что $ \mu $ является $ \sigma $-аддитивной функцией тогда и только тогда,
+когда для произвольных множеств $A, A_1, A_2, \dotsc $,
+которые принадлежат $ \mathcal{B} $, из того,
+что $A \subset \bigcup \limits_{n=1}^{ \infty } A_n$ следует, что $ \mu \left( A \right) \leq \sum \limits_{n=1}^{ \infty } \mu \left( A_n \right) $.
+
+\textit{Решение.}$ \mu $ --- некоторая неотрицательная аддитивная функция на алгебре $ \mathcal{B} $.
+Доказать, что $ \mu - \sigma $-аддитивная мета тогда и только тогда, если из того,
+что $A \subset \bigcup \limits_{n=1}^{ \infty }$ следует, что $ \mu \left( A \right) \leq \sum \limits_{n=1}^{ \infty } \mu \left( A_n \right) $.
+
+Пусть $ \mu - \sigma $-аддитивная.
+Это означает,
+что имеем $ \mu \left( \bigcup \limits_{n=1}^{ \infty } A_n \right) = \sum \limits_{n=1}^{ \infty } \mu \left( A_n \right) $ для множеств,
+которые не пересекаются $ \left( A_i \cap A_j = \emptyset, \, i \neq j \right) $.
+
+Если $A \subset \bigcup \limits_{n=1}^{ \infty } A_n$, то по монотонности $ \mu \left( A \right) \leq \mu \left( \bigcup \limits_{n=1}^{ \infty } A_n \right) $.
+
+Объединение множеств, которые не пересекаются обозначим как $ \bigcup \limits_{n=1}^{ \infty } A_m = \\
+= \bigsqcup \limits_{n=1}^{ \infty } B_n$,
+где $B_1 = A_1, \, B_2 = A_2 \cap \overline{A_1}, \, B_3 = A_3 \cap \overline{A_2} \cap \overline{A_1}, \dotsc $.
+
+Откуда следует,
+что
+$ \mu \left( \bigcup \limits_{n=1}^{ \infty } A_n \right) =
+\mu \left( \bigsqcup \limits_{n=1}^{ \infty } B_n \right) =
+\sum \limits_{n=1}^{ \infty } \mu \left( B_n \right) \leq
+\sum \limits_{n=1}^{ \infty } \mu \left( A_n \right) $.
+
+Имеем, что $B_2 = A_2 \cap C \Rightarrow B_2 \subseteq A_2 \Rightarrow \mu \left( B_2 \right) \leq \mu \left( A_2 \right) $.
+Поэтому $ \mu \left( A \right) \leq \\
+\leq \sum \limits_{n=1}^{ \infty } \mu \left( A_n \right) $.
+В одну сторону доказали.
+Знаем,
+что
+$A \subset \bigcup \limits_{n=1}^{ \infty } A_n \Rightarrow
+\mu \left( A \right) \leq \\
+\leq \mu \left( \bigcup \limits_{n=1}^{ \infty } A_n \right) \leq
+\sum \limits_{n=1}^{ \infty } \mu \left( A_n \right) $
+выполняется для любых множеств $A, A_1, A_2, \dotsc $.
+По предыдущей задаче (задача 7.6) $ \mu \left( A \right) \geq \sum \limits_{n=1}^k \mu \left( A_n \right) $ для множеств, которые не пересекаются.
+Для множеств, которые не пересекаются возможно только равенство:
+$ \mu \left( A \right) = \sum \limits_{n=1}^{ \infty } \mu \left( A_n \right) $ для $A_i \cap A_j = \emptyset, \, i \neq j$.
+
+\subsubsection*{7.8}
+
+\textit{Задание.} Пусть $ \Omega $ --- множество рациональных точек на $ \left[ 0, 1 \right] $, а $ \mathcal{F} $ ---
+алгебра множеств,
+каждое из которых является бесконечной суммой множеств $A$ вида
+$ \left\{ r: \, a < r < b \right\}, \,
+\left\{ r: \, a < r \leq b \right\}, \,
+\left\{ r: \, a \leq r < b \right\} $,
+которые не пересекаются, и пусть $P \left( A \right) = b - a$.
+Докажите, что $P$ является конечно-аддитивной, но не счётно-аддитивной функцией множеств.
+
+\textit{Решение.} $ \Omega = \left\{ \left[ 0, 1 \right] \cap \mathbb{Q} \right\} $ --- множество рациональных точек.
+$ \mathcal{F} $ --- алгебра множеств, порождённая интервалами любого вида (открытыми, полуоткрытыми, замкнутыми).
+Хотим показать, что $P = b - a$ --- конечно-аддитивная, но не счётно-аддитивная.
+
+$ \mathbb{Q} $ --- счётное множество, $ \mathbb{Q} = \bigcup \limits_{i=1}^{ \infty } \left\{ r_i \right\} $.
+Длина отрезка $ \left[ 0, 1 \right] - P \left( \Omega \right) = 1$.
+Если бы $P$ была счётно-аддитивной мерой, то должно бы быть,
+что
+$P \left( \Omega \right) = \\
+= P \left( \bigcup \limits_{i=1}^{ \infty } \left\{ r_i \right\} \right) =
+\sum \limits_{i=1}^{ \infty } P \left( \left\{ r_i \right\} \right) $.
+Каждое $P \left( \left\{ r_i \right\} \right) = 0$, так как $ \left\{ r_i \right\} $ --- замкнутый интервал с концами $r_i, r_i$.
+Поэтому $P \left( \Omega \right) = 0$ --- противоречие.
+Поэтому $P$ не является счётно-аддитивной мерой.
+
 \addcontentsline{toc}{section}{Домашнее задание}
 \section*{Домашнее задание}
 
