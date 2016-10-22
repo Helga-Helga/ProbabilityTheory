@@ -540,9 +540,23 @@ $$ \left[ 0, \frac{n}{n+1} \right),$$
 а событие $B_n$ --- в том, что точка выбрана в интервале $ \left( 0, 1/n \right) $.
 Что означают события $ \bigcup \limits_{n=1}^{ \infty } A_n, \, \bigcap \limits_{n=1}^{ \infty } B_n$?
 
-\textit{Решение.} Распишем объединение отрезков
-$$ \bigcup \limits_{n=1}^{ \infty } A_n =
+\textit{Решение.} Распишем объединение отрезков:
+\begin{equation*}
+\begin{split}
+\bigcup \limits_{n=1}^{ \infty } A_n =
 \bigcup \limits_{n=1}^{ \infty } \left[ 0, \frac{n}{n+1} \right) =
 \bigcup \limits_{n=1}^{ \infty } \left[ 0, \frac{n+1-1}{n+1} \right) =
-\bigcup \limits_{n=1}^{ \infty } \left[ 0, 1 - \frac{1}{n+1} \right) =
-\left[ 0, 1 \right).$$
+\bigcup \limits_{n=1}^{ \infty } \left[ 0, 1 - \frac{1}{n+1} \right) = \\
+= \lim \limits_{n \rightarrow \infty } \left[ 0, 1 - \frac{1}{n+1} \right) =
+\left[ 0, 1 \right).
+\end{split}
+\end{equation*}
+Точку выбираем из интервала $ \left[ 0, 1 \right) $.
+
+Распишем пересечение отрезков:
+$$ \bigcap \limits_{n=1}^{ \infty } B_n =
+\bigcap \limits_{n=1}^{ \infty } \left( 0, \frac{1}{n} \right) =
+\lim \limits_{n \rightarrow \infty } \left( 0, \frac{1}{n} \right) =
+\left( 0, 0 \right) =
+\emptyset.$$
+Точку выбираем из пустого множества.
