@@ -56,6 +56,81 @@ $$X_i: \,
 если попарно независимы порождённые ими сигма-алгебры $ \left\{ \sigma \left( X_i \right) \right\}_{i \in I} $.
 Случайные величины независимы в совокупности, если таковы порождённые ими сигма-алгебры.
 
+\addcontentsline{toc}{section}{Аудиторные задачи}
+\section*{Аудиторные задачи}
+
+\subsubsection*{8.3}
+
+\textit{Задание.} Пусть $ \xi, \eta $ --- случайные величины, которые определены на вероятностном пространстве $ \left( \Omega, \mathcal{F}, \mathbb{P} \right) $.
+Докажите,
+что множества
+$A = \\
+= \left\{ \omega \in \Omega: \,
+\xi \left( \omega \right) <
+\eta \left( \omega \right) \right\}, \,
+B =
+\left\{ \omega \in \Omega: \,
+\xi \left( \omega \right) =
+\eta \left( \omega \right) \right\}, \,
+C = \\
+= \left\{ \omega \in \Omega: \,
+\xi \left( \omega \right) \leq
+\eta \left( \omega \right) \right\} $
+являются событиями.
+
+\textit{Решение.} Есть $ \xi, \eta $ --- случайные величины на вероятностном пространстве $ \left( \Omega, \mathcal{F}, \mathbb{P} \right) $.
+Нужно доказать, что множества являются событиями, то есть они принадлежат $ \sigma $-алгебре $ \mathcal{F} $.
+
+Нужно проверить, что
+$$A =
+\left\{ \omega \in \Omega: \,
+\xi \left( \omega \right) <
+\eta \left( \omega \right) \right\} \in
+\mathcal{F}.$$
+
+Пусть
+$$ \forall c \in \mathbb{R}: \qquad \left\{ \omega: \xi \left( \omega \right) \leq c \right\} \in \mathcal{F}, \\
+\forall b \in \mathbb{R}: \qquad \left\{ \omega: \xi \left( \omega \right) \leq b \right\} \in \mathcal{F}.$$
+
+Множество вещественных чисел $ \mathbb{R} $ является несчётным.
+Нужно счётное количество операций.
+Может разделить две случайные величины рациональной точкой
+\begin{equation*}
+\begin{split}
+A =
+\bigcup \limits_{c_i \in \mathbb{Q} } \left\{ \omega \in \Omega: \, \xi \left( \omega \right) < c_i < \eta \left( \omega \right) \right\} = \\
+= \bigcup \limits_{c_i \in \mathbb{Q} }
+\left( \left\{ \omega \in \Omega: \, \xi \left( \omega \right) < c_i \right\} \cap
+\left\{ \omega: \, \eta \left( \omega \right) > c_i \right\} \right).
+\end{split}
+\end{equation*}
+
+С каждым множеством $ \sigma $-алгебра содержит дополнение.
+Тогда
+$ \\
+\left\{ \omega: \, \eta \left( \omega \right) > b \right\} \in
+\mathcal{F} $.
+По условию
+$$B =
+\left\{ \omega \in \Omega: \,
+\xi \left( \omega \right) =
+\eta \left( \omega \right) \right\}.$$
+Дополнение к нему равно
+$$ \overline{B} =
+\left\{ \omega \in \Omega: \,
+\xi \left( \omega \right) >
+\eta \left( \omega \right) \right\} \cup
+\left\{ \omega \in \Omega: \,
+\xi \left( \omega \right) <
+\eta \left( \omega \right) \right\}.$$
+По предыдущим пунктам каждое из этих множеств принадлежит $ \mathcal{F} $.
+Из этого следует, чо объединение принадлежит $ \mathcal{F} $.
+
+$C$ можно представить как
+$$C =
+A \cup B \in \mathcal{F},$$
+так как $A \in \mathcal{F} $ и $B \in \mathcal{F} $.
+
 \addcontentsline{toc}{section}{Дополнительные задачи}
 \section*{Дополнительные задачи}
 
