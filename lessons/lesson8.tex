@@ -1,0 +1,63 @@
+\addcontentsline{toc}{chapter}{Занятие 8. Случайные величины. Измеримость}
+\chapter*{Занятие 8. Случайные величины. Измеримость}
+
+\addcontentsline{toc}{section}{Контрольные вопросы и задания}
+\section*{Контрольные вопросы и задания}
+
+\subsubsection*{Приведите определение $ \sigma $-алгебры борелевых множеств, измеримой функции, болелевской функции, случайной величины, $ \sigma $-алгебры, порождённой случайной величиной.}
+
+Борелевская $ \sigma $-алгебра --- наименьшая $ \sigma $-алгебра, порождённая открытыми множествами.
+
+Пусть $ \left( X, \mathcal{F} \right) $ и $ \left( Y, \mathcal{G} \right) $ --- два множества с выделенными алгебрами подмножеств.
+Тогда функция $f: X \rightarrow Y$ называется $ \mathcal{F} / \mathcal{G} $-измеримой, или просто измеримой,
+если полный прообраз любого множества из $ \mathcal{G} $ принадлежит $ \mathcal{F} $, то есть
+$$ \forall B \in \mathcal{G}, \,
+f^{-1} \left( B \right) \in \mathcal{F},$$
+где $f^{-1} \left( B \right) $ означает полный прообраз множества $B$.
+
+Борелева (борелевская) функция:
+$ \xi: \left( \mathbb{R}, \mathcal{B} \left( \mathbb{R} \right) \right) \rightarrow
+\left( \mathbb{R}, \mathcal{B} \left( \mathbb{R} \right) \right) $.
+
+Есть $ \left( \Omega, \mathcal{F} \right) $ --- пространство элементарных событий $ \Omega $ с $ \sigma $-алгеброй событий $ \mathcal{F} $ на нём.
+Есть пара $ \left( \mathbb{R}, \mathcal{B} \left( \mathbb{R} \right) \right) $,
+где $ \mathcal{B} \left( \mathbb{R} \right) - \sigma $-алгебра борелевых подмножеств на $ \mathbb{R} $.
+Отображение $ \xi: \Omega \rightarrow \mathbb{R} $ называется случайной величиной, если выполняется $ \forall B \subset \mathcal{B} \left( \mathbb{R} \right): \, \left\{ \omega: \xi \left( \omega \right) \in B \right\} \in \mathcal{F} $, другими словами, $ \xi^{-1} \left( B \right) \in \mathcal{F} $ (прообраз каждого множества $B$ должен быть измеримым).
+
+$ \sigma $-алгебра, порождённая случайной величиной $ \xi: X \rightarrow \mathbb{R} $, определяется следующим образом:
+$$ \sigma \left( \xi \right) =
+\left\{ \left. \xi^{-1} \left( B \right) \right| B \in \mathcal{B} \left( \mathbb{R} \right) \right\},$$
+где $ \mathcal{B} \left( \mathbb{R} \right) $ --- борелевская сигма-алгебра на вещественной прямой.
+
+\subsubsection*{Сформулируйте меру про сходимость по вероятности множеств из минимальной $ \sigma $-алгебры.}
+
+Последовательность случайных величин $ \left\{ \xi_n: \, n \geq 1 \right\} $ сходится по вероятности к случайное величине $ \xi $, если:
+$$ \forall \epsilon > 0, \qquad
+P \left\{ \left| \xi_n - \xi \right| > \epsilon \right\} \rightarrow 0, \qquad
+n \rightarrow \infty.$$
+
+\subsubsection*{Какие $ \sigma $-алгебры называются независимыми?}
+
+Пусть $ \mathcal{A}_1, \mathcal{A}_2 \subset \mathcal{F} $ две сигма-алгебры на одном и том же вероятностном пространстве.
+Они называются независимыми, если любые их представители независимы между собой, то есть:
+$$ \mathbb{P} \left( A_1 \cap A_2 \right) =
+\mathbb{P} \left( A_1 \right) \cdot \mathbb{P} \left( A_2 \right), \qquad
+\forall A_1 \in \mathcal{A}_1, \,
+A_2 \in \mathcal{A}_2.$$
+
+\subsubsection*{Приведите определение независимых случайных величин.}
+
+Пусть дано семейство случайных величин $ \left( X_i \right)_{i \in I} $,
+так что
+$$X_i: \,
+\Omega \rightarrow \mathbb{R}, \qquad
+\forall i \in I.$$
+Тогда эти случайные величины попарно независимы,
+если попарно независимы порождённые ими сигма-алгебры $ \left\{ \sigma \left( X_i \right) \right\}_{i \in I} $.
+Случайные величины независимы в совокупности, если таковы порождённые ими сигма-алгебры.
+
+\addcontentsline{toc}{section}{Дополнительные задачи}
+\section*{Дополнительные задачи}
+
+\addcontentsline{toc}{section}{Домашнее задание}
+\section*{Домашнее задание}
