@@ -575,3 +575,90 @@ $ \mu \left( \bigcup \limits_{n=1}^{ \infty } A_n \right) = \\
 = \infty \neq
 0 =
 \sum \limits_{n=1}^{ \infty } \mu \left( A_n \right) $.
+
+\subsubsection*{7.21}
+
+\textit{Задание.} Докажите, что:
+\begin{enumerate}[label=\alph*)]
+\item
+$P \left( \varliminf \limits_{n \rightarrow \infty } A_n \right) =
+\lim \limits_{n \rightarrow \infty } P \left( \bigcap \limits_{k=n}^{ \infty } A_k \right) $;
+\item
+$P \left( \varliminf \limits_{n \rightarrow \infty } A_n \right) \leq
+\varliminf \limits_{n \rightarrow \infty } P \left( A_n \right) \leq
+\varlimsup \limits_{n \rightarrow \infty } P \left( A_n \right) \leq
+P \left( \varlimsup \limits_{n \rightarrow \infty } A_n \right) $.
+\end{enumerate}
+
+\textit{Решение.}
+\begin{enumerate}[label=\alph*)]
+\item По определению нижнего предела: 
+$P \left( \varliminf \limits_{n \rightarrow \infty } A_n \right) =
+P \left( \bigcup \limits_{n=1}^{ \infty } \bigcap \limits_{k=n}^{ \infty } A_k \right) $.
+
+Получаем неубывающую последовательность пересечений событий:
+$ \\
+\bigcap \limits_{k=n}^{ \infty } A_k \subseteq \bigcap \limits_{k=n+1}^{ \infty } A_k$.
+Их объединение будет стремиться к последнему элементу.
+Поэтому
+$$P \left( \varliminf \limits_{n \rightarrow \infty } A_n \right) =
+P \left( \bigcup \limits_{n=1}^{ \infty } \bigcap \limits_{k=n}^{ \infty } A_k \right) =
+\lim \limits_{n \rightarrow \infty } P \left( \bigcap \limits_{k=n}^{ \infty } A_k \right);$$
+\item пересечение множеств входит в каждое множество
+$$ \bigcap \limits_{k=n}^{ \infty } A_k \subseteq
+A_t, \qquad
+\forall n \in \mathbb{N}, \,
+\forall t \geq n.$$
+По свойству монотонности получаем
+$$P \left( \bigcap \limits_{k=n}^{ \infty } A_k \right) \leq
+P \left( A_t \right), \qquad
+\forall n \in \mathbb{N}, \,
+\forall t \geq n.$$
+Для любого $t$, которое не меньше фиксированного $n$, данное неравенство справедливо.
+Нижний предел вероятностей --- это предел одной из подпоследовательностей этих вероятностей.
+Поскольку это предел, то $t$ будет стремиться к бесконечности, что больше любого заранее заданного $n$.
+Это значит, что неравенство сохраняется и для нижнего предела, то есть
+$$P \left( \bigcap \limits_{k=n}^{ \infty } A_k \right) \leq
+\varliminf \limits_{t \rightarrow \infty } P \left( A_t \right), \qquad
+\forall n \in \mathbb{N}.$$
+В левой части неравенства можем увеличивать $n$ и сделать сколь угодно большим.
+Иными словами
+$$ \lim \limits_{n \rightarrow \infty } P \left( \bigcap \limits_{k=n}^{ \infty } A_k \right) \leq
+\varliminf \limits_{t \rightarrow \infty } P \left( A_t \right).$$
+По доказанному из первого пункта
+$$P \left( \varliminf \limits_{n \rightarrow \infty } A_n \right) \leq
+\varliminf \limits_{n \rightarrow \infty } P \left( A_n \right).$$
+По свойствам нижнего и верхнего пределов
+$$\varliminf \limits_{n \rightarrow \infty } P \left( A_n \right) \leq
+\varlimsup \limits_{n \rightarrow \infty } P \left( A_n \right).$$
+Распишем вероятность верхнего предела
+$$P \left( \varlimsup \limits_{n \rightarrow \infty } A_n \right) =
+P \left( \bigcap \limits_{n=1}^{ \infty } \bigcup \limits_{k=n}^{ \infty } A_k \right).$$
+Верхний предел последовательности случайных событий ---
+это пересечение монотонно невозрастающей последовательности объединений случайных событий.
+Значит вероятность верхнего предела последовательности сходится к пределу вероятности объединений
+$$P \left( \bigcap \limits_{n=1}^{ \infty } \bigcup \limits_{k=n}^{ \infty } A_k \right) =
+\lim \limits_{n \rightarrow \infty } P \left( \bigcup \limits_{k=n}^{ \infty } A_k \right).$$
+Любое множество последовательности входит в объединение множеств из этой последовательности
+$$A_t \subseteq \bigcup \limits_{k=n}^{ \infty } A_k, \qquad
+\forall n \in \mathbb{N}, \,
+\forall t \geq n.$$
+По свойству монотонности
+$$P \left( A_t \right) \leq
+P \left( \bigcup \limits_{k=n}^{ \infty } A_k \right), \qquad
+\forall n \in \mathbb{N}, \,
+\forall t \geq n.$$
+Неравенство справедливо для любого $t$, которое не меньше фиксированного натурального $n$.
+Поэтому можем перейти к пределу.
+Он может не существовать, поэтому используем верхний предел
+$$ \varlimsup \limits_{t \rightarrow \infty } P \left( A_t \right) \leq
+P \left( \bigcup \limits_{k=n}^{ \infty } A_k \right), \qquad
+\forall n \in \mathbb{N}.$$
+В правой части неравенства может увеличивать $n$ и сделать его сколь угодно большим.
+Иными словами
+$$ \varlimsup \limits_{t \rightarrow \infty } P\left( A_t \right) \leq
+\lim \limits_{n \rightarrow \infty }P \left( \bigcup \limits_{k=n}^{ \infty } A_k \right).$$
+Получаем
+$$ \varlimsup \limits_{n \rightarrow \infty } P \left( A_n \right) \leq
+P \left( \varlimsup \limits_{n \rightarrow \infty } A_n \right).$$
+\end{enumerate}
