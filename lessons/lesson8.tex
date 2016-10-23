@@ -201,6 +201,35 @@ $e^{ \xi }$ --- случайная величина.
 Тогда действительно $ \xi $ является случайной величиной. 
 \end{enumerate}
 
+\subsubsection*{8.6}
+
+\textit{Задание.}
+Пусть $ \left\{ \xi_n \right\}_{n \geq 1} $ ---
+последовательность случайных величин, которые заданы на вероятностном пространстве $ \left( \Omega, \mathcal{F}, \mathbb{P} \right) $.
+Докажите, что функции $ \inf \limits_{n} \xi_n, \, \sup \limits_{n} \xi_n $ являются случайными величинами.
+
+\textit{Решение.} Нужно показать, что $ \forall c \in \mathbb{R}: \qquad \left\{ \omega: \, \inf \limits_{n} \xi_n \left( \omega \right) \leq c \right\} \in \mathcal{F} $.
+
+Выписываем это множество и думаем, как его изобразить.
+Хотя бы один элемент должен быть меньше $c$.
+Отсюда следует, что
+$$ \left\{ \omega: \,
+\inf \limits_{n} \xi_n \left( \omega \right) \leq
+c \right\} =
+\bigcup \limits_{n=1}^{ \infty } \left\{ \omega: \,
+\xi_n \left( \omega \right) \leq
+c \right\}.$$
+Каждое множество,
+которое стоит под знаком объединения, по определению принадлежит $ \sigma $-алгебре $ \mathcal{F} $ и их счётное объединение принадлежит $ \sigma $-алгебре $ \mathcal{F} $.
+$ \sigma $-алгебра замкнута относительно счётной операции объединения.
+$$ \left\{ \omega: \,
+\sup \limits_{n} \xi_n \left( \omega \right) >
+c \right\} =
+\bigcup \limits_{n=1}^{ \infty } \left\{ \omega: \,
+\xi_n \left( \omega \right) > c \right\} \in
+\mathcal{F}.$$
+Это следует из того, что $\left\{ \omega: \, \xi_n \left( \omega \right) > c \right\} \in \mathcal{F} $, так как это случайная величина.
+
 \addcontentsline{toc}{section}{Дополнительные задачи}
 \section*{Дополнительные задачи}
 
