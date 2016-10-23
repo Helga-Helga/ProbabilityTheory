@@ -145,6 +145,62 @@ A \cup B \in \mathcal{F},$$
 В каждом случае $ \phi \left( \xi, \eta \right) $ --- случайная величина, если $ \phi $ --- непрерывная функция.
 Тогда оно борелевская.
 
+\subsubsection*{8.5}
+
+\textit{Задание.}
+Пусть $ \left( \Omega, \mathcal{F}, \mathbb{P} \right) $ ---
+вероятностное пространство, $ \xi \left( \omega \right) $ --- действительнозначная функция, которая определена на $ \Omega $.
+Должна ли $ \xi $ быть случайной величиной, если случайной величиной есть:
+\begin{enumerate}[label=\alph*)]
+\item $ \xi^2 $;
+\item $ \left| \xi \right| $;
+\item $ e^{ \xi } $. 
+\end{enumerate}
+
+\textit{Решение.} $ \xi $ --- случайная величина.
+Отсюда следует, что $ \xi^2, \left| \xi \right|, e^{ \xi }$ --- случайные величины (взяли непрерывные функции).
+В первых двух случаях будем строить контрпример, в третьем случае $ \xi $ будет случайной величиной.
+Первые две функции не являются взаимно-однозначным отображением.
+Третья --- взаимно-однозначное отображение (рис. \ref{fig:85}).
+
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=.4\textwidth]{./pictures/8_5.png}
+  \caption{Функции}
+  \label{fig:85}
+\end{figure}
+
+\begin{enumerate}[label=\alph*)]
+\item \item Строим контрпример.
+Пусть
+$$ \xi \left( \omega \right) =
+\begin{cases}
+1, \omega \in A, \\
+-1, \omega \in \tilde{A},
+\end{cases}$$
+где $A$ --- измеримое множество, $ \tilde{A} $ --- не измеримое множество.
+Тогда видим, что $ \xi $ не является случайной величиной, потому что
+$$ \left\{ \omega: \,
+\xi \left( \omega \right) =
+- 1 \right\} =
+\tilde{A} \in
+\mathcal{F} $$
+--- не измеримое множество ($ \sigma $-алгебра --- это только измеримые множества).
+$$ \xi^2 \left( \omega \right) \equiv
+1, \,
+\left| \xi \left( \omega \right) \right| \equiv
+1, \qquad
+\forall \omega$$
+\item $ e^{ \xi } $.
+Тождественная единица --- это число (константа) --- случайная величина;
+\item что значит, что $e^{ \xi }$ --- случайная величина?
+$e^{ \xi }$ --- случайная величина.
+Отсюда следует, что $ \forall c \in \mathbb{R}: \qquad \left\{ \omega: \, e^{ \xi \left( \omega \right) } \leq c \right\} $.
+Можем записать, что это множество $ \left\{ \omega: \xi \left( \omega \right) \leq \ln c \right\} \in \mathcal{F} $, где $ \ln c \equiv d \in \mathbb{R} $.
+Доказали, что для любого $d \in \mathbb{R} $ множество $ \left\{ \omega: \, \xi \left( \omega \right) \leq d \right\} \in \mathcal{F} $.
+Тогда действительно $ \xi $ является случайной величиной. 
+\end{enumerate}
+
 \addcontentsline{toc}{section}{Дополнительные задачи}
 \section*{Дополнительные задачи}
 
