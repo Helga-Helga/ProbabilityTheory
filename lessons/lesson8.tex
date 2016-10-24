@@ -345,3 +345,31 @@ $ \left\{ \omega: \xi \leq x \right\} =
 \end{equation*}
 Значит $ \xi^{ \eta } $ --- случайная величина.
 \end{enumerate}
+
+\subsubsection*{8.15}
+
+\textit{Задание.}
+Пусть $ \left( \Omega, \mathcal{F}, \mathbb{P} \right) $ ---
+вероятностное пространство, $ \xi \left( \omega \right) $ --- действительнозначная функция, определённая на $ \Omega $.
+Должна ли $ \xi $ быть случайной величиной, если случайной величиной есть:
+\begin{enumerate}[label=\alph*)]
+\item $ \cos \xi $;
+\item $ \xi^{ \xi } $, где $ \xi $ --- положительная случайная величина.
+\end{enumerate}
+
+\textit{Решение.} Функции не являются взаимно-однозначными, поэтому $ \xi $ не будет случайной величиной.
+ \begin{enumerate}[label=\alph*)]
+\item \item Строим контрпример.
+Пусть
+$$ \xi \left( \omega \right) =
+\begin{cases}
+1, \qquad \omega \in A, \\
+- 1, \qquad \omega \in \tilde{A},
+\end{cases}
+$$
+где $A$ --- измеримое множества, $ \tilde{A} $ --- неизмеримое множество.
+Тогда $ \xi $ не является случайной величиной,
+потому что $ \left\{ \omega \; \middle| \; \xi \left( \omega \right) = - 1 \right\} = \\
+= \tilde{A} \in \mathcal{F} $ ---
+неизмеримое множество ($ \sigma $-алгебра --- это только измеримые множества);
+\end{enumerate}
