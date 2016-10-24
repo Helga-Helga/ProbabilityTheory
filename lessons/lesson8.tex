@@ -301,12 +301,12 @@ $$ \left\{ \omega \; \middle| \;
 $$ \left\{ \omega \; \middle| \; \xi - \eta \leq x \right\} =
 \left\{ \omega \; \middle| \; \xi \leq \eta + x \right\} =
 \bigcup \limits_{n=1}^{ \infty } \left( \left\{ \omega \; \middle| \; \xi < r_n \right\} \cap
-\left\{ \omega \; \middle| \; r_n < c - \eta \right\} \right),$$
+\left\{ \omega \; \middle| \; r_n < x - \eta \right\} \right),$$
 где $ \left\{ r_n \right\} = \mathbb{Q} $.
 Так как $ \xi $ и $ \eta $ являются случайными величинами,
 то и множества
 $ \left\{ \omega \; \middle| \; \xi < r_n \right\} $
-и $ \left\{ \omega \; \middle| \; r_n < c - \eta \right\} $ принадлежат $ \sigma $-алгебре $ \mathcal{F} $,
+и $ \left\{ \omega \; \middle| \; r_n < x - \eta \right\} $ принадлежат $ \sigma $-алгебре $ \mathcal{F} $,
 а значит и их пересечение и объединение принадлежит этой $ \sigma $-алгебре;
 \item нужно показать, что $ \left\{ \omega \; \middle| \; \min \left\{ \xi, \eta \right\} \leq x \right\} \in \mathcal{F} $ для произвольного $x \in \\
 \in \mathbb{R} $.
@@ -389,7 +389,7 @@ $$
 
 \subsubsection*{8.16}
 
-\textit{Задание.} Пусть $ \left\{ \xi_n \right\}_{n \geq 1} $ --- последовательность случайных величин, определённых н одном и том же вероятностном пространстве.
+\textit{Задание.} Пусть $ \left\{ \xi_n \right\}_{n \geq 1} $ --- последовательность случайных величин, определённых на одном и том же вероятностном пространстве.
 Докажите, что $ \varlimsup \limits_{n \rightarrow \infty } \xi_n $ является случайной величиной. 
 
 \textit{Решение.}
@@ -408,7 +408,7 @@ $$ \left\{ \omega \; \middle| \; \xi \left( \omega \right) =
 \inf \limits_{n \geq 1} \xi_n =
 - \infty \right\} \in \mathcal{F}.$$
 
-Покажем, что$ \sup \limits_{n \geq 1} \xi_n $ --- случайная величина
+Покажем, что $ \sup \limits_{n \geq 1} \xi_n $ --- случайная величина
 \begin{equation*}
 \begin{split}
 \forall c \in \mathbb{R}, \qquad \left\{ \omega \; \middle| \; \eta \left( \omega \right) \leq c \right\} =
@@ -436,7 +436,7 @@ $$ \left\{ \omega \; \middle| \; \xi \left( \omega \right) =
 
 \subsubsection*{8.17}
 
-\textit{Задание.} Пусть $ \left\{ \xi_n \right\}_{n \geq 1} $ --- последовательность случайных величин, определённых н одном и том же вероятностном пространстве.
+\textit{Задание.} Пусть $ \left\{ \xi_n \right\}_{n \geq 1} $ --- последовательность случайных величин, определённых на одном и том же вероятностном пространстве.
 Докажите,
 что множество
 $A = \left\{ \omega \in \Omega \; \middle| \; \right. $ последовательность $ \left\{ \xi_n \right\}_{n \geq 1} \\
@@ -444,10 +444,15 @@ $ является монотонной \} является случайным �
 
 \textit{Решение.} Чтобы доказать, что множество $A$ является случайным событием, нужно показать, что $A \in \mathcal{F} $.
 Поскольку последовательность является монотонной, то:
-$$A =
-\left\{ \forall n \geq 1, \qquad \xi_n - \xi_{n-1} \leq 0 \right\} =
-\bigcap \limits_{n=1}^{ \infty } \left\{ \omega \in \Omega: \xi_n - \xi_{n-1} \leq 0 \right\}.$$
+\begin{equation*}
+\begin{split}
+A =
+\left\{ \forall n \geq 1, \qquad \xi_n - \xi_{n-1} \leq 0 \right\} = \\
+= \bigcap \limits_{n=1}^{ \infty } \left\{ \omega \in \Omega: \xi_n - \xi_{n-1} \leq 0 \right\} \cup \left\{ \omega \in \Omega: \xi_{n-1} - \xi_n \leq 0 \right\}.
+\end{split}
+\end{equation*}
 
 Поскольку $ \xi_n - \xi_{n-1} $ является случайной величиной при произвольных $n$, то
-$$\bigcap \limits_{n=1}^{ \infty } \left\{ \omega \in \Omega: \xi_n - \xi_{n-1} \leq 0 \right\} \in \mathcal{F},$$
+$$ \bigcap \limits_{n=1}^{ \infty } \left\{ \omega \in \Omega: \xi_n - \xi_{n-1} \leq 0 \right\} \cup
+\left\{ \omega \in \Omega: \xi_{n-1} - \xi_n \leq 0 \right\} \in \mathcal{F},$$
 поскольку $ \mathcal{F} $ есть $ \sigma $-алгебра.
