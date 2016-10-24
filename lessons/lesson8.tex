@@ -235,3 +235,113 @@ c \right\} =
 
 \addcontentsline{toc}{section}{Домашнее задание}
 \section*{Домашнее задание}
+
+\subsubsection*{8.13}
+
+\textit{Задание.} Пусть $A$ --- случайное событие.
+Докажите, что
+$$ \mathbbm{1}_A \left( \omega \right) =
+\begin{cases}
+1, \qquad \omega \in A, \\
+0, \qquad \omega \notin A
+\end{cases}$$
+является случайной величиной.
+
+\textit{Решение.}
+Нужно доказать,
+что $ \forall c \in \mathbb{R}, \qquad \left\{ \omega \; \middle| \; \mathbbm{1}_A \left( \omega \right) \leq c \right\} \in \mathcal{F} $,
+где $ \mathcal{F} $ --- сигма-алгебра.
+
+Пусть $c \geq 1$.
+Тогда
+$$ \left\{ \omega \; \middle| \;
+\mathbbm{1}_A \left( \omega \right) \leq
+c \right\} =
+\Omega \in
+\mathcal{F}.$$
+
+В частности, при $c = 1$ получаем
+$$ \left\{ \omega \; \middle| \;
+\mathbbm{1}_A \left( \omega \right) \leq
+1 \right\} =
+\Omega \in
+\mathcal{F},$$
+так как по определению индикатора события он может принимать значение или 0, или 1, что всегда не больше единицы.
+То есть неравенство справедливо для всех $ \omega $ из $ \Omega $.
+
+По условию $A \in \mathcal{F}$.
+По определению $ \sigma $-алгебры $ \overline{A} \in \mathcal{F} $.
+
+Осталось доказать, что это выполняется и для $c < 1$.
+Получаем множество
+$$ \left\{ \omega \; \middle| \;
+\mathbbm{1}_A < 1 \right\} =
+\overline{A} \in \mathcal{F}.$$
+
+Доказали, что соотношение выполняется для любого вещественного числа $c$.
+Следовательно индикатор случайного события --- случайная величина.
+
+\subsubsection*{8.14}
+
+\textit{Задание.} Пусть $ \xi, \eta $ --- случайные величины, определённые на вероятностном пространстве $ \left( \Omega, \mathcal{F}, \mathbb{P} \right) $.
+Докажите, что следующие функции являются случайными величинами:
+\begin{enumerate}[label=\alph*)]
+\item $ \xi - \eta $;
+\item $ \min \left\{ \xi, \eta \right\} $;
+\item $ \xi^{ \eta } $, где $ \xi $ --- положительная случайная величина.
+\end{enumerate}
+
+\textit{Решение.} Если функция непрерывна, то она является измеримой.
+
+\begin{enumerate}[label=\alph*)]
+\item
+Чтобы доказать, что $ \xi - \eta $ является случайной величиной,
+нужно показать, что $ \left\{ \omega \; \middle| \; \xi - \eta \leq x \right\} \in \mathcal{F} $ для произвольного $x \in \mathbb{R} $.
+Имеем:
+$$ \left\{ \omega \; \middle| \; \xi - \eta \leq x \right\} =
+\left\{ \omega \; \middle| \; \xi \leq \eta + x \right\} =
+\bigcup \limits_{n=1}^{ \infty } \left( \left\{ \omega \; \middle| \; \xi < r_n \right\} \cap
+\left\{ \omega \; \middle| \; r_n < c - \eta \right\} \right),$$
+где $ \left\{ r_n \right\} = \mathbb{Q} $.
+Так как $ \xi $ и $ \eta $ являются случайными величинами,
+то и множества
+$ \left\{ \omega \; \middle| \; \xi < r_n \right\} $
+и $ \left\{ \omega \; \middle| \; r_n < c - \eta \right\} $ принадлежат $ \sigma $-алгебре $ \mathcal{F} $,
+а значит и их пересечение и объединение принадлежит этой $ \sigma $-алгебре;
+\item нужно показать, что $ \left\{ \omega \; \middle| \; \min \left\{ \xi, \eta \right\} \leq x \right\} \in \mathcal{F} $ для произвольного $x \in \\
+\in \mathbb{R} $.
+Распишем
+$ \left\{ \omega \; \middle| \; \min \left\{ \xi, \eta \right\} \leq x \right\} =
+\left\{ \omega \; \middle| \; \xi \leq x \right\} \cup \left\{ \omega \; \middle| \; \eta \leq x \right\} $.
+Так как $ \xi $ и $ \eta $ являются случайными величинами,
+то и множества $ \left\{ \omega \; \middle| \; \xi \leq x \right\} $ и $ \left\{ \omega \; \middle| \; \eta \leq x \right\} $ принадлежат $ \sigma $-алгебре $ \mathcal{F} $, а значит и их объединение принадлежит этой $ \sigma $-алгебре;
+\item нужно показать, что $ \left\{ \omega \; \middle| \; \xi^{ \eta } \leq x \right\} \in \mathcal{F} $ для произвольного $x \in \mathbb{R} $.
+Распишем $ \left\{ \omega \; \middle| \; \xi^{ \eta } \leq x \right\} = \left\{ \omega \; \middle| \; \eta \cdot \ln \xi \leq \ln x \right\} $.
+
+Покажем сначала, что $ \ln \xi $ --- случайная величина.
+Имеем множество
+$ \left\{ \omega \; \middle| \; \ln \xi \leq \ln x \right\} =
+\left\{ \omega \; \middle| \; \ln \xi \leq x' \right\} \in
+\mathcal{F} $.
+Следовательно $ \ln \xi $ --- случайная величина.
+
+Покажем, что квадрат случайной величины тоже является случайной величиной
+$ \left\{ \omega: \xi \leq x \right\} =
+\left\{ \xi^2 \leq x^2 = x' \right\} \in
+\mathcal{F} $.
+
+Вернёмся к основной задаче
+\begin{equation*}
+\begin{split}
+\left\{ \omega \; \middle| \; \eta \cdot \ln \xi \leq \ln x \right\} = \\
+= \left\{ \omega \; \middle| \;
+\eta^2 + \frac{1}{4} \cdot 2 \eta \cdot \ln \xi + \xi^2 - \eta^2 + \frac{1}{4} \cdot 2 \eta \cdot \ln \xi - \xi^2 \leq \ln x \right\} = \\
+= \left\{ \omega \; \middle| \; \left[ \left( \eta + \ln \xi \right)^2 - \left( \eta - \ln \xi \right)^2 \right] \cdot
+\frac{1}{4} \leq \ln x \right\} = \\
+= \left\{ \omega \; \middle| \; \left( \eta + \ln \xi \right)^2 - \left( \eta - \ln \xi \right)^2 \leq 4 \ln x \right\} = \\
+= \left\{ \omega \; \middle| \; \left[ \eta - \left( - \ln \xi \right) \right]^2 -
+\left[ \eta - \ln \xi \right]^2 \leq 4 \ln x \right\} \in \mathcal{F}.
+\end{split}
+\end{equation*}
+Значит $ \xi^{ \eta } $ --- случайная величина.
+\end{enumerate}
