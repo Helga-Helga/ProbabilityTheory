@@ -359,7 +359,7 @@ $ \left\{ \omega: \xi \leq x \right\} =
 
 \textit{Решение.} Функции не являются взаимно-однозначными, поэтому $ \xi $ не будет случайной величиной.
  \begin{enumerate}[label=\alph*)]
-\item \item Строим контрпример.
+\item Строим контрпример.
 Пусть
 $$ \xi \left( \omega \right) =
 \begin{cases}
@@ -367,9 +367,69 @@ $$ \xi \left( \omega \right) =
 - 1, \qquad \omega \in \tilde{A},
 \end{cases}
 $$
-где $A$ --- измеримое множества, $ \tilde{A} $ --- неизмеримое множество.
+где $A$ --- измеримое множество, $ \tilde{A} $ --- неизмеримое множество.
 Тогда $ \xi $ не является случайной величиной,
 потому что $ \left\{ \omega \; \middle| \; \xi \left( \omega \right) = - 1 \right\} = \\
 = \tilde{A} \in \mathcal{F} $ ---
 неизмеримое множество ($ \sigma $-алгебра --- это только измеримые множества);
+\item строим контрпример.
+Пусть
+$$ \xi \left( \omega \right) =
+\begin{cases}
+0.45, \qquad \omega \in A, \\
+0.25, \qquad \omega \in \tilde{A},
+\end{cases}
+$$
+где $A$ --- измеримое множество, $ \tilde{A} $ --- неизмеримое множество.
+Тогда $ \xi $ не является случайной величиной,
+потому что $ \left\{ \omega \; \middle| \; \xi \left( \omega \right) = - 1 \right\} = \\
+= \tilde{A} \in \mathcal{F} $ ---
+неизмеримое множество ($ \sigma $-алгебра --- это только измеримые множества)
 \end{enumerate}
+
+\subsubsection*{8.16}
+
+\textit{Задание.} Пусть $ \left\{ \xi_n \right\}_{n \geq 1} $ --- последовательность случайных величин, определённых н одном и том же вероятностном пространстве.
+Докажите, что $ \varlimsup \limits_{n \rightarrow \infty } \xi_n $ является случайной величиной. 
+
+\textit{Решение.}
+Запишем верхний предел последовательности в виде $ \varlimsup \limits_{n \rightarrow \infty } \xi_n = \\
+= \inf \limits_{m \geq 1} \sup \limits_{n \geq m} \xi_n$.
+
+Считаем, что $ \sup \limits_{n \geq 1} \xi_n $ может принимать значение $+ \infty $,
+тогда
+$$ \left\{ \omega \; \middle| \; \eta \left( \omega \right) =
+\sup \limits_{n \geq 1} \xi_n =
++ \infty \right\} \in \mathcal{F}.$$
+
+Аналогично $ \inf \limits_{n \geq 1} \xi_n $ может принимать значение $- \infty $,
+тогда
+$$ \left\{ \omega \; \middle| \; \xi \left( \omega \right) =
+\inf \limits_{n \geq 1} \xi_n =
+- \infty \right\} \in \mathcal{F}.$$
+
+Покажем, что$ \sup \limits_{n \geq 1} \xi_n $ --- случайная величина
+\begin{equation*}
+\begin{split}
+\forall c \in \mathbb{R}, \qquad \left\{ \omega \; \middle| \; \eta \left( \omega \right) \leq c \right\} =
+\left\{ \omega \; \middle| \; \sup \limits_{n \geq 1} \xi_n \left( \omega \right) \leq c \right\} = \\
+= \left\{ \omega \; \middle| \; \forall n \geq 1, \qquad \xi_n \left( \omega \right) \leq c \right\} =
+\bigcap \limits_{n=1}^{ \infty } \left\{ \omega \; \middle| \; \xi_n \left( \omega \right) \leq c \right\} \in \mathcal{F},
+\end{split}
+\end{equation*}
+так как каждое из множеств принадлежит $ \mathcal{F} $.
+Следовательно супремум случайных величин --- это случайная величина.
+
+Покажем, что$ \inf \limits_{n \geq 1} \xi_n $ --- случайная величина
+\begin{equation*}
+\begin{split}
+\forall c \in \mathbb{R}, \qquad \left\{ \omega \; \middle| \; \xi \left( \omega \right) \leq c \right\} =
+\left\{ \omega \; \middle| \; \inf \limits_{n \geq 1} \xi_n \left( \omega \right) \leq c \right\} = \\
+= \left\{ \omega \; \middle| \; \forall n \geq 1, \qquad \xi_n \left( \omega \right) \leq c \right\} =
+\bigcup \limits_{n=1}^{ \infty } \left\{ \omega \; \middle| \; \xi_n \left( \omega \right) \leq c \right\} \in \mathcal{F},
+\end{split}
+\end{equation*}
+так как каждое из множеств принадлежит $ \mathcal{F} $.
+Следовательно инфимум случайных величин --- это случайная величина.
+
+Из этого следует, что верхний предел последовательности случайных величин --- случайная величина.
