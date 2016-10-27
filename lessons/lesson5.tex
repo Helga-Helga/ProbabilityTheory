@@ -1290,18 +1290,20 @@ P \left( \left. A_n \right| A_1 A_2 \dotsc A_{n-1} C \right) =
 \textit{Задание.} Пусть событие $A$ такое, что $P \left( A \right) $ равно 0 или 1.
 Докажите, что $A$ и произвольное событие $B$ независимы.
 
-\textit{Решение.} $A$ может быть либо пустым множеством, либо совпадать с множеством элементарных исходов.
-
-Пусть $A = \emptyset$.
-Тогда $P \left( A \right) = 0$.
-Рассмотрим произведение вероятностей события $A$ и произвольного события $B$.
-Оно равно $P \left( A \right) P \left( B \right) = 0 \cdot P \left( B \right) = \\ = 0$.
-Рассмотрим вероятность пересечения событий: $P \left( A \cap B \right) = P \left( \emptyset \cap B \right) = \\ = P \left( \emptyset \right) = 0$.
-События называются независимыми, если $P \left( A \cap B \right) = P \left( A \right) P \left( B \right) $.
-Получили, что это равенство выполняется, значит события независимы.
-
-Если $A = \Omega $, то $P \left( A \right) = 1$.
-Рассмотрим произведение вероятностей события $A$ и произвольного события $B$.
-Оно равно $P \left( A \right) P \left( B \right) = 1 \cdot P \left( B \right) = \\ = P \left( B \right)$.
-Рассмотрим вероятность пересечения событий: $P \left( A \cap B \right) = P \left( \Omega \cap B \right) = \\ = P \left( B \right) $.
-События независимы, так как $P \left( A \cap B \right) = P \left( A \right) P \left( B \right) $.
+\textit{Решение.} $P \left( A \right) = 0$ или $P \left( A \right) = 1 \Rightarrow \forall B, \qquad A$ и $B$ --- независимы.
+\begin{enumerate}
+\item $P \left( A \right) = 0$.
+Тогда $P \left( A \right) P \left( B \right) = 0$.
+Вероятность пересечения $P \left( A \cap B \right) \leq \\
+\leq P \left( A \right) \Rightarrow P \left( A \cap B \right) = 0$;
+\item Рассмотрим случай, когда $P \left( A \right) = 1 \Rightarrow P \left( \overline{A} \right) = 0$.
+По предыдущему пункту
+$P \left( \overline{A} \cap B \right) =
+0 \rightarrow P \left( \overline{A} \cap B \right) =
+P \left( B \right) - P \left( A \cap B \right) \Rightarrow \\
+\Rightarrow P \left( A \cap B \right) =
+P \left( B \right) =
+P \left( A \right) \cdot P \left( B \right) =
+1 \cdot P \left( B \right) =
+P \left( B \right) $.
+\end{enumerate}
