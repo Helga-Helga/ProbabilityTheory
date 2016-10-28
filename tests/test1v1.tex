@@ -578,27 +578,32 @@ $$P \left( A \right) =
   \label{fig:341}
 \end{figure}
 
+Всего путей
+$$ \left| \Omega \right| =
+C_{n+n^n} =
+\frac{ \left( 2n \right)!}{n!n!}.$$
+
 Начальная точка --- точка $A$, конечная --- точка $B$.
 Всего путей из $A$ в $B$ существует
 $$ \left| A \rightarrow B \right| =
-C_{n+n}^n =
-C_{2n}^n =
-\frac{ \left( 2n \right)!}{n!n!}.$$
+C_{n-1+n-1}^{n-1} =
+\frac{ \left( 2n-1 \right)!}{ \left( n-1 \right)! \left( n \right)!}.$$
 
 Путей, которые пересекают диагональ будет
 $$ \left| A' \rightarrow B \right| =
-C_{n-1+n}^n =
-C_{2n-1}^n =
-\frac{ \left( 2n-1 \right)!}{n! \left( n-1 \right)!}.$$
+C_{n-2+n}^n =
+\frac{ \left( 2n-2 \right)!}{n! \left( n-2 \right)!}.$$
 
 Тогда путей, которые не пересекают диагональ будет
 $$2 \left( \left| A \rightarrow B \right| - \left| A' \rightarrow B \right| \right) =
-2 \cdot \left( \frac{ \left( 2n \right)!}{n!n!} - \frac{ \left( 2n-1 \right)!}{n! \left( n-1 \right)!} \right),$$
+2 \cdot \left( \frac{ \left( 2n-1 \right)!}{ \left( n-1 \right)! \left( n \right)!} - \frac{ \left( 2n-2 \right)!}{n! \left( n-2 \right)!} \right),$$
 так как частица может двигаться и вправо, и влево.
 
 Тогда вероятность указанного в условии задачи события равна
 $$P =
-\frac{2 \cdot \left( \frac{ \left( 2n \right)!}{n!n!} - \frac{ \left( 2n-1 \right)!}{n! \left( n-1 \right)!} \right) }{ \frac{ \left( 2n \right)!}{n!n!} }.$$
+\frac{2 \cdot \left( \frac{ \left( 2n-1 \right)!}{ \left( n-1 \right)! \left( n \right)!} -
+\frac{ \left( 2n-2 \right)!}{n! \left( n-2 \right)!} \right) }{\frac{ \left( 2n \right)!}{n!n!}} =
+\frac{1}{2n-1}.$$
 
 \subsubsection*{5}
 
