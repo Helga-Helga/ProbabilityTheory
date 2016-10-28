@@ -230,6 +230,35 @@ c \right\} =
 \mathcal{F}.$$
 Это следует из того, что $\left\{ \omega: \, \xi_n \left( \omega \right) > c \right\} \in \mathcal{F} $, так как это случайная величина.
 
+\subsubsection*{8.7}
+
+\textit{Задание.} Пусть $ \left\{ \xi_n \right\}_{n \geq 1}$ --- последовательность случайных величин, которые определены на одном и том же вероятностном пространстве.
+Докажите, что множества: $A = \left\{ \omega \in \Omega \; \middle| \; \right.$ последовательность $ \left\{ \xi_n \left( \omega \right) \right\}_{n \geq 1}$ ограничена\},
+$B =
+\left\{ \omega \in \Omega \; \middle| \; \xi_1 + \xi_2 \geq 5 \right\}, \,
+C =
+\left( \omega \in \Omega \; \middle| \; \xi_1 -3 \xi_2 \xi_3 + \xi_4^2 \cos \xi_1 \geq 0 \right\} $
+являются случайными событиями.
+
+\textit{Решение.} Чтоб доказать, что $A$ является случайной величиной, нужно показать, что $ \left\{ \omega \in \Omega \; \middle| \; \right. $ последовательность $ \left\{ \xi_n \left( \omega \right) \right\}_{n \geq 1}$ ограничена\} $ \in \mathcal{F} $ для произвольного $x \in \mathbb{R} $.
+
+Последовательность $ \left\{ \xi_n \right\}_{n \geq 1}$ называется ограниченной, если она ограниченная сверху и ограниченная снизу, то есть существует такое число $x > 0$, что для любого номера $n, \left| \xi_n \left( \omega \right) \right| \leq x$.
+Имеем: $ \left\{ \omega \in \Omega \; \middle| \; \right.$ последовательность $ \left\{ \xi_n \left( \omega \right) \right\}_{n \geq 1}$ ограничена\} $=
+\bigcap \limits_{N=1}^{ \infty } \bigcup \limits_{n=1}^{ \infty }
+\left\{ \omega \; \middle| \; \exists x > 0, \forall n, \qquad -x \leq \xi_n \left( \omega \right) \leq x \right\} = \\
+= \bigcap \limits_{N=1}^{ \infty } \bigcup \limits_{n=1}^{ \infty }
+\left\{ \omega \; \middle| \; \xi_n \left( \omega \right) \leq x \right\} \ \left\{ \omega \; \middle| \; \xi_n \left( \omega \right) < - x \right\} $.
+Поскольку $ \xi_n $ является случайной,
+то оба множества $ \left\{ \omega \; \middle| \; \xi_n \left( \omega \right) \leq x \right\} $ и
+$ \left\{ \omega \; \middle| \; \xi_n \left( \omega \right) < - x \right\} $ принадлежат $ \sigma $-алгебре $ \mathcal{F} $,
+а значит и их разница
+$ \left\{ \omega \; \middle| \; \xi_n \left( \omega \right) \leq x \right\} \ \left\{ \omega \; \middle| \; \xi_n \left( \omega \right) < - x \right\} $
+принадлежит этой $ \sigma $-алгебре.
+Тогда и
+$$ \bigcap \limits_{N=1}^{ \infty } \bigcup \limits_{n=1}^{ \infty }
+\left\{ \omega \; \middle| \; \xi_n \left( \omega \right) \leq x \right\} \ \left\{ \omega \; \middle| \; \xi_n \left( \omega \right) < - x \right\} \in \mathcal{F}.$$
+
+
 \addcontentsline{toc}{section}{Дополнительные задачи}
 \section*{Дополнительные задачи}
 
