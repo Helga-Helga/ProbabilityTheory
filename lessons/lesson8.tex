@@ -497,6 +497,48 @@ $$ \xi^{-1} \left( \Delta \right) =
 Проверили оба условия.
 Значит $ \mathcal{A} $ является $ \sigma $-алгеброй, порождённой случайной величиной $ \xi $.
 
+\subsubsection*{8.10}
+
+\textit{Задание.}
+Докажите,
+что последовательность событий
+$ \left\{ A_n \right\}_{n \geq 1} $ является последовательностью независимых событий тогда и только тогда,
+когда $ \left\{ \mathbbm{1} \left( A_n \right) \right\}_{n \geq 1} $ является последовательностью независимых случайных величин.
+Здесь $ \mathbbm{1} \left( A \right) $ --- индикатор события $A$.
+
+\textit{Решение.}
+$$ \mathbbm{1} \left( A_n \right) =
+\begin{cases}
+1, \qquad \omega \in A_n, \\
+0, \qquad \omega \notin A_n \left( \omega \in \overline{A_n} \right).
+\end{cases}$$
+
+Пусть есть последовательность независимых событий $ \left\{ A_n \right\}_{n \geq 1} $.
+По определению
+$$P \left( \bigcap \limits_{i=1}^n A_i^{ \epsilon_i} \right) =
+\prod \limits_{i=1}^n P \left( A_i^{ \epsilon_i} \right).$$
+
+Пусть $x_i = \left\{ 0, 1 \right\} $.
+Тогда
+$$P \left( \mathbbm{1} \left( A_1^{ \epsilon_1} \right) = x_1, \,
+\mathbbm{1} \left( A_2^{ \epsilon_2} \right) = x_2, \dotsc,
+\mathbbm{1} \left( A_n^{ \epsilon_n} \right) = x_n \right) =
+\prod \limits_{i=1}^n P \left( \mathbbm{1} \left( A_i^{ \epsilon_i} \right) = x_i \right)
+\left( * \right).$$
+
+Знаем,
+что $ \mathbbm{1} \left( A_1 \right) = 1 \iff A_1$ произошло,
+и $ \mathbbm{1} \left( \overline{A_1} \right) = 0 \iff \overline{A_1}$ не произошло $ \Rightarrow A_1$ произошло.
+
+Из того, что
+$$P \left( \bigcap \limits_{i=1}^n A_i^{ \epsilon_i} \right) =
+\prod \limits_{i=1}^n P \left( A_i^{ \epsilon_i} \right) $$
+следует, что
+$$P \left( \mathbbm{1} \left( A_1^{ \epsilon_1} \right) = x_1, \dotsc, A_n^{ \epsilon_n} = x_n \right) =
+\prod \limits_{i=1}^n P \left( A_i^{ \epsilon_i} \right), \,
+\left( * \right) =
+\prod \limits_{i=1}^n P \left( A_i^{ \epsilon_i} \right).$$
+
 \addcontentsline{toc}{section}{Дополнительные задачи}
 \section*{Дополнительные задачи}
 
