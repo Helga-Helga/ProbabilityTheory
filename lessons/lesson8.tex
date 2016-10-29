@@ -303,6 +303,120 @@ $$C =
 \left( \omega \in \Omega \; \middle| \; \xi_1 -3 \xi_2 \xi_3 + \xi_4^2 \cos \xi_1 \geq 0 \right\} \in
 \mathcal{F}.$$
 
+\subsubsection*{8.8}
+
+\textit{Задание.}
+Пусть вероятностное пространство
+$ \left( \Omega, \mathcal{F}, \mathbb{P} \right) $
+является отрезком $ \left[ 0, 1 \right] $ из $ \sigma $-алгебры борелевских множеств и мерой Лебега.
+Опишите $ \sigma $-алгебру, порождённую случайной величиной:
+\begin{enumerate}[label=\alph*)]
+\item $ \xi \left( \omega \right) = 1/2 $;
+\item $ \xi \left( \omega \right) =
+\begin{cases}
+\omega, \qquad \omega \in \left[ 0, 1/2 \right), \\
+1, \qquad \omega \in \left[ 1/2, 1 \right].
+\end{cases} $
+\end{enumerate}
+
+\textit{Решение.}
+\begin{enumerate}[label=\alph*)]
+\item $ \xi \left( \omega \right) = 1/2 $.
+Нарисуем график этого отображения (рис. \ref{fig:88})
+
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=.4\textwidth]{./pictures/8_8.png}
+  \caption{График $ \xi \left( \omega \right) = 1/2 $}
+  \label{fig:88}
+\end{figure}
+
+$ \left( \Omega, \mathcal{F}, \mathbb{P} \right) $ --- вероятностное пространство, где $ \Omega = \left[ 0, 1 \right] $.
+Отрезок $ \left[ 0, 1 \right] $ является атомом для $ \xi $, поскольку все значения равны для любой точки.
+Сформируем некоторое множество
+$ \mathcal{A} =
+\left\{ B \subset \mathcal{F} \; \middle| \; B \supset \left[ 0, 1 \right] \right.$
+или $\left. B \cap \left[ 0, 1 \right] = \emptyset \right\} = \left\{ \left[ 0, 1 \right], \emptyset \right\} $ --- тривиальная $ \sigma $-алгебра.
+
+Проверим, что $ \mathcal{A} $ --- это действительно $ \mathcal{F}_{ \xi } $, то есть $ \sigma $-алгебра, порождённая $ \xi $.
+Нужно убедиться, что
+\begin{enumerate}
+\item $ \forall B \subset \mathcal{A} \, \exists \Delta \in \mathcal{B} \left( \mathbb{R} \right), \qquad B = \xi^{-1} \left( \Delta \right) $;
+\item $ \forall \Delta \in \mathcal{B} \left( \mathbb{R} \right), \qquad \xi^{-1} \left( \Delta \right) \in \mathcal{A} $.
+\end{enumerate}
+
+Проверяем первое условие:
+\begin{enumerate}[label=\alph*)]
+\item для $ \emptyset $ должно найтись множество на $ \xi \left( \omega \right) $, такая что её прообраз совпадает с множеством, которое не содержит $1/2$.
+Если $B = \emptyset $, то $ \Delta $ --- произвольное множество из $ \mathcal{B} \left( \mathbb{R} \right) $, которое не содержит точку $1/2$; 
+\item если $B = \left[ 0, 1 \right] $, в качестве $ \Delta $ можно взять $ \left\{ 1/2 \right\} $.
+\end{enumerate}
+
+Проверяем второе условие:
+\begin{enumerate}[label=\alph*)]
+\item если $ \Delta \supset \left\{ 1/2 \right\} $, тогда $ \xi^{-1} \left( \Delta \right) = \left[ 0, 1 \right] \in \mathcal{A} $;
+\item если $ \Delta \not\supset \left\{ 1/2 \right\} $, то $ \xi^{-1} \left( \Delta \right) = \emptyset \in \mathcal{A} $.
+\end{enumerate}
+
+Убедились, что все прообразы являются $ \emptyset $ или $ \left[ 0, 1 \right] $;
+\item нарисуем график (рис. \ref{fig:881}.
+
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=.4\textwidth]{./pictures/8_81.png}
+  \caption{График}
+  \label{fig:881}
+\end{figure}
+
+$$ \xi \left( \omega \right) =
+\begin{cases}
+\omega, \qquad \omega \in \left[ 0, 1/2 \right), \\
+1, \qquad \omega \in \left[ 1/2, 1 \right].
+\end{cases} $$
+
+Отображение $ \xi: \, \left[ 0, 1 \right] \rightarrow \left[ 0, 1 \right] $.
+Будем рассматривать борелевскую $ \sigma $-алгебру.
+Отрезок
+$$ \left[ \frac{1}{2}, 1 \right] $$
+является атомом для $ \xi $.
+Отсюда следует, что множество
+$$ \mathcal{A} =
+\left\{ B \subset \mathcal{F} \; \middle| \; B \supset \left[ \frac{1}{2}, 1 \right] or B \cap \left[ \frac{1}{2}, 1 \right] \right\}.$$
+Наша гипотеза: это и есть $ \sigma $-алгебра, порождённая $ \xi $.
+Должны проверить такие 2 условия:
+\begin{enumerate}
+\item $ \forall B \subset \mathcal{A} \, \exists \Delta \in \mathcal{B} \left( \mathbb{R} \right), \qquad B = \xi^{-1} \left( \Delta \right) $;
+\item $ \forall \Delta \in \mathcal{B} \left( \left[ 0, 1 \right] \right), \qquad \xi^{-1} \left( \Delta \right) \in \mathcal{A} $.
+\end{enumerate}
+
+Проверяем первое условие:
+\begin{enumerate}[label=\alph*)]
+\item пусть
+$$B \supset \left[ \frac{1}{2}, 1 \right].$$
+Предъявим $ \Delta $.
+Тогда $ \Delta = \left\{ 1 \right\} \cup \left( B \setminus \left[ 0, 1 \right] \right) $;
+\item пусть
+$$B \cap \left[ \frac{1}{2}, 1 \right] = \emptyset.$$
+Оно будет прообразом для $ \Delta = B$.
+\end{enumerate}
+
+Проверяем второе условие:
+\begin{enumerate}[label=\alph*)]
+\item пусть $ \Delta \supset \left\{ 1 \right\} $, тогда
+$$ \xi^{-1} \left( \Delta \right) =
+\left[ \frac{1}{2}, 1 \right] \cup \left( \Delta \cap \left[ \frac{1}{2}, 1 \right] \right) \in
+\mathcal{A},$$
+потому что это множество полностью содержит отрезок
+$$ \left[ 1/2, 1 \right];$$
+\item если $ \Delta \not\supset \left\{ 1 \right\} $, то
+$$ \xi^{-1} \left( \Delta \right) =
+\Delta \cap \left[ 0, \frac{1}{2} \right) \in
+\mathcal{A}.$$
+\end{enumerate}
+
+Поэтому это действительно $ \sigma $-алгебра, порождённая $ \xi $.
+\end{enumerate}
+
 \addcontentsline{toc}{section}{Дополнительные задачи}
 \section*{Дополнительные задачи}
 
