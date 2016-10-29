@@ -417,6 +417,86 @@ $$ \xi^{-1} \left( \Delta \right) =
 Поэтому это действительно $ \sigma $-алгебра, порождённая $ \xi $.
 \end{enumerate}
 
+\subsubsection*{8.9}
+
+\textit{Задание.} Опишите $ \sigma $-алгебру, порождённую дискретной случайной величиной.
+
+\textit{Решение.} Любую дискретную случайную величину можем изобразить как
+$$ \xi \left( \omega \right) =
+\sum \limits_{i=1}^n x_i \cdot \mathbbm{1} \left( \omega \in A_i \right),$$
+где
+$$ \Omega =
+\bigsqcup \limits_{i=1}^n A_i, \,
+P \left( A_i \right) >
+0, \,
+A_i \cap A_j =
+\emptyset.$$
+В каждом случае $ \xi $ принимает $n$ разных значений $ \left\{ x_1, \dotsc, x_n \right\} $.
+Или если она принимает счётное количество значений
+$$ \xi \left( \omega \right) =
+\sum \limits_{i=1}^{ \infty } x_i \cdot \mathbbm{1} \left( \omega \in A_i \right),$$
+где
+$$ \Omega =
+\bigsqcup \limits_{i=1}^{ \infty } A_i, \,
+P \left( A_i \right) >
+0, \,
+A_i \cap A_j =
+\emptyset,
+A_i =
+\left\{ \omega \; \middle| \; \xi \left( \omega \right) = x_i \right\}.$$
+Тогда $A_i$ --- атомы для $ \xi $.
+Тогда
+$$ \sigma \left( \xi \right) =
+\left\{ B \in \mathcal{F} \; \middle| \; B = \bigcup \limits_{i \in M} A_i \right\} =
+\mathcal{A},$$
+где $M$ --- некоторое множество индексов.
+Нарисуем график (рис. \ref{fig:89}).
+
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=.4\textwidth]{./pictures/8_9.png}
+  \caption{График}
+  \label{fig:89}
+\end{figure}
+
+Проверим, что $ \mathcal{A} $ --- действительно $ \sigma $-алгебра, порождённая величиной $ \xi $.
+Нужно проверить условия:
+\begin{enumerate}
+\item $ \forall B \subset \mathcal{A} \, \exists \Delta \in \mathcal{B} \left( \mathbb{R} \right), \qquad B = \xi^{-1} \left( \Delta \right) $;
+\item $ \forall \Delta \in \mathcal{B} \left( \mathbb{R} \right), \qquad \xi^{-1} \left( \Delta \right) \in \mathcal{A} $.
+\end{enumerate}
+Пусть $B \in \mathcal{A} $.
+Тогда
+$$B =
+\bigcup \limits_{i \in M} A_i,$$
+где $M$ --- некоторое множество индексов.
+
+Например, $B = A_1 \cup A_3$.
+
+Возьмём
+$$ \Delta =
+\bigcup \limits_{i \in M} \left\{ x_i \right\}.$$
+Тогда $ \xi^{-1} \left( \Delta \right) = B$.
+Показали первое условие.
+
+Допустим, что ни одна из $x_1, x_2, x_3, \dotsc $ не входит в $ \Delta $.
+Тогда
+$$ \xi^{-1} \left( \Delta \right) =
+\emptyset \in
+\mathcal{A}.$$
+
+Множество $M$ может содержать $ \emptyset, \left\{ 1 \right\}, \left\{ 2 \right\}, \left\{ 1, 2 \right\}, \dotsc $.
+
+Пусть некоторые $x_i \in \Delta $.
+Сформируем множество индексов
+$$ \left\{ M \; \middle| \; \forall i \in M, \qquad x_i \in \Delta \right\}.$$
+Тогда прообразом будет
+$$ \xi^{-1} \left( \Delta \right) =
+\bigcup \limits_{i \in M} A_i.$$
+
+Проверили оба условия.
+Значит $ \mathcal{A} $ является $ \sigma $-алгеброй, порождённой случайной величиной $ \xi $.
+
 \addcontentsline{toc}{section}{Дополнительные задачи}
 \section*{Дополнительные задачи}
 
