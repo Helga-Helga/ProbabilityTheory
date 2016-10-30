@@ -539,6 +539,25 @@ $$P \left( \mathbbm{1} \left( A_1^{ \epsilon_1} \right) = x_1, \dotsc, A_n^{ \ep
 \left( * \right) =
 \prod \limits_{i=1}^n P \left( A_i^{ \epsilon_i} \right).$$
 
+\subsubsection*{8.11}
+
+\textit{Задание.} Пусть $ \mathcal{A}_1, \mathcal{A}_2 $ --- независимые алгебры.
+Докажите, что порождённые ими $ \sigma $-алгебры тоже независимы.
+
+\textit{Решение.} Пусть $A_1, A_2$ из наших $ \sigma $-алгебр.
+Тогда для каждого $ \epsilon $ найдутся $B_1, B_2$ из наших алгебр, такие, что $P \left( A_i \Delta B_i \right) \leq \epsilon, \, i = 1, 2$.
+Отсюда
+$P \left( A_1 A_2 \right) - P \left( A_1 \right) P \left( A_2 \right) \leq
+P \left( B_1 A_2 + \left( A_1 A_2 \right) \setminus \left( B_1 A_2 \right) \right) - \\
+- \left( P \left( A_1 \right) - \epsilon \right) \left( P \left( A_2 \right) - \epsilon \right) \leq
+P \left( B_1 A_2 \right) + P \left( A_2 \left( A_1 \setminus B_1 \right) \right) - P \left( A_1 A_2 \right) + 2 \epsilon \leq \\
+\leq P \left( \left( B_1 \setminus A_1 \right) A_2 \right) + P \left( A_1 A_2 \right) - P \left( A_1 \right) P \left( A_2 \right) +
+3 \epsilon \leq
+4 \epsilon $.
+
+В силу произвольности $ \epsilon $ имеем $P \left( A_1 A_2 \right) \leq P \left( A_1 \right) P \left( A_2 \right) $.
+Аналогично доказывается обратное неравенство, откуда и следует независимость $A_1$ и $A_2$.
+
 \addcontentsline{toc}{section}{Дополнительные задачи}
 \section*{Дополнительные задачи}
 
