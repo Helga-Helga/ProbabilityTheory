@@ -1,0 +1,58 @@
+\addcontentsline{toc}{chapter}{Занятие 11. Последовательности случайных величин. Лемма Бореля-Кантелли}
+\chapter*{Занятие 11. Последовательности случайных величин. Лемма Бореля-Кантелли}
+
+\addcontentsline{toc}{section}{Контрольные вопросы и задания}
+\section*{Контрольные вопросы и задания}
+
+\subsubsection*{Сформулируйте лемму Бореля-Кантелли, закон <<нуля или единицы>> Колмогорова; запишите теоретико-множественное изображение событий $ \varlimsup \limits_{n \to \infty } A_n, \, \varliminf \limits_{n \to \infty } A_n$.}
+
+Лемма Бореля-Кантелли.
+\begin{enumerate}
+\item Если
+$$ \sum \limits_{n=1}^{ \infty } P \left( A_n \right) < + \infty,$$
+то $P \left( \varlimsup \limits_{n \to \infty } A_n \right) = 0$;
+\item если $ \left\{ A_n \right\} $ --- независимы и
+$$ \sum \limits_{n=1}^{ \infty } P \left( A_n \right) =
++ \infty $$
+(ряд, составленный из вероятностей, расходится), то $P \left( \varlimsup \limits_{n \to \infty } A_n \right) = 1$.
+\end{enumerate}
+
+Закон <<нуля или единицы>> Колмогорова.
+Пусть дано вероятностное пространство
+$ \left( \Omega, \mathcal{F}, \mathbb{P} \right) $
+и определённая на нём последовательность независимыых случайных величин
+$ \left\{ X_n \right)_{n=1}^{ \infty } $ (не обязятельно одинаково распределённых).
+Пусть $ \mathcal{F}_{ \infty }$ --- её остаточная $ \sigma $-алгебра, то есть
+$$ \mathcal{F}_{ \infty } =
+\sigma \left( \bigcap \limits_{m=1}^{ \infty } \bigcup \limits_{n \geq m} \mathcal{F}_n \right),$$
+где $ \mathcal{F}_n $ есть $ \sigma $-алгебра, порождённая случайной величиной $X_n$.
+
+Тогда если $A \in \mathcal{F}_{ \infty }$, то $ \mathbb{P} \left( A \right) = 0$ или $ \mathbb{P} \left( A \right) = 1$.
+
+Другими словами, $A$ --- остаточное событие, если оно измеримо относительно $ \sigma $-алгебры,
+порождённой случайными величинами $ \left\{ X_n \right\}_{n=1}^{ \infty }$, но независимо от любого конечного подмножества этих величин.
+Согласно теореме, такое событие имеет вероятность ноль или единица.
+
+Пусть $ \left\{ A_n \right\}_{n \geq 1}$ --- последовательность случайных событий.
+
+$$ \varlimsup \limits_{n \to \infty } A_n =
+\bigcap \limits_{n=1}^{ \infty } \bigcup \limits_{m=n}^{ \infty } A_m.$$
+
+Это означает, что $ \forall n \, \exists m, \qquad A_m$ произошло.
+В последовательности
+$$ \left\{ A_n \right\}_{n \geq 1}$$
+происходит бесконечно много событий $A_n$.
+
+$$ \varliminf \limits_{n \to \infty } \bigcup \limits_{n=1}^{ \infty } \bigcap \limits_{m=n}^{ \infty } A_m =$$
+= \{начиная с некоторого номера в $ \left\{ A_n \right\}_{n \geq 1}$ происходят все события $A_n$\}.
+
+$ \exists n \, \forall m, \qquad A_m$ произошло.
+
+\addcontentsline{toc}{section}{Аудиторные задачи}
+\section*{Аудиторные задачи}
+
+\addcontentsline{toc}{section}{Дополнительные задачи}
+\section*{Дополнительные задачи}
+
+\addcontentsline{toc}{section}{Домашнее задание}
+\section*{Домашнее задание}
