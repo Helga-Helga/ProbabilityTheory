@@ -941,3 +941,28 @@ $$ \xi^{-1} \left( \Delta \right) =
 Проверили оба условия.
 Значит $ \mathcal{A} $ является $ \sigma $-алгеброй, порождённой случайной величиной $ \xi $.
 \end{enumerate}
+
+\subsubsection*{8.19}
+
+\textit{Задание.} Пусть $ \xi $ и $ \eta $ --- независимые случайные величины, $f$ и $g$ --- борелевские функции.
+Докажите, что случайные величины $f \left( \xi \right) $ и $g \left( \eta \right) $ являются независимыми.
+
+\textit{Решение.} $ \eta $ и $ \xi $ --- независимые случайные величины.
+$f, g$ ---
+борелевские функции
+$f \left( \xi \right): \, \Omega \rightarrow \mathbb{R}, \,
+f \in B_1', \,
+g \left( \eta \right): \, \Omega \rightarrow \mathbb{R}, \,
+g \in B_2'$.
+
+Тогда
+$ \left\{ \omega \; \middle| \; f \left( \xi \left( \omega \right) \right) \in B_1' \right\} =
+\left\{ \omega \; \middle| \; \xi \left( \omega \right) \in f^{-1} \left( B_1' \right) \equiv B_1 \right\}, \, \\
+\left\{ \omega \; \middle| \; g \left( \eta \left( \omega \right) \right) \in B_2' \right\} =
+\left\{ \omega \; \middle| \; \eta \left( \omega \right) \in g^{-1} \left( B_2' \right) \equiv B_2 \right\} $.
+
+Отсюда $B_1$ и $B_2$ --- независимые множества.
+Тогда
+$$B_1' = f \left( B_1 \right), \,
+B_2' = g \left( B_2 \right) $$
+--- независимы.
