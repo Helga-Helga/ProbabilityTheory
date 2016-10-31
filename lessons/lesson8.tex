@@ -566,7 +566,60 @@ P \left( B_1 A_2 \right) + P \left( A_2 \left( A_1 \setminus B_1 \right) \right)
 \textit{Задание.} Пусть $ \xi_1, \dotsc, \xi_n $ --- случайные величины и $ \phi \left( x_1, \dotsc, x_n \right) $ --- борелевская функция.
 Докажите, что функция $ \phi \left( \xi_1 \left( \omega \right), \dotsc, \xi_n \left( \omega \right) \right) $ является случайной величиной.
 
-\textit{Решение.}
+\textit{Решение.} Доказательство разобьём на несколько частей.
+Обозначим
+$$ \eta = \phi \left( \xi_1, \dotsc, \xi_n \right).$$
+
+\begin{enumerate}
+\item Достаточно проверить, что $ \eta^{-1} \left( G \right) \in \mathcal{F} $ для произвольного открытого множества $G$ в $ \mathbb{R} $.
+
+Почему это так?
+Вводим множество $a = \left\{ \Delta \; \middle| \; \eta^{-1} \left( \Delta \right) \in \mathcal{F} \right\} $ --- это $ \sigma $-алгебра, $a$ содержит открытые множества.
+Тогда $a \supset \sigma $ (открытые множества) $= \mathcal{B} $;
+\item пусть $G$ --- открытое в $ \mathbb{R} $.
+По определению
+$$ \eta^{-1} \left( G \right) =
+\left\{ \omega \; \middle| \; \phi \left( \xi_1 \left( \omega \right), \dotsc, \xi_n \left( \omega \right) \right) \in G \right\}.$$
+
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=.4\textwidth]{./pictures/8_12.png}
+  \caption{Отображения}
+  \label{fig:812}
+\end{figure}
+
+Из рисунка \ref{fig:812}
+$$ \left\{ \omega \; \middle| \; \phi \left( \xi_1 \left( \omega \right), \dotsc, \xi_n \left( \omega \right) \right) \in G \right\} =
+\left\{ \omega \; \middle| \; \left( \xi_1 \left( \omega \right), \dotsc, \xi_n \left( \omega \right) \right) \in \phi^{-1} \left( G \right) \right\}.$$
+
+По условию функция $ \phi $ --- непрерывна.
+
+Знаем, что $f^{-1} \left( G \right) $ --- открытое множество в $ \mathbb{R}^n$.
+
+Заменяем открытое на более общее --- борелевское.
+
+Докажем,
+что для всякого
+$ \Delta \in \mathcal{B} \left( \mathbb{R}^n \right) $
+множество
+$$ \left\{ \omega \; \middle| \; \left( \xi_1 \left( \omega \right), \dotsc, \xi_n \left( \omega \right) \right) \in \Delta \right\} \in \mathcal{F} $$
+(является случайным событием).
+
+Множество всех таких $ \Delta $ образует $ \sigma $-алгебру.
+Определим
+$$a =
+\left\{ \Delta \; \middle| \; \left( \xi_1 \left( \omega \right), \dotsc, \xi_n \left( \omega \right) \right) \in \Delta \right\} \in \mathcal{F} $$
+--- сигма-алгебра.
+
+Возьмём в качестве $ \Delta: \, \Delta = \prod \limits_{k=1}^n \left( a_k, b_k \right] $.
+Тогда
+$$ \left\{ \omega \; \middle| \; \left( \xi_1 \left( \omega \right), \dotsc, \xi_n \left( \omega \right) \right) \in \Delta \right\} =
+\bigcap \limits_{k=1}^n \left\{ \omega \; \middle| \; \xi_k \left( \omega \right) \in \left( a_k, b_k \right] \right\} \in \mathcal{F},$$
+где $ \xi_k \left( \omega \right) $ --- случайные величины.
+
+Тогда $a \supset $ \{прямоугольники\} $ \Rightarrow a \supset \sigma $ (прямоугольники) $= \mathcal{B} $.
+
+\end{enumerate}
 
 \addcontentsline{toc}{section}{Домашнее задание}
 \section*{Домашнее задание}
