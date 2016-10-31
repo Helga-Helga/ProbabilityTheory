@@ -948,24 +948,26 @@ $$ \xi^{-1} \left( \Delta \right) =
 Докажите, что случайные величины $f \left( \xi \right) $ и $g \left( \eta \right) $ являются независимыми.
 
 \textit{Решение.} $ \eta $ и $ \xi $ --- независимые случайные величины.
-$f, g$ ---
-борелевские функции
-$f \left( \xi \right): \, \Omega \rightarrow \mathbb{R}, \,
-f \in B_1', \,
-g \left( \eta \right): \, \Omega \rightarrow \mathbb{R}, \,
-g \in B_2'$.
+$f, g$ --- борелевские функции.
 
-Тогда
-$ \left\{ \omega \; \middle| \; f \left( \xi \left( \omega \right) \right) \in B_1' \right\} =
-\left\{ \omega \; \middle| \; \xi \left( \omega \right) \in f^{-1} \left( B_1' \right) \equiv B_1 \right\}, \, \\
-\left\{ \omega \; \middle| \; g \left( \eta \left( \omega \right) \right) \in B_2' \right\} =
-\left\{ \omega \; \middle| \; \eta \left( \omega \right) \in g^{-1} \left( B_2' \right) \equiv B_2 \right\} $.
+Борелева (борелевская) функция ---
+отображение пространства вещественных чисел в пространство вещественных чисел,
+для которого прообраз любого борелевского множества есть борелевское множество.
 
-Отсюда $B_1$ и $B_2$ --- независимые множества.
-Тогда
-$$B_1' = f \left( B_1 \right), \,
-B_2' = g \left( B_2 \right) $$
---- независимы.
+Борелевское множество --- множество, которое может быть получено в результате не более чем счётной совокупности операций объединения и пересечения открытых и замкнутых множеств пространства вещественных чисел.
+
+Из независимости случайных величин $ \xi $ и $ \eta $ следует
+$$ P \left( \xi \in B_1, \, \eta \in B_2 \right) =
+P \left( \xi \in B_1 \right) P \left( \eta \in B_2 \right),
+\forall B_1, B_2 \in \mathcal{B} \left( \mathbb{R} \right).$$
+
+$f \left( \xi \right), \, g \left( \eta \right) $ --- случайные величины.
+
+$P \left\{ f \left( \xi \right) \in B_1, \, g \left( \eta \right) \in B_2 \right\} =
+P \left\{ \xi \in f^{-1} \left( \mathcal{B_1} \right), \, \eta \in g^{-1} \left( \mathcal{B_2} \right) \right\} = \\
+= P \left\{ \xi \in B_1', \, \eta \in B_2' \right\} =
+P \left( \xi \in B_1' \right) P \left( \eta \in B_2' \right) =
+P \left( f \left( \xi \right) \in B_1 \right) P \left( g \left( \eta \right) \in B_2 \right) $.
 
 \subsubsection*{8.20}
 
