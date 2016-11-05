@@ -72,6 +72,36 @@ $$ \sum \limits_{k=1}^{ \infty } P \left( A_k \right) =
 
 По второй части леммы Бореля-Кантелли $P \left( \varlimsup \limits_{n \to \infty } A_n \right) = 1$.
 
+\subsubsection*{13.4}
+
+\textit{Задание.}
+Пусть $ \left\{ \xi_n \right\}_{n \geq 1}$ --- последовательность независимых случайных величин,
+причём $P \left( \xi_n = 1 \right) = p, \, P \left( \xi_n = 0 \right) = 1 - p$.
+Докажите, что
+$$P \left( \sum \limits_{n=1}^{ \infty } \xi_n = + \infty \right) = 1.$$
+
+\textit{Решение.} $ \left\{ \xi_n \right\}_{n \geq 1}$ --- независимые случайные величины.
+
+Известно, что $P \left( \xi_n = 1 \right) = p, \, P \left( \xi_n = 0 \right) = 1 - p$.
+
+Нужно показать, что
+$$P \left( \sum \limits_{n=1}^{ \infty } \xi_n = + \infty \right) = 1.$$
+
+Если $p = 0$, то ряд сходится.
+Поэтому изначально предполагаем, что $p > 0$.
+
+Если бесконечно много единиц, тогда ряд расходится.
+Нужно показать,
+что в последовательности $ \xi_1, \xi_2, \dotsc, \xi_n, \dotsc $ бесконечно много единиц,
+т.е. $P \left( A_n \right.$ бесконечно часто) $= 1, \, A_n = \left\{ \xi_n = 1 \right\} $.
+
+Эти события независимы, потому что $ \left\{ \xi_n \right\} $ --- независимы, $P \left( A_n \right) = p$.
+
+Тогда
+$$ \sum \limits_{n=1}^{ \infty } P \left( A_n \right) =
+\sum \limits_{n=1}^{ \infty } p =
++ \infty.$$
+
 \addcontentsline{toc}{section}{Дополнительные задачи}
 \section*{Дополнительные задачи}
 
