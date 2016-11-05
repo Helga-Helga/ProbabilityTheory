@@ -102,6 +102,127 @@ $$ \sum \limits_{n=1}^{ \infty } P \left( A_n \right) =
 \sum \limits_{n=1}^{ \infty } p =
 + \infty.$$
 
+\subsubsection*{13.5}
+
+\textit{Задание.} Пусть $ \left\{ \xi_n \right\}_{n \geq 1}$ --- последовательность независимых случайных величин.
+Найдите вероятность $P \left( \varliminf \limits_{n \to \infty } \xi_n = 0 \right) $, если:
+\begin{enumerate}[label=\alph*)]
+\item $P \left( \xi_n = k/n \right) = 1/n, \qquad k = 1, \dotsc, n$;
+\item $P \left( \xi_n = k/n \right) = 2k/\left[ n \left( n+1 \right) \right], \qquad k = 1, \dotsc, n$.
+\end{enumerate}
+
+\textit{Решение.}
+\begin{enumerate}[label=\alph*)]
+\item Есть последовательность независимых случайных величин $ \left\{ \xi_n \right\} $ такая, что
+$$P \left\{ \xi_n = \frac{k}{n} \right\} =
+\frac{1}{n}, \qquad
+1 \leq k \leq n.$$
+
+Нужно найти $P \left( \varliminf \limits_{n \to \infty } \xi_n = 0 \right) $.
+
+Из условия следует, что $ \xi_1$ может принимать значение 1, $ \xi_2$ --- 1 и $1/2, \, \xi_3$ --- 1, $1/3, \, 2/3, \, \xi_n$ принимает $n$ значений
+$$ \xi_n: \, \frac{1}{n}, \frac{2}{n}, \frac{3}{n}, \dotsc, \frac{n}{n}.$$
+
+Каждое из $n$ значений $ \xi_n$ принимает с одинаковой вероятностью $1/n$.
+
+Фиксируем произвольное натуральное число $m \geq 1$.
+Пытаемся показать, что
+$$P \left\{ \varliminf \limits_{n \to \infty } \xi_n \leq \frac{1}{m} \right\} =
+1.$$
+Если покажем, то
+$$P \bigcap \limits_{m=1}^{ \infty } \left\{ \varliminf \limits_{n \to \infty } \xi_n \leq \frac{1}{m} \right\} =
+1.$$
+Перепишем левую часть
+$$P \bigcap \limits_{m=1}^{ \infty } \left\{ \varliminf \limits_{n \to \infty } \xi_n \leq \frac{1}{m} \right\} =
+P \left\{ \varliminf \limits_{n \to \infty } \xi_n = 0 \right\} =
+1$$ ---
+то, что хотим показать
+$$P \bigcap \limits_{m=1}^{ \infty } \left\{ \varliminf \limits_{n \to \infty } \xi_n \leq \frac{1}{m} \right\} =
+P \left\{ \varliminf \limits_{n \to \infty } \xi_n = 0 \right\} \geq$$
+$P \left\{ \xi_n \leq \frac{1}{m} \right.$ бесконечно часто\}.
+Обозначим
+$$A_n =
+\left\{ \xi_n \leq \frac{1}{m} \right\}.$$
+
+Хотим воспользоваться второй частью леммы Бореля-Кантелли.
+Нужно организовать $A_1, A_2, \dotsc, A_n, \dotsc $ --- независимые,
+$$ \sum \limits_{n=1}^{ \infty } P \left( A_n \right) =
++ \infty.$$
+
+Найдём
+$$P \left( A_n^c \right) =
+P \left\{ \xi_n \leq \frac{1}{c} \right\}.$$
+
+Можем считать, что $n \geq m, \, c \in \mathbb{N}$.
+
+Для каких $k \in \mathbb{N}$
+$$ \frac{k}{n} \leq \frac{1}{c}?$$
+Имеем
+$$k \leq \left[ \frac{n}{c} \right] $$ ---
+целая часть.
+Тогда
+$$P \left\{ \xi_n \leq \frac{1}{c} \right\} =
+\sum \limits_{ \frac{k}{n} \leq \frac{1}{c} \left( k \leq \left[ \frac{n}{c} \right] \right) } P \left\{ \xi_n = \frac{k}{n} \right\} =
+\frac{1}{n} \cdot \left[ \frac{n}{c} \right].$$
+
+Рассмотрим ряд
+$$ \sum \limits_{n=c}^{ \infty } \left( \frac{1}{n} \cdot \left[ \frac{n}{c} \right] \right) =
++ \infty.$$
+
+Если
+$$ \sum \limits_{n=1}^{ \infty} x_n < + \infty, \,
+x_n \geq 0, \,
+n \geq 1 \Rightarrow
+\lim \limits_{n \to \infty } x_n =
+0.$$
+
+Достаточно показать, что
+$$ \lim \limits_{n \to \infty } \frac{1}{n} \cdot \left[ \frac{n}{c} \right] =
+\frac{1}{c} >
+0.$$
+Отсюда следует, что ряд расходится и нижний предел равен нулю;
+\item $ \left\{ \xi_n \right\}_{n=1}^{ \infty }$ --- независимые случайные величины
+$$P \left( \xi_n = \frac{k}{n} \right) =
+\frac{2k}{n \left( n+1 \right) }, \, 1 \leq k \leq n.$$
+
+Чему равна $P \left( \varliminf \limits_{n \to \infty } \xi_n = 0 \right)?$
+
+Будет ли
+$$ \sum \limits_{k=1}^n \frac{2k}{n \left( n+1 \right) } =
+1?$$
+
+Распишем эту сумму
+$$ \sum \limits_{k=1}^n \frac{2k}{n \left( n+1 \right) } =
+\frac{2k}{n \left( n+1 \right) } \sum \limits_{k=1}^n k=
+\frac{2 \cdot \frac{n \left( n+1 \right) }{2}}{n \left( n+1 \right) } =
+1.$$
+
+Фиксируем $m \in \mathbb{N}$ такое, что $P \left\{ \xi_n \leq 1/n \right.$ бесконечно часто\}.
+$$A_n =
+\left\{ \xi_n \leq \frac{1}{m} \right\}.$$
+Найдём вероятность этого события
+$$P \left( A_n \right) =
+P \left\{ \xi_n \leq \frac{1}{m} \right\} =
+\sum \limits_{k} P \left\{ \xi_n = \frac{k}{n} \right\}.$$
+Найдём пределы для суммы
+$$ \frac{k}{n} \leq \frac{1}{m}, \, k \leq \left[ \frac{n}{m} \right].$$
+Тогда
+\begin{equation*}
+\begin{split}
+\sum \limits_{k} P \left\{ \xi_n = \frac{k}{n} \right\} =
+\sum \limits_{k=1}^{ \left[ \frac{n}{m} \right] } \frac{2k}{n \left( n+1 \right) } =
+\frac{2}{n \left( n+1 \right) } \sum \limits_{k=1}^{ \left[ \frac{n}{m} \right] } k = \\
+= \frac{2}{n \left( n+1 \right) } \cdot \frac{ \left[ \frac{n}{m} \right] \left( \left[ \frac{n}{m} \right] + 1 \right) }{2}
+\end{split}
+\end{equation*}
+--- будет ли он расходиться?
+
+$$ \lim \limits_{n \to \infty } P \left( A_n \right) =
+\frac{1}{m^2} >
+0.$$
+Отсюда следует, что ряд расходится, вероятность верхнего предела равна единице.
+\end{enumerate}
+
 \addcontentsline{toc}{section}{Дополнительные задачи}
 \section*{Дополнительные задачи}
 
