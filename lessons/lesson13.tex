@@ -223,6 +223,34 @@ $$ \lim \limits_{n \to \infty } P \left( A_n \right) =
 Отсюда следует, что ряд расходится, вероятность верхнего предела равна единице.
 \end{enumerate}
 
+\subsubsection*{13.7}
+
+\textit{Задание.} Пусть $ \left\{ \xi_n \right\}_{n \geq 1}$ --- последовательность независимых одинаково распределённых случайных величин с функцией распределения
+$$F \left( x \right) =
+\begin{cases}
+0, \qquad x < 0, \\
+1 - e^{-x}, \qquad x \geq 0.
+\end{cases}$$
+Докажите, что
+$$P \left( \varlimsup \limits_{n \to \infty } \frac{ \xi_n}{ \ln n} = 1 \right) =
+1.$$
+
+\textit{Решение.} $ \left\{ \xi_n \right\}_{n \geq 1}$ --- последовательность независимых случайных величин, для которых
+$$P \left\{ \xi_n \leq x \right\} =
+\begin{cases}
+0, \qquad x < 0, \\
+1 - e^{-x}, \qquad x \geq 0.
+\end{cases}$$
+
+Нужно показать, что
+$$P \left( \varlimsup \limits_{n \to \infty } \frac{ \xi_n}{ \ln n} = 1 \right) =
+1.$$
+Это эквивалентно следующим двум утверждениям:
+\begin{enumerate}
+\item $ \forall \epsilon > 0, \qquad P \left\{ \xi_n / \ln n > 1 + \epsilon \right.$ бесконечно часто\} $= 0$;
+\item $ \forall \epsilon > 0, \qquad P \left\{ \xi_n / \ln n > 1 - \epsilon \right.$ бесконечно часто\} $= 1$.
+\end{enumerate}
+
 \addcontentsline{toc}{section}{Дополнительные задачи}
 \section*{Дополнительные задачи}
 
