@@ -366,3 +366,43 @@ P \left( \varlimsup \limits_{n \to \infty } A_n \setminus A \right) =
 P \left( \varlimsup \limits_{n \to \infty } A_n \cap \overline{A} \right) \leq
 P \left( \overline{A} \right) = \\
 = 1 - P \left( A \right) $.
+
+\subsubsection*{13.17}
+
+\textit{Задание.}
+На вероятностном пространстве
+$ \left( \Omega, \mathcal{B}, P \right) $, где $ \Omega = \left( 0, 1 \right), \, \mathcal{B} = \\
+= \mathcal{B} \left( \left( 0, 1 \right) \right), \, P$ ---
+мера Лебега, рассмотрим последовательность событий
+$$ \left\{ A_n = \left( 0, \frac{1}{n} \right) \right\}_{n \geq 1}.$$
+Покажите, что
+$$ \sum \limits_{n=1}^{ \infty } P \left( A_n \right) =
+\infty,$$
+но $P \left( A_n \right.$ бесконечно часто) $= 0$.
+
+\textit{Решение.}
+Вероятность задана как мера Лебега,
+то есть расстояние между точками
+$$P \left( A_n \right) =
+P \left[ \left( 0, \frac{1}{n} \right) \right] =
+\frac{1}{n} - 0 =
+\frac{1}{n}.$$
+Ряд, составленный из таких вероятностей расходится (он гармонический), т.е.
+$$ \sum \limits_{n=1}^{ \infty} P \left( A_n \right) =
+\sum \limits_{n=1}^{ \infty } \frac{1}{n} =
++ \infty.$$
+
+Найдём верхний предел
+$$ \varlimsup \limits_{n \to \infty } A_n =
+\bigcap \limits_{n=1}^{ \infty } \bigcup \limits_{m=n}^{ \infty } \left( 0, \frac{1}{m} \right) =
+\left( 0, 0 \right),$$
+так как объединение таких интервалов даёт
+$$ \left( 0, \frac{1}{m} \right),$$
+а пересечение --- $ \left( 0, 0 \right) $.
+
+Вероятность этого предела равна
+$P \left( A_n \right.$ бесконечно часто) $=$
+$$= P \left( \varlimsup \limits_{n \to \infty } A_n \right) =
+P \left[ \left( 0, 0 \right) \right] =
+0 - 0 =
+0.$$ 
