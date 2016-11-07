@@ -102,6 +102,35 @@ $$ \sum \limits_{n=1}^{ \infty } P \left( A_n \right) =
 \sum \limits_{n=1}^{ \infty } p =
 + \infty.$$
 
+\subsubsection*{Задача}
+
+\textit{Задание.} Предположим, что игральный кубик подбрасывается бесконечное число раз независимым образом.
+На нём 6 граней.
+Кубик симметричный.
+Доказать, что с вероятностью 1 последовательность из ста двоек встречается бесконечное число раз.
+
+\textit{Решение.}
+$$ \xi_n =
+\begin{cases}
+1, p_1 = \frac{1}{6}, \\
+2, p_2 = \frac{1}{6}, \\
+3, p_3 = \frac{1}{6}, \\
+\dotsc \\
+6, p_6 = \frac{1}{6}.
+\end{cases}$$
+
+Нужно доказать,
+что $P$ \{последовательность $ \left( 2, 2, \dotsc, 2 \right) $, где 100 двоек, выпадает бесконечно часто\} $= 1 = P \left( \varlimsup \limits_{n \to \infty } A_n \right) $.
+
+Введём события $A_1 =$ \{выпадет двойка при первых ста подбрасываниях\}, $A_2 =$ \{выпадет двойка при 101-ом --- 200-ом подбрасываниях\},
+$ \dotsc, \, A_n =\\
+=$ \{выпадет двойка при $100 \left( n-1 \right) + 1$ --- $100n$ подбрасываниях\}.
+Нужно найти вероятность такого события
+$$P \left( A_n \right) =
+\left( \frac{1}{6} \right)^{100}.$$
+
+Ряд, составленный из этих вероятностей расходится $ \sum \limits_{n=1}^{ \infty } P \left( A_n \right) = + \infty $.
+
 \subsubsection*{13.5}
 
 \textit{Задание.} Пусть $ \left\{ \xi_n \right\}_{n \geq 1}$ --- последовательность независимых случайных величин.
@@ -432,3 +461,39 @@ $$P \left( \varliminf \limits_{n \to \infty } A_n \right) = 1.$$
 Тогда вероятность равна
 $$P \left( A_n \right) =
 C_{2^n}^n p^n \left( 1 - p \right)^{2^n-n}.$$
+
+\subsubsection*{13.20}
+
+\textit{Задание.} Пусть $ \left\{ \xi_n \right\}_{n \geq 1}$ --- последовательность независимых одинаково распределённых случайных величин с функцией распределения
+$$F \left( x \right) =
+\begin{cases}
+0, \qquad x < 1, \\
+1 - \frac{1}{x}, \qquad x \geq 1.
+\end{cases}$$
+
+Нужно показать, что $P \left\{ \xi_n/ \sqrt{n} \right.$ бесконечно часто\} $= 1, \qquad \forall c > 0$.
+
+Рассматриваем события
+$$A_n =
+\left\{ \frac{ \xi_n}{ \sqrt{n}} > c \right\}.$$
+Найдём их вероятность
+$$P \left( A_n \right) =
+P \left\{ \frac{ \xi_n}{ \sqrt{n}} > c \right\} =
+1 - P \left\{ \frac{ \xi_n}{ \sqrt{n}} \leq c \right\} =
+1 - P \left\{ \xi_n \leq c \sqrt{n} \right\}.$$
+По условию $P \left\{ \xi_n \leq c \sqrt{n} \right\} = 0$.
+Из этого следует, что
+$$P \left( A_n \right) =
+1 - \left( 1 - \frac{1}{c \sqrt{n}} \right) =
+\frac{1}{c \sqrt{n}}.$$
+Ряд из вероятностей расходится
+$$ \sum \limits_{n=1}^{ \infty }P \left( A_n \right) =
+\sum \limits_{n=1}^{ \infty } \frac{1}{c \sqrt{n}} =
++ \infty.$$
+
+События $ \left\{ A_n \right\}_{n \geq 1}$ --- независимы.
+Тогда по второй части леммы Бореля-Кантелли
+$$P \left( \varlimsup \limits_{n \to \infty } \frac{ \xi_n}{ \sqrt{n}} = \infty \right) =
+1.$$ 
+ 
+\textit{Решение.}
