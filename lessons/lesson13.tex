@@ -346,4 +346,23 @@ $$ \sum \limits_{n=1}^{ \infty } P \left( A_n \right) =
 Тогда по первой части леммы Бореля-Кантелли $P \left( \varliminf \limits_{n \to \infty } \xi_n = 0 \right) = 0$.
 \end{enumerate}
 
+\subsubsection*{13.16}
 
+\textit{Задание.} Пусть для последовательности событий $ \left\{ A_n \in \mathcal{F} \right\}_{n \geq 1}$ существует событие $A \in \mathcal{F}$ такое, что
+$$ \sum \limits_{i=1}^{ \infty } P \left( A \cap A_i \right) < + \infty.$$
+Докажите, что $P \left( \varlimsup \limits_{n \to \infty } A_n \right) \leq 1 - P \left( A \right) $.
+
+\textit{Решение.} По первой части леммы Бореля-Кантелли из того, что
+$$ \sum \limits_{i=1}^{ \infty } P \left( A \cap A_i \right) < + \infty $$
+следует, что $P \left( \varlimsup \limits_{n \to \infty } \left( A \cap A_n \right) \right) = 0$.
+Можем вынести $A$ из-под знака предела
+$P \left( \varlimsup \limits_{n \to \infty } \left( A \cap A_n \right) \right) =
+P \left( A \cap \varlimsup \limits_{n \to \infty } A_n \right) =
+0$.
+События не пересекаются,
+значит
+$P \left( \varlimsup \limits_{n \to \infty } A_n \right) =
+P \left( \varlimsup \limits_{n \to \infty } A_n \setminus A \right) =
+P \left( \varlimsup \limits_{n \to \infty } A_n \cap \overline{A} \right) \leq
+P \left( \overline{A} \right) = \\
+= 1 - P \left( A \right) $.
