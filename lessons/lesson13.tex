@@ -293,3 +293,57 @@ P \left( \overline{ \varlimsup \limits_{n \to \infty } A_n} \right) =
 1 - P \left( \varlimsup \limits_{n \to \infty } A_n \right) =
 1 - 1 =
 0.$$
+
+\subsubsection*{13.15}
+
+\textit{Задание.} Пусть $ \left\{ \xi_n \right\}_{n \geq 1}$ --- последовательность независимых случайных величин.
+Найдите вероятность $P \left( \varliminf \limits_{n \to \infty } \xi_n = 0 \right) $, если:
+\begin{enumerate}[label=\alph*)]
+\item $P \left( \xi_n = 0 \right) = P \left( \xi_n = 1 \right) = 1/2$;
+\item $P \left( \xi_n = 1/n \right) = P \left( \xi_n = 1 \right) = 1/n, \, P \left( \xi_n = 2 \right) = 1 - 2/n$;
+\item $P \left( \xi_n = 0 \right) = 1/2^n, \, P \left( \xi_n = 1 \right) = 1 - 1/2^n$.
+\end{enumerate}
+
+\textit{Решение.}
+\begin{enumerate}[label=\alph*)]
+\item Нужно показать,
+что в последовательности $ \xi_1, \xi_2, \dotsc, \xi_n, \dotsc $ бесконечно много нулей и $P \left( A_n \right.$ бесконечно часто) $= 1$,
+где $A_n = \left\{ \xi_n = 0 \right\} $.
+Эти события независимы, потому что $ \left\{ \xi_n \right\}_{n \geq 1}$ --- независимы.
+Их вероятность по условию равна
+$$P \left( A_n \right) =
+\frac{1}{2}.$$
+Рассмотрим ряд
+$$ \sum \limits_{n=1}^{ \infty } P \left( A_n \right) =
+\sum \limits_{n=1}^{ \infty } \frac{1}{2} =
++ \infty.$$
+Тогда по второй части леммы Бореля-Кантелли $P \left( \varliminf \limits_{n \to \infty } \xi_n = 0 \right) = 1$;
+\item нужно показать,
+что в последовательности $ \xi_1, \xi_2, \dotsc, \xi_n, \dotsc $ бесконечно много нулей и $P \left( A_n \right.$ бесконечно часто) $= 1$,
+где
+$$A_n =
+\left\{ \xi_n < \frac{1}{N} \right\}.$$
+Эти события независимы, потому что $ \left\{ \xi_n \right\}_{n \geq 1}$ --- независимы.
+По условию
+$$P \left( \xi_n = \frac{1}{n} \right) =
+\frac{1}{n}.$$
+Рассмотрим ряд
+$$ \sum \limits_{n=1}^{ \infty } P \left( A_n \right) \geq
+\sum \limits_{n=1}^{ \infty } \frac{1}{n} =
++ \infty.$$
+Тогда по второй части леммы Бореля-Кантелли $P \left( \varliminf \limits_{n \to \infty } \xi_n = 0 \right) = 1$;
+\item нужно показать,
+что в последовательности $ \xi_1, \xi_2, \dotsc, \xi_n, \dotsc $ бесконечно много нулей и $P \left( A_n \right.$ бесконечно часто) $= 1$,
+где $A_n = \left\{ \xi_n = 0 \right\} $.
+Вероятность этих событий по условию равна
+$$P \left( A_n \right) =
+\frac{1}{2^n}.$$
+Рассмотрим ряд
+$$ \sum \limits_{n=1}^{ \infty } P \left( A_n \right) =
+\sum \limits_{n=1}^{ \infty } \frac{1}{2^n} =
+\frac{ \frac{1}{2}}{1 - \frac{1}{2}} =
+1.$$
+Тогда по первой части леммы Бореля-Кантелли $P \left( \varliminf \limits_{n \to \infty } \xi_n = 0 \right) = 0$.
+\end{enumerate}
+
+
