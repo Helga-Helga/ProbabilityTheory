@@ -471,34 +471,50 @@ $$F \left( x \right) =
 1 - \frac{1}{x}, \qquad x \geq 1.
 \end{cases}$$
  
-\textit{Решение.} Нужно показать, что $P \left\{ \xi_n/ \sqrt{n} \right.$ бесконечно часто\} $= 1, \qquad \forall c > 0$.
+\textit{Решение.} Знаем, что
+$$P \left( \xi_n \leq x \right) =
+F \left( x \right) =
+\begin{cases}
+0, \qquad x < 1, \\
+1 - \frac{1}{x}, \qquad x \geq 1.
+\end{cases}$$
 
-Рассматриваем события
-$$A_n =
-\left\{ \frac{ \xi_n}{ \sqrt{n}} > c \right\}.$$
-Найдём их вероятность
-$$P \left( A_n \right) =
-P \left\{ \frac{ \xi_n}{ \sqrt{n}} > c \right\} =
-1 - P \left\{ \frac{ \xi_n}{ \sqrt{n}} \leq c \right\} =
-1 - P \left\{ \xi_n \leq c \sqrt{n} \right\}.$$
-По условию $P \left\{ \xi_n \leq c \sqrt{n} \right\} = 0$.
-Из этого следует, что
-$$P \left( A_n \right) =
-1 - \left( 1 - \frac{1}{c \sqrt{n}} \right) =
-\frac{1}{c \sqrt{n}}.$$
-Ряд из вероятностей расходится
-$$ \sum \limits_{n=1}^{ \infty }P \left( A_n \right) =
-\sum \limits_{n=1}^{ \infty } \frac{1}{c \sqrt{n}} =
-+ \infty.$$
+Хотим доказать, что
+$$P \left( \varlimsup \limits_{n \to \infty } \frac{ \xi_n}{ \sqrt{n}} =
++ \infty \right) =
+1.$$
 
-События $ \left\{ A_n \right\}_{n \geq 1}$ --- независимы.
-Тогда по второй части леммы Бореля-Кантелли
-$$P \left( \varlimsup \limits_{n \to \infty } \frac{ \xi_n}{ \sqrt{n}} = \infty \right) =
+Есть некоторая подпоследовательность, которая сходится к бесконечности.
+
+Начнём с вероятности
+$$P \left( \frac{ \xi_n}{ \sqrt{n}} > \sqrt{n} \right).$$
+Если покажем, что ряд
+$$ \sum \limits_{n=1}^{ \infty } P \left( \frac{ \xi_n}{ \sqrt{n}} > \sqrt{n} \right) =
++ \infty,$$
+по условию $ \left\{ \xi_n \right\}_{n \geq 1}$ --- независимы, то $P \left( \xi_n / \sqrt{n} > \sqrt{n} \right.$ бесконечно часто $ \left. \right) = 1$.
+Отсюда следует, что
+$$P \left( \frac{ \xi_n}{ \sqrt{n}} > \sqrt{n} \right) = P \left( \xi_n > n \right) = 1 - P \left( \xi_n \leq n \right).$$
+
+Знаем, что $P \left( \xi_n \leq n \right) $ --- функция распределения
+$$P \left( \frac{ \xi_n}{ \sqrt{n}} > \sqrt{n} \right) =
+1 - P \left( \xi_n \leq n \right) =
+1 - F \left( n \right) =
+1 - \left( 1 - \frac{1}{n} \right) =
+\frac{1}{n}.$$
+Отсюда следует, что ряд расходящийся
+$$ \sum \limits_{n=1}^{ \infty } P \left( \frac{ \xi_n}{ \sqrt{n}} > \sqrt{n} \right) =
++ \infty,$$
+по условию $ \left\{ \xi_n \right\}_{n \geq 1}$ --- независимы.
+Отсюда следует, что $P \left( \xi_n / \sqrt{n} > \sqrt{n} \right.$ бесконечно часто $ \left. \right) = 1$.
+Отсюда следует, что
+$$P \left( \varlimsup \limits_{n \to \infty } \frac{ \xi_n}{ \sqrt{n}} =
++ \infty \right) =
 1.$$
 
 \subsubsection*{13.21}
 
-\textit{Задание.} На отрезке $ \left[ 0, 1 \right] $ последовательно выбирают наугад точки $A_1, A_2, \dotsc $.
+\textit{Задание.} На отрезке $ \left[ 0, 1 \right] $ последовательно выбирают наугад точки
+$$A_1, A_2, \dotsc.$$
 Пусть $ \rho_n$ является минимальным из расстояний от точек $A_1, \dotsc, A_n$ к фиксированной точке $A$ на отрезке $ \left[ 0, 1 \right] $.
 Доказать, что $P \left( \rho_n \to \left( n \to \infty \right) 0 \right) = 1$.
 
