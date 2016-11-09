@@ -495,3 +495,52 @@ $$ \sum \limits_{n=1}^{ \infty }P \left( A_n \right) =
 Тогда по второй части леммы Бореля-Кантелли
 $$P \left( \varlimsup \limits_{n \to \infty } \frac{ \xi_n}{ \sqrt{n}} = \infty \right) =
 1.$$
+
+\subsubsection*{13.21}
+
+\textit{Задание.} На отрезке $ \left[ 0, 1 \right] $ последовательно выбирают наугад точки $A_1, A_2, \dotsc $.
+Пусть $ \rho_n$ является минимальным из расстояний от точек $A_1, \dotsc, A_n$ к фиксированной точке $A$ на отрезке $ \left[ 0, 1 \right] $.
+Доказать, что $P \left( \rho_n \to \left( n \to \infty \right) 0 \right) = 1$.
+
+\textit{Решение.} Пусть $d_i = dist \left( A, A_i \right) $.
+
+Положим $ \rho_n = \min \left( d_1, \dotsc, d_n \right) $.
+
+Хотим показать, что $P \left( \rho_n \to \left( n \to \infty \right) 0 \right) = 1$.
+
+Начиная с некоторого номера $ \forall \epsilon > 0 \, \exists N \, \forall n \geq N, \qquad \rho_n < \epsilon $ --- определение сходимости к нулю.
+
+Пусть $ \epsilon $ --- произвольное как угодно малое число, $ \epsilon > 0$.
+Рассмотрим событие
+$P \left( \rho_n > \epsilon \right) =
+P \left( \min \left( d_1, \dotsc, d_n \right) > \epsilon \right) =
+P \left( d_1 > \epsilon, d_2 > \epsilon, \dotsc, d_n > \epsilon \right) $.
+Воспользуемся независимостью
+$$P \left( d_1 > \epsilon, d_2 > \epsilon, \dotsc, d_n > \epsilon \right) =
+P \left( d_1 > \epsilon \right) \cdot \dotsc \cdot P \left( d_n > \epsilon \right).$$
+Рассмотрим рисунок \ref{fig:1321}.
+На нём область, отмеченная красным --- место, куда должна попасть точка $A_i$.
+
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=.4\textwidth]{./pictures/13_21.png}
+  \caption{Заполнение урн}
+  \label{fig:1321}
+\end{figure}
+
+Из рисунка $P \left( d_1 > \epsilon \right) \cdot \dotsc \cdot P \left( d_n > \epsilon \right) = \left( 1 - 2 \epsilon \right)^n = r^n, r < 1$.
+Из этого следует, что если рассмотрим ряд, составленные из этих вероятностей, получим
+$$ \sum \limits_{n=1}^{ \infty } P \left( \rho_n > \epsilon \right) = \sum \limits_{n=1}^{ \infty } r^n = \frac{r}{1-r} = \frac{1-2 \epsilon }{2 \epsilon } < + \infty.$$
+
+Ряд сходящийся.
+Отсюда следует, что $P \left( \left( \rho_n > \epsilon \right) \right.$ происходит бесконечно часто) $= 0$.
+
+Это значит, что $ \forall N \, \exists n > N, \qquad \left( \rho_n > \epsilon \right) $ выполняется.
+
+Вероятность такого события равна нулю.
+
+Противоположное событие означает
+$$P \left( \exists N \, \forall n > N, \qquad \left( \rho_n < \epsilon \right) \right) =
+1 =
+P \left( \left( \rho_n < \epsilon \right) \right.$$
+для всех $n$, начиная с некоторого номера) --- это то, что хотели показать.
