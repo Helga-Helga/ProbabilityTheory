@@ -280,6 +280,51 @@ $$P \left( \varlimsup \limits_{n \to \infty } \frac{ \xi_n}{ \ln n} = 1 \right) 
 \item $ \forall \epsilon > 0, \qquad P \left\{ \xi_n / \ln n > 1 - \epsilon \right.$ бесконечно часто\} $= 1$.
 \end{enumerate}
 
+\subsubsection*{13.8}
+
+\textit{Задание.} При случайном блуждании на прямой частица делает шаг вправо с вероятностью $2/3$ и влево с вероятностью $1/3$.
+Найдите вероятность того, что частица бесконечно много раз вернётся в исходную точку.
+
+\textit{Решение.} Изобразим задачу на рис. \ref{fig:138}.
+
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=.4\textwidth]{./pictures/13_8.png}
+  \caption{Блуждание частицы}
+  \label{fig:138}
+\end{figure}
+
+Найдём вероятность $P \left( \varlimsup \limits_{n \to \infty } A_{2n} \right) $.
+
+Вероятность события $A_{2n}$ равна
+$$P \left( A_{2n} \right) =
+\left( \frac{2}{3} \cdot \frac{1}{3} \right)^n \cdot C_{2n}^n.$$
+
+Ряд составленный из таких вероятностей
+$$ \sum \limits_{n=1}^{ \infty } \left( \frac{2}{3} \cdot \frac{1}{3} \right)^n \cdot C_{2n}^n =
+\sum \limits_{n=1}^{ \infty } \left( \frac{2}{9} \right)^n \cdot \frac{ \left( 2n \right)!}{n!n!}.$$
+
+По формуле Стирлинга
+$$n! \sim \frac{ \sqrt{2 \pi n} n^n}{\exp{n}}.$$
+Подставим эту формулу в вероятность
+\begin{equation*}
+\begin{split}
+P \left( A_{2n} \right) \sim
+\left( \frac{2}{9} \right)^n \cdot
+\frac{ \sqrt{2 \pi n}}{ \sqrt{2 \pi n} \sqrt{2 \pi n}} \cdot \frac{ \left( 2n \right)^{2n}}{n^n n^n} \cdot
+\frac{\exp{n} \cdot \exp{n}}{ \exp{2n}} = \\
+= \left( \frac{2}{9} \right)^n \cdot \frac{2}{2 \sqrt{ \pi n}} \cdot \frac{ \left( 2n \right)^{2n}}{n^{2n}} =
+\left( \frac{2}{9} \right)^n \cdot \frac{2^{2n}}{ \sqrt{ \pi n}} =
+\frac{2^n \cdot 2^{2n}}{9^n \sqrt{ \pi n}} =
+\frac{2^{3n}}{9^n \sqrt{ \pi n}} = \\
+= \left( \frac{2^3}{9} \right)^n \cdot \frac{1}{ \sqrt{ \pi n}} =
+\left( \frac{8}{9} \right)^n \cdot \frac{1}{ \sqrt{ \pi n}}.
+\end{split}
+\end{equation*}
+Ряд сходится.
+Отсюда следует, что $P \left( \varlimsup \limits_{n \to \infty } A_{2n} \right) = 0$.
+
+
 \addcontentsline{toc}{section}{Дополнительные задачи}
 \section*{Дополнительные задачи}
 
@@ -540,7 +585,7 @@ P \left( d_1 > \epsilon \right) \cdot \dotsc \cdot P \left( d_n > \epsilon \righ
 \begin{figure}[h!]
   \centering
   \includegraphics[width=.4\textwidth]{./pictures/13_21.png}
-  \caption{Заполнение урн}
+  \caption{Область, куда может попасть точка}
   \label{fig:1321}
 \end{figure}
 
