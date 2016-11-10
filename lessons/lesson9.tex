@@ -25,6 +25,40 @@ $ \sigma $-алгебра,
 порождённая случайной величиной $ \xi $ ---
 это совокупность всех случайных событий вида $ \xi^{-1} \left( \Delta \right) $, где $ \Delta \in \mathcal{B} \left( \mathbb{R} \right) $.
 
+\subsubsection*{Приведите определение функции распределения случайной величины, перечислите свойства функции распределения.}
+
+Для случайной величины $ \xi $ функция распределения $F_{ \xi } \left( x \right) = P \left\{ \xi \leq x \right\} $.
+Эта функция задана на $x \in \mathbb{R}$.
+
+Свойства:
+\begin{enumerate}
+\item $F_{ \xi }: \, \mathbb{R} \rightarrow \left[ 0, 1 \right] $;
+\item $x_1 \leq x_2: \, F_{ \xi } \left( x_1 \right) \leq F_{ \xi } \left( x_2 \right) $;
+\item $F_{ \xi } \left( - \infty \right) = \lim \limits_{n \to - \infty } F_{ \xi } \left( x \right) = 0, \,
+F_{ \xi } \left( + \infty \right) = \lim \limits_{n \to + \infty } F_{ \xi } \left( x \right) = 1$;
+\item для каждого $x_0 \in \mathbb{R}: \, F_{ \xi } \left( x_0 + \right) = F_{ \xi } \left( x_0 \right) $.
+\end{enumerate}
+
+\subsubsection*{Приведите определение плотности распределения случайной величины.}
+
+Случайная величина $ \xi $ имеет плотность распределения $p_{ \xi }$, если
+$$ \forall a \leq b, \qquad
+F_{ \xi } \left( b \right) - F_{ \xi } \left( a \right) =
+\int \limits_a^b p_{ \xi } \left( x \right) dx.$$
+
+\subsubsection*{Какая связь между функцией распределения и плотностью распределения случайной величины?}
+
+$F_{ \xi } \left( b \right) - F_{ \xi } \left( a \right) $ ---
+это вероятность попадания $ \xi $ в интервал $ \left( a, b \right] $, то есть $P \left( \xi \in \left( a, b \right] \right) $.
+
+\subsubsection*{Сформулируйте свойства плотности распределения случайной величины.}
+
+Свойства:
+\begin{enumerate}
+\item $p_{ \xi } \geq 0$;
+\item $ \int_{- \infty }^{+ \infty }p_{ \xi } \left( x \right) dx = 1$.
+\end{enumerate}
+
 \addcontentsline{toc}{section}{Дополнительные задачи}
 \section*{Дополнительные задачи}
 
