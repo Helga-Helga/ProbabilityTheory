@@ -59,6 +59,131 @@ $F_{ \xi } \left( b \right) - F_{ \xi } \left( a \right) $ ---
 \item $ \int_{- \infty }^{+ \infty }p_{ \xi } \left( x \right) dx = 1$.
 \end{enumerate}
 
+\addcontentsline{toc}{section}{Аудиторные задачи}
+\section*{Аудиторные задачи}
+
+\subsubsection*{9.3}
+
+\textit{Задание.} Пусть $F \left( x \right) $ --- функция распределения случайной величины $ \xi $.
+Выразите через функцию $F$:
+\begin{enumerate}[label=\alph*)]
+\item вероятности:
+$$P \left( \xi > x \right), \,
+P \left( \xi < x \right), \,
+P \left( \xi \geq x \right), \,
+P \left( \xi = x \right), \,
+P \left( \xi \in \left[ a, b \right] \right), \,
+P \left( \left| \xi \right| < x \right);$$
+\item функции распределения случайных величин:
+$- \xi, \, a \xi + b, \, \left| \xi \right|, \, \xi^2, \, g \left( \xi \right) $, где $g$ --- непрерывная строго монотонная функция. 
+\end{enumerate}
+
+\textit{Решение.}
+\begin{enumerate}[label=\alph*)]
+\item Знаем $F \left( x \right) = P \left( \xi \leq x \right) $ --- известная функция.
+
+Рассмотрим $P \left( \xi > x \right) $.
+Перейдём к противоположному событию
+$$P \left( \xi > x \right) =
+1 - P \left( \xi \leq x \right) =
+1 - F \left( x \right).$$
+
+Рассмотрим
+$$P \left( \xi < x \right) =
+\lim \limits_{y \to x -} F \left( y \right).$$
+
+Вообще говоря, это не равно $F \left( x \right) $.
+Например, рис. \ref{fig:93}.
+
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=.4\textwidth]{./pictures/9_3.png}
+  \caption{Непрерывность справа функции распределения случайной величины}
+  \label{fig:93}
+\end{figure}
+
+Рассмотрим $P \left( \xi \geq x \right)$.
+Перейдём к противоположному
+$$P \left( \xi \geq x \right) =
+1 - P \left( \xi < x \right) =
+1 - \lim \limits_{y \to x-} F \left( y \right).$$
+Рассмотрим $P \left( \xi = x \right) $ --- величина скачка в точке.
+$$P \left( \xi = x \right) =
+P \left( \xi \leq x \right) - P \left( \xi < x \right) =
+F \left( x \right) - \lim \limits_{y \to x-} F \left( y \right).$$
+
+Из рисунка \ref{fig:931}
+$$P \left( \xi \in \left[ a, b \right] \right) =
+P \left( \xi \leq b \right) - P \left( \xi < a \right) =
+F \left( b \right) - \lim \limits_{y \to a-} F \left( y \right) =
+F \left( b \right) - F \left( a- \right).$$
+
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=.4\textwidth]{./pictures/9_3_1.png}
+  \caption{Отрезок $ \left[ a, b \right] $}
+  \label{fig:931}
+\end{figure}
+
+\begin{equation*}
+\begin{split}
+P \left( \left| \xi \right| < x \right) =
+P \left( \xi < x \right) - P \left( \xi \leq - x \right) =
+\lim \limits_{y \to x-} F \left( y \right) - F \left( -x \right) = \\
+= F \left( x- \right) - F \left( -x \right);
+\end{split}
+\end{equation*}
+\item  по определению $F_{- \xi} \left( x \right) = P \left( - \xi \leq x \right) $.
+Воспользовавшись непревывностью относительно $ \xi $ получим $P \left( - \xi \leq x \right) = P \left( \xi \geq -x \right) $.
+Перейдём к противоположному $P \left( \xi \geq -x \right) = 1 - P \left( \xi < -x \right) = 1 - F_{ \xi } \left( -x- \right) $.
+
+По определению $F_{a \xi + b} \left( x \right) = P \left( a \xi + b \leq x \right) $.
+Решаем относительно $ \xi $.
+Получаем
+$$P \left( a \xi + b \leq x \right) =
+P \left( \xi \leq \frac{x-b}{a} \right) =
+F \left( \frac{x-b}{a} \right),$$
+если $a > 0$.
+
+Пусть $a < 0$.
+Тогда будет
+$$P \left( \xi \geq \frac{x-b}{a} \right) =
+1 - F_{ \xi } \left( \frac{x-b}{a} - \right).$$
+
+Рассмотрим
+$$F_{\left| \xi \right| } \left( x \right) =
+P \left( \left| \xi \right| \leq x \right) =
+P \left( \xi \leq x \right) - P \left( \xi < -x \right) =
+F_{ \xi } \left( x \right) - F_{ \xi } \left( -x- \right).$$
+
+Рассмотрим
+\begin{equation*}
+\begin{split}
+F_{ \xi^2} \left( x \right) =
+P \left( \xi^2 \leq x \right) =
+\begin{cases}
+0, \qquad x < 0, \\
+P \left| \xi \right| \leq \sqrt{x}, \qquad x \geq 0
+\end{cases} = \\
+=
+\begin{cases}
+0, \qquad x < 0, \\
+F_{ \xi } \left( \sqrt{x} \right) - F_{ \xi } \left( - \sqrt{x}- \right), \qquad x \geq 0.
+\end{cases}
+\end{split}
+\end{equation*}
+
+Рассмотрим $F_{g \left( \xi \right) } \left( x \right) = P \left( g \left( \xi \right) \leq x \right) $.
+
+Функция $g \left( \xi \right) $ будет случайной величиной, потому что она непрерывна
+
+$$P \left( g \left( \xi \right) \leq x \right) =
+\begin{cases}
+g \uparrow, \qquad P \left( \xi \leq g^{-1} \left( x \right) \right) = F_{ \xi } \left( g^{-1} \left( x \right) \right), \\
+g \downarrow, \qquad P \left( \xi \geq g^{-1} \left( x \right) \right) = 1 - F_{ \xi } \left( g^{-1} \left( x \right) - \right).
+\end{cases}$$
+\end{enumerate}
+
 \addcontentsline{toc}{section}{Дополнительные задачи}
 \section*{Дополнительные задачи}
 
