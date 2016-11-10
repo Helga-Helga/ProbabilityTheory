@@ -380,6 +380,48 @@ $$P \left( \varlimsup \limits_{n \to \infty } A_n \right) = 1.$$
 \addcontentsline{toc}{section}{Дополнительные задачи}
 \section*{Дополнительные задачи}
 
+\subsubsection*{13.11}
+
+\textit{Задание.} Докажите, что для последовательности независимых случайных величин $ \left\{ \xi_n \right\}_{n \geq 1}$ случайные величины
+$$ \varliminf \limits_{n \to \infty } \xi_n, \,
+\varlimsup \limits_{n \to \infty } \xi_n, \,
+\varliminf \limits_{n \to \infty } \frac{1}{n} \sum \limits_{k=1}^{n} \xi_k, \,
+\varlimsup \limits_{n \to \infty } \frac{1}{n} \sum \limits_{k=1}^{n} \xi_k,$$
+а в случае, когда $P \left( \xi_n > 0 \right) = 1$, и величины
+$$ \varliminf \limits_{n \to \infty } \sqrt[n]{ \prod \limits_{k=1}^n \xi_k}, \,
+\varlimsup \limits_{n \to \infty } \sqrt[n]{ \prod \limits_{k=1}^n \xi_k}$$
+с вероятностью 1 являются величинами постоянными.
+
+\textit{Решение.} Докажем, что
+$$ P \left( \varliminf \limits_{n \to \infty } \xi_n = const \right) =
+1.$$
+Рассмотрим события
+$$D_c =
+\left\{ \varliminf \limits_{n \to \infty } \xi_n \leq c \right\}, \,
+c \in \mathbb{R}.$$
+Поскольку
+$$ \varliminf \limits_{n \to \infty } \xi_n$$
+не зависит от счётного количества элементов последовательности, то
+$$D_c \in \mathcal{F}^{ \infty } =
+\bigcap \limits_{n=1}^{ \infty } \mathcal{F}_n^{ \infty } \left( \xi \right),$$
+где $ \mathcal{F}_n^{ \infty } \left( \xi \right) = \sigma \left( \xi_n, \xi_{n+1}, \dotsc \right) $.
+Поэтому по закону <<нуля или единицы>> $P \left( D_c \right) = 0$ или $P \left( D_c \right) = 1$.
+Положим $c^* = \sup \left\{ c \in \mathbb{R} \; \middle| \; P \left( D_c \right) = 0 \right\} $.
+Тогда из определения супремума следует, что для произвольного
+$$n \geq 1, \qquad
+P \left( \varliminf \limits_{n \to \infty } \xi_n \leq c^* - \frac{1}{n} \right) =
+0, \,
+P \left( \varliminf \limits_{n \to \infty } \xi_n \leq c^* + \frac{1}{n} \right) =
+1.$$
+
+Отсюда:
+$$P \left( c^* - \frac{1}{n} < \varlimsup \limits_{n \to \infty } \xi_n \leq c^* + \frac{1}{n} \right) =
+1, \qquad
+\forall n \geq 1,$$
+а это значит, что
+$$P \left( \varliminf \limits_{n \to \infty } \xi_n = c^* \right) =
+1.$$
+
 \addcontentsline{toc}{section}{Домашнее задание}
 \section*{Домашнее задание}
 
