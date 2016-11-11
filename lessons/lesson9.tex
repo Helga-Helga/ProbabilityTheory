@@ -315,6 +315,29 @@ P \left( \xi \leq x \right) =
 $$P \left( \xi = 1 \right) = \frac{1}{2}, \,
 P \left( \xi = 2 \right) = \frac{1}{2}.$$
 
+\subsubsection*{9.7}
+
+\textit{Задание.}
+Определите, 
+при каком значении параметра $a$ функция $p \left( x \right) = a \exp{- \lambda \left| x \right| }, \, \lambda > 0$ является плотностью распределения вероятностей.
+
+\textit{Решение.} Условие нормировки плотности
+\begin{equation*}
+\begin{split}
+1 =
+\int \limits_{- \infty }^{+ \infty } p \left( x \right) dx =
+\int \limits_{- \infty }^{+ \infty } a \exp{- \lambda \left| x \right| } dx =
+2 \int \limits_0^{+ \infty } a \exp{- \lambda x} dx = \\
+= - \frac{2a}{ \lambda } \cdot \int \limits_0^{+ \infty } \exp{- \lambda x} d \left( - \lambda x \right) =
+\left. - \frac{2a}{ \lambda } \cdot \exp{- \lambda x} \right|_0^{+ \infty } =
+\frac{2a}{ \lambda }.
+\end{split}
+\end{equation*}
+
+Отсюда следует, что
+$$a =
+\frac{ \lambda }{2}.$$
+
 \addcontentsline{toc}{section}{Дополнительные задачи}
 \section*{Дополнительные задачи}
 
