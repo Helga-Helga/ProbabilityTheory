@@ -184,6 +184,105 @@ g \downarrow, \qquad P \left( \xi \geq g^{-1} \left( x \right) \right) = 1 - F_{
 \end{cases}$$
 \end{enumerate}
 
+\subsubsection*{9.4}
+
+\textit{Задание.} Определите, какие из следующих функций являются функциями распределения:
+\begin{enumerate}[label=\alph*)]
+\item $F \left( x \right) = 3/4 + 1/ \left( 2 \pi \right) \cdot arctg x $;
+\item $F \left( x \right) =
+\begin{cases}
+0, \qquad x < 0, \\
+\frac{x}{1+x}, \qquad x \geq 0;
+\end{cases}$
+\item $F \left( x \right) =
+\begin{cases}
+0, \qquad x < 0, \\
+\frac{ \left[ x \right] }{2}, \qquad 0 \leq x \leq 2, \\
+1, \qquad x > 2.
+\end{cases}$
+\end{enumerate}
+
+\textit{Решение.}
+\begin{enumerate}[label=\alph*)]
+\item $F \left( x \right) = 3/4 + 1/ \left( 2 \pi \right) \cdot arctg x $.
+
+Функция
+$$arctg x \in \left( - \frac{ \pi }{2}, \frac{ \pi }{2} \right).$$
+
+Подставляя эти значения, получаем
+$$ \left( \frac{1}{4}, 1 \right) \in \left[ 0, 1 \right].$$
+
+Проверим следующее свойство
+$$ \lim \limits_{n \to + \infty } F \left( x \right) = 1, \,
+\lim \limits_{n \to - \infty } F \left( x \right) =
+\frac{3}{4} - \frac{1}{4} =
+\frac{1}{2} \neq
+0.$$
+
+Вывод: это не является функцией распределения;
+\item $F \left( x \right) =
+\begin{cases}
+0, \qquad x < 0, \\
+\frac{x}{1+x}, \qquad x \geq 0.
+\end{cases}$
+
+Функция непрерывна, $0 \leq F \left( x \right) \leq 1$.
+
+Найдём значение функции на бесконечности
+$$F \left( - \infty \right) =
+\lim \limits_{x \to - \infty } F \left( x \right) =
+0, \,
+F \left( + \infty \right) =
+\lim \limits_{x \to + \infty } F \left( x \right) =
+1.$$
+
+При $x \geq 0$ берём рпоизводную
+$$F' \left( x \right) =
+\left( \frac{x}{1+x} \right)' =
+\frac{1+x-x}{ \left( 1+x \right)^2} =
+\frac{1}{ \left( 1+x \right)^2} >
+0.$$
+
+Берём вторую производную
+$$F'' \left( x \right) =
+\frac{-2 \left( x+1 \right) }{ \left( 1+x \right)^4} <
+0.$$
+Отсюда следует, что функция выпуклая вверх (рис. \ref{fig:94});
+
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=.4\textwidth]{./pictures/9_4.png}
+  \caption{Вид функции распределения}
+  \label{fig:94}
+\end{figure}
+
+\item $P \left( \xi = 1 \right) = 0.5, \, P \left( \xi = 3 \right) = 0.4, \, P \left( \xi = -1 \right) = 0.1$.
+
+В сумме вероятности дают единицу, значит это все значения, которые может принимать $ \xi $.
+По определению
+$$F \left( x \right) =
+P \left( \xi \leq x \right) =
+\begin{cases}
+0, \qquad x < -1, \\
+0.1, \qquad -1 \leq x < 1, \\
+0.6, \qquad 1 \leq x < 3, \\
+1, \qquad x \geq 3.
+\end{cases}$$
+
+Найдём $P \left( \xi \leq 2 \right) = P \left( \xi = 1 \right) + P \left( \xi = -1 \right) $.
+
+График имеет вид как на рисунке \ref{fig:941}.
+
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=.4\textwidth]{./pictures/9_4_1.png}
+  \caption{Вид функции распределения}
+  \label{fig:941}
+\end{figure}
+
+Вероятности --- величина скачка.
+\end{enumerate}
+
 \addcontentsline{toc}{section}{Дополнительные задачи}
 \section*{Дополнительные задачи}
 
