@@ -256,9 +256,32 @@ $$F'' \left( x \right) =
   \label{fig:94}
 \end{figure}
 
-\item $P \left( \xi = 1 \right) = 0.5, \, P \left( \xi = 3 \right) = 0.4, \, P \left( \xi = -1 \right) = 0.1$.
+\item $F \left( x \right) =
+\begin{cases}
+0, \qquad x < 0, \\
+\frac{ \left[ x \right] }{2}, \qquad 0 \leq x \leq 2, \\
+1, \qquad x > 2.
+\end{cases}$
 
-В сумме вероятности дают единицу, значит это все значения, которые может принимать $ \xi $.
+По графику (рис. \ref{fig:941}) это является функцией распределения.
+
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=.4\textwidth]{./pictures/9_4_1.png}
+  \caption{График функции распределения}
+  \label{fig:941}
+\end{figure}
+
+\end{enumerate}
+
+\subsubsection*{9.5}
+
+\textit{Задание.} Постройте график функции распределения случайной величины $ \xi $ такой, что
+$P \left( \xi = 1 \right) = 0.5, \,
+P \left( \xi = 3 \right) = 0.4, \,
+P \left( \xi = -1 \right) = 0.1$.
+
+\textit{Решение.} В сумме вероятности дают единицу, значит это все значения, которые может принимать $ \xi $.
 По определению
 $$F \left( x \right) =
 P \left( \xi \leq x \right) =
@@ -271,17 +294,16 @@ P \left( \xi \leq x \right) =
 
 Найдём $P \left( \xi \leq 2 \right) = P \left( \xi = 1 \right) + P \left( \xi = -1 \right) $.
 
-График имеет вид как на рисунке \ref{fig:941}.
+График имеет вид как на рисунке \ref{fig:95}.
 
 \begin{figure}[h!]
   \centering
-  \includegraphics[width=.4\textwidth]{./pictures/9_4_1.png}
+  \includegraphics[width=.4\textwidth]{./pictures/9_5.png}
   \caption{Вид функции распределения}
-  \label{fig:941}
+  \label{fig:95}
 \end{figure}
 
 Вероятности --- величина скачка.
-\end{enumerate}
 
 \addcontentsline{toc}{section}{Дополнительные задачи}
 \section*{Дополнительные задачи}
