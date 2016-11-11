@@ -319,17 +319,17 @@ P \left( \xi = 2 \right) = \frac{1}{2}.$$
 
 \textit{Задание.}
 Определите, 
-при каком значении параметра $a$ функция $p \left( x \right) = a \exp{- \lambda \left| x \right| }, \, \lambda > 0$ является плотностью распределения вероятностей.
+при каком значении параметра $a$ функция $p \left( x \right) = ae^{- \lambda \left| x \right| }, \, \lambda > 0$ является плотностью распределения вероятностей.
 
 \textit{Решение.} Условие нормировки плотности
 \begin{equation*}
 \begin{split}
 1 =
 \int \limits_{- \infty }^{+ \infty } p \left( x \right) dx =
-\int \limits_{- \infty }^{+ \infty } a \exp{- \lambda \left| x \right| } dx =
-2 \int \limits_0^{+ \infty } a \exp{- \lambda x} dx = \\
-= - \frac{2a}{ \lambda } \cdot \int \limits_0^{+ \infty } \exp{- \lambda x} d \left( - \lambda x \right) =
-\left. - \frac{2a}{ \lambda } \cdot \exp{- \lambda x} \right|_0^{+ \infty } =
+\int \limits_{- \infty }^{+ \infty } ae^{- \lambda \left| x \right| } dx =
+2 \int \limits_0^{+ \infty } ae^{- \lambda x} dx = \\
+= - \frac{2a}{ \lambda } \cdot \int \limits_0^{+ \infty }e^{- \lambda x} d \left( - \lambda x \right) =
+\left. - \frac{2a}{ \lambda } \cdot e^{- \lambda x} \right|_0^{+ \infty } =
 \frac{2a}{ \lambda }.
 \end{split}
 \end{equation*}
@@ -337,6 +337,101 @@ P \left( \xi = 2 \right) = \frac{1}{2}.$$
 Отсюда следует, что
 $$a =
 \frac{ \lambda }{2}.$$
+
+\subsubsection*{9.9}
+
+\textit{Задание.} Случайная величина $ \xi $ имеет показательное распределение с плотностью распределения
+$$p_{ \xi } \left( x \right) =
+\begin{cases}
+e^{-x}, \qquad x \geq 0, \\
+0, \qquad x < 0.
+\end{cases}$$
+Вычислить вероятности:
+$P \left( \xi \in \left[ 2, 3 \right] \right), \,
+P \left( \xi \in \left( 2, 3 \right] \right), \,
+P \left( \xi \geq 2 \right), \,
+P \left( \xi \leq 3 \right), \, \\
+P \left( \xi^2 - 6 \leq - \xi \right), \,
+P \left( \left| \xi > t+s \right| \xi > t \right) $,
+где $t > 0, \, s > 0$.
+Найдите плотность распределения случайной величины $2 \xi $.
+
+\textit{Решение.}
+$$P \left( \xi \in \left[ 2, 3 \right] \right) =
+\int \limits_2^3 e^{-x} dx =
+\left/ -e^{-x} \right|_2^3 =
+-e^{-3} +e^{-2}.$$
+
+Вероятность $P \left( \xi \in \left[ 2, 3 \right] \right) = P \left( \xi \in \left[ 2, 3 \right] \right) $.
+
+Найдём
+$$P \left( \xi \geq 2 \right) =
+\int \limits_2^{+ \infty }e^{-x} dx =
+\left. -e^{-x} \right|_2^{+ \infty } =
+-e^{- \infty } +e^{-2} =
+e^{-2}.$$
+
+Вероятность
+\begin{equation*}
+\begin{split}
+P \left( \xi \leq 3 \right) =
+\int \limits_{- \infty }^3 p_{ \xi }dx =
+\int \limits_0^3e^{-x} dx =
+\left. -e^{-x} \right|_0^3 =
+-e^{-3} +e^^0 =
+1 -e^{-3}.
+\end{split}
+\end{equation*}
+
+По теореме Виета
+\begin{equation*}
+\begin{split}
+P \left( \xi^2 - 6 \leq - \xi \right) =
+P \left( \xi \in \left[ -3, 2 \right] \right) =
+\int \limits_{-3}^2 p_{ \xi } \left( x \right) dx =
+\int \limits_0^2e^{-x} dx =
+\left. -e^{-x} \right|_0^2 = \\
+= -e^{-2} + 1.
+\end{split}
+\end{equation*}
+
+Найдём
+$$P \left( \left. \xi > t + s \right| \xi > t \right) =
+\frac{P \left( \xi > t + s, \xi > t \right) }{P \left( \xi > t \right) }.$$
+
+Введём события $A = \left\{ \xi > t + s \right\}, \, B = \left\{ \xi > t \right\}, \, B \supset A$.
+Отсюда следует, что их пересечение совпадает с $A$.
+
+Используем это
+$$ \frac{P \left( \xi > t + s, \xi > t \right) }{P \left( \xi > t \right) } =
+\frac{P \left( \xi > t + s \right) }{P \left( \xi > t \right) } =
+\frac{e^{-t-s}}{e^{-t}} =
+e^{-s}.$$
+
+Для функции с переменным верхним пределом
+$$F_{ \xi } \left( x \right) =
+\int \limits_{- \infty }^x p_{ \xi } \left( y \right) dy.$$
+
+В формуле
+$$F_{ \xi } \left( b \right) - F_{ \xi } \left( a \right) =
+\int \limits_a^b p_{ \xi } \left( y \right) dy$$
+заменяем $b$ на $x$, а $a$ --- на $- \infty $.
+
+В каждой точке непрерывности функции распределения $F_{ \xi }' \left( x \right) = p_{ \xi } \left( x \right) $.
+
+Вычислим
+$$F_{2 \xi } \left( x \right) =
+P \left( 2 \xi \leq x \right) =
+P \left( \xi \leq \frac{x}{2} \right) =
+F_{ \xi } \left( \frac{x}{2} \right).$$
+
+Дифференцируем слева и справа сложную функцию
+$$p_{2 \xi} \left( x \right) =
+\frac{1}{2} \cdot p_{ \xi } \left( \frac{x}{2} \right) =
+\begin{cases}
+\frac{e^{- \frac{x}{2}}}{2}, \qquad x \geq 0, \\
+0, \qquad x < 0.
+\end{cases}$$
 
 \addcontentsline{toc}{section}{Дополнительные задачи}
 \section*{Дополнительные задачи}
