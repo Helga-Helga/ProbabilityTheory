@@ -476,6 +476,31 @@ P \left( \xi \leq \sqrt{x} \right) - P \left( \xi < - \sqrt{x} \right) = \\
 $$p_{ \xi^2} \left( x \right) =
 \frac{1}{2 \sqrt{x}} \left( p_{ \xi } \left( \sqrt{x} \right) + p_{ \xi } \left( - \sqrt{x} \right) \right) \mathbbm{1}_{x > 0}.$$
 
+Рассмотрим $F_{ \xi^2 - 4 \xi } \left( x \right) = \\
+= P \left( \xi^2 - 4 \xi \leq x \right) =
+P \left( \xi \in \left[ 2 - \sqrt{4+x}, 2 + \sqrt{4+x} \right] \right) = \\
+= P \left( \xi \leq 2 + \sqrt{4+x} \right) - P \left( 2 - \sqrt{4+x} \right) = \\
+= F_{ \xi } \left( 2 + \sqrt{4+x} \right) - F_{ \xi } \left( 2 - \sqrt{4+x} \right) $.
+
+Её плотность распределения --- это производная
+$$p_{ \xi^2 - 4 \xi} \left( x \right) =
+\frac{1}{2 \sqrt{4+x}} \cdot p_{ \xi } \left( 2 + \sqrt{4+x} \right) + \frac{1}{2 \sqrt{4+x}} \cdot p_{ \xi } \left( 2 - \sqrt{4+x} \right).$$
+
+Рассмотрим функцию распределения
+$$F_{g \left( \xi \right) } \left( x \right) =
+P \left( g \left( \xi \right) \leq x \right) =
+\begin{cases}
+g \uparrow, \qquad P \left( \xi \leq g^{-1} \left( x \right) \right) = F_{ \xi } \left( g^{-1} \left( x \right) \right), \\
+g \downarrow, \qquad P \left( \xi \geq g^{-1} \left( x \right) \right) = 1 - F_{ \xi } \left( g^{-1} \left( x \right) \right).
+\end{cases}$$
+
+Её плотность распределения
+$$p_{g \left( x \right) } \left( x \right) =
+\begin{cases}
+g \uparrow, \qquad \left( g^{-1} \left( x \right) \right)'p_{ \xi } \left( g^{-1} \left( x \right) \right), \\
+g \downarrow, \qquad -\left( g^{-1} \left( x \right) \right)'p_{ \xi } \left( g^{-1} \left( x \right) \right).
+\end{cases}$$
+
 \addcontentsline{toc}{section}{Дополнительные задачи}
 \section*{Дополнительные задачи}
 
