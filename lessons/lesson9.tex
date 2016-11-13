@@ -567,6 +567,31 @@ P \left( \left[ \xi \right] \leq x \right) =
 \frac{ \left[ x \right] +1}{5}.$$
 \end{enumerate}
 
+\subsubsection*{9.12}
+
+\textit{Задание.}
+Вероятность выпуска бракованного изделия равна $p$,
+вероятность признать качественное изделие бракованным равна $ \alpha $, вероятность признать бракованное изделие качественным равна $ \beta $.
+Детали выпускают до тех пор, пока одно из изделий не будет признано бракованным.
+Найдите распределение следующих случайных величин:
+\begin{enumerate}[label=\alph*)]
+\item $ \xi $ --- количества выпущенных бракованных изделий;
+\item $ \eta $ --- количества пропущенных бракованных изделий. 
+\end{enumerate}
+
+\textit{Решение.} $ \eta $ --- количество выпущенных бракованных изделий, оно совпадает с $ \eta .$
+Пусть событие $H_n =$ \{всего выпущено $n$ деталей\}.
+Тогда условная вероятность $P \left( \left. \xi = k \right| H_n \right) = C_n^k p^k \left( 1-p \right)^{n-k}$.
+Запишем искомую вероятность через формулу для полной вероятности
+\begin{equation*}
+\begin{split}
+P \left\{ \xi = k \right\} =
+\sum \limits_{n=k+1}^{ \infty } P \left( \left. \xi = k \right| H_n \right) P \left( H_n \right) = \\
+= \sum \limits_{n=k+1}^{ \infty } C_n^k p^k \left( 1 - \beta \right)^{n-k} \beta^k
+\left( 1 - \alpha \right)^{n-k} \left( p \left( 1 - \beta \right) + \left( 1 - \beta \right) \alpha \right).
+\end{split}
+\end{equation*}
+
 \subsubsection*{9.13}
 
 \textit{Задание.} Пусть $ \xi $ --- случайная величина с непрерывной функцией распределения $F$ и $ \eta = F \left( \xi \right) $.
