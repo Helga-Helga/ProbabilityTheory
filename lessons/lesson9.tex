@@ -590,6 +590,35 @@ F \left( F^{-1} \left( x \right) \right) = x, \qquad 0 \leq x \leq 1, \\
 1, \qquad x > 1.
 \end{cases}$$
 
+\subsubsection*{9.14}
+
+\textit{Задание.} Пусть $ \xi, \eta $ --- независимые случайные величины с функциями распределения $F$ и $G$ соответственно.
+Найдите функцию распределения случайных величин $ \max \left( \xi, \eta \right) $ и $ \min \left( \xi, \eta \right) $.
+
+\textit{Решение.}
+Найдём функцию распределения для максимума
+$$F_{ \max \left\{ \xi, \eta \right) } \left( x \right) =
+P \left\{ \max \left( \xi, \eta \right) \leq x \right) =
+P \left\{ \xi \leq x, \eta \leq x \right).$$
+Из независимости случайных величин
+$$P \left\{ \xi \leq x, \eta \leq x \right) =
+P \left( \xi \leq x \right) \cdot P \left( \eta \leq x \right) =
+F \cdot G.$$
+Отсюда следует, что $F_{ \max \left\{ \xi, \eta \right) } \left( x \right) = F \cdot G$.
+
+Найдём функцию распределения для минимума
+$$F_{ \min \left\{ \xi, \eta \right) } \left( x \right) =
+P \left\{ \min \left( \xi, \eta \right) \leq x \right) =
+P \left( \left\{ \xi \leq x \right\} \cup \left\{ \eta \leq x \right\} \right).$$
+По формуле включений-исключений
+$$P \left( \left\{ \xi \leq x \right\} \cup \left\{ \eta \leq x \right\} \right) =
+P \left( \xi \leq x \right) + P \left( \eta \leq x \right) - P \left( \xi \leq x, \eta \leq x \right).$$
+Из независимости случайных величин
+$$P \left\{ \xi \leq x, \eta \leq x \right) =
+P \left( \xi \leq x \right) \cdot P \left( \eta \leq x \right) =
+F \cdot G.$$
+Отсюда следует, что $F_{ \min \left\{ \xi, \eta \right) } \left( x \right) = F + G - F \cdot G$.
+
 \addcontentsline{toc}{section}{Дополнительные задачи}
 \section*{Дополнительные задачи}
 
