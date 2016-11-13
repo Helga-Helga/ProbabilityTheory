@@ -567,6 +567,29 @@ P \left( \left[ \xi \right] \leq x \right) =
 \frac{ \left[ x \right] +1}{5}.$$
 \end{enumerate}
 
+\subsubsection*{9.13}
+
+\textit{Задание.} Пусть $ \xi $ --- случайная величина с непрерывной функцией распределения $F$ и $ \eta = F \left( \xi \right) $.
+Найдите функцию распределения случайной величины $ \eta $.
+
+\textit{Решение.} По определению
+$$F_{ \eta } =
+P \left\{ \eta \leq x \right\} =
+P \left\{ F \left( \xi \right) \leq x \right\} =
+\begin{cases}
+0, \qquad x < 0, \\
+P \left( \xi \leq F^{-1} \left( x \right) \right), \qquad 0 \leq x \leq 1, \\
+1, \qquad x > 1.
+\end{cases}$$
+
+Если функция не спадает и непрерывна, то она имеет обратную
+$$F_{ \eta } =
+\begin{cases}
+0, \qquad x < 0, \\
+F \left( F^{-1} \left( x \right) \right) = x, \qquad 0 \leq x \leq 1, \\
+1, \qquad x > 1.
+\end{cases}$$
+
 \addcontentsline{toc}{section}{Дополнительные задачи}
 \section*{Дополнительные задачи}
 
