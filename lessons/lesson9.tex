@@ -518,17 +518,19 @@ g \downarrow, \qquad -\left( g^{-1} \left( x \right) \right)'p_{ \xi } \left( g^
   \label{fig:910}
 \end{figure}
 
-Используем формулу для геометрической вероятности
-$$P \left( \xi \leq x \right) =
-\frac{S_{A}}{S_{ \Omega }} =
-\frac{ \pi x^2}{ \pi } =
-x^2.$$
+Эта вероятность равна
+$$F_{ \xi } \left( x \right) =
+\begin{cases}
+0, \qquad x \leq 0, \\
+x^2, \qquad 0 < x < 1, \\
+1, \qquad x \geq 1.
+\end{cases}$$
 
-Плотность распределения --- это производная
-$$p_{ \xi } \left( x \right) =
+Нашли функцию распределения.
+
+$p_{ \xi } \left( x \right) =
 F_{ \xi }' \left( x \right) =
-\left( x^2 \right)' =
-2x.$$
+2x \cdot \mathbbm{1} \left( x \in \left[ 0, 1 \right] \right) $.
 
 \subsubsection*{9.11}
 
