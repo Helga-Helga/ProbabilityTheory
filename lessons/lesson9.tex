@@ -676,3 +676,75 @@ $P \left( \xi = n \right) = \\
 = P \left( \overline{A_1} \cap \overline{A_2} \cap \dotsc \cap \overline{A_{n-1}} \cap A_n \right) = \\
 = P \left( \overline{A_1} \right) \cdot P \left( \overline{A_2} \cdot \right) \dotsc \cap P \left( \overline{A_{n-1}} \right) \cdot P \left( A_n \right) =
 \left( 0.8 \right)^{n-1} \cdot 0.2$.
+
+\subsubsection*{9.17}
+
+\textit{Задание.} Допустим, что в партии есть $n$ деталей, а вероятности $p, \alpha, \beta $ имеют то же содержание, что и в задаче 9.12.
+Отдел технического контроля проверил все детали.
+Найдите распределение:
+\begin{enumerate}[label=\alph*)]
+\item числа пропущенных бракованных деталей;
+\item числа качественных бракованных деталей, которые были признаны бракованными. 
+\end{enumerate}
+
+\textit{Решение.} Всего есть $n$ деталей.
+Пусть $ \xi $ --- количество бракованных деталей,
+которые были признаны качественными, $ \eta $ --- количество качественных деталей, которые были признаны бракованными.
+
+\begin{enumerate}[label=\alph*)]
+\item Вычислим вероятность того, что все детали признаны качественными.
+
+Вероятность того, что одну бракованную деталь выпустили и признали качественной, равна $p \cdot \beta $.
+
+Бракованных деталей всего можно выпустить от нуля до $n$.
+
+Найдём вероятность $P \left( \xi = k \right) $.
+Сначала нужно выбрать $k$ бракованных деталей из $n$ выпущенных.
+Вероятность того, что эти $k$ бракованных деталей признали качественными, равна $ \left( p \cdot \beta \right)^k$.
+Вероятность того, что остальные $ \left( n - k \right) $ детали признали бракованными, равна $ \left( 1 - p \cdot \beta \right)^{n-k}$.
+По правилу умножения
+$$P \left( \xi = k \right) =
+C_n^k \left( p \cdot \beta \right) \left( 1 - p \cdot \beta \right)^{n-k}.$$
+
+Просуммируем
+$$P \left( \xi \leq k \right) =
+\sum \limits_{i=0}^k P \left( \xi = i \right) =
+\sum \limits_{i=0}^k C_n^i \left( p \cdot \beta \right)^i \left( 1 - p \cdot \beta \right)^{n-i}.$$
+
+Тогда
+$$F \left( x \right) =
+\begin{cases}
+0, \qquad x \leq 0, \\
+\sum \limits_{i=0}^k C_n^i \left( p \cdot \beta \right)^i \left( 1 - p \cdot \beta \right)^{n-i}, \qquad 0 < x \leq n, \\
+1, \qquad x > n;
+\end{cases}$$
+\item вычислим вероятность того, что качественное изделие будет признано бракованным.
+
+Вероятность выпуска качественного изделия равна $ \left( 1 - p \right) $.
+
+Вероятность того, что качественная деталь будет признана бракованной, равна $ \alpha \left( 1 - p \right) $.
+
+Всего могли выпустить от нуля до $n$ качественных деталей.
+
+Вычислим вероятность $P \left( \eta = k \right) $.
+Сначала нужно выбрать $k$ качественных деталей из $n$.
+Вероятность того, что эти $k$ качественных деталей были признаны бракованными, равна $ \left[ \alpha \left( 1 - p \right) \right]^k$.
+Вероятность того, что остальные $ \left( n - k \right) $ деталей были признаны качественными,
+равна $ \left[ 1 - \alpha \left( 1 - p \right) \right]^{n-k}$.
+По правилу умножения
+$$P \left( \eta = k \right) =
+C_n^k \left[ \alpha \left( 1 - p \right) \right]^k \left[ 1 - \alpha \left( 1 - p \right) \right]^{n-k}.$$
+
+Просуммируем
+$$P \left( \eta \leq k \right) =
+\sum \limits_{i=0}^k P \left( \eta = i \right) =
+\sum \limits_{i=0}^k C_n^i \left[ \alpha \left( 1-p \right) \right]^i \left[ 1 - \alpha \left( 1-p \right) \right]^{n-i}.$$
+
+Тогда
+$$F \left( x \right) =
+\begin{cases}
+0, \qquad x \leq 0, \\
+\sum \limits_{i=0}^k C_n^i \left[ \alpha \left( 1-p \right) \right]^i \left[ 1 - \alpha \left( 1-p \right) \right]^{n-i}, \qquad 0 < x \leq 1, \\
+1, \qquad x > 1.
+\end{cases}$$
+\end{enumerate}
