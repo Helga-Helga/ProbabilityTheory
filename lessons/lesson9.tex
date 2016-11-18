@@ -748,3 +748,126 @@ $$F \left( x \right) =
 1, \qquad x > 1.
 \end{cases}$$
 \end{enumerate}
+
+\subsubsection*{9.18}
+
+\textit{Задание.} Определите, какие из следующих функций являются функциями распределения:
+\begin{enumerate}[label=\alph*)]
+\item $F \left( x \right) =
+\begin{cases}
+0, \qquad x < 0, \\
+1 - \frac{1-e^{-x}}{2}, \qquad x \geq 0;
+\end{cases}$
+\item $F \left( x \right) =
+\begin{cases}
+0, \qquad x \leq 0, \\
+1 - \frac{1-e^{-x}}{x}, \qquad x > 0;
+\end{cases}$
+\item $F \left( x \right) = e^{-e^{-x}}$.
+\end{enumerate}
+
+\textit{Решение.}
+\begin{enumerate}[label=\alph*)]
+\item Изобразим функцию $F \left( x \right) $ на рисунке \ref{fig:918}.
+
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=.4\textwidth]{./pictures/9_18.png}
+  \caption{Функция $F \left( x \right) $}
+  \label{fig:918}
+\end{figure}
+
+Найдём
+$$F \left( - \infty \right) =
+\lim \limits_{x \to - \infty } F \left( x \right) =
+\lim \limits_{x \to - \infty } \left( 1 - \frac{1-e^{-x}}{2} \right) =
+0.$$
+
+Найдём
+\begin{equation*}
+\begin{split}
+F \left( + \infty \right) =
+\lim \limits_{x \to + \infty } F \left( x \right) =
+\lim \limits_{x \to + \infty } \left( 1 - \frac{1-e^{-x}}{2} \right) =
+1 - \frac{1-0}{2} = \\
+= 1 - \frac{1}{2} =
+\frac{1}{2} \neq
+1.
+\end{split}
+\end{equation*}
+
+Функция не является функцией распределения;
+\item изобразим функцию на рисунке \ref{fig:9181}.
+
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=.4\textwidth]{./pictures/9_18_1.png}
+  \caption{Функция $F \left( x \right) $}
+  \label{fig:9181}
+\end{figure}
+
+Функция принимает значения $0 \leq F \left( x \right) \leq 1$.
+
+Найдём
+$$F \left( - \infty \right) =
+\lim \limits_{x \to - \infty } F \left( x \right) =
+\lim \limits_{x \to - \infty} 0 =
+0.$$
+
+Найдём
+$$F \left( + \infty \right) =
+\lim \limits_{x \to + \infty } F \left( x \right) =
+\lim \limits_{x \to + \infty } \left( 1 - \frac{1-e^{-x}}{x} \right).$$
+Раскроем скобки
+$$\lim \limits_{x \to + \infty } \left( 1 - \frac{1-e^{-x}}{x} \right) =
+\lim \limits_{x \to + \infty } \left( 1 - \frac{1}{x} + \frac{e^{-x}}{x} \right) =
+1.$$
+
+Берём производную, где $x > 0$.
+Получаем
+\begin{equation*}
+\begin{split}
+F' \left( x \right) =
+\left( 1 - \frac{1-e^{-x}}{x} \right)' =
+\left( - \frac{1-e^{-x}}{x} \right)' =
+\left( \frac{e^{-x}-1}{x} \right)' = \\
+= \frac{-xe^{-x}- \left( e^{-x}-1 \right) }{x^2} =
+\frac{-xe^{-x}-e^{-x}+1}{x^2} =
+\frac{-e^{-x} \left( x+1 \right) +1}{x^2} = \\
+= \frac{ \frac{x+1}{-e^x} + 1}{x^2} > 0.
+\end{split}
+\end{equation*}
+Отсюда следует, что функция возрастает.
+
+\begin{equation*}
+\begin{split}
+F'' \left( x \right) =
+\left( \frac{-xe^{-x}-e^{-x}+1}{x^2} \right)' = \\
+= \frac{ \left( -e^{-x}+x \cdot e^{-x}+e^{-x} \right) x^2 - 2x \left( -xe^{-x}-e^{-x}+1 \right) }{x^4} =
+\frac{-e^{-x} \cdot x^2 + x^3 \cdot e^{-x}+x^2e^{-x} + 2x^2e^{-x}+2xe^{-x}-2x}{x^4} =
+\frac{x^3e^{-x}+2x^2e^{-x}+2xe^{-x}-2x}{x^4} < 0.
+\end{split}
+\end{equation*}
+Отсюда следует, что функция выпуклая вверх.
+Вывод: функция $F \left( x \right) $ --- функция распределения;
+\item $F \left( x \right) = e^{-e^{-x}}$.
+
+Функция принимает значения на $ \left[ 0, 1 \right] $.
+
+Найдём
+$$F \left( - \infty \right) =
+\lim \limits_{x \to - \infty } F \left( x \right) =
+\lim \limits_{x \to - \infty } e^{-e^{-x}} =
+0.$$
+
+Найдём
+$$F \left( + \infty \right) =
+\lim \limits_{x \to + \infty } F \left( x \right) =
+\lim \limits_{x \to + \infty } e^{-e^{-x}} =
+e^0 =
+1.$$
+
+Берём производную $F' \left( x \right) = \left( e^{-e^{-x}} \right)' = e^{-x-e^{-x}} > 0$.
+Отсюда следует, что функция возрастает.
+Поэтому она является функцией распределения.
+\end{enumerate}
