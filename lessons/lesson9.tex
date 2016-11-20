@@ -1269,3 +1269,85 @@ e^{x-e^x}, \qquad x \geq 0.
 \end{cases}
 \end{split}
 \end{equation*}
+
+\subsubsection*{9.23}
+
+\textit{Задание.} Случайная величина $ \xi $ имеет плотность распределения $p \left( x \right) $.
+Найдите плотность распределения случайных величин:
+$$-5 \xi + 4,
+\xi^3,
+\frac{1}{ \xi },
+- \xi^4 - 4 \xi^2,
+\left| \xi - 2 \right|.$$
+
+\textit{Решение.}
+\begin{equation*}
+\begin{split}
+F_{-4 \xi + 4} \left( x \right) =
+P \left( -5 \xi+4 \leq x \right) =
+P \left( -5 \xi \leq -4 + x \right) =
+P \left( \xi \geq \frac{4}{5} - \frac{x}{5} \right) = \\
+= 1 - P \left( \xi \leq \frac{4}{5} - \frac{x}{5} \right) =
+1 - F_{ \xi } \left( \frac{4}{5} - \frac{x}{5} \right).
+\end{split}
+\end{equation*}
+
+Тогда плотность распределения равна
+$$p_{-5 \xi + 4} \left( x \right) =
+\frac{1}{5} \cdot p_{ \xi } \left( \frac{4}{5} - \frac{x}{5} \right).$$
+
+Функция распределения следующей случайной величины равна
+$$F_{ \xi^3} \left( x \right) =
+P \left( \xi^3 \leq x \right) =
+P \left( \xi \leq \sqrt[3]{x} \right) =
+F_{ \xi } \left( \sqrt[3]{x} \right) =
+F_{ \xi } \left( x^{ \frac{1}{3}} \right).$$
+
+Её плотность распределения
+$$p_{ \xi^3} \left( x \right) =
+\frac{1}{3} \cdot x^{- \frac{2}{3}}p \left( x^{ \frac{1}{3}} \right) =
+\frac{1}{3x^{ \frac{2}{3}}}p_{ \xi} \left( \sqrt[3]{x} \right).$$
+
+Функция распределения следующей случайной величины равна
+\begin{equation*}
+\begin{split}
+F_{ \frac{1}{ \xi }} \left( x \right) =
+P \left( \frac{1}{ \xi } \leq x \right) =
+P \left( 1 \leq x \xi \right) =
+P \left( x \xi \geq 1 \right) =
+P \left( \xi \geq \frac{1}{x} \right) = \\
+= 1 - P \left( \xi < \frac{1}{x} \right) =
+1 - F_{ \xi } \left( \frac{1}{x} - \right).
+\end{split}
+\end{equation*}
+
+Её плотность распределения
+$$p_{ \frac{1}{ \xi }} \left( x \right) =
+\frac{1}{x^2} \cdot p_{ \xi } \left( \frac{1}{x} \right).$$
+
+Функция распределения следующей случайной величины
+$F_{- \xi^2 - 4 \xi^2} \left( x \right) = \\
+= P \left( - \xi^4 - 4 \xi^2 \leq x \right) =
+1 - P \left( \xi \in \left[ - \sqrt{-2+ \sqrt{4-x}}, \sqrt{-2+ \sqrt{4-x}} \right] \right) = \\
+= 1 - P \left( \xi \leq \sqrt{-2+ \sqrt{4-x}} \right) + P \left( \xi < - \sqrt{-2+ \sqrt{4-x}} \right) = \\
+= 1 - F_{ \xi } \left( \sqrt{-2+ \sqrt{4-x}} \right) + F_{ \xi } \left( - \sqrt{-2+ \sqrt{4-x}}- \right) $.
+
+Её плотность распределения
+\begin{equation*}
+\begin{split}
+p_{- \xi^4 - 4 \xi^2} \left( x \right) =
+- \left( \sqrt{-2+ \sqrt{4-x}} \right)'p_{ \xi} \left( \sqrt{-2+ \sqrt{4-x}} \right) - \left( \sqrt{-2+ \sqrt{4-x}} \right)' = \\
+= \frac{1}{4 \sqrt{-2+ \sqrt{4-x}}} \cdot
+\frac{1}{ \sqrt{4-x}} \left( p_{ \xi } \left( \sqrt{-2+ \sqrt{4-x}} \right) + p_{ \xi } \left( - \sqrt{-2+ \sqrt{4-x}}- \right) \right).
+\end{split}
+\end{equation*}
+
+Функция распределения следующей случайной величины равна
+$F_{ \left| \xi - 2 \right| } \left( x \right) = \\
+= P \left( \left| \xi - 2 \right| \leq x \right) =
+P \left( -x \leq \xi - 2 \leq x \right) =
+P \left( \xi - 2 \leq x \right) - P \left( \xi -2 < - x \right) = \\
+= P \left( \xi \leq x + 2 \right) - P \left( \xi < 2 - x \right) =
+F_{ \xi } \left( x + 2 \right) - F_{ \xi } \left( 2 - x - \right) $.
+
+Её плотность распределения $p_{ \left| \xi - 2 \right| } \left( x \right) = p_{ \xi } \left( x + 2 \right) + p_{ \xi } \left( 2 - x - \right) $.
