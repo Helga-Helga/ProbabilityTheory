@@ -1121,3 +1121,64 @@ P \left( \xi^2 - \xi - x \leq 0 \right) = \\
 \end{split}
 \end{equation*}
 \end{enumerate}
+
+\subsubsection*{9.21}
+
+\textit{Задание.} Можно ли подобрать константу $c$ так, чтобы функция
+$$p \left( x \right) =
+\frac{c}{x^3}$$
+была бы плотностью распределения вероятностей на:
+\begin{enumerate}[label=\alph*)]
+\item луче $ \left[ 1, + \infty \right) $;
+\item луче $ \left[ 0, \infty \right) $;
+\item отрезке $ \left[ -2, -1 \right] $?
+\end{enumerate}
+
+\textit{Решение.} Условие нормировки функции распределения
+$$ \int p \left( x \right) dx = 1.$$
+
+\begin{enumerate}[label=\alph*)]
+\item подставим границы интегрирования в условие нормировки
+\begin{equation*}
+\begin{split}
+\int \limits_1^{+ \infty } p \left( x \right) =
+\int \limits_1^{+ \infty } \frac{x}{x^3} dx =
+c \int \limits_1^{+ \infty } x^{-3}dx =
+\left. c \cdot \frac{x^{-2}}{-2} \right|_1^{+ \infty } =
+\left. - \frac{c}{2x^2} \right|_1^{+ \infty } =
+\frac{c}{2} = \\
+= 1.
+\end{split}
+\end{equation*}
+
+Отсюда получаем, что $c = 2$;
+\item подставляем границы интегрирования в условие нормировки
+\begin{equation*}
+\begin{split}
+\int \limits_0^{+ \infty } p \left( x \right) dx =
+\int \limits_0^{+ \infty } \frac{c}{x^3} dx =
+c \cdot \int \limits_0^{+ \infty } x^{-3} dx =
+\left. c \cdot \frac{x^{-2}}{-2} \right|_0^{+ \infty } =
+\left. - \frac{c}{2x^2} \right|_0^{+ \infty } = \\
+= 1.
+\end{split}
+\end{equation*}
+
+Нельзя подобрать константу $c$;
+\item Подставляем пределы интегрирования
+\begin{equation*}
+\begin{split}
+\int \limits_{-2}^{-1} p \left( x \right) dx =
+\int \limits_{-2}^{-1} \frac{c}{x^3} dx =
+c \int \limits_{-2}^{-1} x^{-3} dx =
+\left. c \cdot \frac{x^{-2}}{-2} \right|_{-2}^{-1} =
+\left. - \frac{c}{2x^2} \right|_{-2}^{-1} = \\
+= - \frac{x}{2 \left( -1 \right)^2} + \frac{c}{2 \left( -2 \right)^2} =
+- \frac{c}{2} + \frac{c}{8} =
+c \left( \frac{1}{8} - \frac{1}{2} \right) =
+- \frac{3c}{8}.
+\end{split}
+\end{equation*}
+Отсюда следует, что
+$$c = - \frac{8}{3}.$$
+\end{enumerate}
