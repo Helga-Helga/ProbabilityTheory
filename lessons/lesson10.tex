@@ -89,6 +89,76 @@ M \xi^2 - 2 M \xi + 1 =
 2.3 - 2.6 + 1 =
 0.7.$$
 
+\subsubsection*{10.4}
+
+\textit{Задание.} Плотность распределения случайной величины $ \xi $ равна
+$$p_{ \xi } \left( x \right) =
+\frac{ \lambda }{2} \cdot e^{- \lambda \left| x \right| }, \, \lambda > 0.$$
+Вычислите её функцию распредедения, математическое ожидание и дисперсию.
+
+\textit{Решение.} Начнём с математического ожидания
+$$M \xi =
+\int \limits_{- \infty }^{+ \infty }xp_{ \xi } \left( x \right).$$
+Подставляем функцию
+$$M \xi =
+\int \limits_{- \infty }^{+ \infty } x \cdot \frac{ \lambda }{2} \cdot e^{- \lambda \left| x \right| } dx.$$
+Функция нечётная, интегрируется по всей оси, поэтому $M \xi = 0$.
+
+Вычисляем дисперсию.
+В данном случае она будет совпадать со вторым моментом
+$$D \xi =
+M \xi^2 - \left( M \xi \right)^2 =
+M \xi^2 =
+\int \limits_{- \infty }^{+ \infty } x^2 p_{ \xi } \left( x \right) dx =
+\int \limits_{- \infty }^{+ \infty } x^2 \cdot \frac{ \lambda }{2} \cdot e^{- \lambda \left| x \right| } dx.$$
+Функция чётная
+$$D \xi =
+\lambda \int \limits_0^{+ \infty } x^2 e^{- \lambda x} dx.$$
+Берём по частям,
+$$u = x^2,
+dv = e^{- \lambda x} dx,
+du = 2xdx,
+v = - \frac{1}{ \lambda } \cdot e^{- \lambda x}.$$
+Получаем
+$$D \xi =
+\left. \lambda \cdot x^2 \cdot \left( -1 \right) \cdot \frac{1}{ \lambda } \cdot e^{- \lambda x} \right|_0^{+ \infty } +
+\lambda \int \limits_0^{+ \infty } \frac{1}{ \lambda } \cdot e^{- \lambda x} \cdot 2xdx.$$
+Ещё раз берём по частям
+$$x = u,
+dv = e^{- \lambda x}dx,
+dx = du,
+v = - \frac{1}{ \lambda } \cdot e^{- \lambda x}.$$
+Получаем
+\begin{equation*}
+\begin{split}
+D \xi =
+\left. 2x \left( - \frac{1}{ \lambda } \cdot e^{- \lambda x} \right) \right|_0^{+ \infty } +
+2 \int \frac{1}{ \lambda } \cdot e^{- \lambda x} dx =
+\left. - \frac{2}{ \lambda^2} \cdot e^{- \lambda x} \right|_0^{+ \infty } - \\
+- \left. \frac{2xe^{- \lambda x}}{ \lambda } \right|_0^{+ \infty } =
+\frac{2}{ \lambda^2}.
+\end{split}
+\end{equation*}
+
+Теперь находим функцию распределения
+$$F_{ \xi } \left( x \right) =
+\int \limits_{- \infty }^{x} p_{ \xi } \left( y \right) dy =
+\begin{cases}
+\int \limits_{- \infty }^x \frac{ \lambda }{2} \cdot e^{ \lambda y} dy =
+\frac{1}{2} \cdot e^{ \lambda x}, \qquad x < 0, \\
+\int \limits_{- \infty }^0 \frac{ \lambda }{2} \cdot e^{ \lambda y} dy + \int \limits_0^x \frac{ \lambda }{2} \cdot e^{- \lambda y} dy = \\
+= \left. \frac{1}{2} - \frac{1}{2} \cdot e^{- \lambda y} \right|0-^x =
+\frac{1}{2} - \frac{1}{2} \cdot e^{- \lambda x} + \frac{1}{2} = \\
+= 1 - \frac{1}{2} \cdot e^{- \lambda x}, \qquad x > 0.
+\end{cases}$$
+
+Таким образом,
+$$F_{ \xi } \left( x \right) =
+\begin{cases}
+\frac{1}{2} \cdot e^{ \lambda x}, \qquad x < 0, \\
+1 - \frac{1}{2} \cdot e^{- \lambda x}, \qquad x > 0.
+\end{cases}$$
+
 \addcontentsline{toc}{section}{Дополнительные задачи}
 \section*{Дополнительные задачи}
 
