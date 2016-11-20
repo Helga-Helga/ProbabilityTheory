@@ -1182,3 +1182,90 @@ c \left( \frac{1}{8} - \frac{1}{2} \right) =
 Отсюда следует, что
 $$c = - \frac{8}{3}.$$
 \end{enumerate}
+
+\subsubsection*{9.22}
+
+\textit{Задание.} Случайная величина $ \xi $ имеет показательное распределение с плотностью распределения
+$$p \left( x \right) =
+\begin{cases}
+2e^{-2x}, \qquad x \geq 0, \\
+0, \qquad x < 0.
+\end{cases}$$
+Вычислите вероятности:
+$$P \left( \xi \in \left[ 1, 2 \right] \right),
+P \left( \xi \in \left( 1, 2 \right] \right),
+P \left( \xi \geq 2 \right),
+P \left( \xi \leq 3 \right),
+P \left( \xi^2 - 5 \xi \geq -6 \right).$$
+Найдите плотность распределения случайной величины $ \eta = \ln \left( 2 \xi \right) $.
+
+\textit{Решение.}
+\begin{equation*}
+\begin{split}
+P \left( \xi \in \left[ 1, 2 \right] \right) =
+\int \limits_1^2 2e^{-2x}dx =
+2 \int \limits_1^2 e^{-2x}dx =
+- \frac{2}{2} \int \limits_1^2 e^{-2x}d \left( -2x \right) =
+\left. -e^{-2x} \right|_1^2 = \\
+= -e^{-2 \cdot 2} + e^{-2} =
+-e^{-4} + e^{-2}.
+\end{split}
+\end{equation*}
+
+Найдём
+$$P \left( \xi \geq 2 \right) =
+\int \limits_2^{+ \infty } 2e^{-2x}dx =
+\left. -e^{-2x} \right|_2^{+ \infty } =
+e^{-4}.$$
+
+Найдём
+$$P \left( \xi \leq 3 \right) =
+\int \limits_{- \infty }^3 p \left( x \right) dx =
+\int \limits_0^3 2e^{-2x}dx =
+\left. -e^{-2x} \right|_0^3 =
+-e^{-6} + e^0 =
+-e^{-6} + 1.$$
+
+Найдём
+$$P \left( \xi^2 - 5 \xi \geq -6 \right) =
+P \left( \xi^2 - 5 \xi + 6 \geq 0 \right).$$
+По теореме Виета
+\begin{equation*}
+\begin{split}
+P \left( \xi^2 - 5 \xi + 6 \geq 0 \right) =
+P \left( \xi \in \left( - \infty, 2 \right] \cup \left[ 3, + \infty \right) \right) =
+\int \limits_{- \infty }^2 p \left( x \right) dx + \int \limits_3^{+ \infty } p \left( x \right) dx = \\
+= \int \limits_0^2 2e^{-2x}dx + \int \limits_3^{+ \infty } 2e^{-2x}dx =
+\left. -e^{-2x} \right|_0^2 - \left. e^{-2x} \right|_3^{+ \infty } =
+-e^{-4} + 1 + e^{-6}.
+\end{split}
+\end{equation*}
+
+По определению
+$$F_{ \xi } \left( x \right) =
+\int \limits_{- \infty }^x p_{ \xi } \left( y \right) dy.$$
+
+В каждой точке непрерывности функции распределения $F'_{ \xi } \left( x \right) = p_{ \xi } \left( x \right) $.
+
+Тогда
+$$F_{ \eta } \left( x \right) =
+F_{ \ln \left( 2 \xi \right) } \left( x \right) =
+P \left( \ln \left( 2 \xi \right) \leq x \right) =
+P \left( 2 \xi \leq e^x \right) =
+P \left( \xi \leq \frac{e^x}{2} \right) =
+F \left( \frac{e^x}{2} \right).$$
+
+Дифференцируем слева и справа сложную функцию
+\begin{equation*}
+\begin{split}
+p_{ \eta } \left( x \right) =
+p_{ \ln \left( 2 \xi \right) } \left( x \right) =
+\frac{e^x}{2} \cdot p \left( \frac{e^x}{2} \right) = \\
+= \begin{cases}
+0, \qquad x < 0, \\
+\frac{e^x}{2} \cdot 2e^{-2 \cdot \frac{e^x}{2}} =
+e^x \cdot e^{-e^x} =
+e^{x-e^x}, \qquad x \geq 0.
+\end{cases}
+\end{split}
+\end{equation*}
