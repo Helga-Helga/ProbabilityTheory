@@ -215,6 +215,79 @@ M \xi^2 - \left( M \xi \right)^2 =
 
 Из линейности математического ожидания $M \left( 2 \xi + 1 \right) = 2M \xi + 1 = n + 1$.
 
+\subsubsection*{10.6}
+
+\textit{Задание.} Вычислите:
+\begin{enumerate}[label=\alph*)]
+\item $M \left| \xi \right| $, если
+$$p_{ \xi } \left( x \right) =
+\frac{1}{ \sqrt{2 \pi } \sigma } \cdot e^{- \frac{x^2}{2 \sigma^2}};$$
+\item $M \sin^2 \pi \xi, Me^{ \xi }$, если
+$$p_{ \xi } \left( x \right) =
+\begin{cases}
+1, \qquad x \in \left[ 0, 1 \right], \\
+0, \qquad x \notin \left[ 0, 1 \right];
+\end{cases}$$
+\item $M \min \left( \left| \xi \right|, 1 \right) $, если
+$$p_{ \xi } \left( x \right) =
+\frac{1}{ \pi } \cdot \frac{1}{1+x^2}.$$
+\end{enumerate}
+
+\textit{Решение.}
+\begin{enumerate}[label=\alph*)]
+\item Найдём математическое ожидание
+$$M \left| \xi \right| =
+\int \limits_{- \infty }^{+ \infty } \left| x \right| \cdot \frac{1}{ \sqrt{2 \pi } \sigma } \cdot e^{- \frac{x^2}{2 \sigma^2}}dx.$$
+Подинтегральная функция чётная, поэтому
+$$M \left| \xi \right| =
+2 \int \limits_0^{+ \infty } x \cdot \frac{1}{ \sqrt{2 \pi } \sigma } \cdot e^{- \frac{x^2}{2 \sigma^2}}dx.$$
+Введём замену
+$$dt = d \left( \frac{x^2}{2 \sigma^2} \right),
+t = \frac{x^2}{2 \sigma^2}.$$
+Получаем
+$$M \left| \xi \right| =
+\frac{2 \sigma^2}{ \sqrt{2 \pi } \sigma } \int \limits_0^{+ \infty } e^{-t} dt =
+\left. \frac{-2 \sigma }{ \sqrt{2 \pi }} \cdot e^{-t} \right|_0^{+ \infty } =
+\frac{2 \sigma }{ \sqrt{2 \pi }};$$
+\item это равномерное распределение на отрезке $ \left[ 0, 1 \right] $.
+
+Вычисляем
+\begin{equation*}
+\begin{split}
+M \sin^2 \pi \xi =
+\int \limits_{- \infty }^{+ \infty } \sin^2 \pi x \cdot p_{ \xi } \left( x \right) dx =
+\int \limits_0^1 \sin^2 \pi x dx =
+\int \limits_0^1 \frac{1 - \cos 2x}{2} dx = \\
+= \left. \frac{x}{2} \right|_0^1 - \int \limits_0^1 \frac{ \cos 2 \pi x}{2} dx =
+\frac{1}{2} - 0 =
+\frac{1}{2}.
+\end{split}
+\end{equation*}
+
+Далее находим
+$$Me^{ \xi } =
+\int \limits_{- \infty }^{+ \infty } e^x p_{ \xi } \left( x \right) =
+\int \limits_0^1 e^x dx =
+\left. e^x \right|_0^1 =
+e - 1;$$
+\item имеем плотность Коши.
+Счётного математического ожидания не существует.
+Будем вычислять
+\begin{equation*}
+\begin{split}
+M \min \left( \left| \xi \right|, 1 \right) =
+\int \limits_{- \infty }^{+ \infty } \min \left( \left| x \right|, 1 \right) p_{ \xi } \left( x \right) dx =
+\int \limits_{- \infty }^{-1} \frac{1}{ \pi } \cdot \frac{1}{1+x^2} dx + \\
++ \int \limits_{-1}^1 \left| x \right| p_{ \xi } \left( x \right) dx +
+\int \limits_1^{+ \infty } \frac{1}{ \pi } \cdot \frac{1}{1+x^2} dx =
+\frac{2}{ \pi } \left( \int \limits_1^{+ \infty } \frac{1}{1+x^2} dx + \int \limits_0^1 \frac{x}{1+x^2} dx \right) = \\
+= \frac{2}{ \pi } \left[ \left. arctg x \right|_1^{+ \infty } + \left. \frac{1}{2} \cdot \ln \left( x^2 + 1 \right) \right|_0^1 \right] =
+\frac{2}{ \pi } \left( \frac{ \pi }{4} + \frac{1}{2} \cdot \ln 2 \right) =
+\frac{1}{2} + \frac{ \ln 2}{ \pi }.
+\end{split}
+\end{equation*}
+\end{enumerate}
+
 \addcontentsline{toc}{section}{Дополнительные задачи}
 \section*{Дополнительные задачи}
 
