@@ -1,0 +1,65 @@
+\addcontentsline{toc}{chapter}{Занятие 10. Числовые характеристики случайных величин I}
+\chapter*{Занятие 10. Числовые характеристики случайных величин I}
+
+\addcontentsline{toc}{section}{Контрольные вопросы и задания}
+\section*{Контрольные вопросы и задания}
+
+\subsubsection*{Приведите формулы для вычисления математического ожидания дискретной случайной величины; случайной величины, которая имеет плотность распределения; функции от случайной величины.}
+
+Пусть $ \xi $ --- дискретная случайная величина.
+Она может принимать не более чем счётное количество значений.
+Принимает значения $x_1, \dotsc, x_n, \dotsc $ с такими вероятностями $p_1, \dotsc, p_n, \dotsc $.
+Тогда математическое ожидание вычисляется так
+$$M \xi =
+\sum \limits_{i=1}^{ \infty } x_i p_i.$$
+Для того, чтобы математическое ожидание существовало, необходимо, чтобы ряд сходился адболютно, то есть
+$$ \sum \limits_{i=1}^{ \infty } \left| x_i \right| \cdot p_i < + \infty.$$
+
+Пусть $ \xi $ имеет абсолютно непрерывное распределение (имеет плотность распределения $p_{ \xi } \left( x \right) $).
+В таком случае математическое ожидание вычисляется ка
+$$M \xi =
+\int \limits_{- \infty }^{+ \infty } xp_{ \xi } \left( x \right) dx.$$
+
+В случае, если имеем функцию от $ \xi $, математическое ожидание
+$$M \varphi \left( x \right) =
+\int \limits_{- \infty }^{+ \infty } \varphi \left( x \right) p_{ \xi } \left( x \right) dx.$$
+
+\subsubsection*{Приведите определение дисперсии случайной величины и запишите формулу для её вычисления.}
+
+Дисперсия случайной величины $ \xi $, для которой $ \exists M \xi $,
+называется
+$$D \xi =
+M \left[ \left( \xi - M \xi \right)^2 \right] \leq + \infty.$$
+Это мера отклонения случайной величины от своего среднего (математического ожидания).
+
+Для вычисления пользуемся формулой $D \xi = M \xi^2 - \left( M \xi \right)^2.$
+
+\subsubsection*{Сформулируйте свойства математического ожидания и дисперсии.}
+
+Сфойства математического ожидания:
+\begin{enumerate}
+\item если $ \exists M$, то $ \forall c \in \mathbb{R} \, \exists M \left( c \xi \right) $ и $ M \left( c \xi \right) = cM \xi $;
+\item если существует $M \xi $ и $M \eta $, то $ \exists M \left( \xi + \eta \right) $ и $M \left( \xi + \eta \right) = M \xi + M \eta $.
+Из этих двух условий следует, что математическое ожидание является линейной функцией;
+\item $ \exists M \xi \iff \exists M \left| \xi \right| $, и кроме того $ \left| M \xi \right| \leq M \left| \xi \right| $;
+\item если $ \xi \geq 0$, то $M \xi \geq 0$;
+\item $\xi \geq \eta, \, \exists \xi, \, \exists \eta \Rightarrow M \xi \geq M \eta $;
+\item если $ \eta $ и $ \xi $ --- независимые случайные величины,
+для которых существует математическое ожидание, то $ \exists M \left( \xi \eta \right) = M \xi \cdot M \eta $.
+\end{enumerate}
+
+Свойства дисперсии:
+\begin{enumerate}
+\item $D \xi \geq 0$'
+\item $ \forall \lambda \in \mathbb{R}: \qquad D \left( \lambda \xi \right) = \lambda^2 D \xi $;
+\item для независимых $ \eta $ и $ \xi \, D \left( \xi + \eta \right) = D \xi + D \eta $.
+\end{enumerate}
+
+\addcontentsline{toc}{section}{Аудиторные задачи}
+\section*{Аудиторные задачи}
+
+\addcontentsline{toc}{section}{Дополнительные задачи}
+\section*{Дополнительные задачи}
+
+\addcontentsline{toc}{section}{Домашнее задание}
+\section*{Домашнее задание}
