@@ -1035,3 +1035,89 @@ P \left( \xi < 5 \right) $.
 \end{split}
 \end{equation*}
 \end{enumerate}
+
+\subsubsection*{9.20}
+
+\textit{Задание.} Пусть $ \xi $ --- координата точки, наугад выбранной на отрезке $ \left[ -3, 12 \right] $.
+Найдите функции распределения случайных величин:
+\begin{enumerate}[label=\alph*)]
+\item $- \xi$;
+\item $ \left[ \xi \right] $;
+\item $ \left| \xi - 1 \right| $;
+\item $ \xi^2 - \xi $.
+\end{enumerate}
+
+\textit{Решение.} Пусть $ \Omega = \left[ -3, 12 \right] $.
+Длина отрезка равна
+$$l_{ \Omega } =
+12 - \left( -3 \right) =
+12+3 =
+15.$$
+При $x < -3, \qquad P \left( \xi \leq x \right) = 0$; при $x > 12, \qquad P \left( \xi < x \right) = 1$.
+
+Функция распределения
+$$F_{ \xi } \left( x \right) =
+P \left( \xi \leq x \right) =
+\frac{l}{l_{ \Omega }} =
+\frac{x - \left( -3 \right) }{15} =
+\frac{x+3}{15}, \qquad -3 \leq x < 12.$$
+
+\begin{enumerate}[label=\alph*)]
+\item Функция распределения
+\begin{equation*}
+\begin{split}
+F_{- \xi } \left( x \right) =
+P \left( - \xi \leq x \right) =
+P \left( \xi \geq -x \right) =
+1 - P \left( \xi < -x \right) =
+1 - \frac{l}{l_{ \Omega }} = \\
+= 1 - \frac{-x+3}{15} =
+\frac{15+x-3}{15} =
+\frac{12+x}{15} =
+\frac{12}{15} + \frac{x}{15} =
+\frac{4}{5} + \frac{x}{15};
+\end{split}
+\end{equation*}
+\item обозначим $ \left[ \xi \right] $ как целую часть от числа.
+Тогда функция распределения
+\begin{equation*}
+\begin{split}
+P \left( \left[ \xi \right] \leq x \right) =
+P \left( \left[ \xi \right] \leq 12 \right) - P \left( \left[ \xi \right] < -3 \right) =
+P \left( \xi \leq 12 \right) - P \left( \xi < -2 \right) = \\
+= F \left( 13 \right) - F \left( -2- \right) =
+1 - \frac{-2+3}{15} =
+1 - \frac{1}{15} =
+\frac{14}{15};
+\end{split}
+\end{equation*}
+\item функция распределения
+\begin{equation*}
+\begin{split}
+F_{ \left| \xi - 1 \right| } \left( x \right) =
+P \left( -x \leq \xi - 1 \leq x \right) =
+P \left( \xi - 1 \leq x \right) - P \left( \xi - 1 < - x \right) = \\
+= P \left( \xi \leq x + 1 \right) - P \left( \xi < 1 - x \right) =
+\begin{cases}
+0, \qquad x < -1, \\
+\frac{2x}{15}, \qquad -3 \leq x \leq 12, \\
+1, \qquad x > 12;
+\end{cases}
+\end{split}
+\end{equation*}
+\item функция распределения
+\begin{equation*}
+\begin{split}
+F_{\xi^2 - \xi} \left( x \right) =
+P \left( \xi^2 - \xi - x \leq 0 \right) = \\
+= P \left( \xi \in \left[ \frac{1 - \sqrt{1+4x}}{2}, \frac{1 + \sqrt{1+4x}}{2} \right] \right) = \\
+= \begin{cases}
+0, \qquad \frac{1 - \sqrt{1+4x}}{2} < -3, \\
+1, \qquad \frac{1 + \sqrt{1+4x}}{2} > 12, \\
+\frac{x_2+3}{15}, \qquad x_1 < -3, \, -3 < x_2 < 12, \\
+\frac{x_2 - x_1}{15}, \qquad -3 < x_1, \, x_2 < 12, \\
+\frac{12 - x_1}{15}, \qquad -3 \leq x < 12, \, x_2 > 12.
+\end{cases}
+\end{split}
+\end{equation*}
+\end{enumerate}
