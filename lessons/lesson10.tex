@@ -402,3 +402,66 @@ $$M \xi =
 \frac{n}{6} \left( \frac{1}{6} + \frac{5}{6} \right)^{n-1} =
 \frac{n}{6} \cdot 1^{n-1} =
 \frac{n}{6}.$$
+
+\subsubsection*{10.17}
+
+\textit{Задание.} Подброшено $n$ игральных кубиков.
+Найдите математическое ожидание суммы и произведения очков.
+
+\textit{Решение.} Найдём математическое ожидание очков, выпавших при одном бросании.
+Вероятность выпадения любой из шести граней равна $1/6$.
+Имеем дискретную случайную величину $ \xi $, для которой
+$$M \xi =
+\sum \limits_{k=1}^6 k \cdot \frac{1}{6} =
+\frac{1}{6} \cdot \sum \limits_{k=1}^6 =
+\frac{1}{6} \cdot 21 =
+\frac{7}{2}.$$
+
+Из свойств математического ожидания, если существуют $M \xi $ и $M \eta $, то существует $M \left( \xi + \eta \right) $ и $M \left( \xi + \eta \right) = M \xi + M \eta $.
+Следовательно математическое ожидание суммы очков, выпавших при $n$ подбрасываниях игрального кубика, равно
+$$M \xi_1 =
+n \cdot \frac{7}{2} =
+\frac{7n}{2}.$$
+
+Из свойств математического ожидания,
+если случайные величины $ \xi $ и $ \eta $ независимы,
+$M \xi $ и $M \eta $ существуют, то $M \left( \xi \eta \right) $ существует и $M \left( \xi \eta \right) = M \xi \cdot M \eta $.
+
+Так как подбрасывания кубика независимы, воспользуемся этим свойством
+$$M \xi_2 =
+\left( \frac{7}{2} \right)^n.$$
+
+\subsubsection*{10.18}
+
+\textit{Задание.} Пусть $ \xi $ имеем плотность распределения
+$$p \left( x \right) =
+\frac{1}{ \sqrt{2 \pi } \sigma } \cdot e^{- \frac{ \left( x-a \right)^2}{2 \sigma^2}}$$
+(нормальное распределение с параметрами $ \left( a, \sigma^2 \right) $).
+Вычислите $ M \left| \xi - a \right| $.
+
+\textit{Решение.} По определению математического ожидания случайной величины, для которой задана плотность распределения
+$$M \left| \xi - a \right| =
+\int \limits_{- \infty }^{+ \infty } \left| x - a \right| \cdot \frac{1}{ \sqrt{2 \pi } \sigma } \cdot e^{- \frac{ \left( x - a \right)^2}{2 \sigma^2}} dx.$$
+
+Подинтегральная функция чётная, поэтому
+$$M \left| \xi - a \right| =
+2 \int \limits_0^{+ \infty } \left( x - a \right) \cdot \frac{1}{ \sqrt{2 \pi } \sigma } \cdot e^{- \frac{ \left( x - a \right)^2}{2 \sigma^2}} dx.$$
+
+Введём замену
+$$t = \frac{ \left( x-a \right)^2}{2 \sigma^2},
+dt = d \left( \frac{ \left( x-a \right)^2}{2 \sigma^2} \right) = \frac{2 \left( x-a \right) }{2 \sigma^2} dx = \frac{x-a}{ \sigma^2} dx,$$
+откуда
+$$dx = \frac{ \sigma^2}{x-a}.$$
+Подставим введённую замену в выражение
+\begin{equation*}
+\begin{split}
+M \left| \xi - a \right| =
+2 \int \limits_0^{+ \infty } \left( x-a \right) \cdot \frac{1}{ \sqrt{2 \pi } \sigma } \cdot e^{-t} \cdot \frac{ \sigma^2}{x-a} dt =
+2 \int \limits_0^{+ \infty } \frac{1}{ \sqrt{2 \pi }} \cdot \sigma e^{-t} dt = \\
+= \frac{2}{ \sqrt{2 \pi }} \cdot \sigma \int \limits_0^{+ \infty } e^{-t} dt =
+\left. - \sqrt{ \frac{2}{ \pi }} \cdot \sigma e^{-t} \right|_0^{+ \infty } =
+- \sqrt{ \frac{2}{ \pi }} \cdot \sigma \cdot \left( e^{- \infty } - e^0 \right) = \\
+= - \sqrt{ \frac{2}{ \pi }} \cdot \sigma \left( 0 - 1 \right) =
+\sqrt{ \frac{2}{ \pi }} \cdot \sigma.
+\end{split}
+\end{equation*}
