@@ -544,3 +544,49 @@ M \cos \xi =
 0.
 \end{split}
 \end{equation*}
+
+\subsubsection*{10.20}
+
+\textit{Задание.} Случайные величины $ \xi $ и $ \eta $ являются независимыми и известно, что $M \xi = 1, M \eta = 2, D \xi = 1, D \eta = 4$.
+Вычислите:
+\begin{enumerate}[label=\alph*)]
+\item $M \left( \xi + \eta + 1 \right)^2$;
+\item $D \xi \eta $.
+\end{enumerate}
+
+\textit{Решение.} Запишем формулу для дисперсии $D \xi = M \xi^2 - \left( M \xi \right)^2$.
+
+Отсюда выразим второй момент $M \xi^2 = D \xi + \left( M \xi \right)^2 = 1 + 1 = 2$.
+
+Аналогичные действия проделываем для $ \eta $ и получаем
+$$M \eta^2 =
+D \eta + \left( M \eta \right)^2 =
+4 + 4 =
+8.$$
+
+\begin{enumerate}[label=\alph*)]
+\item Найдём $M \left( \xi + \eta + 1 \right)^2$.
+Раскроем скобки
+\begin{equation*}
+\begin{split}
+M \left( \xi + \eta + 1 \right)^2 =
+M \left[ \left( \xi + \eta \right)^2 + 2 \left( \xi + \eta \right) + 1 \right] = \\
+= M \left( \xi^2 + 2 \xi \eta + \eta^2 + 2 \xi + 2 \eta + 1 \right).
+\end{split}
+\end{equation*}
+
+Пользуемся линейностью
+$$M \left( \xi + \eta + 1 \right)^2 =
+M \xi^2 + 2 M \xi M \eta + M \eta^2 + 2M \xi + 2M \eta + 1.$$
+
+Подставим числовые значения $M \left( \xi + \eta + 1 \right)^2 = 2 + 2 \cdot 1 \cdot 2 + 8 + 2 \cdot 1 + \\
++ 2 \cdot 2 + 1 = 2 + 4 + 8 + 2 + 4 + 1 = 21$;
+\item по определению $D \xi \eta = M \left( \xi \eta \right)^2 - \left[ M \left( \xi \eta \right) \right]^2$.
+
+Так как случайные величины независимы, то
+$$M \left( \xi + \eta + 1 \right)^2 =
+M \left( \xi^2 \cdot \eta^2 \right) - \left( M \xi \cdot M \eta \right)^2 =
+M \xi^2 \cdot M \eta^2 - \left( M \xi \right)^2 \left( M \eta \right)^2.$$
+
+Подставим числовые значения $M \left( \xi + \eta + 1 \right)^2 = 2 \cdot 8 - 1 \cdot 4 = 16 - 4 = 12$.
+\end{enumerate}
