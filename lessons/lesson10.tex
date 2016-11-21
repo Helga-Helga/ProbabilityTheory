@@ -465,3 +465,82 @@ M \left| \xi - a \right| =
 \sqrt{ \frac{2}{ \pi }} \cdot \sigma.
 \end{split}
 \end{equation*}
+
+\subsubsection*{10.19}
+
+\textit{Задание.} Случайная величина $ \xi $ имеет плотность распределения
+$$p \left( x \right) =
+\begin{cases}
+\frac{ \sin x}{2}, \qquad x \in \left[ 0, \pi \right], \\
+0, \qquad x \notin \left[ 0, \pi \right].
+\end{cases}$$
+Вычислите:
+$$P \left( \xi \in \left[ \frac{ \pi }{4}, \frac{ \pi }{3} \right] \right);
+M \xi;
+M \cos \xi.$$
+
+\textit{Решение.} Найдём вероятность того, что $ \xi $ попадёт в указанный отрезок
+\begin{equation*}
+\begin{split}
+P \left( \xi \in \left[ \frac{ \pi }{4}, \frac{ \pi }{3} \right] \right) =
+\int \limits_{ \frac{ \pi }{4}}^{ \frac{ \pi }{3}} p_{ \xi } \left( x \right) dx =
+\int \limits_{ \frac{ \pi }{4}}^{ \frac{ \pi }{3}} \frac{ \sin x}{2} dx =
+\frac{1}{2} \cdot \int \limits_{ \frac{ \pi }{4}}^{ \frac{ \pi }{3}} \sin x dx =
+\left. - \frac{1}{2} \cdot \cos x \right|_{ \frac{ \pi }{4}}^{ \frac{ \pi }{3}} = \\
+= - \frac{1}{2} \cdot \left( \cos \frac{ \pi }{3} - \cos \frac{ \pi }{4} \right) =
+- \frac{1}{2} \left( \frac{1}{2} - \frac{ \sqrt{2}}{2} \right) =
+\frac{1}{2} \cdot \frac{ \sqrt{2} - 1}{2} =
+\frac{ \sqrt{2} - 1}{4}.
+\end{split}
+\end{equation*}
+
+Найдём математическое ожидание
+$$M \xi =
+\int \limits_{- \infty }^{+ \infty } xp_{ \xi } \left( x \right) =
+\int \limits_0^{ \pi } x \cdot \frac{ \sin x}{2} dx.$$
+
+Вынесем $1/2$ за знак интеграла
+$$M \xi =
+\frac{1}{2} \int \limits_0^{ \pi } x \sin x dx.$$
+
+Берём интеграл по частям
+$$u = x,
+dv = \sin x dx,
+du = dx,
+v = \int \sin x dx = - \cos x.$$
+Подставляем
+$$M \xi =
+\left. - \frac{1}{2} \cdot x \cos x \right|_0^{ \pi } + \frac{1}{2} \int \limits_0^{ \pi } \cos x dx =
+\left. - \frac{1}{2} \cdot \pi \cos \pi + \frac{1}{2} \sin x \right|_0^{ \pi } =
+\frac{- \pi \left( -1 \right) }{2} =
+\frac{ \pi }{2}.$$
+
+Найдём математическое ожидание косинуса
+$$M \cos \xi =
+\int \limits_{- \infty }^{+ \infty } \cos x \cdot p_{ \xi } \left( x \right) dx =
+\int \limits_0^{ \pi } \cos x \cdot \frac{ \sin x}{2} dx.$$
+
+Вынесем $1/2$ за знак интеграла
+$$M \cos \xi =
+\frac{1}{2} \int \limits_0^{ \pi } \sin x \cdot \cos x dx.$$
+
+Умножим и поделим на 2
+$$M \cos \xi =
+\frac{1}{2} \int \limits_0^{ \pi } \sin \left( 2x \right) dx.$$
+
+Сделаем замену
+$$2x = y,
+dy = 2dx,
+dx = \frac{dy}{2}.$$
+Получим
+\begin{equation*}
+\begin{split}
+M \cos \xi =
+\frac{1}{2} \int \limits_0^{2 \pi } \sin y \cdot \frac{dy}{2} =
+\frac{1}{4} \int \limits_0^{2 \pi } \sin y dy =
+\left. - \frac{1}{4} \cdot \cos y \right|_0^{2 \pi} = \\
+= - \frac{1}{4} \left( \cos \left( 2 \pi \right) - \cos 0 \right) =
+- \frac{1}{4} \left( 1 - 1 \right) =
+0.
+\end{split}
+\end{equation*}
