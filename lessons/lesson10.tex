@@ -496,7 +496,7 @@ P \left( \xi \in \left[ \frac{ \pi }{4}, \frac{ \pi }{3} \right] \right) =
 
 Найдём математическое ожидание
 $$M \xi =
-\int \limits_{- \infty }^{+ \infty } xp_{ \xi } \left( x \right) =
+\int \limits_{- \infty }^{+ \infty } xp_{ \xi } \left( x \right) dx =
 \int \limits_0^{ \pi } x \cdot \frac{ \sin x}{2} dx.$$
 
 Вынесем $1/2$ за знак интеграла
@@ -526,7 +526,7 @@ $$M \cos \xi =
 
 Умножим и поделим на 2
 $$M \cos \xi =
-\frac{1}{2} \int \limits_0^{ \pi } \sin \left( 2x \right) dx.$$
+\frac{1}{4} \int \limits_0^{ \pi } \sin \left( 2x \right) dx.$$
 
 Сделаем замену
 $$2x = y,
@@ -536,11 +536,11 @@ dx = \frac{dy}{2}.$$
 \begin{equation*}
 \begin{split}
 M \cos \xi =
-\frac{1}{2} \int \limits_0^{2 \pi } \sin y \cdot \frac{dy}{2} =
-\frac{1}{4} \int \limits_0^{2 \pi } \sin y dy =
-\left. - \frac{1}{4} \cdot \cos y \right|_0^{2 \pi} = \\
-= - \frac{1}{4} \left( \cos \left( 2 \pi \right) - \cos 0 \right) =
-- \frac{1}{4} \left( 1 - 1 \right) =
+\frac{1}{4} \int \limits_0^{2 \pi } \sin y \cdot \frac{dy}{2} =
+\frac{1}{8} \int \limits_0^{2 \pi } \sin y dy =
+\left. - \frac{1}{8} \cdot \cos y \right|_0^{2 \pi} = \\
+= - \frac{1}{8} \left( \cos \left( 2 \pi \right) - \cos 0 \right) =
+- \frac{1}{8} \left( 1 - 1 \right) =
 0.
 \end{split}
 \end{equation*}
