@@ -317,6 +317,136 @@ M \min \left( \left| \xi \right|, 1 \right) =
 Это выражение равно $D \xi + \left( M \xi \right)^2 + 2D \eta + 2 \left( M \eta \right)^2 - M \xi \cdot M \eta - 4M \xi + M \eta + 4 = 1 + 1 + 8 + \\
 + 8 - 2 - 4 + 2 + 4 = 18$.
 
+\subsubsection*{10.8}
+
+\textit{Задание.}
+Точка P наугад выбрана на границе квадрата ABCD с вершинами в точках $A \left( -1, -1 \right), B \left( -1, 1 \right), C \left( 1, 1 \right) $ и $D \left( 1, -1 \right) $.
+Найдите функцию распределения, плотность распределения (если существует), математическое ожидание и дисперсию проекции точки P на:
+\begin{enumerate}[label=\alph*)]
+\item ось абсцисс;
+\item прямую $y = x$.
+\end{enumerate}
+
+\textit{Решение.}
+\begin{enumerate}[label=\alph*)]
+\item Нарисуем квадрат (рис. \ref{fig:108}).
+
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=.4\textwidth]{./pictures/10_8.png}
+  \caption{Квадрат ABCD}
+  \label{fig:108}
+\end{figure}
+
+Выберем точку P на границе.
+Пусть $ \xi $ --- проекция точки P на ось абсцисс.
+
+Все точки из AB или CD проецируются в одну точку.
+
+Найдём вероятность
+$$P \left( \xi = -1 \right) =
+P \left( P \in AB \right).$$
+AB --- дна из четырёх сторон, поэтому
+$$P \left( P \in AB \right) =
+\frac{1}{4}.$$
+
+Аналогично
+$$P \left( \xi = 1 \right) =
+\frac{1}{4}.$$
+
+Берём какое-нибудь $x$.
+Для него
+$$P \left( \xi \leq x \right) =
+\frac{2+2 \left( x+1 \right) }{8} =
+\frac{2+x}{4}.$$
+
+Можем записать функцию распределения
+$$F \left( x \right) =
+\begin{cases}
+0, \qquad x < -1, \\
+\frac{x+2}{4}, \qquad -1 \leq x \leq 1, \\
+1, x \geq 1.
+\end{cases}$$
+
+Изобразим её на графике \ref{fig:1081}.
+
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=.4\textwidth]{./pictures/10_8_1.png}
+  \caption{Функция распределения}
+  \label{fig:1081}
+\end{figure}
+
+В точке 1 происходит скачек величиной $1/4$ в точку единица.
+
+Случайная величина принимает 2 изолированных значения $-1$ и 1 с вероятностью $1/4$.
+На $ \left[ -1, 1 \right) $ она имеет плотность распределения.
+
+Найдём математическое ожидание как интеграл Стилтьеса
+$$M \xi =
+\int \limits_{- \infty }^{+ \infty } xdF_{ \xi } \left( x \right) =
+-1 \cdot \frac{1}{4} + \int \limits_{-1}^1 x \cdot \frac{1}{4} dx + 1 \cdot \frac{1}{4} =
+\left. \frac{1}{4} \cdot \frac{x^2}{2} \right|_{-1}^1 =
+0.$$
+
+Изменение функции $dF_{ \xi } \left( x \right) $ на $ \left( - \infty, -1 \right) $ и на $ \left[ 1, + \infty \right) $ равно нулю.
+
+Квадрат --- симметрическая фигура относительно точки 0, случайная величина симметрична относительно точки 0.
+
+Дисперсия
+\begin{equation*}
+\begin{split}
+D \xi =
+M \xi^2 =
+\int \limits_{- \infty }^{+ \infty } x^2 dF_{ \xi } \left( x \right) =
+\left( -1 \right)^2 \cdot \frac{1}{4} + \int \limits_{-1}^1 \frac{x^2}{4} dx + \frac{1}{4} =
+\left. \frac{1}{2} + \frac{1}{4} \cdot \frac{x^3}{3} \right|_{-1}^1 = \\
+= \frac{1}{2} + \frac{1}{4} \left( \frac{1}{3} + \frac{1}{3} \right) =
+\frac{1}{2} + \frac{1}{4} \cdot \frac{2}{3} =
+\frac{1}{2} + \frac{1}{6} =
+\frac{3+1}{6} =
+\frac{4}{6} =
+\frac{2}{3};
+\end{split}
+\end{equation*}
+\item перерисуем квадрат (рис. \ref{fig:1082}).
+
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=.4\textwidth]{./pictures/10_8_2.png}
+  \caption{Квадрат ABCD}
+  \label{fig:1082}
+\end{figure}
+
+Сделаем замену координат.
+Пустим ось $x$ по диагонали.
+Выбираем точку на границе, перпендикуляр опускаем на диагональ.
+Пусть $ \xi $ --- проекция точки на диагональ.
+Считаем вероятность того, что $ \xi \leq x$.
+
+Она равна
+$$P \left( \xi \leq x \right) =
+2 \cdot \sqrt{2} \cdot x \cdot \frac{1}{8} =
+\frac{ \sqrt{2} x}{4} =
+\frac{x}{2 \sqrt{2}}.$$
+
+Соответственно если $x < 0$, то это 0, если $x > 2 \sqrt{2} $ --- единица.
+
+Запишем функцию распределения
+$$F \left( x \right) =
+\begin{cases}
+0, \qquad x < 0, \\
+\frac{x}{2 \sqrt{2}}, \qquad x \in \left[ 0, 2 \sqrt{2} \right], \\
+1, \qquad x > 2 \sqrt{2}.
+\end{cases}$$
+
+Отсюда следует, что $ \xi $ имеет равномерное распределение на отрезке $x \in \left[0, 2 \sqrt{2} \right] $.
+Математическое ожидание $M \xi = \sqrt{2}$, а дисперсия
+$$D \xi = \frac{ \left( 2 \sqrt{2} \right)^2}{12} =
+\frac{4 \cdot 2}{12} =
+\frac{2}{3}.$$
+\end{enumerate}
+
 \addcontentsline{toc}{section}{Дополнительные задачи}
 \section*{Дополнительные задачи}
 
