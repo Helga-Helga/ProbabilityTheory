@@ -447,6 +447,28 @@ $$D \xi = \frac{ \left( 2 \sqrt{2} \right)^2}{12} =
 \frac{2}{3}.$$
 \end{enumerate}
 
+\subsubsection*{10.9}
+
+\textit{Задание.} Пусть $ \xi $ --- неотрицательная случайная величина с конечным математическим ожидание.
+Докажите, что
+$$M \xi =
+\sum \limits_{i=1}^{ \infty } P \left( \xi \geq 1 \right).$$
+
+\textit{Решение.} $ \xi \geq 0, \xi \in \mathbb{Z}$ --- случайная величина.
+По определению
+$$M \xi =
+\sum \limits_{i=1}^{+ \infty } i \cdot P \left( \xi = i \right) =
+\sum \limits_{i=1}^{+ \infty } \left[ iP \left( \xi \geq i \right) - iP \left( \xi \geq i + 1 \right) \right].$$
+Обозначим $i + 1 = m$ и разобьём на две суммы
+$$M \xi =
+\sum \limits_{i=0}^{+ \infty } iP \left( \xi \geq i \right) - \sum \limits_{m=1}^{+ \infty } \left( m-1 \right) P \left( \xi \geq m \right).$$
+Обозначим $m=i$, тогда
+$$M \xi =
+\sum \limits_{i=0}^{+ \infty } iP \left( \xi \geq i \right) - \sum \limits_{i=1}^{+ \infty } \left( i-1 \right) P \left( \xi \geq i \right).$$
+Суммируем от единицы
+$$M \xi =
+\sum \limits_{i=1}^{+ \infty } P \left( \xi \geq i \right)$$
+
 \addcontentsline{toc}{section}{Дополнительные задачи}
 \section*{Дополнительные задачи}
 
