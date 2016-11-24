@@ -595,6 +595,49 @@ $$\sum \limits_{n=0}^{ \infty } P \left( \nu = n \right) n =
 M \nu,$$
 то $MS = M \nu M \xi_1 = \lambda \cdot 1 = \lambda $.
 
+\subsubsection*{10.12}
+
+\textit{Задание.} Докажите, что если $F \left( x \right) $ --- функция распределения случайной величины $ \xi $ и существует $M \xi $, то имеют место соотношения
+$$ \lim \limits_{x \to + \infty } x \left( 1-F \left( x \right) \right) = 0,
+\lim \limits_{x \to - \infty } xF \left( x \right) = 0.$$
+
+\textit{Решение.} Существование математического интеграла можем записать как конечность интеграла Стилтьеса
+$$ \exists M \xi \Rightarrow \int \limits_{- \infty }^{+ \infty } xdF \left( x \right) < + \infty.$$
+Из этого следует, что
+$$ \exists M \left| \xi \right| \Rightarrow \int \limits_{- \infty }^{+ \infty } \left| x \right| dF \left( x \right) < + \infty.$$
+Это означает, что
+$$ \lim \limits_{T \to + \infty } \int \limits_T^{+ \infty } xdF \left( x \right) =
+0.$$
+
+Оценим.
+$x$ --- монотонная функция
+э поэтому
+\begin{equation*}
+\begin{split}
+\int \limits_T^{+ \infty } xdF \left( x \right) \geq
+\int \limits_T^{+ \infty } FdF \left( x \right) =
+T \int \limits_T^{+ \infty } dF \left( x \right) =
+\left. TF \left( x \right) \right|_T^{+ \infty } =
+TF \left( + \infty \right) - \\
+- TF \left( T \right) =
+T \left( 1 - F \left( T \right) \right).
+\end{split}
+\end{equation*}
+
+Отсюда следует, что $T \left( 1 - F \left( T \right) \right) \rightarrow 0$, когда $T \rightarrow \infty $.
+Эта величина не превосходит что-то, когда это стремится к нулю.
+Аналогично
+$$ \lim \limits_{T \to - \infty } \int \limits_{- \infty }^T xdF \left( x \right) =
+0.$$
+Оценим
+$$ \int \limits_{- \infty }^T xdF \left( x \right) \geq
+\int \limits_{- \infty }^T TdF \left( x \right) =
+\left. TF \left( x \right) \right|_{- \infty }^T =
+TF \left( T \right) - TF \left( - \infty \right) =
+TF \left( T \right).$$
+
+Отсюда следует, что $TF \left( T \right) \rightarrow 0, \qquad T \rightarrow \infty $.
+
 \addcontentsline{toc}{section}{Дополнительные задачи}
 \section*{Дополнительные задачи}
 
