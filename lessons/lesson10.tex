@@ -527,6 +527,74 @@ M \xi^{2n+2} =
 
 Получили, что формула верна для $n+1$, а значит и для любого натурального $n$.
 
+\subsubsection*{10.11}
+
+\textit{Задание.} Пусть $ \xi_1, \xi_2, \dotsc $ --- независимые одинаково распределённые случайные величины с плотностью распределения
+$$p \left( x \right) =
+\begin{cases}
+e^{-x}, \qquad x \geq 0, \\
+0, \qquad x < 0,
+\end{cases}$$
+и пусть $ \nu $ --- независимая от $ \xi_1, \xi_2, \dotsc $ случайная величина с распределением Пуассона, то есть
+$$P \left( \nu = n \right) =
+\frac{ \lambda^n}{n!} \cdot e^{- \lambda }, \qquad n \in \mathbb{N}.$$
+Вычислите математическое ожидание случайной величины
+$$ \eta =
+\sum \limits_{k=1}^{ \nu } \xi_k.$$
+
+\textit{Решение.} Из линейности
+$$M \left( \sum \limits_{i=1}^n \xi_i \right) =
+\sum \limits_{i=1}^n M \xi_i.$$
+
+Теорема про монотонную сходимость. Если $ \xi_n$ монотонно сходится к $ \xi $, то
+$$M \left( \lim \limits_{n \to \infty } \right) =
+M \xi =
+\lim \limits_{n \to \infty } M_{ \xi_n}.$$
+Поменяли местами знак математического ожидания и предел.
+
+$$ \sum \limits_{i=1}^n \xi_i \uparrow \sum \limits_{i=1}^{ \infty } \xi_i,$$
+если $ \xi_i$ --- неотрицательные.
+Тогда
+$$M \left( \lim \limits_{m \to \infty } \sum \limits_{i=1}^m \xi_i \right) =
+M \left( \sum \limits_{i=1}^{ \infty } \xi_i \right).$$
+
+Задано экспоненциальное распределение с параметром единица.
+Есть случайное количество слагаемых $ \nu, \xi_1, \xi_2, \dotsc $ --- независимы.
+
+$ \nu = 0, 1, 2, \dotsc $.
+Случайная величина
+$$ \eta =
+\sum \limits_{n=0}^{ \infty } \mathbbm{1} \left( \nu = n \right) \cdot \sum \limits_{k=1}^n \xi_k.$$
+
+Гипотез про $ \nu $ бесконечно много, поэтому суммируем по всем гипотезам.
+В этой сумме только одно слагаемое отличается от нуля за счёт индикатора.
+$ \nu $ принимает одно и только одно значение.
+Нужно разобраться, можно ли применить теорему про монотонную сходимость.
+
+Сформируем частичную сумму
+$$S_m =
+\sum \limits_{n=0}^m \mathbbm{1} \left( \nu = n \right) \sum \limits_{k=1}^n \xi_k =
+\sum \limits_{n=0}^{ \infty } \mathbbm{1} \left( \nu = n \right) \sum \limits_{k=1}^n \xi_k.$$
+
+С каждым слагаемым сумма может только возрастать.
+Тогда по теореме про монотонную сходимость
+$$MS =
+\lim \limits_{m \to \infty } MS_m.$$
+Из линейности
+$$MS =
+\lim \limits_{m \to \infty } \sum \limits_{n=0}^m M \left( \mathbbm{1} \left( \nu = n \right) \sum \limits_{k=1}^n \xi_k \right).$$
+Переходим к пределу, применяем то, что $ \nu $ и $ \xi $ --- независимы
+$$MS =
+\sum \limits_{n=0}^{ \infty } P \left( \nu = n \right) M \left( \sum \limits_{k=1}^n \xi_k \right).$$
+Используем то, что $ \xi_k$ --- одинаково распределённые.
+Их этого следует, что все их математические ожидания совпадают
+$$MS =
+\sum \limits_{n=0}^{ \infty } P \left( \nu = n \right) nM \xi_1.$$
+Так как
+$$\sum \limits_{n=0}^{ \infty } P \left( \nu = n \right) n =
+M \nu,$$
+то $MS = M \nu M \xi_1 = \lambda \cdot 1 = \lambda $.
+
 \addcontentsline{toc}{section}{Дополнительные задачи}
 \section*{Дополнительные задачи}
 
