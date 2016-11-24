@@ -467,7 +467,65 @@ $$M \xi =
 \sum \limits_{i=0}^{+ \infty } iP \left( \xi \geq i \right) - \sum \limits_{i=1}^{+ \infty } \left( i-1 \right) P \left( \xi \geq i \right).$$
 Суммируем от единицы
 $$M \xi =
-\sum \limits_{i=1}^{+ \infty } P \left( \xi \geq i \right)$$
+\sum \limits_{i=1}^{+ \infty } P \left( \xi \geq i \right).$$
+
+\subsubsection*{10.10}
+
+\textit{Задание.} Пусть $ \xi $ имеет плотность распределения
+$$p \left( x \right) =
+\frac{1}{ \sqrt{2 \pi } \sigma } \cdot e^{- \frac{x^2}{2 \sigma^2}}$$
+(нормальное распределение с параметрами $ \left( 0, \sigma^2 \right) $).
+Докажите, что для произвольного $n \geq 1, \qquad M \xi^{2n-1} = 0, M \xi^{2n} = \left( 2n-1 \right)!! \left( \sigma^2 \right)^n$.
+
+\textit{Решение.} $M \xi = 0, D \xi = \sigma^2$.
+
+Найдём
+$$M \xi^{2n-1} =
+\int \limits_{- \infty }^{+ \infty } x^{2n-1} p \left( x \right) dx =
+\int \limits_{- \infty }^{+ \infty } x^{2n-1} \cdot \frac{1}{ \sqrt{2 \pi } \cdot \sigma } \cdot e^{- \frac{x^2}{2 \sigma^2}}dx.$$
+Функция нечётная, интегрируется по всей оси, поэтому $M \xi^{2n-1} = 0$.
+
+Найдём
+$$M \xi^{2n} =
+\int \limits_{- \infty }^{+ \infty } x^{2n} \cdot \frac{1}{ \sqrt{2 \pi } \sigma } \cdot e^{- \frac{x^2}{2 \sigma^2}} dx.$$
+Функция чётная, поэтому
+$$M \xi^{2n} =
+2 \int \limits_0^{+ \infty } x^{2n} \cdot \frac{1}{ \sqrt{2 \pi } \sigma } \cdot e^{- \frac{x^2}{2 \sigma^2}} dx.$$
+Докажем по индукции.
+
+Допустим, что для $ \xi^{2n}$ это доказано.
+Берём $n+1$, то есть $ \xi^{2n+2}$.
+
+База индукции $M \xi^2 = \left( 2n-1 \right)!! \sigma^2 = \sigma^2$.
+
+Найдём
+$$M \xi^{2n+2} =
+2 \int \limits_0^{+ \infty } x^{2n+2} \cdot \frac{1}{ \sqrt{2 \pi} \cdot \sigma } \cdot e^{- \frac{x^2}{2 \sigma^2}} dx.$$
+Возьмём по частям,
+\begin{equation*}
+\begin{split}
+u = x^{2n+1},
+du = \left( 2n+1 \right) x^{2n}dx,
+dv = xe^{- \frac{x^2}{2 \sigma^2}} dx,
+v = \int xe^{- \frac{x^2}{2 \sigma^2}} dx = \\
+= \frac{1}{2} \int e^{- \frac{x^2}{2 \sigma^2}} d \left( x^2 \right) =
+- \frac{1}{2} \cdot 2 \sigma^2 \int e^{- \frac{x^2}{2 \sigma^2}} d \left( - \frac{x^2}{2 \sigma^2} \right) =
+- \sigma^2 \cdot e^{- \frac{x^2}{2 \sigma^2}}.
+\end{split}
+\end{equation*}
+Получаем
+\begin{equation*}
+\begin{split}
+M \xi^{2n+2} =
+\left. - \frac{2}{ \sqrt{2 \pi } \sigma } \cdot \sigma^2 e^{- \frac{x^2}{2 \sigma^2}} \cdot x^{2n+1} \right|_0^{+ \infty } +
+\int \limits_0^{+ \infty } \sigma^2 e^{- \frac{x^2}{2 \sigma^2}} \left( 2n+1 \right) x^{2n} dx = \\
+= 2 \int \limits_0^{+ \infty } \frac{1}{ \sqrt{2 \pi } \sigma } \cdot x^{2n} e^{- \frac{x^2}{2 \sigma^2}} dx \cdot \sigma^2 \left( 2n+1 \right) =
+\left( 2n-1 \right)!! \left( \sigma^2 \right)^n \sigma^2 \left( 2n+1 \right) = \\
+= \left( 2n+1 \right)!! \left( \sigma^2 \right)^{n+1}.
+\end{split}
+\end{equation*}
+
+Получили, что формула верна для $n+1$, а значит и для любого натурального $n$.
 
 \addcontentsline{toc}{section}{Дополнительные задачи}
 \section*{Дополнительные задачи}
