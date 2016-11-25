@@ -911,3 +911,92 @@ M \xi^2 \cdot M \eta^2 - \left( M \xi \right)^2 \left( M \eta \right)^2.$$
 
 Подставим числовые значения $D \left( \xi \eta \right) = 2 \cdot 8 - 1 \cdot 4 = 16 - 4 = 12$.
 \end{enumerate}
+
+\subsubsection*{10.21}
+
+\textit{Задание.}
+Пусть $ \xi_1, \dotsc, \xi_n$ ---
+независимые случайные величины с плотностью распределения $p \left( x \right) = \mathbbm{1}_{ \left[ 0, 1 \right] } \left( x \right) $ каждая.
+Вычислите
+$$M \left( \xi_1 + \dotsc + \xi_n \right),
+D \left( \xi_1 + \dotsc + \xi_n \right),
+M \sqrt[n]{\xi_1 \dotsc \xi_n},
+D \left( \xi_1 \dotsc \xi_n \right).$$
+
+\textit{Решение.} Вычислим математическое ожидание суммы случайных величин $M \left( \xi_1 + \dotsc + \xi_n \right) $.
+Из свойства линейности математического ожидания $M \left( \xi_1 + \dotsc + \xi_n \right) = M \xi_1 + \dotsc + M \xi_n$.
+Случайные величины имеют одинаковую плотность распределения, поэтому можем обозначить
+$$M \xi_1 =
+\dotsc =
+M \xi_n =
+M \xi.$$
+Тогда
+$$M \left( \xi_1 + \dotsc + \xi_n \right) =
+\sum \limits_{i=1}^n M \xi =
+nM \xi.$$
+Найдём это математическое ожидание
+$$M \xi =
+\int \limits_{- \infty }^{+ \infty } xp \left( x \right) dx =
+\int \limits_{- \infty }^{+ \infty } x \cdot \mathbbm{1}_{ \left[ 0, 1 \right] } \left( x \right) dx =
+\int \limits_0^1 xdx =
+\left. \frac{x^2}{2} \right|_0^1 =
+\frac{1}{2}.$$
+Подставим найденное значение
+$$M \left( \xi_1 + \dotsc + \xi_n \right) =
+n \cdot \frac{1}{2} =
+\frac{n}{2}.$$
+
+Найдём дисперсию суммы случайных величин.
+Так как $ \xi_1, \dotsc, \xi_n$ --- независимы, то $D \left( \xi_1 + \dotsc + \xi_n \right) = D \xi_1 + \dotsc + D \xi_n$.
+Так как случайные величины имеют одинаковую плотность распределения, то их дисперсии равны, то есть $D \xi_1 = \dotsc = D \xi_n = D \xi $.
+Тогда
+$$D \left( \xi_1 + \dotsc + \xi_n \right) =
+\sum \limits_{i=1}^n D \xi_i =
+\sum \limits_{i=1}^n D \xi =
+nD \xi.$$
+По определению дисперсии $D \xi = M \xi^2 - \left( M \xi \right)^2$.
+Найдём второй момент
+$$M \xi^2 =
+\int \limits_{- \infty }^{+ \infty } x^2 p \left( x \right) dx =
+\int \limits_{- \infty }^{+ \infty } x^2 \cdot \mathbbm{1}_{ \left[ 0, 1 \right] } \left( x \right) dx =
+\int \limits_0^1 x^2 dx =
+\left. \frac{x^3}{3} \right|_0^1 =
+\frac{1}{3}.$$
+Подставим полученные значения в формулу для дисперсии
+$$D \left( \xi_1 + \dotsc + \xi_n \right) =
+n \cdot \left[ M \xi^2 - \left( M \xi \right)^2 \right] =
+n \cdot \left[ \frac{1}{3} - \left( \frac{1}{2} \right)^2 \right] =
+n \cdot \left( \frac{1}{3} - \frac{1}{4} \right) =
+\frac{n}{12}.$$
+
+Найдём следующее математическое ожидание
+$$M \sqrt[n]{ \xi_1 \dotsc \xi_n} =
+M \left( \xi_1^{ \frac{1}{n}} \dotsc \xi_n^{ \frac{1}{n}} \right).$$
+Так как случайные величины независимы, то
+$$M \left( \xi_1^{ \frac{1}{n}} \dotsc \xi_n^{ \frac{1}{n}} \right) =
+M \left( \xi_1^{ \frac{1}{n}} \right) \dotsc M \left( \xi_n^{ \frac{1}{n}} \right) =
+\prod \limits_{i=1}^n M \left( \xi_i^{ \frac{1}{n}} \right) =
+\prod \limits_{i=1}^n M \left( \xi^{ \frac{1}{n}} \right) =
+\left( M \xi^{ \frac{1}{n}} \right)^n.$$
+Найдём это математическое ожидание
+$$M \left( \xi^{ \frac{1}{n}} \right) =
+\int \limits_{- \infty }^{+ \infty } x^{ \frac{1}{n}} p \left( x \right) dx =
+\int \limits_{- \infty }^{+ \infty } x^{ \frac{1}{n}} \cdot \mathbbm{1}_{ \left[ 0, 1 \right] } \left( x \right) dx =
+\int \limits_0^1 x^{ \frac{1}{n}} dx =
+\left. \frac{x^{1+ \frac{1}{n}}}{1 + \frac{1}{n}} \right|_0^1 =
+\frac{n}{n+1}.$$
+Подставим это значение в искомое выражение
+$$M \sqrt[n]{ \xi_1 \dotsc \xi_n} =
+\left( M \xi^{ \frac{1}{n}} \right)^n =
+\left( \frac{n}{n+1} \right)^n.$$
+
+Найдём дисперсию произведения случайных величин.
+По определению $D \left( \xi_1 \dotsc \xi_n \right) = M \left( \xi_1 \dotsc \xi_n \right)^2 - \left[ M \left( \xi_1 \dotsc \xi_n \right) \right]^2$.
+Из линейности математического ожидания
+$$D \left( \xi_1 \dotsc \xi_n \right) =
+M \xi_1^2 \dotsc M \xi_n^2 - \left( M \xi_1 \right)^2 \dotsc \left( M \xi_n \right)^2 =
+\left( M \xi^2 \right)^n - \left( M \xi \right)^{2n}.$$
+Подставим числовые значения
+$$D \left( \xi_1 \dotsc \xi_n \right) =
+\left( \frac{1}{3} \right)^n - \left( \frac{1}{2} \right)^{2n} =
+\left( \frac{1}{3} \right)^n - \left( \frac{1}{4} \right)^n.$$
