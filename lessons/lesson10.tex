@@ -1029,3 +1029,46 @@ $$M \min \left( \xi, \eta \right) =
 Из независимости
 $$M \min \left( \xi, \eta \right) =
 \sum \limits_{i=1}^{ \infty } P \left( \xi \geq i \right) P \left( \eta \geq i \right).$$
+
+\subsubsection*{10.23}
+
+\textit{Задание.} Докажите, что если $F \left( x \right) $ --- функция распределения случайной величины $ \xi $ и существует $M \xi $, то
+$$M \left| \xi \right| =
+\int \limits_{- \infty }^0 F \left( x \right) dx + \int \limits_0^{+ \infty } \left[ 1 - F \left( x \right) \right] dx.$$
+
+\textit{Решение.} По определению
+$$M \left| \xi \right| =
+\int \limits_{- \infty }^{+ \infty } \left| x \right| dF_{ \left| \xi \right| } \left( x \right) dx =
+- \int \limits_{- \infty }^0 xdF_{ \xi } \left( x \right) + \int \limits_0^{+ \infty } xdF_{ \xi } \left( x \right).$$
+
+Воспользуемся интегрированием по частям
+$$ \int \limits_a^b fdg =
+\left. fg \right|_a^b - \int \limits_a^b gdf.$$
+
+Получаем
+$$M \left| \xi \right| =
+\left. -xF_{ \xi } \left( x \right) \right|_{- \infty }^0 + \int \limits_{- \infty }^0 F_{ \xi } \left( x \right) dx +
+\left. xF_{ \xi } \left( x \right) \right|_0^{+ \infty } - \int \limits_0^{+ \infty } F_{ \xi } \left( x \right) dx.$$
+
+Вычислим, подставив пределы интегрирования
+$$ \left. xF_{ \xi } \left( x \right) \right|_{- \infty }^0 =
+0 \cdot F_{ \xi } \left( 0 \right) - \left( - \infty \right) \cdot F_{ \xi } \left( - \infty \right) = 0,$$
+так как $F_{ \xi } \left( - \infty \right) = 0$.
+
+Аналогично
+$$ \left. xF_{ \xi } \left( x \right) \right|_0^{+ \infty } = \infty \cdot F \left( + \infty \right) = \infty,$$
+так как $F \left( + \infty \right) = 1$ из свойств функции распределения.
+
+Запишем в таком виде
+$$ \left. xF_{ \xi } \left( x \right) \right|_0^{+ \infty } =
+\infty =
+\left. x \right|_0^{+ \infty } =
+\int \limits_0^{+ \infty } dx.$$
+
+Подставим полученные выражения
+$$M \left| \xi \right| =
+\int \limits_{- \infty }^0 F_{ \xi } \left( x \right) dx + \int \limits_0^{+ \infty } -
+\int \limits_0^{+ \infty } F_{ \xi } \left( x \right) dx.$$
+Объединим два последних интеграла
+$$M \left| \xi \right| =
+\int \limits_{- \infty }^0 F_{ \xi } \left( x \right) dx + \int \limits_0^{+ \infty } \left[ 1 - F_{ \xi } \left( x \right) \right] dx.$$
