@@ -638,6 +638,40 @@ TF \left( T \right).$$
 
 Отсюда следует, что $TF \left( T \right) \rightarrow 0, \qquad T \rightarrow \infty $.
 
+\subsubsection*{10.13}
+
+\textit{Задание.} Используя лемму Фату, докажите, что
+$$P \left( \varliminf \limits_{n \to \infty } A_n \right) \leq
+\varliminf \limits_{n \to \infty } P \left( A_n \right) \leq
+\varlimsup \limits_{n \to \infty } P \left( A_n \right) \leq
+P \left( \varlimsup \limits_{n \to \infty } \right).$$
+
+\textit{Решение.} Положим $ \xi_n = \mathbbm{1} \left( A_n \right) $.
+
+Из этого следует, что
+$$M \left( \varliminf \limits_{n \to \infty } \mathbbm{1} \left( A_n \right) \right) \leq
+\varliminf \limits_{n \to \infty } M \mathbbm{1} \left( A_n \right) \leq
+\varlimsup \limits_{n \to \infty } M \mathbbm{1} \left( A_n \right) \leq
+M \left( \varlimsup \limits_{n \to \infty } \mathbbm{1} \left( A_n \right) \right).$$
+
+Заменим математическое ожидание на вероятность
+$$M \left( \varliminf \limits_{n \to \infty } \mathbbm{1} \left( A_n \right) \right) \leq
+\varliminf \limits_{n \to \infty } P \left( A_n \right) \leq
+\varlimsup \limits_{n \to \infty } P \left( A_n \right) \leq
+M \left( \varlimsup \limits_{n \to \infty } \mathbbm{1} \left( A_n \right) \right).$$
+
+Применим результат задачи 2.17
+$$M \left( \mathbbm{1} \left( \varliminf \limits_{n \to \infty } A_n \right) \right) \leq
+\varliminf \limits_{n \to \infty } P \left( A_n \right) \leq
+\varlimsup \limits_{n \to \infty } P \left( A_n \right) \leq
+M \left( \mathbbm{1} \left( \varlimsup \limits_{n \to \infty } A_n \right) \right).$$
+
+Получаем то, что нужно было доказать
+$$P \left( \varliminf \limits_{n \to \infty } A_n \right) \leq
+\varliminf \limits_{n \to \infty } P \left( A_n \right) \leq
+\varlimsup \limits_{n \to \infty } P \left( A_n \right) \leq
+P \left( \varlimsup \limits_{n \to \infty } \right).$$
+
 \addcontentsline{toc}{section}{Дополнительные задачи}
 \section*{Дополнительные задачи}
 
