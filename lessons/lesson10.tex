@@ -675,6 +675,31 @@ P \left( \varlimsup \limits_{n \to \infty } \right).$$
 \addcontentsline{toc}{section}{Дополнительные задачи}
 \section*{Дополнительные задачи}
 
+\subsubsection*{10.14}
+
+\textit{Задание.} Пусть $ \xi_1, \dotsc, \xi_n$ --- независимые одинаково распределённые случайные величины.
+Докажите, что
+$$M \left( \frac{ \xi_1 + \dotsc + \xi_k}{ \xi_1 + \dotsc + \xi_n} \right) =
+\frac{k}{n}$$
+для произвольного $1 \leq k \leq n$. 
+
+\textit{Решение.} Распишем частное через произведение
+$$M \left( \frac{ \xi_1 + \dotsc + \xi_k}{ \xi_1 + \dotsc + \xi_n} \right) =
+M \left( \left( \xi_1 + \dotsc + \xi_k \right) \cdot \frac{1}{ \xi_1 + \dotsc + \xi_n} \right).$$
+Так как случайные величины независимы, то
+$$M \left( \frac{ \xi_1 + \dotsc + \xi_k}{ \xi_1 + \dotsc + \xi_n} \right) =
+M \left( \xi_1 + \dotsc + \xi_n \right) \cdot M \frac{1}{ \xi_1 + \dotsc + \xi_n}.$$
+Воспользуемся свойством линейности математического ожидания
+$$M \left( \frac{ \xi_1 + \dotsc + \xi_k}{ \xi_1 + \dotsc + \xi_n} \right) =
+\left( M \xi_1 + \dotsc + M \xi_k \right) \cdot M \frac{1}{ \xi_1 + \dotsc + \xi_n}.$$
+Случайные величины одинаково распределены, поэтому
+$$M \left( \frac{ \xi_1 + \dotsc + \xi_k}{ \xi_1 + \dotsc + \xi_n} \right) =
+kM \xi_1 \cdot M \frac{1}{ \xi_1 + \dotsc + \xi_n}.$$
+
+Осталось доказать, что
+$$M \frac{1}{ \xi } =
+\frac{1}{M \xi }.$$
+
 \addcontentsline{toc}{section}{Домашнее задание}
 \section*{Домашнее задание}
 
