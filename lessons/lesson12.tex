@@ -84,6 +84,92 @@ D \xi = \sigma^2.$$
 \item для независимых $ \eta $ и $ \xi \, D \left( \xi + \eta \right) = D \xi + D \eta $.
 \end{enumerate}
 
+\addcontentsline{toc}{section}{Аудиторные задачи}
+\section*{Аудиторные задачи}
+
+\subsubsection*{12.4}
+
+\textit{Задание.} Существует $n$ типов игрушек, которые можно найти в конфете <<Киндер-сюрприз>>.
+Сколько в среднем нужно перебрать конфет, чтобы набрать полную коллекцию?
+Как ведёт себя количество попыток при $n \to \infty $?
+
+\textit{Решение.} Количество игрушек не ограничено.
+Сколько бы их не брали, общее количество от этого не изменится.
+Все игрушки одинаково равномерно перемешаны, так что каждый тип встречается с одинаковой вероятностью $1/n$.
+
+Вероятность в формуле 
+$$M \xi =
+\sum \limits_{k=0}^{ \infty } kP \left( \xi = k \right) $$
+будет найти сложно, поэтому пользуемся формулой
+$$M \xi =
+\sum \limits_{k=0}^{ \infty } P \left( \xi > k \right).$$
+
+Обозначим через $ \xi $ наименьшее количество конфет, которые необходимо купить, чтобы получить полный набор игрушек,
+то есть каждый тип из $n$ типов игрушек должен быть там представлен. 
+Напишем такое событие $ \left\{ \xi > k \right\} $.
+Оно означает, что среди $k$ игрушек ещё нет полного набора.
+
+$P \left( \xi > k \right) = P$(среди $k$ игрушек нет полного набора) $= P$(среди $k$ игрушек не хватает хотя бы одного типа).
+Используем формулу включений-исключений.
+Введём события $A_i^k =$ {нет $i$-того типа среди $k$ игрушек}.
+Через эти события запишем формулу включений-исключений
+$P \left( \xi > k \right) = \\
+= P \left( A_1^k \right) C_n^1 -
+C_n^2 P \left( A_1^k \cap A_2^k \right) +
+C_n^3 \cdot P \left( A_1^k \cap A_2^k \cap A_3^k \right) -
+\dotsc + \\
++ \left( -1 \right)^n P \left( A_1^k \cap A_2^k \cap \dotsc \cap A_{n-1}^k \right) C_n^{n-1}$.
+Не может быть такого, что нет ни одного типа.
+Вычисляем $P \left( A_1^k \right) = P$(среди $k$ игрушек нет игрушек первого типа) =
+\begin{equation*}
+\begin{split}
+= \sum \limits_{m_2 + m_3 + \dotsc + m_n = k, m_i \geq 0} \frac{k!}{m_2! \dotsc m_n!} \cdot \left( \frac{1}{n} \right)^{m_2} \left( \frac{1}{n} \right)^{n_3} \cdot \dotsc \cdot \left( \frac{1}{n} \right)^{m_n} = \\
+= \left( \frac{1}{n} \right)^k \left( n-1 \right)^k =
+\left( 1 - \frac{1}{n} \right)^k.
+\end{split}
+\end{equation*}
+
+Вычисляем $P \left( A_1^k \cap A_2^k \right) = P$(среди $k$ игрушек нет первого и второго типов игрушек) =
+\begin{equation*}
+\begin{split}
+= \sum \limits_{m_3 + m_4 + \dotsc + m_n = k, m_i \geq 0} \frac{k!}{m_3! \dotsc m_n!} \cdot
+\left( \frac{1}{n} \right)^{m_3} \left( \frac{1}{n} \right)^{m_4} \cdot \dotsc \cdot \left( \frac{1}{n} \right)^{m_n} = \\
+= \left( \frac{1}{n} \right)^k \left( n-2 \right)^k =
+\left( 1 - \frac{2}{n} \right)^k.
+\end{split}
+\end{equation*}
+
+В формуле используется мультибиномиальное распределение
+$$C_k^{m_1} C_{k-m_1}^{m_2} C_{k- m_1 - m_2}^{m_3} \dotsc.$$
+
+Будем пользоваться формулой
+\begin{equation*}
+\begin{split}
+M \xi =
+\sum \limits_{k=0}^{ \infty } P \left( \xi > k \right) =
+C_n^1 \sum \limits_{k=0}^{ \infty } P \left( A_1^k \right) -
+C_n^2 \sum \limits_{k=0}^{ \infty } P \left( A_1^k \cap A_2^k \right) +
+\dotsc + \\
++ \left( -1 \right)^n C_n^{n-1} \sum \limits_{k=0}^{ \infty } P \left( A_1^k \cap A_2^k \cap \dotsc \cap A_{n-1}^k \right),
+\end{split}
+\end{equation*}
+где
+\begin{equation*}
+\begin{split}
+\sum \limits_{k=0}^{ \infty } P \left( A_1^k \right) =
+\sum \limits_{k=0}^{ \infty } \left( 1 - \frac{1}{n} \right)^k =
+\frac{1}{1 - \left( 1 - \frac{1}{n} \right) } =
+n,
+\sum \limits_{k=0}^{ \infty } P \left( A_1^k \cap A_2^k \right) =
+\frac{n}{2}, \\
+\sum \limits_{k=0}^{ \infty } P \left( A_1^k \cap A_2^k \cap \dotsc \cap A_{n-1}^k \right) =
+\frac{n}{n-1}.
+\end{split}
+\end{equation*}
+Получаем
+$$M \xi =
+nC_n^1 - \frac{n}{2} \cdot C_n^2 + \dotsc + \left( -1 \right)^n C_n^{n-1} \cdot \frac{n}{n-1}.$$
+
 \addcontentsline{toc}{section}{Дополнительные задачи}
 \section*{Дополнительные задачи}
 
