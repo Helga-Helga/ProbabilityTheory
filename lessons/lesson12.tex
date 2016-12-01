@@ -267,5 +267,61 @@ M \nu \cdot M \xi_1.$$
 По условию $M \xi_i = 5, \xi_i \geq 0, M \nu = 15$.
 Тогда $M \eta = 15 \cdot 5 = 75$.
 
+\subsubsection*{12.7}
+
+\textit{Задание.} Количество печатных ошибок в книге имеет распределение Пуассона с параметром $ \lambda > 0$.
+Найдите математическое ожидание количества ошибок после трёх независимых корректорских проверок, если при каждой проверке каждая из ошибок исправляется с вероятностью $p$.
+
+\textit{Решение.} Целесообразно ввести такие случайные величины.
+Пусть $ \xi $ --- начальное количество ошибок.
+Она имеет распределение Пуассона
+$$P \left\{ \xi = k \right\} =
+\frac{ \lambda^k}{k!} \cdot e^{- \lambda },$$
+где $k = 0, 1, \dotsc $.
+
+Пусть $ \xi_i$ --- количество ошибок после $i$-ой корректорской проверки.
+Начнём с $ \xi_1$.
+По каждой ошибке можем ввести функцию индикатор
+$$ \xi_1 = \sum \limits_{i=1}^{ \xi } \mathbbm{1} \left( A \right),$$
+где событие $A$ означает, что $i$-тая ошибка корректором не исправлена.
+Тогда найдём математическое ожидание
+$M \xi_1 = M \xi \cdot M \mathbbm{1}$($i$-тую ошибку корректор не исправил)$= M \xi \cdot M \mathbbm{1}$(первую ошибку корректор не увидел)$= \lambda \left( 1 - p \right) $.
+Теперь
+$$ \xi_2 =
+\sum \limits_{i=1}^{ \xi_1} \mathbbm{1} A.$$
+
+Найдём её математическое ожидание
+$M \xi_2 = M \xi_1 \cdot M \mathbbm{1}$(первую ошибку не исправили)
+$= M \xi_1 \cdot P$(первую ошибку не исправили)$= \lambda \left( 1-p \right) \left( 1-p \right) = \\
+= \lambda \left( 1-p \right)^2$.
+
+Соответственно $M \xi_3 = \lambda \left( 1-p \right)^3.$
+Докажем, что $ \xi_1, \xi_2, \xi_3$ тоже имеют распределение Пуассона.
+
+нужно найти гипотезы об ошибках перед проверкой
+$$P \left\{ \xi_1 = k \right\} =
+\sum \limits_{i=k}^{ \infty } P \left( \xi = i \right) P \left( \left. \xi_1 = k \right| \xi = i \right) $$
+--- формула полной вероятности.
+$$P \left\{ \xi_1 = k \right\} =
+\sum \limits_{i=k}^{ \infty } \frac{ \lambda^i}{i!} \cdot e^{- \lambda } C_i^k p^{i-k} \left( 1-p \right)^k,$$
+где $p^{i-k}$ означает, что какие-то $i-k$ ошибки были исправлены.
+$$P \left\{ \xi_1 = k \right\} =
+e^{- \lambda } \left( 1-p \right)^k \sum \limits_{i=k}^{ \infty } \frac{ \lambda^i}{i!} \cdot \frac{i!}{k! \left( i-k \right)!} \cdot p^{i-k}.$$
+Сократим на $i!$ и сделаем замену $i - k = m, i = m + k$.
+Получим
+\begin{equation*}
+\begin{split}
+P \left\{ \xi_1 = k \right\} =
+\frac{e^{- \lambda } \left( 1-p \right)^k}{k!} \sum \limits_{m=0}^{ \infty } \lambda^{m+k} \cdot \frac{p^m}{m!} =
+\frac{e^{- \lambda } \lambda^k \left( 1-p \right)^k}{k!} \sum \limits_{m=0}^{ \infty } \frac{ \lambda^m}{m!} \cdot p^m = \\
+= e^{- \lambda } \cdot \frac{ \lambda^k \left( 1-p \right)^k}{k!} \cdot e^{ \lambda p} =
+\frac{e^{- \lambda \left( 1-p \right) } \left( \lambda \left( 1-p \right) \right)^k}{k!}
+\end{split}
+\end{equation*}
+--- распределение Пуассона с параметром $ \lambda \left( 1-p \right) $.
+
+Аналогично для $ \xi_2, \xi_3$.
+Делаем для них соответствующие гипотезы.
+
 \addcontentsline{toc}{section}{Домашнее задание}
 \section*{Домашнее задание}
