@@ -170,8 +170,80 @@ n,
 $$M \xi =
 nC_n^1 - \frac{n}{2} \cdot C_n^2 + \dotsc + \left( -1 \right)^n C_n^{n-1} \cdot \frac{n}{n-1}.$$
 
-\addcontentsline{toc}{section}{Дополнительные задачи}
-\section*{Дополнительные задачи}
+\subsubsection*{12.5}
+
+\textit{Задание.} В магазине находится $A$ тонн товара, который быстро портится и который нужно реализовать за один день.
+Спрос на этот товар --- случайная величина, которая имеет показательное распределение с параметром $1/2$ (в тоннах).
+Цена одного килограмма товара составляет одну гривну.
+Найдите:
+\begin{enumerate}[label=\alph*)]
+\item средний спрос за день;
+\item среднюю выручку за день при условии, что $A = 1$;
+\item среднюю выручку за день при условии, что $A = 1$, а нереализованный остаток товара утилизируется по 30 коп. за килограмм.
+При каком $A$ выручка будет максимальной?
+\end{enumerate}
+
+\textit{Решение.} Пусть $ \xi $ --- это спрос на товар ( случайная величина с показательным распределением с параметром $1/2$)
+$$ \xi \sim \prod \left( \frac{1}{2} \right).$$
+
+\begin{enumerate}[label=\alph*)]
+\item Нужно найти математическое ожидание $ \xi $.
+В тоннах оно равно
+$$M \xi =
+\frac{1}{ \frac{1}{2}} =
+2.$$
+
+Это означает, что за день в среднем люди хотели, чтобы было две тонны продукта;
+\item введём новую случайную величину.
+Пусть $ \eta $ --- выручка за день.
+Выразим через $A = 1$ и $ \xi $.
+Получим $ \eta = \min \left( A, \xi \right) \cdot 1000 = \min \left( 1, \xi \right) \cdot 1000$ (грн.).
+
+Теперь ищем
+\begin{equation*}
+\begin{split}
+M \eta =
+10^3 \cdot M \min \left( \xi, \eta \right) =
+10^3 \int \limits_{- \infty }^{+ \infty } \min \left( 1, x \right) p_{ \xi } \left( x \right) dx = \\
+= \int \limits_0^{+ \infty } \min \left( 1, x \right) \cdot \frac{1}{2} \cdot e^{- \frac{x}{2}} dx \cdot 10^3.
+\end{split}
+\end{equation*}
+Разобьём на 2 интеграла
+$$M \eta =
+10^3 \int \limits_0^1 x \cdot \frac{1}{2} \cdot e^{- \frac{x}{2}} dx + 10^3 \int \limits_1^{+ \infty } \frac{1}{2} \cdot e^{- \frac{x}{2}} dx.$$
+Вычисляем каждый интеграл отдельно.
+Первый интеграл берём по частям
+$$u = x, dv = e^{- \frac{x}{2}} dx, du = dx, v = \int e^{- \frac{x}{2}} dx = -2 \int e^{- \frac{x}{2}} d \left( - \frac{x}{2} \right) = -2e^{- \frac{x}{2}}.$$
+Получаем
+\begin{equation*}
+\begin{split}
+\int \limits_0^1 x \cdot e^{- \frac{x}{2}} dx =
+\left. -2xe^{- \frac{x}{2}} \right|_0^1 + 2 \int \limits_0^1 e^{- \frac{x}{2}} dx =
+\left. -2e^{- \frac{1}{2}} + 2 \cdot \left( -2 \right) \cdot e^{- \frac{x}{2}} \right|_0^1 = \\
+= -2e^{- \frac{1}{2}} -4e^{- \frac{1}{2}} + 4 =
+-6e^{- \frac{1}{2}} + 4.
+\end{split}
+\end{equation*}
+Подставляем
+\begin{equation*}
+\begin{split}
+M \eta =
+10^3 \cdot \left( -3e^{- \frac{1}{2}} + 2 \right) + 10^3 \cdot e^{- \frac{1}{2}} =
+10^3 \left( 2 - 2e^{- \frac{1}{2}} \right) = \\
+= 2 \cdot 10^3 \left( 1 - e^{- \frac{1}{2}} \right) =
+2000 \left( 1 - e^{- \frac{1}{2}} \right).
+\end{split}
+\end{equation*}
+Выражение в скобках меньше чем $1/2$, поэтому $M \xi < 1000$;
+
+\item ищем среднюю выручку за день при условии, что $A = 1$, а нереализованный остаток товара утилизируется по 30 коп. за килограмм.
+Введём $ \zeta = \min \left( 1, \xi \right) \cdot 1000 + \left[ 1 - \min \left( 1, \xi \right) \right] \cdot 300$.
+Перегруппируем слагаемые $ \zeta = \min \left( 1, \xi \right) \cdot 1000 + 300 - 300 \cdot \min \left( 1, \xi \right) $.
+Вынесем $ \min \left( 1, \xi \right) $ за скобки $ \zeta = 700 \cdot \min \left( 1, \xi \right) + 300$.
+Из предыдущего пункта
+$$M \zeta =
+2 \cdot 700 \left( 1 - e^{- \frac{1}{2}} \right) + 300.$$
+\end{enumerate}
 
 \addcontentsline{toc}{section}{Домашнее задание}
 \section*{Домашнее задание}
