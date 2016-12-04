@@ -627,3 +627,111 @@ $$\begin{bmatrix}
 что и есть то, что искали.
 Доказали формулу для $ \left( k+1 \right)$-го члена.
 Поэтому можем утверждать, что существует матрица $ \hat{P}$.
+
+Третья строка матрицы ничего не даёт, поэтому запишем в виде
+$$ \hat{P}^{k-1} =
+\begin{bmatrix}
+       \frac{1}{2} & \frac{1}{2} \\
+       \frac{1}{2} & 0
+\end{bmatrix} =
+\left( \frac{1}{2} \cdot
+\begin{bmatrix}
+       1 & 1 \\
+       1 & 0
+\end{bmatrix} \right)^{k-1} =
+\frac{\begin{bmatrix}
+       1 & 1 \\
+       1 & 0
+\end{bmatrix}^{k-1}}{2^{k-1}}.$$
+
+Выпишем матрицу на $t$-ом шаге
+$$2^t \cdot \hat{P}^t =
+2^t \cdot
+\begin{bmatrix}
+       a_1^t & a_2^t \\
+       a_3^t & a_4^t
+\end{bmatrix}.$$
+Отсюда следует, что
+$$ \hat{P}^{t+1} \cdot 2^{t+1} =
+\begin{bmatrix}
+       a_1^t & a_2^t \\
+       a_3^t & a_4^t
+\end{bmatrix} \cdot
+\begin{bmatrix}
+       1 & 1 \\
+       1 & 0
+\end{bmatrix} \cdot 2^{t+1} =
+\begin{bmatrix}
+       a_1^t + a_2^t & a_1^t \\
+       a_1^t + a_4^t & a_1^t
+\end{bmatrix} \cdot 2^{t+1}.$$
+
+Нас интересует верхний правый элемент, который означает, что перешли в состояние $M$, из которого можем перейти в состояние $F$.
+С этим элементом связан верхний левый элемент.
+Выразим их через предыдущие $a_2^{t+1} = a_1^t, a_1^{t+1} = a_1^t + a_2^t$.
+Докажем по индукции, что эти числа --- числа Фибоначчи (рис. \ref{fig:12151}).
+
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=.6\textwidth]{./pictures/12_15_1.png}
+  \caption{Числа Фибоначчи}
+  \label{fig:12151}
+\end{figure}
+
+Нулевой шаг индукции
+$$ \begin{cases}
+a_2^1 = 1 = f_1, \\
+a_1^1 = 1 = f_2.
+\end{cases}$$
+Предположим, что формула справедлива для $t$-го шага
+$$ \begin{cases}
+a_2^t = f_t, \\
+a_1^t = f_{t+1}.
+\end{cases}$$
+Проверим его для $ \left( t+1 \right) $-го шага
+$$ \begin{cases}
+a_2^{t+1} = a_1^t = f_{t+1}, \\
+a_1^{t+1} = a_1^t + a_2^t = f_{t+1} + f_t = f_{t+2}.
+\end{cases}$$
+Формула верна, значит это действительно числа Фибоначчи.
+
+По формуле Бине $k$-ое число Фибоначчи можно представить как
+$$f_k =
+\frac{ \phi^k}{ \sqrt{5}} =
+\frac{ \left( \frac{1 + \sqrt{5}}{2} \right)^k}{ \sqrt{5}}.$$
+
+Тогда вероятность того, что на $k$-ом шаге игра завершится равна
+$$P \left( \xi = k \right) =
+P \left( \eta_k = F \right) =
+\frac{f_k}{2^{k-1}} \cdot \frac{1}{2} =
+\frac{ \left( 1 + \sqrt{5} \right)^k}{2^{2k} \cdot \sqrt{5}} =
+\frac{ \sqrt{5}}{5} \cdot \left( \frac{1 + \sqrt{5}}{4} \right)^k.$$
+
+Найдём математическое ожидание такой случайной величины
+$$M \xi =
+\sum \limits_{k=2}^{ \infty } k \cdot P \left( \xi = k \right) =
+\sum \limits_{k=2}^{ \infty } k \cdot \frac{ \sqrt{5}}{5} \cdot \left( \frac{1 + \sqrt{5}}{4} \right)^k =
+\frac{ \sqrt{5}}{5} \sum \limits_{k=2}^{ \infty } k \left( \frac{1 + \sqrt{5}}{4} \right)^k.$$
+
+Введём обозначения
+$$ c = \frac{ \sqrt{5}}{5}, q = \frac{1 + \sqrt{5}}{4}.$$
+Тогда
+$$M \xi =
+c \sum \limits_{k=2}^{ \infty } kq^{k}.$$
+
+Найдём сумму
+$$c \sum \limits_{k=2}^{ \infty } q^k =
+c \cdot \sum \limits_{k=1}^{ \infty } q^{k-1} =
+\frac{c}{q} \sum \limits_{k=1}^{ \infty } q^{k} =
+\frac{c}{q} \cdot \frac{q}{1-q} =
+\frac{c}{1-q}.$$
+
+Возьмём производную от этого значения
+$$c \cdot \frac{ \partial Q}{ \partial q} =
+c \cdot \frac{ \partial }{ \partial q} \left( \frac{1}{1-q} \right) =
+\frac{c}{ \left( 1-q \right)^2}.$$
+
+Подставим это значение в математическое ожидание
+$$M \xi =
+c \cdot \frac{1}{ \left( 1-q \right)^k} \cdot \frac{1}{q}.$$
+
