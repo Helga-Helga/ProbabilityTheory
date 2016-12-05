@@ -448,6 +448,25 @@ P \left\{ \xi \leq 2 \right\} + P \left\{ \xi = 3 \right\} =
   \label{fig:1212}
 \end{figure}
 
+Найдём математическое ожидание данной случайной величины
+$$M \xi =
+\sum \limits_{k=1}^4 k \cdot P \left\{ \xi = k \right\} =
+\sum \limits_{k=1}^4 k \cdot p \left( 1-p \right)^{k-1}.$$
+Подставим известные значения.
+При $k = 4$ вероятность успеха будет равна 1, так как это последняя попытка, на которой можно и выиграть, и проиграть.
+При этом игра закончится
+$$M \xi =
+1 \cdot \frac{1}{4} \left( \frac{3}{4} \right)^0 +
+2 \cdot \frac{1}{4} \left( \frac{3}{4} \right)^1 +
+3 \cdot \frac{1}{4} \left( \frac{3}{4} \right)^3 +
+4 \cdot \left( \frac{1}{4} + \frac{3}{4} \right) \left( \frac{3}{4} \right)^3.$$
+Упростим слагаемые
+$$M \xi =
+\frac{1}{4} + \frac{1}{16} + \frac{27}{64} + \frac{4 \cdot 27}{64} =
+\frac{40+135}{64} =
+\frac{175}{64} \approx
+2.7$$
+
 \subsubsection*{12.13}
 
 \textit{Задание.} Математик имеет связку $n$ ключей, один из которых подходит к замку.
