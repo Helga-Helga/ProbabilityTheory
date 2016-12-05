@@ -767,22 +767,75 @@ $$c \cdot \frac{ \partial Q}{ \partial q} =
 c \cdot \frac{ \partial }{ \partial q} \left( \frac{1}{1-q} \right) =
 \frac{c}{ \left( 1-q \right)^2}.$$
 
-Подставим это значение в математическое ожидание
-$$M \xi =
-c \cdot \frac{1}{ \left( 1-q \right)^2} \cdot \frac{1}{q} =
-\frac{ \sqrt{5}}{5} \cdot \frac{1}{ \left( 1 - \frac{1 + \sqrt{5}}{4} \right)^2} \cdot \frac{1}{ \frac{1 + \sqrt{5}}{4}} =
-\frac{ \sqrt{5}}{5} \cdot \frac{1}{ \left( \frac{4 - 1 - \sqrt{5}}{4} \right)^2} \cdot \frac{4}{1 + \sqrt{5}}.$$
-Избавимся от иррациональности в знаменателе последней дроби
-$$M \xi =
-\frac{ \sqrt{5}}{5} \cdot \frac{16}{ \left( 3 - \sqrt{5} \right)^2} \cdot \frac{4 \left( 1 - \sqrt{5} \right)}{1 - 5} =
-\frac{4 \sqrt{5} \left( 1 - \sqrt{5} \right) }{5 \cdot 4} \cdot \frac{16}{9 - 6 \sqrt{5} + 5}.$$
-Сократим на 4 и запишем под одной дробью
-$$M \xi =
-\frac{16 \sqrt{5} \left( 1 - \sqrt{5} \right) }{5 \left( 14 - 6 \sqrt{5} \right) } =
-\frac{16 \sqrt{5} \left( 1 - \sqrt{5} \right) }{5 \cdot 2 \left( 7 - 3 \sqrt{5} \right)} =
-\frac{8 \sqrt{5} \left( 1 - \sqrt{5} \right) \left( 7 + 3 \sqrt{5} \right) }{5 \left( 49 - 3 \cdot 5 \right) }.$$
-В знаменателе приведём подобные
-$$M \xi = \frac{4 \sqrt{5} \left( 1 - \sqrt{5} \right) \left( 7 + 3 \sqrt{5} \right) }{5 \cdot 17}.$$
+Далее нужно подставить значения $с$ и $q$ и взять целую часть от полученного значения.
+
+Рассмотрим более простое решение, которое даёт правильный ответ.
+Приведём задачу к одномерной (рис. \ref{fig:12152}).
+
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=1\textwidth]{./pictures/12_15_2.png}
+  \caption{Одномерная задача}
+  \label{fig:12152}
+\end{figure}
+
+Если точка $P$ попадает в точку 0, то Пётр разоряется.
+Если точка $P$ оказывается в точке 5, то Иван разоряется.
+
+Обозначим через $f \left( x \right) $ среднее время до попадания точки $P$ в точку 0 или 5, начиная из точки $x$.
+
+Имеем граничные условия $f \left( 0 \right) = f \left( 5 \right) = 0$.
+
+С вероятностью $1/2$ точка $P$  переходит на следующую позицию вправо и с вероятностью $1/2$ --- влево, поэтому
+$$f \left( x \right) =
+\frac{1}{2} \cdot f \left( x+1 \right) + \frac{1}{2} \cdot f \left( x-1 \right) +1,$$
+где единица прибавляется потому, что на переход потратили 1 шаг.
+
+Ищем $f \left( x \right) $ в виде $f \left( x \right) = ax^2 + bx + c$.
+
+Подставляем граничные условия, чтобы найти константы $f \left( 0 \right) = c = 0$.
+Теперь $f \left( x \right) $ имеет вид $f \left( x \right) = ax^2 + bx$.
+Подставляем второе граничное условие $f \left( 5 \right) = 25a + 5b = 0$.
+Делим уравнение на 5.
+Получаем
+$$5a + b =
+0.$$
+Выражаем $b$ через $a$.
+Получаем $b = -5a$.
+Подставляем это значение в исходное уравнение $f \left( x \right) = ax^2 - 5ax$.
+
+В нашей задаче начальная точка --- это $x = 2$.
+Находим значение $f$ в точке 2
+$$ \begin{cases}
+f \left( 2 \right) = a \cdot 2^2 - 5 \cdot 2 a = 4a - 10a = -6a, \\
+f \left( 2 \right) = \frac{1}{2} \cdot f \left( 3 \right) + \frac{1}{2} \cdot f \left( 1 \right) + 1. 
+\end{cases}$$
+
+Находим $f \left( 3 \right) = 3^2 \cdot a - 5 a \cdot 3 = 9a - 15a = -6a$ и $f \left( 1 \right) = a - 5a = -4a$.
+Подставляем
+$$f \left( 2 \right) =
+\frac{1}{2} \cdot \left( -6a \right) + \frac{1}{2} \cdot \left( -4a \right) + 1 =
+-3a - 2a + 1 =
+-5a + 1.$$
+
+Приравниваем $f \left( 2 \right) $, полученные разными способами $-6a = -5a + 1$.
+Переносим $-5a$ влево $-6a + 5a = 1$.
+Приводим подобные $-a = 1$.
+Получаем коэффициент $a = -1$.
+
+Из этого следует, что коэффициент $b = -5a = -5 \cdot \left( -1 \right) = 5$.
+
+Подставляем найденные коэффициенты $a$ и $b$ в уравнение
+$$f \left( x \right) =
+-x^2 + 5x =
+x \left( 5 - x \right).$$
+
+Нужное нам значение --- $f \left( 2 \right) = -6a = -6 \cdot \left( -1 \right) = 6$.
+Аналогично
+$$f \left( 3 \right) =
+-6a =
+6,$$
+то есть среднее количество игр до разорения одного из игроков равно шести.
 
 \subsubsection*{12.16}
 
