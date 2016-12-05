@@ -534,18 +534,20 @@ $$M \eta =
 $$M \eta^2 =
 \sum \limits_{k=1}^n k^2 \cdot \frac{1}{n} =
 \frac{1}{n} \sum \limits_{k=1}^n k^2 =
-\frac{1}{n} \cdot \frac{1+n^2}{2} \cdot n =
-\frac{n^1 + 1}{2}.$$
+\frac{1}{n} \cdot \frac{n \left( n+1 \right) \left( 2n+1 \right) }{6} =
+\frac{ \left( n+1 \right) \left( 2n+1 \right) }{6}.$$
 Ищем дисперсию
-$$
-M \eta^2 - \left( M \eta \right)^2 =
-\frac{n^2 + 1}{2} - \left( \frac{n+1}{2} \right)^2 =
-\frac{n^2 + 1}{2} - \frac{n^2 + 2n + 1}{4}.$$
-Приводим к общему знаменателю, для чего первую дробь умножаем и делим на 2
 $$D \eta =
-\frac{2n^2 + 2 - n^2 - 2n - 1}{4} =
-\frac{n^2 - 2n + 1}{4} =
-\frac{ \left( n-1 \right)^2}{4}.$$
+M \eta^2 - \left( M \eta \right)^2 =
+\frac{ \left( n+1 \right) \left( 2n+1 \right) }{6} - \left( \frac{n+1}{2} \right)^2.$$
+Возводим в квадрат второе слагаемое
+$$D \eta =
+\frac{ \left( n+1 \right) \left( 2n+1 \right) }{6} - \frac{ \left( n+1 \right)^2}{4}.$$
+Приводим к общему знаменателю, выносим $ \left( n+1 \right) $ за скобки
+$$D \eta =
+\frac{ \left( n+1 \right) \left( 4n + 2 - 3n - 3 \right) }{12} =
+\frac{ \left( n+1 \right) \left( n-1 \right) }{12} =
+\frac{n^2 - 1}{12}.$$
 \end{enumerate}
 
 \subsubsection*{12.15}
