@@ -359,6 +359,110 @@ $$M \xi_{10} =
 \left( \frac{4}{3} \right)^{10}.$$
 \end{enumerate}
 
+\subsubsection*{12.9}
+
+\textit{Задание.} Вероятность того, что рыбина попадёт в сетку рыбака на протяжении дня, равна $p \in \left( 0, 1 \right) $.
+В озере находится $n$ рыб.
+Найдите:
+\begin{enumerate}[label=\alph*)]
+\item распределение, математическое ожидание и дисперсию улова в первый день рыбалки;
+\item математическое ожидание улова в $k$-й день рыбалки;
+\item распределение и математическое ожидание номера рыбалки, когда рыбак впервые поймал хотя бы одну рыбину;
+\item распределение номера дня, когда рыбак выловил последнюю рыбину из озера.
+\end{enumerate}
+Считайте, что рыбак ставит сетку каждый день, и рыбины попадают в сетку независимо одна от другой.
+
+\textit{Решение.}
+\begin{enumerate}[label=\alph*)]
+\item $ \xi_1$ --- количество рыб, которые выловил в первый день рыбак.
+Отсюда следует, что $ \xi_1 \sim Binom \left( n, p \right) $.
+
+Биномиальное распределение имеет вид
+$$P \left\{ \xi = k \right\} = C_n^k p^k \left( 1-p \right)^{n-k},
+M \xi_1 = np.$$
+
+Дисперсия улова в первый день рыбалки равна $D \xi = np \left( 1-p \right) $;
+\item пусть $ \xi_2$ --- улов во второй день
+$$M \xi_2 =
+\sum \limits_{i=1}^{n - \xi_1} \mathbbm{1} \left( A_i \right),$$
+где событие $A_i$ означает, что $i$-тая рыба выловилась
+$$M \xi_2 = M \left( n - \xi_1 \right) \cdot P \left( A_i \right) =
+\left( n - np \right) p =
+np \left( 1 - p \right).$$
+
+Пусть $ \xi_3$ --- улов в третий день
+$$M \xi_3 =
+M \sum \limits_{i=1}^{n - \xi_1 - \xi_2} \mathbbm{1} \left( A_i \right) =
+M \left( n - \xi_1 - \xi_2 \right) \cdot P \left( A_i \right).$$
+Подставляем известные значения
+$$M \xi_3 =
+\left( n - np - np \left( 1-p \right) \right) p =
+np \left( 1 - p - p \left( 1-p \right) \right).$$
+Раскрываем скобки
+$$M \xi_3 =
+np \left( 1 - p - p + p^2 \right) =
+np \left( 1-2p+p^2 \right) =
+np \left( 1-p \right)^2.$$
+
+Пусть $ \xi_k$ --- улов в $k$-ый день
+$$M \xi_k =
+M \sum \limits_{i=1}^{n - \xi_1 - \xi_2 - \dotsc - \xi_{k-1}} \mathbbm{1} \left( A_i \right) =
+M \left( n - \xi_1 - \xi_2 - \dotsc - \xi_{k-1} \right) \cdot P \left( A_i \right).$$
+Подставляем известные значения
+$$M \xi_k =
+np \left( 1-p \right)^{k-1};$$
+\item введём случайную величину $ \eta $, которая равна номеру дня, когда рыбак что-то поймал.
+
+Найдём распределение этой случайной величины
+$P \left\{ \eta = k \right\} = P$\{в первый, второй, $ \left( k-1 \right) $-ый день рыбак ничего не поймал, в $k$-ый день --- поймал\}.
+
+Найдём её математическое ожидание
+$$M \eta =
+\sum \limits_{i=1}^{ \infty } k \cdot P \left( \eta = k \right\},$$
+где
+$$P \left\{ \eta = k \right\} =
+\left( 1-p \right)^n \left( 1-p \right)^n \cdot \dotsc \cdot \left( 1-p \right)^n =
+\left( 1-p \right)^{nk-1} \left( 1 - \left( 1-p \right)^n \right).$$
+
+Подставляя это значение в формулу для математического ожидания получаем
+$$M \eta =
+\frac{1}{1 - \left( 1-p \right)^n};$$
+\item пусть случайная величина $ \gamma $ --- это минимальный номер дня, когда рыбак выловил последнюю рыбину.
+
+Найдём вероятность
+$P \left\{ \xi > k \right\} = P$\{за $k$ дней рыбак выловил не всю рыбу\}
+$= P \left\{ \xi_1 + \xi_2 + \dotsc + \xi_k < n \right\} = 1 - P \left\{ \xi_1 + \dotsc + \xi_k = n \right\},$
+на $ \xi_k$ нет никаких ограничений.
+
+Тогда
+$$P \left\{ \xi > k \right\} =
+1 - \sum \limits_{m_1 + \dotsc + m_k = n} P \left\{ \xi_1 = m_1, \dotsc, \xi_k = m_k \right).$$
+Подставляем вероятность
+\begin{equation*}
+\begin{split}
+P \left\{ \xi > k \right\} =
+1 - \\
+- \sum \limits_{m_1 + \dotsc + m_k = n} C_n^k p^{m_1} \left( 1-p \right)^{n-m_1} \cdot C_{n-m_1}^{m_2} p^{m_2} \left( 1-p \right)^{n-m_1 - m_2} \cdot \dotsc = \\
+= 1 - \sum \limits_{m_1 + \dotsc + m_k = n} p^n \cdot
+\frac{n!}{m_1!m_2!m_3! \cdot \dotsc \cdot m_k!} \cdot
+\left( 1-p \right)^{n-m_1} \times \\
+ \times \left( 1-p \right)^{n-m_1 - m_2} \cdot
+\dotsc.
+\end{split}
+\end{equation*}
+Пользуемся полиномиальной теоремой, которая утверждает, что
+$$ \left( x_1 + x_2 + \dotsc + x_k \right)^n =
+\sum_{ \substack{ \alpha_1 \geq 0, \alpha_2 \geq 0, \dotsc, \alpha_k \geq 0, \\ \alpha_1 + \alpha_2 + \dotsc + \alpha_k = n}}
+\frac{n!}{ \alpha_1! \alpha_2! \cdot \dotsc \cdot \alpha_k!} \cdot x_1^{ \alpha_1} x_2^{ \alpha^2} \cdot \dotsc \cdot x_k^{ \alpha_k}.$$
+Применяем теорему $P \left\{ \xi > k \right\} = 1 - p^n \left( 1 + \left( 1-p \right) + \dotsc + \left( 1-p \right) \right)^n,$
+где слагаемых $ \left( 1-p \right) $ --- $ \left( k-1 \right) $-а штука.
+Из этого следует, что можем записать в следующем виде $P \left\{ \xi > k \right\} = 1 - p^n \left( 1 - \left( k-1 \right) \left( 1-p \right) \right)^n$.
+
+Тогда $ \gamma $ имеет распределение $P \left\{ \gamma= k \right\} = P \left( \gamma > k-1 \right) - P \left( \gamma > k \right) $.
+
+Чтобы посчитать $M \gamma $ должны суммировать по всем $n$.
+\end{enumerate}
+
 \addcontentsline{toc}{section}{Домашнее задание}
 \section*{Домашнее задание}
 
