@@ -87,6 +87,53 @@ D \xi = \sigma^2.$$
 \addcontentsline{toc}{section}{Аудиторные задачи}
 \section*{Аудиторные задачи}
 
+\subsubsection*{12.3}
+
+\textit{Задание.} Две электрические лампы соединены:
+\begin{enumerate}[label=\alph*)]
+\item последовательно;
+\item параллельно.
+\end{enumerate}
+Время безотказной работы ламп имеет показательное распределение с параметром 1 и 2 соответственно.
+Найдите математическое ожидание времени, в течение которого горит хотя бы одна из ламп.
+
+\textit{Решение.} Пусть случайная величина $ \xi $ --- это время безотказной работы хотя бы одной из ламп.
+Время безотказной работы первой лампы имеет плотность распределения $p_1 \left( x \right) = e^{-x} \cdot \mathbbm{1} \left( x \geq 0 \right) $.
+Время безотказной работы второй лампы имеет плотность распределения $p_2 \left( x \right) = 2e^{-2x} \cdot \mathbbm{1} \left( x \geq 0 \right) $.
+
+\begin{enumerate}[label=\alph*)]
+\item При последовательном соединении если одна из ламп перегорает --- перестаёт работать и другая лампа.
+Следовательно нужно найти математическое ожидание минимума
+$$M \xi =
+\int \limits_{- \infty }^{+ \infty } x \cdot \min \left( p_1 \left( x \right), p_2 \left( x \right) \right) dx =
+\int \limits_0^{+ \infty } x \cdot \min \left( e^{-x}, 2e^{-2x} \right) dx.$$
+График функции $e^{-x}$ лежит ниже графика функции $2e^{-2x}$ при
+$$x < \ln 2.$$
+Разбиваем интеграл на 2
+$$M \xi =
+\int \limits_0^{ \ln 2} x \cdot e^{-x} dx + \int \limits_{ \ln 2}^{+ \infty } 2e^{-2x} dx.$$
+Первый интеграл берём по частям, а во втором делаем замену $2x = y$.
+Получаем
+$$M \xi =
+\frac{1}{2} \left( 1 - \ln 2 \right) + \frac{1}{8} \left( 1 + \ln 4 \right) =
+\frac{1}{2} - \frac{1}{2} \cdot \ln 2 + \frac{1}{8} + \frac{1}{8} \cdot \ln 4.$$
+Приведём подобные
+$$M \xi =
+\frac{5}{8} - \frac{1}{2} \cdot \ln 2 + \frac{1}{8} \cdot \ln 4;$$
+\item при параллельном соединении лампы работают независимо.
+Поэтому нужно найти математическое ожидание максимума
+$$M \xi =
+\int \limits_{- \infty }^{+ \infty } x \cdot \max \left( p_1 \left( x \right), p_2 \left( x \right) \right) dx =
+\int \limits_0^{+ \infty } x \cdot \max \left( e^{-x}, 2e^{-2x} \right) dx.$$
+Разбиваем на 2 интеграла
+$$M \xi =
+\int \limits_0^{ \ln 2} 2xe^{-2x} dx + \int \limits_{ \ln 2}^{+ \infty } xe^{-x} dx =
+\frac{1}{8} \left( 3 - \ln 4 \right) + \frac{1}{2} \left( 1 + \ln 2 \right).$$
+Приводим подобные
+$$M \xi =
+\frac{7}{8} - \frac{1}{8} \cdot \ln 2 + \frac{1}{2} \cdot \ln 2.$$
+\end{enumerate}
+
 \subsubsection*{12.4}
 
 \textit{Задание.} Существует $n$ типов игрушек, которые можно найти в конфете <<Киндер-сюрприз>>.
