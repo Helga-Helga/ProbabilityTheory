@@ -1,0 +1,148 @@
+\addcontentsline{toc}{chapter}{Занятие 11. Совместное распределение случайных величин}
+\chapter*{Занятие 11. Совместное распределение случайных величин}
+
+\addcontentsline{toc}{section}{Контрольные вопросы и задания}
+\section*{Контрольные вопросы и задания}
+
+\subsubsection*{Запишите основные вероятностные распределения и поясните смысл их параметров.}
+
+Основные распределения:
+\begin{enumerate}
+\item дискретное распределение:
+\begin{enumerate}
+\item равномерное дискретное распределение
+$$P \left( \xi = k \right) =
+\frac{1}{N},
+1 \leq k \leq N,
+M \xi = \frac{N+1}{2}, D \xi = \frac{N^2 - 1}{12};$$
+\item биномиальное распределение: $ \xi \sim Biom \left( n, p \right) $
+$$P \left\{ \xi = k \right\} =
+C_n^k p^k q^{n-k},$$
+где $0 \leq k \leq n, q = 1 - p, M \xi = np, D \xi = npq$;
+\item геометрическое распределение $ \xi \sim Geom \left( p \right), p \in \left( 0, 1 \right) $
+$$P \left\{ \xi = k \right\} =
+pq^k,
+k \geq 0,
+M \xi = \frac{q}{p},
+D \xi = \frac{q}{p^2};$$
+\item пуассоновское распределение: $ \xi \sim Pois \left( \lambda \right), \lambda > 0$
+$$P \left\{ \xi = k \right\} = \frac{ \lambda^k}{k!} \cdot e^{- \lambda },
+k \geq 0,
+M \xi = \lambda,
+D \xi = \lambda;$$
+\end{enumerate}
+\item непрерывные распределения:
+\begin{enumerate}
+\item равномерное распределение: $ \xi \sim U \left( \left[ a, b \right] \right) $
+$$p \left( x \right) =
+\begin{cases}
+\frac{1}{b-a}, \qquad x \in \left[ a, b \right], \\
+0, x \notin \left[ a, b \right], \\
+\end{cases}
+M \xi = \frac{a+b}{2},
+D \xi = \frac{ \left( b-a \right)^2}{12};$$
+\item экспоненциальное распределение: $ \xi \sim Exp \left( \lambda \right), \lambda > 0$
+$$p \left( x \right) =
+\begin{cases}
+\lambda e^{- \lambda x}, \qquad x \geq 0, \\
+0, \qquad x < 0, \\
+\end{cases}
+M \xi = \frac{1}{ \lambda },
+D \xi = \frac{1}{ \lambda^2};$$
+\item распределение Коши: $ \xi \sim C \left( \Theta \right), \Theta > 0$
+$$p \left( x \right) =
+\frac{ \Theta }{ \pi \left( x^2 + \Theta^2 \right) };$$
+\item гауссовское (нормальное) распределение:
+$$ \xi \sim \mathcal{N} \left( a, \sigma^2 \right),
+a \in \mathbb{R},
+\sigma^2 > 0,$$
+$$p \left( x \right) = \frac{1}{ \sqrt{2 \pi } \cdot \sigma } \cdot e^{- \frac{ \left( x-a \right)^2}{2 \sigma^2}},
+x \in \mathbb{R},
+M \xi = a,
+D \xi = \sigma^2.$$
+\end{enumerate}
+\end{enumerate}
+
+\subsubsection*{Что называется случайным вектором?}
+
+Случайный вектор --- это набор упорядоченных величин
+$$ \vec{ \xi } =
+\left( \xi_1, \xi_2, \dotsc, \xi_n \right).$$
+
+\subsubsection*{Приведите критерий независимости компонент случайного вектора.}
+
+$ \xi_1, \dotsc, \xi_n$ --- независимы тогда и только тогда, когда
+$$p_{ \vec{ \xi }} \left( x_1, \dotsc, x_n \right) =
+\prod \limits_{i=1}^n p_{ \xi_i} \left( x \right).$$
+
+\subsubsection*{Как вычислить плотность суммы независимых случайных величин?}
+
+Для независимых случайных величин
+$$p_{ \xi + \eta } \left( x \right) =
+\int \limits_{ \mathbb{R}} p_{ \xi } \left( x-y \right) p_{ \eta } \left(t y \right) dy.$$
+
+\addcontentsline{toc}{section}{Аудиторные задачи}
+\section*{Аудиторные задачи}
+
+\subsubsection*{11.3}
+
+\textit{Задание.} Пусть $ \xi, \eta $ --- независимые случайные величины, причём $ \xi $ имеет показательное распределение с параметром $ \lambda $, а $ \nu $ равномерно распределена на отрезке $ \left[ 0, h \right] $.
+Найдите плотностьраспределения случайной величины $ \xi $. 
+
+\textit{Решение.} Случайная величина $ \xi $ имеет плотность распределения
+$$p_{ \xi } \left( x \right) =
+\begin{cases}
+\lambda e^{- \lambda x}, \qquad x \geq 0, \\
+0, \qquad x < 0.
+\end{cases}$$
+
+Случайная величина $ \eta $ имеет плотность распределения
+$$p_{ \eta } \left( x \right) =
+\begin{cases}
+0, \qquad x \notin \left[ 0, h \right], \\
+\frac{1}{h}, \qquad x \in \left[ 0, h \right].
+\end{cases}$$
+
+Случайные величины $ \xi, \eta $ --- независимы.
+Записываем плотность распределения суммы
+$$p_{ \xi + \eta } \left( x \right) =
+\int \limits_{ \mathbb{R}} p_{ \xi } \left( x - y \right) p_{ \eta } \left( y \right) dy.$$
+Будем использовать индикатор
+$$p_{ \xi + \eta } \left( x \right) =
+\int \limits_{ \mathbb{R}} \lambda e^{- \lambda \left( x-y \right) } \cdot
+\mathbbm{1} \left( x-y \geq 0 \right) \cdot
+\frac{1}{h} \cdot
+\mathbbm{1} \left( y \in \left[ 0, h \right] \right) dy.$$
+Эти индикаторы будут задавать, где именно будем интегрировать эти плотности.
+Должны интегрировать по пересечению $ \left[ 0, h \right] \cap \left( - \infty, x \right)$, где $h$ --- фиксированное число, а $x$ --- параметр
+$$p_{ \xi + \eta } \left( x \right) =
+\begin{cases}
+0, \qquad x < 0, \\
+\int \limits_0^x \lambda e^{- \lambda \left( x-y \right) } dy \cdot \frac{1}{h}, \qquad x \in \left[ 0, h \right], \\
+\int \limits_0^h \lambda e^{- \lambda \left( x-y \right) } dy \cdot \frac{1}{h}, \qquad x > h.
+\end{cases}$$
+
+Отдельно вычисляем каждый интеграл.
+Второй случай
+$$ \frac{ \lambda }{h} \int \limits_0^x e^{- \lambda x} \cdot e^{ \lambda y} dy =
+\left. \frac{1}{h} \cdot e^{- \lambda x} \cdot e^{ \lambda y} \right|_0^x =
+\frac{1}{h} \cdot e^{- \lambda x} \cdot e^{ \lambda x} - \frac{1}{h} \cdot e^{- \lambda x} \cdot e^0.$$
+Выражение $e^{- \lambda x} \cdot e^{ \lambda x}$ даёт единицу
+$$\frac{ \lambda }{h} \int \limits_0^x e^{- \lambda x} \cdot e^{ \lambda y} dy =
+\frac{1}{h} - \frac{1}{h} \cdot e^{- \lambda x} =
+\frac{1}{h} \left( 1 - e^{- \lambda x} \right) =
+\frac{1-e^{- \lambda x}}{h}.$$
+
+Вычисляем третий случай --- такой же итеграл, только в пределах от нуля до $h$.
+Имеем
+$$ \int \limits_0^h \lambda e^{- \lambda \left( x-y \right) } dy \cdot \frac{1}{h} =
+\left. \frac{1}{h} \cdot e^{- \lambda x} \cdot e^{ \lambda y} \right|_0^h =
+\frac{e^{- \lambda x}}{h} \left( e^{ \lambda h} - 1 \right),$$
+где $x$ --- это параметр.
+Следовательно
+$$p_{ \xi + \eta } \left( x \right) =
+\begin{cases}
+0, \qquad x < 0, \\
+\frac{1-e^{- \lambda x}}{h}, \qquad x \in \left[ 0, h \right], \\
+\frac{e^{- \lambda x}}{h} \left( e^{ \lambda h} - 1 \right), \qquad x > h.
+\end{cases}$$
