@@ -146,3 +146,30 @@ $$p_{ \xi + \eta } \left( x \right) =
 \frac{1-e^{- \lambda x}}{h}, \qquad x \in \left[ 0, h \right], \\
 \frac{e^{- \lambda x}}{h} \left( e^{ \lambda h} - 1 \right), \qquad x > h.
 \end{cases}$$
+
+\subsubsection*{11.4}
+
+\textit{Задание.} Пусть $ \xi, \eta, \zeta $ --- независимые случайные величины.
+Известно,
+что $ \xi $ и $ \eta $ имеют функции распределения $F$ и $G$ соответственно,
+а $ \zeta $ принимат значения 0 или 1 с вероятностями $p$ и $q$ соответственно $ \left( p + q = 1 \right) $.
+Найдите функцию распределения случайной величины $ \zeta \xi + \left( 1 - \zeta \right) \eta $.
+
+\textit{Решение.} Начинаем с определения функции распределения
+$$P \left( \xi \leq x \right) = F_{ \xi } \left( x \right) = F,
+P \left( \eta \leq x \right) = G.$$
+
+По условию $P \left( \zeta = 0 \right) = p = 1 - P \left( \zeta = 1 \right) = 1 - q$.
+
+Откуда $P \left( \zeta = 1 \right) = q$.
+
+Ищем функцию распределения по определению
+$$F_{ \zeta \xi + \left( 1 - \zeta \right) \eta } \left( x \right) =
+P \left(  \zeta \xi + \left( 1 - \zeta \right) \eta \leq x \right).$$
+Применяем формулу полной вероятности.
+Если $ \zeta = 0$, то случайная величина --- это $ \eta $, если $ \zeta = 1$, то это $ \xi $.
+Получаем
+$$F_{ \zeta \xi + \left( 1 - \zeta \right) \eta } \left( x \right) =
+P \left( \zeta = 0 \right) P \left( \eta \leq x \right) + P \left( \zeta = 1 \right) P \left( \eta \leq x \right) =
+pG + \left( 1 - p \right) F.$$
+В итоге получаем $F_{ \zeta \xi + \left( 1 - \zeta \right) \eta } \left( x \right) = pG + qF.$
