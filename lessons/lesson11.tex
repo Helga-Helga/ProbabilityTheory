@@ -201,3 +201,165 @@ F_{ \xi } \left( x \right) - F_{ \xi } \left( -y \right), \qquad x \in \left[ -y
 F_{ \xi } \left( y \right) - F_{ \xi } \left( -y \right), \qquad x > y
 \end{cases}
 \cdot \mathbbm{1} \left( y > 0 \right).$$
+
+\subsubsection*{11.6}
+
+\textit{Задание.}
+Случайный вектор $ \left( \xi_1, \xi_2 \right) $ имеет плотность распределения
+$$p \left( x \right) =
+\left( x+ay^2 \right) \cdot \mathbbm{1}_{ \left[ 0, 1 \right]^2}.$$
+Найдите:
+\begin{enumerate}[label=\alph*)]
+\item параметр $a$;
+\item $M \xi_1, M \xi_1 \xi_2, P \left( \xi_1 < \xi_2 \right) $;
+\item плотности $p_{ \xi_1} \left( x \right), p_{ \xi_2} \left( x \right) $;
+\item плотность распределения случайной величины $ \max \left( \xi_1, \xi_2 \right) $.
+\end{enumerate}
+Являются ли $ \xi_1, \xi_2$ независимыми?
+
+\textit{Решение.}
+\begin{enumerate}[label=\alph*)]
+\item Находим неизвестный параметр $a$, который входит в плотность из условия нормировки.
+
+Плотность определена, когда $0 \leq x \leq 1, 0 \leq y \leq 1$.
+
+Условие нормировки выполняется для всякой плотности
+$$1 =
+\int \limits_{- \infty }^{+ \infty } \int \limits_{- \infty }^{+ \infty } p \left( x, y \right) dxdy =
+\int \limits_0^1 \int \limits_0^1 \left( x+ay^2 \right) dxdy.$$
+Подставляем пределы интегрирования
+$$1 =
+\left. \int \limits_0^1 \left( \frac{x^2}{2} + ay^2 x \right) \right|_0^1 dy =
+\int \limits_0^1 \left( \frac{1}{2} + ay^2 \right) dy =
+\frac{1}{2} + \frac{a}{3}.$$
+Отсюда следует, что
+$$a =
+\frac{2}{3};$$
+\item ищем $M \xi_1$.
+Математическое ожидание $ \phi \left( \xi_1, \xi_2 \right) $ вычислили бы так
+$$M \phi \left( \xi_1, \xi_2 \right) =
+\int \int \limits_{ \mathbb{R}^2} \phi \left( x, y \right) p \left( x, y \right) dxdy,$$
+где $p$ --- это их совместная вероятность, то есть вероятность вектора.
+
+В данном случае $ \phi \left( \xi_1, \xi_2 \right) = \xi_1$.
+
+Вычисляем математическое ожидание
+$$M \xi_1 =
+\int \int \limits_{ \mathbb{R}^2} x \cdot p \left( x, y \right) dxdy =
+\int \limits_0^1 \int \limits_0^1 x \left( x + ay^2 \right) dxdy.$$
+Раскрываем скобки
+$$M \xi_1 =
+\int \limits_0^1 \int \limits_0^1 \left( x^2 + ay^2 x \right) dxdy =
+\left. \int \limits_0^1 \left( \frac{x^3}{3} + \frac{ay^2 x^2}{2} \right) \right|_0^1 dy.$$
+Подставляем пределы интегрирования
+$$M \xi_1 =
+\int \limits_0^1 \left( \frac{1}{3} + \frac{ay^2}{2} \right) dy =
+\left. \left( \frac{y}{3} + \frac{ay^3}{6} \right) \right|_0^1 =
+\frac{1}{3} + \frac{a}{6}.$$
+Подставляем
+$$a =
+\frac{2}{3}.$$
+Получаем
+$$M \xi_1 =
+\frac{1}{3} + \frac{3}{2 \cdot 6} =
+\frac{1}{3} + \frac{1}{4}.$$
+Приводим к общему знаменателю, для чего первое слагаемое умножаем и делим на 4, а второе --- на 3
+$$M \xi_1 =
+\frac{7}{12}.$$
+
+Найдём следующее математическое ожидание.
+
+В данном случае $ \phi \left( \xi_1, \xi_2 \right) = \xi_1 \xi_2$.
+
+Это будет
+$$M \xi_1 \xi_2 =
+\int \int \limits_{ \mathbb{R}^2} xyp \left( x, y \right) dxdy.$$
+Подставляем вид $p \left( x, y \right) $.
+Получаем
+$$M \xi_1 \xi_2 =
+\int \limits_0^1 \int \limits_0^1 xy \left( x + \frac{3}{2} \cdot y^2 \right) dxdy =
+\int \limits_0^1 \int \limits_0^1 \left( x^2 y + \frac{3xy^3}{2} \right) dxdy.$$
+Берём внутненний интеграл
+$$M \xi_1 \xi_2 =
+\int \limits_0^1 \left( \frac{y}{3} + \frac{3y^3}{4} \right) dy =
+\left. \left( \frac{y^2}{6} + \frac{3y^4}{16} \right) \right|_0^1 =
+\frac{1}{6} + \frac{3}{16} =
+\frac{17}{48}.$$
+
+Любую вероятность можно записать как математическое ожидание индикатора
+$$P \left( \xi_1 < \xi_2 \right) =
+M \mathbbm{1} \left( \xi_1 < \xi_2 \right).$$
+В данный момент $\mathbbm{1} \left( \xi_1 < \xi_2 \right) = \phi \left( \xi_1, \xi_2 \right) $.
+Поэтому
+$$P \left( \xi_1 < \xi_2 \right) =
+\int \int \limits_{ \mathbb{R}^2} \mathbbm{1} \left( x < y \right) p \left( x, y \right) dxdy =
+\int \int \limits_{x < y} p \left( x, y \right) dxdy.$$
+Подставляем плотность распределения
+$$P \left( \xi_1 < \xi_2 \right) =
+\int \limits_0^1 \int \limits_0^y \left( x + \frac{3y^2}{2} \right) dxdy =
+\left. \int \limits_0^1 \left( \frac{x^2}{2} + \frac{2y^2 x}{2} \right) \right|_0^y.$$
+Подставляем пределы интегрирования
+$$P \left( \xi_1 < \xi_2 \right) =
+\int \limits_0^1 \left( \frac{y^2}{2} + \frac{3y^3}{2} \right) dxdy =
+\left. \left( \frac{y^3}{6} + \frac{3y^4}{8} \right) \right|_0^1 =
+\frac{1}{6} + \frac{3}{8}.$$
+Приводим к общему знаменателю.
+Для этого первую дробь умножаем и делим на 4, а вторую --- на 3
+$$P \left( \xi_1 < \xi_2 \right) =
+\frac{4+9}{24} =
+\frac{13}{24};$$
+\item находим плотность каждой из случайных величин.
+Находим как плотности компонент вектора
+$$p_{ \xi_1} \left( x \right) =
+\int \limits_{ \mathbb{R}} p \left( x, y \right) dy =
+\int \limits_0^1 \left( x + \frac{3y^2}{2} \right) dy \cdot \mathbbm{1} \left( x \in \left[ 0, 1 \right] \right).$$
+Вычисляем интеграл
+$$p_{ \xi_1} \left( x \right) =
+\left. \left( xy + \frac{3y^3}{6} \right) \right|_0^1 \cdot \mathbbm{1} \left( x \in \left[ 0, 1 \right] \right) =
+\left. \left( xy + \frac{y^3}{2} \right) \right|_0^1 \cdot \mathbbm{1} \left( x \in \left[ 0, 1 \right] \right).$$
+Подставляем пределы интегрирования
+$$p_{ \xi_1} \left( x \right) =
+\left( x + \frac{1}{2} \right) \cdot \mathbbm{1} \left( x \int \left[ 0, 1 \right] \right).$$
+
+Теперь ищем плотность $ \xi_2$ аналогичным образом
+$$p_{ \xi_2} \left( y \right) =
+\int \limits_{ \mathbb{R}} p \left( x, y \right) dx =
+\int \limits_0^1 \left( x + \frac{3y^2}{2} \right) dx \cdot \mathbbm{1} \left( y \in \left[ 0, 1 \right] \right).$$
+Вычисляем интеграл
+$$p_{ \xi_2} \left( y \right) =
+\left. \left( \frac{x^2}{2} + \frac{3y^2 x}{2} \right) \right|_0^1 \cdot \mathbbm{1} \left( y \in \left[ 0, 1 \right] \right) =
+\left( \frac{1}{2} + \frac{2y^2}{2} \right) \cdot \mathbbm{1} \left( y \in \left[ 0, 1 \right] \right).$$
+
+Поскольку совместная плотность $p_{ \vec{ \xi }} \left( x, y \right) \neq p_{ \xi_1} \left( x \right) \cdot p_{ \xi_2} \left( y \right) $,
+то $ \xi_1$ и $ \xi_2$ не могут быть независимыми;
+\item $F_{ \max \left( \xi_1, \xi_2 \right) } \left( x \right) $ --- ищем.
+
+$$P \left( \max \left( \xi_1, \xi_2 \right) \leq x \right) =
+P \left( \xi_1 \leq x, \xi_2 \leq x \right) =
+M \mathbbm{1} \left( \xi_1 \leq x, \xi_2 \leq x \right).$$
+Вычисляем математическое ожидание по определению
+$$P \left( \max \left( \xi_1, \xi_2 \right) \leq x \right) =
+\int \int \limits_{ \mathbb{R}^2} \mathbbm{1} \left( u \leq x, v \leq x \right) \cdot p \left( u, v \right) dudv.$$
+При этом $x \in \left[ 0, 1 \right] $.
+Получаем
+$$P \left( \max \left( \xi_1, \xi_2 \right) \leq x \right) =
+\int \limits_0^x \int \limits_0^x \left( u + \frac{3v^2}{2} \right) dudv =
+\left. \int \limits_0^x \left( \frac{u^2}{2} + \frac{3u^2 \cdot u}{2} \right) \right|_0^x dv.$$
+Подставляем пределы интегрирования
+$$P \left( \max \left( \xi_1, \xi_2 \right) \leq x \right) =
+\int \limits_0^x \left( \frac{x^2}{2} + \frac{3v^2 x}{2} \right) dv =
+\frac{x^3}{2} + \frac{x^4}{2}, x \in \left[ 0, 1 \right].$$
+
+Записываем функцию распределения
+$$F_{ \max \left( \xi_1, \xi_2 \right) } \left( x \right) =
+\begin{cases}
+0, \qquad x < 0, \\
+\frac{x^3}{2} + \frac{x^4}{2}, \qquad x \in \left[ 0, 1 \right], \\
+1, \qquad x > 1.
+\end{cases}$$
+
+Ищем плотность распределения
+$$p_{ \max \left( \xi_1, \xi_2 \right) } \left( x \right) =
+F_{ \max \left( \xi_1, \xi_2 \right) }' \left( x \right) =
+\left( \frac{3}{2} \cdot x^2 + 2x^3 \right) \cdot \mathbbm{1} \left( x \in \left[ 0, 1 \right] \right).$$
+\end{enumerate}
