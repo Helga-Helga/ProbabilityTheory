@@ -510,6 +510,48 @@ $$ \left( x_1 + x_2 + \dotsc + x_k \right)^n =
 Чтобы посчитать $M \gamma $ должны суммировать по всем $n$.
 \end{enumerate}
 
+\subsubsection*{12.10}
+
+\textit{Задание.} Количество осадков --- случайная величина с непрерывной функцией распределения и независима от количества осадков в предыдущие года.
+Пусть $ \tau $ --- наименьшее количество лет, которые нужно ждать, чтобы количество осадков превысило уровень текущего года.
+Найдите распределение случайной величины $ \tau $ и вычислите её математическое ожидание $M \tau $.
+
+\textit{Решение.} Минимальное количество лет $ \tau $ --- это дискретная случайная величина.
+Это значит, что $ \tau $ принимает какое-то значение с определённой вероятностью.
+Нужно найти эти числа и эти вероятности.
+
+Представим минимальное количество лет как множество пар
+$$< N, P \left( N \right) >,$$
+где $N$ --- количество лет, $P \left( N \right) $ --- вероятность того,
+что ни за один из $ \left( N - 1 \right) $ год количество осадков не стало больше количества осадков текущего года.
+
+Получаем обычное геометрическое распределение
+$$P \left( \left. \tau = k \right| \xi_i = x \right) =
+p_k \cdot \prod \limits_{j=1}^{k-1} \left( 1-p_j \right),$$
+где
+$$p_j =
+P \left( \xi_{i+j} > \xi_i \right) =
+P \left( \xi_{i+j} > x \right) =
+\int \limits_{x < y} p \left( y \right) dy.$$
+
+Чтобы найти обычную вероятность,
+можно воспользоваться формулой условной вероятности $P \left( \left. X \right| Y \right) = P \left( X \cap Y \right) \cdot P \left( Y \right)$.
+
+Для данной задачи это
+$$P \left( \tau = k, \xi_i = x \right) =
+P \left( \left. \tau = k \right| \xi_i = x \right) P \left( \xi_i = x \right).$$
+Воспользуемся формулой полной вероятности и перейдём к пределу
+$$P \left( \tau = k \right) =
+\int \limits_{- \infty }^{+ \infty } P \left( \left. \tau = k \right| \xi_i = x \right) P \left( \xi_i = x \right) dx =
+\int \limits_{- \infty }^{+ \infty } p_k \prod \limits_{j=1}^{k-1} \left( 1-p_j \right) P \left( \xi_i = x \right) dx.$$
+Подставим значения вероятностей
+$$P \left( \tau = k \right) =
+\int \limits_{- \infty }^{+ \infty } p_k \prod \limits_{j=1}^{k-1} \left( 1 - \int \limits_{x < y} p \left( y \right) dy \right) P \left( \xi = k \right) dx.$$
+
+Математическое ожидание по определению равно
+$$M \tau =
+\sum \limits_{- \infty }^{+ \infty } k \cdot P \left( \tau = k \right) dx.$$
+
 \addcontentsline{toc}{section}{Домашнее задание}
 \section*{Домашнее задание}
 
