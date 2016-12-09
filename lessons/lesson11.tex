@@ -173,3 +173,31 @@ $$F_{ \zeta \xi + \left( 1 - \zeta \right) \eta } \left( x \right) =
 P \left( \zeta = 0 \right) P \left( \eta \leq x \right) + P \left( \zeta = 1 \right) P \left( \eta \leq x \right) =
 pG + \left( 1 - p \right) F.$$
 В итоге получаем $F_{ \zeta \xi + \left( 1 - \zeta \right) \eta } \left( x \right) = pG + qF.$
+
+\subsubsection*{11.5}
+
+\textit{Задание.} Пусть $ \xi $ --- случайная величина с функцией распределения $F$.
+Найдите функцию распределения случайного вектора $ \left( \xi, \left| \xi \right| \right) $.
+
+\textit{Решение.} Есть случайный вектор, который имеет две компоненты.
+Поэтому функция распределения будет иметь 2 аргумента.
+
+По определению $F_{ \left( \xi, \left| \xi \right| \right) } \left( x, y \right) = P \left( \xi \leq x, \left| \xi \right| \leq y \right).$
+Раскрываем модуль $F_{ \left( \xi, \left| \xi \right| \right) } \left( x, y \right) = P \left( \xi \leq x, -y \leq \xi \leq y \right) $.
+Всё касается одной и той же случайной величины
+$$F_{ \left( \xi, \left| \xi \right| \right) } \left( x, y \right) =
+\begin{cases}
+0, \qquad x < - y, \\
+P \left( \xi \in \left[ -y, x \right] \right), \qquad x \in \left[ -y, y \right], \\
+P \left( \xi \in \left[ -y, y \right] \right), \qquad x > y
+\end{cases}
+\cdot \mathbbm{1} \left( y > 0 \right).$$
+Выражаем это через функцию распределения $ \xi $.
+Получаем
+$$F_{ \left( \xi, \left| \xi \right| \right) } \left( x, y \right) =
+\begin{cases}
+0, \qquad x < - y, \\
+F_{ \xi } \left( x \right) - F_{ \xi } \left( -y \right), \qquad x \in \left[ -y, y \right], \\
+F_{ \xi } \left( y \right) - F_{ \xi } \left( -y \right), \qquad x > y
+\end{cases}
+\cdot \mathbbm{1} \left( y > 0 \right).$$
