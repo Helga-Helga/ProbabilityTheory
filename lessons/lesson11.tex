@@ -238,14 +238,14 @@ $$a =
 \item ищем $M \xi_1$.
 Математическое ожидание $ \phi \left( \xi_1, \xi_2 \right) $ вычислили бы так
 $$M \phi \left( \xi_1, \xi_2 \right) =
-\int \int \limits_{ \mathbb{R}^2} \phi \left( x, y \right) p \left( x, y \right) dxdy,$$
+\iint_{ \mathbb{R}^2} \phi \left( x, y \right) p \left( x, y \right) dxdy,$$
 где $p$ --- это их совместная вероятность, то есть вероятность вектора.
 
 В данном случае $ \phi \left( \xi_1, \xi_2 \right) = \xi_1$.
 
 Вычисляем математическое ожидание
 $$M \xi_1 =
-\int \int \limits_{ \mathbb{R}^2} x \cdot p \left( x, y \right) dxdy =
+\iint_{ \mathbb{R}^2} x \cdot p \left( x, y \right) dxdy =
 \int \limits_0^1 \int \limits_0^1 x \left( x + ay^2 \right) dxdy.$$
 Раскрываем скобки
 $$M \xi_1 =
@@ -273,7 +273,7 @@ $$M \xi_1 =
 
 Это будет
 $$M \xi_1 \xi_2 =
-\int \int \limits_{ \mathbb{R}^2} xyp \left( x, y \right) dxdy.$$
+\iint_{ \mathbb{R}^2} xyp \left( x, y \right) dxdy.$$
 Подставляем вид $p \left( x, y \right) $.
 Получаем
 $$M \xi_1 \xi_2 =
@@ -292,8 +292,8 @@ M \mathbbm{1} \left( \xi_1 < \xi_2 \right).$$
 В данный момент $\mathbbm{1} \left( \xi_1 < \xi_2 \right) = \phi \left( \xi_1, \xi_2 \right) $.
 Поэтому
 $$P \left( \xi_1 < \xi_2 \right) =
-\int \int \limits_{ \mathbb{R}^2} \mathbbm{1} \left( x < y \right) p \left( x, y \right) dxdy =
-\int \int \limits_{x < y} p \left( x, y \right) dxdy.$$
+\iint_{ \mathbb{R}^2} \mathbbm{1} \left( x < y \right) p \left( x, y \right) dxdy =
+\iint_{x < y} p \left( x, y \right) dxdy.$$
 Подставляем плотность распределения
 $$P \left( \xi_1 < \xi_2 \right) =
 \int \limits_0^1 \int \limits_0^y \left( x + \frac{3y^2}{2} \right) dxdy =
@@ -339,7 +339,7 @@ P \left( \xi_1 \leq x, \xi_2 \leq x \right) =
 M \mathbbm{1} \left( \xi_1 \leq x, \xi_2 \leq x \right).$$
 Вычисляем математическое ожидание по определению
 $$P \left( \max \left( \xi_1, \xi_2 \right) \leq x \right) =
-\int \int \limits_{ \mathbb{R}^2} \mathbbm{1} \left( u \leq x, v \leq x \right) \cdot p \left( u, v \right) dudv.$$
+\iint_{ \mathbb{R}^2} \mathbbm{1} \left( u \leq x, v \leq x \right) \cdot p \left( u, v \right) dudv.$$
 При этом $x \in \left[ 0, 1 \right] $.
 Получаем
 $$P \left( \max \left( \xi_1, \xi_2 \right) \leq x \right) =
@@ -363,3 +363,55 @@ $$p_{ \max \left( \xi_1, \xi_2 \right) } \left( x \right) =
 F_{ \max \left( \xi_1, \xi_2 \right) }' \left( x \right) =
 \left( \frac{3}{2} \cdot x^2 + 2x^3 \right) \cdot \mathbbm{1} \left( x \in \left[ 0, 1 \right] \right).$$
 \end{enumerate}
+
+\subsubsection*{11.7}
+
+\textit{Задание.} Пусть $ \xi_1, \xi_2$ --- независимые случайные величины со стандартным нормальным распределением каждая.
+Найдите плотность оаспределения случайной величины $ \sqrt{ \xi_1^2 + \xi_2^2}$.
+
+\textit{Решение.} Выпишем плотность $ \xi_1, \xi_2$ каждую из условия, $ \sigma = 1, a = 0$.
+Имеем
+$$p_{ \xi_1} \left( x \right) =
+p_{ \xi_2} \left( x \right) =
+\frac{1}{ \sqrt{2 \pi }} \cdot e^{- \frac{x^2}{2}}.$$
+
+Тогда совместная плотность вектора (из независимости)
+$$p_{ \left( \xi_1, \xi_2 \right) } \left( x, y \right) =
+p_{ \xi_1} \left( x \right) \cdot p_{ \xi_2} \left( x \right) =
+\frac{1}{2 \pi } \cdot e^{- \frac{x^2 + y^2}{2}}.$$
+
+Функция распределения этой случайной величины по определению
+$$F_{ \sqrt{ \xi_1^2 + \xi_2^2}} \left( t \right) =
+P \left( \sqrt{ \xi_1^2 + \xi_2^2} \leq t \right).$$
+Это целесообразно рассматривать при $t \geq 0$.
+Записываем вероятность как индикатор этого события $F_{ \sqrt{ \xi_1^2 + \xi_2^2}} \left( t \right) = M \mathbbm{1} \left( \sqrt{ \xi_1^2 + \xi_2^2} \leq t \right) $.
+Есть две случайные величины, значит будет двойной интеграл
+$$F_{ \sqrt{ \xi_1^2 + \xi_2^2}} \left( t \right) =
+\iint_{ \mathbb{R}^2} \mathbbm{1} \left( \sqrt{x^2 + y^2} \leq t \right) p_{ \left( \xi_1, \xi_2 \right) } \left( x, y \right) dxdy.$$
+Перепишем плотность
+$$F_{ \sqrt{ \xi_1^2 + \xi_2^2}} \left( t \right) =
+\iint_{ \mathbb{R}^2} \mathbbm{1} \left( \sqrt{x^2 + y^2} \leq t \right) \cdot \frac{1}{2 \pi } \cdot e^{- \frac{x^2 + y^2}{2}} \cdot dxdy.$$
+Перейдём в полярную систему координат
+$x = \rho \cos \phi,
+y = \rho \sin \phi,
+dxdy = \\
+= \rho d \rho d \phi,
+\rho: 0 \rightarrow t,
+\phi: 0 \rightarrow 2 \pi,
+x^2 + y^2 = \rho^2,
+\mathbbm{1} \left( \sqrt{x^2 + y^2} \leq t \right) = \mathbbm{1} \left( \rho \leq t \right) $.
+Получаем
+$$F_{ \sqrt{ \xi_1^2 + \xi_2^2}} \left( t \right) =
+\int \limits_0^{2 \pi } \int \limits_0^t \frac{1}{2 \pi } \cdot e^{- \frac{ \rho^2}{2}} \rho d \rho d \phi.$$
+По $d \phi $ проинтегрируем сразу
+$$F_{ \sqrt{ \xi_1^2 + \xi_2^2}} \left( t \right) =
+- \int \limits_0^t d \left( e^{- \frac{ \rho^2}{2}} \right) =
+\left. - e^{- \frac{ \rho^2}{2}} \right|_0^t =
+1 - e^{- \frac{t^2}{2}}$$
+--- это при $t > 0$.
+
+Нужно продифференцировать по $t$.
+Получаем
+$$p_{ \sqrt{ \xi_1^2 + \xi_2^2}} \left( t \right) =
+- e^{- \frac{t^2}{2}} \cdot \left( - \frac{2t}{2} \right) \cdot \mathbbm{1} \left( t > 0 \right) =
+te^{- \frac{t^2}{2}} \cdot \mathbbm{1} \left( t > 0 \right).$$
