@@ -415,3 +415,79 @@ $$F_{ \sqrt{ \xi_1^2 + \xi_2^2}} \left( t \right) =
 $$p_{ \sqrt{ \xi_1^2 + \xi_2^2}} \left( t \right) =
 - e^{- \frac{t^2}{2}} \cdot \left( - \frac{2t}{2} \right) \cdot \mathbbm{1} \left( t > 0 \right) =
 te^{- \frac{t^2}{2}} \cdot \mathbbm{1} \left( t > 0 \right).$$
+
+\addcontentsline{toc}{section}{Домашнее задание}
+\section*{Домашнее задание}
+
+\subsubsection*{11.13}
+
+\textit{Задание.} Пусть $ \xi $ и $ \eta $ --- независимые одинаково распределённые случайные величины с плотностью распределения
+$$p \left( x \right) =
+\frac{e{- \left| x \right| }}{2}.$$
+Найдите плотность распределения суммы $ \xi + \eta $.
+
+\textit{Решение.} Записываем по определению
+$$p_{ \xi + \eta } \left( x \right) =
+\int \limits_{ \mathbb{R}} p \left( x-y \right) p \left( y \right) dy =
+\int \limits_{ \mathbb{R}} \frac{e^{- \left| x-y \right| }}{2} \cdot \frac{e^{- \left| y \right| }}{2} dy.$$
+Выносим константы за знак интеграла
+$$p_{ \xi + \eta } \left( x \right) =
+\frac{1}{4} \int \limits_{ \mathbb{R}} e^{- \left| x-y \right| - \left| y \right| } dy =
+\frac{1}{4} \cdot I.$$
+
+Рассматриваем три случая: $x < 0, x = 0$ и $x > 0$.
+В первом случае
+$$I =
+\int \limits_{- \infty }^x e^{-x+y+y} dy + \int \limits_x^0 e^{x-y+y} dy + \int_0^{+ \infty } e^{x-y-y} dy.$$
+Во втором слагаемом $y$ уничтожается
+$$I =
+\int \limits_{- \infty }^x e^{2y-x} dy + \int \limits_x^0 e^x dy + \int \limits_0^{+ \infty } e^{-2y+x} dy.$$
+Вычисляем интегралы
+$$I =
+\left. \frac{1}{2} \cdot e^{2y-x} \right|_{- \infty }^x + \left. e^x \cdot y \right|_x^0 - \left. \frac{1}{2} \cdot e^{-2y+x} \right|_0^{+ \infty }.$$
+Подставляем пределы интегрирования
+$$I =
+\frac{1}{2} \cdot e^{2 \cdot x - x} - \frac{1}{2} \cdot e^{- \infty } + e^x \cdot 0 - e^x \cdot x - \frac{1}{2} \cdot e^{- \infty } + \frac{1}{2} \cdot e^x.$$
+Экспонента на $- \infty $ равна нулю
+$$I =
+\frac{1}{2} \cdot e^x - x \cdot e^x + \frac{1}{2} \cdot e^x =
+e^x - x \cdot e^x =
+e^x \left( 1 - x \right).$$
+
+При $x = 0$ получаем
+$$I =
+\int_{- \infty }^{+ \infty } e^{- \left| -y \right| - \left| y \right| } dy =
+\int \limits_{- \infty }^0 e^{- \left( -y \right) + y} dy + \int \limits_0^{+ \infty } e^{-y-y} dy.$$
+Упрощаем степени в экспонентах
+$$I =
+\int \limits_{- \infty }^0 e^{2y} dy + \int \limits_0^{+ \infty } e^{-2y} dy =
+\left. \frac{1}{2} \cdot e^{2y} \right|_{- \infty }^0 - \left. \frac{1}{2} \cdot e^{-2y} \right|_0^{+ \infty }.$$
+Подставляем пределы интегрирования
+$$I =
+\frac{1}{2} \cdot e^0 - \frac{1}{2} \cdot e^{- \infty } - \frac{1}{2} \cdot e^{- \infty } + \frac{1}{2} \cdot e^0.$$
+Экспонента на $- \infty $ равна нулю
+$$I =
+\frac{1}{2} + \frac{1}{2} =
+1.$$
+
+В третьем случае
+$$I =
+\int \limits_{- \infty }^0 e^{-x+y+y} dy + \int \limits_0^x e^{-x+y-y} dy + \int \limits_x^{+ \infty } e^{x-y-y} dy.$$
+Во втором слагаемом $y$ уничтожается
+$$I =
+\int \limits_{- \infty }^0 e^{2y-x} dy + \int \limits_0^x e^{-x} dy + \int \limits_x^{+ \infty } e^{-2y+x} dy.$$
+Вычисляем интегралы
+$$I =
+\frac{1}{2} \cdot e^{-x} - \frac{1}{2} \cdot e^{- \infty } + e^{-x} \cdot x - e^{-x} \cdot 0 - \frac1{1}{2} \cdot e^{- \infty } + \frac{1}{2} \cdot e^{-2x+x}.$$
+Экспонента на $- \infty $ равна нулю
+$$I =
+\frac{1}{2} \cdot e^{-x} + x \cdot e^{-x} + \frac{1}{2} \cdot e^{-x} =
+e^{-x} + x \cdot e^{-x} =
+e^{-x} \left( 1+x \right).$$
+
+В итоге получаем
+$$p_{ \xi + \eta } \left( x \right) =
+\begin{cases}
+\frac{1}{4} \cdot e^{ \left| x \right| } \left( 1 + \left| x \right| \right), \qquad x \neq 0, \\
+\frac{1}{4}, \qquad x = 0.
+\end{cases}$$
