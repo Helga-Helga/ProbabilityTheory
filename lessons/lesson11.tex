@@ -524,3 +524,37 @@ $$p_{ \xi + \eta } \left( x \right) =
 $$p_{ \xi + \eta } \left( x \right) =
 \sum \limits_{k =x-1}^{x} p_k =
 p_{x-1} + p_x.$$
+
+\subsubsection*{11.15}
+
+\textit{Задание.} Пусть $ \xi $ --- случайная величина с функцией распределения $F$.
+Найдите функцию распределения случайного вектора $ \left) \xi, \xi \right) $.
+
+\textit{Решение.} Есть случайный вектор, который имеет две компоненты.
+Поэтому фукция распределения будет иметь 2 аргумента.
+
+По определению $F_{ \left( \xi, \xi \right) } \left( x, y \right) = P \left( \xi \leq x, \xi \leq y \right) $.
+Всё касается одной и той же случайной величины.
+Изображаем все случаи на рисунке $ \ref{fig:1115}$.
+
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=.8\textwidth]{./pictures/11_15.png}
+  \caption{Возможные случаи}
+  \label{fig:1115}
+\end{figure}
+
+Получаем
+$$F_{ \left( \xi, \xi \right) } \left( x, y \right) =
+\begin{cases}
+P \left( \xi \leq x \right), \qquad x \leq y, \\
+P \left( \xi \leq y \right), \qquad x > y.
+\end{cases}$$
+
+Выражаем это через функцию распределения
+$$F_{ \left( \xi, \xi \right) } \left( x, y \right) =
+\begin{cases}
+F \left( x \right), \qquad x \leq y, \\
+F \left( y \right), \qquad x > y.
+\end{cases} =
+F \left( \min \left( x, y \right) \right).$$
