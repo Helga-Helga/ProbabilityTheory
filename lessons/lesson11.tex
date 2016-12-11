@@ -558,3 +558,114 @@ F \left( x \right), \qquad x \leq y, \\
 F \left( y \right), \qquad x > y.
 \end{cases} =
 F \left( \min \left( x, y \right) \right).$$
+
+\subsubsection*{11.16}
+
+\textit{Задание.} Случайный вектор $ \left( \xi_1, \xi_2 \right) $ имеет плотность распределения
+$$p \left( x, y \right) =
+\frac{c}{1+x^2 + x^2 y^2 + y^2}.$$
+Найдите:
+\begin{enumerate}[label=\alph*)]
+\item параметр $c$;
+\item плотности распределения $p_{ \xi_1} \left( x \right), p_{ \xi_2} \left( x \right) $;
+\item $P \left( \left| \xi_1 \right| \leq 1, \left| \xi_2 \right| \leq 1 \right).$
+\end{enumerate}
+Являются ли $ \xi_1, \xi_2$ независимыми?
+
+\textit{Решение.}
+\begin{enumerate}[label=\alph*)]
+\item Находим неизвестный параметр, который входит в плотность распределения из условия нормировки, которое выполняется для всякой плотности
+$$1 =
+\int \limits_{- \infty }^{+ \infty } \int \limits_{- \infty }^{+ \infty } p \left( x, y \right) dxdy =
+\int \limits_{- \infty }^{+ \infty } \int \limits_{- \infty }^{+ \infty } \frac{c}{1 + x^2 + x^2 y^2 + y^2} dxdy.$$
+Выпишем дробь и разложим знаменатель на множители
+$$ \frac{c}{1 + x^2 + x^2 y^2 + y^2} =
+\frac{c}{x^2 \left( 1 + y^2 \right) + \left( 1 + y^2 \right) } =
+\frac{c}{ \left( 1 + y^2 \right) \left( 1 + x^2 \right) }.$$
+Подставим в интеграл
+$$1 =
+\int \limits_{- \infty }^{+ \infty } \int \limits_{- \infty }^{+ \infty } \frac{c}{ \left( 1 + y^2 \right) \left( 1 + x^2 \right) } dxdy =
+\int \limits_{- \infty }^{+ \infty } \frac{c}{1 + y^2} \int \limits_{- \infty }^{+ \infty } \frac{1}{1 + x^2} dxdy.$$
+Вычислим интеграл по $dx$.
+Получим
+$$1 =
+\int \limits_{- \infty }^{+ \infty } \left. \frac{c}{1 + y^2} \cdot arctg x \right|_{- \infty }^{+ \infty } dy.$$
+Подставим пределы интегрирования
+$$1 =
+\int \limits_{- \infty }^{+ \infty } \frac{c}{1 + y^2} \left[ arctg \left( + \infty \right) - arctg \left( - \infty \right) \right] dy.$$
+Раскроем скобки
+$$1 =
+\int \limits_{- \infty }^{+ \infty } \frac{c}{1 + y^2} \left[ \frac{ \pi }{2} - \left( - \frac{ \pi }{2} \right) \right] dy =
+\int \limits_{- \infty }^{+ \infty } \frac{c}{1 + y^2} \left( \frac{ \pi }{2} + \frac{ \pi }{2} \right) dy.$$
+Приведём подобные
+$$1 =
+\pi c \int \limits_{- \infty }^{+ \infty } \frac{dy}{1 + y^2} =
+\left. \pi c \cdot arctg y \right|_{- \infty }^{+ \infty } =
+\pi c \cdot \pi =
+\pi^2 c.$$
+Отсюда следует, что
+$$c =
+\frac{1}{ \pi^2};$$
+\item находим плотности каждой из случайных величин ка плотности компонент вектора
+$$p_{ \xi_1} \left( x \right) =
+\int \limits_{- \infty }^{+ \infty } p \left( x, y \right) dy =
+\int \limits_{- \infty }^{+ \infty } \frac{c}{1 + x^2 + x^2 y^2 + y^2} dy.$$
+Разложим знаменатель дроби на множители
+$$p_{ \xi_1} \left( x \right) =
+\int \limits_{- \infty }^{+ \infty } \frac{1}{ \pi^2 \left( 1 + y^2 \right) \left( 1 + x^2 \right) } dy =
+\frac{1}{ \pi^2 \left( 1 + x^2 \right) } \int \limits_{- \infty }^{+ \infty } \frac{1}{1 + y^2} dy.$$
+Вычислим интеграл
+$$p_{ \xi_1} \left( x \right) =
+\frac{1}{ \pi^2 \left( 1 + x^2 \right) } \cdot \pi.$$
+Одно $ \pi $ сокращается
+$$p_{ \xi_1} \left( x \right) =
+\frac{1}{ \pi \left( 1 + x^2 \right) }.$$
+
+Теперь ищем плотность $ \xi_2$ аналогичным образом
+$$p_{ \xi_2} \left( y \right) =
+\int \limits_{- \infty }^{+ \infty } p \left( x, y \right) dx =
+\int \limits_{- \infty }^{+ \infty } \frac{c}{1 + x^2 + x^2 y^2 + y^2 } dx.$$
+Разложим знаменатель дроби на множители
+$$p_{ \xi_2} \left( y \right) =
+\int \limits_{- \infty }^{+ \infty } \frac{1}{ \pi^2 \left( 1 + y^2 \right) \left( 1 + x^2 \right) } dx =
+\frac{1}{ \pi^2 \left( 1 + y^2 \right) } \int \limits_{- \infty }^{+ \infty } \frac{1}{1 + x2} dx.$$
+Вычислим интеграл
+$$p_{ \xi_2} \left( y \right) =
+\frac{1}{ \pi^2 \left( 1 + y^2 \right) } \cdot \pi.$$
+Одно $ \pi $ сокращается
+$$p_{ \xi_2} \left( y \right) =
+\frac{1}{ \pi \left( 1 + y^2 \right) };$$
+\item ищем вероятность
+$$P \left( \left| \xi_1 \right| \leq 1, \left| \xi_2 \right| \leq 1 \right) =
+P \left( -1 \leq \xi_1 \leq 1, -1 \leq \xi_2 \leq 1 \right).$$
+Вероятность представляем как математическое ожидание индикатора события
+$$P \left( \left| \xi_1 \right| \leq 1, \left| \xi_2 \right| \leq 1 \right) =
+M \mathbbm{1} \left( -1 \leq \xi_1 \leq 1, -1 \leq \xi_2 \leq 1 \right).$$
+Вычисляем математическое ожидание
+$$P \left( \left| \xi_1 \right| \leq 1, \left| \xi_2 \right| \leq 1 \right) =
+\int \limits_{- \infty }^{+ \infty } \int \limits_{- \infty }^{+ \infty } \mathbbm{1} \left( -1 \leq \xi_1 \leq 1, -1 \leq \xi_2 \leq 1 \right) p \left( x, y \right) dxdy.$$
+Меняем пределы интегрирования за счёт индикатора
+$$P \left( \left| \xi_1 \right| \leq 1, \left| \xi_2 \right| \leq 1 \right) =
+\int \limits_{-1}^1 \int \limits_{-1}^1 p \left( x, y \right) dxdy.$$
+Подставляем вид плотности распределения
+$$P \left( \left| \xi_1 \right| \leq 1, \left| \xi_2 \right| \leq 1 \right) =
+\int \limits_{-1}^1 \int \limits_{-1}^1 \frac{1}{ \pi^2 \left( 1 + y^2 \right) \left( 1 + x^2 \right) } dxdy.$$
+Вычисляем внутренний интеграл
+$$P \left( \left| \xi_1 \right| \leq 1, \left| \xi_2 \right| \leq 1 \right) =
+\frac{1}{ \pi^2} \int \limits_{-1}^1 \left. \frac{1}{1 + y^2} \cdot arctg x \right|_{-1}^1 dy.$$
+Подставляем пределы интегрирования
+$$P \left( \left| \xi_1 \right| \leq 1, \left| \xi_2 \right| \leq 1 \right) =
+\frac{1}{ \pi^2} \int \limits_{-1}^1 \frac{ \pi }{2} \cdot \frac{1}{1 + y^2} dy =
+\frac{1}{ \pi^2} \cdot \frac{ \pi }{2} \cdot \frac{ \pi }{2}.$$
+Сокращаем $ \pi^2$ и в итоге получаем
+$$P \left( \left| \xi_1 \right| \leq 1, \left| \xi_2 \right| \leq 1 \right) =
+\frac{1}{4}.$$
+\end{enumerate}
+
+Проверим, являются ли случайные величины независимыми.
+Для этого сравним произведение плотностей компонент вектора с плотностью вектора
+$$p_{ \xi_1} \left( x \right) \cdot p_{ \xi_2} \left( y \right) =
+\frac{1}{ \pi \left( 1 + x^2 \right) } \cdot \frac{1}{ \pi \left( 1 + y^2 \right) } =
+\frac{1}{ \pi^2 \left( 1 + x^2 \right) \left( 1 + y^2 \right) } =
+p_{ \left( \xi_1, \xi_2 \right) } \left( x, y \right).$$
+Отсюда следует, что $ \xi_1, \xi_2$ --- независимы.
