@@ -504,7 +504,7 @@ $$F_{ \xi + \eta } \left( x \right) =
 P \left( \xi + \eta \leq x \right) =
 \sum \limits_{k = - \infty }^{+ \infty } P \left( \left. \xi + \eta \leq x \right| \eta = k \right) \cdot P \left( \eta = k \right).$$
 Подставим $ \eta = k$ в условной вероятности и значение вероятности из условия.
-А так же заменим вероятность на функцию распределения
+Также заменим вероятность на функцию распределения
 $$F_{ \xi + \eta } \left( x \right) =
 \sum \limits_{k = - \infty }^{+ \infty } P \left( \eta = k \right) \cdot P \left( \xi + k \leq x \right) =
 \sum \limits_{k = - \infty }^{+ \infty } p_k \cdot F_{ \xi } \left( x-k \right).$$
@@ -525,7 +525,7 @@ p_{x-1} + p_x.$$
 \subsubsection*{11.15}
 
 \textit{Задание.} Пусть $ \xi $ --- случайная величина с функцией распределения $F$.
-Найдите функцию распределения случайного вектора $ \left) \xi, \xi \right) $.
+Найдите функцию распределения случайного вектора $ \left( \xi, \xi \right) $.
 
 \textit{Решение.} Есть случайный вектор, который имеет две компоненты.
 Поэтому фукция распределения будет иметь 2 аргумента.
@@ -545,14 +545,14 @@ p_{x-1} + p_x.$$
 $$F_{ \left( \xi, \xi \right) } \left( x, y \right) =
 \begin{cases}
 P \left( \xi \leq x \right), \qquad x \leq y, \\
-P \left( \xi \leq y \right), \qquad x > y.
+P \left( \xi \leq y \right), \qquad x \geq y.
 \end{cases}$$
 
 Выражаем это через функцию распределения
 $$F_{ \left( \xi, \xi \right) } \left( x, y \right) =
 \begin{cases}
 F \left( x \right), \qquad x \leq y, \\
-F \left( y \right), \qquad x > y.
+F \left( y \right), \qquad x \geq y.
 \end{cases} =
 F \left( \min \left( x, y \right) \right).$$
 
