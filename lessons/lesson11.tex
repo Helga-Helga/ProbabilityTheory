@@ -905,3 +905,65 @@ $$p_{ \xi_1} \left( x \right) \cdot p_{ \xi_2} \left( y \right) =
 \frac{1}{ \pi^2 \left( 1 + x^2 \right) \left( 1 + y^2 \right) } =
 p_{ \left( \xi_1, \xi_2 \right) } \left( x, y \right).$$
 Отсюда следует, что $ \xi_1, \xi_2$ --- независимы.
+
+\subsubsection*{11.17}
+
+\textit{Задание.} Пусть $ \xi $ и $ \eta $ --- независимые случайные величины, каждая из которых распределена по показательному распределению с параметром
+$$ \alpha > 0.$$
+Докажите, что $ \xi/ \left( \xi + \eta \right) $ имеет равномерное распределение на отрезке $ \left[ 0, 1 \right] $.
+
+\textit{Решение.} Найдём функцию распределения по определению
+$$F_{ \frac{ \xi }{ \xi + \eta }} \left( x \right) =
+P \left( \frac{ \xi }{ \xi + \eta } \leq x \right) =
+M \mathbbm{1} \left( \frac{ \xi }{ \xi + \eta } \leq x \right\}.$$
+
+Так как случайные величины $ \xi $ и $ \eta $ --- независимы, то
+$p_{ \left( \xi, \eta \right) } \left( x, y \right) = \\
+= p_{ \xi } \left( x \right) p_{ \eta } \left( y \right) =
+\alpha e^{- \alpha x} \cdot \mathbbm{1} \left( x \geq 0 \right) \cdot \alpha e^{- \alpha y} \cdot \mathbbm{1} \left( y \geq 0 \right) =
+\alpha^2 e^{- \alpha x} e^{- \alpha y} \mathbbm{1} \left( x \geq 0, y \geq 0 \right) $.
+
+Из этого следует, что
+$$F_{ \frac{ \xi }{ \xi + \eta }} \left( x \right) =
+\iint \limits_{ \mathbb{R}^2} \mathbbm{1} \left( \frac{z}{z+y} \leq x \right) \cdot
+\mathbbm{1} \left( x \geq 0, y \geq 0 \right) \cdot \alpha^2 e^{- \alpha z} e^{- \alpha y} dzdy.$$
+Изменим пределы интегрирования за счёт индикатора
+\begin{equation*}
+\begin{split}
+F_{ \frac{ \xi }{ \xi + \eta }} \left( x \right) =
+\int \limits_0^{+ \infty } \int \limits_0^{+ \infty } \mathbbm{1} \left( z \leq xz + xy \right) \alpha^2 e^{- \alpha z} e^{- \alpha y} dzdy = \\
+= \alpha^2 \int \limits_0^{+ \infty } \int \limits_0^{+ \infty } \mathbbm{1} \left( z - xz \leq xy \right) e^{- \alpha z} e^{- \alpha y} dzdy = \\
+= \alpha^2 \int \limits_0^{+ \infty } \int \limits_0^{+ \infty } \mathbbm{1} \left( z \left( 1 - x\right) \leq xy \right) e^{- \alpha z} e^{- \alpha y} dzdy = \\
+= \alpha^2 \int \limits_0^{+ \infty } \int \limits_0^{+ \infty } \mathbbm{1} \left( z \leq \frac{xy}{1-x} \right) e^{- \alpha z} e^{- \alpha y} dzdy =
+\alpha^2 \int \limits_0^{+ \infty } \int \limits_0^{ \frac{xy}{1-x}} e^{- \alpha z} e^{- \alpha y} dzdy = \\
+= \alpha^2 \int \limits_0^{+ \infty } \left. e^{- \alpha y} \frac{1}{- \alpha } \cdot e^{- \alpha z} \right|_0^{ \frac{xy}{1-x}} dy =
+- \alpha \int \limits_0^{+ \infty } e^{- \alpha y} \left( e^{- \alpha \cdot \frac{xy}{1-x}} - 1 \right) dy = \\
+= - \alpha \int \limits_0^{+ \infty } \left( e^{- \alpha y - \alpha \cdot \frac{xy}{1-x}} - e^{- \alpha y} \right) dy =
+- \alpha \int \limits_0^{+ \infty } e^{- \alpha y \left( 1 + \frac{x}{1-x} \right) } dy + \alpha \int \limits_0^{+ \infty } e^{- \alpha y} dy = \\
+= - \alpha \int \limits_0^{+ \infty } e^{- \alpha y \cdot \frac{1-x+x}{1-x}} dy - \left. \alpha \cdot \frac{1}{- \alpha } \cdot e^{- \alpha y} \right|_0^{+ \infty } =
+\left. - \alpha \cdot \frac{1}{- \alpha } \cdot \left( 1-x \right) e^{- \alpha y} \right|_0^{+ \infty } - \\
+- \left. e^{- \alpha y} \right|_0^{+ \infty } =
+\left. \left( 1-x \right) e^{- \alpha y} \right|_0^{+ \infty } - \left. e^{- \alpha y} \right|_0^{+ \infty } =
+\left. e^{- \alpha y} \right|_0^{+ \infty } \left( 1-x-1 \right) = \\
+= -x \left( e^{- \infty } -1 \right) =
+x.
+\end{split}
+\end{equation*}
+
+Запишем результат в виде системы
+$$F_{ \frac{ \xi }{ \xi + \eta }} \left( x \right) =
+\begin{cases}
+0, \qquad x < 0, \\
+x, \qquad x \in \left[ 0, 1 \right], \\
+1, \qquad x > 1.
+\end{cases}$$
+
+Найдём плотность распределения как производную от функции распределения
+$$p_{ \frac{ \xi }{ \xi + \eta }} \left( x \right) =
+F'_{ \frac{ \xi }{ \xi + \eta }} \left( x \right) =
+\begin{cases}
+0, \qquad x < 0, \\
+1, \qquad x \in \left[ 0, 1 \right], \\
+0, \qquad x > 1
+\end{cases} =
+\mathbbm{1} \left( x \in \left[ 0, 1 \right] \right).$$
