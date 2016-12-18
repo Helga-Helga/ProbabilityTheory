@@ -577,6 +577,61 @@ p \left( 1-p \right)^{k-1 + \left( n-1 \right) \left( l-1 \right) } - \\
 - p \left( 1-p \right)^{ \left( k-1 \right) \left( n-1 \right) l} =
 p \left( 1-p \right)^{ \left( k-1 \right) + \left( n-1 \right) \left( l-1 \right) } \left( 1- \left( 1-p \right)^{n-1} \right)$.
 
+\subsubsection*{11.11}
+
+\textit{Задание.} Пусть $ \xi_1, \xi_2$ --- показательно распределённые с параметром $ \lambda $ независимые случайные величины.
+Вычислите вероятность
+$$P \left\{ \xi_1 < x, \xi_1 + \xi_2 < y \right\},
+x, y \in \left[ 0, + \infty \right).$$
+
+\textit{Решение.} 
+\begin{equation*}
+\begin{split}
+P \left\{ \xi_1 < x, \xi_1 + \xi_2 < y \right\} =
+M \mathbbm{1} \left( \xi_1 < x, \xi_1 + \xi_2 < y \right\} = \\
+= \int \limits_{- \infty }^{+ \infty } \mathbbm{1} \left\{ z_1 < x, z_1 + z_2 < y \right\} p_{ \xi_1} \left( z_1 \right) p_{ \xi_2} \left( z_2 \right) dz_1 dz_2.
+\end{split}
+\end{equation*}
+Случайные величины $ \xi_1, \xi_2$ --- независимые, поэтому плотность их совместного распределения равна произведению их плотностей
+$$P \left\{ \xi_1 < x, \xi_1 + \xi_2 < y \right\} =
+\int \limits_0^x \int \limits_0^{+ \infty } \mathbbm{1} \left\{ z_1 < x, z_1 + z_2 < y \right\} \lambda^2 e^{- \lambda \left( z_1 + z_2 \right) } dz_1 dz_2.$$
+Нужно рассматривать 2 случая:
+\begin{enumerate}
+\item при $x < y$ получаем
+$$P \left\{ \xi_1 < x, \xi_1 + \xi_2 < y \right\} =
+\int \limits_0^x \int \limits_0^{y - z_1} \lambda^2 e^{- \lambda \left( z_1 + z_2 \right) } dz_1 dz_2.$$
+Разбиваем на две экспоненты
+$$P \left\{ \xi_1 < x, \xi_1 + \xi_2 < y \right\} =
+\int \limits_0^x \int \limits_0^{y-z_1} \lambda^2 e^{- \lambda z_1} e^{- \lambda z_2} dz_1 dz_2.$$
+Берём внутренний интеграл
+$$P \left\{ \xi_1 < x, \xi_1 + \xi_2 < y \right\} =
+\int \limits_0^x \left. \lambda^2 e^{- \lambda z_1} \cdot \frac{1}{- \lambda } \cdot e^{- \lambda z_2} \right|_0^{y-z_1} dz_1.$$
+Сокращаем $ \lambda $ и получаем
+$$P \left\{ \xi_1 < x, \xi_1 + \xi_2 < y \right\} =
+- \lambda \int \limits_0^x e^{- \lambda z_1} \left( e^{- \lambda \left( y-z_1 \right) } - 1 \right) dz_1.$$
+Раскрываем скобки
+$$P \left\{ \xi_1 < x, \xi_1 + \xi_2 < y \right\} =
+- \lambda \int \limits_0^x \left( e^{- \lambda z_1 - \lambda y + \lambda z_1} - e^{- \lambda z_1} \right) dz_1.$$
+Слагаемые $- \lambda z_1$ и $ \lambda z_1$ уничтожаются
+$$P \left\{ \xi_1 < x, \xi_1 + \xi_2 < y \right\} =
+- \lambda \int \limits_0^x \left( e^{- \lambda y} - e^{- \lambda z_1} \right) dz_1.$$
+Берём интеграл
+$$P \left\{ \xi_1 < x, \xi_1 + \xi_2 < y \right\} =
+\left. - \lambda e^{- \lambda y} \cdot z_1 \right|_0^x - \left. \lambda \cdot \frac{1}{ \lambda } \cdot e^{- \lambda z_1} \right|_0^x.$$
+Подставляем пределы интегрирования
+$$P \left\{ \xi_1 < x, \xi_1 + \xi_2 < y \right\} =
+- \lambda e^{- \lambda y} x - e^{- \lambda x} + 1;$$
+\item при $x > y$ получаем
+\begin{equation*}
+\begin{split}
+P \left\{ \xi_1 < x, \xi_1 + \xi_2 < y \right\} =
+P \left\{ \xi_1 < y, \xi_1 + \xi_2 < y \right\} = \\
+= P \left\{ \xi_1 \leq \min \left( x, y \right), \xi_1 + \xi_2 < y \right\} =
+- \lambda e^{- \lambda y} \min \left( x, y \right) - e^{- \lambda \min \left( x, y \right) } + 1.
+\end{split}
+\end{equation*}
+\end{enumerate}
+
 \addcontentsline{toc}{section}{Домашнее задание}
 \section*{Домашнее задание}
 
