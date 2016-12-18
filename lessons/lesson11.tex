@@ -748,24 +748,17 @@ $$p_0 + p_1 + p_{-1} + \dotsc =
 $$F_{ \xi + \eta } \left( x \right) =
 P \left( \xi + \eta \leq x \right) =
 \sum \limits_{k = - \infty }^{+ \infty } P \left( \left. \xi + \eta \leq x \right| \eta = k \right) \cdot P \left( \eta = k \right).$$
-Подставим $ \eta = k$ в условной вероятности и значение вероятности из условия.
+Подставим $ \eta = k$ в условной вероятности и значение вероятности из условия, так как случайные величины независимы
 Также заменим вероятность на функцию распределения
 $$F_{ \xi + \eta } \left( x \right) =
-\sum \limits_{k = - \infty }^{+ \infty } P \left( \eta = k \right) \cdot P \left( \xi + k \leq x \right) =
-\sum \limits_{k = - \infty }^{+ \infty } p_k \cdot F_{ \xi } \left( x-k \right).$$
+\sum \limits_{k = - \infty }^{+ \infty } P \left( \eta = k \right) \cdot P \left( \xi + k \leq x \right).$$
+Случайная величина $ \xi $ меняется в пределах $0 \leq \xi \leq x - k, k \leq \left[ x \right] $, поэтому
+$$F_{ \xi + \eta } \left( x \right) =
+\sum \limits_{k \leq \left[ x \right] } \min \left( 1, x-k \right) p_k.$$
 
-Найдём плотность распределения как производную от функции распределения и запишем плотность распределения из условия
-$$p_{ \xi + \eta } \left( x \right) =
-\sum \limits_{k = - \infty }^{+ \infty } p_k \cdot p_{ \xi } \left( x-k \right) =
-\sum \limits_{k = - \infty }^{+ \infty } p_k \cdot \mathbbm{1} \left( x-k \in \left[ 0, 1 \right] \right).$$
-Перенесём $x$ вправо и умножим на $-1$ левую и правую части
-$$p_{ \xi + \eta } \left( x \right) =
-\sum \limits_{k = - \infty }^{+ \infty } p_k \cdot \mathbbm{1} \left( -k \in \left[ -x, 1-x \right] \right) =
-\sum \limits_{k = - \infty }^{+ \infty } p_k \cdot \mathbbm{1} \left( k \in \left[ x-1, x \right] \right).$$
-Изменим пределы интегрирования за счёт индикатора и запишем сумму в явном виде
-$$p_{ \xi + \eta } \left( x \right) =
-\sum \limits_{k =x-1}^{x} p_k =
-p_{x-1} + p_x.$$
+Найдём плотность распределения как производную от функции распределения и запишем плотность распределения из условия.
+
+Функция не дифференцируема, поэтому плотности нет.
 
 \subsubsection*{11.15}
 
