@@ -416,6 +416,35 @@ $$p_{ \sqrt{ \xi_1^2 + \xi_2^2}} \left( t \right) =
 - e^{- \frac{t^2}{2}} \cdot \left( - \frac{2t}{2} \right) \cdot \mathbbm{1} \left( t > 0 \right) =
 te^{- \frac{t^2}{2}} \cdot \mathbbm{1} \left( t > 0 \right).$$
 
+\subsubsection*{11.8}
+
+\textit{Задание.} Пусть $ \xi_1, \dotsc, \xi_5$ --- независимые случайные величины.
+Случайные величины $ \xi_1, \dotsc, \xi_4$ равномерно распределены на отрезке $ \left[ 0, 2 \right] $,
+а $ \xi_5$ имеет плотность распределения $p \left( x \right) = 2x \mathbbm{1}_{ \left[ 0, 1 \right] }$.
+Вычислите вероятность $P \left( \xi_1 \leq \xi_2 \leq \dotsc \leq \xi_5 \leq x \right), x \in \mathbb{R}$.
+
+\textit{Решение.}
+\begin{enumerate}
+\item При $x \leq 0$ искомая вероятность равна нулю;
+\item при $x \geq 2$ искомая вероятность равна единице;
+\item при $0 < x < 2$ искомая вероятность равна
+\begin{equation*}
+\begin{split}
+\int \limits_0^2 \int \limits_0^2 \int \limits_0^2 \int \limits_0^2 \int \limits_0^2 \mathbbm{1} \left\{ z_1 \leq z_2 \leq \dotsc \leq z_5 \leq x \right\} \cdot
+\left( \frac{1}{2} \right)^4 \cdot 2 \cdot z_5 \cdot \mathbbm{1}_{ \left[ 0, 1 \right] } \left( z_5 \right) \times \\
+\times dz_1 \dotsc dz_5 = \\
+= \frac{1}{8} \int \limits_0^2 \int \limits_0^2 \int \limits_0^2 \int \limits_0^2 \int \limits_0^1
+\mathbbm{1} \left\{ z_1 \leq z_2 \leq \dotsc \leq z_5 \leq x \right\} z_5 dz_1 \dotsc dz_5 = \\
+= \frac{1}{8} \int \limits_0^1 \int \limits_0^1 \int \limits_0^1 \int \limits_0^1 \int \limits_0^1
+\mathbbm{1} \left\{ z_1 \leq z_2 \leq \dotsc \leq z_5 \leq x \right\} z_5 dz_1 \dotsc dz_5.
+\end{split}
+\end{equation*}
+
+Это получается при $x > 1$.
+
+При $x \leq 1$ в верхний предел интегралов будет $x$.
+\end{enumerate}
+
 \subsubsection*{11.9}
 
 \textit{Задание.} Пусть $ \xi $ и $ \eta $ --- независимые случайные величины, каждая из которых распределена по показательному распределению с параметром $ \alpha $.
