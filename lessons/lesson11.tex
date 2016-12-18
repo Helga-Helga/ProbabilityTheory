@@ -512,6 +512,71 @@ $$p_{ \frac{ \xi }{ \eta }} \left( x \right) =
 \frac{x}{ \left( 1 + x \right)^2} =
 p_{ \zeta } \left( x \right).$$
 
+\subsubsection*{11.10}
+
+\textit{Задание.}
+Пусть $X_1, \dotsc, X_n$ --- независимые случайные величины, каждая из которых имеет геометрическое распределение с параметром $p$.
+Вычислите вероятность $P \left( X_1 = k, X_{ \left( 1 \right) } = l \right) $,
+где $X_{ \left( 1 \right) } = \min \left\{ X_1, \dotsc, X_n \right\} $.
+
+\textit{Решение.} Геометрическое распределение имеет вид
+$$P \left( X_i = k \right) = q^{k-1} p,
+k > 0,
+i = \overline{1,n},
+q = 1 - p.$$
+
+Если $k < l$, то искомая вероятность нулевая, потому что минимум не может быть больше чем одно из значений.
+Поэтому нужно рассматривать случай, когда $k \geq l$.
+Сначала будем искать вероятность $P \left( X_1 = k, X_{ \left( 1 \right) } \geq l \right) $.
+Тогда
+$P \left( X_1 = k, X_{ \left( 1 \right) } = l \right) =
+P \left( X_1 = k, X_{ \left( 1 \right) } \geq l \right) - P \left( X_1 = k, X_{ \left( 1 \right) } \geq l + 1 \right) $.
+
+Ищем вероятность
+$$P \left( X_1 = k, X_{ \left( 1 \right) } \geq l \right) =
+P \left\{ X_1 = k, X_1 \geq l, X_2 \geq l, \dotsc, X_n \geq l \right\}.$$
+Если $l \geq l$, то если $X_1 = k$, то автоматически $X_1 \geq l$.
+Получаем
+$$P \left( X_1 = k, X_{ \left( 1 \right) } \geq l \right) =
+P \left( X_1 = k, X_2 \leq l, \dotsc, X_n \leq l \right\}.$$
+Пользуемся независимостью
+\begin{equation*}
+\begin{split}
+P \left( X_1 = k, X_{ \left( 1 \right) } \geq l \right) =
+P \left\{ X_1 = k \right\} \cdot P \left\{ X_2 \geq l \right\} \cdot \dotsc P \left\{ X_n \geq l \right\} = \\
+= p \left( 1-p \right)^{k-1} \cdot \left( P \left\{ X_2 \geq l \right\} \right)^{n-1} =
+p \left( 1-p \right)^{k-1} \cdot \left( \sum \limits_{i=1}^{+ \infty } P \left\{ X_2 = i \right\} \right)^{n-1}.
+\end{split}
+\end{equation*}
+Подставим значение вероятности
+$$P \left( X_1 = k, X_{ \left( 1 \right) } \geq l \right) =
+p \left( 1-p \right)^{k-1} \cdot \left( \sum \limits_{i=l}^{+ \infty } p \left( 1-p \right)^{i-1} \right)^{n-1}.$$
+Пользуемся формулой для суммы геометрической прогрессии
+$$P \left( X_1 = k, X_{ \left( 1 \right) } \geq l \right) =
+pp^{n-1} \left( 1-p \right)^{k-1} \cdot \left( \frac{ \left( 1-p \right)^{l-1}}{1 - \left( 1-p \right) } \right)^{n-1}.$$
+Раскроем скобки в знаменателе
+$$P \left( X_1 = k, X_{ \left( 1 \right) } \geq l \right) =
+p^n \left( 1-p \right)^{k-1} \cdot \left( \frac{ \left( 1-p \right)^{l-1}}{p} \right)^{n-1}.$$
+Сократим на $p^{n-1}$ и получим
+$$P \left( X_1 = k, X_{ \left( 1 \right) } \geq l \right) =
+p \left( 1-p \right)^{k-1} \cdot \left( 1-p \right)^{\left( l-1 \right) \left( n-1 \right)} =
+p \left( 1-p \right)^{l \left( n-1 \right) + n}$$
+при условии, что $k \geq l$.
+А иначе --- 0.
+
+Воспользуемся формулой 
+$P \left( X_1 = k, X_{ \left( 1 \right) } = l \right) =
+P \left( X_1 = k, X_{ \left( 1 \right) } \geq l \right) - P \left( X_1 = k, X_{ \left( 1 \right) } \geq l + 1 \right) $.
+Возникает 2 случая.
+Если $k < l$, то обе вероятности равны нулю.
+В случае, когда $k = l$, вторая вероятность равна нулю и ответ: $p \left( 1-p \right)^{n \left( n-1 \right) }$.
+При $k \geq l + 1$ нужно найти разность
+$P \left( X_1 = k, X_{ \left( 1 \right) } = l \right) = \\
+= P \left( X_1 = k, X_{ \left( 1 \right) } \geq l \right) - P \left( X_1 = k, X_{ \left( 1 \right) } \geq l + 1 \right) =
+p \left( 1-p \right)^{k-1 + \left( n-1 \right) \left( l-1 \right) } - \\
+- p \left( 1-p \right)^{ \left( k-1 \right) \left( n-1 \right) l} =
+p \left( 1-p \right)^{ \left( k-1 \right) + \left( n-1 \right) \left( l-1 \right) } \left( 1- \left( 1-p \right)^{n-1} \right)$.
+
 \addcontentsline{toc}{section}{Домашнее задание}
 \section*{Домашнее задание}
 
