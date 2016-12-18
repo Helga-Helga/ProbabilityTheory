@@ -1,0 +1,57 @@
+\addcontentsline{toc}{chapter}{Занятие 14. Сходимость последовательностей случайных величин}
+\chapter*{Занятие 11. Сходимость последовательностей случайных величин}
+
+\addcontentsline{toc}{section}{Контрольные вопросы и задания}
+\section*{Контрольные вопросы и задания}
+
+\addcontentsline{toc}{section}{Аудиторные задачи}
+\section*{Аудиторные задачи}
+
+\subsubsection*{14.3}
+
+\textit{Задание.} Пусть $ \left\{ \xi_n \right\}_{n \geq 1}$ --- последовательность нормально распределённых случайных величин,
+$$ \xi_n \sim N \left( a, \frac{1}{n} \right).$$
+Докажите, что:
+\begin{enumerate}[label=\alph*)]
+\item $ \xi_n \overset{P}{ \rightarrow } a;$
+\item $ \xi_n \overset{L_2}{ \rightarrow } a;$
+\item $ \xi_n \overset{L_p}{ \rightarrow } a, p \geq 1$.
+\end{enumerate}
+
+\textit{Решение.}
+\begin{enumerate}[label=\alph*)]
+\item Запишем определение сходимости по вероятности
+$$ \forall \epsilon > 0,
+\qquad P \left\{ \left| \xi_n - a \right| > \epsilon \right\} \rightarrow 0$$
+при $n \rightarrow \infty $.
+
+Неравенство Чебышева
+$$P \left\{ \left| \xi_n - a \right| > \epsilon \right\} =
+P \left\{ \left| \xi_n - a \right|^2 > \epsilon^2 \right\} \leq
+\frac{M \left| \xi_n - a \right|^2}{ \epsilon^2} =
+\frac{1}{n \epsilon^2} \rightarrow
+0$$
+при $n \to \infty $.
+Сходимость по вероятности есть;
+\item $ \xi_n \overset{L_2}{ \rightarrow } a$.
+Это означает, что $M \left| \xi_n - a \right| \rightarrow 0$.
+Имеем
+$$M \left| \xi_n - a \right| =
+\frac{1}{n} \rightarrow
+0;$$
+\item неравенство Ляпунова
+$ \left( M \left| \zeta \right|^{r_1} \right)^{ \frac{1}{r_1}} \leq \left( M \left| \zeta \right|^{r_2} \right)^{ \frac{1}{r_2}},$ где $ \zeta = \xi_n - a$.
+
+В этом случае
+$$M \left| \xi_n - a \right|^{2k} =
+\frac{ \left( 2k-1 \right)!!}{n^{2k}} \rightarrow
+0.$$
+
+Случайная величина имеет распределение $ \xi \sim N \left( 0, \sigma^2 \right) $.
+Из этого следует, что $M \xi^{2k} = \left( 2k-1 \right)!! \cdot \sigma^{2k}$,
+где двойной факториал означает произведение всех нечётных целых положительных числе до $ \left( 2k-1 \right) $.
+Получаем, что в любом $L_{2k}$ есть сходимость.
+\end{enumerate}
+
+\addcontentsline{toc}{section}{Домашнее задание}
+\section*{Домашнее задание}
