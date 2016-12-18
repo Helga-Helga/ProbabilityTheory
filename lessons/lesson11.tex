@@ -416,6 +416,102 @@ $$p_{ \sqrt{ \xi_1^2 + \xi_2^2}} \left( t \right) =
 - e^{- \frac{t^2}{2}} \cdot \left( - \frac{2t}{2} \right) \cdot \mathbbm{1} \left( t > 0 \right) =
 te^{- \frac{t^2}{2}} \cdot \mathbbm{1} \left( t > 0 \right).$$
 
+\subsubsection*{11.9}
+
+\textit{Задание.} Пусть $ \xi $ и $ \eta $ --- независимые случайные величины, каждая из которых распределена по показательному распределению с параметром $ \alpha $.
+Найдите функцию и плотность распределения случайной величины $ \xi/\eta $.
+
+\textit{Решение.}
+Плотности распределения случайных величин
+$$p_{ \eta } \left( x \right) =
+p_{ \eta } \left( x \right) =
+\alpha e^{- \alpha x} \cdot \mathbbm{1} \left( x \geq 0 \right).$$
+
+Искомая функция распределения
+$$F_{ \frac{ \xi }{ \eta }} \left( x \right) =
+P \left( \frac{ \xi }{ \eta } \leq x \right) =
+P \left( \xi \leq \eta x \right).$$
+
+Умеем считать плотность для суммы
+$$ \frac{ \xi }{ \eta } \rightarrow \tilde{ \xi } + \tilde{ \eta }.$$
+
+Есть случайная величина
+$$ \zeta =
+\frac{ \xi }{ \eta }.$$
+Можно взять логарифм того и другого и получить
+$$ \ln \zeta =
+\ln \xi - \ln \eta =
+\ln \xi + \left( - \ln \eta \right) =
+\xi' + \eta'.$$
+
+Так как $ \xi $ и $ \eta $ --- независимы, то $ \ln \xi, - \ln \eta $ --- тоже независимые.
+Нужно найти функцию распределения этих случайных величин
+$$F_{ \xi'} \left( x \right) =
+P \left( \xi' \leq x \right) =
+P \left( \xi \leq e^x \right) =
+F_{ \xi } \left( e^x \right).$$
+Плотность распределения $p_{ \xi'} \left( x \right) = \left( F_{ \xi } \left( e^x \right) \right)' = e^x p_{ \xi } \left( e^x \right) $.
+Подставим плотность распределения из условия $p_{ \xi'} \left( x \right) = \mathbbm{1} \left( e^x \geq 0 \right) \alpha e^x \cdot e^{- \alpha e^x}$.
+Индикатор равен единице, поэтому $p_{ \xi'} \left( x \right) = \alpha e^x \cdot e^{- \alpha e^x}$.
+Хотим распределить функцию распределения $ \eta'$.
+Получаем
+$F_{ \eta'} \left( x \right) =
+P \left( \eta' \leq x \right) =
+P \left( - \ln \eta \leq x \right) = \\
+= P \left( \ln \eta \geq -x \right) =
+P \left( \eta \geq -e^x \right) =
+1 - P \left( \eta \geq e^{-x} \right).$
+Случайная величина имеет равномерное распределение $F_{ \eta'} \left( x \right) = 1 - F_{ \xi } \left( e^{-x} \right) $.
+
+Плотность распределения
+$$p_{ \eta'} \left( x \right) =
+\left( 1 - F_{ \eta } \left( -e^{-x} \right) \right)' =
+e^x p_{ \xi } \left( e^{-x} \right) =
+\alpha e^{-x} \cdot e^{- \alpha e^{-x}}.$$
+
+Получаем плотность распределения суммы
+$$p_{ \xi' + \eta'} \left( x \right) =
+\int \limits_{- \infty }^{+ \infty } e^y e^{- \alpha e^y} e^{-x+y} e^{- \alpha e^{-x+y}} dy =
+\alpha^2 \int \limits_{ \mathbb{R}} e^{2y-x} \cdot e^{- \alpha \left( e^y + e^{-x+y} \right)} dy.$$
+Нужно сделать замену переменных.
+Нужно взять
+$$y = \ln z,
+dy = \frac{1}{z}dz.$$
+Отсюда следует, что $z = e^y, y = + \infty \Rightarrow z = + \infty, y = - \infty \Rightarrow z = 0$.
+Получаем
+$$p_{ \xi' + \eta'} \left( x \right) =
+\alpha^2 \int \limits_0^{+ \infty } e^{-x} \cdot x^2 e^{- \alpha x \left( 1 + e^{-x} \right) } dz \cdot \frac{1}{z}.$$
+Сокращаем $z$, а $e^{-x}$ выносим за знак интеграла
+$$p_{ \xi' + \eta'} \left( x \right) =
+\alpha^2 e^{-x} \int \limits_0^{+ \infty } ze^{- \alpha z \left( 1 + e^{-x} \right) } dz.$$
+Берём по частям
+$$u = z,
+du = dz,
+dv = e^{- \alpha x \left( 1 + e^{-x} \right) } dz,
+v = - \frac{1}{ \alpha \left( 1 + e^{-x} \right) } \cdot e^{- \alpha z \left( 1 + e^{-x} \right) }.$$
+Получаем
+\begin{equation*}
+\begin{split}
+p_{ \xi' + \eta'} \left( x \right) = \\
+= \alpha^2 e^{-x} \left( \left. - \frac{z}{ \alpha \left( 1 + e^{-x} \right) } \cdot e^{- \alpha + \left( 1 + e^{-x} \right) } \right|_0^{+ \infty } +
+\int \limits_0^{+ \infty } \frac{1}{ \alpha \left( 1 + e^{-x} \right) } \cdot e^{- \alpha z \left( 1 + e^{-x} \right) } dx \right) = \\
+= \alpha^2 e^{-x} \left( \left. - \frac{z}{ \alpha \left( 1 + e^{-x} \right) } \cdot e^{- \alpha z \left( 1 + e^{-x} \right) } \right|_0^{+ \infty } -
+\left. \frac{1}{ \alpha^2 \left( 1 + e^{-x} \right)^2 } \cdot e^{- \alpha z \left( 1 + e^{-x} \right)} \right|_0^{+ \infty } \right).
+\end{split}
+\end{equation*}
+Первое слагаемое превращается в 0
+$$p_{ \xi' + \eta'} \left( x \right) =
+\alpha^2 e^{-x} \cdot \frac{1}{ \alpha^2 \left( 1 + e^{-x} \right) ^2}.$$
+Сокращаем $ \alpha^2$ и получаем
+$$p_{ \xi' + \eta'} \left( x \right) = \frac{e^{-x}}{ \left( 1 + e^{-x} \right)^2} =
+p_{ \ln \left( \frac{ \xi }{ \eta } \right) } \left( x \right) =
+p_{ \ln \zeta } \left( x \right).$$
+
+В результате получаем
+$$p_{ \frac{ \xi }{ \eta }} \left( x \right) =
+\frac{x}{ \left( 1 + x \right)^2} =
+p_{ \zeta } \left( x \right).$$
+
 \addcontentsline{toc}{section}{Домашнее задание}
 \section*{Домашнее задание}
 
@@ -590,11 +686,12 @@ $$1 =
 Подставим пределы интегрирования
 $$1 =
 \int \limits_{- \infty }^{+ \infty } \frac{c}{1 + y^2} \left[ arctg \left( + \infty \right) - arctg \left( - \infty \right) \right] dy.$$
-Раскроем скобки
+На $- \infty $ арктангенс равен $ - \pi/2$, а на $+ \infty $ --- $ \pi/2$.
+Поэтому
 $$1 =
 \int \limits_{- \infty }^{+ \infty } \frac{c}{1 + y^2} \left[ \frac{ \pi }{2} - \left( - \frac{ \pi }{2} \right) \right] dy =
 \int \limits_{- \infty }^{+ \infty } \frac{c}{1 + y^2} \left( \frac{ \pi }{2} + \frac{ \pi }{2} \right) dy.$$
-Приведём подобные
+Приведём подобные и вынесем константу за знак интеграла
 $$1 =
 \pi c \int \limits_{- \infty }^{+ \infty } \frac{dy}{1 + y^2} =
 \left. \pi c \cdot arctg y \right|_{- \infty }^{+ \infty } =
@@ -603,11 +700,11 @@ $$1 =
 Отсюда следует, что
 $$c =
 \frac{1}{ \pi^2};$$
-\item находим плотности каждой из случайных величин ка плотности компонент вектора
+\item находим плотности каждой из случайных величин как плотности компонент вектора
 $$p_{ \xi_1} \left( x \right) =
 \int \limits_{- \infty }^{+ \infty } p \left( x, y \right) dy =
 \int \limits_{- \infty }^{+ \infty } \frac{c}{1 + x^2 + x^2 y^2 + y^2} dy.$$
-Разложим знаменатель дроби на множители
+Разложим знаменатель дроби на множители и подставим найденное значение константы
 $$p_{ \xi_1} \left( x \right) =
 \int \limits_{- \infty }^{+ \infty } \frac{1}{ \pi^2 \left( 1 + y^2 \right) \left( 1 + x^2 \right) } dy =
 \frac{1}{ \pi^2 \left( 1 + x^2 \right) } \int \limits_{- \infty }^{+ \infty } \frac{1}{1 + y^2} dy.$$
@@ -622,10 +719,10 @@ $$p_{ \xi_1} \left( x \right) =
 $$p_{ \xi_2} \left( y \right) =
 \int \limits_{- \infty }^{+ \infty } p \left( x, y \right) dx =
 \int \limits_{- \infty }^{+ \infty } \frac{c}{1 + x^2 + x^2 y^2 + y^2 } dx.$$
-Разложим знаменатель дроби на множители
+Разложим знаменатель дроби на множители и подставим найденное значение константы
 $$p_{ \xi_2} \left( y \right) =
 \int \limits_{- \infty }^{+ \infty } \frac{1}{ \pi^2 \left( 1 + y^2 \right) \left( 1 + x^2 \right) } dx =
-\frac{1}{ \pi^2 \left( 1 + y^2 \right) } \int \limits_{- \infty }^{+ \infty } \frac{1}{1 + x2} dx.$$
+\frac{1}{ \pi^2 \left( 1 + y^2 \right) } \int \limits_{- \infty }^{+ \infty } \frac{1}{1 + x^2} dx.$$
 Вычислим интеграл
 $$p_{ \xi_2} \left( y \right) =
 \frac{1}{ \pi^2 \left( 1 + y^2 \right) } \cdot \pi.$$
