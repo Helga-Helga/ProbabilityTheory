@@ -1094,3 +1094,66 @@ $$F_{ \xi_1^2 + \xi_2^2} \left( t \right) =
 Получим искомую плотность распределения
 $$p_{ \xi_1^2 + \xi_2^2} \left( t \right) =
 \frac{1}{2} \cdot e^{- \frac{t}{2}} \cdot \mathbbm{1} \left( t \geq 0 \right).$$
+
+\subsubsection*{11.20}
+
+\textit{Задание.} Пусть $ \xi_1, \xi_2$ --- равномерно распределённые на отрезке $ \left[ 0, 1 \right] $ независимые случайные величины.
+Вычислите вероятность
+$$P \left\{ \xi_1 < x, \xi_1 + 2 \xi_2 < y \right\},
+x, y \in \left[ 0, 1 \right].$$
+
+\textit{Решение.} Выпишем плотности $ \xi_1, \xi_2$ каждую из условия
+$$p_{ \xi_1} \left( x \right) =
+p_{ \xi_2} \left( x \right) =
+\frac{1}{b-a} \cdot \mathbbm{1} \left( x \in \left[ a, b \right] \right).$$
+Из условия известно, что $a = 0, b = 1$, то есть
+$$p_{ \xi_1} \left( x \right) =
+p_{ \xi_2} \left( x \right) =
+\mathbbm{1} \left( x \in \left[ 0, 1 \right] \right).$$
+
+Запишем вероятность через математическое ожидание индикатора
+\begin{equation*}
+\begin{split}
+P \left\{ \xi_1 < x, \xi_1 + 2 \xi_2 < y \right\} =
+M \mathbbm{1} \left\{ \xi_1 < x, \xi_1 + 2 \xi_2 < y \right\} = \\
+= \iint \limits_{ \mathbb{R}^2} \mathbbm{1} \left\{ z_1 < x, z_1 + 2 z_2 < y \right\} p_{ \xi_1} \left( z_1 \right) p_{ \xi_2} \left( z_2 \right) dz_1 dz_2.
+\end{split}
+\end{equation*}
+Случайные величины $ \xi_1, \xi_2$ --- независимы, поэтому плотность их совместного распределения равна произведению их плотностей
+\begin{equation*}
+\begin{split}
+P \left\{ \xi_1 < x, \xi_1 + 2 \xi_2 < y \right\} =
+\iint \limits_{ \mathbb{R}^2} \mathbbm{1} \left\{ z_1 < x, z_1 + 2 z_2 < y \right\} \cdot
+\mathbbm{1} \left( z_1 \in \left[ 0, 1 \right] \right) \times \\
+\times \mathbbm{1} \left( z_2 \in \left[ 0, 1 \right] \right) dz_1 dz_2 =
+\int \limits_0^1 \int \limits_0^1 \mathbbm{1} \left\{ z_1 < x, z_1 + 2 z_2 < y \right\} dz_1 dz_2.
+\end{split}
+\end{equation*}
+Рассмотрим 2 случая:
+\begin{enumerate}
+\item $x < y$.
+Получим
+$$P \left\{ \xi_1 < x, \xi_1 + 2 \xi_2 < y \right\} =
+\int \limits_0^x \int \limits_0^{ \frac{y-z_1}{2}} dz_1 dz_2 =
+\int \limits_0^x \frac{y-z_1}{2} dz_1.$$
+Вынесем константу за знак интеграла
+$$P \left\{ \xi_1 < x, \xi_1 + 2 \xi_2 < y \right\} =
+\frac{1}{2} \int \limits_0^x \left( y-z_1 \right) dz_1 =
+\left. \frac{1}{2} \left( yz_1 - \frac{z_1^2}{2} \right) \right|_0^x.$$
+Подставим пределы интегрирования
+$$P \left\{ \xi_1 < x, \xi_1 + 2 \xi_2 < y \right\} =
+\frac{1}{2} \left( xy - \frac{x^2}{2} \right);$$
+\item рассмотрим случай, когда $x > y$.
+Получаем
+$$P \left\{ \xi_1 < x, \xi_1 + 2 \xi_2 < y \right\} =
+P \left\{ \xi_1 < y, \xi_1 + 2 \xi_2 < y \right\} =
+\frac{1}{2} \left( y^2 - \frac{y^2}{2} \right).$$
+Приведём подобные
+$$P \left\{ \xi_1 < x, \xi_1 + 2 \xi_2 < y \right\} =
+\frac{1}{2} \cdot \frac{y^2}{2} =
+\frac{y^2}{4}.$$
+\end{enumerate}
+
+В общем случае получаем
+$$P \left\{ \xi_1 < x, \xi_1 + 2 \xi_2 < y \right\} =
+\frac{1}{2} \left( \min \left( x, y \right) y - \frac{\left[ \min \left( x, y \right) \right]^2}{2} \right).$$
