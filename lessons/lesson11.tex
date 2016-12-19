@@ -915,7 +915,7 @@ $$ \alpha > 0.$$
 \textit{Решение.} Найдём функцию распределения по определению
 $$F_{ \frac{ \xi }{ \xi + \eta }} \left( x \right) =
 P \left( \frac{ \xi }{ \xi + \eta } \leq x \right) =
-M \mathbbm{1} \left( \frac{ \xi }{ \xi + \eta } \leq x \right\}.$$
+M \mathbbm{1} \left\{ \frac{ \xi }{ \xi + \eta } \leq x \right\}.$$
 
 Так как случайные величины $ \xi $ и $ \eta $ --- независимы, то
 $p_{ \left( \xi, \eta \right) } \left( x, y \right) = \\
@@ -967,3 +967,120 @@ F'_{ \frac{ \xi }{ \xi + \eta }} \left( x \right) =
 0, \qquad x > 1
 \end{cases} =
 \mathbbm{1} \left( x \in \left[ 0, 1 \right] \right).$$
+
+\subsubsection*{11.18}
+
+\textit{Задание.} Пусть $ \xi_1, \dotsc, \xi_n$ --- независимые одинаково распределённые случайные величины с непрерывной функцией распределения $F$.
+Упорядочим их по величине $ \xi_{ \left( 1 \right) } \leq \xi_{ \left( 2 \right) } \leq \dotsc \leq \xi_{ \left( n \right) }$.
+Найдите функцию распределения случайных величин:
+\begin{enumerate}[label=\alph*)]
+\item $ \xi_{ \left( 1 \right) } = \min \left( \xi_1, \dotsc, \xi_n \right) $;
+\item $ \xi_{ \left( n \right) } = \max \left( \xi_1, \dotsc, \xi_n \right) $;
+\item $ \xi_{ \left( m \right) }$.
+\end{enumerate}
+
+\textit{Решение.}
+\begin{enumerate}[label=\alph*)]
+\item По определению
+$F_{ \xi_{ \left( 1 \right) }} \left( x \right) =
+P \left\{ \min \left( \xi_1, \dotsc, \xi_n \right) \leq x \right\}$.
+Перейдём к противоположному событию
+$F_{ \xi_{ \left( 1 \right) } } \left( x \right) =
+1 - P \left\{ \min \left( \xi_1, \dotsc, \xi_n \right) > x \right\}$.
+Это значит, что каждая из случайных величин больше $x$.
+Получаем
+$$F_{ \xi_{ \left( 1 \right) }} \left( x \right) =
+1 - P \left( \xi_1 > x, \dotsc, \xi_n > x \right) =
+1 - P \left( \xi_1 > x \right) \cdot \dotsc \cdot P \left( \xi_n > x \right).$$
+Перейдём к противоположным событиям
+$$F_{ \xi_{ \left( 1 \right) }} \left( x \right) =
+1 - \left[ 1 - P \left( \xi_1 \leq x \right) \right] \cdot \dotsc \cdot \left[ 1 - P \left( \xi_n \leq x \right) \right].$$
+Запишем через функцию распределения
+$$F_{ \xi_{ \left( 1 \right) }} \left( x \right) =
+1 - \left[ 1 - P \left( \xi_1 \leq x \right) \right]^n = 1 - \left[ 1 - F \left( x \right) \right]^n;$$
+\item аналогично
+$F_{ \xi_{ \left( n \right) }} \left( x \right) =
+P \left( \xi_{ \left( n \right) } \leq x \right) =
+P \left\{ \max \left( \xi_1, \dotsc, \xi_n \right) \leq x \right\}$.
+Это значит, что каждая из $n$ случайных величин не превосходит $x$.
+Получаем
+$F_{ \xi_{ \left( n \right) }} \left( x \right) =
+P \left( \xi_1 \leq x, \dotsc, \xi_n \leq x \right) =
+P \left( \xi_1 \leq x \right) \cdot \dotsc \cdot P \left( \xi_n \leq x \right)$.
+Так как случайные величины одинаково распределены, то
+$$F_{ \xi_{ \left( n \right) }} \left( x \right) =
+\left[ P \left( \xi_1 \leq x \right) \right]^n =
+\left[ F \left( x \right) \right]^n;$$
+\item  найдём функцию распределения $F_{ \xi_{\left( m \right) }} \left( x \right) = P \left( \xi_{ \left( m \right) } \leq x \right) = P$(хотя бы $m$ из $n$ случайных величин не превышают $x$)$=$
+$$= \sum \limits_{i=m}^n C_n^i \left[ F \left( x \right) \right]^i \left[ 1 - F \left( x \right) \right]^{n-i}.$$
+\end{enumerate}
+
+\subsubsection*{11.19}
+
+\textit{Задание.} Пусть $ \xi_1, \xi_2$ --- независимые случайные величины со стандартным нормальным распределением.
+Найдите плотность распределения случайной величины $ \xi_1^2 + \xi_2^2$.
+
+\textit{Решение.} Выпишем плотности $ \xi_1, \xi_2$ каждую из условия
+$$p_{ \xi_1} \left( x \right) =
+p_{ \xi_2} \left( x \right) =
+\frac{1}{ \sqrt{2 \pi} \sigma} \cdot e^{- \frac{ \left( x - a \right)^2}{2 \sigma^2}}.$$
+Стандартное нормальное распределение означает, что $a = 0, \sigma = 1$, то есть
+$$p_{ \xi_1} \left( x \right) =
+p_{ \xi_2} \left( x \right) =
+\frac{1}{ \sqrt{2 \pi}} \cdot e^{- \frac{x^2}{2}}.$$
+
+Тогда совместная плотность вектора из независимости случайных величин
+$$p_{ \left( \xi_1, \xi_2 \right) } \left( x, y \right) =
+p_{ \xi_1} \left( x \right) \cdot p_{ \xi_2} \left( y \right) =
+\frac{1}{ \sqrt{2 \pi }} \cdot e^{- \frac{x^2}{2}} \cdot \frac{1}{ \sqrt{2 \pi }} \cdot e^{- \frac{y^2}{2}} =
+\frac{1}{2 \pi } \cdot e^{- \frac{x^2 + y^2}{2}}.$$
+
+Функция распределения по определению равна
+$$F_{ \xi_1^2 + \xi_2^2} \left( t \right) =
+P \left( \xi_1^2 + \xi_2^2 \leq t \right).$$
+Это есть смысл продолжать при $t \geq 0$.
+Записываем вероятность события как индикатор этого события $F_{ \xi_1^2 + \xi_2^2} \left( t \right) = M \mathbbm{1} \left( \xi_1^2 + \xi_2^2 \leq t \right) $.
+Есть две случайные величины.
+Отсюда следует, что будет двойной интеграл
+$$F_{ \xi_1^2 + \xi_2^2} \left( t \right) =
+\iint \limits_{ \mathbb{R}^2} \mathbbm{1} \left( x^2 + y^2 \leq t \right) \cdot p_{ \left( \xi_1, \xi_2 \right) } \left( x, y \right) dxdy.$$
+Перепишем плотность
+$$F_{ \xi_1^2 + \xi_2^2} \left( t \right) =
+\iint \limits_{ \mathbb{R}^2} \mathbbm{1} \left( x^2 + y^2 \leq t \right) \cdot \frac{1}{2 \pi } \cdot e^{- \frac{x^2 + y^2}{2}} dxdy.$$
+Перейдём в полярную систему координат
+$x = \rho \cos \phi,
+y = \rho \cos \phi,
+dxdy = \\
+= \rho d \rho d \phi,
+\rho: 0 \rightarrow \sqrt{t},
+\phi: 0 \rightarrow 2 \pi,
+x^2 + y^2 = \rho^2 \cos^2 \phi + \rho^2 \sin \phi = \\
+= \rho^2 \left( \sin^2 \phi + \cos^2 \phi \right) = \rho^2,
+\mathbbm{1} \left( x^2 + y^2 \leq t \right) = \mathbbm{1} \left( \rho^2 \leq t \right) $.
+Получаем
+$$F_{ \xi_1^2 + \xi_2^2} \left( t \right) =
+\int \limits_0^{2 \pi } \int \limits_0^{ \sqrt{t}} \frac{1}{2 \pi } \cdot e^{- \frac{ \rho^2}{2}} \rho d \rho d \phi.$$
+По $d \phi $ сразу проинтегрируем
+$$F_{ \xi_1^2 + \xi_2^2} \left( t \right) =
+\frac{1}{2 \pi } \int \limits_0^{ \sqrt{t}} \left. e^{- \frac{ \rho^2}{2}} \cdot \phi \right|_0^{2 \pi } \rho d \rho =
+\frac{1}{2 \pi } \int \limits_0^{ \sqrt{t}} \rho e^{- \rho^2} \cdot 2 \pi d \rho =
+\int \limits_0^{ \sqrt{t}} \rho e^{- \frac{ \rho^2}{2}} d \rho.$$
+Заметим, что
+$$d \left( e^{- \frac{ \rho^2}{2}} \right) =
+- \frac{2 \rho }{2} \cdot e^{- \frac{ \rho^2}{2}} d \rho =
+- \rho e^{- \frac{ \rho^2}{2}} d \rho.$$
+Отсюда выражаем подынтегральную функцию
+$$ \rho e^{- \frac{ \rho^2}{2}} d \rho =
+-d \left( e^{- \frac{ \rho^2}{2}} \right) .$$
+Подставляем полученный результат
+$$F_{ \xi_1^2 + \xi_2^2} \left( t \right) =
+- \int \limits_0^{ \sqrt{t}} d \left( e^{- \frac{ \rho^2}{2}} \right) =
+\left. - e^{- \frac{ \rho^2}{2}} \right|_0^{ \sqrt{t}} =
+-e^{- \frac{t}{2}} + 1 =
+1 - e^{- \frac{t}{2}}$$
+--- это при $t \geq 0$.
+
+Нужно продифференцировать по $t$.
+Получим искомую плотность распределения
+$$p_{ \xi_1^2 + \xi_2^2} \left( t \right) =
+\frac{1}{2} \cdot e^{- \frac{t}{2}} \cdot \mathbbm{1} \left( t \geq 0 \right).$$
