@@ -108,3 +108,23 @@ P \left( \left| \xi_n \right| \cdot \left| \eta_n - \eta \right| > \frac{ \epsil
 \end{equation*}
 так как по условию каждая из этих вероятностей стремится к нулю.
 \end{enumerate}
+
+\subsubsection*{14.19}
+
+\textit{Задание.} Пусть $ \left( \xi_n - \xi \right) \overset{P}{ \rightarrow } 0$.
+Докажите, что $ \xi_n^2 \overset{P}{ \rightarrow } \xi^2$.
+
+\textit{Решение.} Оценим вероятность
+$$P \left\{ \left| \xi_n^2 - \xi^2 \right| > \epsilon \right\} =
+P \left\{ \left| \xi_n^2 - 2 \xi_n \xi + \xi^2 + 2 \xi \xi_n - 2 \xi^2 \right| > \epsilon \right\}.$$
+Сгруппируем слагамые
+\begin{equation*}
+\begin{split}
+P \left\{ \left| \xi_n^2 - \xi^2 \right| < \epsilon \right\} =
+P \left\{ \left| \left( \xi_n - \xi \right)^2 + 2 \xi \left( \xi_n - \xi \right) \right| > \epsilon \right\} \leq
+P \left\{ \left| \xi_n - \xi \right|^2 > \frac{ \epsilon }{2} \right\} + \\
++ P \left\{ 2 \xi \left| \xi_n - \xi \right| > \frac{ \epsilon }{2} \right\} \rightarrow
+0,
+\end{split}
+\end{equation*}
+так как каждая из вероятностей стремится к нулю при $n \rightarrow \infty $ по условию.
