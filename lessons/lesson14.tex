@@ -13,8 +13,8 @@
 $$ \xi_n \sim N \left( a, \frac{1}{n} \right).$$
 Докажите, что:
 \begin{enumerate}[label=\alph*)]
-\item $ \xi_n \overset{P}{ \rightarrow } a;$
-\item $ \xi_n \overset{L_2}{ \rightarrow } a;$
+\item $ \xi_n \overset{P}{ \rightarrow } a$;
+\item $ \xi_n \overset{L_2}{ \rightarrow } a$;
 \item $ \xi_n \overset{L_p}{ \rightarrow } a, p \geq 1$.
 \end{enumerate}
 
@@ -55,3 +55,56 @@ $$M \left| \xi_n - a \right|^{2k} =
 
 \addcontentsline{toc}{section}{Домашнее задание}
 \section*{Домашнее задание}
+
+\subsubsection*{14.18}
+
+\textit{Задание.} Пусть $ \xi_n \overset{P}{ \rightarrow } \xi, \eta_n \overset{P}{ \rightarrow } \eta$.
+Докажите, что:
+\begin{enumerate}[label=\alph*)]
+\item $ \xi_n + \eta_n \overset{P}{ \rightarrow } \xi + \eta$;
+\item $ \left| \xi_n \right| \overset{P}{ \rightarrow } \left| \xi \right| $;
+\item $ \xi_n \eta_n \overset{P}{ \rightarrow } \xi \eta $.
+\end{enumerate}
+
+\textit{Решение.}
+\begin{enumerate}[label=\alph*)]
+\item Из неравенства треугольника
+$ \left| \xi_n - \xi + \eta_n - \eta \right| \leq \left| \xi_n - \xi \right| + \left| \eta_n - \eta \right| $.
+Отсюда следует, что
+$$ \left\{ \left| \xi_n - \xi + \eta_n - \eta \right| > \epsilon \right\} \subseteq
+\left\{ \left| \xi_n - \xi \right| + \left| \eta_n - \eta \right| > \epsilon \right\}.$$
+Разобъём на объединение двух множеств
+$$ \left\{ \left| \xi_n - \xi + \eta_n - \eta \right| > \epsilon \right\} \subseteq
+\left\{ \left| \xi_n - \xi \right| > \frac{ \epsilon }{2} \right\} \cup \left\{ \left| \eta_n - \eta \right| > \frac{ \epsilon }{2} \right\}.$$
+
+Тогда вероятность, которая фигурирует в определении сходимости по вероятности
+\begin{equation*}
+\begin{split}
+P \left\{ \left| \xi_n - \xi + \eta_n - \eta \right| > \epsilon \right\} \leq
+P \left\{ \left| \xi_n - \xi \right| + \left| \eta_n - \eta \right| > \epsilon \right\} \leq \\
+\leq P \left\{ \left| \xi_n - \xi \right| > \frac{ \epsilon }{2} \right\} + P \left\{ \left| \eta_n - \eta \right| > \frac{ \epsilon }{2} \right\}.
+\end{split}
+\end{equation*}
+По условию каждая из этих вероятностей стремится к нулю при
+$$n \rightarrow \infty,$$
+поэтому и всё выражение стремится к нулю при $n \rightarrow \infty $;
+\item оценим вероятность
+$P \left( \left| \left| \xi_n \right| - \left| \xi \right| \right| < \epsilon \right) \geq
+P \left( \left| \xi_n - \xi \right| < \epsilon \right) \rightarrow
+1$
+по условию;
+\item выпишем нужную вероятность
+$$P \left( \left| \xi_n \eta_n - \xi \eta \right| > \epsilon \right) =
+P \left( \left| \xi_n \eta_n - \xi \eta_n + \xi \eta_n - \xi \eta \right| > \epsilon \right).$$
+Сгруппируем слагаемые
+\begin{equation*}
+\begin{split}
+P \left( \left| \xi_n \eta_n - \xi \eta \right| > \epsilon \right) =
+P \left( \left| \eta_n \left( \xi_n - \xi \right) + \xi \left( \eta_n - \eta \right) \right| > \epsilon \right) \leq \\
+\leq P \left( \left| \eta \right| \cdot \left| \xi_n - \xi \right| > \frac{ \epsilon }{2} \right) +
+P \left( \left| \xi_n \right| \cdot \left| \eta_n - \eta \right| > \frac{ \epsilon }{2} \right) \rightarrow
+0,
+\end{split}
+\end{equation*}
+так как по условию каждая из этих вероятностей стремится к нулю.
+\end{enumerate}
