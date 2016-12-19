@@ -1011,8 +1011,18 @@ P \left( \xi_1 \leq x \right) \cdot \dotsc \cdot P \left( \xi_n \leq x \right)$.
 $$F_{ \xi_{ \left( n \right) }} \left( x \right) =
 \left[ P \left( \xi_1 \leq x \right) \right]^n =
 \left[ F \left( x \right) \right]^n;$$
-\item  найдём функцию распределения $F_{ \xi_{\left( m \right) }} \left( x \right) = P \left( \xi_{ \left( m \right) } \leq x \right) = P$(хотя бы $m$ из $n$ случайных величин не превышают $x$)$=$
-$$= \sum \limits_{i=m}^n C_n^i \left[ F \left( x \right) \right]^i \left[ 1 - F \left( x \right) \right]^{n-i}.$$
+\item  найдём функцию распределения $F_{ \xi_{\left( m \right) }} \left( x \right) = P \left( \xi_{ \left( m \right) } \leq x \right)$.
+Из условия знаем, что $ \xi_{ \left( 1 \right) } \leq \xi_{ \left( 2 \right) } \leq \dotsc \leq \xi_{ \left( m \right) } \leq \dotsc \leq \xi_{ \left( n \right) }$.
+Если $ \xi_{ \left( m \right) } \leq x$, то как минимум $ \xi_{ \left( 1 \right) }, \dotsc, \xi_{ \left( m \right) } \leq x$.
+Так как $x$ может быть равен бесконечности, то хотя бы $m$ из $n$ случайных величин не должно превосходить значение $x$.
+Получаем $F_{ \xi_{\left( m \right) }} \left( x \right) = P$(хотя бы $m$ из $n$ случайных величин не превышают $x$)$=$
+\begin{equation*}
+\begin{split}
+= \sum \limits_{i=m}^n C_n^i \left[ P \left( \xi \leq x \right) \right]^i \left[ P \left( \xi > x \right) \right]^{n-i} = \\
+= \sum \limits_{i=m}^n C_n^i \left[ F \left( x \right) \right]^i \cdot \left[ 1 - P \left( \xi \leq x \right) \right]^{n-i} =
+\sum \limits_{i=m}^n C_n^i \left[ F \left( x \right) \right]^i \cdot \left[ 1 - F \left( x \right) \right]^{n-i}.
+\end{split}
+\end{equation*}
 \end{enumerate}
 
 \subsubsection*{11.19}
