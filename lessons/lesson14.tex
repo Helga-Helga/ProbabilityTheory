@@ -128,3 +128,68 @@ P \left\{ \left| \xi_n - \xi \right|^2 > \frac{ \epsilon }{2} \right\} + \\
 \end{split}
 \end{equation*}
 так как каждая из вероятностей стремится к нулю при $n \rightarrow \infty $ по условию.
+
+\subsubsection*{14.20}
+
+\textit{Задание.} Пусть $ \xi_n \overset{P}{ \rightarrow } \xi, \eta_n \overset{P}{ \rightarrow } \eta $ и случайные величины $ \xi, \eta $ эквивалентны.
+Докажите, что $ \xi_n - \eta_n \overset{P}{ \rightarrow } 0$. 
+
+\textit{Решение.} Оценим вероятность $P \left( \left| \xi_n - \eta_n \right| > \epsilon \right) $.
+Прибавим и отнимем <<единицу>> $P \left( \left| \xi_n - \eta_n \right| > \epsilon \right) = P \left( \left| \xi_n - \xi - \eta_n + \xi \right| > \epsilon \right) $.
+Применим неравенство треугольника
+$P \left( \left| \xi_n - \eta_n \right| > \epsilon \right) \leq
+P \left( \left| \xi_n - \xi \right| + \left| \xi - \eta_n \right| > \epsilon \right) $.
+Так как $ \xi $ и $ \eta $ --- эквивалентные случайные величины, то есть $P \left( \xi \neq \eta \right) = 0$,
+то
+\begin{equation*}
+\begin{split}
+P \left( \left| \xi_n - \eta_n \right| > \epsilon \right) \leq
+P \left( \left| \xi_n - \xi \right| + \left| \eta_n - \eta \right| > \epsilon \right) \leq
+P \left( \left| \xi_n - \xi \right| > \frac{ \epsilon }{2} \right) + \\
++ P \left( \left| \eta_n - \eta \right| > \frac{ \epsilon }{2} \right) \rightarrow
+0, n \rightarrow \infty,
+\end{split}
+\end{equation*}
+как как каждая из этих вероятностей стремится к нулю по условию.
+
+\subsubsection*{14.21}
+
+\textit{Задание.} Пусть $ \left\{ \xi_n \right\}_{n \geq 1}$ --- последовательность нормально распределённых случайных величин с параметром $ \alpha = n$.
+Докажите, что $ \left\{ \xi_n \right\}_{n \geq 1}$ сходится к нулю в среднем квадратическом.
+
+\textit{Решение.}
+Запишем плотность распределения
+$$p_{ \xi_n } \left( x \right) =
+\lambda e^{- \lambda x} \cdot \mathbbm{1} \left( x \geq 0 \right) =
+ne^{-nx} \cdot \mathbbm{1} \left( x \geq 0 \right).$$
+
+Второй момент по определения равен
+$$M \left| \xi_n \right|^2 =
+\int \limits_{- \infty }^{+ \infty } x^2 \cdot p_{ \xi_n} \left( x \right) dx =
+\int \limits_{- \infty }^{+ \infty } x^2 \cdot n \cdot e^{-nx} \cdot \mathbbm{1} \left( x \geq 0 \right) dx =
+n \int \limits_0^{+ \infty } x^2 \cdot e^{-nx} dx.$$
+Проинтегрируем по частям 
+$$u = x^2,
+du = 2xdx,
+dv = e^{-nx}dx,
+v = - \frac{1}{n} \cdot e^{-nx}.$$
+Получим
+$$M \left| \xi_n \right|^2 =
+n \left( \left. - \frac{1}{n} \cdot e^{-nx} \cdot x^2 \right|_0^{+ \infty } + \frac{1}{n} \int \limits_0^{+ \infty } e^{-nx} \cdot 2xdx \right).$$
+Раскроем скобки и упростим
+$$M \left| \xi_n \right|^2 =
+\left. -x^2 \cdot e^{-nx} \right|_0^{+ \infty } + 2 \int \limits_0^{+ \infty } xe^{-nx} dx.$$
+Проинтегрируем второй раз по частям
+$$u = x,
+du = dx,
+dv = e^{-nx}dx,
+v = - \frac{1}{n} \cdot e^{-nx}.$$
+Получим
+$$M \left| \xi_n \right|^2 =
+\left. -x^2 \cdot e^{-nx} \right|_0^{+ \infty } +
+2 \left( \left. - \frac{1}{n} \cdot e^{-nx} \cdot x \right|_0^{+ \infty } + \frac{1}{n} \int \limits_0^{+ \infty } e^{-nx} dx \right).$$
+Первые 2 слагаемых зануляются, вычисляем интеграл
+$$M \left| \xi_n \right|^2 =
+\left. \frac{2}{n} \left( - \frac{1}{n} \right) \cdot e^{-nx} \right|_0^{+ \infty } =
+\left. - \frac{2}{n^2} \cdot e^{-nx} \right|_0^{+ \infty } =
+\frac{2}{n^2} \rightarrow 0, n \rightarrow \infty.$$
