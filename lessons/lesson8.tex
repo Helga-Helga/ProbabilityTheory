@@ -873,18 +873,17 @@ $ \left( \Omega, \mathcal{F}, \mathbb{P} \right) $
   \label{fig:818}
 \end{figure}
 
-$ \sigma $-алгебра, порождённая $ \xi $ ---
-это совокупность всех случайных событий вида $ \xi^{-1} \left( \Delta \right) $, где $ \Delta \in \mathcal{B} \left( \left[ 0, 1 \right] \right) $.
-Это множество всех прообразов борелевских подмножеств из $ \left[ 0, 1 \right] $,
-то есть
-$ \mathcal{F_{ \epsilon }} \subseteq \mathcal{F}: \;
-\mathcal{F_{ \epsilon }} = \\
-= \left\{ A \subset \mathcal{F} \; \middle| \; A = \xi^{-1} \left( \Delta \right), \, \Delta \in \mathcal{B} \left( \left[ 0, 1 \right] \right) \right\} $.
+Нет таких отрезков на $ \left[ 0, 1 \right] $, которые имеют одинаковое значение.
+Поэтому в данном случае нет атомов.
 
 Пусть $ \mathcal{A} $ --- сигма-алгебра, порождённая случайной величиной $ \xi $.
-Она имеет вид $ \mathcal{A} = \left\{ B \subset \mathcal{F} \; \middle| \; \left[ 0, 1 \right], \emptyset \right\} $.
+Она имеет вид
+$ \mathcal{A} =
+\left\{ B \in \mathcal{F} \; \middle| \; \emptyset \subset B \vee B \cap \emptyset = \emptyset \right\} =
+\left\{ B \in \mathcal{F} \; \middle| \; B \right.$ --- любое или $ \left. B \cap \emptyset = \emptyset \right\} =
+\left\{ B \in \mathbbm{F} \; \middle| \; B \subseteq \left[ 0, 1 \right] \right\} $.
 
-Гипотезы: это и есть $ \sigma $-алгебра, порождённая $ \xi $.
+Гипотеза: это и есть $ \sigma $-алгебра, порождённая $ \xi $.
 
 Условия, которые должны выполняться:
 \begin{enumerate}
@@ -894,32 +893,23 @@ $ \mathcal{F_{ \epsilon }} \subseteq \mathcal{F}: \;
 \end{enumerate}
 
 Проверяем первое условие.
-Пусть $B = \left[ 0, 1 \right] $.
+Пусть $B \subseteq \left[ 0, 1 \right] $.
 Тогда
 $$ \Delta =
-\left[ 0, \frac{1}{2} \right].$$
+\left[ \frac{a}{2}, \frac{b}{2} \right].$$
 
-Пусть $B = \emptyset $.
-Тогда
-$$ \Delta =
-\left( \frac{1}{2}, 1 \right]. $$
+Пусть $B = \left[ 0, b \right] \subseteq \left[ 0, 1 \right] $.
+
+В случае, когда $B$ другое, можно представить его в виде счётного объединения $ \left[ a, b \right] $ и указать $ \Delta $ по указанному правилу.
 
 Проверяем второе условие.
-Пусть
-$$ \Delta =
-\left( \frac{1}{2}, 1 \right],$$
+Пусть $ \Delta $ --- произвольное,
 тогда
 $$ \xi^{-1} \left( \Delta \right) =
-\emptyset \in
-\mathcal{A}.$$
+\left( \Delta_0 \cap \left[ 0, 1 \right] \right) \subset \left[ 0, 1 \right],$$
+потому что $ \Delta_0 \in \left[ 0, 1 \right] $, так как
+$$ \xi^{-1} \left( \left[ 0, \frac{1}{2} \right] \right) = \left[ 0, 1 \right].$$
 
-Если
-$$ \Delta =
-\left[ 0, \frac{1}{2} \right],$$
-то
-$$ \xi^{-1} \left( \Delta \right) =
-\left[ 0, 1 \right] \in
-\mathcal{A}.$$
 
 Отсюда следует, что это действительно $ \sigma $-алгебра, порождённая $ \xi $.
 \item Нарисуем график (рис. \ref{fig:8181}).
