@@ -897,33 +897,10 @@ $$\lim \limits_{x \to + \infty } \left( 1 - \frac{1-e^{-x}}{x} \right) =
 \lim \limits_{x \to + \infty } \left( 1 - \frac{1}{x} + \frac{e^{-x}}{x} \right) =
 1.$$
 
-Берём производную, где $x > 0$.
-Получаем
-\begin{equation*}
-\begin{split}
-F' \left( x \right) =
-\left( 1 - \frac{1-e^{-x}}{x} \right)' =
-\left( - \frac{1-e^{-x}}{x} \right)' =
-\left( \frac{e^{-x}-1}{x} \right)' = \\
-= \frac{-xe^{-x}- \left( e^{-x}-1 \right) }{x^2} =
-\frac{-xe^{-x}-e^{-x}+1}{x^2} =
-\frac{-e^{-x} \left( x+1 \right) +1}{x^2} = \\
-= \frac{ \frac{x+1}{-e^x} + 1}{x^2} > 0.
-\end{split}
-\end{equation*}
-Отсюда следует, что функция возрастает.
+Функция не является непрерывной справа.
+Она непрерывна слева.
 
-\begin{equation*}
-\begin{split}
-F'' \left( x \right) =
-\left( \frac{-xe^{-x}-e^{-x}+1}{x^2} \right)' = \\
-= \frac{ \left( -e^{-x}+x \cdot e^{-x}+e^{-x} \right) x^2 - 2x \left( -xe^{-x}-e^{-x}+1 \right) }{x^4} = \\
-= \frac{-e^{-x} \cdot x^2 + x^3 \cdot e^{-x}+x^2e^{-x} + 2x^2e^{-x}+2xe^{-x}-2x}{x^4} = \\
-= \frac{x^3e^{-x}+2x^2e^{-x}+2xe^{-x}-2x}{x^4} < 0.
-\end{split}
-\end{equation*}
-Отсюда следует, что функция выпуклая вверх.
-Вывод: функция $F \left( x \right) $ --- функция распределения;
+Вывод: функция $F \left( x \right) $ не является функцией распределения;
 \item $F \left( x \right) = e^{-e^{-x}}$.
 
 Функция принимает значения на $ \left[ 0, 1 \right] $.
