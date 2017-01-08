@@ -270,14 +270,18 @@ $ \varlimsup \limits_{ n \to \infty } \mathbbm{ 1 } \left( A_n \right) = 1 $.
 
 \textit{Решение.}
 \begin{enumerate}[label=\alph*)]
-\item По определению $ \varlimsup \limits_{ n \to \infty } A_n = \bigcap \limits_{ n \geq 1} \bigcup \limits_{ m \geq n} A_m $.
+\item По определению
+$$ \varlimsup \limits_{ n \to \infty } A_n =
+\bigcap \limits_{ n \geq 1} \bigcup \limits_{ m \geq n} A_m.$$
 
 При $ n = 1: \bigcup \limits_{ m \geq 1} A_m = A_1 \cup A_2 \cup A_3 \cup \dotsc = B \cup C $.
 Пересечение бесконечного количества одинаковых множеств даёт $ \varlimsup \limits_{ n \to \infty } A_n = B \cup C $;
 
-\item по определению $ \varliminf \limits_{ n \to \infty } A_n = \bigcup \limits_{ n = 1 }^\infty \bigcap \limits_{ m = n }^\infty A_m = B \cap C $.
-
-При $ n = 1 : \bigcap \limits_{ m \geq 1 } A_m = A_1 \cap A_2 \cap A_3 \cap \dotsc = B \cap C $, поэтому $ \varliminf \limits_{ n \to \infty } A_n = B \cap C $.
+\item это противоположное событие к тому, что произошло бесконечное количество событий из последовательности
+$$ \overline{ \varlimsup \limits_{ n \to \infty } A_n} =
+\overline{\bigcap \limits_{ n \geq 1} \bigcup \limits_{ m \geq n} A_m} =
+\overline{B \cup C} =
+\overline{B} \cap \overline{C}.$$
 \end{enumerate}
 
 \subsubsection*{2.9}
