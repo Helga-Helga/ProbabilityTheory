@@ -163,12 +163,14 @@ $$ C = \overline{ \overline{ A \cap \overline{ B } } \cup \overline{ A \cup B } 
 
 \textit{Решение.}
 $ C =
-\overline{ \overline{ A \cap \overline{ B }}} \cup \overline{ \overline{ A \cup B }} \cup \overline{ B \cap A } =
-\left( A \cap \overline{ B } \right) \cup A \cup B \cup \overline{ B } \cup \overline{ A } = \\
-= \left( A \cap \overline{ B } \right) \cup A \cup \overline{ A } \cup B \cup \overline{ B } =
-\left( A \cap \overline{ B } \right) \cup \Omega \cup \Omega =
-\left( A \cap \overline{ B } \right) \cup \Omega =
-\Omega $.
+\overline{ \overline{ A \cap \overline{ B }}} \cap \overline{ \overline{ A \cup B }} \cap \overline{ B \cap A } =
+A \cap \overline{B} \cap \left( A \cup B \right) \cap \left( \overline{B} \cup \overline{A} \right) = \\
+= A \cap \left[ \left( \overline{B} \cap A \right) \cup \left( \overline{B} \cap B \right) \right] \cap \left( \overline{B} \cup \overline{A} \right) =
+A \cap \overline{B} \cap A \cap \left( \overline{B} \cup \overline{A} \right) =
+A \cap \overline{B} \cap \left( \overline{B} \cup \overline{A} \right) = \\
+= \left[ \left( A \cap \overline{B} \right) \cup \left( A \cap \overline{A} \right) \right] \cap \overline{B} =
+A \cap \overline{B} \cap \overline{B} =
+A \cap \overline{B}$.
 
 \subsubsection*{2.6}
 
