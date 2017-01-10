@@ -416,30 +416,39 @@ $$1 - 1 + \frac{1}{2!} + \dotsc + \left( -1 \right)^{n+1} \frac{1}{n!}.$$
 $$P =
 1 - \frac{1}{2!} + \frac{1}{3!} - \dotsc + \left( -1 \right)^{n+1} \frac{1}{n!};$$
 
-\item найдём вероятность того, что $n - m$ писем не попадут в конверты с правильными адресами, а затем вычтем её из 1.
+\item найдём вероятность того, что ровно $m$ писем попадут в конверты с правильными адресами.
+
+Всего вариантов расстановки есть $n!$.
 
 Письма, которые будут вложены в конверты с правильными адресами,
 можно выбрать $C_n^m$ способами;
-остальные $n - m$ писем можно вложить в $n - m$ конвертов $ \left( n-m \right)!$ способами,
-поэтому общее число вариантов размещения писем по конвертам равно $$C_n^m \cdot \left( n-m \right)!.$$
+остальные $n - m$ писем можно вложить в $n - m$ конвертов $ \left( n-m \right)!$ способами.
 
-Аналогично пункту а) получаем, что число способов, которыми письма можно разложить по конвертам так, что ровно $m$ писем окажется в конверте с правильным адресом, равно
-$$C_n^m
-\left( \left( n-m \right)! - \left( n-m \right)! + \frac{ \left(n-m \right)!}{2!} - \frac{ \left( n-m\right)!}{3!} + \dotsc \right),$$
-а вероятность этого события равна этому числу, делённому на $n!$, т.е. равна числу
+От этого значения нужно отнять число вариантов расстановки, при котором $ \left( m+1 \right) $ письмо попало по назначению.
+Для этого выбираем $ \left( m+1 \right) $-но письмо, которое попало но назначению, остальные переставляем произвольным образом.
+Получаем
+$$C_n^m \cdot \left( n-m \right)! - C_n^{m+1} \left( n-m-1 \right)!.$$
+
+К этому значению нужно прибавить количество способов, при котором $ \left( m+2 \right) $ письма попало по назначению.
+Получаем
+$$C_n^m \cdot \left( n-m \right)! - C_n^{m+1} \left( n-m-1 \right)! + C_n^{m+2} \cdot \left( n-m-2 \right)!.$$
+
+И так далее
 \begin{equation*}
 \begin{split}
-C_n^m \cdot \frac{1}{n!}
-\left( \left( n-m \right)! - \left( n-m \right)! + \frac{ \left(n-m \right)!}{2!} - \frac{ \left( n-m\right)!}{3!} + \dotsc \right) = \\
-= \frac{1}{m! \left( n-m \right)!}
-\left( \left( n-m \right)! - \left( n-m \right)! + \frac{ \left(n-m \right)!}{2!} - \frac{ \left( n-m\right)!}{3!} + \dotsc \right) = \\
-= \frac{1}{m!} \left( \frac{1}{2!} - \frac{1}{3!} + \dotsc \right).
+C_n^m \cdot \left( n-m \right)! - C_n^{m+1} \left( n-m-1 \right)! + C_n^{m+2} \cdot \left( n-m-2 \right)! - \dotsc = \\
+= \frac{n!}{m! \left( n-m \right)!} \cdot \left( n-m \right)! -
+\frac{n!}{ \left( m+1 \right)! \left( n-m-1 \right)!} \cdot \left( n-m-1 \right)! + \\
++ \frac{n!}{ \left( m+2 \right)! \left( n-m-2 \right)!} \cdot \left( n-m-2 \right)! -
+\dotsc = \\
+= \frac{n!}{m!} - \frac{n!}{ \left( m+1 \right)!} + \frac{n!}{ \left( m+2 \right)!} - \dotsc.
 \end{split}
 \end{equation*}
 
 Следовательно, вероятность того, что ровно $m$ писем окажется в конвертах с правильными адресами, равна
 $$P =
-1 - \frac{1}{m!} \left( \frac{1}{2!} - \frac{1}{3!} + \dotsc \right).$$
+\frac{1}{m!} - \frac{1}{ \left( m+1 \right)!} + \frac{1}{ \left( m+2 \right)!} - \dotsc $$
+--- поделили на общее число способов подписать $n$ писем $n$ адресами --- $n!$.
 
 \paragraph*{Число встреч}
 
