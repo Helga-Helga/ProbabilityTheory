@@ -4,6 +4,86 @@
 \addcontentsline{toc}{section}{Контрольные вопросы и задания}
 \section*{Контрольные вопросы и задания}
 
+\subsubsection*{Приведите определение видов сходимости случайных величин; какая связь между ними?}
+
+Последовательность $ \left\{ \xi_n: \, n \geq 1 \right\} $ сходится к случайной величине $ \xi $ почти наверное (с вероятностью 1),
+если $ \exists \Omega_0 \subset \Omega, \, \Omega_0 $ ---
+случайное событие $ \left( \Omega_0 \in \mathcal{F} \right): \, P \left( \Omega_0 \right) = 1$ и
+$ \forall \omega \in \Omega_0:
+\xi_n \left( \omega \right) \rightarrow \xi \left( \omega \right),
+n \rightarrow \infty $
+(поточечная сходимость на множестве полной вероятности), т.е. $P \left\{ \lim \limits_{n \to \infty} \xi_n \left( \omega \right) = \xi \left( \omega \right) \right\} = 1$.
+
+Последовательность случайных величин $ \left\{ \xi_n \right\} $ сходится по вероятности к случайной величине $ \xi $,
+если $ \forall \epsilon > 0 \, P \left\{ \left| \xi_n - \xi \right| > \epsilon \right\} \rightarrow \infty, \, n \rightarrow \infty $.
+
+Лемма.
+Пусть $ \xi_n \overset{almost sure (a.s.)}{ \rightarrow } \xi, \, n \rightarrow \infty $, тогда $ \xi_n \overset{P}{ \rightarrow } \xi, \, n \rightarrow \infty $,
+т.е. их сходимости почти наверное следует сходимость по вероятности.
+
+Лемма Рисса.
+Пусть $ \xi_n \overset{P}{ \rightarrow } \xi, \, n \rightarrow \infty $.
+Тогда существует подпоследовательность: $ \left\{ \xi_{n_k}: \, k \geq 1 \right\} $ такая, что $ \xi_{n_k} \overset{a.s.}{ \rightarrow } \xi, \, k \rightarrow \infty $.
+
+Лемма (характеризация сходимости по вероятности).
+Если последовательность $ \left\{ \xi_n \right\} $ и случайная величина $ \xi $ таковы,
+что их любой подпоследовательности $ \left\{ \xi_{n_k}: \, k \geq 1 \right\} $ можно выбрать подподпоследовательность
+$$ \left\{ \xi_{n_{k_j}}: \, j \geq 1 \right\} $$
+такую,
+что $ \xi_{n_{k_j}} \overset{a.s.}{ \rightarrow } \xi, \, j \rightarrow \infty $, то сама $ \xi_n \overset{P}{ \rightarrow } \xi, \, n \rightarrow \infty $.
+
+\subsubsection*{Приведите определение эквивалентных случайных величин.}
+
+Две случайные величины $ \xi $ и $ \eta $ называются эквивалентными, если вероятность соотношения $ \xi \neq \eta $ равна нулю.
+
+\subsubsection*{Сформулируйте лемму Бореля-Кантелли.}
+
+\begin{enumerate}
+\item Если
+$$ \sum \limits_{n=1}^{ \infty } P \left( A_n \right) < + \infty,$$
+то $P \left( \varlimsup \limits_{n \to \infty } A_n \right) = 0$.
+\item Если $ \left\{ A_n \right\} $ --- независимы и
+$$ \sum \limits_{n=1}^{ \infty } P \left( A_n \right) = + \infty $$
+(ряд из вероятностей расходится), то $P \left( \varlimsup \limits_{n \to \infty } A_n \right) = 1$.
+\end{enumerate}
+
+\subsubsection*{Запишите неравенства Чебышева, Ляпунова, Гёльдера, Минковского.}
+
+Неравенство Чебышева.
+\begin{enumerate}
+\item Пусть есть неотрицательная случайная величина $ \xi \geq 0$ с
+$$M \xi < + \infty, \,
+c > 0.$$
+Тогда
+$$P \left\{ \xi \geq c \right\} \leq \frac{M \xi }{c}.$$
+\item Пусть $ \xi $ --- случайная величина, такая, что $M \xi^2 < + \infty, \, c > 0$.
+Тогда
+$$P \left\{ \left| \xi - M \xi \right| \geq c \right\} \leq \frac{D \xi }{c^2}.$$
+\end{enumerate}
+
+Неравенство Гёльдера.
+Пусть еть числа $p, \, q > 1$ такие, что
+$$ \frac{1}{p} + \frac{1}{q} = 1.$$
+Случайные величины $ \xi $ и $ \eta: \, M \left| \xi \right|^p < + \infty, \, M \left| \eta \right|^q < + \infty $.
+Тогда
+$$M \left| \xi \eta \right| \leq [p]\sqrt{M \left| \xi \right|^p} \cdot [q]\sqrt{M \left| \eta \right|^q}.$$
+
+Общее вероятностное пространство, одна из случайных величин равна единице.
+Будет расстатривать 2 числа: $0 < r_1 < r_2$.
+Есть какая-то случайная величина
+$$ \zeta, \,
+\xi = \left| \zeta \right|^{r_1}, \,
+\eta = 1, \,
+p = \frac{r_2}{r_1} > 1, \, 
+\frac{1}{p} + \frac{1}{q} = 1.$$
+Применим неравенство Гёльдера $M \left| \zeta \right|^{r_1} \leq \left( M \left| \zeta \right|^{r_2} \right)^{ \frac{r_1}{r_2}}$ или
+$$ \left( M \left| \zeta \right|^{r_1} \right)^{ \frac{1}{r_1}} \leq \left( M \left| \zeta \right|^{r_2} \right)^{ \frac{1}{r_2}}$$
+--- неравенство Ляпунова.
+
+Неравенство Минковского.
+Если $p \geq 1$ и $M \left| \xi \right|^p < + \infty, \, M \left| \eta \right|^p < + \infty $,
+то $[p]\sqrt{M \left| \xi + \eta \right|^p} \leq [p]\sqrt{M \left| \xi \right|^p} + [p]\sqrt{M \left| \eta \right|^p}$.
+
 \addcontentsline{toc}{section}{Аудиторные задачи}
 \section*{Аудиторные задачи}
 
