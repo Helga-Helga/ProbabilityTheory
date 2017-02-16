@@ -1,0 +1,113 @@
+\addcontentsline{toc}{chapter}{Занятие 15. Характеристические функции}
+\chapter*{Занятие 15. Характеристические функции}
+
+\addcontentsline{toc}{section}{Контрольные вопросы и задания}
+\section*{Контрольные вопросы и задания}
+
+\subsubsection*{Приведите определение характеристической функции случайной величины, сформулируйте свойства характеристической функции; запишите характеристические функции основных вероятностных распределений.}
+
+Характеристической функцией случайной величины $ \xi $ называется функция $ \varphi_{ \xi } \left( t \right) = Me^{it \xi } = M \cos t \xi + iM \sin t \xi $, где $i$ ---
+это мнимая единица, $t \in \mathbb{R}$.
+
+В терминах функции распределения
+$$ \varphi_{ \xi } \left( t \right) =
+\int \limits_{- \infty }^{+ \infty } e^{itx} dF_{ \xi } \left( x \right).$$
+
+В терминах плотности
+$$ \varphi_{ \xi } \left( t \right) =
+\int \limits_{- \infty }^{+ \infty } e^{itx} p \left( x \right) dx$$
+--- преобразование Фурье для плотности.
+
+Свойства:
+\begin{enumerate}
+\item $ \left| \varphi_{ \xi } \left( t \right) \right| \leq 1$ и $ \varphi_{ \xi } \left( 0 \right) = 1$;
+\item $ \varphi_{ \xi } \left( t \right) = \overline{ \varphi_{ \xi } \left( -t \right)}$, имеется в виду комплексно сопряжённое;
+\item $ \varphi_{ \xi }$ равномерно непрерывна на числовой оси $ \mathbb{R}$.
+Это означает,
+что
+$$ \forall \epsilon > 0 \,
+\exists \delta > 0: \,
+\left| t_1 - t_2 \right| \leq \delta \Rightarrow \left| \varphi_{ \xi } \left( t_1 \right) - \varphi_{ \xi } \left( t_2 \right) \right| < \epsilon;$$
+\item $ \varphi_{ \xi }$ --- неотрицательно определённая:
+$$ \forall t_1, \dotsc, t_n \in \mathbb{R}, \,
+\lambda_1, \dotsc, \lambda_n \in \mathbb{R}: \,
+\sum \limits_{k,j=1}^n \varphi_{ \xi } \left( t_k - t_j \right) \lambda_k \lambda_j \geq 0.$$
+\end{enumerate}
+
+Примеры характеристических функций на известных распределениях:
+\begin{enumerate}
+\item биномиальное: $ \xi = 0, \dotsc, n$, есть параметр $p \in \left( 0, 1 \right) $, а вероятность $P \left\{ \xi = k \right\} = C_n^k p^k \left( 1 - p \right)^{n-k}$.
+Тогда
+$$ \varphi_{ \xi } \left( t \right) =
+\left[ \left( e^{it} - 1 \right) p + 1 \right]^n;$$
+\item геометрическое: $ \xi = 0, 1, 2, \dotsc $, есть число $p \in \left( 0, 1 \right) $.
+Тогда
+$$P \left( \xi = k \right) = \left( 1-p \right) p^k, \,
+\varphi_{ \xi } \left( t \right) = Me^{it \xi } = \sum \limits_{k=0}^{ \infty } \left( 1-p \right) p^k \left( e^{it} \right)^k = \frac{1-p}{1-pe^{it}};$$
+\item пуассоновское с параметром $ \lambda > 0$.
+Здесь
+$$ \xi = 0, 1, \dotsc, \,
+P \left\{ \xi = k \right\} = e^{- \lambda } \cdot \frac{ \lambda^k}{k!}.$$
+Так что
+$$ \varphi_{ \xi } \left( t \right) =
+\sum \limits_{k=0}^{ \infty } e^{- \lambda } \cdot \frac{ \lambda^k \left( e^{it} \right)^k}{k!} =
+e^{ \lambda \left( e^{it} - 1 \right) };$$
+\item равномерное.
+Пусть $ \xi $ имеет плотность
+$$ \mathbbm{1}_{ \left[ a, b \right] } \left( x \right) \cdot \frac{1}{b-a}.$$
+Тогда
+$$ \varphi_{ \xi } \left( t \right) =
+\frac{1}{b-a} \int \limits_a^b e^{itx} dx =
+\left( e^{itb} - e^{ita} \right) \cdot \frac{1}{it \left( b-a \right)};$$
+\item показательное распределение с параметром $ \lambda > 0$.
+Здесь плотность имеет вид $p \left( x \right) = \mathbbm{1}_{ \left[ 0, + \infty \right) } \left( x \right) \lambda e^{- \lambda x}$.
+Поэтому
+$$ \varphi_{ \xi } \left( t \right) =
+\int \limits_0^{+ \infty } \lambda e^{- \left( \lambda - it \right) x} dx =
+\frac{ \lambda }{ \lambda - it};$$
+\item гауссовское.
+Возьмём вначале $N \left( 0, 1 \right) $.
+Это
+$$p \left( x \right) =
+\frac{1}{ \sqrt{2 \pi }} \cdot e^{- \frac{x^2}{2}}.$$
+Получим $ \varphi_{ \xi } \left( t \right) = e^{- \frac{t^2}{2}}$.
+В общем виде $ \varphi \left( t \right) = Me^{it \left( a + \sqrt{ \sigma^2} \xi \right) } = e^{ita} e^{- \frac{t^2 \sigma^2}{2}}$;
+\item $ \varphi \left( t \right) = e^{- \left| t \right| }$ --- характеристическая функция для распределения Коши.
+\end{enumerate}
+
+\subsubsection*{Сформулируйте теорему Бохнера, теорему Пойя.}
+
+Теорема Бохнера-Хинчина.
+Функция $ \varphi: \mathbb{R} \rightarrow \mathbb{C}$ является характеристической функцией некоторого вероятностного распределения (т.е. некоторой случайной величины)
+тогда и только тогда, когда $ \phi $ обладает свойствами 1) --- 4).
+Условие 3) можно заменить просто непрерывностью.
+
+Теорема Пойа.
+Пусть функция $ \varphi: \mathbb{R} \rightarrow \mathbb{R}$ --- чётная, непрерывная,
+выпуклая вниз на $ \left[ 0, + \infty \right), \, \varphi \left( 0 \right) = 1, \, \varphi $ убывает у нулю на $+ \infty $.
+Тогда $ \varphi $ --- характеристическая.
+
+\subsubsection*{Запишите формулу обращения для характеристических функций.}
+
+Теорема (формула восстановления для характеристических функций).
+Пусть $ a < b$ --- точки непрерывности функции распределения $F$.
+Тогда
+$$F \left( b \right) - F \left( a \right) =
+\lim \limits_{c \to + \infty } \frac{1}{2 \pi } \int \limits_{-c}^c \frac{e^{-ita} - e^{-itb}}{it} \cdot \varphi(t) dt.$$
+
+\subsubsection*{Какая связь между производными характеристической функции и моментами случайной величины?}
+
+Лемма.
+Пусть $M \left| \xi \right|^n < + \infty $, тогда $ \exists \varphi^{ \left( k \right) } \left( 0 \right) $ для
+$k = 1, \dotsc, n$ и
+$$M \xi^k =
+\left( -i \right)^k \varphi^{ \left( k \right) } \left( 0 \right).$$
+
+Лемма.
+Пусть $ \exists \varphi^{ \left( 2n \right) } \left( 0 \right) $.
+Тогда $M \xi^{2n} < + \infty $ и
+$$M \xi^k = \left( -i \right)^k \varphi^{ \left( k \right) } \left( 0 \right) \,
+\forall k = 1, \dotsc, 2n.$$
+
+\addcontentsline{toc}{section}{Аудиторные задачи}
+\section*{Аудиторные задачи}
