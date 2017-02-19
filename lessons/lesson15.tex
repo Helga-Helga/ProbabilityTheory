@@ -340,3 +340,62 @@ $ \varphi_{ \xi_1 + \xi_2} \left( t \right) =
 \varphi_{ \xi_1} \left( t \right) \varphi_{ \xi_2} \left( t \right) =
 e^{it \left( a_1 + a_2 \right) - \frac{t^2}{2} \left( \sigma_1^2 + \sigma_2^2 \right) }$.
 Из этого следует, что $ \xi_1 + \xi_2 \sim N \left( a_1 + a_1, \sigma_1^2 + \sigma_2^2 \right) $.
+
+\subsubsection*{15.11}
+
+\textit{Задание.}
+Пусть $ \left\{ \xi_n \right\}_{n \geq 1}$ --- последовательность независимых одинаково распределённых случайных величин с характеристической функцией $ \varphi $,
+и пусть $ \nu $ --- случайная величина, которая не зависит от $ \left\{ \xi_n \right\}_{n \geq 1}$,
+и принимает целые неотрицательные значения: $P \left( \nu = k \right) = p_k$.
+\begin{enumerate}[label=\alph*)]
+\item Найдите характеристическую функцию случайной величины $ \xi_1 + \dotsc + \xi_{ \nu }$;
+\item для какой случайной величины функция
+$$ \frac{1}{2 - \varphi \left( t \right) }$$
+является характеристической?
+\end{enumerate}
+
+\textit{Решение.}
+\begin{enumerate}[label=\alph*)]
+\item Ищем по определению $ \varphi_{ \xi_1 + \dotsc + \xi_{ \nu }} \left( t \right) = Me^{it \left( \xi_1 + \dotsc + \xi_n \right) }$.
+Нужно ввести все возможные значения $ \nu $.
+Получим
+$$ \varphi_{ \xi_1 + \dotsc + \xi_{ \nu }} \left( t \right) =
+M \left[ \sum \limits_{n=0}^{ \infty } \mathbbm{1} \left( \nu = n \right) e^{it \left( \xi_1 + \dotsc + \xi_n \right) } \right].$$
+Обозначим
+$$ \sum \limits_{n=0}^{ \infty } \mathbbm{1} \left( \nu = n \right) e^{it \left( \xi_1 + \dotsc + \xi_n \right) } = S.$$
+Отличное от нуля в этой сумме одно слагаемое.
+Берём частичную сумму
+$$S_m =
+\sum \limits_{n=0}^m \mathbbm{1} \left( \nu = n \right) e^{it \left( \xi_1 + \dotsc + \xi_n \right) } \rightarrow S, \, m \rightarrow \infty.$$
+
+Оценим
+$$ \left| S_m \right| \leq
+\sum \limits_{n=0}^m \left| \mathbbm{1} \left( \nu = n \right) e^{it \left( \xi_1 + \dotsc + \xi_n \right) } \right| \leq
+\sum \limits_{n=0}^m \mathbbm{1} \left( \nu = n \right).$$
+
+Теперь нужно убедиться, что математическое ожидание этой суммы --- конечное.
+Пользуемся линейностью
+$$M \sum \limits_{n=0}^m \mathbbm{1} \left( \nu = n \right) =
+\sum \limits_{n=0}^m P \left( \nu = n \right) =
+\sum \limits_{n=0}^m p_n \leq
+1,$$
+потому что это распределение случайной величины.
+Из этого следует, что
+$$MS = \lim \limits_{m \to \infty } MS_m.$$
+
+Вернёмся к характеристической функции и пользуемся независимостью $ \nu $ и $ \left\{ \xi_n \right\}_{n \geq 1}$.
+Получаем
+\begin{equation*}
+\varphi_{ \xi_1 + \dotsc + \xi_{ \nu }} \left( t \right) =
+MS =
+\sum \limits_{n=0}^{ \infty } M \mathbbm{1} \left( \nu = n \right) Me^{it \left( \xi_1 + \dotsc + \xi_n \right) } = //
+= \sum \limits_{n=0}^{ \infty } p_n \varphi_{ \xi_1 + \dotsc + \xi_n} \left( t \right).
+\end{equation*}
+Пользуемся независимостью
+$$ \varphi_{ \xi_1 + \dotsc + \xi_{ \nu }} \left( t \right) =
+\sum \limits_{n=0}^{ \infty } p_n \varphi_{ \xi_1 + \dotsc + \xi_n} \left( t \right) =
+\sum \limits_{n=0}^{ \infty } p_n \varphi^n \left( t \right).$$
+\item для какой случайной величины функция
+$$ \frac{1}{2 - \varphi \left( t \right) }$$
+является характеристической?
+\end{enumerate}
