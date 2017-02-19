@@ -319,3 +319,24 @@ $ \varphi_{ \xi_1 - \xi_2} \left( t \right) =
 \varphi_{ \xi_1} \left( t \right) \varphi_{- \xi} \left( t \right) =
 \varphi_{ \xi_1} \left( t \right) \varphi_{ \xi_2} \left( - t \right) $.
 Это одна и та же характеристическая функция, потому это равно $ \varphi \left( t \right) \varphi \left( - t \right) $.
+
+\subsubsection*{15.9}
+
+\textit{Задание.}
+Используя характеристические функции, докажите, что если $ \xi_1, \, \xi_2$ --- независимые случайные величины,
+которые имеют нормальные распределения $N \left( a_1, \sigma_1^2 \right) $ и $N \left( a_2, \sigma_2^2 \right) $ соответственно,
+то случайная величина $ \xi_1 + \xi_2$ имеет нормальное распределение $N \left( a_1 + a_1, \sigma_1^2 + \sigma_2^2 \right) $.
+
+\textit{Решение.} $ \xi_1 \sim N \left( a_1, \sigma_1^2 \right), \, \xi_2 \sim N \left( a_2, \sigma_2^2 \right) $.
+
+Характеристические функции этих случайных величин соответственно равны
+$ \varphi_{ \xi_1} \left( t \right) = e^{ita_1 - \frac{t^2 \sigma_1^2}{2}}, \,
+\varphi_{ \xi_2} \left( t \right) = e^{ita_2 - \frac{t^2 \sigma_2^2}{2}}$.
+
+Найдём характеристическую функцию суммы.
+$ \xi_1, \, \xi_2$ --- независимы.
+Поэтому
+$ \varphi_{ \xi_1 + \xi_2} \left( t \right) =
+\varphi_{ \xi_1} \left( t \right) \varphi_{ \xi_2} \left( t \right) =
+e^{it \left( a_1 + a_2 \right) - \frac{t^2}{2} \left( \sigma_1^2 + \sigma_2^2 \right) }$.
+Из этого следует, что $ \xi_1 + \xi_2 \sim N \left( a_1 + a_1, \sigma_1^2 + \sigma_2^2 \right) $.
