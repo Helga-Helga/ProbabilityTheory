@@ -341,6 +341,53 @@ $ \varphi_{ \xi_1 + \xi_2} \left( t \right) =
 e^{it \left( a_1 + a_2 \right) - \frac{t^2}{2} \left( \sigma_1^2 + \sigma_2^2 \right) }$.
 Из этого следует, что $ \xi_1 + \xi_2 \sim N \left( a_1 + a_1, \sigma_1^2 + \sigma_2^2 \right) $.
 
+\subsubsection*{15.10}
+
+\textit{Задание.} Пусть $ \xi_1, \, \xi_2$ --- независимые случайные величины, каждая из которых имеет стандартное нормальное распределение.
+Вычислите характеристическую функцию случайной величины
+$$ \eta =
+\frac{ \xi_1^2 - \xi_2^2}{2}.$$
+
+\textit{Решение.}
+$ \xi_1, \, \xi_2$ --- независимые случайные величины со стандартным нормальным распределением $ \xi_1 \sim N \left( 0, 1 \right), \, \xi_2 \sim N \left( 0, 1 \right) $.
+
+Их характеристические функции $ \varphi_{ \xi_1} \left( t \right) = \varphi_{ \xi_2} \left( t \right) = e^{- \frac{t^2}{2}}$.
+
+Нужно найти характеристическую функцию случайной величины
+$$ \eta =
+\frac{ \xi_1^2 - \xi_2^2}{2} =
+\frac{ \xi_1^2}{2} - \frac{ \xi_2^2}{2}.$$
+
+Воспользовавшись свойством $ \varphi_{a \xi } \left( t \right) = Me^{i \left( ta \right) \xi } = \varphi_{ \xi } \left( at \right) $ получим
+$$ \varphi_{ \eta } \left( t \right) = \varphi_{ \xi_1^2 - \xi_2^2} \left( \frac{t}{2} \right).$$
+Пользуемся независимостью
+$$ \varphi_{ \xi_1^2 - \xi_2^2} \left( \frac{t}{2} \right) =
+\varphi_{ \xi_1^2} \left( \frac{t}{2} \right) \cdot \varphi_{- \xi_2^2} \left( \frac{t}{2} \right) -
+\varphi_{ \xi_1^2} \left( \frac{t}{2} \right) \cdot \varphi_{ \xi_2^2} \left( - \frac{t}{2} \right).$$
+
+Найдём характеристическую функцию квадрата случайной величины по определению
+$$ \varphi_{ \xi_2^2} \left( \frac{t}{2} \right) =
+Me^{i \cdot \frac{t}{2} \cdot \xi_1^2} =
+\int \limits_{- \infty }^{+ \infty } e^{i \cdot \frac{t}{2} \cdot x^2} \cdot \frac{1}{ \sqrt{2 \pi }} \cdot e^{- \frac{x^2}{2}}dx =
+\frac{1}{ \sqrt{2 \pi }} \int \limits_{- \infty }^{ \infty } e^{- \frac{x^2}{2} \left( 1 - it \right) }dx.$$
+Делаем замену $y = x \sqrt{1 - it}, dy = \sqrt{1 - it}dt$.
+Получаем
+$$ \frac{1}{ \sqrt{2 \pi }} \int \limits_{- \infty }^{ \infty } e^{- \frac{x^2}{2} \left( 1 - it \right) }dx =
+\frac{1}{ \sqrt{2 \pi }} \int \limits_{- \infty }^{ \infty } e^{- \frac{y^2}{2}} \cdot \frac{1}{ \sqrt{1 - it}} dy.$$
+В силу того, что
+$$ \int \limits_{- \infty }^{ \infty }p \left( x \right) dx = 1,$$
+получаем, что
+$$ \frac{1}{ \sqrt{2 \pi }} \int \limits_{- \infty }^{ \infty } e^{- \frac{y^2}{2}}dy = 1.$$
+Остаётся
+$$ \frac{1}{ \sqrt{2 \pi }} \int \limits_{- \infty }^{ \infty } e^{- \frac{y^2}{2}} \cdot \frac{1}{ \sqrt{1 - it}} dy =
+\frac{1}{ \sqrt{1 - it}}.$$
+
+В итоге получаем
+$$ \varphi_{ \eta } \left( t \right) =
+\varphi_{ \xi_1^2} \left( \frac{t}{2} \right) \cdot \varphi_{ \xi_2^2} \left( - \frac{t}{2} \right) =
+\frac{1}{ \sqrt{1 - it}} \cdot \frac{1}{ \sqrt{1 - it}} =
+\frac{1}{ \sqrt{1 + t^2}}.$$
+
 \subsubsection*{15.11}
 
 \textit{Задание.}
