@@ -111,3 +111,148 @@ $$M \xi^k = \left( -i \right)^k \varphi^{ \left( k \right) } \left( 0 \right) \,
 
 \addcontentsline{toc}{section}{Аудиторные задачи}
 \section*{Аудиторные задачи}
+
+\subsubsection*{15.3}
+
+\textit{Задание.} Случайная величина $ \xi $ принимает значения $1$ и $- 1$ с вероятностью $1 / 2$ каждое.
+Найдите характеристическую функцию $ \xi $.
+
+\textit{Решение.} $ \xi $ --- случайная величина.
+$$P \left( \xi = 1 \right) =
+P \left( \xi = - 1 \right) =
+\frac{1}{2}.$$
+По определению
+$$ \varphi_{ \xi } \left( t \right) =
+Me^{it \xi } =
+e^{it} \cdot \frac{1}{2} + e^{- it} \cdot \frac{1}{2} =
+\frac{1}{2} \left( e^{it} + e^{- it} \right) =
+\cos t.$$
+
+\subsubsection*{15.4}
+
+\textit{Задание.} Случайная величина $ \xi $ имеет плотность распределения
+$$p \left( x \right) =
+\begin{cases}
+0, \qquad \left| x \right| > a, \\
+\frac{1}{a} \left( 1 - \frac{ \left| x \right| }{a} \right), \qquad \left| x \right| \geq a.
+\end{cases}$$
+Докажите, что её характеристическая функция
+$$ \varphi \left( t \right) =
+\begin{cases}
+1 - \left| t \right|, \qquad \left| t \right| \leq 1, \\
+0, \qquad \left| t \right| > 1.
+\end{cases}$$
+
+\textit{Решение.} $ \xi $ --- случайная величина.
+Её плотность распределения ---
+$$p \left( x \right) =
+\begin{cases}
+0, \qquad \left| x \right| > a, \\
+\frac{1}{a} \left( 1 - \frac{ \left| x \right| }{a} \right), \qquad \left| x \right| \geq a.
+\end{cases}$$
+По определению
+$$ \varphi_{ \xi } \left( t \right) =
+\int \limits_{- a}^a e^{itx} \cdot \frac{1}{a} \left( 1 - \frac{ \left| x \right| }{a} \right) dx.$$
+Действительная часть подынтегральной функции чётная
+$$ \varphi_{ \xi } \left( t \right) =
+2 \cdot \frac{1}{a} \int \limits_0^a \cos \left( tx \right) \left( 1 - \frac{x}{a} \right) dx.$$
+Раскроем скобки и возьмём второй интеграл по частям
+$$ \varphi_{ \xi } \left( t \right) =
+\left. 2 \cdot \frac{1}{a} \cdot \frac{ \sin \left( tx \right) }{t} \right|_0^a -
+\frac{2}{a} \left( \left. \frac{x \sin \left( tx \right) }{t} \right|_0^a - \int \limits_0^a \frac{ \sin \left( tx \right) }{t} dx \right).$$
+Подставим пределы интегрирования и возьмём интеграл
+$$ \varphi_{ \xi } \left( t \right) =
+\frac{2}{a} \cdot \frac{ \sin \left( at \right) }{t} - \frac{2}{a} \cdot \frac{ \sin \left( at \right) }{t} - \frac{ \cos \left( at \right) - 1}{t^2} \cdot \frac{2}{a^2}.$$
+Первые 2 слагаемых уничтожаются
+$$ \varphi_{ \xi } \left( t \right) =
+\frac{2}{a^2} \cdot \frac{1 - \cos \left( at \right) }{t^2}.$$
+
+\subsubsection*{15.5}
+
+\textit{Задание.} Найдите закон распределения, которому соответствует характеристическая функция
+$$ \begin{cases}
+1 - \left| t \right|, \qquad \left| t \right| \leq 1, \\
+0, \qquad \left| t \right| > 1.
+\end{cases}$$
+
+\textit{Решение.}
+$$ \int \limits_{- \infty }^{+ \infty } \left| \varphi \left( t \right) \right| dt =
+\int \limits_{- 1}^1 \left| 1 - \left| t \right| \right| dt.$$
+При изменении $t$ на $ \left( - t \right) $ ничего не изменится, значит подынтегральная функция чётная
+$$ \int \limits_{- \infty }^{+ \infty } \left| \varphi \left( t \right) \right| dt =
+2 \int \limits_0^1 \left( 1 - t \right) dt =
+2 \left. \left( t - \frac{t^2}{2} \right) \right|_0^1 =
+2 \left( 1 - \frac{1}{2} \right) =
+2 \cdot \frac{1}{2} =
+1 < + \infty.$$
+Отсюда следует, что функция абсолютно интегрируема.
+
+$$p \left( t \right) =
+\frac{1}{2 \pi } \int \limits_{-1}^1 e^{- itx} \left( 1 - \left| t \right| \right) dt =
+2 \cdot \frac{1}{2 \pi } \int \limits_0^1 \cos \left( tx \right) \left( 1 - t \right) dt.$$
+Интегрируем частями
+$$p \left( t \right) =
+\frac{1}{ \pi } \int \limits_0^1 \cos \left( tx \right) dt - \frac{1}{ \pi } \int \limits_0^1 t \cos \left( tx \right) dt =
+\frac{1}{ \pi } \left( \frac{ \sin x}{x} - \frac{ \sin x}{x} + \frac{1 - \cos x}{x^2} \right).$$
+Первые 2 слагаемых уничтожаются
+$$p \left( t \right) =
+\frac{1 - \cos x}{ \pi x^2}.$$
+
+\subsubsection*{15.6}
+
+\textit{Задание.} Докажите, что следующие функции являются характеристическими:
+\begin{enumerate}[label=\alph*)]
+\item $ \cos^2 t$;
+\item $e^{- t^2}$;
+\item $e^{- \left| t \right| }$.
+\end{enumerate}
+
+\textit{Решение.}
+\begin{enumerate}[label=\alph*)]
+\item Нарисуем график (рис. \ref{fig:1562}).
+
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=.4\textwidth]{./pictures/15_6_2.png}
+  \caption{График функции $ \cos^2 t$}
+  \label{fig:1562}
+\end{figure}
+
+Теорема Пойа не подходит, но $ \cos t$ является характеристической функцией.
+Пусть $ \xi_1, \dotsc, \xi_n$ --- независимые случайные величины.
+Тогда
+$$ \varphi_{ \xi_1 + \xi_2 + \dotsc + \xi_n} \left( t \right) =
+\varphi_{ \xi_1} \left( t \right) \cdot \varphi_{ \xi_2} \left( t \right) \cdot \dotsc \cdot \varphi_{ \xi_n} \left( t \right).$$
+
+Пусть $ \xi_2, \, \xi_2$ --- независимые случайные величины с распределением
+$$P \left( \xi_1 = 1 \right) =
+P \left( \xi_2 = - 1 \right) =
+\frac{1}{2}.$$
+Тогда характеристическая функция их суммы $ \varphi_{ \xi_1 + \xi_2} \left( t \right) = \varphi_{ \xi_1} \left( t \right) \cdot \varphi_{ \xi_2} \left( t \right) $.
+Из задачи 15.3 $ \varphi_{ \xi_1 + \xi_2} \left( t \right) = \cos^2 t$.
+Предъявили ту случайную величину, для которой это является характеристической функцией.
+
+\item нарисуем график функции (рис. \ref{fig:1561}).
+
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=.4\textwidth]{./pictures/15_6_1.png}
+  \caption{График функции $e^{- t^2}$}
+  \label{fig:1561}
+\end{figure}
+
+Это характеристическая функция случайной величины $ \xi \sim N \left( 0, 2 \right) $;
+
+\item используем теорему Пойа.
+Нарисуем график (рис. \ref{fig:156}).
+
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=.4\textwidth]{./pictures/15_6.png}
+  \caption{График функции $e^{ - \left| t \right| }$}
+  \label{fig:156}
+\end{figure}
+
+В нуле --- единица, функция чётная, неотрицательная, выпуклая вниз, стремится к нулю.
+По теореме Пойа эта функция является характеристической.
+\end{enumerate}
