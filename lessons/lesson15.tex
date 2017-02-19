@@ -256,3 +256,45 @@ P \left( \xi_2 = - 1 \right) =
 В нуле --- единица, функция чётная, неотрицательная, выпуклая вниз, стремится к нулю.
 По теореме Пойа эта функция является характеристической.
 \end{enumerate}
+
+\subsubsection*{15.7}
+
+\textit{Задание.} Докажите, что следующие функции не могут быть характеристическими:
+\begin{enumerate}[label=\alph*)]
+\item $e^{- i \left| t \right| }$;
+\item $ \cos t^2$.
+\end{enumerate}
+
+\textit{Решение.}
+\begin{enumerate}[label=\alph*)]
+\item $e^{- i \left| t \right| } = \varphi \left( t \right)$.
+
+Проверим сопряжённость.
+
+$$e^{- i \left| t \right| \neq e^{i \left| - t \right| }}.$$
+Отсюда следует, что нарушается условие комплексной сопряжённости;
+\item схематически нарисуем график этой функции (рис. \ref{fig:157}).
+
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=.4\textwidth]{./pictures/15_7.png}
+  \caption{График функции $ \cos t^2$}
+  \label{fig:157}
+\end{figure}
+
+Нарушается равномерная непрерывность.
+
+Покажем это.
+
+Покажем, что размах --- 2.
+Берём $t_1 = \sqrt{2k \pi }$, а $t_2 = \sqrt{2k \pi + \pi }$.
+Смотрим на их разность
+$$ \left| t_2 - t_1 \right| =
+\frac{ \pi }{ \sqrt{2k \pi } + \sqrt{2k \pi + \pi }}.$$
+
+Когда $k \rightarrow \infty $, то $ \left| t_2 - t_1 \right| \rightarrow 0$.
+Значит можем найти как угодно близкие точки.
+Смотрим на разность значений функций в этих точках $ \left| \varphi \left( t_2 \right) - \varphi \left( t_1 \right) \right| = \left| 1 - \left( -1 \right) \right| = 2$.
+
+Расстояние равно двум, остаётся постоянным, к нулю не стремится.
+\end{enumerate}
