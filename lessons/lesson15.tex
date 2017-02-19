@@ -298,3 +298,24 @@ $$ \left| t_2 - t_1 \right| =
 
 Расстояние равно двум, остаётся постоянным, к нулю не стремится.
 \end{enumerate}
+
+\subsubsection*{15.8}
+
+\textit{Задание.}
+Докажите, что если $ \varphi \left( t \right) $ является характеристической функцией, то $ \left| \varphi \left( t \right) \right|^2$ тоже есть характеристической функцией.
+
+\textit{Решение.} $ \left| \varphi \left( t \right) \right|^2 = \varphi \left( t \right) \overline{ \varphi \left( t \right) }$.
+По одному из свойств это равно $ \varphi \left( t \right) \varphi \left( - t \right) $.
+
+По определению характеристической функции $ \varphi \left( t \right) = Me^{it \xi }$.
+
+Тогда $ \varphi \left( - t \right) = Me^{- it \xi } = Me^{it \left( - \xi \right) } = \varphi_{- \xi } \left( t \right) $.
+
+Пусть $ \xi_1, \, \xi_2$ ---
+независимые случайные величины с характеристической функцией $ \varphi \left( t \right) = \varphi_{ \xi_1} \left( t \right) = \varphi_{ \xi_2} \left( t \right) $.
+
+Тогда
+$ \varphi_{ \xi_1 - \xi_2} \left( t \right) =
+\varphi_{ \xi_1} \left( t \right) \varphi_{- \xi} \left( t \right) =
+\varphi_{ \xi_1} \left( t \right) \varphi_{ \xi_2} \left( - t \right) $.
+Это одна и та же характеристическая функция, потому это равно $ \varphi \left( t \right) \varphi \left( - t \right) $.
