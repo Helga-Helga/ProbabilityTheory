@@ -457,7 +457,7 @@ $$ \frac{1}{2 - \varphi \left( t \right) }$$
 \textit{Задание.} Пусть $ \xi_1, \dotsc, \xi_n$ --- независимые случайные величины, каждая из которых принимает значения $1$ и $- 1$ с вероятностью $1 / 2$.
 Найдите характеристическую функцию случайной величины $S_n = \xi_1 + \dotsc + \xi_n$.
 
-\textit{Решение.} Найдём характеристическую функцию одной каждой из случайных величин
+\textit{Решение.} Найдём характеристическую функцию каждой из случайных величин
 $$ \varphi_{ \xi_1} \left( t \right) =
 \dotsc =
 \varphi_{ \xi_n} \left( t \right) =
@@ -469,9 +469,10 @@ e^{it} \cdot \frac{1}{2} + e^{- it} \cdot \frac{1}{2} =
 
 Так как случайные величины $ \xi_1, \dotsc, \xi_n$ --- независимы,
 то
-$ \varphi_{ \xi_1 + \dotsc + \xi_n} \left( t \right) = \\
-= Me^{it \left( \xi_1 + \dotsc + \xi_n \right) } =
+$ \varphi_{S_n} \left( t \right) = \\
+= \varphi_{ \xi_1 + \dotsc + \xi_n} \left( t \right) =
+Me^{it \left( \xi_1 + \dotsc + \xi_n \right) } =
 Me^{it \xi_1} \dotsc e^{it \xi_n} =
-\varphi_{ \xi_1} \left( t \right) \dotsc \varphi_{ \xi_n} \left( t \right) =
-\varphi_{ \xi}^n \left( t \right) =
+\varphi_{ \xi_1} \left( t \right) \dotsc \varphi_{ \xi_n} \left( t \right) = \\
+= \varphi_{ \xi}^n \left( t \right) =
 \cos^n \left( t \right) $.
