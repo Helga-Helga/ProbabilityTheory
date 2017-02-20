@@ -538,3 +538,71 @@ $$ \varphi_{ \eta } \left( t \right) =
 \frac{1 + e^{- \left| t \right| }e^{- t^2}}{2}.$$
 Предъявили случайную величину, для которой заданная функция является характеристической.
 \end{enumerate}
+
+\subsubsection*{15.19}
+
+\textit{Задание.} Докажите, что следующие функции не могут быть характеристическими:
+\begin{enumerate}[label=\alph*)]
+\item $a_1 \cos t + \dotsc + a_n \cos nt + b_1 \sin t + \dotsc + b_n \sin nt; \, b_1 \cdot \dotsc \cdot b_n \neq 0, \, a_i, \, b_i \in \mathbb{R}$;
+\item $e^t$;
+\item $ \cos t^3$.
+\end{enumerate}
+
+\textit{Решение.}
+\begin{enumerate}[label=\alph*)]
+\item Проверим свойство комплексной сопряжённости.
+Должно быть
+$$ \varphi \left( t \right) =
+\overline{ \varphi \left( - t \right) }.$$
+Найдём
+$ \varphi \left( - t \right) =
+a_1 \cos \left( - t \right) + \dotsc + a_n \cos \left( - nt \right) + b_1 \sin \left( - t \right) + \dotsc + \\
++ b_n \sin \left( - nt \right) =
+a_1 \cos t + \dotsc + a_n \cos \left( nt \right) - b_1 \sin t - \dotsc - b_n \sin \left( nt \right) = \\
+= \overline{ \varphi \left( - t \right) }$,
+так как функция действительная.
+Получили, что
+$$ \varphi \left( t \right) \neq
+\overline{ \varphi \left( - t \right) },$$
+то есть нарушается условие комплексной сопряжённости;
+\item проверим свойство комплексной сопряжённости.
+Должно быть
+$$ \varphi \left( t \right) =
+\overline{ \varphi \left( - t \right) }.$$
+Найдём $ \varphi \left( - t \right) = e^{-t} = \overline{ \varphi \left( - t \right) }$, так как функция действительная.
+Получили, что $ \varphi \left( t \right) \neq \overline{ \varphi \left( - t \right) }$, то есть нарушается условие комплексной сопряжённости;
+\item схематически нарисуем график этой функции (рис. \ref{fig:1519}).
+
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=.4\textwidth]{./pictures/15_19.png}
+  \caption{График функции $ \cos t^3$}
+  \label{fig:1519}
+\end{figure}
+
+Покажем, что нарушается равномерная непрерывность.
+Берём
+$$t_1 = \sqrt[3]{2k \pi }, \,
+t_2 = \sqrt[3]{2k \pi + \pi }.$$
+Смотрим на их разность
+$$ \left| t_2 - t_1 \right| =
+\left| \sqrt[3]{2k \pi + \pi } - \sqrt[3]{2k \pi } \right|.$$
+Умножим и поделим на их неполный квадрат
+$$ \left| t_2 - t_1 \right| =
+\frac{2k \pi + \pi - 2k \pi}{ \left( 2k \pi + \pi \right)^{ \frac{2}{3}} + \sqrt[3]{2k \pi + \pi } \sqrt[3]{2k \pi } + \left( 2k \pi \right)^{ \frac{2}{3}}}.$$
+Первое и последнее слагаемые в числителе уничтожаются
+$$ \left| t_2 - t_1 \right| =
+\frac{ \pi }{ \left( 2k \pi + \pi \right)^{ \frac{2}{3}} + \sqrt[3]{ \left( 2k \pi + \pi \right) \left( 2k \pi \right) } + \left( 2k \pi \right)^{ \frac{2}{3}}}.$$
+
+Когда $t \rightarrow \infty $, то $ \left| t_2 - t_1 \right| \rightarrow 0$.
+Значит можем найти как угодно близкие точки.
+Смотрим на разность функций в этих точках
+$$ \left| \varphi \left( t_2 \right) - \varphi \left( t_1 \right) \right| =
+\left| \cos \left( 2k \pi + \pi \right) - \cos \left( 2k \pi \right) \right| =
+\left| - 1 - 1 \right| =
+\left| - 2 \right| =
+2.$$
+
+Размах равен двум, остаётся постоянным, к нулю не стремится.
+Поэтому функция не является характеристической.
+\end{enumerate}
