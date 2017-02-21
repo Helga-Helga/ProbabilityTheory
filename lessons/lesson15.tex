@@ -660,3 +660,112 @@ $$ \varphi \left( t \right) =
 \frac{1}{2} \cdot \frac{it - 1 - it - 1}{ \left( it + 1 \right) \left( it - 1 \right) } =
 \frac{- 2}{2 \left( - t^2 - 1 \right) } =
 \frac{1}{1 + t^2}.$$
+
+\subsubsection*{15.22}
+
+\textit{Задание.} Пусть $ \xi_1, \, \xi_2, \dotsc, \xi_n$ --- независимые одинаково распределённые случайные величины, которые распределены по закону Коши с плотностью
+$$p_{ \xi } \left( t \right) =
+\frac{1}{ \pi \left( 1 + x^2 \right) }.$$
+Найдите характеристическую функцию случайной величины
+$$ \eta =
+\sum \limits_{k=1}^n a_k \xi_k,$$
+где $a_1, \dotsc, a_n$ --- неслучайные константы.
+Что можно сказать про распределение случайной величины $ \eta $?
+
+\textit{Решение.} $ \xi_1, \, \xi_2, \dotsc, \xi_n$ --- независимые случайные величины с распределением Коши
+$$p \left( x \right) =
+\frac{1}{ \pi \left( 1 + x^2 \right) }.$$
+
+Характеристическая функция --- это преобразование Фурье от функции $p \left( x \right) $.
+Найдём её
+$$ \varphi \left( t \right) =
+\int \limits_{- \infty }^{+ \infty } \frac{1}{ \pi \left( 1 + x^2 \right) } \cdot e^{itx} dx.$$
+
+Рассмотрим новую функцию
+$$f \left( z \right) =
+\frac{e^{itz}}{ \pi \left( 1 + z^2 \right) } =
+\frac{e^{itz}}{ \pi \left( z - i \right) \left( z + i \right) }.$$
+
+Будем считать, что $t > 0$, в силу свойства комплексной сопряжённости характеристической функции этого достаточно.
+
+Функция $f$ имеет 2 полюса в нулях знаменателя --- точки $ \pm i$ (рис. \ref{fig:1522}).
+
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=.4\textwidth]{./pictures/15_22.png}
+  \caption{Вспомогательный рисунок для нахождения интеграла от функции $f$}
+  \label{fig:1522}
+\end{figure}
+
+Для больших $N$ есть замкнутый контур с полюсом первого порядка
+$$ \int \limits_{ \Gamma_N} f \left( z \right) dz + \int \limits_{- N}^N \left( rez \, f \right) \left( i \right) =
+2 \pi ie^{- t} \cdot \frac{1}{2i \pi } =
+e^{- t}.$$
+
+В общем случае $ \varphi \left( t \right) = e^{- \left| t \right| }$.
+
+Нужно найти характеристическую функцию случайной величины
+$$ \eta =
+\sum \limits_{k = 1}^n a_k \xi_k =
+a_1 \xi_1 + a_2 \xi_2 + \dotsc + a_n \xi_n.$$
+
+Заметим, что $ \varphi_{a \xi } \left( t \right) = Me^{i \left( at \right) \xi } \left( t \right) = \varphi_{ \xi } \left( at \right) $.
+
+Из независимости случайных величин следует, что
+$$ \varphi_{ \eta } \left( t \right) =
+\varphi_{a_1 \xi_1 + a_2 \xi_2 + \dotsc + a_n \xi_n} \left( t \right) =
+\varphi_{ \xi_1} \left( a_1 t \right) \cdot \varphi_{ \xi_2} \left( a_2 t \right) \cdot \dotsc \cdot \varphi_{ \xi_n} \left( a_n t \right) =
+\prod \limits_{k = 1}^n \varphi_{ \xi } \left( a_k t \right).$$
+Подставим характеристическую функцию
+$$ \varphi_{ \eta } \left( t \right) =
+\prod \limits_{k = 1}^n e^{- \left| a_k t \right| } =
+e^{- \sum \limits_{k = 1}^n \left| a_k t \right| } =
+e^{- \sum \limits_{k = 1}^n \left| a_k \right| \cdot \left| t \right| }.$$
+
+Проверим условие абсолютной интегрируемости характеристической функции
+$$ \int \limits_{- \infty }^{+ \infty } \left| \varphi_{ \eta } \left( t \right) \right| dt =
+\int \limits_{- \infty }^{+ \infty } \left| e^{- \sum \limits_{k = 1}^n \left| a_k \right| \cdot \left| t \right| } \right| dt.$$
+При изменении $t$ на $ \left( - t \right) $ ничего не меняется, значит, подынтегральная функция чётная
+$$ \int \limits_{- \infty }^{+ \infty } \left| \varphi_{ \eta } \left( t \right) \right| dt =
+2 \int \limits_0^{+ \infty } e^{- \sum \limits_{k = 1}^n \left| a_k \right| \cdot t} dt =
+\left. - 2 \cdot \frac{1}{ \sum \limits_{k = 1}^n \left| a_k \right| } \cdot e^{- \sum \limits_{k = 1}^n \left| a_k \right| \cdot t} \right|_0^{+ \infty } =
+\frac{2}{ \sum \limits_{k = 1}^n \left| a_k \right| }.$$
+При
+$$\sum \limits_{k = 1}^n \left| a_k \right| \neq
+0$$
+получаем, что
+$$ \int \limits_{- \infty }^{+ \infty } \left| \varphi_{ \eta } \left( t \right) \right| dt <
++ \infty.$$
+Отсюда следует, что функция абсолютно интегрируема и можем найти плотность распределения как обратное преобразование Фурье
+$$p_{ \eta } \left( t \right) =
+\frac{1}{2 \pi } \int \limits_{- \infty }^{+ \infty } e^{- itx} e^{- \sum \limits_{k = 1}^n \left| a_k \right| \cdot \left| t \right| } dt.$$
+Раскроем модуль, разбив интеграл на 2
+$$p_{ \eta } \left( t \right) =
+\frac{1}{2 \pi } \int \limits_{- \infty }^0 e^{- itx} e^{ \sum \limits_{k = 1}^n \left| a_k \right| t} dt +
+\frac{1}{2 \pi } \int \limits_0^{+ \infty } e^{- itx} e^{- \sum \limits_{k = 1}^n \left| a_k \right| t} dt.$$
+Объединим экспоненты и вынесем $t$ в показателе степени
+$$p_{ \eta } \left( t \right) =
+\frac{1}{2 \pi } \int \limits_{- \infty }^0 e^{t \left( \sum \limits_{k = 1}^n \left| a_k \right| - ix \right) } dt +
+\frac{1}{2 \pi } \int \limits_0^{+ \infty } e^{t \left( - \sum \limits_{k = 1}^n \left| a_k \right| - ix \right) } dt.$$
+Возьмём интегралы от экспонент
+\begin{equation*}
+\begin{split}
+p_{ \eta } \left( t \right) =
+\frac{1}{2 \pi } \cdot \left. \frac{1}{ \sum \limits_{k = 1}^n \left| a_k \right| - ix} \cdot
+e^{t \left( \sum \limits_{k = 1}^n \left| a_k \right| - ix \right) } \right|_{- \infty }^0 - \\
+- \frac{1}{2 \pi } \cdot \left. \frac{1}{ \sum \limits_{k = 1}^n \left| a_k \right| + ix} \cdot
+e^{t \left( - \sum \limits_{k = 1}^n \left| a_k \right| - ix \right) } \right|_0^{+ \infty }.
+\end{split}
+\end{equation*}
+Подставим пределы интегрирования
+$$p_{ \eta } \left( t \right) =
+\frac{1}{2 \pi } \cdot \frac{1}{ \sum \limits_{k = 1}^n \left| a_k \right| - ix} + \frac{1}{2 \pi } \cdot \frac{1}{ \sum \limits_{k = 1}^n \left| a_k \right| + ix} =
+\frac{1}{2 \pi } \cdot
+\frac{ \sum \limits_{k = 1}^n \left| a_k \right| + ix + \sum \limits_{k = 1}^n \left| a_k \right| - ix}{ \left( \sum \limits_{k = 1}^n \left| a_k \right| \right)^2 + x^2}.$$
+Приведём подобные в числителе
+$$p_{ \eta } \left( t \right) =
+\frac{1}{2 \pi } \cdot \frac{2 \sum \limits_{k = 1}^n \left| a_k \right| }{\left( \sum \limits_{k = 1}^n \left| a_k \right| \right)^2 + x^2} =
+\frac{ \sum \limits_{k = 1}^n \left| a_k \right| }{ \pi \left[ \left( \sum \limits_{k = 1}^n \left| a_k \right| \right)^2 + x^2 \right] }.$$
+Отсюда следует, что случайная величина $ \eta $ имеет распределение Коши с параметром
+$$ \theta =
+\sum \limits_{k = 1}^n \left| a_k \right|.$$
