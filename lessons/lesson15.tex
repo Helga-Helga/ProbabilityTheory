@@ -769,3 +769,96 @@ $$p_{ \eta } \left( t \right) =
 Отсюда следует, что случайная величина $ \eta $ имеет распределение Коши с параметром
 $$ \theta =
 \sum \limits_{k = 1}^n \left| a_k \right|.$$
+
+\subsubsection*{15.23}
+
+\textit{Задание.} Найдите закон распределения, которому соответствует характеристическая функция:
+\begin{enumerate}[label=\alph*)]
+\item $e^{- \left| t \right| }$;
+\item $e^{- t^2}$.
+\end{enumerate}
+
+\textit{Решение.}
+\begin{enumerate}[label=\alph*)]
+\item Проверим абсолютную интегрируемость характеристической функции
+$$ \int \limits_{- \infty }^{+ \infty } \left| \varphi \left( t \right) \right| dt =
+\int \limits_{- \infty }^{+ \infty } \left| e^{- \left| t \right| } \right| dt.$$
+При замене $t$ на $ \left( - t \right) $ ничего не изменится, значит, подынтегральная функция чётная
+$$ \int \limits_{- \infty }^{+ \infty } \left| \varphi \left( t \right) \right| dt =
+2 \int \limits_0^{+ \infty } e^{- t} dt =
+\left. -2e^{- t} \right|_0^{+ \infty } =
+2 <
++ \infty.$$
+Из этого следует, что характеристическая функция абсолютно интегрируема, и можем найти плотность распределения как обратное преобразование Фурье
+$$p \left( t \right) =
+\frac{1}{2 \pi } \int \limits_{- \infty }^{+ \infty } e^{- itx} e^{- \left| t \right| } dt =
+\frac{1}{2 \pi } \int \limits_{- \infty }^0 e^{- itx} e^t dt + \frac{1}{2 \pi } \int \limits_0^{+ \infty } e^{- itx} e^{- t} dt.$$
+Вынесем $t$ в показателях экспонент
+$$p \left( t \right) =
+\frac{1}{2 \pi } \int \limits_{- \infty }^0 e^{t \left( 1 - it \right) } dt + \frac{1}{2 \pi } \int \limits_0^{+ \infty } e^{t \left( - 1 - it \right) } dt.$$
+Возьмём интегралы
+$$p \left( t \right) =
+\frac{1}{2 \pi } \cdot \left. \frac{1}{1 - it} \cdot e^{t \left( 1 - it \right) } \right|_{- \infty }^0 +
+\frac{1}{2 \pi } \cdot \left. \frac{- 1}{1 + it} \cdot e^{t \left( - 1 - it \right) } \right|_0^{+ \infty }.$$
+Подставим пределы интегрирования
+$$p \left( t \right) =
+\frac{1}{2 \pi } \cdot \frac{1}{1 - it} + \frac{1}{2 \pi } \cdot \frac{1}{1 + it} =
+\frac{1}{2 \pi } \left( \frac{1}{1 - it} + \frac{1}{1 + it} \right).$$
+Приведём к общему знаменателю
+$$p \left( t \right) =
+\frac{1}{2 \pi } \cdot \frac{1 + it + 1 - it}{1 + x^2} =
+\frac{2}{2 \pi \left( 1 + x^2 \right) } =
+\frac{1}{ \pi \left( 1 + x^2 \right) };$$
+\item проверим абсолютную интегрируемость характеристической функции
+$$ \int \limits_{- \infty }^{+ \infty } \left| \varphi \left( t \right) \right| dt =
+\int \limits_{- \infty }^{+ \infty } \left| e^{- t^2} \right| dt =
+\int \limits_{- \infty }^{+ \infty } e^{- t^2} dt.$$
+
+Нужно взять гауссов интеграл, который может быть представлен как
+$$I =
+\int \limits_{- \infty }^{+ \infty } e^{- x^2} dx =
+\int \limits_{- \infty }^{+ \infty } e^{- y^2} dy.$$
+
+Рассмотрим квадрат этого интеграла $I^2$.
+Вводя двумерные координаты,
+переходя от них к полярным координатам
+$$ \left( x = r \cos \varphi, \,
+y = r \sin \varphi, \, 
+^2 = x^2 + y^2 \right) $$
+и интегрируя по $ \varphi $ (от нуля до $2 \pi $),
+получаем
+$$I^2 =
+\int \limits_{- \infty }^{+ \infty } \int \limits_{- \infty }^{+ \infty } e^{- \left( x^2 + y^2 \right) } dxdy =
+\int \limits_0^{2 \pi } d \varphi \int \limits_0^{+ \infty } e^{- r^2} rdr =
+2 \pi \int \limits_0^{+ \infty } e^{- r^2} dr^2 \cdot \frac{1}{2}.$$
+Сократим константы и возьмём интеграл
+$$I^2 = 
+\pi \left. \cdot e^{- r^2} \right|_0^{+ \infty } =
+\pi.$$
+
+Следовательно,
+$$I =
+\int \limits_{- \infty }^{+ \infty } e^{- t^2} dt =
+\sqrt{ \pi } <
++ \infty.$$
+Отсюда следует, что характеристическая функция абсолютно интегрируема, и можем найти плотность распределения как обратное преобразование Фурье
+$$p \left( t \right) =
+\frac{1}{2 \pi } \int \limits_{- \infty }^{+ \infty } e^{- itx} e^{- t^2} dt.$$
+Выделим полный квадрат в степени экспоненты
+\begin{equation*}
+\begin{split}
+p \left( t \right) =
+\frac{1}{2 \pi }
+\int \limits_{- \infty }^{+ \infty } e^{- \left[ t^2 + itx \cdot 2 \cdot \frac{1}{2} + \frac{1}{4} \left( ix \right)^2 \right] + \frac{1}{4} \left( ix \right)^2} dt = \\
+= \frac{1}{2 \pi } \int \limits_{- \infty }^{+ \infty } e^{- \left( t + \frac{1}{2} \cdot ix \right)^2 - \frac{x^2}{4}} dt.
+\end{split}
+\end{equation*}
+Сделаем замену
+$$t + \frac{1}{2} \cdot ix = u, \, du = dt.$$
+Получим
+$$p \left( t \right) =
+\frac{1}{2 \pi } \cdot e^{- \frac{x^2}{4}} \int \limits_{- \infty }^{+ \infty } e^{- u^2} du =
+\frac{1}{2 \pi } \cdot e^{- \frac{x^2}{4}} \cdot \sqrt{ \pi } =
+\frac{e^{- \frac{x^2}{4}}}{2 \sqrt{ \pi }}.$$
+
+\end{enumerate}
