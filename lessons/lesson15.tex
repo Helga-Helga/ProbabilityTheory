@@ -892,3 +892,72 @@ e^{ \lambda \left( e^{it} - 1 \right) }.$$
 $$ \varphi_{ \xi + \eta } \left( t \right) =
 \varphi_{ \xi } \left( t \right) \varphi_{ \eta } \left( t \right) =
 \frac{1}{it} \left( e^{it} - 1 \right) e^{ \lambda \left( e^{it} - 1 \right) }.$$
+
+\subsubsection*{15.25}
+
+\textit{Задание.}
+Используя характеристические функции, докажите, что если $ \xi_1, \, \xi_2$ --- независимые случайные величины,
+которые имеют распределение Пуассона с параметрами $ \lambda_1$ и $ \lambda_2$ соответственно,
+то случайная величина $ \xi_1 + \xi_2$ имеет распределение Пуассона с параметром $ \lambda_1 + \lambda_2$.
+
+\textit{Решение.}
+$ \xi_1, \, \xi_2$ --- случайные величины с пуассоновским распределением $ \xi_1 \sim Pois \left( \lambda_1 \right), \, \xi_2 \sim Pois \left( \lambda_2 \right) $.
+
+Их характеристические функции
+$ \varphi_{ \xi_1} \left( t \right) = e^{ \lambda_1 \left( e^{it} - 1 \right) }, \,
+\varphi_{ \xi_2} \left( t \right) = e^{- \lambda_2 \left( e^{it} - 1 \right) }$.
+
+Найдём характеристическую функцию суммы случайных величин.
+
+$ \xi_1, \, \xi_2$ --- независимы.
+Поэтому
+$$ \varphi_{ \xi_1 + \xi_2} \left( t \right) =
+\varphi_{ \xi_1} \left( t \right) \varphi_{ \xi_2} \left( t \right) =
+e^{ \lambda_1 \left( e^{it} - 1 \right) } e^{ \lambda_2 \left( e^{it} - 1 \right) } =
+e^{ \lambda_1 \left( e^{it} - 1 \right) + \lambda_2 \left( e^{it} - 1 \right) }.$$
+Вынесем общий множитель в показателе экспоненты за скобки
+$$ \varphi_{ \xi_1 + \xi_2} \left( t \right) =
+e^{ \left( e^{it} - 1 \right) \left( \lambda_1 + \lambda_2 \right) }.$$
+Из этого следует, что $ \left( \xi_1 + \xi_2 \right) \sim Pois \left( \lambda_1 + \lambda_2 \right) $.
+
+\subsubsection*{15.26}
+
+\textit{Задание.}
+Используя характеристические функции, докажите, что если $ \xi_1, \, \xi_2$ --- независимые случайные величины,
+которые имеют биномиальное распределение с параметрами $ \left( n_1, p \right) $ и $ \left( n_2, p \right) $ соответственно,
+то случайная величина $ \xi_1 + \xi_2$ имеет биномиальное распределение с параметром $ \left( n_1 + n_2, p \right) $.
+
+\textit{Решение.}
+$ \xi_1, \, \xi_2$ --- случайные величины с биномиальным распределением $ \xi_1 \sim Binom \left( n_1, p \right), \, \xi_2 \sim Binom \left( n_2, p \right) $.
+
+Для биномиального распределения есть вероятность
+$$P \left\{ \xi = k \right\} = C_n^k p^k \left( 1 - p \right)^{n - k},$$
+где $p \in \left( 0, 1 \right), \, k = \overline{0, n}$.
+
+Тогда
+$$ \varphi_{ \xi } \left( t \right) =
+Me^{it \xi } =
+\sum \limits_{k = 0}^{n} C_n^k \left( e^{it} \right)^k p^k \left( 1 - p \right)^{n - k} =
+\sum \limits_{k = 0}^{n} C_n^k \left( e^{it} p \right)^k \left( 1 - p \right)^{n - k}.$$
+Применяем формулу для бинома Ньютона
+$$ \varphi_{ \xi } \left( t \right) =
+\left[ e^{it} p + \left( 1 - p \right) \right]^n =
+\left( e^{it} p + 1 - p \right)^n =
+\left[ p \left( e^{it} - 1 \right) + 1 \right]^n.$$
+
+Случайные величины $ \xi_1, \, \xi_2$ имеют характеристические функции
+$$ \varphi_{ \xi_1 } \left( t \right) = \left[ p \left( e^{it} - 1 \right) + 1 \right]^{n_1}, \,
+\varphi_{ \xi_2 } \left( t \right) = \left[ p \left( e^{it} - 1 \right) + 1 \right]^{n_2}.$$
+
+Найдём характеристическую функцию суммы случайных величин.
+
+$ \xi_1, \, \xi_2$ --- независимы,
+поэтому
+$$ \varphi_{ \xi_1 + \xi_2} \left( t \right) =
+\varphi_{ \xi_1} \left( t \right) \varphi_{ \xi_2} \left( t \right) =
+\left[ p \left( e^{it} - 1 \right) + 1 \right]^{n_1} \left[ p \left( e^{it} - 1 \right) + 1 \right]^{n_2}.$$
+При перемножении одинаковых выражений их степени складываются, потому
+$$ \varphi_{ \xi_1 + \xi_2} \left( t \right) =
+\left[ p \left( e^{it} - 1 \right) + 1 \right]^{n_1 + n_2}.$$
+
+Из этого следует, что $ \left( \xi_1 + \xi_2 \right) \sim Binom \left( n_1 + n_2, p \right) $.
