@@ -860,5 +860,35 @@ $$p \left( t \right) =
 \frac{1}{2 \pi } \cdot e^{- \frac{x^2}{4}} \int \limits_{- \infty }^{+ \infty } e^{- u^2} du =
 \frac{1}{2 \pi } \cdot e^{- \frac{x^2}{4}} \cdot \sqrt{ \pi } =
 \frac{e^{- \frac{x^2}{4}}}{2 \sqrt{ \pi }}.$$
-
 \end{enumerate}
+
+\subsubsection*{15.24}
+
+\textit{Задание.}
+Пусть $ \xi $ и $ \eta $ --- независимые случайные величины, причём $ \xi $ имеет равномерное на отрезке $ \left[ 0, 1 \right] $ распределение,
+а $ \eta $ распределена по закону Пуассона с параметром $ \lambda $.
+Найдите характеристическую функцию случайной величины $ \xi + \eta $.
+
+\textit{Решение.} $ \xi $ имеет плотность распределения $p_{ \xi } \left( t \right) = \mathbbm{1}_{ \left[ 0, 1 \right] } \left( x \right) $.
+Тогда
+$$ \varphi_{ \xi } \left( t \right) =
+\int \limits_0^1 e^{itx} dx =
+\left. \frac{1}{it} \cdot e^{itx} \right|_0^1 =
+\frac{1}{it} \left( e^{it} - 1 \right).$$
+
+Случайная величина $ \eta $ имеет пуассоновское распределение с параметром $ \lambda > 0$, которое выглядит следующим образом
+$$P \left\{ \eta = k \right\} =
+e^{- \lambda } \cdot \frac{ \lambda^k}{k!}.$$
+
+Так что
+$$ \varphi_{ \eta } \left( t \right) =
+\sum \limits_{k = 0}^{ \infty } e^{- \lambda } \cdot \frac{ \lambda^k \left( e^{it} \right)^k}{k!} =
+e^{- \lambda } \sum \limits_{k = 0}^{ \infty } \frac{ \left( \lambda e^{it} \right)^k}{k!} =
+e^{- \lambda } e^{ \lambda e^{it}} =
+e^{ \lambda e^{it} - \lambda } =
+e^{ \lambda \left( e^{it} - 1 \right) }.$$
+
+Так как случайные величины $ \xi $ и $ \eta $ --- независимы, то
+$$ \varphi_{ \xi + \eta } \left( t \right) =
+\varphi_{ \xi } \left( t \right) \varphi_{ \eta } \left( t \right) =
+\frac{1}{it} \left( e^{it} - 1 \right) e^{ \lambda \left( e^{it} - 1 \right) }.$$
