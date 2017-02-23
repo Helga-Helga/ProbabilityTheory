@@ -961,3 +961,51 @@ $$ \varphi_{ \xi_1 + \xi_2} \left( t \right) =
 \left[ p \left( e^{it} - 1 \right) + 1 \right]^{n_1 + n_2}.$$
 
 Из этого следует, что $ \left( \xi_1 + \xi_2 \right) \sim Binom \left( n_1 + n_2, p \right) $.
+
+\subsubsection*{15.27}
+
+\textit{Задание.}
+Пусть $ \xi $ --- равномерно распределённая на отрезке $ \left[ 0, 1 \right] $ случайная величина, а $ \nu $ --- случайная величина,
+которая не зависит от $ \xi $ и принимает целые положительные значения: $P \left( \nu = k \right) = p_k$.
+Найдите характеристическую функцию случайной величины $ \xi \cdot \nu $.
+
+\textit{Решение.} Случайная величина $ \xi $ равномерно распределена на отрезке $ \left[ 0, 1 \right] $ и имеет характеристическую функцию
+$$ \varphi_{ \xi } \left( t \right) =
+\left( e^{it} - 1 \right) \cdot \frac{1}{it}.$$
+
+По определению $ \varphi_{ \xi \cdot \nu } \left( t \right) = Me^{it \xi \cdot \nu } \left( t \right) = M \left( e^{it \xi} \right)^{ \nu }.$
+Нужно учесть все возможные значения $ \nu $.
+Получаем
+$$ \varphi_{ \xi \cdot \nu } \left( t \right) =
+M \sum \limits_{n = 1}^{+ \infty } \mathbbm{1} \left( \nu = n \right) e^{it \xi n}.$$
+Обозначим
+$$ \sum \limits_{n = 1}^{+ \infty } \mathbbm{1} \left( \nu = n \right) e^{it \xi n} =
+S.$$
+
+Отличное от нуля в этой сумме одно слагаемое.
+Берём частичную сумму
+$$S_m =
+\sum \limits_{n = 1}^{m} \mathbbm{1} \left( \nu = n \right) e^{it \xi n} \rightarrow S, \,
+m \rightarrow \infty.$$
+
+Оценим
+$$ \left| S_m \right| \leq
+\sum \limits_{n = 1}^{+ \infty } \left| \mathbbm{1} \left( \nu = n \right) e^{it \xi n} \right| \leq
+\sum \limits_{n = 1}^{+ \infty } \mathbbm{1} \left( \nu = n \right).$$
+
+Теперь нужно убедиться, что эта сумма имеет конечное математическое ожидание.
+Пользуемся линейностью
+$$M \sum \limits_{n = 1}^{+ \infty } \mathbbm{1} \left( \nu = n \right) =
+\sum \limits_{n = 1}^{+ \infty } P \left( \nu = n \right) =
+\sum \limits_{n = 1}^{+ \infty } p_n \leq
+1,$$
+потому что это распределение случайной величины.
+Из этого следует, что
+$$MS =
+\lim \limits_{m \to \infty } MS_m.$$
+
+Теперь сумму математических ожиданий можно записать как математическое ожидание суммы
+$$ \varphi_{ \xi \cdot \nu } \left( t \right) =
+\sum \limits_{n = 1}^{+ \infty } M \mathbbm{1} \left( \nu = n \right) \cdot Me^{it \xi n} =
+\sum \limits_{n = 1}^{+ \infty } p_n \varphi_{ \xi } \left( tn \right) =
+\sum \limits_{n = 1}^{+ \infty } p_n \left( e^{itn} - 1 \right) \cdot \frac{1}{itn}.$$
