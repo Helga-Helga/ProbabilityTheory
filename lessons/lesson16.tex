@@ -1,0 +1,68 @@
+\addcontentsline{toc}{chapter}{Занятие 16. Слабая сходимость случайных величин. Заон больших чисел}
+\chapter*{Занятие 16. Слабая сходимость случайных величин. Заон больших чисел}
+
+\addcontentsline{toc}{section}{Контрольные вопросы и задания}
+\section*{Контрольные вопросы и задания}
+
+\subsubsection*{Приведите определение видов сходимости случайных величин; какая связь между ними?}
+
+Последовательность $ \left\{ \xi_n: \, n \geq 1 \right\} $ сходится к случайной величине $ \xi $ почти наверное (с вероятностью 1),
+если $ \exists \Omega_0 \subset \Omega, \, \Omega_0 $ ---
+случайное событие $ \left( \Omega_0 \in \mathcal{F} \right): \, P \left( \Omega_0 \right) = 1$ и
+$ \forall \omega \in \Omega_0:
+\xi_n \left( \omega \right) \rightarrow \xi \left( \omega \right),
+n \rightarrow \infty $
+(поточечная сходимость на множестве полной вероятности), т.е. $P \left\{ \lim \limits_{n \to \infty} \xi_n \left( \omega \right) = \xi \left( \omega \right) \right\} = 1$.
+
+Последовательность случайных величин $ \left\{ \xi_n \right\} $ сходится по вероятности к случайной величине $ \xi $,
+если $ \forall \epsilon > 0 \, P \left\{ \left| \xi_n - \xi \right| > \epsilon \right\} \rightarrow \infty, \, n \rightarrow \infty $.
+
+Лемма.
+Пусть $ \xi_n \overset{almost sure (a.s.)}{ \rightarrow } \xi, \, n \rightarrow \infty $, тогда $ \xi_n \overset{P}{ \rightarrow } \xi, \, n \rightarrow \infty $,
+т.е. их сходимости почти наверное следует сходимость по вероятности.
+
+Лемма Рисса.
+Пусть $ \xi_n \overset{P}{ \rightarrow } \xi, \, n \rightarrow \infty $.
+Тогда существует подпоследовательность: $ \left\{ \xi_{n_k}: \, k \geq 1 \right\} $ такая, что $ \xi_{n_k} \overset{a.s.}{ \rightarrow } \xi, \, k \rightarrow \infty $.
+
+Лемма (характеризация сходимости по вероятности).
+Если последовательность $ \left\{ \xi_n \right\} $ и случайная величина $ \xi $ таковы,
+что их любой подпоследовательности $ \left\{ \xi_{n_k}: \, k \geq 1 \right\} $ можно выбрать подподпоследовательность
+$$ \left\{ \xi_{n_{k_j}}: \, j \geq 1 \right\} $$
+такую,
+что $ \xi_{n_{k_j}} \overset{a.s.}{ \rightarrow } \xi, \, j \rightarrow \infty $, то сама $ \xi_n \overset{P}{ \rightarrow } \xi, \, n \rightarrow \infty $.
+
+Случайные величины $ \xi_n$ слабо сходятся (сходятся по распределению) к случайной величине $ \xi $,
+если для всякой непрерывной и ограниченной функции
+$f: \,
+\mathbb{R} \rightarrow \mathbb{R} \,
+Mf \left( \xi_n \right) \rightarrow Mf \left( \xi \right) $ при $n \rightarrow \infty $.
+
+\subsubsection*{Приведите критерии слабой сходимости (в терминах сходимости функций распределения и в терминах сходимости характеристических функций.}
+
+Последовательность функций распределения $ \left\{ F_n \right\} $ слабо сходится к функции распределения $F$,
+если для всякой непрерывной и ограниченной функции
+$f: \, \mathbb{R} \rightarrow \mathbb{R} \,
+\int \limits_{- \infty }^{+ \infty } f \left( x \right) dF_n \left( x \right) \rightarrow \int \limits_{- \infty }^{+ \infty } f \left( x \right) dF \left( x \right) $
+при $n \rightarrow \infty $.
+
+Если $ \xi_n \Rightarrow \xi $ при $n \rightarrow \infty $,
+то $ \varphi_{ \xi_n} \left( t \right) = Me^{it \xi_n} \rightarrow Me^{it \xi } = \varphi_{ \xi } \left( t \right), \, n \rightarrow \infty $.
+
+\subsubsection*{Сформулируйте закон больших чисел.}
+
+Пусть $ \xi_1, \dotsc, \xi_n$ --- последовательность независимых одинаково распределённых случайных величины (функции распределения $ \xi_n: n \geq 1$ совпадают).
+Организуем нарастающие суммы
+$$S_n =
+\sum \limits_{k = 1}^n \xi_k.$$
+Берём среднее (ограниченные нормированные суммы):
+$$ \frac{1}{n} \cdot S_n.$$
+Если $ \exists M \xi_1 = a$, то
+$$ \frac{1}{n} \cdot S_n \overset{P}{ \rightarrow } a, \,
+n \rightarrow \infty.$$
+
+\addcontentsline{toc}{section}{Аудиторные задачи}
+\section*{Аудиторные задачи}
+
+\addcontentsline{toc}{section}{Домашнее задание}
+\section*{Домашнее задание}
