@@ -468,6 +468,62 @@ $$ \frac{1}{2 - \varphi \left( t \right) }$$
 будет характеристической функцией $ \eta $.
 \end{enumerate}
 
+\subsubsection*{15.13}
+
+\textit{Задание.} С помощью характеристической функции вычислите моменты случайной величины со стандартным нормальным распределением.
+
+\textit{Решение.} $ \xi \sim N \left( 0, 1 \right) $ имеет плотность распределения
+$$p_{ \xi } \left( x \right) =
+\frac{1}{ \sqrt{2 \pi }} \cdot e^{- \frac{x^2}{2}}$$
+и характеристическую функцию $ \varphi_{ \xi } \left( t \right) = e^{- \frac{t^2}{2}}$.
+
+Моменты случайной величины связаны с характеристической функцией формулой
+\begin{equation}\label{eq:connection}
+  M \xi^k =
+\left( -i \right)^k \varphi^{ \left( k \right) } \left( 0 \right) 
+\end{equation}
+
+Найдём производную характеристической функции $ \varphi_{ \xi }' \left( t \right) = -te^{- \frac{t^2}{2}}$.
+
+Запишем ряд Тейлора для экспоненты
+$$e^x =
+\sum \limits_{k = 0}^{ \infty } \frac{x^k}{k!}.$$
+
+Вместо $x$ подставим $-t^2 / 2$ и получим
+$$ \varphi_{ \xi } \left( t \right) =
+e^{- \frac{t^2}{2}} =
+\sum \limits_{k = 0}^{ \infty } \frac{ \left( - \frac{t^2}{2} \right)^k}{k!} =
+\sum \limits_{k = 0}^{ \infty } \frac{ \left( -1 \right)^k t^{2k}}{2^k k!}.$$
+Все слагаемые, где $t$ имеют нечётные степени, имеют нулевой коэффициент.
+
+С другой стороны
+$$ \varphi \left( t \right) =
+\sum \limits_{k = 0}^{ \infty } \frac{ \varphi^{ \left( k \right) \left( 0 \right) }}{k!} \cdot t^k.$$
+
+Приравниваем коэффициенты при соответствующих степенях
+$$ \sum \limits_{k = 0}^{ \infty } \frac{ \left( -1 \right)^k t^{2k}}{2^k k!} =
+\sum \limits_{k = 0}^{ \infty } \frac{ \varphi^{ \left( 2k \right) \left( 0 \right) t^{2k}}}{ \left( 2k \right)!}.$$
+
+Для нечётных степеней $ \varphi^{ \left( 2k - 1 \right) } \left( 0 \right) = 0$.
+
+Для четных ---
+$$ \varphi^{ \left( 2k \right) } \left( 0 \right) =
+\frac{ \left( -1 \right)^k \left( 2k \right)!}{2^k k!}.$$
+Представим знаменатель дроби в виде
+$$2^k k! =
+\left( 2 \cdot 1 \right) \left( 2 \cdot 2 \right) \cdot \dotsc \cdot \left( k \cdot 2 \right) =
+2 \cdot 4 \cdot \dotsc \cdot \left( 2k \right) =
+\left( 2k \right)!!.$$
+Тогда
+$$ \varphi^{ \left( 2k \right) } \left( 0 \right) =
+\frac{ \left( -1 \right)^k \left( 2k \right)!}{ \left( 2k \right)!!} =
+\left( -1 \right)^k \left( 2k - 1 \right)!!.$$
+
+Остаётся воспользоваться формулой \eqref{eq:connection}.
+$ \left( -i \right)^{2k} =
+\left( -1 \right)^k$.
+Отсюда следует, что $M \xi^k = \left( -1 \right)^k \left( -1 \right)^k \left( 2k - 1 \right)!! = \left( 2k - 1 \right)!!$.
+
 \addcontentsline{toc}{section}{Домашнее задание}
 \section*{Домашнее задание}
 
