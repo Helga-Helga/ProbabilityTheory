@@ -468,6 +468,66 @@ $$ \frac{1}{2 - \varphi \left( t \right) }$$
 будет характеристической функцией $ \eta $.
 \end{enumerate}
 
+\subsubsection*{15.12}
+
+\textit{Задание.}
+Пусть $ \left\{ \xi_n \right\}_{n \geq 1}$ ---
+последовательность независимых одинаково распределённых случайных величин с равномерным распределением на $ \left[ 0, 1 \right] $, и пусть $ \nu $ --- случайная величина,
+которая не зависит от $ \left\{ \xi_n \right\}_{n \geq 1}$, и имеет распределение Пуассона с параметром $ \lambda $.
+Докажите, что случайная величина
+$$ \eta \left( t \right) =
+\sum \limits_{k = 1}^{ \nu } \mathbbm{1} \left\{ \xi_k \in \left[ 0, t \right] \right\} $$
+имеет распределение Пуассона с параметром $ \lambda t$.
+
+\textit{Решение.}
+$ \left\{ \xi_n \right\}_{n \geq 1}$ ---
+последовательность независимых одинаково распределённых случайных величин с плотностью распределения
+$$p_{ \xi_n} \left( x \right) = \mathbbm{1}_{ \left[ 0, 1 \right] } \left( x \right), \,
+n \geq 1.$$
+
+Случайная величина $ \nu $ --- независима от $ \left\{ \xi_n \right\}_{n \geq 1}$ и имеет распределение
+$$P \left( \nu = k \right) =
+\frac{ \lambda^k}{k!} \cdot e^{- \lambda }.$$
+
+Есть случайная величина
+$$ \nu \left( t \right) = \sum \limits_{k = 1}^{ \nu } \mathbbm{1} \left\{ \xi_k \in \left[ 0, t \right] \right\}, \,
+t > 0.$$
+
+По определению
+$$ \varphi_{ \eta } \left( z \right) =
+Me^{iz \eta } =
+Me^{iz \left( \mathbbm{1} \left\{ \xi_1 \in \left[ 0, t \right] \right\} + \dotsc + \mathbbm{1} \left\{ \xi_{ \nu } \in \left[ 0, t \right] \right\} \right) } =
+M \sum \limits_{k = 0}^{ \infty } \left[ \mathbbm{1} \left( \nu = k \right) e^{iz \eta } \right].$$
+Запишем в явном виде случайную величину $ \eta $.
+Получим
+$$ \varphi_{ \eta } \left( z \right) =
+M \sum \limits_{k = 0}^{ \infty } \left( \mathbbm{1} \left\{ \nu = k \right\}
+e^{iz \sum \limits_{j = 1}^{ \nu } \mathbbm{1} \left\{ \xi_j \in \left[ 0, t \right] \right\} } \right).$$
+Поменяем знак суммы и математического ожидания и воспользуемся тем,
+что математическое ожидание произведения независимых случайных величин равно произведению их математических ожиданий
+$$ \varphi_{ \eta } \left( z \right) =
+\sum \limits_{k = 0}^{ \infty } M \left[ \mathbbm{1} \left( \nu = k \right) \right]
+Me^{iz \sum \limits_{j = 1}^{ \nu } \mathbbm{1} \left\{ \xi_j \in \left[ 0, t \right] \right\} }.$$
+Математическое ожидание индикатора события --- это вероятность данного события
+$$ \varphi_{ \eta } \left( z \right) =
+\sum \limits_{k = 0}^{ \infty } P \left( \nu = k \right) Me^{iz \sum \limits_{j = 1}^k \mathbbm{1} \left\{ \xi_j \in \left[ 0, t \right] \right\} } =
+\sum \limits_{k = 0}^{ \infty } \frac{ \lambda^k}{k!} \cdot e^{- \lambda }
+\prod \limits_{j = 1}^k Me^{iz \cdot \mathbbm{1} \left\{ \xi_j \in \left[ 0, t \right] \right\} }.$$
+Случайные величины независимы и одинаково распределены
+$$  \varphi_{ \eta } \left( z \right) =
+\sum \limits_{k = 0}^{ \infty } \frac{ \lambda^k}{k!} \cdot e^{- \lambda} \left( Me^{iz \cdot \mathbbm{1} \left\{ \xi_1 \in \left[ 0, t \right] \right\} } \right)^k.$$
+
+Найдём математическое ожидание из полученного выражения
+$$Me^{iz \cdot \mathbbm{1} \left\{ \xi_1 \in \left[ 0, t \right] \right\} } =
+te^{iz} + \left( 1 - t \right) =
+t \left( e^{iz} - 1 \right) + 1.$$
+
+Тогда характеристическая функция равна
+$$ \varphi_{ \eta } \left( z \right) =
+\sum \limits_{k = 0}^{ \infty } \frac{ \lambda^k}{k!} \cdot e^{- \lambda } \left[ t \left( e^{iz} - 1 \right) + 1 \right]^k =
+e^{- \lambda } \sum \limits_{k = 0}^{ \infty } \frac{ \lambda^k}{k!} \left[ t \left( e^{iz} - 1 \right) + 1 \right].$$
+Данная сумма --- это ряд для экспоненты, поэтому $ \varphi_{ \eta } \left( z \right) = e^{ \lambda t \left( e^{iz} - 1 \right) }$.
+
 \subsubsection*{15.13}
 
 \textit{Задание.} С помощью характеристической функции вычислите моменты случайной величины со стандартным нормальным распределением.
