@@ -444,9 +444,28 @@ MS =
 $$ \varphi_{ \xi_1 + \dotsc + \xi_{ \nu }} \left( t \right) =
 \sum \limits_{n=0}^{ \infty } p_n \varphi_{ \xi_1 + \dotsc + \xi_n} \left( t \right) =
 \sum \limits_{n=0}^{ \infty } p_n \varphi^n \left( t \right).$$
-\item для какой случайной величины функция
+\item есть последовательность $ \left\{ \xi_n \right\}_{n = 1}^{ \infty }$ независимых одинаково распределённых случайных величин с характеристической функцией $ \varphi $.
+
+Случайная величина $ \nu $ не зависит от $ \xi_1, \dotsc, \xi_n, \dotsc $ и имеет распределение $P \left\{ \nu = k \right\} = p_k, \, k \geq 0$.
+
+Тогда характеристическая функция $ \eta = \xi_1 + \dotsc + \xi_{ \nu }$ выглядела так
+$$ \varphi_{ \eta } \left( t \right) =
+\sum \limits_{k = 0}^{ \infty } \varphi^k \left( t \right) \cdot p_k.$$
+
+Какая случайная величина может иметь характеристическую функцию
+$$ \frac{1}{2 - \varphi \left( t \right) } =
+\frac{1}{2} \cdot \frac{1}{1 - \frac{ \varphi \left( t \right) }{2}}.$$
+Применяем формулу для суммы геометрической прогрессии
+$$ \frac{1}{2 - \varphi \left( t \right) } =
+\frac{1}{2} \sum \limits_{k = 0}^{ \infty } \left( \frac{ \varphi \left( t \right) }{2} \right)^k =
+\sum \limits_{k = 0}^{ \infty } \varphi^k \left( t \right) \cdot \frac{1}{2^{k+1}}.$$
+
+Если положим
+$$p_k = \frac{1}{2^{k+1}}, \,
+k \geq 0,$$
+то
 $$ \frac{1}{2 - \varphi \left( t \right) }$$
-является характеристической?
+будет характеристической функцией $ \eta $.
 \end{enumerate}
 
 \addcontentsline{toc}{section}{Домашнее задание}
