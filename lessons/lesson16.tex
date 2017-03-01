@@ -64,6 +64,73 @@ n \rightarrow \infty.$$
 \addcontentsline{toc}{section}{Аудиторные задачи}
 \section*{Аудиторные задачи}
 
+\subsubsection*{16.2}
+
+\textit{Задание.} Пусть $ \xi_{ \lambda }$ --- случайная величина, распределённая по закону Пуассона с параметром $ \lambda $.
+Докажите, что при $ \lambda \rightarrow \infty $ распределение случайной величины
+$$ \frac{ \xi_{ \lambda } - \lambda }{ \sqrt{ \lambda }}$$
+слабо сходится к распределению случайной величины, которая имеет нормлаьное стандартное распределение.
+
+\textit{Решение.} $ \xi_{ \lambda } \sim Pois \left( \lambda \right), \, \lambda > 0$.
+
+Нужно проверить, что
+$$ \eta_{ \lambda } = \frac{ \xi_{ \lambda } - \lambda }{ \sqrt{ \lambda }} \overset{d}{ \rightarrow } \eta, \,
+\lambda \rightarrow + \infty, \,
+\eta \sim N \left( 0, 1 \right).$$
+
+Будем проверять сходимость характеристических функций.
+
+Теорема.
+Пусть $ \left\{ \xi_n \right\}_{n \geq 1}$ --- это последовательность случайных величин,
+тогда $ \xi_n \overset{d}{ \rightarrow } \xi, \, n \rightarrow \infty $ тогда и только тогда,
+когда $ \forall t \in \mathbb{R} \, \varphi_{ \xi_n} \left( t \right) \rightarrow \varphi_{ \xi } \left( t \right) $.
+
+В данной задаче $ \eta_{ \lambda }$ --- не последовательность, а семейство случайных величин.
+
+Посчитаем характеристическую функцию случайной величины $ \eta_{ \lambda }$.
+По определению $ \varphi_{ \eta_{ \lambda }} \left( t \right) = Me^{it \cdot \frac{ \xi_{ \lambda } - \lambda }{ \sqrt{ \lambda }}}$.
+Характеристическая функция пуассоновской случайной величины $ \xi_{ \lambda }$ с параметром $ \lambda $ имеет вид
+$$ \varphi_{ \xi_{ \lambda }} \left( t \right) =
+e^{ \lambda \left( e^{it} - 1 \right) } =
+Me^{it \xi_{ \lambda }}.$$
+Тогда
+$ \varphi_{ \eta_{ \lambda }} \left( t \right) =
+Me^{it \cdot \frac{ \xi_{ \lambda }}{ \sqrt{ \lambda }}} \cdot e^{-it \sqrt{ \lambda }} =
+e^{-it \sqrt{ \lambda }} e^{ \lambda \left( e^{i \cdot \frac{t}{ \sqrt{ \lambda }}} - 1 \right) }$.
+Запишем под одну экспоненту $ \varphi_{ \eta_{ \lambda }} \left( t \right) = e^{ \lambda  \left( e^{i \cdot \frac{t}{ \sqrt{ \lambda }}} - 1 \right) - it \sqrt{ \lambda }}$.
+
+Нужно проверить, что $ \varphi_{ \eta_{ \lambda }} \left( t \right) \rightarrow \varphi_{ \eta } \left( t \right) = e^{- \frac{t^2}{2}}, \, \eta \sim N \left( 0, 1 \right) $.
+
+Нужно показать, что показатель в экспоненте сходится к
+$$ - \frac{t^2}{2}, \, \lambda \rightarrow \infty .$$
+
+Воспользуемся формулой Эйлера
+$$ \lim \limits_{ \lambda \to + \infty } \left[ \lambda \left( e^{i \cdot \frac{t}{ \sqrt{ \lambda }} - 1} \right) - it \sqrt{ \lambda } \right] =
+\lim \limits_{ \lambda \to + \infty }
+\left( - \sqrt{ \lambda } it + \lambda \left( \cos \frac{t}{ \sqrt{ \lambda }} + i \sin \frac{t}{ \sqrt{ \lambda }} - 1 \right) \right).$$
+Отделим действительную и мнимую части
+\begin{equation*}
+\begin{split}
+\lim \limits_{ \lambda \to + \infty } \left[ \lambda \left( e^{i \cdot \frac{t}{ \sqrt{ \lambda }} - 1} \right) - it \sqrt{ \lambda } \right] = \\
+= \lim \limits_{ \lambda \to + \infty }
+\left( \lambda \left( \cos \frac{t}{ \sqrt{ \lambda }} - 1 \right) + i \left( \lambda \sin \frac{t}{ \sqrt{ \lambda }} - \sqrt{ \lambda } t \right) \right) = \\
+= \lim \limits_{ \lambda \to + \infty }
+\left( \lambda \left( 1 - \frac{t^2}{2 \lambda } + o \left( \frac{t^3}{ \sqrt{ \lambda }} \right) - 1 \right) +
+i \left( \lambda \sin \frac{t}{ \sqrt{ \lambda }} - \sqrt{ \lambda } t \right) \right).
+\end{split}
+\end{equation*}
+Действительная часть стремится к $- t^2 / 2, \, \lambda \rightarrow + \infty $.
+
+Оценим мнимую часть
+$$ \lambda \sin \frac{t}{ \sqrt{ \lambda }} - \sqrt{ \lambda } t =
+\lambda \left( \frac{t}{ \sqrt{ \lambda }} - \frac{t^3}{6 \lambda^{ \frac{3}{2}}} + o \left( \frac{t^4}{ \lambda^2} \right) \right) - \sqrt{ \lambda } t.$$
+Первое слагаемое в скобках и слагаемое после скобок уничтожаются
+$$ \lambda \sin \frac{t}{ \sqrt{ \lambda }} - \sqrt{ \lambda } t =
+- \frac{t^3}{6 \sqrt{ \lambda }} + o \left( 1 \right) \rightarrow 0 $$
+при $ \lambda \rightarrow + \infty $, так как каждое из слагаемых стремится к нулю.
+
+Значит, показатель экспоненты стремится к $- t^2 / 2$.
+
 \subsubsection*{16.3}
 
 \textit{Задание.}
