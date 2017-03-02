@@ -238,3 +238,146 @@ $ \varphi_{ \xi_{n, p}} \left( t \right) \rightarrow e^{ \lambda \left( e^{it} -
 \varphi_{ \xi_{ \lambda }} \left( t \right) $.
 
 По указанной теореме получаем, что распределения величин $ \xi_{n, p}$ слабо сходятся к распределению случайной величины $ \xi_{ \lambda }$.
+
+\subsubsection*{16.15}
+
+\textit{Задание.} Пусть $ \xi_n \Rightarrow \xi $.
+Означает ли это, что $ \xi_n - \xi \Rightarrow 0$?
+
+\textit{Решение.} Нужно проверить, выполняется ли
+$$Mf \left( \xi_n - \xi \right) \rightarrow Mf \left( 0 \right) \,
+\forall f \in C_b \left( \mathbb{R} \right).$$
+
+Пусть
+$$ \xi_n =
+\begin{cases}
+0, \qquad \frac{1}{2}, \\
+1, \qquad \frac{1}{2},
+\end{cases}
+n \geq 1.$$
+
+Пусть $ \xi = \xi_1$.
+Тогда
+$$Mf \left( \xi_n \right) =
+\frac{1}{2} \left[ f \left( 0 \right) + f \left( 0 \right) \right] =
+Mf \left( \xi \right),$$
+то есть выполняется условие $ \xi_n \Rightarrow \xi $.
+
+Значения, которые может принимать разность случайных величин приведены в таблице \ref{table:difference}.
+
+\begin{table}
+\begin{center}
+  \begin{tabular}{ | c | c | c | }
+    \hline
+    $ \xi_n$ & $ \xi $ & $ \xi_n - \xi $ \\ \hline
+    0 & 1 & $-1$ \\ \hline
+    1 & 0 & 1 \\ \hline
+    0 & 0 & 0 \\ \hline
+    1 & 1 & 0 \\
+    \hline
+  \end{tabular}
+\caption{Значения разности $ \xi_n - \xi $ \label{table:difference}}
+\end{center}
+\end{table}
+
+Из таблицы \ref{table:difference} видно, что
+$$ \xi_n - \xi =
+\begin{cases}
+1, \qquad \frac{1}{4}, \\
+-1, \qquad \frac{1}{4}, \\
+0, \qquad \frac{1}{2}.
+\end{cases}$$
+
+Тогда
+$$Mf \left( \xi_n - \xi \right) =
+\frac{1}{4} \left[ f \left( 1 \right) + f \left( -1 \right) \right] + \frac{1}{2} \cdot f \left( 0 \right).$$
+
+Возьмём $f$ как на рисунке \ref{fig:1615}.
+
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=.4\textwidth]{./pictures/16_15.png}
+  \caption{График функции $f \left( x \right) $}
+  \label{fig:1615}
+\end{figure}
+
+Тогда
+$$Mf \left( \xi_n - \xi \right) =
+\frac{1}{4} \left( 0 + 0 \right) + \frac{1}{2} \cdot 1 =
+\frac{1}{2}.$$
+
+При этом $Mf \left( 0 \right) = f \left( 0 \right) = 1$, но
+$$ \frac{1}{2} \not \to 1, \,
+n \rightarrow \infty.$$
+Из этого следует, что $ \xi_n - \xi \not \Rightarrow 0, \, n \rightarrow \infty $.
+
+\subsubsection*{16.17}
+
+\textit{Задание.} Вычислить пределы:
+\begin{enumerate}[label=\alph*)]
+\item $ \lim \limits_{n \to \infty } \left( \frac{2}{ \pi } \right)^n
+\idotsint \limits_{ \left[ 0, \infty \right]^n}
+\sin \left( \frac{x_1 + x_2 + \dotsc + x_n}{n} \right)
+e^{- \frac{2}{ \pi } \left( x_1 + x_2 + \dotsc + x_n \right) }
+dx_1 dx_2 \dotsc dx_n$;
+\item $ \lim \limits_{n \to \infty } \left( \frac{1}{ \sqrt{2 \pi }} \right)^n
+\idotsint \limits_{ \mathbb{R}^n} \cos^{2m} \left( \pi \cdot \frac{x_1 + x_2 + \dotsc + x_n}{n} \right) \times \\
+\times e^{- \frac{ \left( x_1 - 1 \right)^2 + \dotsc + \left( x_n - 1 \right)^2}{2}} dx_1 dx_2 \dotsc dx_n, \,
+m \in \mathbb{N}$.
+\end{enumerate}
+
+\textit{Решение.}
+\begin{enumerate}[label=\alph*)]
+\item Запишем экспоненты в виде произведения
+\begin{equation*}
+\begin{split}
+\lim \limits_{n \to \infty } \left( \frac{2}{ \pi } \right)^n
+\idotsint \limits_{ \left[ 0, \infty \right]^n}
+\sin \left( \frac{x_1 + x_2 + \dotsc + x_n}{n} \right) \times \\
+\times e^{- \frac{2}{ \pi } \left( x_1 + x_2 + \dotsc + x_n \right) }
+dx_1 dx_2 \dotsc dx_n = \\
+= \lim \limits_{n \to \infty } \idotsint \limits_{ \left[ 0, \infty \right]^n} \sin \left( \frac{x_1 + x_2 + \dotsc + x_n}{n} \right) \cdot
+\frac{2}{ \pi } \cdot e^{- \frac{2}{ \pi } \cdot x_1} \times \\
+\times \frac{2}{ \pi } \cdot e^{- \frac{2}{ \pi } \cdot x_2} \cdot \dotsc \cdot
+\frac{2}{ \pi } \cdot e^{- \frac{2}{ \pi } \cdot x_n} dx_1 dx_2 \dotsc dx_n = \\
+= \lim \limits_{n \to \infty } M \sin \left( \frac{ \xi_1 + \xi_2 + \dotsc + \xi_n}{n} \right), \,
+\xi_n \sim Exp \left( \frac{2}{ \pi } \right)
+\end{split}
+\end{equation*}
+--- независимые одинаково распределённые случайные величины.
+
+Их математическое ожидание равно
+$$M \xi_1 =
+\frac{1}{ \frac{2}{ \pi }} =
+\frac{ \pi }{2}.$$
+По закону больших чисел
+$$ \frac{ \xi_1 + \xi_2 + \dotsc + \xi_n}{n} \overset{P}{ \rightarrow } \frac{ \pi }{2}.$$
+
+Тогда искомый предел равен
+$$M \sin \left( \frac{ \xi_1 + \xi_2 + \dotsc + \xi_n}{n} \right) \to M \sin \frac{ \pi }{2} = M1 = 1, \,
+n \to \infty;$$
+\item запишем экспоненты в виде произведения
+\begin{equation*}
+\begin{split}
+\lim \limits_{n \to \infty } \left( \frac{1}{ \sqrt{2 \pi }} \right)^n
+\idotsint \limits_{ \mathbb{R}^n} \cos^{2m} \left( \pi \cdot \frac{x_1 + x_2 + \dotsc + x_n}{n} \right) \times \\
+\times e^{- \frac{ \left( x_1 - 1 \right)^2 + \dotsc + \left( x_n - 1 \right)^2}{2}} dx_1 dx_2 \dotsc dx_n = \\
+= \lim \limits_{n \to \infty } \idotsint \limits_{ \mathbb{R}^n} \cos^{2m} \left( \pi \cdot \frac{x_1 + x_2 + \dotsc + x_n}{n} \right) \cdot \frac{1}{ \sqrt{2 \pi }} \cdot
+e^{- \frac{ \left( x_1 - 1 \right)^2}{2}} \times \\
+\times \frac{1}{ \sqrt{2 \pi }} \cdot e^{- \frac{ \left( x_2 - 1 \right)^2}{2}} \cdot \dotsc \cdot \frac{1}{ \sqrt{2 \pi }} \cdot
+e^{- \frac{ \left( x_n - 1 \right)^2}{2}} dx_1 dx_2 \dotsc dx_n = \\
+= \lim \limits_{n \to \infty } M \cos^{2m} \left( \frac{ \xi_1 + \xi_2 + \dotsc + \xi_n}{2} \right), \,
+\xi_n \sim N \left( 1, 1 \right)
+\end{split}
+\end{equation*}
+--- независимые одинаково распределённые случайные величины.
+
+Их математическое ожидание равно $M \xi_1 = 1$.
+
+По закону больших чисел
+$$ \frac{ \xi_1 + \xi_2 + \dotsc + \xi_n}{n} \overset{P}{ \rightarrow } M \xi_1 = 1.$$
+
+Тогда исходный предел равен
+$$M \cos^{2m} \left( \frac{ \xi_1 + \xi_2 + \dotsc + \xi_n}{n} \right) \to M \cos^{2m} \pi = \cos^{2m} \pi = 1, \,
+n \to \infty.$$
+\end{enumerate}
