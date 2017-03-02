@@ -185,3 +185,56 @@ f \left( \frac{1}{2} \right);$$
 
 \addcontentsline{toc}{section}{Домашнее задание}
 \section*{Домашнее задание}
+
+\subsubsection*{16.14}
+
+\textit{Задание.} Пусть $ \xi_{n, p}$ --- случайная величина, распределённая по биномиальному закону с параметрами $p$ и $n$.
+Докажите, что если $n \rightarrow \infty $ и $p \rightarrow 0$ так, что $p \cdot n \rightarrow \lambda < \infty $,
+то распределения величин $ \xi_{n, p}$ слабо сходятся к распределению случайной величины $ \xi_{ \lambda }$, распределённой по закону Пуассона с параметром $ \lambda $.
+
+\textit{Решение.} $ \xi_{n, p} \sim Binom \left( p, n \right), \, n \geq 1, \, p \in \left[ 0, 1 \right] $.
+
+Нужно проверить,
+что
+$$ \xi_{n, p} \overset{d}{ \rightarrow } \xi_{ \lambda }, \,
+n \rightarrow \infty, \,
+p \rightarrow 0, \,
+\xi_{ \lambda } \sim Pois \left( \lambda \right), \,
+p \cdot n \rightarrow \lambda < \infty.$$
+
+Будем проверять сходимость характеристических функций.
+
+Теорема.
+Пусть $ \left\{ \xi_n \right\}_{n \geq 1}$ --- это последовательность случайных величин,
+тогда $ \xi_n \overset{d}{ \rightarrow } \xi, \, n \rightarrow \infty $ тогда и только тогда,
+когда $ \forall t \in \mathbb{R} \, \varphi_{ \xi_n} \left( t \right) \rightarrow \varphi_{ \xi } \left( t \right) $.
+
+Посчитаем характеристическую функцию случайной величины $ \xi_{n, p}$.
+По определению
+$$ \varphi_{ \xi_{n, p}} \left( t \right) =
+Me^{it \xi_{n, p}} =
+\sum \limits_{k = 0}^{n} C_n^k \left( e^{it} \right)^k p^k \left( 1 - p \right)^{n-k}.$$
+Воспользуемся формулой для бинома Ньютона $ \varphi_{ \xi_{n, p}} \left( t \right) = \left[ \left( e^{it} - 1 \right) p + 1 \right]^n$.
+
+Нужно проверить, что
+$$ \varphi_{ \xi_{n, p}} \left( t \right) \rightarrow
+\varphi_{ \xi_{ \lambda }} \left( t \right) =
+\sum \limits_{k = 0}^{ \infty } e^{- \lambda } \cdot \frac{ \lambda^k \left( e^{it} \right)^k}{k!} =
+e^{ \lambda \left( e^{it} - 1 \right) }, \,
+\xi_{ \lambda } \sim Pois \left( \lambda \right).$$
+
+Воспользуемся тем, что $ \left( 1 + x \right)^n - 1 \sim nx, \, x \rightarrow 0, \, n > 0$, подставив вместо $x$ выражение $ \left( e^{it} - 1 \right) p$.
+Получим
+$$ \varphi_{ \xi_{n, p}} \left( t \right) =
+\left[ \left( e^{it} - 1 \right) p + 1 \right]^n \sim n \left( e^{it} - 1 \right) p + 1 =
+np \left( e^{it} - 1 \right) + 1.$$
+По условию $np \rightarrow \lambda $, поэтому $ \varphi_{ \xi_{n, p}} \left( t \right) \rightarrow \lambda \left( e^{it} - 1 \right) + 1$.
+
+Воспользуемся тем, что $e^x - 1 \sim x$ при $x \rightarrow 0$.
+Отсюда следует, что
+$$x + 1 \sim e^x.$$
+Вместо $x$ подставим $ \lambda \left( e^{it} - 1 \right) $ и получим
+$ \varphi_{ \xi_{n, p}} \left( t \right) \rightarrow e^{ \lambda \left( e^{it} - 1 \right) } =
+\varphi_{ \xi_{ \lambda }} \left( t \right) $.
+
+По указанной теореме получаем, что распределения величин $ \xi_{n, p}$ слабо сходятся к распределению случайной величины $ \xi_{ \lambda }$.

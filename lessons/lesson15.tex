@@ -540,7 +540,7 @@ $$p_{ \xi } \left( x \right) =
 Моменты случайной величины связаны с характеристической функцией формулой
 \begin{equation}\label{eq:connection}
   M \xi^k =
-\left( -i \right)^k \varphi^{ \left( k \right) } \left( 0 \right) 
+\left( -i \right)^k \varphi^{ \left( k \right) } \left( 0 \right).
 \end{equation}
 
 Найдём производную характеристической функции $ \varphi_{ \xi }' \left( t \right) = -te^{- \frac{t^2}{2}}$.
@@ -562,7 +562,7 @@ $$ \varphi \left( t \right) =
 
 Приравниваем коэффициенты при соответствующих степенях
 $$ \sum \limits_{k = 0}^{ \infty } \frac{ \left( -1 \right)^k t^{2k}}{2^k k!} =
-\sum \limits_{k = 0}^{ \infty } \frac{ \varphi^{ \left( 2k \right) \left( 0 \right) t^{2k}}}{ \left( 2k \right)!}.$$
+\sum \limits_{k = 0}^{ \infty } \frac{ \varphi^{ \left( 2k \right) } \left( 0 \right) t^{2k}}{ \left( 2k \right)!}.$$
 
 Для нечётных степеней $ \varphi^{ \left( 2k - 1 \right) } \left( 0 \right) = 0$.
 
@@ -1144,3 +1144,57 @@ $$ \varphi_{ \xi \cdot \nu } \left( t \right) =
 \sum \limits_{n = 1}^{+ \infty } M \mathbbm{1} \left( \nu = n \right) \cdot Me^{it \xi n} =
 \sum \limits_{n = 1}^{+ \infty } p_n \varphi_{ \xi } \left( tn \right) =
 \sum \limits_{n = 1}^{+ \infty } p_n \left( e^{itn} - 1 \right) \cdot \frac{1}{itn}.$$
+
+\subsubsection*{15.28}
+
+\textit{Задание.} С помощью характеристической функции вычислите моменты случайной величины с распределением $N \left( 0, \sigma^2 \right) $.
+
+\textit{Решение.} $ \xi \sim N \left( 0, \sigma^2 \right) $ имеет характеристическую функцию
+$$ \varphi \left( t \right) =
+e^{- \frac{t^2 \sigma^2}{2}}.$$
+
+Моменты случайной величины связаны с характеристической функцией формулой \eqref{eq:connection}.
+
+Запишем ряд Тейлора для экспоненты
+$$e^x =
+\sum \limits_{k = 0}^{ \infty } \frac{x^k}{k!}.$$
+
+Вместо $x$ подставим
+$$- \frac{t^2 \sigma^2}{2}$$
+и получим
+$$ \varphi \left( t \right) =
+e^{- \frac{t^2 \sigma^2}{2}} =
+\sum \limits_{k = 0}^{ \infty } \frac{ \left( - \frac{t^2 \sigma^2}{2} \right)^2}{k!} =
+\sum \limits_{k = 0}^{ \infty } \frac{ \left( -1 \right)^k t^{2k} \sigma^{2k}}{2^k k!}.$$
+
+С другой стороны
+$$ \varphi \left( t \right) =
+\sum \limits_{k = 0}^{ \infty } \frac{ \varphi^{ \left( k \right) } \left( 0 \right) }{k!} \cdot t^k.$$
+
+Приравниваем коэффициенты при соответствующих степенях
+$$ \sum \limits_{k = 0}^{ \infty } \frac{ \left( -1 \right)^k t^{2k} \sigma^{2k}}{2^k k!} =
+\sum \limits_{k = 0}^{ \infty } \frac{ \varphi^{ \left( 2k \right) } \left( 0 \right) t^{2k}}{ \left( 2k \right)!}.$$
+
+Для нечётных степеней $ \varphi^{ \left( 2k - 1 \right) } \left( 0 \right) = 0$.
+
+Для чётных степеней
+$$ \varphi^{ \left( 2k \right) } \left( 0 \right) =
+\frac{ \left( -1 \right)^k \left( 2k \right)! \sigma^{2k}}{2^k k!}.$$
+
+Представим знаменатель дроби в виде
+$$2^k k! =
+\left( 2 \cdot 1 \right) \cdot \left( 2 \cdot 2 \right) \cdot \dotsc \cdot \left( 2 \cdot k \right) =
+\left( 2k \right)!!.$$
+
+Тогда
+$$ \varphi^{ \left( 2k \right) } \left( 0 \right) =
+\frac{ \left( -1 \right)^k \left( 2k \right)! \sigma^{2k}}{ \left( 2k \right)!!} =
+\left( -1 \right)^k \left( 2k - 1 \right)!! \sigma^{2k}.$$
+
+Остаётся воспользоваться формулой \eqref{eq:connection}.
+
+$ \left( -i \right)^{2k} = \left( -1 \right)^k$.
+Отсюда следует, что
+$$M \xi^k =
+\left( -1 \right)^k \left( -1 \right)^k \left( 2k - 1 \right)!! \sigma^{2k} =
+\left( 2k - 1 \right)!! \sigma^{2k}.$$
