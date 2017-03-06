@@ -295,9 +295,36 @@ $$ \sqrt[n]{ \xi_1 \dotsc \xi_n} \overset{P}{ \rightarrow }
 $$ \sqrt[n]{ \xi_1 \dotsc \xi_n} \overset{d}{ \rightarrow } e^{-1}.$$
 Следовательно,
 $ \forall f \in C_b \left( \left[ 0, 1 \right] \right) \,
-Mf \left( \sqrt[n]{ \xi_1 \dotsc \xi_n} \right) \to Mf \left( e^{-1} \right) =
-f \left( e^{-1} \right) $.
+  Mf \left( \sqrt[n]{ \xi_1 \dotsc \xi_n} \right) \to Mf \left( e^{-1} \right) =
+  f \left( e^{-1} \right) $.
 \end{enumerate}
+
+\subsubsection{16.6}
+
+\textit{Задание.}
+Пусть $ \left\{ \xi_n \right\}_{n \geq 1}$ ---
+последовательность независимых одинаково распределённых на отрезке $ \left[ 0, 1 \right] $
+случайных величин.
+Докажите, что
+$$ \left( e^n \prod \limits_{k = 1}^n \xi_k \right)^{ \frac{1}{n}} \overset{P}{ \rightarrow }
+  1, \,
+  n \to \infty.$$
+
+\textit{Решение.} Сумму можем сделать, если прологарифмируем левую часть
+$$ \ln \left( e^n \prod \limits_{k = 1}^n \xi_k \right)^{ \frac{1}{n}} =
+  \frac{1}{n} \left( \sum \limits_{k = 1}^n \ln \xi_k + n \right) =
+  \sum \limits_{k = 1}^n \ln \xi_k \cdot \frac{1}{n} + 1.$$
+Так как $ \left\{ \ln \xi_i \right\} $ ---
+независимые одинаково распределённые случайные величины с конечным первым моментом, то
+$$ \ln \left( e^n \prod \limits_{k = 1}^n \xi_k \right)^{ \frac{1}{n}} \overset{P}{ \rightarrow }
+  1 + M \ln \xi_1 =
+  1 - 1 =
+  0.$$
+
+Возьмём слева и справа экспоненту, поскольку экспонента --- функция непрерывная
+$$ \left( e^n \prod \limits_{k = 1}^n \right)^{ \frac{1}{n}} \to
+  e^0 =
+  1.$$
 
 \addcontentsline{toc}{section}{Домашнее задание}
 \section*{Домашнее задание}
