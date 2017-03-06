@@ -1,0 +1,44 @@
+\addcontentsline{toc}{chapter}{Занятие 17. Центральная предельная теорема}
+\chapter*{Занятие 17. Центральная предельная теорема}
+
+\addcontentsline{toc}{section}{Контрольные вопросы и задания}
+\section*{Контрольные вопросы и задания}
+
+\subsubsection*{Сформулируйте центральную предельную теорему,
+                запишите центральную предельную теорему для последовательности испытаний Бернулли.}
+
+Центральная предельная теорема.
+$ \xi_1, \dotsc, \xi_n$ -- независимые одинаково распределённые случайные величины,
+$M \xi_1 = a, \,
+  D \xi_1 = \sigma^2 < \infty $.
+Тогда
+$$ \frac{S_n - MS_n}{ \sqrt{D \xi_1}} \overset{d}{ \rightarrow } N \left( 0, 1 \right), \,
+  n \to \infty,$$
+где
+$$S_n =
+  \sum \limits_{i = 1}^n \xi_i.$$
+
+Подставляя значения математического ожидания и дисперсии получим
+$$ \frac{S_n - na}{ \sqrt{n}} \overset{d}{ \rightarrow } N \left( 0, \sigma^2 \right), \
+  n \to \infty.$$
+
+Пусть $ \left\{ \varepsilon_k \right\} $ ---
+последовательность независимых одинаково распределённых случайных величин, таких, что
+$$ \varepsilon_k =
+  \begin{cases}
+    1, \qquad p, \\
+    0, \qquad 1 - p.
+  \end{cases}$$
+Тогда
+$$ \frac{S_n - np}{ \sqrt{n}} \overset{d}{ \rightarrow }
+  N \left( 0, p \left( 1 - p \right) \right).$$
+
+Перенесём $p \left( 1 - p \right)$ влево
+$$ \frac{S_n - np}{ \sqrt{n} \sqrt{p \left( 1 - p \right) }} \overset{d}{ \rightarrow }
+  N \left( 0, 1 \right).$$
+
+\addcontentsline{toc}{section}{Аудиторные задачи}
+\section*{Аудиторные задачи}
+
+\addcontentsline{toc}{section}{Домашнее задание}
+\section*{Домашнее задание}
