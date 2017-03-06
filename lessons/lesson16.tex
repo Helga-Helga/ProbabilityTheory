@@ -6,31 +6,44 @@
 
 \subsubsection*{Приведите определение видов сходимости случайных величин; какая связь между ними?}
 
-Последовательность $ \left\{ \xi_n: \, n \geq 1 \right\} $ сходится к случайной величине $ \xi $ почти наверное (с вероятностью 1),
+Последовательность $ \left\{ \xi_n: \, n \geq 1 \right\} $ сходится к случайной величине $ \xi $
+почти наверное (с вероятностью 1),
 если $ \exists \Omega_0 \subset \Omega, \, \Omega_0 $ ---
 случайное событие $ \left( \Omega_0 \in \mathcal{F} \right): \, P \left( \Omega_0 \right) = 1$ и
 $ \forall \omega \in \Omega_0:
 \xi_n \left( \omega \right) \rightarrow \xi \left( \omega \right),
 n \rightarrow \infty $
-(поточечная сходимость на множестве полной вероятности), т.е. $P \left\{ \lim \limits_{n \to \infty} \xi_n \left( \omega \right) = \xi \left( \omega \right) \right\} = 1$.
+(поточечная сходимость на множестве полной вероятности),
+т.е.
+$P \left\{ \lim \limits_{n \to \infty} \xi_n \left( \omega \right) =
+\xi \left( \omega \right) \right\} =
+1$.
 
-Последовательность случайных величин $ \left\{ \xi_n \right\} $ сходится по вероятности к случайной величине $ \xi $,
-если $ \forall \epsilon > 0 \, P \left\{ \left| \xi_n - \xi \right| > \epsilon \right\} \rightarrow \infty, \, n \rightarrow \infty $.
+Последовательность случайных величин $ \left\{ \xi_n \right\} $
+сходится по вероятности к случайной величине $ \xi $,
+если
+$ \forall \epsilon > 0 \,
+P \left\{ \left| \xi_n - \xi \right| > \epsilon \right\} \rightarrow \infty, \,
+n \rightarrow \infty $.
 
 Лемма.
-Пусть $ \xi_n \overset{almost sure (a.s.)}{ \rightarrow } \xi, \, n \rightarrow \infty $, тогда $ \xi_n \overset{P}{ \rightarrow } \xi, \, n \rightarrow \infty $,
+Пусть $ \xi_n \overset{almost sure (a.s.)}{ \rightarrow } \xi, \, n \rightarrow \infty $,
+тогда $ \xi_n \overset{P}{ \rightarrow } \xi, \, n \rightarrow \infty $,
 т.е. их сходимости почти наверное следует сходимость по вероятности.
 
 Лемма Рисса.
 Пусть $ \xi_n \overset{P}{ \rightarrow } \xi, \, n \rightarrow \infty $.
-Тогда существует подпоследовательность: $ \left\{ \xi_{n_k}: \, k \geq 1 \right\} $ такая, что $ \xi_{n_k} \overset{a.s.}{ \rightarrow } \xi, \, k \rightarrow \infty $.
+Тогда существует подпоследовательность: $ \left\{ \xi_{n_k}: \, k \geq 1 \right\} $ такая,
+что $ \xi_{n_k} \overset{a.s.}{ \rightarrow } \xi, \, k \rightarrow \infty $.
 
 Лемма (характеризация сходимости по вероятности).
 Если последовательность $ \left\{ \xi_n \right\} $ и случайная величина $ \xi $ таковы,
-что их любой подпоследовательности $ \left\{ \xi_{n_k}: \, k \geq 1 \right\} $ можно выбрать подподпоследовательность
+что их любой подпоследовательности $ \left\{ \xi_{n_k}: \, k \geq 1 \right\} $
+можно выбрать подподпоследовательность
 $$ \left\{ \xi_{n_{k_j}}: \, j \geq 1 \right\} $$
 такую,
-что $ \xi_{n_{k_j}} \overset{a.s.}{ \rightarrow } \xi, \, j \rightarrow \infty $, то сама $ \xi_n \overset{P}{ \rightarrow } \xi, \, n \rightarrow \infty $.
+что $ \xi_{n_{k_j}} \overset{a.s.}{ \rightarrow } \xi, \, j \rightarrow \infty $,
+то сама $ \xi_n \overset{P}{ \rightarrow } \xi, \, n \rightarrow \infty $.
 
 Случайные величины $ \xi_n$ слабо сходятся (сходятся по распределению) к случайной величине $ \xi $,
 если для всякой непрерывной и ограниченной функции
@@ -38,20 +51,29 @@ $f: \,
 \mathbb{R} \rightarrow \mathbb{R} \,
 Mf \left( \xi_n \right) \rightarrow Mf \left( \xi \right) $ при $n \rightarrow \infty $.
 
-\subsubsection*{Приведите критерии слабой сходимости (в терминах сходимости функций распределения и в терминах сходимости характеристических функций.}
+\subsubsection*{Приведите критерии слабой сходимости
+(в терминах сходимости функций распределения и в терминах сходимости характеристических функций.}
 
-Последовательность функций распределения $ \left\{ F_n \right\} $ слабо сходится к функции распределения $F$,
+Последовательность функций распределения $ \left\{ F_n \right\} $
+слабо сходится к функции распределения $F$,
 если для всякой непрерывной и ограниченной функции
 $f: \, \mathbb{R} \rightarrow \mathbb{R} \,
-\int \limits_{- \infty }^{+ \infty } f \left( x \right) dF_n \left( x \right) \rightarrow \int \limits_{- \infty }^{+ \infty } f \left( x \right) dF \left( x \right) $
+\int \limits_{- \infty }^{+ \infty } f \left( x \right) dF_n \left( x \right) \rightarrow
+\int \limits_{- \infty }^{+ \infty } f \left( x \right) dF \left( x \right) $
 при $n \rightarrow \infty $.
 
 Если $ \xi_n \Rightarrow \xi $ при $n \rightarrow \infty $,
-то $ \varphi_{ \xi_n} \left( t \right) = Me^{it \xi_n} \rightarrow Me^{it \xi } = \varphi_{ \xi } \left( t \right), \, n \rightarrow \infty $.
+то
+$ \varphi_{ \xi_n} \left( t \right) =
+Me^{it \xi_n} \rightarrow Me^{it \xi } =
+\varphi_{ \xi } \left( t \right), \,
+n \rightarrow \infty $.
 
 \subsubsection*{Сформулируйте закон больших чисел.}
 
-Пусть $ \xi_1, \dotsc, \xi_n$ --- последовательность независимых одинаково распределённых случайных величины (функции распределения $ \xi_n: n \geq 1$ совпадают).
+Пусть $ \xi_1, \dotsc, \xi_n$ ---
+последовательность независимых одинаково распределённых случайных величины
+(функции распределения $ \xi_n: n \geq 1$ совпадают).
 Организуем нарастающие суммы
 $$S_n =
 \sum \limits_{k = 1}^n \xi_k.$$
@@ -66,15 +88,18 @@ n \rightarrow \infty.$$
 
 \subsubsection*{16.2}
 
-\textit{Задание.} Пусть $ \xi_{ \lambda }$ --- случайная величина, распределённая по закону Пуассона с параметром $ \lambda $.
+\textit{Задание.} Пусть $ \xi_{ \lambda }$ --- случайная величина,
+распределённая по закону Пуассона с параметром $ \lambda $.
 Докажите, что при $ \lambda \rightarrow \infty $ распределение случайной величины
 $$ \frac{ \xi_{ \lambda } - \lambda }{ \sqrt{ \lambda }}$$
-слабо сходится к распределению случайной величины, которая имеет нормлаьное стандартное распределение.
+слабо сходится к распределению случайной величины,
+которая имеет нормлаьное стандартное распределение.
 
 \textit{Решение.} $ \xi_{ \lambda } \sim Pois \left( \lambda \right), \, \lambda > 0$.
 
 Нужно проверить, что
-$$ \eta_{ \lambda } = \frac{ \xi_{ \lambda } - \lambda }{ \sqrt{ \lambda }} \overset{d}{ \rightarrow } \eta, \,
+$$ \eta_{ \lambda } =
+\frac{ \xi_{ \lambda } - \lambda }{ \sqrt{ \lambda }} \overset{d}{ \rightarrow } \eta, \,
 \lambda \rightarrow + \infty, \,
 \eta \sim N \left( 0, 1 \right).$$
 
@@ -83,13 +108,18 @@ $$ \eta_{ \lambda } = \frac{ \xi_{ \lambda } - \lambda }{ \sqrt{ \lambda }} \ove
 Теорема.
 Пусть $ \left\{ \xi_n \right\}_{n \geq 1}$ --- это последовательность случайных величин,
 тогда $ \xi_n \overset{d}{ \rightarrow } \xi, \, n \rightarrow \infty $ тогда и только тогда,
-когда $ \forall t \in \mathbb{R} \, \varphi_{ \xi_n} \left( t \right) \rightarrow \varphi_{ \xi } \left( t \right) $.
+когда
+$ \forall t \in \mathbb{R} \,
+\varphi_{ \xi_n} \left( t \right) \rightarrow \varphi_{ \xi } \left( t \right) $.
 
 В данной задаче $ \eta_{ \lambda }$ --- не последовательность, а семейство случайных величин.
 
 Посчитаем характеристическую функцию случайной величины $ \eta_{ \lambda }$.
-По определению $ \varphi_{ \eta_{ \lambda }} \left( t \right) = Me^{it \cdot \frac{ \xi_{ \lambda } - \lambda }{ \sqrt{ \lambda }}}$.
-Характеристическая функция пуассоновской случайной величины $ \xi_{ \lambda }$ с параметром $ \lambda $ имеет вид
+По определению
+$ \varphi_{ \eta_{ \lambda }} \left( t \right) =
+Me^{it \cdot \frac{ \xi_{ \lambda } - \lambda }{ \sqrt{ \lambda }}}$.
+Характеристическая функция пуассоновской случайной величины $ \xi_{ \lambda }$ с параметром
+$ \lambda $ имеет вид
 $$ \varphi_{ \xi_{ \lambda }} \left( t \right) =
 e^{ \lambda \left( e^{it} - 1 \right) } =
 Me^{it \xi_{ \lambda }}.$$
@@ -97,25 +127,43 @@ Me^{it \xi_{ \lambda }}.$$
 $ \varphi_{ \eta_{ \lambda }} \left( t \right) =
 Me^{it \cdot \frac{ \xi_{ \lambda }}{ \sqrt{ \lambda }}} \cdot e^{-it \sqrt{ \lambda }} =
 e^{-it \sqrt{ \lambda }} e^{ \lambda \left( e^{i \cdot \frac{t}{ \sqrt{ \lambda }}} - 1 \right) }$.
-Запишем под одну экспоненту $ \varphi_{ \eta_{ \lambda }} \left( t \right) = e^{ \lambda  \left( e^{i \cdot \frac{t}{ \sqrt{ \lambda }}} - 1 \right) - it \sqrt{ \lambda }}$.
+Запишем под одну экспоненту
+$ \varphi_{ \eta_{ \lambda }} \left( t \right) =
+e^{ \lambda  \left( e^{i \cdot \frac{t}{ \sqrt{ \lambda }}} - 1 \right) - it \sqrt{ \lambda }}$.
 
-Нужно проверить, что $ \varphi_{ \eta_{ \lambda }} \left( t \right) \rightarrow \varphi_{ \eta } \left( t \right) = e^{- \frac{t^2}{2}}, \, \eta \sim N \left( 0, 1 \right) $.
+Нужно проверить,
+что
+$ \varphi_{ \eta_{ \lambda }} \left( t \right) \rightarrow \varphi_{ \eta } \left( t \right) =
+e^{- \frac{t^2}{2}}, \, \eta \sim N \left( 0, 1 \right) $.
 
 Нужно показать, что показатель в экспоненте сходится к
 $$ - \frac{t^2}{2}, \, \lambda \rightarrow \infty .$$
 
 Воспользуемся формулой Эйлера
-$$ \lim \limits_{ \lambda \to + \infty } \left[ \lambda \left( e^{i \cdot \frac{t}{ \sqrt{ \lambda }} - 1} \right) - it \sqrt{ \lambda } \right] =
+$$ \lim \limits_{ \lambda \to + \infty }
+\left[
+  \lambda \left( e^{i \cdot \frac{t}{ \sqrt{ \lambda }} - 1} \right) - it \sqrt{ \lambda }
+\right] =
 \lim \limits_{ \lambda \to + \infty }
-\left( - \sqrt{ \lambda } it + \lambda \left( \cos \frac{t}{ \sqrt{ \lambda }} + i \sin \frac{t}{ \sqrt{ \lambda }} - 1 \right) \right).$$
+\left(
+  - \sqrt{ \lambda } it +
+  \lambda \left( \cos \frac{t}{ \sqrt{ \lambda }} +
+  i \sin \frac{t}{ \sqrt{ \lambda }} -
+  1
+\right) \right).$$
 Отделим действительную и мнимую части
 \begin{equation*}
 \begin{split}
-\lim \limits_{ \lambda \to + \infty } \left[ \lambda \left( e^{i \cdot \frac{t}{ \sqrt{ \lambda }} - 1} \right) - it \sqrt{ \lambda } \right] = \\
+\lim \limits_{ \lambda \to + \infty }
+\left[
+  \lambda \left( e^{i \cdot \frac{t}{ \sqrt{ \lambda }} - 1} \right) - it \sqrt{ \lambda }
+\right] = \\
 = \lim \limits_{ \lambda \to + \infty }
-\left( \lambda \left( \cos \frac{t}{ \sqrt{ \lambda }} - 1 \right) + i \left( \lambda \sin \frac{t}{ \sqrt{ \lambda }} - \sqrt{ \lambda } t \right) \right) = \\
+\left( \lambda \left( \cos \frac{t}{ \sqrt{ \lambda }} - 1 \right) +
+i \left( \lambda \sin \frac{t}{ \sqrt{ \lambda }} - \sqrt{ \lambda } t \right) \right) = \\
 = \lim \limits_{ \lambda \to + \infty }
-\left( \lambda \left( 1 - \frac{t^2}{2 \lambda } + o \left( \frac{t^3}{ \sqrt{ \lambda }} \right) - 1 \right) +
+\left( \lambda \left( 1 - \frac{t^2}{2 \lambda } +
+o \left( \frac{t^3}{ \sqrt{ \lambda }} \right) - 1 \right) +
 i \left( \lambda \sin \frac{t}{ \sqrt{ \lambda }} - \sqrt{ \lambda } t \right) \right).
 \end{split}
 \end{equation*}
@@ -123,7 +171,8 @@ i \left( \lambda \sin \frac{t}{ \sqrt{ \lambda }} - \sqrt{ \lambda } t \right) \
 
 Оценим мнимую часть
 $$ \lambda \sin \frac{t}{ \sqrt{ \lambda }} - \sqrt{ \lambda } t =
-\lambda \left( \frac{t}{ \sqrt{ \lambda }} - \frac{t^3}{6 \lambda^{ \frac{3}{2}}} + o \left( \frac{t^4}{ \lambda^2} \right) \right) - \sqrt{ \lambda } t.$$
+\lambda \left( \frac{t}{ \sqrt{ \lambda }} - \frac{t^3}{6 \lambda^{ \frac{3}{2}}} +
+o \left( \frac{t^4}{ \lambda^2} \right) \right) - \sqrt{ \lambda } t.$$
 Первое слагаемое в скобках и слагаемое после скобок уничтожаются
 $$ \lambda \sin \frac{t}{ \sqrt{ \lambda }} - \sqrt{ \lambda } t =
 - \frac{t^3}{6 \sqrt{ \lambda }} + o \left( 1 \right) \rightarrow 0 $$
@@ -134,31 +183,43 @@ $$ \lambda \sin \frac{t}{ \sqrt{ \lambda }} - \sqrt{ \lambda } t =
 \subsubsection*{16.3}
 
 \textit{Задание.}
-Пусть последовательность случайных величин $ \left\{ \xi_n \right\}_{n \geq 1}$ слабо сходится к случайной величине $ \xi $,
+Пусть последовательность случайных величин $ \left\{ \xi_n \right\}_{n \geq 1}$
+слабо сходится к случайной величине $ \xi $,
 и пусть $g: \, \mathbb{R} \rightarrow \mathbbm{R}$ --- непрерывная функция.
-Докажите, что последовательность $ \left\{ g \left( \xi_n \right) \right\}_{n \geq 1}$ слабо сходится к $g \left( \xi \right) $.
+Докажите, что последовательность $ \left\{ g \left( \xi_n \right) \right\}_{n \geq 1}$
+слабо сходится к $g \left( \xi \right) $.
 
-\textit{Решение.} $ \xi_n \overset{d}{ \rightarrow } \xi, \, n \rightarrow \infty, \, g: \, \mathbb{R} \rightarrow \mathbb{R}$.
+\textit{Решение.}
+$ \xi_n \overset{d}{ \rightarrow } \xi, \,
+n \rightarrow \infty, \,
+g: \, \mathbb{R} \rightarrow \mathbb{R}$.
 
 Доказать, что $g \left( \xi_n \right) \overset{d}{ \rightarrow } g \left( \xi \right) $.
-Это означает, что $Mf \left( g \left( \xi_n \right) \right) \rightarrow Mf \left( g \left( \xi \right) \right) $.
+Это означает, что
+$Mf \left( g \left( \xi_n \right) \right) \rightarrow Mf \left( g \left( \xi \right) \right) $.
 
 Обозначим $h \left( x \right) = f \left( g \left( x \right) \right) $.
 Тогда $Mh \left( \xi_n \right) \rightarrow Mh \left( \xi \right) $.
 
-Функция $h$ --- непрерывная, так как это композиция двух непрерывных функций $f$ и $g$; функция $f$ --- ограничена.
+Функция $h$ --- непрерывная, так как это композиция двух непрерывных функций $f$ и $g$;
+функция $f$ --- ограничена.
 Из этого следует, что $h$ --- ограничена.
-Тогда $h \in C_b \left( \mathbb{R} \right) $, следовательно, $g \left( \xi_n \right) \overset{d}{ \rightarrow } g \left( \xi \right) $.
+Тогда $h \in C_b \left( \mathbb{R} \right) $, следовательно,
+$g \left( \xi_n \right) \overset{d}{ \rightarrow } g \left( \xi \right) $.
 
 \subsubsection*{16.5}
 
-\textit{Задание.} Для действительнозначной непрерывной на $ \left[ 0, 1 \right] $ функции $f$ вычислите предел:
+\textit{Задание.}
+Для действительнозначной непрерывной на $ \left[ 0, 1 \right] $ функции $f$ вычислите предел:
 \begin{enumerate}[label=\alph*)]
-\item $ \lim \limits_{n \to \infty } \idotsint \limits_{ \left[ 0, 1 \right]^n} f \left( \frac{x_1 + x_2 + \dotsc + x_n}{n} \right) dx_1 dx_2 \dotsc dx_n$;
-\item $ \lim \limits_{n \to \infty } \idotsint \limits_{ \left[ 0, 1 \right]^n} f \left( \sqrt[n]{x_1 x_2 \dotsc x_n} \right) dx_1 dx_2 \dotsc sx_n$.
+\item $ \lim \limits_{n \to \infty } \idotsint \limits_{ \left[ 0, 1 \right]^n}
+f \left( \frac{x_1 + x_2 + \dotsc + x_n}{n} \right) dx_1 dx_2 \dotsc dx_n$;
+\item $ \lim \limits_{n \to \infty } \idotsint \limits_{ \left[ 0, 1 \right]^n}
+f \left( \sqrt[n]{x_1 x_2 \dotsc x_n} \right) dx_1 dx_2 \dotsc sx_n$.
 \end{enumerate}
 
-\textit{Решение.} $f: \, \left[ 0, 1 \right] \rightarrow \mathbb{R}, \, f \in C \left( \left[ 0, 1 \right] \right) $.
+\textit{Решение.}
+$f: \, \left[ 0, 1 \right] \rightarrow \mathbb{R}, \, f \in C \left( \left[ 0, 1 \right] \right) $.
 
 \begin{enumerate}[label=\alph*)]
 \item Используем закон больших чисел.
@@ -169,18 +230,24 @@ $$ \frac{ \sum \limits_{i = 1}^n \xi_i}{n} \overset{P}{ \rightarrow } M \xi_1,$$
 $$ \frac{ \sum \limits_{i = 1}^n \xi_i}{n} \overset{d}{ \rightarrow } M \xi_1.$$
 Запишем определение слабой сходимости
 $$ \forall f \in C_b \left( \mathbb{R} \right): \,
-Mf \left( \frac{ \sum \limits_{i = 1}^n \xi_i}{n} \right) \rightarrow Mf \left( M \xi_1 \right) = f \left( M \xi_1 \right).$$
+Mf \left( \frac{ \sum \limits_{i = 1}^n \xi_i}{n} \right) \rightarrow Mf \left( M \xi_1 \right) =
+f \left( M \xi_1 \right).$$
 
 Другими словами,
 $$ \lim \limits_{n \to \infty } Mf \left( \frac{ \sum \limits_{i = 1}^n \xi_i}{n} \right) =
 f \left( M \xi_1 \right).$$
 
-Плотность равна 1, если случайные величины независимы и имеют равномерное распределение на $ \left[ 0, 1 \right]: \, \xi_n \sim U \left( \left[ 0, 1 \right] \right) $.
+Плотность равна 1, если случайные величины независимы и имеют равномерное распределение на
+$ \left[ 0, 1 \right]: \, \xi_n \sim U \left( \left[ 0, 1 \right] \right) $.
 
 Тогда
 $$f \left( \frac{x_1 + \dotsc + x_n}{n} \right) =
 f \left( \frac{1}{2} \right);$$
 \item нужно прологарифмировать и получить среднее арифметическое.
+
+$$Mf \left( \xi_1, \dotsc, \xi_n \right) =
+\idotsint \limits_{ \mathbb{R}^n} f \left( x_1, \dotsc, x_n \right)
+p_{ \left( \xi_1, \dotsc, \xi_n \right) } \left( x_1, \dtosc, x_n \right) dx_1 \dotsc dx_n.$$
 \end{enumerate}
 
 \addcontentsline{toc}{section}{Домашнее задание}
@@ -188,11 +255,15 @@ f \left( \frac{1}{2} \right);$$
 
 \subsubsection*{16.14}
 
-\textit{Задание.} Пусть $ \xi_{n, p}$ --- случайная величина, распределённая по биномиальному закону с параметрами $p$ и $n$.
-Докажите, что если $n \rightarrow \infty $ и $p \rightarrow 0$ так, что $p \cdot n \rightarrow \lambda < \infty $,
-то распределения величин $ \xi_{n, p}$ слабо сходятся к распределению случайной величины $ \xi_{ \lambda }$, распределённой по закону Пуассона с параметром $ \lambda $.
+\textit{Задание.} Пусть $ \xi_{n, p}$ --- случайная величина,
+распределённая по биномиальному закону с параметрами $p$ и $n$.
+Докажите, что если $n \rightarrow \infty $ и $p \rightarrow 0$ так, что
+$p \cdot n \rightarrow \lambda < \infty $,
+то распределения величин $ \xi_{n, p}$ слабо сходятся к распределению случайной величины
+$ \xi_{ \lambda }$, распределённой по закону Пуассона с параметром $ \lambda $.
 
-\textit{Решение.} $ \xi_{n, p} \sim Binom \left( p, n \right), \, n \geq 1, \, p \in \left[ 0, 1 \right] $.
+\textit{Решение.}
+$ \xi_{n, p} \sim Binom \left( p, n \right), \, n \geq 1, \, p \in \left[ 0, 1 \right] $.
 
 Нужно проверить,
 что
@@ -207,14 +278,17 @@ p \cdot n \rightarrow \lambda < \infty.$$
 Теорема.
 Пусть $ \left\{ \xi_n \right\}_{n \geq 1}$ --- это последовательность случайных величин,
 тогда $ \xi_n \overset{d}{ \rightarrow } \xi, \, n \rightarrow \infty $ тогда и только тогда,
-когда $ \forall t \in \mathbb{R} \, \varphi_{ \xi_n} \left( t \right) \rightarrow \varphi_{ \xi } \left( t \right) $.
+когда
+$ \forall t \in \mathbb{R} \,
+\varphi_{ \xi_n} \left( t \right) \rightarrow \varphi_{ \xi } \left( t \right) $.
 
 Посчитаем характеристическую функцию случайной величины $ \xi_{n, p}$.
 По определению
 $$ \varphi_{ \xi_{n, p}} \left( t \right) =
 Me^{it \xi_{n, p}} =
 \sum \limits_{k = 0}^{n} C_n^k \left( e^{it} \right)^k p^k \left( 1 - p \right)^{n-k}.$$
-Воспользуемся формулой для бинома Ньютона $ \varphi_{ \xi_{n, p}} \left( t \right) = \left[ \left( e^{it} - 1 \right) p + 1 \right]^n$.
+Воспользуемся формулой для бинома Ньютона
+$ \varphi_{ \xi_{n, p}} \left( t \right) = \left[ \left( e^{it} - 1 \right) p + 1 \right]^n$.
 
 Нужно проверить, что
 $$ \varphi_{ \xi_{n, p}} \left( t \right) \rightarrow
@@ -223,12 +297,15 @@ $$ \varphi_{ \xi_{n, p}} \left( t \right) \rightarrow
 e^{ \lambda \left( e^{it} - 1 \right) }, \,
 \xi_{ \lambda } \sim Pois \left( \lambda \right).$$
 
-Воспользуемся тем, что $ \left( 1 + x \right)^n - 1 \sim nx, \, x \rightarrow 0, \, n > 0$, подставив вместо $x$ выражение $ \left( e^{it} - 1 \right) p$.
+Воспользуемся тем, что $ \left( 1 + x \right)^n - 1 \sim nx, \, x \rightarrow 0, \, n > 0$,
+подставив вместо $x$ выражение $ \left( e^{it} - 1 \right) p$.
 Получим
 $$ \varphi_{ \xi_{n, p}} \left( t \right) =
 \left[ \left( e^{it} - 1 \right) p + 1 \right]^n \sim n \left( e^{it} - 1 \right) p + 1 =
 np \left( e^{it} - 1 \right) + 1.$$
-По условию $np \rightarrow \lambda $, поэтому $ \varphi_{ \xi_{n, p}} \left( t \right) \rightarrow \lambda \left( e^{it} - 1 \right) + 1$.
+По условию
+$np \rightarrow \lambda $,
+поэтому $ \varphi_{ \xi_{n, p}} \left( t \right) \rightarrow \lambda \left( e^{it} - 1 \right) + 1$.
 
 Воспользуемся тем, что $e^x - 1 \sim x$ при $x \rightarrow 0$.
 Отсюда следует, что
@@ -237,7 +314,8 @@ $$x + 1 \sim e^x.$$
 $ \varphi_{ \xi_{n, p}} \left( t \right) \rightarrow e^{ \lambda \left( e^{it} - 1 \right) } =
 \varphi_{ \xi_{ \lambda }} \left( t \right) $.
 
-По указанной теореме получаем, что распределения величин $ \xi_{n, p}$ слабо сходятся к распределению случайной величины $ \xi_{ \lambda }$.
+По указанной теореме получаем, что распределения величин $ \xi_{n, p}$
+слабо сходятся к распределению случайной величины $ \xi_{ \lambda }$.
 
 \subsubsection*{16.15}
 
@@ -263,7 +341,8 @@ $$Mf \left( \xi_n \right) =
 Mf \left( \xi \right),$$
 то есть выполняется условие $ \xi_n \Rightarrow \xi $.
 
-Значения, которые может принимать разность случайных величин приведены в таблице \ref{table:difference}.
+Значения, которые может принимать разность случайных величин приведены в таблице
+\ref{table:difference}.
 
 \begin{table}
 \begin{center}
@@ -290,7 +369,8 @@ $$ \xi_n - \xi =
 
 Тогда
 $$Mf \left( \xi_n - \xi \right) =
-\frac{1}{4} \left[ f \left( 1 \right) + f \left( -1 \right) \right] + \frac{1}{2} \cdot f \left( 0 \right).$$
+\frac{1}{4} \left[ f \left( 1 \right) +
+f \left( -1 \right) \right] + \frac{1}{2} \cdot f \left( 0 \right).$$
 
 Возьмём $f$ как на рисунке \ref{fig:1615}.
 
@@ -321,8 +401,10 @@ n \rightarrow \infty.$$
 e^{- \frac{2}{ \pi } \left( x_1 + x_2 + \dotsc + x_n \right) }
 dx_1 dx_2 \dotsc dx_n$;
 \item $ \lim \limits_{n \to \infty } \left( \frac{1}{ \sqrt{2 \pi }} \right)^n
-\idotsint \limits_{ \mathbb{R}^n} \cos^{2m} \left( \pi \cdot \frac{x_1 + x_2 + \dotsc + x_n}{n} \right) \times \\
-\times e^{- \frac{ \left( x_1 - 1 \right)^2 + \dotsc + \left( x_n - 1 \right)^2}{2}} dx_1 dx_2 \dotsc dx_n, \,
+\idotsint \limits_{ \mathbb{R}^n} \cos^{2m}
+\left( \pi \cdot \frac{x_1 + x_2 + \dotsc + x_n}{n} \right) \times \\
+\times e^{- \frac{ \left( x_1 - 1 \right)^2 + \dotsc + \left( x_n - 1 \right)^2}{2}}
+dx_1 dx_2 \dotsc dx_n, \,
 m \in \mathbb{N}$.
 \end{enumerate}
 
@@ -336,7 +418,8 @@ m \in \mathbb{N}$.
 \sin \left( \frac{x_1 + x_2 + \dotsc + x_n}{n} \right) \times \\
 \times e^{- \frac{2}{ \pi } \left( x_1 + x_2 + \dotsc + x_n \right) }
 dx_1 dx_2 \dotsc dx_n = \\
-= \lim \limits_{n \to \infty } \idotsint \limits_{ \left[ 0, \infty \right]^n} \sin \left( \frac{x_1 + x_2 + \dotsc + x_n}{n} \right) \cdot
+= \lim \limits_{n \to \infty } \idotsint \limits_{ \left[ 0, \infty \right]^n}
+\sin \left( \frac{x_1 + x_2 + \dotsc + x_n}{n} \right) \cdot
 \frac{2}{ \pi } \cdot e^{- \frac{2}{ \pi } \cdot x_1} \times \\
 \times \frac{2}{ \pi } \cdot e^{- \frac{2}{ \pi } \cdot x_2} \cdot \dotsc \cdot
 \frac{2}{ \pi } \cdot e^{- \frac{2}{ \pi } \cdot x_n} dx_1 dx_2 \dotsc dx_n = \\
@@ -354,19 +437,25 @@ $$M \xi_1 =
 $$ \frac{ \xi_1 + \xi_2 + \dotsc + \xi_n}{n} \overset{P}{ \rightarrow } \frac{ \pi }{2}.$$
 
 Тогда искомый предел равен
-$$M \sin \left( \frac{ \xi_1 + \xi_2 + \dotsc + \xi_n}{n} \right) \to M \sin \frac{ \pi }{2} = M1 = 1, \,
+$$M \sin \left( \frac{ \xi_1 + \xi_2 + \dotsc + \xi_n}{n} \right) \to M \sin \frac{ \pi }{2} =
+M1 = 1, \,
 n \to \infty;$$
 \item запишем экспоненты в виде произведения
 \begin{equation*}
 \begin{split}
 \lim \limits_{n \to \infty } \left( \frac{1}{ \sqrt{2 \pi }} \right)^n
-\idotsint \limits_{ \mathbb{R}^n} \cos^{2m} \left( \pi \cdot \frac{x_1 + x_2 + \dotsc + x_n}{n} \right) \times \\
-\times e^{- \frac{ \left( x_1 - 1 \right)^2 + \dotsc + \left( x_n - 1 \right)^2}{2}} dx_1 dx_2 \dotsc dx_n = \\
-= \lim \limits_{n \to \infty } \idotsint \limits_{ \mathbb{R}^n} \cos^{2m} \left( \pi \cdot \frac{x_1 + x_2 + \dotsc + x_n}{n} \right) \cdot \frac{1}{ \sqrt{2 \pi }} \cdot
+\idotsint \limits_{ \mathbb{R}^n} \cos^{2m}
+\left( \pi \cdot \frac{x_1 + x_2 + \dotsc + x_n}{n} \right) \times \\
+\times e^{- \frac{ \left( x_1 - 1 \right)^2 + \dotsc + \left( x_n - 1 \right)^2}{2}}
+dx_1 dx_2 \dotsc dx_n = \\
+= \lim \limits_{n \to \infty } \idotsint \limits_{ \mathbb{R}^n} \cos^{2m}
+\left( \pi \cdot \frac{x_1 + x_2 + \dotsc + x_n}{n} \right) \cdot \frac{1}{ \sqrt{2 \pi }} \cdot
 e^{- \frac{ \left( x_1 - 1 \right)^2}{2}} \times \\
-\times \frac{1}{ \sqrt{2 \pi }} \cdot e^{- \frac{ \left( x_2 - 1 \right)^2}{2}} \cdot \dotsc \cdot \frac{1}{ \sqrt{2 \pi }} \cdot
+\times \frac{1}{ \sqrt{2 \pi }} \cdot e^{- \frac{ \left( x_2 - 1 \right)^2}{2}} \cdot \dotsc \cdot
+\frac{1}{ \sqrt{2 \pi }} \cdot
 e^{- \frac{ \left( x_n - 1 \right)^2}{2}} dx_1 dx_2 \dotsc dx_n = \\
-= \lim \limits_{n \to \infty } M \cos^{2m} \left( \frac{ \xi_1 + \xi_2 + \dotsc + \xi_n}{2} \right), \,
+= \lim \limits_{n \to \infty } M \cos^{2m}
+\left( \frac{ \xi_1 + \xi_2 + \dotsc + \xi_n}{2} \right), \,
 \xi_n \sim N \left( 1, 1 \right)
 \end{split}
 \end{equation*}
@@ -378,6 +467,7 @@ e^{- \frac{ \left( x_n - 1 \right)^2}{2}} dx_1 dx_2 \dotsc dx_n = \\
 $$ \frac{ \xi_1 + \xi_2 + \dotsc + \xi_n}{n} \overset{P}{ \rightarrow } M \xi_1 = 1.$$
 
 Тогда исходный предел равен
-$$M \cos^{2m} \left( \frac{ \xi_1 + \xi_2 + \dotsc + \xi_n}{n} \right) \to M \cos^{2m} \pi = \cos^{2m} \pi = 1, \,
+$$M \cos^{2m} \left( \frac{ \xi_1 + \xi_2 + \dotsc + \xi_n}{n} \right) \to M \cos^{2m} \pi =
+\cos^{2m} \pi = 1, \,
 n \to \infty.$$
 \end{enumerate}
