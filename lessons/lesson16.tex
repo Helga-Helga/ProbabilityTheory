@@ -213,13 +213,14 @@ $g \left( \xi_n \right) \overset{d}{ \rightarrow } g \left( \xi \right) $.
 Для действительнозначной непрерывной на $ \left[ 0, 1 \right] $ функции $f$ вычислите предел:
 \begin{enumerate}[label=\alph*)]
 \item $ \lim \limits_{n \to \infty } \idotsint \limits_{ \left[ 0, 1 \right]^n}
-f \left( \frac{x_1 + x_2 + \dotsc + x_n}{n} \right) dx_1 dx_2 \dotsc dx_n$;
+  f \left( \frac{x_1 + x_2 + \dotsc + x_n}{n} \right) dx_1 dx_2 \dotsc dx_n$;
 \item $ \lim \limits_{n \to \infty } \idotsint \limits_{ \left[ 0, 1 \right]^n}
-f \left( \sqrt[n]{x_1 x_2 \dotsc x_n} \right) dx_1 dx_2 \dotsc sx_n$.
+  f \left( \sqrt[n]{x_1 x_2 \dotsc x_n} \right) dx_1 dx_2 \dotsc sx_n$.
 \end{enumerate}
 
 \textit{Решение.}
-$f: \, \left[ 0, 1 \right] \rightarrow \mathbb{R}, \, f \in C \left( \left[ 0, 1 \right] \right) $.
+$f: \, \left[ 0, 1 \right] \rightarrow \mathbb{R}, \,
+  f \in C \left( \left[ 0, 1 \right] \right) $.
 
 \begin{enumerate}[label=\alph*)]
 \item Используем закон больших чисел.
@@ -230,24 +231,72 @@ $$ \frac{ \sum \limits_{i = 1}^n \xi_i}{n} \overset{P}{ \rightarrow } M \xi_1,$$
 $$ \frac{ \sum \limits_{i = 1}^n \xi_i}{n} \overset{d}{ \rightarrow } M \xi_1.$$
 Запишем определение слабой сходимости
 $$ \forall f \in C_b \left( \mathbb{R} \right): \,
-Mf \left( \frac{ \sum \limits_{i = 1}^n \xi_i}{n} \right) \rightarrow Mf \left( M \xi_1 \right) =
-f \left( M \xi_1 \right).$$
+  Mf \left( \frac{ \sum \limits_{i = 1}^n \xi_i}{n} \right) \rightarrow Mf \left( M \xi_1 \right) =
+  f \left( M \xi_1 \right).$$
 
 Другими словами,
 $$ \lim \limits_{n \to \infty } Mf \left( \frac{ \sum \limits_{i = 1}^n \xi_i}{n} \right) =
-f \left( M \xi_1 \right).$$
+  f \left( M \xi_1 \right).$$
 
 Плотность равна 1, если случайные величины независимы и имеют равномерное распределение на
 $ \left[ 0, 1 \right]: \, \xi_n \sim U \left( \left[ 0, 1 \right] \right) $.
 
 Тогда
 $$f \left( \frac{x_1 + \dotsc + x_n}{n} \right) =
-f \left( \frac{1}{2} \right);$$
+  f \left( \frac{1}{2} \right);$$
 \item нужно прологарифмировать и получить среднее арифметическое.
 
 $$Mf \left( \xi_1, \dotsc, \xi_n \right) =
-\idotsint \limits_{ \mathbb{R}^n} f \left( x_1, \dotsc, x_n \right)
-p_{ \left( \xi_1, \dotsc, \xi_n \right) } \left( x_1, \dtosc, x_n \right) dx_1 \dotsc dx_n.$$
+  \idotsint \limits_{ \mathbb{R}^n} f \left( x_1, \dotsc, x_n \right)
+  p_{ \left( \xi_1, \dotsc, \xi_n \right) } \left( x_1, \dotsc, x_n \right) dx_1 \dotsc dx_n.$$
+Так как величины независимы, то это равно
+$$ \idotsint \limits_{ \mathbb{R}^n} f \left( x_1, \dotsc, x_n \right)
+  p_{ \xi_1} \left( x \right) \dotsc p_{ \xi_n } \left( x \right) dx_1 \dotsc dx_n.$$
+
+Нужно ввести случайные величины $ \xi_1, \dotsc, \xi_n$ ---
+независимые одинаково распределённые по равномерному закону на $ \left[ 0, 1 \right]$,
+то есть
+$$ \xi \sim
+  U \left( \left[ 0, 1 \right] \right).$$
+
+Тогда исходный предел равен
+$$ \lim \limits_{n \to \infty }
+  Mf \left[ \frac{ \left(  \xi_1 \cdot \dotsc \cdot \xi_n \right)^{\frac{1}{n}} }{n} \right].$$
+
+Займёмся аргументом.
+Берём логарифм от корня.
+Логарифм произведения --- это сумма логарифмом
+$$ \ln \left( \sqrt[n]{ \xi_1 \xi_2 \dotsc \xi_n} \right) =
+  \frac{1}{n} \sum \limits_{i = 1}^n \ln \xi_i \overset{P}{ \rightarrow } M \ln \xi_1$$
+--- по закону больших чисел.
+
+Плотность равномерного распределения
+$p_{ \xi_1} \left( x \right) =
+  \mathbbm{1}_{ \left[ 0, 1 \right]} \left( x \right)$.
+
+Вычисляем математическое ожидание
+$$M \ln \xi_1 =
+  \int \limits_0^1 \ln xdx.$$
+Интегрируем по частям:
+$$u = \ln x, \,
+  dv = dx, \,
+  v = x, \,
+  du = \frac{1}{x} dx.$$
+Получаем
+$$M \ln \xi_1 =
+  \left. x \ln x \right|_0^1 - \int \limits_0^1 dx =
+  \left. -x \right|_0^1 =
+  -1.$$
+
+Делаем экспонирование
+$$ \sqrt[n]{ \xi_1 \dotsc \xi_n} \overset{P}{ \rightarrow }
+  e^{-1}.$$
+Из этого следует, что
+$$ \sqrt[n]{ \xi_1 \dotsc \xi_n} \overset{d}{ \rightarrow } e^{-1}.$$
+Следовательно,
+$ \forall f \in C_b \left( \left[ 0, 1 \right] \right) \,
+Mf \left( \sqrt[n]{ \xi_1 \dotsc \xi_n} \right) \to Mf \left( e^{-1} \right) =
+f \left( e^{-1} \right) $.
 \end{enumerate}
 
 \addcontentsline{toc}{section}{Домашнее задание}
