@@ -348,6 +348,37 @@ $$F_n \left( x \right) =
   P \left\{ \xi_1 \leq x \right\} =
   F \left( x \right).$$
 
+\subsubsection*{16.8}
+
+\textit{Задание.}
+Пусть $ \left\{ \xi_n \right\}_{n \geq 1}$ ---
+последовательность независимых одинаково распределённых случайных величин с конечными дисперсиями
+$ \sigma_n^2$.
+Докажите, что если
+$$ \frac{1}{n^2} \sum \limits_{i = 1}^n \sigma_i^2 \to 0,$$
+то
+$$ \frac{ S_n - MS_n}{n} \overset{P}{ \rightarrow } 0,$$
+где $S_n = \xi_1 + \dotsc + \xi_n$.
+
+\textit{Решение.} Нужно доказать, что
+$$ \forall \epsilon > 0, \,
+  P \left\{ \left| \frac{S_n - MS_n}{n} \right| > \epsilon \right\} \to 0, \,
+  n \to \infty.$$
+
+Запишем неравенство Чебышева
+$$P \left\{ \left| \frac{S_n - MS_n}{n} \right| > \epsilon \right\} \leq
+  \frac{1}{ \epsilon^2} \cdot M \left| \frac{S_n - MS_n}{n} \right|^2.$$
+Выносим константу из-под знака математического ожидания
+$$P \left\{ \left| \frac{S_n - MS_n}{n} \right| > \epsilon \right\} \leq
+  \frac{1}{n^2 \epsilon^2} \cdot D \left( S_n \right).$$
+Дисперсия суммы независимых --- это сумма дисперсий
+$$P \left\{ \left| \frac{S_n - MS_n}{n} \right| > \epsilon \right\} \leq
+  \frac{1}{n^2 \sigma^2} \sum \limits_{k = 1}^n D \xi_k =
+  \frac{1}{n^2 \sigma^2} \sum \limits_{k = 1}^n \sigma_k^2 \to
+  0, \,
+  n \to \infty $$
+  по условию.
+
 \addcontentsline{toc}{section}{Домашнее задание}
 \section*{Домашнее задание}
 
