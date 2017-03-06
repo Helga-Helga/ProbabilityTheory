@@ -326,6 +326,28 @@ $$ \left( e^n \prod \limits_{k = 1}^n \right)^{ \frac{1}{n}} \to
   e^0 =
   1.$$
 
+\subsubsection{16.7}
+
+\textit{Задание.}
+Пусть $ \left\{ \xi_n \right\}_{n \geq 1}$ ---
+последовательность независимых одинаково распределённых случайных величин с функцией распределения
+$F \left( x \right) $.
+Для $n \geq 1$ и $x \in \mathbb{R}$ положим:
+$$F_n \left( x \right) =
+  \frac{k}{n},$$
+где $k$ --- количество тех членов из $ \left\{ \xi_1, \dotsc, \xi_n \right\} $,
+которые не превышают $x$.
+Докажите, что
+$$F_n \overset{P}{ \rightarrow } F, \,
+  n \to \infty.$$
+
+\textit{Решение.} Формализируем задачу так, чтобы можно было применить закон больших чисел
+$$F_n \left( x \right) =
+  \frac{ \mathbbm{1} \left\{ \xi_i \leq x \right\}}{n} \overset{P}{ \rightarrow }
+  M \mathbbm{1} \left\{ \xi_1 \leq x \right\} =
+  P \left\{ \xi_1 \leq x \right\} =
+  F \left( x \right).$$
+
 \addcontentsline{toc}{section}{Домашнее задание}
 \section*{Домашнее задание}
 
