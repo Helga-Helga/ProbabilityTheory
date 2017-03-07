@@ -130,5 +130,71 @@ $$P \left( S_{100} > 63 \right) =
   P \left( \eta > 2.6 \right) =
   0.005.$$
 
+\subsubsection*{17.5}
+
+\textit{Задание.}
+Пусть $ \left\{ \xi_n \right\}_{n \geq 1}$ ---
+последовательность независимых одинаково распределённых
+случайных величин с распределением Бернулли с параметром
+$$p =
+  \frac{1}{2},$$
+и пусть $S_k = \xi_1 + \dotsc + \xi_k$.
+Найдите такое $k$, чтобы
+$$P \left( \left| S_k - kp \right| > 1000 \right) >
+  0.0455.$$
+
+\textit{Решение.} Математическое ожидание суммы $S_k$ равно
+$$MS_K =
+  kp =
+  k \cdot \frac{1}{2}.$$
+
+Дисперсия равна
+$$DS_k =
+  k \cdot \frac{1}{4}.$$
+
+Записываем вероятность в таком виде, чтобы можно было применить центральную предельную теорему
+$$P \left( \left| S_k - \frac{k}{2} \right| > 1000 \right) =
+  P \left(
+      \left| \frac{S_k - \frac{k}{2}}{ \sqrt{ \frac{k}{4}}} \right| > \frac{2000}{ \sqrt{k}}
+    \right) \approx
+  P \left( \left| \eta \right| > \frac{2000}{ \sqrt{k}} \right) >
+  0.0455,$$
+так как
+$$ \frac{S_k - \frac{k}{2}}{ \sqrt{ \frac{k}{4}}} \approx
+  \eta \sim
+  N \left( 0, 1 \right).$$
+
+Нарисуем график (рис. \ref{fig:175}), закрасим площадь, котороя соответствует тому, что
+$$ \left| \eta \right| =
+  \left| x \right| >
+  \frac{1000}{ \sqrt{k}}.$$
+
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=.4\textwidth]{./pictures/17_5.png}
+  \caption{Площадь под гаусианой}
+  \label{fig:175}
+\end{figure}
+
+Тогда
+$$2 \Phi_t \left( \frac{2000}{ \sqrt{k}} \right) >
+  0.0455.$$
+
+Тогда табличное
+$$ \Phi_t \left( \frac{2000}{ \sqrt{k}} \right) >
+  0.0275.$$
+
+В таблице значений ищем $0.0275 \approx 0.028$.
+Получается
+$$ \frac{2000}{ \sqrt{k}} <
+  1.91.$$
+
+Отсюда
+$$ \sqrt{k} >
+  \frac{2000}{1.91} \approx
+  \frac{2000}{2} =
+  1000.$$
+Тогда $k > 10000000$.
+
 \addcontentsline{toc}{section}{Домашнее задание}
 \section*{Домашнее задание}
