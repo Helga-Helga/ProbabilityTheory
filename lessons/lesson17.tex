@@ -40,5 +40,41 @@ $$ \frac{S_n - np}{ \sqrt{n} \sqrt{p \left( 1 - p \right) }} \overset{d}{ \right
 \addcontentsline{toc}{section}{Аудиторные задачи}
 \section*{Аудиторные задачи}
 
+\subsubsection*{17.3}
+
+\textit{Задание.} Пусть $ \xi $ --- случайная величина со стандартным нормальным распределением.
+Пользуясь таблицей стандартного нормального распределения найдите:
+\begin{enumerate}[label=\alph*)]
+\item вероятность $P \left( \xi \leq 2.2 \right) $;
+\item такое $x$, что $P \left( \xi > x \right) = 0.9$.
+\end{enumerate}
+
+\textit{Решение.} $ \xi \sim N \left( 0 ,1 \right) $.
+Найдём вероятности
+\begin{enumerate}[label=\alph*)]
+\item $P \left( \xi \leq 2.2 \right) =
+        1 -P \left( \xi > 2.2 \right) =
+        1 - \Phi_t \left( 2.2 \right) =
+        1 - 0.014 =
+        -.986$;
+\item изобразим ситуацию на рисунке \ref{fig:173}.
+
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=.4\textwidth]{./pictures/17_3.png}
+  \caption{Площадь под гаусианой}
+  \label{fig:173}
+\end{figure}
+
+Площадь каждой половины под графиком равна $0.5$.
+Отсюда следует, что $x < 0$.
+
+Получаем, что $ \Phi_t \left( -x \right) = 0.1$.
+
+Ещём в таблице значений $-x = 1.18$.
+Значит, $x = -1.18$.
+
+\end{enumerate}
+
 \addcontentsline{toc}{section}{Домашнее задание}
 \section*{Домашнее задание}
