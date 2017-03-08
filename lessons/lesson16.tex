@@ -600,3 +600,30 @@ $$M \cos^{2m} \left( \frac{ \xi_1 + \xi_2 + \dotsc + \xi_n}{n} \right) \to M \co
 \cos^{2m} \pi = 1, \,
 n \to \infty.$$
 \end{enumerate}
+
+\subsubsection*{16.18}
+
+\textit{Задание.}
+Пусть $ \left\{ \xi_n \right\}_{n \geq 1}$ --- последовательность независимых случайных величин,
+каждая из которых имеет показательное распределение с параметром $ \lambda = 1$.
+Докажите, что
+$$ \left( \prod \limits_{k = 1}^n \xi_k \right)^{ \frac{1}{n}} \overset{P}{ \rightarrow } e^{-C}, \,
+  n \to \infty.$$
+
+\textit{Решение.} Сумму можно получить, прологарифмировав левую часть
+$$ \ln \left( \prod \limits_{k = 1}^n \xi_k \right)^{ \frac{1}{n}} =
+  \frac{1}{n} \left( \sum \limits_{k = 1}^n \ln \xi_k \right).$$
+
+Так как $ \left\{ \ln \xi_n \right\}_{n \geq 1}$ ---
+независимые одинаково распределённые случайные величины с конечным первым моментом, то
+$$ \ln \left( \prod \limits_{k = 1}^n \xi_k \right)^{ \frac{1}{n}} \overset{P}{ \rightarrow }
+  M \ln \xi_1 =
+  \int \limits_0^{+ \infty } \lambda \ln x e^{- \lambda x} dx =
+  \int \limits_0^{+ \infty } \ln x e^{- x} dx, \,
+  n \to \infty.$$
+
+Возьмём справа и слева экспоненту, поскольку экспонента --- непрерывная функция
+$$ \left( \prod \limits_{k = 1}^n \xi_k \right)^{ \frac{1}{n}} \overset{P}{ \rightarrow }
+  e^{ \int \limits_0^{+ \infty } \ln x e^{-x} dx} =
+  e^{-C}, \,
+  n \to \infty.$$
