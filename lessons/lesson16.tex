@@ -630,3 +630,34 @@ $$ \left( \prod \limits_{k = 1}^n \xi_k \right)^{ \frac{1}{n}} \overset{P}{ \rig
   e^{ \int \limits_0^{+ \infty } \ln x e^{-x} dx} =
   e^{-C}, \,
   n \to \infty.$$
+
+\subsubsection*{16.19}
+
+\textit{Задание.}
+Пусть $ \left\{ \xi_n \right\}_{n \geq 1}$ ---
+последовательность независимых одинаково распределённых случайных величин с
+$M \xi_1 = \mu, \, D \xi_1 = \sigma^2 < \infty $ и
+$$P \left( \xi_1 = 0 \right) =
+  0.$$
+Докажите, что
+$$ \frac{ \xi_1 + \dotsc + \xi_n}{ \xi_1^2 + \dotsc + \xi_n^2} \overset{P}{ \rightarrow }
+  \frac{ \mu }{ \mu^2 + \sigma^2}, \,
+  n \to \infty.$$
+
+\textit{Решение.} Умножим и поделим дробь слева на $n$.
+Получим
+$$ \frac{ \xi_1 + \dotsc + \xi_n}{ \xi_1^2 + \dotsc + \xi_n^2} =
+  \frac{ \xi_1 + \dotsc + \xi_n}{n} \cdot \frac{n}{ \xi_1^2 + \dotsc + \xi_n^2}.$$
+Первый сомножитель по центральной предельной теореме по вероятности сходится к
+$M \xi_1 = \mu, \,
+  n \to \infty $.
+По свойствам дисперсии $D \xi_1 = M \xi_1^2 - \left( M \xi_1 \right)^2$,
+откуда $M \xi_1^2 = D \xi_1 - \left( M \xi_1 \right)^2 = \sigma^2 + \mu^2$.
+Тогда второй сомножитель по вероятности сходится к
+$$ \frac{1}{M \xi_1^2} =
+  \frac{1}{ \sigma^2 + \mu^2}, \,
+  n \to \infty.$$
+Тогда всё выражение по вероятности сходится к
+$$ \mu \cdot \frac{1}{ \sigma^2 + \mu^2} =
+  \frac{ \mu }{ \mu^2 + \sigma^2}, \,
+  n \to \infty.$$
