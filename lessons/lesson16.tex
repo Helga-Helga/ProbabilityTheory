@@ -362,19 +362,19 @@ $$ \frac{ S_n - MS_n}{n} \overset{P}{ \rightarrow } 0,$$
 
 \textit{Решение.} Нужно доказать, что
 $$ \forall \epsilon > 0, \,
-  P \left\{ \left| \frac{S_n - MS_n}{n} \right| > \epsilon \right\} \to 0, \,
+  P \left\{ \left| \frac{S_n - MS_n}{n} \right| > \varepsilon \right\} \to 0, \,
   n \to \infty.$$
 
 Запишем неравенство Чебышева
-$$P \left\{ \left| \frac{S_n - MS_n}{n} \right| > \epsilon \right\} \leq
-  \frac{1}{ \epsilon^2} \cdot M \left| \frac{S_n - MS_n}{n} \right|^2.$$
+$$P \left\{ \left| \frac{S_n - MS_n}{n} \right| > \varepsilon \right\} \leq
+  \frac{1}{ \varepsilon^2} \cdot M \left| \frac{S_n - MS_n}{n} \right|^2.$$
 Выносим константу из-под знака математического ожидания
-$$P \left\{ \left| \frac{S_n - MS_n}{n} \right| > \epsilon \right\} \leq
-  \frac{1}{n^2 \epsilon^2} \cdot D \left( S_n \right).$$
+$$P \left\{ \left| \frac{S_n - MS_n}{n} \right| > \varepsilon \right\} \leq
+  \frac{1}{n^2 \varepsilon^2} \cdot D \left( S_n \right).$$
 Дисперсия суммы независимых --- это сумма дисперсий
-$$P \left\{ \left| \frac{S_n - MS_n}{n} \right| > \epsilon \right\} \leq
-  \frac{1}{n^2 \sigma^2} \sum \limits_{k = 1}^n D \xi_k =
-  \frac{1}{n^2 \sigma^2} \sum \limits_{k = 1}^n \sigma_k^2 \to
+$$P \left\{ \left| \frac{S_n - MS_n}{n} \right| > \varepsilon \right\} \leq
+  \frac{1}{n^2 \varepsilon^2} \sum \limits_{k = 1}^n D \xi_k =
+  \frac{1}{n^2 \varepsilon^2} \sum \limits_{k = 1}^n \sigma_k^2 \to
   0, \,
   n \to \infty $$
   по условию.
@@ -661,3 +661,31 @@ $$ \frac{1}{M \xi_1^2} =
 $$ \mu \cdot \frac{1}{ \sigma^2 + \mu^2} =
   \frac{ \mu }{ \mu^2 + \sigma^2}, \,
   n \to \infty.$$
+
+\subsubsection*{16.20}
+
+\textit{Задание.}
+Пусть $g \left( x \right) $ --- непрерывная функция, определённая для $x \in \left[ 0, 1 \right]$,
+со значениями в $ \left[ 0, 1 \right]$.
+Пусть $X_1, X_2, \dotsc $ --- последовательность независимых случайных величин,
+равнометрно распределённых на $ \left[ 0, 1 \right]$.
+Положим
+$$Y_n = g \left( X_n \right), \,
+  S_N = \frac{Y_1 + \dotsc + Y_n}{n}.$$
+Докажите, что $S_n \overset{P}{ \rightarrow } S$, где $S$ --- площадь криволинейной трапеции,
+ограниченной графиком функции $g \left( x \right)$.
+Каким нужно выбрать $n$ длч того,
+чтобы $P \left( \left| S_n - S \right| < \varepsilon \right) \geq 0.95$?
+
+\textit{Решение.}
+
+\subsubsection*{16.21}
+
+\textit{Задание.}
+Пусть $ \left\{ \xi_n \right\}_{n \geq 1}$ ---
+последовательность независимых случайных величин с конечными вторыми моментами.
+Докажите, что если $ \sup \limits_n D \xi_n < \infty $, то
+$$ \frac{S_n - MS_n}{n} \overset{P}{ \rightarrow } 0,$$
+где $S_n = \xi_1 + \dotsc + \xi_n$.
+
+\textit{Решение.}
