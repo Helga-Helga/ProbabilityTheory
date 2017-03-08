@@ -120,7 +120,7 @@ $$P \left( S_{100} < 45 \right) =
 Следующая вероятность равна
 $$P \left( 45 < S_{100} < 55 \right) =
   P \left( -1 < \eta < 1 \right) =
-  1 - \Phi_t \left( 1 \right) =
+  1 - 2 \Phi_t \left( 1 \right) =
   1 - 2 \cdot 0.159 =
   0.682.$$
 
@@ -335,4 +335,75 @@ $$2 \Phi_t \left( x \right) =
 В таблице находим, что
 $$x =
   1.645.$$
+\end{enumerate}
+
+\subsubsection*{17.12}
+
+\textit{Задание.}
+Пусть $S$ --- число гербов, что выпали при 1 000 000 подбрасываниях правильной монеты.
+Оцените вероятность $P \left( 499000 < S < 501000 \right) $:
+\begin{enumerate}[label=\alph*)]
+\item с помощью неравенства Чебышева;
+\item с помощью центральной предельной теоремы.
+\end{enumerate}
+
+\textit{Решение.} Пусть $ \xi_i = \mathbbm{1}$ \{при $i$-м подбрасывании выпал герб\}.
+Тогда
+$$S =
+  \sum \limits_{i = 1}^{1000000} \xi_i.$$
+
+Математическое ожидание введённой случайной величины совпадает с вероятностью того, что выпал герб
+$$M \xi_i =
+  \frac{1}{2}.$$
+
+Дисперсия равна
+$$D \xi_i =
+  \frac{1}{2} \cdot \frac{1}{2} =
+  \frac{1}{4}.$$
+
+Для суммы
+$$MS = 1000000 \cdot \frac{1}{2} = 500000, \,
+  DS = \frac{1000000}{4} = 250000.$$
+
+\begin{enumerate}[label=\alph*)]
+\item Воспользуемся неравенством Чебышева для дисперсии
+$$P \left( \left| \xi - M \xi \right| \geq \varepsilon \right) \leq
+  \frac{D \xi }{ \varepsilon^2}$$
+или
+$$P \left( \left| \xi - M \xi \right| < \varepsilon \right) \geq
+  1 - \frac{D \xi }{ \varepsilon^2}.$$
+
+Отнимем от всех частей неравенства математическое ожидание суммы
+\begin{equation*}
+  \begin{split}
+    P \left( 499000 < S < 501000 \right) =
+    P \left( 499000 - MS < S - MS < 501000 - MS \right) = \\
+    = P \left( 499000 - 500000< S - MS < 501000 - 500000 \right) = \\
+    = P \left( -1000 < S - MS < 1000 \right) =
+    P \left( \left| S - MS \right| < 1000 \right) \geq \\
+    \geq 1 - \frac{DS}{1000^2} =
+    1 - \frac{250000}{1000000} =
+    1 - 0.25 =
+    0.75;
+  \end{split}
+\end{equation*}
+\item в предыдущем пункте получили,
+что
+$$P \left( 499000 < S < 501000 \right) =
+  P \left( \left| S - MS \right| < 1000 \right).$$
+Поделим правую и левую части на корень из дисперсии суммы
+$$P \left( 499000 < S < 501000 \right) =
+  P \left( \frac{ \left| S - MS \right| }{ \sqrt{DS}} < \frac{1000}{ \sqrt{DS}} \right).$$
+В правой части подставим значение дисперсии
+$$P \left( 499000 < S < 501000 \right) =
+  P \left( \frac{ \left| S - MS \right| }{ \sqrt{DS}} < \frac{1000}{500} \right).$$
+Поделим в правой части константы
+$$P \left( 499000 < S < 501000 \right) =
+  P \left( \frac{ \left| S - MS \right| }{ \sqrt{DS}} < 2 \right) =
+  1 - 2 \Phi_t \left( 2 \right).$$
+Найдём в таблице нормального распределения соответствующее значение
+$$P \left( 499000 < S < 501000 \right) =
+  1 - 2 \cdot 0.023 =
+  1 - 0.046 =
+  0.954.$$
 \end{enumerate}
