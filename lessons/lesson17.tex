@@ -305,3 +305,34 @@ $$t =
 
 \addcontentsline{toc}{section}{Домашнее задание}
 \section*{Домашнее задание}
+
+\subsubsection*{17.11}
+
+\textit{Задание.} Пусть $ \xi $ --- случайная величина со стандартным нормальным распределением.
+Пользуясь таблицей стандартного нормального распределения найдите:
+\begin{enumerate}[label=\alph*)]
+\item вероятность $P \left( \xi \in \left[ -3, 1 \right] \right) $;
+\item такое $x$, что $P \left( \left| \xi \right| \leq x \right) = 0.9$.
+\end{enumerate}
+
+\textit{Решение.}
+\begin{enumerate}[label=\alph*)]
+\item Разобъём искомую вероятность на разность двух
+$$P \left( \xi \in \left[ -3, 1 \right] \right) =
+  P \left( \xi \geq -3 \right) - P \left( \xi > 1 \right) =
+  \Phi_t \left( -3 \right) - \Phi_t \left( 1 \right).$$
+Преобразуем первое слагаемое, чтобы был положительный аргумент
+$$P \left( \xi \in \left[ -3, 1 \right] \right) =
+  1 - \Phi_t \left( 3 \right) - \Phi_t \left( 1 \right) =
+  1 - 0.00135 - 0.0159 =
+  0.83965;$$
+\item из условия находим, что $1 - 2 \Phi_t \left( x \right) = 0.9$.
+Отсюда
+$$2 \Phi_t \left( x \right) =
+  1 - 0.9 =
+  0.1.$$
+Делим на $2$ и получаем $ \Phi_t \left( x \right) = 0.05$.
+В таблице находим, что
+$$x =
+  1.645.$$
+\end{enumerate}
