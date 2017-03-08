@@ -684,8 +684,28 @@ $$Y_n = g \left( X_n \right), \,
 \textit{Задание.}
 Пусть $ \left\{ \xi_n \right\}_{n \geq 1}$ ---
 последовательность независимых случайных величин с конечными вторыми моментами.
-Докажите, что если $ \sup \limits_n D \xi_n < \infty $, то
+Докажите, что если
+$$ \sup \limits_n D \xi_n <
+  \infty,$$
+то
 $$ \frac{S_n - MS_n}{n} \overset{P}{ \rightarrow } 0,$$
 где $S_n = \xi_1 + \dotsc + \xi_n$.
 
-\textit{Решение.}
+\textit{Решение.} Нужно доказать, что
+$$ \forall \varepsilon > 0, \,
+  P \left\{ \left| \frac{S_n - MS_n}{n} \right| > \varepsilon \right\} \to 0, \,
+  n \to \infty.$$
+
+Запишем неравенство Чебышева
+$$P \left\{ \left| \frac{S_n - MS_n}{n} \right| > \varepsilon \right\} \leq
+  \frac{1}{ \varepsilon^2} \cdot M \left| \frac{S_n - MS_n}{n} \right|^2.$$
+
+Вынесем константу из-под знака математического ожидания
+$$P \left\{ \left| \frac{S_n - MS_n}{n} \right| > \varepsilon \right\} \leq
+  \frac{1}{n^2 \varepsilon^2} \cdot DS_n.$$
+
+Дисперсия суммы независимых случайных величин --- это сумма их дисперсий
+$$P \left\{ \left| \frac{S_n - MS_n}{n} \right| > \varepsilon \right\} \leq
+  \frac{1}{n^2 \varepsilon^2} \sum \limits_{k = 1}^n D \xi_k \to
+  0, \,
+  n \to \infty.$$
