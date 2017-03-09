@@ -665,19 +665,94 @@ $$ \mu \cdot \frac{1}{ \sigma^2 + \mu^2} =
 \subsubsection*{16.20}
 
 \textit{Задание.}
-Пусть $g \left( x \right) $ --- непрерывная функция, определённая для $x \in \left[ 0, 1 \right]$,
+Пусть $g \left( x \right) $ --- непрерывная функция, определённая для
+$$x \in
+  \left[ 0, 1 \right],$$
 со значениями в $ \left[ 0, 1 \right]$.
 Пусть $X_1, X_2, \dotsc $ --- последовательность независимых случайных величин,
 равнометрно распределённых на $ \left[ 0, 1 \right]$.
 Положим
 $$Y_n = g \left( X_n \right), \,
-  S_N = \frac{Y_1 + \dotsc + Y_n}{n}.$$
+  S_n = \frac{Y_1 + \dotsc + Y_n}{n}.$$
 Докажите, что $S_n \overset{P}{ \rightarrow } S$, где $S$ --- площадь криволинейной трапеции,
 ограниченной графиком функции $g \left( x \right)$.
-Каким нужно выбрать $n$ длч того,
+Каким нужно выбрать $n$ для того,
 чтобы $P \left( \left| S_n - S \right| < \varepsilon \right) \geq 0.95$?
 
-\textit{Решение.}
+\textit{Решение.} По закону больших чисел
+$$S_n =
+  \frac{1}{n} \left( Y_1 + \dotsc + Y_n \right) \overset{P}{ \rightarrow } MY_1, \,
+  n \to \infty.$$
+
+Найдём математическое ожидание
+$$MY_1 =
+  Mg \left( X_1 \right) =
+  \int \limits_{ \mathbb{R}} g \left( x \right) p \left( x \right) dx =
+  \int \limits_0^1 g \left( x \right) dx =
+  S,$$
+так как случайные величины по условию имеют плотность распределения
+$$p \left( x \right) =
+  \frac{1}{b - a} \cdot \mathbbm{1} \left( x \in \left[ a, b \right] \right) =
+  \frac{1}{1 - 0} \cdot \mathbbm{1} \left( x \in \left[ 0, 1 \right] \right) =
+  \mathbbm{1} \left( x \in \left[ 0, 1 \right] \right).$$
+
+Тогда $S_n \overset{P}{ \rightarrow } S, \, n \to \infty $.
+
+Запишем неравенство Чебышева
+$$P \left( \left| \xi - M \xi \right| > \varepsilon \right) <
+  \frac{D \xi }{ \varepsilon^2}.$$
+Перейдём к противоположному событию
+$$P \left( \left| \xi - M \xi \right| \leq \varepsilon \right) =
+  1 - P \left( \left| \xi - M \xi \right| > \varepsilon \right) \geq
+  1 - \frac{D \xi }{ \varepsilon^2}.$$
+Применим это к указанной вероятности
+$$P \left( \left| S_n - S \right| < \varepsilon \right) \geq
+  1 - \frac{DS_n}{ \varepsilon^2} =
+  0.95.$$
+Выразим дисперсию $DS_n = \left( 1 - 0.95 \right) \varepsilon^2 = 0.05 \cdot \varepsilon^2$.
+Подставим $S_n$ и получим
+$$ D \left( \frac{1}{n} \left( Y_1 + \dotsc + Y_n \right) \right) =
+  0.05 \cdot \varepsilon^2.$$
+Вынесем $n$ из-под знака дисперсии
+$$ \frac{1}{n^2} \cdot D \left( g \left( X_1 \right) + \dotsc + g \left( X_n \right) \right) =
+  0.05 \cdot \varepsilon^2.$$
+Дисперсия суммы независимых случайных величин --- сумма их дисперсий
+$$ \frac{1}{n^2 } =
+  \frac{0.05 \cdot \varepsilon^2}{ \sum \limits_{i = 1}^n Dg \left( X_i \right) }.$$
+
+Тогда размер выборки должен быть
+$$n =
+  \sqrt{ \frac{ \sum \limits_{i = 1}^n Dg \left( X_i \right) }{0.05 \cdot \varepsilon^2}}.$$
+Знаем, что
+$$M \xi =
+  \int \limits_{ \mathbb{R}} x p_{ \xi } \left( x \right) dx,$$
+также в случае, если имеем функцию от случайной величины
+$$Mf \left( \xi \right) =
+  \int \limits_{ \mathbb{R}} f \left( x \right) p_{ \xi } \left( x \right) dx.$$
+Тогда
+$$MY_i^2 =
+  Mg^2 \left( X_i \right) =
+  \int \limits_0^1 g^2 \left( x \right) dx.$$
+По свойствам дисперсии
+$$Dg \left( X_i \right) =
+  Mg^2 \left( X_i \right) - \left( Mg \left( X_i \right) \right)^2 =
+  \int \limits_0^1 g^2 \left( x \right) dx - S^2.$$
+Подставляем значение дисперсии в найденную формулу для размера выборки
+$$n =
+  \sqrt{
+    \frac{n \left( \int \limits_0^1 g^2 \left( x \right) dx - S^2 \right) }{0.05 \cdot \varepsilon^2}
+  }.$$
+Поднесём левую и правую части уравнения в квадрат
+$$n^2 =
+  \frac{n \left(
+      \int \limits_0^1 g^2 \left( x \right) dx - S^2
+    \right) }{0.05 \cdot \varepsilon^2}.$$
+Перенесём всё влево
+$$n^2 - \frac{\int \limits_0^1 g^2 \left( x \right) dx - S^2}{0.05 \cdot \varepsilon^2} \cdot n =
+  0.$$
+Вынесем $n$ за скобки и получим ненулевое решение
+$$n =
+  \frac{\int \limits_0^1 g^2 \left( x \right) dx - S^2}{0.05 \cdot \varepsilon^2}.$$
 
 \subsubsection*{16.21}
 
