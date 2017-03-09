@@ -62,7 +62,7 @@ $$ \frac{S_n - np}{ \sqrt{n} \sqrt{p \left( 1 - p \right) }} \overset{d}{ \right
 \begin{figure}[h!]
   \centering
   \includegraphics[width=.4\textwidth]{./pictures/17_3.png}
-  \caption{Площадь под гаусианой}
+  \caption{Площадь под гауссианой}
   \label{fig:173}
 \end{figure}
 
@@ -172,7 +172,7 @@ $$ \left| \eta \right| >
 \begin{figure}[h!]
   \centering
   \includegraphics[width=.4\textwidth]{./pictures/17_5.png}
-  \caption{Площадь под гаусианой}
+  \caption{Площадь под гауссианой}
   \label{fig:175}
 \end{figure}
 
@@ -407,3 +407,109 @@ $$P \left( 499000 < S < 501000 \right) =
   1 - 0.046 =
   0.954.$$
 \end{enumerate}
+
+\subsubsection*{17.13}
+
+\textit{Задание.}
+Пусть $ \xi_1, \xi_2, \dotsc $ ---
+последовательность независимых случайных величин с распределением Бернулли с параметром
+$$p =
+  \frac{1}{2},$$
+и пусть $S_k = \xi_1 + \dotsc + \xi_k$.
+Найдите такое $k$, что $P \left( \left| S_k - kp \right| > 100 \right) < 0.05$.
+
+\textit{Решение.} Математическое ожидание суммы $S_k$ равно
+$$MS_k =
+  kp =
+  k \cdot \frac{1}{2}.$$
+
+Дисперсия равна
+$$DS_k =
+  k \cdot \frac{1}{4}.$$
+
+Запишем вероятность в таком виде, чтобы можно было применить центральную предельную теорему
+$$P \left( \left| S_k - \frac{k}{2} \right| > 100 \right) =
+  P \left(
+    \left| \frac{S_k - \frac{k}{2}}{ \sqrt{ \frac{k}{4}}} \right| > \frac{100}{ \sqrt{ \frac{k}{4}}}
+  \right) \approx
+  P \left( \left| \eta \right| > \frac{200}{ \sqrt{k}} \right) <
+  0.05,$$
+так как
+$$ \frac{S_k - \frac{k}{2}}{ \sqrt{ \frac{k}{4}}} \approx
+  \eta \sim
+  N \left( 0, 1 \right).$$
+
+Соответствующий график изображён на рисунке \ref{fig:175}, закрашена площадь,
+которая соответствует тому, что
+$$ \left| \eta \right| >
+  \frac{200}{ \sqrt{k}} =
+  x.$$
+
+Тогда
+$$2 \Phi_t \left( \frac{200}{ \sqrt{k}} \right) < 0.05.$$
+
+Выражаем табличное значение
+$$ \Phi_t \left( \frac{200}{ \sqrt{k}} \right) <
+  \frac{0.05}{2} =
+  0.025.$$
+
+В таблице значений ищем $0.025$.
+Это соответствует тому, что
+$$ \frac{200}{ \sqrt{k}} >
+  1.96.$$
+
+Отсюда
+$$ \sqrt{k} <
+  \frac{200}{1.96} \approx
+  102.04.$$
+Подносим в квадрат и получаем $k < 10412.16$.
+
+\subsubsection*{17.14}
+
+\textit{Задание.}
+При случайном блуждании на числовой оси частица, стартуя из точки 0,
+делает шаг вправо или влево с вероятностями $1 / 2$.
+Оцените вероятность того, что после сотого шага частицу будет отдалять от начальной точки не меньше,
+чем 10 шагов.
+
+\textit{Решение.} Введём случайную величину, соответствующую перемешению вправо или влево
+$$ \xi_i =
+  \begin{cases}
+    1, \qquad \frac{1}{2}, \\
+    -1, \qquad \frac{1}{2}.
+  \end{cases}$$
+Тогда количество шагов, которые будут отдалять частицу от начальной точки после сотого шага равно
+$$S_{100} =
+  \sum \limits_{i = 1}^{100} \xi_i.$$
+
+Математическое ожидание введённой случайной величины по определению равно
+$$M \xi_i =
+  1 \cdot \frac{1}{2} - 1 \cdot \frac{1}{2} =
+  0.$$
+
+Дисперсия совпадает со вторым моментом
+$$D \xi_i =
+  M \xi_i^2 =
+  1^2 \cdot \frac{1}{2} + \left( -1 \right)^2 \cdot \frac{1}{2} =
+  \frac{1}{2} + \frac{1}{2} =
+  1.$$
+
+Для суммы $MS_{100} = 100 \cdot 0 = 0, \, DS_{100} = 100 \cdot 1 = 100$.
+
+Найдём вероятность
+$$P \left( \left| S_{100} \right| \geq 10 \right) =
+  P \left(
+    \frac{ \left| S_{100} \right| - MS_{100}}{ \sqrt{DS_{100}}} \geq
+    \frac{10 - MS_{100}}{ \sqrt{DS_{100}}}
+  \right).$$
+
+Первая дробь стремится к случайной величине $ \eta \sim N \left( 0, 1 \right) $
+по центральной предельной теореме.
+$$P \left( \left| S_{100} \right| \geq 10 \right) =
+  P \left( \eta \geq \frac{10 - 0}{ \sqrt{100}} \right) =
+  P \left( \eta \geq \frac{10}{10} \right) =
+  P \left( \eta \geq 1 \right) =
+  \Phi_t \left( 1 \right).$$
+В таблице нормального распределения находим значение для единицы
+$$P \left( \left| S_{100} \right| \geq 10 \right) =
+  0.159.$$
