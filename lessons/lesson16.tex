@@ -464,13 +464,8 @@ $$ \xi_n =
 n \geq 1.$$
 
 Пусть $ \xi = \xi_1$.
-Тогда
-$$Mf \left( \xi_n \right) =
-\frac{1}{2} \left[ f \left( 0 \right) + f \left( 0 \right) \right] =
-Mf \left( \xi \right),$$
-то есть выполняется условие $ \xi_n \Rightarrow \xi $.
 
-Значения, которые может принимать разность случайных величин приведены в таблице
+Значения, которые может принимать разность случайных величин, приведены в таблице
 \ref{table:difference}.
 
 \begin{table}
@@ -564,6 +559,8 @@ $$M \xi_1 =
 \frac{ \pi }{2}.$$
 По закону больших чисел
 $$ \frac{ \xi_1 + \xi_2 + \dotsc + \xi_n}{n} \overset{P}{ \rightarrow } \frac{ \pi }{2}.$$
+Из этого следует, что
+$$ \frac{ \xi_1 + \xi_2 + \dotsc + \xi_n}{n} \overset{d}{ \rightarrow } \frac{ \pi }{2}.$$
 
 Тогда искомый предел равен
 $$M \sin \left( \frac{ \xi_1 + \xi_2 + \dotsc + \xi_n}{n} \right) \to M \sin \frac{ \pi }{2} =
@@ -572,20 +569,20 @@ n \to \infty;$$
 \item запишем экспоненты в виде произведения
 \begin{equation*}
 \begin{split}
-\lim \limits_{n \to \infty } \left( \frac{1}{ \sqrt{2 \pi }} \right)^n
-\idotsint \limits_{ \mathbb{R}^n} \cos^{2m}
-\left( \pi \cdot \frac{x_1 + x_2 + \dotsc + x_n}{n} \right) \times \\
-\times e^{- \frac{ \left( x_1 - 1 \right)^2 + \dotsc + \left( x_n - 1 \right)^2}{2}}
-dx_1 dx_2 \dotsc dx_n = \\
-= \lim \limits_{n \to \infty } \idotsint \limits_{ \mathbb{R}^n} \cos^{2m}
-\left( \pi \cdot \frac{x_1 + x_2 + \dotsc + x_n}{n} \right) \cdot \frac{1}{ \sqrt{2 \pi }} \cdot
-e^{- \frac{ \left( x_1 - 1 \right)^2}{2}} \times \\
-\times \frac{1}{ \sqrt{2 \pi }} \cdot e^{- \frac{ \left( x_2 - 1 \right)^2}{2}} \cdot \dotsc \cdot
-\frac{1}{ \sqrt{2 \pi }} \cdot
-e^{- \frac{ \left( x_n - 1 \right)^2}{2}} dx_1 dx_2 \dotsc dx_n = \\
-= \lim \limits_{n \to \infty } M \cos^{2m}
-\left( \frac{ \xi_1 + \xi_2 + \dotsc + \xi_n}{2} \right), \,
-\xi_n \sim N \left( 1, 1 \right)
+  \lim \limits_{n \to \infty } \left( \frac{1}{ \sqrt{2 \pi }} \right)^n
+  \idotsint \limits_{ \mathbb{R}^n} \cos^{2m}
+  \left( \pi \cdot \frac{x_1 + x_2 + \dotsc + x_n}{n} \right) \times \\
+  \times e^{- \frac{ \left( x_1 - 1 \right)^2 + \dotsc + \left( x_n - 1 \right)^2}{2}}
+  dx_1 dx_2 \dotsc dx_n = \\
+  = \lim \limits_{n \to \infty } \idotsint \limits_{ \mathbb{R}^n} \cos^{2m}
+  \left( \pi \cdot \frac{x_1 + x_2 + \dotsc + x_n}{n} \right) \cdot \frac{1}{ \sqrt{2 \pi }} \cdot
+  e^{- \frac{ \left( x_1 - 1 \right)^2}{2}} \times \\
+  \times \frac{1}{ \sqrt{2 \pi }} \cdot e^{- \frac{ \left( x_2 - 1 \right)^2}{2}} \cdot \dotsc \cdot
+  \frac{1}{ \sqrt{2 \pi }} \cdot
+  e^{- \frac{ \left( x_n - 1 \right)^2}{2}} dx_1 dx_2 \dotsc dx_n = \\
+  = \lim \limits_{n \to \infty } M \cos^{2m}
+  \left( \pi \cdot \frac{ \xi_1 + \xi_2 + \dotsc + \xi_n}{2} \right), \,
+  \xi_n \sim N \left( 1, 1 \right)
 \end{split}
 \end{equation*}
 --- независимые одинаково распределённые случайные величины.
@@ -594,11 +591,14 @@ e^{- \frac{ \left( x_n - 1 \right)^2}{2}} dx_1 dx_2 \dotsc dx_n = \\
 
 По закону больших чисел
 $$ \frac{ \xi_1 + \xi_2 + \dotsc + \xi_n}{n} \overset{P}{ \rightarrow } M \xi_1 = 1.$$
+Из этого следует, что
+$$ \frac{ \xi_1 + \xi_2 + \dotsc + \xi_n}{n} \overset{d}{ \rightarrow } 1.$$
 
 Тогда исходный предел равен
-$$M \cos^{2m} \left( \frac{ \xi_1 + \xi_2 + \dotsc + \xi_n}{n} \right) \to M \cos^{2m} \pi =
-\cos^{2m} \pi = 1, \,
-n \to \infty.$$
+$$M \cos^{2m} \left( \pi \cdot \frac{ \xi_1 + \xi_2 + \dotsc + \xi_n}{n} \right) \to
+  M \cos^{2m} \pi =
+  \cos^{2m} \pi = 1, \,
+  n \to \infty.$$
 \end{enumerate}
 
 \subsubsection*{16.18}
