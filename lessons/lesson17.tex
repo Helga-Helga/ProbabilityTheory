@@ -904,3 +904,82 @@ $$P \left( S_{10} \geq 7 \right) \approx
   P \left( \eta \geq 1.27 \right) =
   \Phi_t \left( 1.27 \right) =
   0.098.$$
+
+\subsubsection*{17.19}
+
+\textit{Задание.}
+Игральный кубик подбрасывается до тех пор, аж пока сумма очков впервые превысит 700.
+Оцените вероятность того, что для этого понадобится:
+\begin{enumerate}[label=\alph*)]
+  \item больше чем 210 подбрасываний;
+  \item меньше чем 190 подбрасываний;
+  \item не меньше чем 180 и не больше чем 210 подбрасываний.
+\end{enumerate}
+
+\textit{Решение.} Введём случайные величины $ \xi_i$ с распределением
+$$P \left\{ \xi_i = k \right\} = \frac{1}{6}, \,
+  i = 1, 2, \dotsc, \\
+  k = \overline{1, 6}.$$
+\begin{enumerate}[label=\alph*)]
+  \item Нужно найти вероятность события $S_{210} < 700$.
+  Найдём математическое ожидание
+  $$M \xi_i =
+    \left( 1 + 2 + 3 + 4 + 5 + 6 \right) \cdot \frac{1}{6} =
+    \frac{21}{6} =
+    3.5.$$
+  Найдём второй момент
+  $$M \xi_i^2 =
+    \left( 1 + 4 + 9 + 16 + 25 + 36 \right) \cdot \frac{1}{6} =
+    \frac{91}{6} \approx
+    15.167.$$
+  По свойствам дисперсии
+  $D \xi_i =
+    M \xi_i^2 - \left( M \xi_i \right)^2 \approx 15.167 - 12.25 =
+    2.92$.
+  Тогда вероятность равна
+  $$P \left( S_{210} < 700 \right) =
+    P \left(
+      \frac{S_{210} - MS_{210}}{ \sqrt{DS_{210}}} <
+      \frac{700 - 210 \cdot 3.5}{ \sqrt{210 \cdot 2.92}}
+    \right).$$
+  Заменим левую часть неравенства на случайную величину $ \eta \to N \left( 0, 1 \right) $.
+  Получим
+  $$P \left(
+      \frac{S_{210} - MS_{210}}{ \sqrt{DS_{210}}} <
+      \frac{700 - 210 \cdot 3.5}{ \sqrt{210 \cdot 2.92}}
+    \right) =
+    P \left( \eta < \frac{700 - 735}{24.75} \right).$$
+  Упростим правую часть неравенства
+  $$P \left( \eta < \frac{700 - 735}{24.75} \right) \approx
+    P \left( \eta < -1.41 \right) =
+    P \left( \eta > 1.41 \right) =
+    0.079;$$
+  \item нужно найти вероятность
+  $$P \left( S_{190} > 700 \right) =
+    P \left(
+      \frac{S_{190} - MS_{190}}{ \sqrt{DS_{190}}} >
+      \frac{700 - 190 \cdot 3.5}{ \sqrt{190 \cdot 2.92}}
+    \right) \approx
+    P \left( \eta > 1.49 \right).$$
+  В таблице находим, что
+  $$P \left( \eta > 1.49 \right) =
+    0.068;$$
+  \item нужно найти вероятность
+  $$P \left( S_{180} \leq 700, \, S_{210} \geq 700 \right) =
+    1 - P \left( S_{180} > 700 \right) - P \left( S_{210} < 700 \right).$$
+  Посчитаем первую вероятность
+  $$P \left( S_{180} > 700 \right) =
+    P \left(
+      \frac{S_{180} - MS_{180}}{ \sqrt{DS_{180}}} >
+      \frac{700 - 180 \cdot 3.5}{ \sqrt{180 \cdot 2.92}}
+    \right) \approx
+    P \left( \eta > 3.05 \right).$$
+  Это табличное значение
+  $$P \left( \eta > 3.05 \right) \approx
+    \Phi_t \left( 3 \right) =
+    0.00135.$$
+  Тогда исходная вероятность равна
+  $$P \left( S_{180} \leq 700, \, S_{210} \geq 700 \right) =
+    1 - 0.00135 - 0.079 \approx
+    0.92.$$
+\end{enumerate}
