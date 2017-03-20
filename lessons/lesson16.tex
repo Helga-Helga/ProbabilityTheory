@@ -736,7 +736,9 @@ $$MY_i^2 =
 По свойствам дисперсии
 $$Dg \left( X_i \right) =
   Mg^2 \left( X_i \right) - \left( Mg \left( X_i \right) \right)^2 =
-  \int \limits_0^1 g^2 \left( x \right) dx - S^2.$$
+  \int \limits_0^1 g^2 \left( x \right) dx - S^2 \leq
+  \int \limits_0^1 g^2 \left( x \right) dx \leq 1,$$
+так как $g^2 \left( x \right) \leq 1$.
 Подставляем значение дисперсии в найденную формулу для размера выборки
 $$n =
   \sqrt{
@@ -752,7 +754,8 @@ $$n^2 - \frac{\int \limits_0^1 g^2 \left( x \right) dx - S^2}{0.05 \cdot \vareps
   0.$$
 Вынесем $n$ за скобки и получим ненулевое решение
 $$n =
-  \frac{\int \limits_0^1 g^2 \left( x \right) dx - S^2}{0.05 \cdot \varepsilon^2}.$$
+  \frac{\int \limits_0^1 g^2 \left( x \right) dx - S^2}{0.05 \cdot \varepsilon^2} \leq
+  \frac{1}{0.05 \cdot \varepsilon^2}.$$
 
 \subsubsection*{16.21}
 
