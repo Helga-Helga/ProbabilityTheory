@@ -1,0 +1,88 @@
+\addcontentsline{toc}{chapter}{Занятие 18. Условное математическое ожидание}
+\chapter*{Занятие 18. Условное математическое ожидание}
+
+\addcontentsline{toc}{section}{Контрольные вопросы и задания}
+\section*{Контрольные вопросы и задания}
+
+\subsubsection*{Приведите определение условного математического ожидания.}
+
+Условным математическим ожиданием случайной величины $ \xi $ относительно $ \sigma $-алгебры
+$ \mathbb{F'}$ называется случайная величина $ \eta $ такая, что:
+\begin{enumerate}
+  \item $ \eta $ измерима относительно $ \mathbb{F'}$;
+  \item для любой случайной величины $ \zeta $, измеримой относительно $ \mathbb{F'}$ и ограниченной,
+  $M \xi \zeta = M \eta \zeta $.
+\end{enumerate}
+
+\subsubsection*{Запишите формулы для вычисления условного математического ожидания.}
+
+$ \sigma $-алгебра $ \mathbb{F'}$ --- конечная.
+Есть набор $H_1, \dotsc, H_n$ такой, что
+$$ \bigcup \limits_{k = 1}^n H_k = \Omega, \,
+  H_k \cap H_j = \emptyset, \,
+  k \neq j, \,
+  P \left( H_k \right) > 0.$$
+
+Уловное математическое ожидание случайной величины $ \xi $ относительно
+$$ \mathbb{F'} =
+  \left\{ \bigcup \limits_{k = 1}^n H_k^{ \varepsilon_k} \right\},$$
+где
+$$ \varepsilon_k =
+  \begin{cases}
+    0, \\
+    1,
+  \end{cases}
+  H_k^0 = \emptyset, \,
+  H_k^1 = H_k,$$
+имеет вид
+$$ \eta =
+  \sum \limits_{k = 1}^n
+    \frac{M \xi \cdot \mathbbm{1}_{H_k}}{P \left( H_k \right) } \cdot \mathbbm{1}_{H_k}.$$
+
+\subsubsection*{Сформулируйте свойства условного математического ожидания.}
+
+\begin{enumerate}
+  \item $ \mathbb{F'} = \left\{ \emptyset, \Omega \right\} $.
+  Из этого следует, что $M \left( \xi \; \middle| \; \mathbb{F'} \right) = M \xi $;
+  \item $ \mathbb{F'} \subset \mathbb{F"} \subset \mathbb{F}$.
+  Тогда
+  $M \left( M \left( \xi \; \middle| \; \mathbb{F"} \right) \; \middle| \; \mathbb{F'} \right) =
+    M \left( \xi \; \middle| \; \mathbb{F'} \right) $;
+  \item $M \left( M \left( \xi \; \middle| \; \mathbb{F'} \right) \right) = M \xi $;
+  \item $ \zeta $ измерима относительно $ \mathbb{F'}$.
+  Тогда
+  $M \left( \xi \zeta \; \middle| \; \mathbb{F'} \right) =
+    \zeta M \left( \xi \; \middle| \; \mathbb{F'} \right) $;
+  \item $ \xi $ не зависит от $ \mathbb{F'}$, следовательно,
+  $M \left( \xi \; \middle| \; \mathbb{F'} \right) =
+    M \xi $;
+  \item $M \left( \alpha_1 \xi_1 + \alpha_2 \xi_2 \; \middle| \; \mathbb{F'} \right) =
+    \alpha_1 M \left( \xi_1 \; \middle| \; \mathbb{F'} \right) +
+    \alpha_2 M \left( \xi_2 \; \middle| \; \mathbb{F'} \right) $;
+  \item если $ \xi \geq 0$, то $M \left( \xi \; \middle| \; \mathbb{F'} \right) \geq 0$;
+  \item $ \left| M \left( \xi \; \middle| \; \mathbb{F'} \right) \right| \leq
+    M \left( \left| \xi \right| \; \middle| \; \mathbb{F'} \right) $,
+  так как модуль --- выпуклая вниз функция;
+  \item если $f$ --- выпуклая вниз функция,
+  то $f \left( M \left( \xi \; \middle| \; \mathbb{F'} \right) \right) \leq
+    M \left( f \left( \xi \right) \; \middle| \; \mathbb{F'} \right) $;
+  \item предельные теоремы.
+  Если $ \xi_n \geq 0, \, \xi_n \nearrow \xi $ (возрастает) при $n \to \infty $,
+  то
+  $M \left( \xi_n \; \middle| \; \mathbb{F'} \right) \nearrow
+    M \left( \xi \; \middle| \; \mathbb{F'} \right) $
+  почти наверное, $n \to \infty $;
+  \item если $ \left| \xi_n \right| \leq \eta, \, \exists M \eta $ и
+  $ \xi_n \overset{P} \xi, \, n \to \infty $,
+  то
+  $M \left( \xi_n \; \middle| \; \mathbb{F'} \right) \overset{P}{ \to }
+    M \left( \xi \; \middle| \; \mathbb{F'} \right), \,
+    n \to \infty.$
+\end{enumerate}
+
+\addcontentsline{toc}{section}{Аудиторные задачи}
+\section*{Аудиторные задачи}
+
+
+\addcontentsline{toc}{section}{Домашнее задание}
+\section*{Домашнее задание}
