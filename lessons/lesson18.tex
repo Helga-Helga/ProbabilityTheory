@@ -288,3 +288,121 @@ $$M \left[ \xi^2 \; \middle| \; \xi + \eta \right] =
 
 \addcontentsline{toc}{section}{Домашнее задание}
 \section*{Домашнее задание}
+
+\subsubsection*{18.15}
+
+\textit{Задание.}
+На вероятностном пространстве $ \left( \omega, \mathcal{F}, P \right) $,
+где $ \Omega = \left[ 0, 1 \right], \, \mathcal{F}$ ---
+$ \sigma $-алгебра борелевских подмножетсв $ \Omega, \, P$ --- мера Лебега,
+задана случайная величина $ \xi = \sin \pi \omega $.
+Пусть $ \sigma $-алгебра $ \mathcal{B}$ порождена множествами
+$$ \left[0, \frac{1}{3} \right), \,
+  \left\{ \frac{1}{3} \right\}, \,
+  \left( \frac{1}{3}, \frac{1}{2} \right).$$
+
+Вычислите условное математическое ожидание $M \left[ \xi \; \middle| \; \mathcal{B} \right] $.
+
+\textit{Решение.} Мера Лебега в данном случае --- это длина.
+
+Есть 3 атома
+$$ \sigma \left( \mathcal{B} \right) =
+  \left\{
+    \left[ 0, \frac{1}{3} \right), \,
+    \left[ \frac{1}{3}, \frac{1}{2} \right), \,
+    \left[ \frac{1}{2}, 1 \right]
+  \right\}.$$
+
+Условное математическое ожидание ---
+это случайная величина
+$$ \eta =
+  M \left( \xi \; \middle| \; \mathcal{B} \right).$$
+
+Будет 3 слагаемых,
+умноженные на соответствующие
+индикоторы и поделенные на вероятность попадания в соответствующий отрезок.
+
+Первое слагаемое имеет вид
+$$ \int \limits_0^1
+  \sin \left( \pi \omega \right) \cdot
+  \mathbbm{1} \left\{ \omega \in \left[ 0, \frac{1}{3} \right) \right\} d \omega =
+  \int \limits_0^{ \frac{1}{3}} \sin \left( \pi \omega \right) d \omega =
+  \frac{1}{ \pi } \cdot
+  \int \limits_0^{ \frac{1}{3}} \sin \left( \pi \omega \right) d \left( \pi \omega \right).$$
+Берём интеграл
+$$ \frac{1}{ \pi } \cdot
+  \int \limits_0^{ \frac{1}{3}} \sin \left( \pi \omega \right) d \left( \pi \omega \right)
+  \left. - \frac{1}{ \pi } \cdot \cos \left( \pi \omega \right) \right|_0^{ \frac{1}{3}} =
+  - \frac{1}{ \pi } \cdot \cos \left( \frac{ \pi }{3} \right) + \frac{1}{ \pi } \cdot \cos 0=
+  - \frac{1}{ \pi } \cdot \frac{1}{2} + \frac{1}{ \pi } =
+  \frac{1}{2 \pi }.$$
+
+Второе слагаемое имеет вид
+$$ \int \limits_0^1
+  \sin \left( \pi \omega \right) \cdot
+  \mathbbm{1} \left\{ \omega \in \left[ \frac{1}{3}, \frac{1}{2} \right) \right\} d \omega =
+  \int \limits_{ \frac{1}{3}}^{ \frac{1}{2}} \sin \left( \pi \omega \right) d \omega =
+  \left.
+    - \frac{1}{ \pi } \cdot \cos \left( \pi \omega \right)
+  \right|_{ \frac{1}{3}}^{ \frac{1}{2}}.$$
+Подставляем пределы интегрирования
+$$ \left.
+    - \frac{1}{ \pi } \cdot \cos \left( \pi \omega \right)
+  \right|_{ \frac{1}{3}}^{ \frac{1}{2}} =
+  - \frac{1}{ \pi } \cdot \cos \frac{ \pi }{2} + \frac{1}{ \pi } \cdot \cos \frac{ \pi }{3} =
+  - \frac{1}{ \pi } \cdot 0 + \frac{1}{ \pi } \cdot \frac{1}{2} =
+  \frac{1}{2 \pi }.$$
+
+Аналогично получаем третье слагаемое
+$$ \int \limits_0^1
+    \sin \left( \pi \omega \right) \cdot
+    \mathbbm{1} \left\{ \omega \in \left[ \frac{1}{2}, 1 \right] \right\} d \omega =
+  \int \limits_{ \frac{1}{2}}^1 \sin \left( \pi \omega \right) d \omega =
+  \left. - \frac{1}{ \pi } \cdot \cos \left( \pi \omega \right) \right|_{ \frac{1}{2}}^1.$$
+Подставляем пределы интегрирования
+$$ \left. - \frac{1}{ \pi } \cdot \cos \left( \pi \omega \right) \right|_{ \frac{1}{2}}^1 =
+  - \frac{1}{ \pi } \cdot \cos \pi + \frac{1}{ \pi } \cdot \cos \frac{ \pi }{2} =
+  - \frac{1}{ \pi } \cdot \left( -1 \right) + \frac{1}{ \pi } \cdot 0 =
+  \frac{1}{ \pi }.$$
+
+Получаем условное математическое ожидание
+$$ \eta =
+  \frac{3}{2 \pi } \cdot
+  \mathbbm{1} \left\{ \omega \in \left[ 0, \frac{1}{3} \right) \right\} +
+  \frac{6}{2 \pi } \cdot
+  \mathbbm{1} \left\{ \omega \in \left[ \frac{1}{3}, \frac{1}{2} \right) \right\} +
+  \frac{2}{ \pi } \cdot
+  \mathbbm{1} \left\{ \omega \in \left[ \frac{1}{2}, 1 \right) \right\}.$$
+
+Случайная величина на каждом атоме принимает своё значение.
+
+\subsubsection*{18.16}
+
+\textit{Задание.} Пусть $ \xi $ и $ \eta $ --- независимые случайные величины.
+Вычислите $D \left( M \left[ \xi + \eta \; \middle| \; \xi \right] \right) $,
+если $ \xi $ и $ \eta $ имеют показательное распределение с параметрами $ \lambda $
+и $ \mu $ соответственно.
+
+\textit{Решение.}
+Воспользуемся линейностью условного математического ожидания
+$M \left( \xi + \eta \; \middle| \; \xi \right) =
+  M \left( \xi \; \middle| \; \xi \right) + M \left( \eta \; \middle| \; \xi \right) $.
+
+Поскольку случайная величина $ \eta $ не зависит от $ \xi $, то
+$$M \left( \eta \; \middle| \; \xi \right) =
+  M \eta =
+  \frac{1}{ \mu }.$$
+
+Случайная величина $ \xi $ измерима относительно $ \sigma $-алгебры $ \sigma \left( \xi \right) $,
+порождённой случайной величиной $ \xi $, а поэтому
+$$M \left( \xi + \eta \; \middle| \; \xi \right) =
+  \xi + \frac{1}{ \mu }.$$
+
+Ищем дисперсию
+$$D \left[ M \left( \xi + \eta \; \middle| \; \xi \right) \right] =
+  D \left( \xi + \frac{1}{ \mu } \right) =
+  D \xi + D \frac{1}{ \mu }.$$
+Случайная величина $ \xi $ имеет показательное распределение
+$$D \xi + D \frac{1}{ \mu } =
+  \frac{1}{ \lambda^2} + 0 =
+  \frac{1}{ \lambda^2}.$$
