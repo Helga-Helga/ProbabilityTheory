@@ -229,5 +229,62 @@ $$a^2 D \xi =
     \xi^2.$
 \end{enumerate}
 
+\subsubsection*{18.6}
+
+\textit{Задание.}
+Пусть независимые случайные величины $ \xi $ и $ \eta $ имеют распределение Пуассона с
+параметром $ \lambda $ каждая.
+Вычислите:
+\begin{enumerate}[label=\alph*)]
+  \item условное распределение $P \left( \xi = k \; \middle| \; \xi + \eta = n \right) $;
+  \item условное математическое ожидание $M \left[ \xi^2 \; \middle| \; \xi + \eta \right] $.
+\end{enumerate}
+
+\textit{Решение.}
+$$M \left[ \xi^2 \; \middle| \; \xi + \eta \right] =
+  M \left( \xi^2 \; \middle| \; \xi + \eta = t \right).$$
+
+\begin{enumerate}[label=\alph*)]
+  \item По определению условной вероятности
+  $$P \left( \xi = k \; \middle| \; \xi + \eta = t \right) =
+    \frac{P \left( \xi = k, \, \xi + \eta = t \right) }{P \left( \xi + \eta = t \right) }.$$
+  Сумма пуассоновских случайных величин имеет распределение Пуассона с параметром,
+  который равен сумме параметров распределений случайных величин, входящих в сумму
+  $$ \frac{P \left( \xi = k, \, \xi + \eta = t \right) }{P \left( \xi + \eta = t \right) } =
+    \frac{P \left( \xi = k \right) P \left( \eta = t - k \right) }{P \left( \zeta = t \right) } =
+    \frac{ \frac{ \lambda^k e^{- \lambda }}{k!} \cdot \frac{ \lambda^{t - k} e^{- \lambda }}{ \left( t - k \right)!}}{ \left( 2 \lambda \right)^y e^{-2 \lambda }} \cdot
+    t!.$$
+  Сокращаем
+  $$ \frac{ \frac{ \lambda^k e^{- \lambda }}{k!} \cdot \frac{ \lambda^{t - k} e^{- \lambda }}{ \left( t - k \right)!}}{ \left( 2 \lambda \right)^y e^{-2 \lambda }} \cdot
+    t! =
+    C_t^k \cdot \frac{1}{2^t} =
+    C_t^k \cdot 2^{-t},$$
+  где $ \zeta = \xi + \eta \sim Pois \left( 2 \lambda \right) $;
+  \item условное математическое ожидание равно
+  $$M \left( \xi^2 \; \middle| \; \xi + \eta = t \right) =
+    \sum \limits_{k = 0}^t k^2 \cdot \frac{t! \cdot 2^{-t}}{k! \cdot \left( t - k \right)!} =
+    2^{-t} \sum \limits_{k = 1}^t \frac{kt!}{ \left( k - 1 \right)! \left( t - k \right)!}.$$
+  Разбиваем на две суммы, $k$ представляем как $\left( k - 1 + 1 \right) $.
+  Получем
+  \begin{equation*}
+    \begin{split}
+      2^{-t} \sum \limits_{k = 1}^t \frac{kt!}{ \left( k - 1 \right)! \left( t - k \right)!} = \\
+      = 2^{-t} \cdot
+      \sum \limits_{k = 1}^t
+        \frac{ \left( t - 2 \right)!}{ \left( k - 2 \right)! \left( t - k \right)!} \cdot
+      \left( t - 1 \right) +
+      2^{-t} \cdot
+      \sum \limits_{k = 2}^t
+        \frac{ \left( t - 1 \right)!}{ \left( k - 1 \right)! \left( t - k \right)!} = \\
+      = 2^{-t} \left[ t \left( t - 1 \right) \cdot 2^{t - 2} + t \cdot 2^{t - 1} \right] =
+      \frac{t \left( t - 1 \right) }{4} + \frac{t}{2} =
+      \frac{t^2 + t}{4}.
+    \end{split}
+  \end{equation*}
+  Отсюда следует, что
+  $$M \left( \xi^2 \; \middle| \; \xi + \eta \right) =
+    \frac{1}{4} \left[ \left( \xi + \eta \right)^2 + \xi + \eta \right].$$
+\end{enumerate}
+
 \addcontentsline{toc}{section}{Домашнее задание}
 \section*{Домашнее задание}
