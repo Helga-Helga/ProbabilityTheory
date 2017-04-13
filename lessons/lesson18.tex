@@ -174,5 +174,60 @@ $D \left( M \left[ \xi \eta \; \middle| \; \xi \right] \right) =
 $$a^2 D \xi =
   \frac{a^2}{12}.$$
 
+\subsubsection*{18.5}
+
+\textit{Задание.} Пусть $ \xi $ имеет стандартное нормальное распределение.
+Вычислите условное математическое ожидание:
+\begin{enumerate}[label=\alph*)]
+  \item $M \left( \xi \; \middle| \; \left| \xi \right| \right) $;
+  \item $M \left( \xi^2 \; \middle| \; \left| \xi \right| \right) $.
+\end{enumerate}
+
+\textit{Решение.}
+\begin{enumerate}[label=\alph*)]
+  \item $M \left( \xi \; \middle| \; \left| \xi \right| \right) =
+    \eta $.
+
+  Не можем $ \xi $ хорошей функцией выразить через $ \left| \xi \right| $.
+
+  Случайная величина $ \eta $ должна удовлетворять свойствам:
+  \begin{enumerate}
+    \item $ \eta $ --- измеримая относительно $ \sigma $-алгебры, порождённо $ \left| \xi \right| $,
+    то есть $ \sigma \left( \left| \xi \right| \right) $;
+    \item для любого множества
+    $A \in \sigma \left( \left| \xi \right| \right): \,
+    M \left( \xi \cdot \mathbbm{1}_A \right) = M \left( \eta \cdot \mathbbm{1}_A \right) $.
+  \end{enumerate}
+
+  Вычисляем математическое ожидание
+  $$M \left( \xi \cdot \mathbbm{1}_A \right) =
+    \int \limits_{- \infty }^{+ \infty }
+      x \cdot \mathbbm{1}_A \left( x \right) p \left( x \right) dx,$$
+  где $p \left( x \right) $ --- плотность нормального распределения, $A$ ---
+  симметричная относительно нуля область (множество).
+  Это некоторая функция от $ \left| x \right| $.
+  Учитывая это, получаем
+  $$ \int \limits_{- \infty }^{+ \infty }
+      x \cdot \mathbbm{1}_A \left( x \right) p \left( x \right) dx =
+    \int \limits_{- \infty }^{+ \infty }
+      x \cdot \varphi \left( \left| x \right| \right) p \left( x \right) dx.$$
+  Функция $ \varphi \left( \left| x \right| \right) $ --- чётная, $p \left( x \right) $ --- чётная,
+  $x$ --- нечётная.
+  Интегрируем по всей оси
+  $$ \int \limits_{- \infty }^{+ \infty }
+      x \cdot \varphi \left( \left| x \right| \right) p \left( x \right) dx =
+    0,$$
+  следовательно, $ \eta = 0$;
+
+  \item ищем
+  $M \left( \xi^2 \; \middle| \; \left| \xi \right| \right) =
+    M \left[ \xi^2 \; \middle| \; \sigma \left( \left| \xi \right| \right) \right] $.
+  Перепишем случайную величину $ \xi^2 = \left| \xi \right|^2$, откуда следует, что $ \xi^2$ ---
+  измеримая относительно $ \sigma $-алгебры $ \sigma \left( \left| \xi \right| \right) $.
+  Согласно со свойствами
+  $M \left[ \xi^2 \; \middle| \; \sigma \left( \left| \xi \right| \right) \right] =
+    \xi^2.$
+\end{enumerate}
+
 \addcontentsline{toc}{section}{Домашнее задание}
 \section*{Домашнее задание}
