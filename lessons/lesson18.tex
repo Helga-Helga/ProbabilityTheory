@@ -141,5 +141,38 @@ $$ \eta =
 
 На каждом атоме случайная величина принимает своё значение.
 
+\subsubsection*{18.4}
+
+\textit{Задание.} Пусть $ \xi $ и $ \eta $ --- независимые случайные величины.
+Вычислите $D \left( M \left[ \xi \eta \; \middle| \; \xi \right] \right) $,
+если $ \xi $ равномерно распределена на отрезке $ \left[ 0, 1 \right] $,
+а $ \eta $ имеет нормальное распределение с параметрами $1, \sigma^2$.
+
+\textit{Решение.} Упростим случайную величину
+$M \left( \xi \eta \; \middle| \; \xi \right) =
+  M \left[ \xi \eta \; \middle| \; \sigma \left( \xi \right) \right] $.
+Случайная величина $ \xi $ измерима относительно своей же $ \sigma $-алгебры
+$ \sigma \left( \xi \right) $.
+Используем свойство условного математического ожидания, которое говорит,
+что в данном случае можем вынести $ \xi $ за знак условного математического ожидания
+$M \left[ \xi \eta \; \middle| \; \sigma \left( \xi \right) \right] =
+  \xi M \left[ \eta \; \middle| \; \sigma \left( \xi \right) \right].$
+Случайные величины $ \xi $ и $ \eta $ независимы, поэтому $ \eta $ не зависит от $ \sigma $-алгебры,
+порождённой $ \xi $.
+По свойствам условного математического ожидания
+$ \xi M \left[ \eta \; \middle| \; \sigma \left( \xi \right) \right] =
+  \xi M \eta =
+  \xi a$,
+где
+$$a = const.$$
+
+Ищем дисперсию
+$D \left( M \left[ \xi \eta \; \middle| \; \xi \right] \right) =
+  D \left( a \xi \right) =
+  a^2 D \xi.$
+Случайная величина имеет равномерное распределение
+$$a^2 D \xi =
+  \frac{a^2}{12}.$$
+
 \addcontentsline{toc}{section}{Домашнее задание}
 \section*{Домашнее задание}
