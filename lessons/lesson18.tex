@@ -426,3 +426,29 @@ $$D \xi + D \frac{1}{ \mu } =
   Согласно со свойствами $M \left[ \xi \; \middle| \; \sigma \left( \xi^3 \right) \right] = \xi $;
   \item $M \left( \xi \; \middle| \; \max \left( \xi, \eta \right) \right) $.
 \end{enumerate}
+
+\subsubsection*{18.18}
+
+\textit{Задание.}
+Пусть $X_1, \dotsc, X_n$ ---
+независимые случайные величины показательно распределены с параметром $ \lambda $ каждая.
+Вычислите
+$$M \left( \sum \limits_{k = 1}^n X_k^2 \; \middle| \; X_1 \right).$$
+
+\textit{Решение.} Воспользуемся линейностью условного математического ожидания:
+$$M \left( \sum \limits_{k = 1}^n X_k^2 \; \middle| \; X_1 \right) =
+  \sum \limits_{i = 1}^n M \left( X_k^2 \; \middle| X_1 \right).$$
+
+Поскольку случайная величина $X_k^2$ не зависит от $X_1$ при произвольном $k \neq 1$, то
+$$M \left( X_k^2 \; \middle| \; X_1 \right) =
+  MX_k^2 =
+  \frac{2}{ \lambda^2}$$
+при $k \neq 1$.
+Случайная величина $X_1^2$ измерима относительно $ \sigma $-алгебры $ \sigma \left( X_1 \right) $,
+порождённой случайной величиной $X_1$,
+а поэтому
+$$M \left( X_1^2 \; \middle| \; X_1 \right) =
+  X_1^2.$$
+Таким образом:
+$$M \left( \sum \limits_{k = 1}^n X_k^2 \; \middle| \; X_1 \right) =
+  X_1^2 + \frac{2 \left( n - 1 \right) }{ \lambda^2}.$$
