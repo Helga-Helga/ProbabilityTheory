@@ -286,6 +286,162 @@ $$M \left[ \xi^2 \; \middle| \; \xi + \eta \right] =
     \frac{1}{4} \left[ \left( \xi + \eta \right)^2 + \xi + \eta \right].$$
 \end{enumerate}
 
+\subsubsection*{18.9}
+
+\textit{Задание.}
+Пусть случайная величина $ \xi $ имеет показательное распределение с параметром 1, а $t > 0$.
+Вычислите:
+\begin{enumerate}[label=\alph*)]
+  \item $M \left[ \xi^2 - \eta^2 \; \middle| \; \xi + \eta \right] $;
+  \item $M \left[ \xi \; \middle| \; \xi + 2 \eta \right] $.
+\end{enumerate}
+
+\textit{Решение.}
+\begin{enumerate}[label=\alph*)]
+  \item $t$ --- фиксированное число.
+  Решим по определению
+  $$M \left[ \xi \; \middle| \; \min \left( \xi, t \right) \right] =
+    \eta =
+    f \left( \min \left( \xi, \eta \right) \right),$$
+  где функция $f$ --- борелевская, такая, что:
+  $$M \left[ \xi \varphi \left( \min \left( \xi, t \right) \right) \right] =
+    M \left[ f \left( \min \left( \xi, t \right) \right) \cdot
+    \varphi \left( \min \left( \xi, t \right) \right) \right] $$
+  для произвольной ограниченной борелевой $ \varphi $.
+
+  В явном виде вычислим оба математических ожидания и их приравняем
+  $$M \left[ \xi \varphi \left( \min \left( \xi, t \right) \right) \right] =
+    \int \limits_0^{+ \infty } x \varphi \left( \min \left( x, t \right) \right) e^{-x} dx.$$
+  Разбиваем интеграл на 2
+  $$ \int \limits_0^{+ \infty } x \varphi \left( \min \left( x, t \right) \right) e^{-x} dx =
+    \int \limits_0^t x \varphi \left( x \right) e^{-x} dx +
+    \varphi \left( t \right) \int \limits_t^{+ \infty } xe^{-x} dx.$$
+  Второй интеграл вычисляем в явном виде
+  \begin{equation*}
+    \begin{split}
+      \int \limits_0^t x \varphi \left( x \right) e^{-x} dx +
+      \varphi \left( t \right) \int \limits_t^{+ \infty } xe^{-x} dx = \\
+      = \int \limits_0^t x \varphi \left( x \right) e^{-x} dx +
+      \varphi \left( t \right) \left( \left. te^{-t} - e^{-x} \right|_t^{+ \infty } \right) = \\
+      = \int \limits_0^t x \varphi \left( x \right) e^{-x} dx +
+      \varphi \left( t \right) e^{-t} \left( t + 1 \right).
+    \end{split}
+  \end{equation*}
+
+  В явном виде вычисляем правую часть
+  $$M \left[
+    f \left( \min \left( \xi, t \right) \right) \varphi \left( \min \left( \xi, t \right) \right)
+  \right] =
+  \int \limits_0^{+ \infty }
+    f \left( \min \left( x, t \right) \right) \varphi \left( \min \left( x, t \right) \right) e^{-x}
+  dx.$$
+  Разбиваем на 2
+  \begin{equation*}
+    \begin{split}
+      \int \limits_0^{+ \infty }
+        f \left( \min \left( x, t \right) \right) \cdot
+        \varphi \left( \min \left( x, t \right) \right) e^{-x}
+      dx = \\
+      = \int \limits_0^t f \left( x \right) \varphi \left( x \right) e^{-x} dx +
+      f \left( t \right) \varphi \left( t \right) \int \limits_t^{+ \infty } e^{-x} dx = \\
+      = \int \limits_0^t f \left( x \right) \varphi \left( x \right) e^{-x} dx +
+      f \left( t \right) \varphi \left( t \right) e^{-t}.
+    \end{split}
+  \end{equation*}
+
+  Нужно подобрать $f \left( x \right) $ так, чтобы математические ожидания совпадали:
+  $f \left( x \right) =
+    x \cdot \mathbbm{1} \left\{ x < t \right\} +
+    \left( t + 1 \right) \cdot \mathbbm{1} \left\{ x \geq t \right\} $.
+
+  Вместо $x$ нужно подставить $ \min \left( \xi, t \right) $.
+  Это даст возможность упростить выражение
+  $$f \left( \min \left( \xi, t \right) \right) =
+    \min \left( \xi, t \right) \cdot \mathbbm{1} \left\{ \min \left( \xi, t \right) < t \right\} +
+    \left( t + 1 \right) \cdot \mathbbm{1} \left\{ \min \left( \xi, t \right) \geq t \right\}.$$
+  Упрощаем неравенства
+  \begin{equation*}
+    \begin{split}
+      \min \left( \xi, t \right) \cdot \mathbbm{1} \left\{ \min \left( \xi, t \right) < t \right\} +
+      \left( t + 1 \right) \cdot \mathbbm{1} \left\{ \min \left( \xi, t \right) \geq t \right\} = \\
+      = \xi \cdot \mathbbm{1} \left\{ \xi < t \right\} +
+      \left( t + 1 \right) \cdot \mathbbm{1} \left\{ \xi \geq t \right\};
+    \end{split}
+  \end{equation*}
+  \item ищем
+  $M \left[ \xi \; \middle| \; \xi + 2 \eta \right] =
+    \eta =
+    f \left( \max \left( \xi, t \right) \right) $.
+
+  Находим $t$ из условия
+  $$M \left[ \xi \varphi \left( \max \left( \xi, t \right) \right) \right] =
+    M \left[
+      f \left( \max \left( \xi, t \right) \right) \cdot
+      \varphi \left( \max \left( \xi, t \right) \right)
+    \right],$$
+  где $ \varphi $ --- произвольная ограниченная борелевская функция.
+  Сначала найдём левую часть
+  $$M \left[ \xi \varphi \left( \max \left( \xi, t \right) \right) \right] =
+    \int \limits_0^{+ \infty } x \varphi \left( \max \left( x, t \right) \right) e^{-x} dx.$$
+  Разбиваем на 2 интеграла согласно функции максимума
+  $$ \int \limits_0^{+ \infty } x \varphi \left( \max \left( x, t \right) \right) e^{-x} dx =
+    \int \limits_0^t x \varphi \left( t \right) e^{-x} dx +
+    \int \limits_t^{+ \infty } x \varphi \left( x \right) e^{-x} dx.$$
+  Берём первый интеграл, второй оставляем без изменений
+  $$ \int \limits_0^t x \varphi \left( t \right) e^{-x} dx +
+    \int \limits_t^{+ \infty } x \varphi \left( x \right) e^{-x} dx =
+    \left[ 1 - e^{-t} \left( t + 1 \right) \right] \varphi \left( t \right) +
+    \int \limits_t^{+ \infty } x \varphi \left( x \right) e^{-x} dx.$$
+
+  Теперь вычисляем правую часть
+  $$M \left[
+      f \left( \max \left( \xi, t \right) \right) \varphi \left( \max \left( \xi, t \right) \right)
+    \right] =
+    \int \limits_0^{+ \infty }
+      f \left( \max \left( x, t \right) \right) \cdot
+      \varphi \left( \max \left( x, t \right) \right) e^{-x}
+    dx.$$
+  Разбиваем на 2 интеграла согласно функции максимума
+  \begin{equation*}
+    \begin{split}
+      \int \limits_0^{+ \infty }
+        f \left( \max \left( x, t \right) \right) \cdot
+        \varphi \left( \max \left( x, t \right) \right) e^{-x}
+      dx = \\
+      = \int \limits_0^t f \left( t \right) \varphi \left( t \right) e^{-x} dx +
+      \int \limits_t^{+ \infty } f \left( x \right) \varphi \left( x \right) e^{-x} dx.
+    \end{split}
+  \end{equation*}
+  Берём первый интеграл
+  \begin{equation*}
+    \begin{split}
+      \int \limits_0^t f \left( t \right) \varphi \left( t \right) e^{-x} dx +
+      \int \limits_t^{+ \infty } f \left( x \right) \varphi \left( x \right) e^{-x} dx = \\
+      = f \left( t \right) \varphi \left( t \right) \left( 1 - e^{-t} \right) +
+      \int \limits_t^{+ \infty } f \left( x \right) \varphi \left( x \right) e^{-x} dx.
+    \end{split}
+  \end{equation*}
+
+  Подбираем функцию $f$ так, чтобы выполнялось равенство
+  $$f \left( x \right) =
+    \frac{1 - e^{-t} \left( t + 1 \right) }{1 - e^{-t}} \cdot \mathbbm{1} \left\{ x < t \right\} +
+    x \cdot \mathbbm{1} \left\{ x \geq t \right\}.$$
+  Записываем, когда вместо $x$ ставим $ \max \left( \xi, t \right) $.
+  Получаем
+  \begin{equation*}
+    \begin{split}
+      f \left( \max \left( \xi, t \right) \right) = \\
+      = \frac{1 - e^{-t} \left( t + 1 \right) }{1 - e^{-t}} \cdot
+      \mathbbm{1} \left\{ \max \left( \xi, t \right) < t \right\} +
+      \max \left( \xi, t \right) \cdot
+      \mathbbm{1} \left\{ \max \left( \xi, t \right) \geq t \right\} = \\
+      = \frac{1 - e^{-t} \left( t + 1 \right) }{1 - e^{-t}} \cdot
+      \mathbbm{1} \left\{ \xi < t \right\} +
+      \xi \cdot \mathbbm{1} \left\{ \xi \geq t \right\}.
+    \end{split}
+  \end{equation*}
+\end{enumerate}
+
 \addcontentsline{toc}{section}{Домашнее задание}
 \section*{Домашнее задание}
 
