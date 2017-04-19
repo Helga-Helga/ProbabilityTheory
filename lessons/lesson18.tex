@@ -442,6 +442,37 @@ $$M \left[ \xi^2 \; \middle| \; \xi + \eta \right] =
   \end{equation*}
 \end{enumerate}
 
+\subsubsection*{18.11}
+
+\textit{Задание.}
+Вычислите $M \left[ \xi \; \middle| \; \eta \right] $,
+если совместная плотность распределения случайного вектора $ \left( \xi, \eta \right) $ равна:
+$$p \left( x, y \right) =
+  \begin{cases}
+    2ye^{-x} + 2e^{-2x}, \qquad x \geq 0, \, 0 \leq y \leq 1, \\
+    0, \qquad otherwise.
+  \end{cases}$$
+
+\textit{Решение.} $M \left( \xi \; \middle| \; \eta \right) = f \left( \eta \right) $.
+
+По определению
+$$f \left( y \right) =
+  M \left( \xi \; \middle| \; \eta = y \right) =
+  \int \limits_{ \mathbb{R}} xp_{ \left. \xi \right| \eta } \left( \left. x \right| y \right) dx.$$
+Распишем условную плотность
+$$ \int \limits_{ \mathbb{R}} xp_{ \left. \xi \right| \eta } \left( \left. x \right| y \right) dx =
+  \frac{ \int \limits_{ \mathbb{R}} xp_{ \left( \xi, \eta \right) } \left( x, y \right) dy}{ \int \limits_{ \mathbb{R}} p_{ \left( \xi, \eta \right) } \left( x, y \right) dx} =
+  \frac{ \int \limits_{ \mathbb{R}} xp_{ \left( \xi, \eta \right) } \left( x, y \right) dy}{p_{ \eta } \left( t \right) }.$$
+Подставим значения из условия
+$$ \frac{ \int \limits_{ \mathbb{R}} xp_{ \left( \xi, \eta \right) } \left( x, y \right) dy}{p_{ \eta } \left( t \right) } =
+  \frac{ \int \limits_0^{+ \infty } x \left( 2ye^{-x} + 2e^{-2x} \right) dx}{ \int \limits_0^{+ \infty } \left( 2ye^{-x} + 2e^{-2x} \right) dx} =
+  \frac{2y + \frac{1}{2}}{2y + 1}.$$
+
+Таким образом,
+$$M \left( \xi \; \middle| \; \eta \right) =
+  f \left( \eta \right) =
+  \frac{2 \eta + \frac{1}{2}}{2 \eta + 1}.$$
+
 \addcontentsline{toc}{section}{Домашнее задание}
 \section*{Домашнее задание}
 
