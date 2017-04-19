@@ -286,6 +286,159 @@ $$M \left[ \xi^2 \; \middle| \; \xi + \eta \right] =
     \frac{1}{4} \left[ \left( \xi + \eta \right)^2 + \xi + \eta \right].$$
 \end{enumerate}
 
+\subsubsection*{18.8}
+
+\textit{Задание.}
+Пусть $ \xi $ и $ \eta $ --- независимые случайные величины,
+равномерно распределённые на отрезке $ \left[ 0, 1 \right] $.
+Вычислите:
+\begin{enumerate}[label=\alph*)]
+  \item $M \left[ \xi^2 - \eta^2 \; \middle| \; \xi + \eta \right] $;
+  \item $M \left[ \xi \; \middle| \; \xi + 2 \eta \right] $.
+\end{enumerate}
+
+\textit{Решение.}
+\begin{enumerate}[label=\alph*)]
+  \item Распишем разность квадратов
+  $$M \left[ \xi^2 - \eta^2 \; \middle| \; \xi + \eta \right] =
+    M \left[
+      \left( \xi - \eta \right) \left( \xi + \eta \right) \; \middle| \; \xi + \eta
+    \right].$$
+  Случайная величина $ \left( \xi + \eta \right) $ измерима относительно
+  $ \sigma \left( \xi + \eta \right) $,
+  потому её можно вынести за знак условного математического ожидания:
+  $M \left[
+      \left( \xi - \eta \right) \left( \xi + \eta \right) \; \middle| \; \xi + \eta
+    \right] =
+    \left( \xi + \eta \right) \left[ M \left( \xi \; \middle| \; \xi + \eta \right) -
+    M \left( \eta \; \middle| \; \xi + \eta \right) \right] $.
+
+  Найти распределение суммы можем.
+  Чтобы вычислить первое математическое ожидание,
+  необходимо найти распределение вектора $ \left( \xi, \xi + \eta \right) $.
+
+  Чтобы найти второе математическое ожидание,
+  нужно найти распределение $ \left( \eta, \eta + \xi \right) $.
+  Случайные величины $ \xi $ и $ \eta $ --- независимы и одинаково распределённые.
+  Из этого следует, что распределение векторов одинаковое,
+  потому что $ \xi $ и $ \eta $ одинаково входят в функцию
+  $$ \xi + \eta,$$
+  то есть
+  $ \left( \xi, \xi + \eta \right) \sim \left( d \right) \,
+    \left( \eta, \eta + \xi \right) $.
+  Отсюда следует, что эти математические ожидание совпадают:
+  $M \left( \xi \; \middle| \; \xi + \eta \right) =
+    M \left( \eta \; \middle| \; \xi + \eta \right) $.
+  Тогда
+  $$ \left( \xi + \eta \right) \left[ M \left( \xi \; \middle| \; \xi + \eta \right) -
+    M \left( \eta \; \middle| \; \xi + \eta \right) \right] =
+    \left( \xi + \eta \right) \cdot 0 =
+    0;$$
+  \item по определению
+  $M \left[ \xi \; \middle| \; \xi + 2 \eta \right] =
+    f \left( \xi + 2 \eta \right) $.
+
+  Как и в предыдущем пункте
+  $$f \left( y \right) =
+    M \left( \xi \; \middle| \; \xi + 2 \eta = y \right) =
+    \frac{ \int \limits_{ \mathbb{R}} xp_{ \left( \xi, \xi + 2 \eta \right) } \left( x, y \right) dx}{ \int \limits_{ \mathbb{R}} p_{ \left( \xi, \eta \right) } \left( x, y \right) dx}.$$
+
+  Нужно найти плотность такого вектора.
+  Начнём с функции распределения и дифференцируем, находя плотность.
+
+  По определению
+  $F_{ \left( \xi, \xi + 2 \eta \right) } \left( x, y \right) =
+    P \left\{ \xi \leq x, \xi + 2 \eta \leq y \right\} $.
+  Это математическое ожидание индикатора
+  $$P \left\{ \xi \leq x, \xi + 2 \eta \leq y \right\} =
+    M \mathbbm{1} \left\{ \xi \leq x, \xi + 2 \eta \leq y \right\}.$$
+  Есть две случайные величины, следовательно, есть 2 интеграла
+  $$M \mathbbm{1} \left\{ \xi \leq x, \xi + 2 \eta \leq y \right\} =
+    \iint \limits_{ \mathbb{R}^2}
+      \mathbbm{1} \left\{ z \leq x, z + 2t \leq y \right\} \cdot
+      p_{ \left( \xi, \eta \right) } \left( z, t \right)
+    dzdt.$$
+  По условию $ \xi $ и $ \eta $ --- независимые, следовательно,
+  совместная плотность равна произведению плотностей
+  \begin{equation*}
+    \begin{split}
+      \iint \limits_{ \mathbb{R}^2}
+        \mathbbm{1} \left\{ z \leq x, z + 2t \leq y \right\} \cdot
+        p_{ \left( \xi, \eta \right) } \left( z, t \right)
+      dzdt = \\
+      = \iint \limits_{ \mathbb{R}^2}
+        \mathbbm{1} \left\{ x \leq x, z + 2t \leq y \right\} \cdot
+        \mathbbm{1} \left\{ z \in \left[ 0, 1 \right] \right\} \cdot
+        \mathbbm{1} \left\{ t \in \left[ 0, 1 \right] \right\}
+      dzdt = \\
+      = \int \limits_0^x
+        \int \limits_0^{ \frac{y - z}{2}} p_{ \xi } \left( z \right) p_{ \eta } \left( t \right) dt
+      dz.
+    \end{split}
+  \end{equation*}
+
+  Найдём плотность.
+  Теперь нужно продифференцировать по $x$ и по $y$, то есть
+  $$p_{ \left( \xi, \xi + 2 \eta \right) } \left( x, y \right) =
+    \frac{ \partial^2 F_{ \left( \xi, \xi + 2 \eta \right) } \left( x, y \right) }{ \partial x \partial y}.$$
+  Дифференцируем по $x$ как интеграл по сменным верхним пределом
+  $$ \frac{ \partial^2 F_{ \left( \xi, \xi + 2 \eta \right) } \left( x, y \right) }{ \partial x \partial y} =
+    \frac{ \partial }{ \partial y} \left[
+      \int \limits_0^{ \frac{y - x}{2}} p_{ \xi } \left( x \right) p_{ \eta } \left( t \right) dt
+    \right].$$
+  Дифференцируем по $y$ как интеграл со сменным верхним пределом
+  $$ \frac{ \partial }{ \partial y} \left[
+      \int \limits_0^{ \frac{y - x}{2}} p_{ \xi } \left( x \right) p_{ \eta } \left( t \right) dt
+    \right] =
+    \frac{1}{2} \cdot p_{ \xi } \left( x \right) p_{ \eta } \left( \frac{y - x}{2} \right).$$
+  Подставляем значения плотностей
+  $$ \frac{1}{2} \cdot p_{ \xi } \left( x \right) p_{ \eta } \left( \frac{y - x}{2} \right) =
+    \frac{1}{2} \cdot
+    \mathbbm{1} \left\{ x \in \left[ 0, 1 \right] \right\} \cdot
+    \mathbbm{1} \left\{ \frac{y - x}{2} \in \left[ 0, 1 \right] \right\}.$$
+  Из последнего индикатора следует, что $y - 2 \leq x \leq y$.
+
+  Нашли совместную плотность.
+  Сначала найдём знаменатель, то есть проигтегрируем, чтобы найти одномерную плотность.
+  Нужно интегрировать по пересечению $ \left[ 0, 1 \right] \cap \left[ y - 2, y \right] $, то есть
+  $$ \int \limits_{ \mathbb{R}} p_{ \left( \xi, \xi + 2 \eta \right) } \left( x, y \right) dx =
+    \int \limits_{ \left[ 0, 1 \right] \cap \left[ y - 2, y \right] } \frac{1}{2} dx =
+    \begin{cases}
+      \frac{y}{2}, \qquad y \in \left[ 0, 1 \right], \\
+      \frac{1}{2}, \qquad y \in \left[ 1, 2 \right], \\
+      \frac{3 - y}{2}, \qquad y \in \left[ 2, 3 \right].
+    \end{cases}$$
+
+  Находим числитель
+  $$ \int \limits_{ \mathbb{R}} xp_{ \left( \xi, \xi + 2 \eta \right) } \left( x, y \right) dx =
+    \int \limits_{ \left[ 0, 1 \right] \cap \left[ y - 2, y \right] } \frac{x}{2} dx.$$
+  Вычисляем интеграл
+  $$ \int \limits_{ \left[ 0, 1 \right] \cap \left[ y - 2, y \right] } \frac{x}{2} dx =
+    \begin{cases}
+      \frac{y^2}{4}, \qquad y \in \left[ 0, 1 \right], \\
+      \frac{1}{4}, \qquad y \in \left[ 1, 2 \right], \\
+      \frac{1 - \left( y - 2 \right)^2}{4} =
+      \frac{ \left( 3 - y \right) \left( y - 1 \right) }{4}, \qquad y \in \left[ 2, 3 \right].
+    \end{cases}$$
+
+  Будем делить на каждом интервале на своё значение.
+  Таким образом,
+  $$f \left( y \right) =
+    \begin{cases}
+      \frac{y}{2}, \qquad y \in \left[ 0, 1 \right], \\
+      \frac{1}{2}, \qquad y \in \left[ 1, 2 \right], \\
+      \frac{y - 1}{2}, \qquad y \in \left[ 2, 3 \right].
+    \end{cases}$$
+
+  Нужно написать ответ
+  $$f \left( \xi + 2 \eta \right) =
+    \begin{cases}
+      \frac{ \xi + 2 \eta }{2}, \qquad \xi + 2 \eta \in \left[ 0, 1 \right], \\
+      \frac{1}{2}, \qquad \xi + 2 \eta \in \left[ 1, 2 \right], \\
+      \frac{ \xi + 2 \eta - 1}{2}, \qquad \xi + 2 \eta \in \left[ 2, 3 \right].
+    \end{cases}$$
+\end{enumerate}
+
 \subsubsection*{18.9}
 
 \textit{Задание.}
