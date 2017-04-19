@@ -445,8 +445,8 @@ $$M \left[ \xi^2 \; \middle| \; \xi + \eta \right] =
 Пусть случайная величина $ \xi $ имеет показательное распределение с параметром 1, а $t > 0$.
 Вычислите:
 \begin{enumerate}[label=\alph*)]
-  \item $M \left[ \xi^2 - \eta^2 \; \middle| \; \xi + \eta \right] $;
-  \item $M \left[ \xi \; \middle| \; \xi + 2 \eta \right] $.
+  \item $M \left[ \xi \; \middle| \; \min \left( \xi, t \right) \right] $;
+  \item $M \left[ \xi \; \middle| \; \max \left( \xi, t \right) \right] $.
 \end{enumerate}
 
 \textit{Решение.}
@@ -522,7 +522,7 @@ $$M \left[ \xi^2 \; \middle| \; \xi + \eta \right] =
     \end{split}
   \end{equation*}
   \item ищем
-  $M \left[ \xi \; \middle| \; \xi + 2 \eta \right] =
+  $M \left[ \xi \; \middle| \; \max \left( \xi, t \right) \right] =
     \eta =
     f \left( \max \left( \xi, t \right) \right) $.
 
@@ -753,7 +753,7 @@ $$D \xi + D \frac{1}{ \mu } =
 Вычислите:
 \begin{enumerate}[label=\alph*)]
   \item $M \left( \xi \; \middle| \; \xi^3 \right) $;
-  \item $M \left( \xi \; \middle| \; \max \left( \xi, \eta \right) \right) $.
+  \item $M \left( \xi \; \middle| \; \max \left( \xi, n \right) \right) $.
 \end{enumerate}
 
 \textit{Решение.}
@@ -764,7 +764,135 @@ $$D \xi + D \frac{1}{ \mu } =
   Перепишем случайную величину $ \xi = \sqrt[3]{ \xi^3}$, откуда следует, что $ \xi $ ---
   измеримая относительно $ \sigma $-алгебры $ \sigma \left( \xi^3 \right) $.
   Согласно со свойствами $M \left[ \xi \; \middle| \; \sigma \left( \xi^3 \right) \right] = \xi $;
-  \item $M \left( \xi \; \middle| \; \max \left( \xi, \eta \right) \right) $.
+  \item ищем
+    $M \left( \xi \; \middle| \; \max \left( \xi, \eta \right) \right) =
+      \eta =
+      f \left( \max \left( \xi, n \right) \right) $.
+
+    Находим $f$ из условия
+    $$M \left[ \xi \varphi \left( \max \left( \xi, n \right) \right) \right] =
+      M \left[
+        f \left( \max \left( \xi, n \right) \right) \cdot
+        \varphi \left( \max \left( \xi, n \right) \right)
+      \right],$$
+    где $ \varphi $ --- произвольная ограниченная борелевская функция.
+    Сначала находим левую часть
+    $$M \left[ \xi \varphi \left( \max \left( \xi, n \right) \right) \right] =
+      \sum \limits_{x = 0}^{ \infty }
+        x \varphi \left( \max \left( x, n \right) \right) p \left( 1 - p \right)^x.$$
+    Разделим на две суммы согласно функции максимума
+    $$ \sum \limits_{x = 0}^{ \infty } x \varphi \left( \max \left( x, n \right) \right) pq^x =
+      \sum \limits_{x = 0}^n x \varphi \left( n \right) p \left( 1 - p \right)^x +
+      \sum \limits_{x = n}^{ \infty } x \varphi \left( x \right) p \left( 1 - p \right)^x.$$
+    Первое слагаемое в первой сумме нулевое, можно суммировать от единицы
+    \begin{equation*}
+      \begin{split}
+        \sum \limits_{x = 0}^n x \varphi \left( n \right) p \left( 1 - p \right)^x +
+        \sum \limits_{x = n}^{ \infty } x \varphi \left( x \right) p \left( 1 - p \right)^x = \\
+        = \varphi \left( n \right) p \left( 1 - p \right) \cdot
+        \sum \limits_{x = 1}^n x \left( 1 - p \right)^{x - 1} +
+        p \sum \limits_{x = n}^{ \infty } x \varphi \left( x \right) \left( 1 - p \right)^x = \\
+        = \varphi \left( n \right) p \left( 1 - p \right) \cdot
+        \sum \limits_{x = 1}^n \left[ \left( 1 - p \right)^x \right]' +
+        p \sum \limits_{x = n}^{ \infty } x \varphi \left( x \right) \left( 1 - p \right)^x = \\
+        = \varphi \left( n \right) p \left( 1 - p \right) \cdot
+        \left[ \sum \limits_{x = 1}^n \left( 1 - p \right)^x \right]' +
+        p \sum \limits_{x = n}^{ \infty } x \varphi \left( x \right) \left( 1 - p \right)^x.
+      \end{split}
+    \end{equation*}
+    В первом слагаемом имеем геометрическую прогрессию, сумма которой вычисляется по формуле
+    $$S_n =
+      \frac{b_1 \left( 1 - q^n \right) }{1 - q},$$
+    где первый член прогрессии $b_1 = 1 - p$, знаменатель
+    $$q =
+      \frac{b_2}{b_1} =
+      \frac{ \left( 1 - p \right)^2}{1 - p} =
+      1 - p.$$
+    Получаем
+    \begin{equation*}
+      \begin{split}
+        \varphi \left( n \right) p \left( 1 - p \right) \cdot
+        \left[ \sum \limits_{x = 1}^n  \left( 1 - p \right)^x \right]' +
+        p \sum \limits_{x = n}^{ \infty } x \varphi \left( x \right)  \left( 1 - p \right)^x = \\
+        = \varphi \left( n \right) p \left( 1 - p \right) \cdot
+        \left[ \frac{ \left( 1 - p \right) \left[ 1 - \left( 1 - p \right)^n \right] }{p} \right]' +
+        p \sum \limits_{x = n}^{ \infty } x \varphi \left( x \right) \left( 1 - p \right)^x = \\
+        = \varphi \left( n \right) p \left( 1 - p \right) \times \\
+        \times \frac{ \left[ n \left( 1 - p \right)^{n - 1} - 1 + \left( 1 - p \right)^n - pn \left( 1 - p \right)^{n - 1} \right] p - 1 + \left( 1 - p \right)^n + p}{p^2} - \\
+        - \frac{p \left( 1 - p \right)^n}{p^2} +
+        p \sum \limits_{x = n}^{ \infty } x \varphi \left( x \right) \left( 1 - p \right)^x = \\
+        = \varphi \left( n \right) \left( 1 - p \right) \times \\
+        \times \frac{np \left( 1 - p \right)^{n - 1} - p + p \left( 1 - p \right)^n - p^2 n \left( 1 - p \right)^{n - 1} - 1 + \left( 1 - p \right)^n + p}{p} - \\
+        - \frac{p \left( 1 - p \right)^n}{p} +
+        p \sum \limits_{x = n}^{ \infty } x \varphi \left( x \right) \left( 1 - p \right)^x = \\
+        = \varphi \left( n \right) \left( 1 - p \right) \cdot
+        \frac{np \left( 1 - p \right)^{n - 1} \left( 1 - p \right) - 1 + \left( 1 - p \right)^n}{p} + \\
+        + p \sum \limits_{x = n}^{ \infty } x \varphi \left( x \right) \left( 1 - p \right)^x = \\
+        = \varphi \left( n \right) \left( 1 - p \right) \cdot
+        \frac{np \left( 1 - p \right)^n - 1 + \left( 1 - p \right)^n}{p} +
+        p \sum \limits_{x = n}^{ \infty } x \varphi \left( x \right) \left( 1 - p \right)^x = \\
+        = \varphi \left( n \right) \left( 1 - p \right) \cdot
+        \frac{ \left( 1 - p \right)^n \left( np + 1 \right) - 1}{p} +
+        p \sum \limits_{x = n}^{ \infty } x \varphi \left( x \right) \left( 1 - p \right)^x.
+      \end{split}
+    \end{equation*}
+
+  Теперь вычисляем правую часть
+  \begin{equation*}
+    \begin{split}
+      M \left[
+        f \left( \max \left( \xi, n \right) \right) \varphi \left( \max \left( \xi, n \right) \right)
+      \right] = \\
+      = \sum \limits_{x = 0}^{ \infty }
+        f \left( \max \left( x, n \right) \right) \cdot
+        \varphi \left( \max \left( x, n \right) \right) p \left( 1 - p \right)^x.
+    \end{split}
+  \end{equation*}
+  Разбиваем на две суммы согласно максимуму
+  \begin{equation*}
+    \begin{split}
+      \sum \limits_{x = 0}^{ \infty }
+        f \left( \max \left( x, n \right) \right) \cdot
+        \varphi \left( \max \left( x, n \right) \right) p \left( 1 - p \right)^x = \\
+      = \sum \limits_{x = 0}^n f \left( n \right) \varphi \left( n \right) p \left( 1 - p \right)^x +
+      \sum \limits_{x = n}^{ \infty }
+        f \left( x \right) \varphi \left( x \right) p \left( 1 - p \right)^x = \\
+      = f \left( n \right) \varphi \left( n \right) p \sum \limits_{x = 0}^n \left( 1 - p \right)^x +
+      p \cdot
+      \sum \limits_{x = n}^{ \infty }
+        f \left( x \right) \varphi \left( x \right) \left( 1 - p \right)^x = \\
+      = f \left( n \right) \varphi \left( n \right) p \cdot
+      \frac{1 - \left( 1 - p \right)^{n + 1}}{1 - \left( 1 - p \right) } +
+      p \cdot
+      \sum \limits_{x = n}^{ \infty }
+        f \left( x \right) \varphi \left( x \right) \left( 1 - p \right)^x = \\
+      = f \left( n \right) \varphi \left( n \right) \left[ 1 - \left( 1 - p \right)^{n + 1} \right] +
+      p \cdot
+      \sum \limits_{x = n}^{ \infty }
+        f \left( x \right) \varphi \left( x \right) \left( 1 - p \right)^x.
+    \end{split}
+  \end{equation*}
+
+  Подбираем функцию $f$ так, чтобы выполнялось равенство
+  $$f \left( x \right) =
+    \frac{ \left( 1 - p \right) \cdot \frac{ \left( 1 - p \right)^n \left( np + 1 \right) - 1}{p}}{1 - \left( 1 - p \right)^{n + 1}} \cdot
+    \mathbbm{1} \left\{ x < n \right\} +
+    x \cdot \mathbbm{1} \left\{ x \geq n \right\}.$$
+
+  Записываем, когда вместо $x$ стоит $ \max \left( \xi, n \right) $.
+  Получаем
+  \begin{equation*}
+    \begin{split}
+      f \left( \max \left( \xi, n \right) \right) = \\
+      = \frac{ \left( 1 - p \right) \cdot \frac{ \left( 1 - p \right)^n \left( np + 1 \right) - 1}{p}}{1 - \left( 1 - p \right)^{n + 1}} \cdot
+      \mathbbm{1} \left\{ \max \left( \xi, n \right) < n \right\} + \\
+      + \max \left( \xi, n \right) \cdot
+      \mathbbm{1} \left\{ \max \left( \xi, n \right) \geq n \right\} = \\
+      = \frac{ \left( 1 - p \right) \cdot \frac{ \left( 1 - p \right)^n \left( np + 1 \right) - 1}{p}}{1 - \left( 1 - p \right)^{n + 1}} \cdot
+      \mathbbm{1} \left\{ \xi < n \right\} +
+      \xi \cdot \mathbbm{1} \left\{ \xi \geq n \right\}.
+    \end{split}
+  \end{equation*}
 \end{enumerate}
 
 \subsubsection*{18.18}
