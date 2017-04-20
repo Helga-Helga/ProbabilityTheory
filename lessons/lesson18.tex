@@ -341,7 +341,7 @@ $$M \left[ \xi^2 \; \middle| \; \xi + \eta \right] =
   Как и в предыдущем пункте
   $$f \left( y \right) =
     M \left( \xi \; \middle| \; \xi + 2 \eta = y \right) =
-    \frac{ \int \limits_{ \mathbb{R}} xp_{ \left( \xi, \xi + 2 \eta \right) } \left( x, y \right) dx}{ \int \limits_{ \mathbb{R}} p_{ \left( \xi, \eta \right) } \left( x, y \right) dx}.$$
+    \frac{ \int \limits_{ \mathbb{R}} xp_{ \left( \xi, \xi + 2 \eta \right) } \left( x, y \right) dx}{ \int \limits_{ \mathbb{R}} p_{ \left( \xi, \xi + 2 \eta \right) } \left( x, y \right) dx}.$$
 
   Нужно найти плотность такого вектора.
   Начнём с функции распределения и дифференцируем, находя плотность.
@@ -1107,4 +1107,47 @@ $$M \left( \sum \limits_{k = 1}^n X_k^2 \; \middle| \; X_1 \right) =
       \xi \cdot \mathbbm{1} \left\{ \xi \geq t \right\}.
     \end{split}
   \end{equation*}
+\end{enumerate}
+
+\subsubsection{18.20}
+
+\textit{Задание.}
+Пусть $ \xi $ и $ \eta $ --- независимые случайные величины,
+равномерно распределённые на отрезке $ \left[ 0, 1 \right] $.
+Вычислите:
+\begin{enumerate}[label=\alph*)]
+  \item $M \left( \xi \; \middle| \; \xi + \eta \right) $;
+  \item $M \left( \xi - \eta \; \middle| \; \xi + \eta \right) $.
+\end{enumerate}
+
+\textit{Решение.}
+\begin{enumerate}[label=\alph*)]
+  \item $M \left( \xi \; \middle| \; \xi + \eta \right) =
+    M \left( \xi + \eta - \eta \; \middle| \; \xi + \eta \right) =
+    M \left( \xi + \eta \; \middle| \; \xi + \eta \right) -
+    M \left( \eta \; \middle| \; \xi + \eta \right) $.
+  Случайная величина $ \left( \xi + \eta \right) $ измерима относительно
+  $ \sigma \left( \xi + \eta \right) $,
+  потому её можно вынести за знак условного математического ожидания:
+  $M \left( \xi + \eta \; \middle| \; \xi + \eta \right) -
+    M \left( \eta \; \middle| \; \xi + \eta \right) =
+    \xi + \eta - M \left( \eta \; \middle| \; \xi + \eta \right) $.
+
+  Чтобы вычислить условное математическое ожидание,
+  нужно найти распределение $ \left( \eta, \xi + \eta \right) $.
+  Случайные величины $ \xi $ и $ \eta $ --- независимы и одинаково распределённые.
+  Из этого следует, что распределения векторов одинаковые,
+  потому что $ \xi $ и $ \eta $ одинаково входят в функцию $ \left( \xi + \eta \right) $,
+  то есть $ \left( \xi, \xi + \eta \right) \sim \left( d \right) \left( \eta , \xi + \eta \right) $.
+  Отсюда следует, что эти математические ожидания совпадают:
+  $M \left( \xi \; \middle| \; \xi + \eta \right) =
+    M \left( \eta \; \middle| \; \xi + \eta \right) $.
+  Тогда $2M \left( \xi \; \middle| \xi + \eta \right) = \xi + \eta $ и
+  $$M \left( \xi \; \middle| \; \xi + \eta \right) =
+    \frac{ \xi + \eta }{2};$$
+  \item из доказанного в предыдущем пункте
+  $$M \left( \xi - \eta \; \middle| \; \xi + \eta \right) =
+    M \left( \xi \; \middle| \; \xi + \eta \right) -
+    M \left( \eta \; \middle| \; \xi + \eta \right) =
+    0.$$
 \end{enumerate}
