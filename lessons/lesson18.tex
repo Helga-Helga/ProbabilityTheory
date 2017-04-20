@@ -455,7 +455,7 @@ $$M \left[ \xi^2 \; \middle| \; \xi + \eta \right] =
   Решим по определению
   $$M \left[ \xi \; \middle| \; \min \left( \xi, t \right) \right] =
     \eta =
-    f \left( \min \left( \xi, \eta \right) \right),$$
+    f \left( \min \left( \xi, t \right) \right),$$
   где функция $f$ --- борелевская, такая, что:
   $$M \left[ \xi \varphi \left( \min \left( \xi, t \right) \right) \right] =
     M \left[ f \left( \min \left( \xi, t \right) \right) \cdot
@@ -526,7 +526,7 @@ $$M \left[ \xi^2 \; \middle| \; \xi + \eta \right] =
     \eta =
     f \left( \max \left( \xi, t \right) \right) $.
 
-  Находим $t$ из условия
+  Находим $f$ из условия
   $$M \left[ \xi \varphi \left( \max \left( \xi, t \right) \right) \right] =
     M \left[
       f \left( \max \left( \xi, t \right) \right) \cdot
@@ -920,3 +920,191 @@ $$M \left( X_1^2 \; \middle| \; X_1 \right) =
 Таким образом:
 $$M \left( \sum \limits_{k = 1}^n X_k^2 \; \middle| \; X_1 \right) =
   X_1^2 + \frac{2 \left( n - 1 \right) }{ \lambda^2}.$$
+
+\subsubsection*{18.19}
+
+\textit{Задание.}
+Пусть случайная величина $ \xi $ имеет равномерное распределение на отрезке $ \left[ 0, 2 \right] $.
+Вычислите:
+\begin{enumerate}[label=\alph*)]
+  \item $M \left[ \xi \; \middle| \; \min \left( \xi, t \right) \right] $;
+  \item $M \left[ \xi \; \middle| \; \max \left( \xi, t \right) \right] $.
+\end{enumerate}
+
+\textit{Решение.}
+\begin{enumerate}[label=\alph*)]
+  \item $t$ --- фиксированное значение.
+  Решим по определению
+  $$M \left[ \xi \; \middle| \min \left( \xi, t \right) \right] =
+    \eta =
+    f \left( \min \left( \xi, t \right) \right),$$
+  где $f$ --- борелевская, такая,
+  что
+  $$M \left[ \xi \varphi \left( \min \left( \xi, t \right) \right) \right] =
+    M \left[
+      f \left( \min \left( \xi, t \right) \right) \cdot
+      \varphi \left( \min \left( \xi, t \right) \right)
+    \right] $$
+  для произвольной ограниченной борелевской $ \varphi $.
+
+  В явном виде вычислим оба математических ожидания и их приравняем
+  $$M \left[ \xi \varphi \left( \min \left( \xi, t \right) \right) \right] =
+    \int \limits_0^2 \frac{1}{2} \cdot x \varphi \left( \min \left( x, t \right) \right) dx.$$
+  Разделим на 2 интеграла
+  $$ \int \limits_0^2 \frac{1}{2} \cdot x \varphi \left( \min \left( x, t \right) \right) dx =
+    \int \limits_0^t \frac{1}{2} \cdot x  \varphi \left( x \right) dx +
+    \int \limits_t^2 \frac{1}{2} \cdot x \varphi \left( x \right) dx.$$
+  Второй интеграл вычисляем в явном виде
+  $$ \int \limits_0^t \frac{1}{2} \cdot x  \varphi \left( x \right) dx +
+    \int \limits_t^2 \frac{1}{2} \cdot x \varphi \left( x \right) dx =
+    \frac{1}{2} \int \limits_0^t x \varphi \left( x \right) dx +
+    \left. \frac{1}{2} \cdot \varphi \left( x \right) \cdot \frac{x^2}{2} \right|_t^2.$$
+  Подставляем пределы интегрирования
+  $$ \frac{1}{2} \int \limits_0^t x \varphi \left( x \right) dx +
+    \left. \frac{1}{2} \cdot \varphi \left( x \right) \cdot \frac{x^2}{2} \right|_t^2 =
+    \frac{1}{2} \int \limits_0^t x \varphi \left( x \right) dx +
+    \frac{1}{4} \cdot \varphi \left( x \right) \left( 4 - t^2 \right).$$
+  Разобъём второе слагаемое на множители,
+  чтобы потом было проще получить функцию $f \left( x \right) $.
+  Получим
+  \begin{equation*}
+    \begin{split}
+      \frac{1}{2} \int \limits_0^t x \varphi \left( x \right) dx +
+      \frac{1}{4} \cdot \varphi \left( x \right) \left( 4 - t^2 \right) = \\
+      = \frac{1}{2} \int \limits_0^t x \varphi \left( x \right) dx +
+      \frac{1}{2} \cdot \frac{1}{2} \cdot
+      \varphi \left( t \right) \left( 2 - t \right) \left( 2 + t \right).
+    \end{split}
+  \end{equation*}
+
+  В явном виде вычисляем правую часть
+  $$ M \left[
+      f \left( \min \left( \xi, t \right) \right) \cdot
+      \varphi \left( \min \left( \xi, t \right) \right)
+    \right] =
+    \int \limits_0^2
+      f \left( \min \left( x, t \right) \right) \cdot
+      \varphi \left( \min \left( x, t \right) \right) \cdot \frac{1}{2}
+    dx.$$
+  Разделим на 2 интеграла
+  \begin{equation*}
+    \begin{split}
+      \int \limits_0^2
+        f \left( \min \left( x, t \right) \right) \cdot
+        \varphi \left( \min \left( x, t \right) \right) \cdot \frac{1}{2}
+      dx = \\
+      = \frac{1}{2} \int \limits_0^t f \left( x \right) \varphi \left( x \right) dx +
+      \frac{1}{2} \int \limits_t^2 \varphi \left( t \right) f \left( t \right) dx = \\
+      = \frac{1}{2} \int \limits_0^t f \left( x \right) \varphi \left( x \right) dx +
+      \frac{1}{2} \cdot \left. f \left( t \right) \varphi \left( t \right) x \right|_t^2 = \\
+      = \frac{1}{2} \int \limits_0^t f \left( x \right) \varphi \left( x \right) dx +
+      \frac{1}{2} \cdot f \left( t \right) \varphi \left( t \right) \left( 2 - t \right).
+    \end{split}
+  \end{equation*}
+
+  Нужно подобрать $f \left( x \right) $ так, чтобы математические ожидания совпадали
+  $$f \left( x \right) =
+    x \cdot \mathbbm{1} \left\{ x < t \right\} +
+    \frac{1}{2} \cdot \left( 2 + t \right) \cdot \mathbbm{1} \left\{ x \geq t \right\}.$$
+  Упростим второе слагаемое
+  $$x \cdot \mathbbm{1} \left\{ x < t \right\} +
+    \frac{1}{2} \cdot \left( 2 + t \right) \cdot \mathbbm{1} \left\{ x \geq t \right\} =
+    x \cdot \mathbbm{1} \left\{ x < t \right\} +
+    \left( 1 + \frac{t}{2} \right) \cdot \mathbbm{1} \left\{ x \geq t \right\}.$$
+
+  Вместо $x$ нужно подставить $ \min \left( \xi, t \right) $.
+  Это даст возможность упростить выражение
+  $$f \left( \min \left( \xi, t \right) \right) =
+    \min \left( \xi, t \right) \cdot \mathbbm{1} \left\{ \min \left( \xi, t \right) < t \right\} +
+    \left( 1 + \frac{t}{2} \right) \cdot
+    \mathbbm{1} \left\{ \min \left( \xi, t \right) \geq t \right\}.$$
+  Упростим выражение
+  \begin{equation*}
+    \begin{split}
+      \min \left( \xi, t \right) \cdot \mathbbm{1} \left\{ \min \left( \xi, t \right) < t \right\} +
+      \left( 1 + \frac{t}{2} \right) \cdot
+      \mathbbm{1} \left\{ \min \left( \xi, t \right) \geq t \right\} = \\
+      = \xi \cdot \mathbbm{1} \left\{ \xi < t \right\} +
+      \left( 1 + \frac{t}{2} \right) \cdot \mathbbm{1} \left\{ \xi \geq t \right\};
+    \end{split}
+  \end{equation*}
+  \item ищем
+  $M \left[ \xi \; \middle| \; \max \left( \xi, t \right) \right] =
+    \eta =
+    f \left( \max \left( \xi, t \right) \right) $.
+
+  Находим $f$ из условия
+  $$M \left[ \xi \varphi \left( \max \left( \xi, t \right) \right) \right] =
+    M \left[
+      f \left( \max \left( \xi, t \right) \right) \cdot
+      \varphi \left( \max \left( \xi, t \right) \right)
+    \right],$$
+  где $ \varphi $ --- произвольная ограниченная борелевская функция.
+  Сначала найдём левую часть
+  $$M \left[ \xi \varphi \left( \max \left( \xi, t \right) \right) \right] =
+    \int \limits_0^2 x \varphi \left( \max \left( x, t \right) \right) \cdot \frac{1}{2} dx.$$
+  Разобъём на 2 интеграла согласно функции максимума
+  $$ \int \limits_0^2 x \varphi \left( \max \left( x, t \right) \right) \cdot \frac{1}{2} dx =
+    \frac{1}{2} \int \limits_0^t x \varphi \left( t \right) dx +
+    \frac{1}{2} \int \limits_t^2 x \varphi \left( x \right) dx.$$
+  Берём первый интеграл, второй оставляем без изменений
+  $$ \frac{1}{2} \int \limits_0^t x \varphi \left( t \right) dx +
+    \frac{1}{2} \int \limits_t^2 x \varphi \left( x \right) dx =
+    \frac{1}{2} \cdot \left. \varphi \left( t \right) \cdot \frac{x^2}{2} \right|_0^t +
+    \frac{1}{2} \int \limits_t^2 x \varphi \left( x \right) dx.$$
+  Подставляем пределы интегрирования
+  $$ \frac{1}{2} \cdot \left. \varphi \left( t \right) \cdot \frac{x^2}{2} \right|_0^t +
+    \frac{1}{2} \int \limits_t^2 x \varphi \left( x \right) dx =
+    \frac{1}{4} \cdot \varphi \left( t \right) t^2 +
+    \frac{1}{2} \int \limits_t^2 x \varphi \left( x \right) dx.$$
+
+  Теперь вычислим правую часть
+  $$M \left[
+      f \left( \max \left( \xi, t \right) \right) \cdot
+      \varphi \left( \max \left( \xi, t \right) \right)
+    \right] =
+    \int \limits_0^2
+      f \left( \max \left( x, t \right) \right) \cdot
+      \varphi \left( \max \left( x, t \right) \right) \cdot \frac{1}{2}
+    dx.$$
+  Разделим на 2 интеграла согласно функции максимума
+  $$ \int \limits_0^2
+      f \left( \max \left( x, t \right) \right) \cdot
+      \varphi \left( \max \left( x, t \right) \right) \cdot \frac{1}{2}
+    dx =
+    \frac{1}{2} \int \limits_0^t f \left( t \right) \varphi \left( t \right) dx +
+    \frac{1}{2} \int \limits_t^2 f \left( x \right) \varphi \left( x \right) dx.$$
+  Берём первый интеграл
+  \begin{equation*}
+    \begin{split}
+      \frac{1}{2} \int \limits_0^t f \left( t \right) \varphi \left( t \right) dx +
+      \frac{1}{2} \int \limits_t^2 f \left( x \right) \varphi \left( x \right) dx = \\
+      = \frac{1}{2} \cdot \left. f \left( t \right) \varphi \left( t \right) x \right|_0^t +
+      \frac{1}{2} \int \limits_t^2 f \left( x \right) \varphi \left( x \right) dx = \\
+      = \frac{1}{2} \cdot f \left( t \right) \varphi \left( t \right) t +
+      \frac{1}{2} \int \limits_t^2 f \left( x \right) \varphi \left( x \right) dx.
+    \end{split}
+  \end{equation*}
+
+  Подбираем функцию $f$ так, чтобы выполнялось равенство
+  $$f \left( x \right) =
+    \frac{t}{2} \cdot \mathbbm{1} \left\{ x < t \right\} +
+    x \cdot \mathbbm{1} \left\{ x \geq t \right\}.$$
+
+  Запишем, когда вместо $x$ стоит $ \max \left( \xi, t \right) $.
+  Получим
+  $$f \left( \max \left( \xi, t \right) \right) =
+    \frac{t}{2} \cdot \mathbbm{1} \left\{ \max \left( \xi, t \right) < t \right\} +
+    \max \left( \xi, t \right) \cdot
+    \mathbbm{1} \left\{ \max \left( \xi, t \right) \geq t \right\}.$$
+  Упростим выражение
+  \begin{equation*}
+    \begin{split}
+      \frac{t}{2} \cdot \mathbbm{1} \left\{ \max \left( \xi, t \right) < t \right\} +
+      \max \left( \xi, t \right) \cdot
+      \mathbbm{1} \left\{ \max \left( \xi, t \right) \geq t \right\} = \\
+      = \frac{t}{2} \cdot \mathbbm{1} \left\{ \xi < t \right\} +
+      \xi \cdot \mathbbm{1} \left\{ \xi \geq t \right\}.
+    \end{split}
+  \end{equation*}
+\end{enumerate}
