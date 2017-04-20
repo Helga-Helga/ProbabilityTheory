@@ -367,7 +367,7 @@ $$M \left[ \xi^2 \; \middle| \; \xi + \eta \right] =
         p_{ \left( \xi, \eta \right) } \left( z, t \right)
       dzdt = \\
       = \iint \limits_{ \mathbb{R}^2}
-        \mathbbm{1} \left\{ x \leq x, z + 2t \leq y \right\} \cdot
+        \mathbbm{1} \left\{ z \leq x, z + 2t \leq y \right\} \cdot
         \mathbbm{1} \left\{ z \in \left[ 0, 1 \right] \right\} \cdot
         \mathbbm{1} \left\{ t \in \left[ 0, 1 \right] \right\}
       dzdt = \\
@@ -1206,3 +1206,129 @@ $$ \int \limits_{ \mathbb{R}}
 
   Таким образом, $M \left( \xi \; \middle| \; \eta \right) = f \left( \eta \right) = 0$.
 \end{enumerate}
+
+\subsubsection*{18.23}
+
+\textit{Задание.}
+Пусть $ \xi, \eta $ --- независимые случайные величины,
+которые имеют показательное распределение с параметром 2 каждая.
+Найдите совместную плотность $p_{ \left( \xi, \xi + \eta \right) }$.
+С её помощью вычислите:
+\begin{enumerate}[label=\alph*)]
+  \item $M \left( \xi^2 \; \middle| \; \xi + \eta \right) $;
+  \item $M \left( \xi \eta \; \middle| \; \xi + \eta \right) $.
+\end{enumerate}
+
+\textit{Решение.} Начнём с функции распределения и продифференцируем её, находя плотность.
+
+По определению
+$$F_{ \left( \xi, \xi + \eta \right) } \left( x, y \right) =
+  P \left\{ \xi \leq x, \xi + \eta \leq y \right\} =
+  M \mathbbm{1} \left\{ \xi \leq x, \xi + \eta \leq y \right\}.$$
+Есть две случайные величины, будет 2 интеграла
+$$M \mathbbm{1} \left\{ \xi \leq x, \xi + \eta \leq y \right\} =
+  \iint \limits_{ \mathbb{R}}
+    \mathbbm{1} \left\{ z \leq x, z + t \leq y \right\} \cdot
+    p_{ \left( \xi, \eta \right) } \left( x, y \right)
+  dzdt.$$
+По условию $ \xi $ и $ \eta $ --- независимые, следовательно,
+совместная плотность равна произведению плотностей
+\begin{equation*}
+  \begin{split}
+    \iint \limits_{ \mathbb{R}}
+      \mathbbm{1} \left\{ z \leq x, z + t \leq y \right\} \cdot
+      p_{ \left( \xi, \eta \right) } \left( x, y \right)
+    dzdt = \\
+    = \iint \limits_{ \mathbb{R}}
+      \mathbbm{1} \left\{ z \leq x, z + t \leq y \right\} \cdot
+      p_{ \xi } \left( z \right) \cdot p_{ \eta } \left( t \right)
+    dzdt =
+    \int \limits_0^x
+      \int \limits_0^{y - z} p_{ \xi } \left( z \right) p_{ \eta } \left( t \right) dt
+    dz.
+  \end{split}
+\end{equation*}
+
+Теперь нужно продифференцировать по $x$ и по $y$, чтобы найти плотность, то есть
+$$p_{ \left( \xi, \xi + \eta \right) } =
+  \frac{ \partial^2 F_{ \left( \xi, \xi + \eta \right) } \left( x, y \right) }{ \partial x \partial y}.$$
+Дифференцируем по $x$ как интеграл с переменным верхним пределом
+$$ \frac{ \partial^2 F_{ \left( \xi, \xi + \eta \right) } \left( x, y \right) }{ \partial x \partial y} =
+  \frac{ \partial }{ \partial y}
+    \left[
+      \int \limits_0^{y - x} p_{ \xi } \left( x \right) p_{ \eta } \left( t \right) dt
+    \right].$$
+Дифференцируем по $y$ как интеграл с переменным верхним пределом
+$$ \frac{ \partial }{ \partial y}
+    \left[
+      \int \limits_0^{y - x} p_{ \xi } \left( x \right) p_{ \eta } \left( t \right) dt
+    \right] =
+  p_{ \xi } \left( x \right) p_{ \eta } \left( y - x \right).$$
+Подставляем значения плотностей:
+$$p_{ \xi } \left( x \right) p_{ \eta } \left( y - x \right) =
+  2e^{-2x} \cdot \mathbbm{1} \left\{ x \geq 0 \right\} \cdot
+  2e^{-2 \left( y - x \right) } \cdot \mathbbm{1} \left\{ y - x \geq 0 \right\}.$$
+
+Из последнего индикатора следует, что $y \geq x$.
+
+Найдём $M \left( \xi \; \middle| \xi + \eta \right) = f \left( \xi + \eta \right) $.
+
+При этом
+$$f \left( y \right) =
+  M \left( \xi \; \middle| \; \xi + \eta = y \right) =
+  \frac{ \int \limits_{ \mathbb{R}} xp_{ \left( \xi, \xi + \eta \right) } \left( x, y \right) dx}{ \int \limits_{ \mathbb{R}} p_{ \left( \xi, \xi + \eta \right) } \left( x, y \right) dx}.$$
+
+Находим числитель
+$$ \int \limits_0^{+ \infty } xp \left( x, y \right) dx =
+  \int \limits_0^{+ \infty } x \cdot 4e^{-2y} \cdot \mathbbm{1} \left\{ y \geq x \right\} dx =
+  4e^{-2y} \int \limits_0^y xdx =
+  4e^{-2y} \cdot \left. \frac{x^2}{2} \right|_0^y.$$
+Подставляем пределы интегрирования и сокращаем числовые константы
+$$4e^{-2y} \cdot \left. \frac{x^2}{2} \right|_0^y =
+  2e^{-2y} y.$$
+
+Находим знаменатель, то есть проинтегрируем плотность вектора, чтобы найти одномерную плотность
+$$ \int \limits_0^{+ \infty } p \left( x, y \right) dx =
+  \int \limits_0^{+ \infty } 4e^{-2y} \cdot \mathbbm{1} \left\{ y \geq x \right\} dx =
+  4e^{-2y} \int \limits_0^y dx =
+  4e^{-2y} y.$$
+
+Будем делить.
+Таким образом,
+$$f \left( y \right) =
+  \frac{2e^{-2y} y^2}{4e^{-2y} y} =
+  \frac{y}{2}.$$
+
+Как и в задаче 18.20,
+$$M \left( \xi \; \middle| \; \xi + \eta \right) =
+  M \left( \eta \; \middle| \xi + \eta \right) =
+  \frac{ \xi + \eta }{2}.$$
+
+Так как случайные величины $ \xi $ и $ \eta $ --- независимы, то
+$$M \left( \xi \eta \; \middle| \; \xi + \eta \right) =
+  M \left( \xi \; \middle| \; \xi + \eta \right) \cdot
+  M \left( \eta \; \middle| \; \xi + \eta \right) =
+  \left( \frac{ \xi + \eta }{2} \right)^2 =
+  \frac{ \left( \xi + \eta \right)^2}{4}.$$
+
+Найдём второе условное математическое ожидание
+$$M \left( \xi^2 \; \middle| \; \xi + \eta \right) =
+  M \left( \xi^2 + \xi \eta - \xi \eta \; \middle| \; \xi + \eta \right).$$
+Воспользуемся линейностью условного математического ожидания
+$$M \left( \xi^2 + \xi \eta - \xi \eta \; \middle| \; \xi + \eta \right) =
+  M \left( \xi \left( \xi + \eta \right) \; \middle| \; \xi + \eta \right) -
+  M \left( \xi \eta \; \middle| \; \xi + \eta \right).$$
+Случайная величина $ \left( \xi + \eta \right) $ измерима относительно
+$ \sigma \left( \xi + \eta \right) $, потому её можно вынести
+$$ M \left( \xi \left( \xi + \eta \right) \; \middle| \; \xi + \eta \right) -
+  M \left( \xi \eta \; \middle| \; \xi + \eta \right) =
+  \left( \xi + \eta \right) M \left( \xi \; \middle| \; \xi + \eta \right) -
+  \frac{ \left( \xi + \eta \right)^2}{4}.$$
+Подставляем найденное значение
+$$ \left( \xi + \eta \right) M \left( \xi \; \middle| \; \xi + \eta \right) -
+  \frac{ \left( \xi + \eta \right)^2}{4} =
+  \left( \xi + \eta \right) \cdot \frac{ \xi + \eta }{2} - \frac{ \left( \xi + \eta \right)^2}{4}.$$
+Упрощаем первое слагаемое
+$$ \left( \xi + \eta \right) \cdot \frac{ \xi + \eta }{2} - \frac{ \left( \xi + \eta \right)^2}{4} =
+  \frac{ \left( \xi + \eta \right)^2}{2} - \frac{ \left( \xi + \eta \right)^2}{4} =
+  \frac{ \left( \xi + \eta \right)^2}{4}.$$
