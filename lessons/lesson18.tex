@@ -953,7 +953,7 @@ $$M \left( \sum \limits_{k = 1}^n X_k^2 \; \middle| \; X_1 \right) =
   Разделим на 2 интеграла
   $$ \int \limits_0^2 \frac{1}{2} \cdot x \varphi \left( \min \left( x, t \right) \right) dx =
     \int \limits_0^t \frac{1}{2} \cdot x  \varphi \left( x \right) dx +
-    \int \limits_t^2 \frac{1}{2} \cdot x \varphi \left( x \right) dx.$$
+    \int \limits_t^{+ \infty } \frac{1}{2} \cdot x \varphi \left( x \right) dx.$$
   Второй интеграл вычисляем в явном виде
   $$ \int \limits_0^t \frac{1}{2} \cdot x  \varphi \left( x \right) dx +
     \int \limits_t^2 \frac{1}{2} \cdot x \varphi \left( x \right) dx =
@@ -1024,8 +1024,10 @@ $$M \left( \sum \limits_{k = 1}^n X_k^2 \; \middle| \; X_1 \right) =
       \min \left( \xi, t \right) \cdot \mathbbm{1} \left\{ \min \left( \xi, t \right) < t \right\} +
       \left( 1 + \frac{t}{2} \right) \cdot
       \mathbbm{1} \left\{ \min \left( \xi, t \right) \geq t \right\} = \\
-      = \xi \cdot \mathbbm{1} \left\{ \xi < t \right\} +
-      \left( 1 + \frac{t}{2} \right) \cdot \mathbbm{1} \left\{ \xi \geq t \right\};
+      = \left[ \xi \cdot \mathbbm{1} \left\{ \xi < t \right\} +
+      \left( 1 + \frac{t}{2} \right) \cdot \mathbbm{1} \left\{ \xi \geq t \right\} \right] \cdot
+      \mathbbm{1} \left\{ t < 2 \right\} +
+      \dotsc \cdot \mathbbm{1} \left\{ t \geq 2 \right\};
     \end{split}
   \end{equation*}
   \item ищем
