@@ -381,7 +381,7 @@ $$M \left[ \xi^2 \; \middle| \; \xi + \eta \right] =
   Теперь нужно продифференцировать по $x$ и по $y$, то есть
   $$p_{ \left( \xi, \xi + 2 \eta \right) } \left( x, y \right) =
     \frac{ \partial^2 F_{ \left( \xi, \xi + 2 \eta \right) } \left( x, y \right) }{ \partial x \partial y}.$$
-  Дифференцируем по $x$ как интеграл по сменным верхним пределом
+  Дифференцируем по $x$ как интеграл со сменным верхним пределом
   $$ \frac{ \partial^2 F_{ \left( \xi, \xi + 2 \eta \right) } \left( x, y \right) }{ \partial x \partial y} =
     \frac{ \partial }{ \partial y} \left[
       \int \limits_0^{ \frac{y - x}{2}} p_{ \xi } \left( x \right) p_{ \eta } \left( t \right) dt
@@ -1229,7 +1229,7 @@ $$F_{ \left( \xi, \xi + \eta \right) } \left( x, y \right) =
   M \mathbbm{1} \left\{ \xi \leq x, \xi + \eta \leq y \right\}.$$
 Есть две случайные величины, будет 2 интеграла
 $$M \mathbbm{1} \left\{ \xi \leq x, \xi + \eta \leq y \right\} =
-  \iint \limits_{ \mathbb{R}}
+  \iint \limits_{ \mathbb{R}^2}
     \mathbbm{1} \left\{ z \leq x, z + t \leq y \right\} \cdot
     p_{ \left( \xi, \eta \right) } \left( x, y \right)
   dzdt.$$
@@ -1237,11 +1237,11 @@ $$M \mathbbm{1} \left\{ \xi \leq x, \xi + \eta \leq y \right\} =
 совместная плотность равна произведению плотностей
 \begin{equation*}
   \begin{split}
-    \iint \limits_{ \mathbb{R}}
+    \iint \limits_{ \mathbb{R}^2}
       \mathbbm{1} \left\{ z \leq x, z + t \leq y \right\} \cdot
       p_{ \left( \xi, \eta \right) } \left( x, y \right)
     dzdt = \\
-    = \iint \limits_{ \mathbb{R}}
+    = \iint \limits_{ \mathbb{R}^2}
       \mathbbm{1} \left\{ z \leq x, z + t \leq y \right\} \cdot
       p_{ \xi } \left( z \right) \cdot p_{ \eta } \left( t \right)
     dzdt =
@@ -1273,64 +1273,92 @@ $$p_{ \xi } \left( x \right) p_{ \eta } \left( y - x \right) =
 
 Из последнего индикатора следует, что $y \geq x$.
 
-Найдём $M \left( \xi \; \middle| \xi + \eta \right) = f \left( \xi + \eta \right) $.
+\begin{enumerate}[label=\alph*)]
+\item Найдём $M \left( \xi^2 \; \middle| \xi + \eta \right) = f \left( \xi + \eta \right) $.
 
-При этом
-$$f \left( y \right) =
-  M \left( \xi \; \middle| \; \xi + \eta = y \right) =
-  \frac{ \int \limits_{ \mathbb{R}} xp_{ \left( \xi, \xi + \eta \right) } \left( x, y \right) dx}{ \int \limits_{ \mathbb{R}} p_{ \left( \xi, \xi + \eta \right) } \left( x, y \right) dx}.$$
+  При этом
+  $$f \left( y \right) =
+    M \left( \xi^2 \; \middle| \; \xi + \eta = y \right) =
+    \frac{ \int \limits_{ \mathbb{R}} x^2 p_{ \left( \xi, \xi + \eta \right) } \left( x, y \right) dx}{ \int \limits_{ \mathbb{R}} p_{ \left( \xi, \xi + \eta \right) } \left( x, y \right) dx}.$$
 
-Находим числитель
-$$ \int \limits_0^{+ \infty } xp \left( x, y \right) dx =
-  \int \limits_0^{+ \infty } x \cdot 4e^{-2y} \cdot \mathbbm{1} \left\{ y \geq x \right\} dx =
-  4e^{-2y} \int \limits_0^y xdx =
-  4e^{-2y} \cdot \left. \frac{x^2}{2} \right|_0^y.$$
-Подставляем пределы интегрирования и сокращаем числовые константы
-$$4e^{-2y} \cdot \left. \frac{x^2}{2} \right|_0^y =
-  2e^{-2y} y.$$
+  Находим числитель
+  $$ \int \limits_{ \mathbb{R}} x^2 p_{ \left( \xi, \xi + \eta \right) } \left( x, y \right) dx =
+    \int \limits_{ \mathbb{R}}
+      x^2 \cdot 4e^{-2y} \cdot \mathbbm{1} \left\{ x \geq 0 \right\} \cdot
+      \mathbbm{1} \left\{ y - x \geq 0 \right\} dx.$$
+  Вынесем константу за знак интеграла и воспользуемся индикатором
+  $$ \int \limits_{ \mathbb{R}}
+      x^2 \cdot 4e^{-2y} \cdot \mathbbm{1} \left\{ x \geq 0 \right\} \cdot
+      \mathbbm{1} \left\{ y - x \geq 0 \right\} dx =
+    4e^{-2y} \int \limits_0^{+ \infty } x^2 \cdot \mathbbm{1} \left\{ x \leq y \right\} dx.$$
+  Пользуемся вторым индикатором
+  $$4e^{-2y} \int \limits_0^{+ \infty } x^2 \cdot \mathbbm{1} \left\{ x \leq y \right\} dx =
+    4e^{-2y} \int \limits_0^y x^2 dx =
+    4e^{-2y} \cdot \left. \frac{x^3}{3} \right|_0^y =
+    4e^{-2y} \cdot \frac{y^3}{3}.$$
 
-Находим знаменатель, то есть проинтегрируем плотность вектора, чтобы найти одномерную плотность
-$$ \int \limits_0^{+ \infty } p \left( x, y \right) dx =
-  \int \limits_0^{+ \infty } 4e^{-2y} \cdot \mathbbm{1} \left\{ y \geq x \right\} dx =
-  4e^{-2y} \int \limits_0^y dx =
-  4e^{-2y} y.$$
+  Находим знаменатель, то есть проинтегрируем плотность вектора, чтобы найти одномерную плотность
+  $$ \int \limits_{- \infty }^{+ \infty } p \left( x, y \right) dx =
+    \int \limits_0^{+ \infty } 4e^{-2y} \cdot \mathbbm{1} \left\{ y \geq x \right\} dx =
+    4e^{-2y} \int \limits_0^y dx =
+    4e^{-2y} y.$$
 
-Будем делить.
-Таким образом,
-$$f \left( y \right) =
-  \frac{2e^{-2y} y^2}{4e^{-2y} y} =
-  \frac{y}{2}.$$
+  Будем делить.
+  Таким образом,
+  $$f \left( y \right) =
+    \frac{4e^{-2y} \cdot \frac{y^3}{3}}{4e^{-2y}} =
+    \frac{y^2}{3}.$$
 
-Как и в задаче 18.20,
-$$M \left( \xi \; \middle| \; \xi + \eta \right) =
-  M \left( \eta \; \middle| \xi + \eta \right) =
-  \frac{ \xi + \eta }{2}.$$
+  Нужно записать ответ
+  $$M \left( \xi^2 \; \middle| \; \xi + \eta \right) =
+    \frac{ \left( \xi + \eta \right)^2}{3};$$
+  \item случайные величины $ \xi $ и $ \eta $ --- независимы и одинаково распределённые.
+  Из этого следует,
+  что распределения векторов $ \left( \xi, \xi + \eta \right) $ и
+  $ \left( \eta, \xi + \eta \right) $ одинаковы,
+  потому что $ \xi $ и $ \eta $ входят в функцию $ \xi + \eta $ одинаково,
+  то есть
+  $ \left( \xi, \xi + \eta \right) \left( d \right) \sim
+    M \left( \eta, \xi + \eta \right) $.
+  Отсюда следует,
+  что почти наверное
+  $M \left( \xi \; \middle| \; \xi + \eta \right) =
+    M \left( \eta \; \middle| \; \xi + \eta \right) $,
+  а значит и
+  $M \left( \xi^2 \; \middle| \; \xi + \eta \right) =
+    M \left( \eta^2 \; \middle| \; \xi + \eta \right) $
+  почти наверное.
 
-Так как случайные величины $ \xi $ и $ \eta $ --- независимы, то
-$$M \left( \xi \eta \; \middle| \; \xi + \eta \right) =
-  M \left( \xi \; \middle| \; \xi + \eta \right) \cdot
-  M \left( \eta \; \middle| \; \xi + \eta \right) =
-  \left( \frac{ \xi + \eta }{2} \right)^2 =
-  \frac{ \left( \xi + \eta \right)^2}{4}.$$
+  Из того,
+  что случайная величина $ \left( \xi + \eta \right)^2$ измерима относительно
+  $$ \sigma \left( \xi + \eta \right),$$
+  следует,
+  что
+  $M \left[ \left( \xi + \eta \right)^2 \; \middle| \; \xi + \eta \right] =
+    \left( \xi + \eta \right)^2$.
+  Запишем левую часть,
+  воспользовавшись свойством линейности условного математического ожидания
+  $$M \left[ \left( \xi + \eta \right)^2 \; \middle| \; \xi + \eta \right] =
+    M \left( \xi^2 \; \middle| \; \xi + \eta \right) +
+    M \left( \eta^2 \; \middle| \; \xi + \eta \right) +
+    2M \left( \xi \eta \; \middle| \; \xi + \eta \right).$$
+  Приведём подобные
+  \begin{equation*}
+    \begin{split}
+      M \left( \xi^2 \; \middle| \; \xi + \eta \right) +
+      M \left( \eta^2 \; \middle| \; \xi + \eta \right) +
+      2M \left( \xi \eta \; \middle| \; \xi + \eta \right) = \\
+      = 2M \left( \xi^2 \; \middle| \; \xi + \eta \right) +
+      2M \left( \xi \eta \; \middle| \; \xi + \eta \right).
+    \end{split}
+  \end{equation*}
 
-Найдём второе условное математическое ожидание
-$$M \left( \xi^2 \; \middle| \; \xi + \eta \right) =
-  M \left( \xi^2 + \xi \eta - \xi \eta \; \middle| \; \xi + \eta \right).$$
-Воспользуемся линейностью условного математического ожидания
-$$M \left( \xi^2 + \xi \eta - \xi \eta \; \middle| \; \xi + \eta \right) =
-  M \left( \xi \left( \xi + \eta \right) \; \middle| \; \xi + \eta \right) -
-  M \left( \xi \eta \; \middle| \; \xi + \eta \right).$$
-Случайная величина $ \left( \xi + \eta \right) $ измерима относительно
-$ \sigma \left( \xi + \eta \right) $, потому её можно вынести
-$$ M \left( \xi \left( \xi + \eta \right) \; \middle| \; \xi + \eta \right) -
-  M \left( \xi \eta \; \middle| \; \xi + \eta \right) =
-  \left( \xi + \eta \right) M \left( \xi \; \middle| \; \xi + \eta \right) -
-  \frac{ \left( \xi + \eta \right)^2}{4}.$$
-Подставляем найденное значение
-$$ \left( \xi + \eta \right) M \left( \xi \; \middle| \; \xi + \eta \right) -
-  \frac{ \left( \xi + \eta \right)^2}{4} =
-  \left( \xi + \eta \right) \cdot \frac{ \xi + \eta }{2} - \frac{ \left( \xi + \eta \right)^2}{4}.$$
-Упрощаем первое слагаемое
-$$ \left( \xi + \eta \right) \cdot \frac{ \xi + \eta }{2} - \frac{ \left( \xi + \eta \right)^2}{4} =
-  \frac{ \left( \xi + \eta \right)^2}{2} - \frac{ \left( \xi + \eta \right)^2}{4} =
-  \frac{ \left( \xi + \eta \right)^2}{4}.$$
+  Отсюда выразим нужное условное математическое ожидание
+  $$M \left( \xi \eta \; \middle| \; \xi + \eta \right) =
+    \frac{ \left( \xi + \eta \right)^2}{2} -
+    M \left( \xi^2 \; \middle| \; \xi + \eta \right) =
+    \frac{ \left( \xi + \eta \right)^2}{2} - \frac{ \left( \xi + \eta \right)^2}{3}.$$
+  Вычисляя разность дробей получаем
+  $$ \frac{ \left( \xi + \eta \right)^2}{2} - \frac{ \left( \xi + \eta \right)^2}{3} =
+    \frac{ \left( \xi + \eta \right)^2}{6}.$$
+\end{enumerate}
