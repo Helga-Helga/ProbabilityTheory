@@ -148,27 +148,33 @@ dx = du,
 v = - \frac{1}{ \lambda } \cdot e^{- \lambda x}.$$
 Получаем
 \begin{equation*}
-\begin{split}
-D \xi =
-\left. 2x \left( - \frac{1}{ \lambda } \cdot e^{- \lambda x} \right) \right|_0^{+ \infty } +
-2 \int \frac{1}{ \lambda } \cdot e^{- \lambda x} dx =
-\left. - \frac{2}{ \lambda^2} \cdot e^{- \lambda x} \right|_0^{+ \infty } - \\
-- \left. \frac{2xe^{- \lambda x}}{ \lambda } \right|_0^{+ \infty } =
-\frac{2}{ \lambda^2}.
-\end{split}
+  \begin{split}
+    D \xi =
+    \left.
+      2x \left( - \frac{1}{ \lambda } \cdot e^{- \lambda x} \right)
+    \right|_0^{+ \infty } +
+    2 \int \frac{1}{ \lambda } \cdot e^{- \lambda x} dx =
+    \left.
+      -\frac{2}{ \lambda^2} \cdot e^{- \lambda x}
+    \right|_0^{+ \infty } - \\
+    -\left. \frac{2xe^{- \lambda x}}{ \lambda } \right|_0^{+ \infty } =
+    \frac{2}{ \lambda^2}.
+  \end{split}
 \end{equation*}
 
 Теперь находим функцию распределения
 $$F_{ \xi } \left( x \right) =
-\int \limits_{- \infty }^{x} p_{ \xi } \left( y \right) dy =
-\begin{cases}
-\int \limits_{- \infty }^x \frac{ \lambda }{2} \cdot e^{ \lambda y} dy =
-\frac{1}{2} \cdot e^{ \lambda x}, \qquad x < 0, \\
-\int \limits_{- \infty }^0 \frac{ \lambda }{2} \cdot e^{ \lambda y} dy + \int \limits_0^x \frac{ \lambda }{2} \cdot e^{- \lambda y} dy = \\
-= \left. \frac{1}{2} - \frac{1}{2} \cdot e^{- \lambda y} \right|0-^x =
-\frac{1}{2} - \frac{1}{2} \cdot e^{- \lambda x} + \frac{1}{2} = \\
-= 1 - \frac{1}{2} \cdot e^{- \lambda x}, \qquad x > 0.
-\end{cases}$$
+  \int \limits_{- \infty }^{x} p_{ \xi } \left( y \right) dy =
+  \begin{cases}
+    \int \limits_{- \infty }^x \frac{ \lambda }{2} \cdot e^{ \lambda y} dy =
+    \frac{1}{2} \cdot e^{ \lambda x}, \qquad x < 0, \\
+    \int \limits_{- \infty }^0
+      \frac{ \lambda }{2} \cdot e^{ \lambda y} dy +
+    \int \limits_0^x \frac{ \lambda }{2} \cdot e^{- \lambda y} dy = \\
+    = \left. \frac{1}{2} - \frac{1}{2} \cdot e^{- \lambda y} \right|_0^x =
+    \frac{1}{2} - \frac{1}{2} \cdot e^{- \lambda x} + \frac{1}{2} = \\
+    = 1 - \frac{1}{2} \cdot e^{- \lambda x}, \qquad x > 0.
+  \end{cases}$$
 
 Таким образом,
 $$F_{ \xi } \left( x \right) =
@@ -189,17 +195,21 @@ $$F_{ \xi } \left( x \right) =
 $$P \left( \xi = k \right) =
 C_n^k \cdot \left( \frac{1}{2} \right)^k \left( 1 - \frac{1}{2} \right)^{n-k} =
 C_n^k \left( \frac{1}{2} \right)^n, \,
-k = \overline{o, n}.$$
+k = \overline{0, n}.$$
 
 Математическое ожидание
 \begin{equation*}
 \begin{split}
-M \xi =
-\sum \limits_{k=0}^n k \cdot P \left( \xi = k \right) =
-\sum \limits_{k=0}^n k \cdot C_n^k \cdot \left( \frac{1}{2} \right)^n =
-\sum \limits_{k=0}^n \left( \frac{1}{2} \right)^n \cdot k \cdot \frac{n!}{k! \left( n-k \right)!} = \\
-= \left( \frac{1}{2} \right)^n \cdot \sum \limits_{k=0}^n \frac{n!}{ \left( k - 1 \right)! \left( n - k \right)!} =
-\left( \frac{1}{2} \right)^n \cdot \sum \limits_{k=0}^n \frac{n \left( n-1 \right)!}{ \left( k-1 \right)! \left( n-k \right)!}.
+  M \xi =
+  \sum \limits_{k=0}^n k \cdot P \left( \xi = k \right) =
+  \sum \limits_{k=0}^n k \cdot C_n^k \cdot \left( \frac{1}{2} \right)^n =
+  \sum \limits_{k=0}^n
+    \left( \frac{1}{2} \right)^n \cdot k \cdot
+    \frac{n!}{k! \left( n-k \right)!} = \\
+  = \left( \frac{1}{2} \right)^n \cdot \sum \limits_{k=0}^n
+    \frac{n!}{ \left( k - 1 \right)! \left( n - k \right)!} =
+  \left( \frac{1}{2} \right)^n \cdot \sum \limits_{k=0}^n
+    \frac{n \left( n-1 \right)!}{ \left( k-1 \right)! \left( n-k \right)!}.
 \end{split}
 \end{equation*}
 Зделаем замену переменных
@@ -211,17 +221,27 @@ $$M \xi =
 Вычислим второй момент
 \begin{equation*}
 \begin{split}
-M \xi^2 =
-\sum \limits_{k=0}^n k^2 \cdot P \left( \xi = k \right) =
-\sum \limits_{k=0}^n k^2 \cdot C_n^k \cdot \left( \frac{1}{2} \right)^n = \\
-= \sum \limits_{k=0}^n \left( \frac{1}{2} \right)^n \cdot k^2 \cdot \frac{n!}{k! \left( n-k \right)!} =
-\left( \frac{1}{2} \right)^n \cdot \sum \limits_{k=1}^n \frac{n!k}{ \left( k-1 \right)! \left( n-k \right)!} = \\
-= \left( \frac{1}{2} \right)^n \cdot
-\left( \sum \limits_{k=1}^n \frac{n!}{ \left( k-2 \right)! \left( n-k \right)!} + \sum \limits_{k=0}^{n-2} \frac{n!}{ \left( k-1 \right)! \left( n-k \right)!} \right) = \\
-= \left( \frac{1}{2} \right)^n \left[ n \left( n-2 \right) \cdot \sum \limits_{k=0}^{n-2} C_{n-2}^k + n \sum \limits_{k=0}^{n-2} C_{n-1}^k \right] = \\
-= \left( \frac{1}{2} \right)^n \cdot \left[ n \left( n-1 \right) \cdot 2^{n-2} + n \cdot 2^{n-1} \right] =
-\frac{n}{4} \left( n-1+2 \right) =
-\frac{n \left( n+1 \right) }{2}.
+  M \xi^2 =
+  \sum \limits_{k=0}^n k^2 \cdot P \left( \xi = k \right) =
+  \sum \limits_{k=0}^n k^2 \cdot C_n^k \cdot \left( \frac{1}{2} \right)^n = \\
+  = \sum \limits_{k=0}^n
+    \left( \frac{1}{2} \right)^n \cdot k^2 \cdot
+    \frac{n!}{k! \left( n-k \right)!} =
+  \left( \frac{1}{2} \right)^n \cdot \sum \limits_{k=1}^n
+    \frac{n!k}{ \left( k-1 \right)! \left( n-k \right)!} = \\
+  = \left( \frac{1}{2} \right)^n \cdot \left(
+    \sum \limits_{k=1}^n
+      \frac{n!}{ \left( k-2 \right)! \left( n-k \right)!} +
+    \sum \limits_{k=0}^{n-2} \frac{n!}{ \left( k-1 \right)! \left( n-k \right)!}
+  \right) = \\
+  = \left( \frac{1}{2} \right)^n \left[
+    n \left( n-1 \right) \cdot \sum \limits_{k=0}^{n-2} C_{n-2}^k +
+    n \sum \limits_{k=0}^{n-2} C_{n-1}^k
+  \right] = \\
+  = \left( \frac{1}{2} \right)^n \cdot
+  \left[ n \left( n-1 \right) \cdot 2^{n-2} + n \cdot 2^{n-1} \right] =
+  \frac{n}{4} \left( n-1+2 \right) =
+  \frac{n \left( n+1 \right) }{4}.
 \end{split}
 \end{equation*}
 
